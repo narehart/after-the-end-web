@@ -3,9 +3,15 @@ import { SpriteComponent } from "../components/sprite";
 import { Entity, System } from "../ecs";
 
 export class AnimatedSpriteSystem extends System {
+  private absoluteStart: number = 0;
+
   componentsRequired = new Set<Function>([AnimatedSpriteComponent]);
 
   update(entities: Set<Entity>, timestamp: number) {
+    if (this.absoluteStart === 0) {
+      this.absoluteStart = timestamp;
+    }
+
     for (const entity of entities) {
       const container = this.ecs.getComponents(entity);
       const animatedSprite = container.get(AnimatedSpriteComponent);
@@ -13,7 +19,9 @@ export class AnimatedSpriteSystem extends System {
       if (!animatedSprite) continue;
 
       if (animatedSprite.start === 0) {
-        animatedSprite.start = timestamp;
+        animatedSprite.start = animatedSprite.absolute
+          ? this.absoluteStart
+          : timestamp;
       }
 
       const durations = this.getDurations(animatedSprite);
@@ -43,7 +51,9 @@ export class AnimatedSpriteSystem extends System {
       }
 
       if (end && animatedSprite.loop) {
-        animatedSprite.start = timestamp;
+        animatedSprite.start = animatedSprite.absolute
+          ? animatedSprite.start + totalDuration * 1000
+          : timestamp;
       }
     }
   }
@@ -57,7 +67,7 @@ export class AnimatedSpriteSystem extends System {
     let durations = [];
 
     for (let i = 0; i < frames; i++) {
-      durations.push(animatedSprite.duration as number);
+      durations.push(animatedSprite.duration);
     }
 
     return durations;

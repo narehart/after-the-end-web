@@ -422,7 +422,7 @@ export class HexGridGenerateSystem extends System {
       AnimatedSpriteBundle({
         ecs: this.ecs,
         parent: e,
-        animation: ["hex-animations-water-001", 50, 1, true],
+        animation: ["hex-animations-water-001", 50, 1.1, true, true],
         position: [x, y, z + 0.01],
         layer: [1],
         camera: true,

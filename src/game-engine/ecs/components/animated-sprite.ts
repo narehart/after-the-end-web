@@ -8,7 +8,8 @@ export class AnimatedSpriteComponent<T extends string> extends Component {
     public id: T,
     public width: number,
     public duration: number[] | number = 100,
-    public loop: boolean = false
+    public loop: boolean = false,
+    public absolute: boolean = false
   ) {
     super();
   }
