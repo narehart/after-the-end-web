@@ -89,6 +89,7 @@ function SpriteBundle({
 interface IAnimatedSpriteBundle {
   ecs: ECS;
   e?: Entity;
+  parent?: Entity;
   animation: ConstructorParameters<typeof AnimatedSpriteComponent<Sprites>>;
   position?: ConstructorParameters<typeof PositionComponent>;
   layer?: ConstructorParameters<typeof LayerCompoent>;
@@ -99,11 +100,12 @@ function AnimatedSpriteBundle({
   ecs,
   animation,
   e: _e,
+  parent,
   position = [0, 0],
   layer = [0],
   camera,
 }: IAnimatedSpriteBundle) {
-  const e = _e || ecs.addEntity();
+  const e = _e || ecs.addEntity(parent);
   ecs.addComponent(e, new AnimatedSpriteComponent(...animation));
   ecs.addComponent(e, new PositionComponent(...position));
   ecs.addComponent(e, new LayerCompoent(...layer));
@@ -378,7 +380,7 @@ export class HexGridGenerateSystem extends System {
       if (inArea) {
         areaHexes.splice(areaIndex, 1);
       } else {
-        this.ecs.destroyEntity(entity);
+        this.ecs.removeEntity(entity);
       }
     }
 
@@ -419,6 +421,7 @@ export class HexGridGenerateSystem extends System {
     if (sprite === "hex-water-001") {
       AnimatedSpriteBundle({
         ecs: this.ecs,
+        parent: e,
         animation: ["hex-animations-water-001", 50, 1, true],
         position: [x, y, z + 0.01],
         layer: [1],

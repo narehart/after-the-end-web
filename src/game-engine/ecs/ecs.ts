@@ -4,8 +4,20 @@ export type Entity = number;
 
 export abstract class Component {}
 
-export abstract class TagComponent extends Component {
-  public isTagCompoennt = true;
+export class ParentComponent extends Component {
+  constructor(public parent?: Entity) {
+    super();
+  }
+}
+
+export class ChildrenComponent extends Component {
+  constructor(public children: Entity[] = []) {
+    super();
+  }
+}
+
+export class TagComponent extends Component {
+  public isTagComponent = true;
 }
 
 export abstract class System {
@@ -59,14 +71,37 @@ export class ECS {
 
   constructor(public ge: GameEngine) {}
 
-  public addEntity(): Entity {
-    let entity = this.nextEntityID;
+  public addEntity(parentID?: Entity): Entity {
+    const entity = this.nextEntityID;
+    const container = new ComponentContainer();
+
+    if (parentID) {
+      const parentContainer = this.getComponents(parentID);
+      const children = parentContainer.get(ChildrenComponent);
+
+      if (!children) {
+        this.addComponent(parentID, new ChildrenComponent([entity]));
+      } else if (!children.children.includes(entity)) {
+        children.children.push(entity);
+      }
+
+      container.add(new ParentComponent(parentID));
+    }
+
     this.nextEntityID++;
-    this.entities.set(entity, new ComponentContainer());
+    this.entities.set(entity, container);
+
     return entity;
   }
 
   public removeEntity(entity: Entity): void {
+    const container = this.getComponents(entity);
+    const children = container.get(ChildrenComponent)?.children || [];
+
+    for (let i = 0; i < children.length; i++) {
+      this.removeEntity(children[i]);
+    }
+
     this.entitiesToDestroy.push(entity);
   }
 
