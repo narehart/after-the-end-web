@@ -15,31 +15,31 @@ type FlavorTerrain =
   | "forestHeavy"
   | "forestHills"
   | "forestMountains"
-  | "canyons"
-  | "mountainPass"
   | "dominatingPeak"
-  | "desertCanyon"
   | "desertHillsRocky"
-  | "plainsCanyon";
+  | "plainsCanyon"
+  | "plainsFissure"
+  | "dominatingPeak"
+  | "desertMountains";
 type Terrain = PrimaryTerrain | FlavorTerrain;
 type Subhex = { whole: Hex[]; half: Hex[] };
 type AtlusHex = Subhex & { center: Hex };
 
 const terrainSprites: { [key in Terrain]?: Sprites } = {
   water: "hex-water-001",
-  swamp: "hex-plains-003",
-  desert: "hex-plains-003",
-  plains: "hex-plains-003",
-  forest: "hex-plains-003",
-  forestHeavy: "hex-plains-003",
-  forestLight: "hex-plains-003",
-  mountains: "hex-plains-003",
-  hills: "hex-plains-003",
-  desertHillsRocky: "hex-plains-003",
-  forestHills: "hex-plains-003",
-  forestMountains: "hex-plains-003",
-  desertCanyon: "hex-plains-003",
-  plainsCanyon: "hex-plains-003",
+  swamp: "hex-swamp-003",
+  desert: "hex-desert-002",
+  plains: "hex-plains-006",
+  forest: "hex-forest-003",
+  forestHeavy: "hex-forest-heavy-002",
+  forestLight: "hex-forest-light-002",
+  mountains: "hex-mountains-003",
+  hills: "hex-hills-004",
+  desertHillsRocky: "hex-desert-hills-001",
+  forestHills: "hex-forest-hills-002",
+  forestMountains: "hex-forest-mountains-002",
+  dominatingPeak: "hex-dominating-peak-002",
+  desertMountains: "hex-desert-mountains-001",
 };
 
 const terrainOrder: { [key in Terrain]?: number } = {
@@ -74,7 +74,7 @@ const assignmentTable: {
     ],
     wildcard: [
       { type: "swamp", chance: 33 },
-      { type: "desert", chance: 33 },
+      { type: "plains", chance: 33 },
       { type: "hills", chance: 33 },
     ],
   },
@@ -93,7 +93,7 @@ const assignmentTable: {
     tertiary: [{ type: "plains", chance: 100 }],
     wildcard: [
       { type: "water", chance: 50 },
-      { type: "mountains", chance: 50 },
+      { type: "desertMountains", chance: 50 },
     ],
   },
   plains: {
@@ -103,7 +103,7 @@ const assignmentTable: {
     wildcard: [
       { type: "water", chance: 33 },
       { type: "swamp", chance: 33 },
-      { type: "desert", chance: 33 },
+      { type: "plains", chance: 33 },
     ],
   },
   forest: {
@@ -130,12 +130,12 @@ const assignmentTable: {
     ],
     secondary: [
       { type: "mountains", chance: 80 },
-      { type: "plainsCanyon", chance: 20 },
+      { type: "plains", chance: 20 },
     ],
     tertiary: [{ type: "plains", chance: 100 }],
     wildcard: [
       { type: "water", chance: 33 },
-      { type: "desert", chance: 33 },
+      { type: "swamp", chance: 33 },
       { type: "mountains", chance: 24 },
       { type: "hills", chance: 9 },
     ],
@@ -143,14 +143,14 @@ const assignmentTable: {
   mountains: {
     primary: [
       { type: "mountains", chance: 80 },
-      { type: "hills", chance: 20 },
+      { type: "dominatingPeak", chance: 20 },
     ],
     secondary: [{ type: "hills", chance: 100 }],
     tertiary: [
       { type: "forest", chance: 66 },
       { type: "forestMountains", chance: 34 },
     ],
-    wildcard: [{ type: "desert", chance: 100 }],
+    wildcard: [{ type: "swamp", chance: 100 }],
   },
 };
 
