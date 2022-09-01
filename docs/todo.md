@@ -4,6 +4,7 @@
 - clean up terrain generation
 - fix hex animation issue
 - fix memory leak
+- add tests
 
 # player
 
