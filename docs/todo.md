@@ -9,7 +9,7 @@
 # player
 
 - make player sprite
-- make cusrsoer sprites
+- make cusrsor sprites
 - randomly assign player to starting position
 - add player movement
 - add player visibility
