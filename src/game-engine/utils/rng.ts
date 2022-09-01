@@ -1,6 +1,6 @@
 import Alea from "alea";
 
-const prng = Alea("birdie");
+export const prng = Alea("birdie");
 
 export function getRandomInt(min: number, max: number) {
   return Math.floor(prng() * (max - min + 1)) + min;

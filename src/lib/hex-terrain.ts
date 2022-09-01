@@ -1,5 +1,5 @@
 import { Sprites } from "../data/sprites";
-import { getRandomInt, shuffle } from "../game-engine/utils/rng";
+import { getRandomInt, shuffle, prng } from "../game-engine/utils/rng";
 import { Hex, HexGrid, Layout } from "./hex-grid";
 
 type PrimaryTerrain =
@@ -275,7 +275,7 @@ export class HexTerrain {
 
   private getRandomTerrain(terrains: { type: Terrain; chance: number }[]) {
     const expanded = terrains.flatMap((t) => Array(t.chance).fill(t));
-    const winner = expanded[Math.floor(Math.random() * expanded.length)];
+    const winner = expanded[Math.floor(prng() * expanded.length)];
     return winner.type;
   }
 
