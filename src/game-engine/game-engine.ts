@@ -81,15 +81,13 @@ export class GameEngine {
     // handle any input
     this.scene.ecs.input?.(this.platform.events);
 
-    this.scene.ecs.update?.(timestamp);
-
     // perform an update if the lag counter exceeds or is equal to
     // the frame duration.
     // this means we are updating at a Fixed time-step.
-    // while (this.frameDelta >= this.simulationTimestep) {
-    //   this.scene.ecs.update?.(timestamp);
-    //   this.frameDelta -= this.simulationTimestep;
-    // }
+    while (this.frameDelta >= this.simulationTimestep) {
+      this.scene.ecs.update?.(timestamp);
+      this.frameDelta -= this.simulationTimestep;
+    }
 
     // calculate the lag offset, this tells us how far we are
     // into the next frame

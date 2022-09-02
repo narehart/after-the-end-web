@@ -21,6 +21,7 @@ import { SpriteComponent } from "../game-engine/ecs/components/sprite";
 import { clamp } from "../game-engine/utils/utils";
 import { HexTerrain } from "../lib/hex-terrain";
 import { AnimatedSpriteComponent } from "../game-engine/ecs/components/animated-sprite";
+import { hexData } from "../data/hex";
 
 const hexGrid = new HexGrid(HEX_SIZE, MAP_PADDING);
 hexGrid.rectangle(MAP_SIZE);
@@ -392,7 +393,8 @@ export class HexGridGenerateSystem extends System {
 
   getHexPosition(hex: Hex) {
     const index = hexGrid.toIndex(hex);
-    const offset = terrain.terrainOrder[index] || 0;
+    const hexType = terrain.hexType[index];
+    const offset = hexData[hexType].sprite.offset || 0;
     const point = hexGrid.layout.toPoint(hex);
     const x = point.x;
     const y = point.y - offset;
@@ -403,7 +405,8 @@ export class HexGridGenerateSystem extends System {
   addHexEntity(hex: Hex) {
     const e = this.ecs.addEntity();
     const index = hexGrid.toIndex(hex);
-    const sprite = terrain.terrainSprites[index] || "hex-plains-001";
+    const hexType = terrain.hexType[index] || "plains";
+    const sprite = hexData[hexType].sprite;
 
     this.ecs.addComponent(e, new HexComponent(hex));
 
@@ -412,23 +415,21 @@ export class HexGridGenerateSystem extends System {
     SpriteBundle({
       ecs: this.ecs,
       e,
-      sprite: [sprite],
+      sprite: [sprite.id],
       position: [x, y, z],
       layer: [1],
       camera: true,
     });
 
-    if (sprite === "hex-water-001") {
-      AnimatedSpriteBundle({
-        ecs: this.ecs,
-        parent: e,
-        animation: ["hex-animations-water-001", 50, 1, true, true],
-        position: [x, y, z + 0.01],
-        layer: [1],
-        camera: true,
-      });
-    }
+    if (!sprite.animation) return;
 
-    return e;
+    AnimatedSpriteBundle({
+      ecs: this.ecs,
+      parent: e,
+      animation: sprite.animation,
+      position: [x, y, z + 0.01],
+      layer: [1],
+      camera: true,
+    });
   }
 }

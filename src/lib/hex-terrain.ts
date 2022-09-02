@@ -1,158 +1,10 @@
-import { Sprites } from "../data/sprites";
+import { hexData, HexTypeName } from "../data/hex";
+import { hexTerrainAssignments } from "../data/hex-terrain";
 import { getRandomInt, shuffle, prng } from "../game-engine/utils/rng";
 import { Hex, HexGrid, Layout } from "./hex-grid";
 
-type PrimaryTerrain =
-  | "water"
-  | "swamp"
-  | "desert"
-  | "plains"
-  | "hills"
-  | "forest"
-  | "mountains";
-type FlavorTerrain =
-  | "forestLight"
-  | "forestHeavy"
-  | "forestHills"
-  | "forestMountains"
-  | "dominatingPeak"
-  | "desertHillsRocky"
-  | "plainsCanyon"
-  | "plainsFissure"
-  | "dominatingPeak"
-  | "desertMountains";
-type Terrain = PrimaryTerrain | FlavorTerrain;
 type Subhex = { whole: Hex[]; half: Hex[] };
 type AtlusHex = Subhex & { center: Hex };
-
-const terrainSprites: { [key in Terrain]?: Sprites } = {
-  water: "hex-water-001",
-  swamp: "hex-swamp-003",
-  desert: "hex-desert-002",
-  plains: "hex-plains-006",
-  forest: "hex-forest-003",
-  forestHeavy: "hex-forest-heavy-002",
-  forestLight: "hex-forest-light-002",
-  mountains: "hex-mountains-003",
-  hills: "hex-hills-004",
-  desertHillsRocky: "hex-desert-hills-001",
-  forestHills: "hex-forest-hills-002",
-  forestMountains: "hex-forest-mountains-002",
-  dominatingPeak: "hex-dominating-peak-002",
-  desertMountains: "hex-desert-mountains-001",
-};
-
-const terrainOrder: { [key in Terrain]?: number } = {
-  water: -6,
-  swamp: 0,
-  desert: 0,
-  plains: 0,
-  forest: 0,
-  forestHeavy: 0,
-  forestLight: 0,
-  mountains: 0,
-  hills: 0,
-  desertHillsRocky: 0,
-  forestHills: 0,
-  forestMountains: 0,
-};
-
-const assignmentTable: {
-  [key in PrimaryTerrain]?: {
-    primary: { type: Terrain; chance: number }[];
-    secondary: { type: Terrain; chance: number }[];
-    tertiary: { type: Terrain; chance: number }[];
-    wildcard: { type: Terrain; chance: number }[];
-  };
-} = {
-  water: {
-    primary: [{ type: "water", chance: 100 }],
-    secondary: [{ type: "plains", chance: 100 }],
-    tertiary: [
-      { type: "forest", chance: 34 },
-      { type: "forestLight", chance: 66 },
-    ],
-    wildcard: [
-      { type: "swamp", chance: 33 },
-      { type: "plains", chance: 33 },
-      { type: "hills", chance: 33 },
-    ],
-  },
-  swamp: {
-    primary: [{ type: "swamp", chance: 100 }],
-    secondary: [{ type: "plains", chance: 100 }],
-    tertiary: [{ type: "forest", chance: 100 }],
-    wildcard: [{ type: "water", chance: 100 }],
-  },
-  desert: {
-    primary: [{ type: "desert", chance: 100 }],
-    secondary: [
-      { type: "desertHillsRocky", chance: 34 },
-      { type: "desert", chance: 66 },
-    ],
-    tertiary: [{ type: "plains", chance: 100 }],
-    wildcard: [
-      { type: "water", chance: 50 },
-      { type: "desertMountains", chance: 50 },
-    ],
-  },
-  plains: {
-    primary: [{ type: "plains", chance: 100 }],
-    secondary: [{ type: "forest", chance: 100 }],
-    tertiary: [{ type: "hills", chance: 100 }],
-    wildcard: [
-      { type: "water", chance: 33 },
-      { type: "swamp", chance: 33 },
-      { type: "plains", chance: 33 },
-    ],
-  },
-  forest: {
-    primary: [
-      { type: "forest", chance: 66 },
-      { type: "forestHeavy", chance: 34 },
-    ],
-    secondary: [{ type: "plains", chance: 100 }],
-    tertiary: [
-      { type: "forestHills", chance: 66 },
-      { type: "hills", chance: 34 },
-    ],
-    wildcard: [
-      { type: "water", chance: 33 },
-      { type: "swamp", chance: 33 },
-      { type: "forestMountains", chance: 22 },
-      { type: "mountains", chance: 11 },
-    ],
-  },
-  hills: {
-    primary: [
-      { type: "hills", chance: 66 },
-      { type: "forestHills", chance: 34 },
-    ],
-    secondary: [
-      { type: "mountains", chance: 80 },
-      { type: "plains", chance: 20 },
-    ],
-    tertiary: [{ type: "plains", chance: 100 }],
-    wildcard: [
-      { type: "water", chance: 33 },
-      { type: "swamp", chance: 33 },
-      { type: "mountains", chance: 24 },
-      { type: "hills", chance: 9 },
-    ],
-  },
-  mountains: {
-    primary: [
-      { type: "mountains", chance: 80 },
-      { type: "dominatingPeak", chance: 20 },
-    ],
-    secondary: [{ type: "hills", chance: 100 }],
-    tertiary: [
-      { type: "forest", chance: 66 },
-      { type: "forestMountains", chance: 34 },
-    ],
-    wildcard: [{ type: "swamp", chance: 100 }],
-  },
-};
 
 export class HexTerrain {
   private static subhexesFlat: Subhex = {
@@ -197,13 +49,11 @@ export class HexTerrain {
 
   public centerHexes: Hex[] = [];
   public atlusHexes: AtlusHex[] = [];
-  public terrainSprites: Sprites[] = [];
-  public terrainOrder: number[] = [];
+  public hexType: HexTypeName[] = [];
 
   constructor(private hexGrid: HexGrid) {}
 
   public generate() {
-    // get all the atlus hex centers
     this.centerHexes = this.getCenters();
     this.atlusHexes = this.getAtluses(this.centerHexes);
 
@@ -211,38 +61,36 @@ export class HexTerrain {
       const atlus = this.atlusHexes[i];
       this.setAtlusTerrain(atlus);
     }
-
-    // for each atlus hex center get the atlus sub-hexes
-    // randomly assign a terrain type as the primary type
-    // assign primary type to center
-    // assign the other hexes if not already assigned
   }
 
-  setAtlusTerrain(atlus: AtlusHex) {
+  private setAtlusTerrain(atlus: AtlusHex) {
     const typeKeys = Object.keys(
-      assignmentTable
-    ) as (keyof typeof assignmentTable)[];
+      hexTerrainAssignments
+    ) as (keyof typeof hexTerrainAssignments)[];
     const typeIndex = getRandomInt(0, typeKeys.length - 1);
     const type = typeKeys[typeIndex];
-    const assignments = assignmentTable[type]!;
+    const assignments = hexTerrainAssignments[type]!;
 
     const primaryType = this.getRandomTerrain(assignments.primary);
-    this.setTerrain(atlus.center, primaryType);
-
     const wholeShuffled = shuffle(atlus.whole);
     const wholePrimary = wholeShuffled.slice(0, 9);
     const wholeSecondary = wholeShuffled.slice(9, 15);
     const wholeTertiary = wholeShuffled.slice(15);
 
-    wholePrimary.forEach((h) => {
+    this.setTerrain(atlus.center, primaryType);
+
+    for (let i = 0; i < wholePrimary.length; i++) {
+      const h = wholePrimary[i];
       this.setTerrain(h, this.getRandomTerrain(assignments.primary));
-    });
+    }
 
-    wholeSecondary.forEach((h) => {
+    for (let i = 0; i < wholeSecondary.length; i++) {
+      const h = wholeSecondary[i];
       this.setTerrain(h, this.getRandomTerrain(assignments.secondary));
-    });
+    }
 
-    wholeTertiary.forEach((h) => {
+    for (let i = 0; i < wholeTertiary.length; i++) {
+      const h = wholeTertiary[i];
       this.setTerrain(
         h,
         this.getRandomTerrain([
@@ -250,9 +98,10 @@ export class HexTerrain {
           ...assignments.wildcard,
         ])
       );
-    });
+    }
 
-    atlus.half.forEach((h) => {
+    for (let i = 0; i < atlus.half.length; i++) {
+      const h = atlus.half[i];
       this.setTerrain(
         h,
         this.getRandomTerrain([
@@ -261,19 +110,20 @@ export class HexTerrain {
           ...assignments.tertiary,
         ])
       );
-    });
+    }
   }
 
-  private setTerrain(hex: Hex, terrain: Terrain) {
+  private setTerrain(hex: Hex, terrain: HexTypeName) {
     const index = this.hexGrid.toIndex(hex);
-    const sprite = terrainSprites[terrain];
+    const sprite = hexData[terrain].sprite.id;
+
     if (index === -1) return;
     if (!sprite) return;
-    this.terrainSprites[index] = sprite;
-    this.terrainOrder[index] = terrainOrder[terrain]!;
+
+    this.hexType[index] = terrain;
   }
 
-  private getRandomTerrain(terrains: { type: Terrain; chance: number }[]) {
+  private getRandomTerrain(terrains: { type: HexTypeName; chance: number }[]) {
     const expanded = terrains.flatMap((t) => Array(t.chance).fill(t));
     const winner = expanded[Math.floor(prng() * expanded.length)];
     return winner.type;
