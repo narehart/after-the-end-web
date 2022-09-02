@@ -1,5 +1,10 @@
 import { SPRITES } from "../data/sprites";
-import { Scene, SystemEventSystem, RendererSystem } from "../game-engine";
+import {
+  Scene,
+  SystemEventSystem,
+  RendererSystem,
+  ScreenSystem,
+} from "../game-engine";
 import { AnimatedSpriteSystem } from "../game-engine/ecs/systems/animated-sprite";
 import {
   CameraManagerSystem,
@@ -7,7 +12,6 @@ import {
   HexGridGenerateSystem,
   MapBackgroundSystem,
   SceneSizeSystem,
-  ScreenSystem,
 } from "../systems/systems";
 
 export class WorldMap extends Scene {

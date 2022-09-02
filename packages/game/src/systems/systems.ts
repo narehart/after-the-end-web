@@ -4,6 +4,7 @@ import {
   Entity,
   LayerCompoent,
   PointComponent,
+  ScreenComponent,
   System,
   SystemEventComponent,
 } from "../game-engine";
@@ -30,12 +31,6 @@ terrain.generate();
 
 class MapBackgroundManagerComponent extends Component {}
 class MapBackgroundComponent extends Component {}
-
-class ScreenComponent extends Component {
-  constructor(public x: number, public y: number) {
-    super();
-  }
-}
 
 class SceneSizeComponent extends Component {
   constructor(public x: number, public y: number) {
@@ -112,27 +107,6 @@ function AnimatedSpriteBundle({
   ecs.addComponent(e, new LayerCompoent(...layer));
   if (camera) ecs.addComponent(e, new CameraComponent(0, 0));
   return e;
-}
-
-export class ScreenSystem extends System {
-  componentsRequired = new Set<Function>([ScreenComponent]);
-
-  init() {
-    const screenEntity = this.ecs.addEntity();
-    this.ecs.addComponent(screenEntity, new ScreenComponent(0, 0));
-  }
-
-  update(entities: Set<Entity>) {
-    for (const entity of entities) {
-      const container = this.ecs.getComponents(entity);
-      const screen = container.get(ScreenComponent);
-
-      if (!screen) return;
-
-      screen.x = this.ecs.ge.platform.viewport.x;
-      screen.y = this.ecs.ge.platform.viewport.y;
-    }
-  }
 }
 
 export class SceneSizeSystem extends System {
