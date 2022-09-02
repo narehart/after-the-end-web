@@ -14,7 +14,7 @@
 - fix memory leak
 - fix background sprite edges
 - add shadows to forest sprites
-- remove unused sprites
+- remove unused sprites √
 - add tests
 
 # player
