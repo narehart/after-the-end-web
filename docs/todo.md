@@ -1,6 +1,6 @@
 # general
 
-- auto run `yarn images` on file change
+- auto run `yarn images` on file change √
 - extract screen system to game engine
 - extract scene system to game engine
 - extract camera system to game engine
