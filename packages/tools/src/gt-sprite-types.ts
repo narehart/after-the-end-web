@@ -1,7 +1,26 @@
+#!/usr/bin/env node
+
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
 import prettier from "prettier";
+import { program } from "commander";
+
+program
+  .name("sprite-types")
+  .description("Generate a TypeScript file for sprites.")
+  .argument("<string>", "path to directory containing sprites.")
+  .argument("<string>", "path of file to output")
+  .option("-w, --watch", "watch directory for changes and run program")
+  .action((src, dest, opts) => {
+    if (opts.watch) {
+      fs.watch(src, () => {
+        run(src, dest);
+      });
+    } else {
+      run(src, dest);
+    }
+  })
+  .parse();
 
 function camelize(str: string) {
   return str
@@ -9,12 +28,8 @@ function camelize(str: string) {
     .replace(/[^a-zA-Z0-9]+(.)/g, (_, chr) => chr.toUpperCase());
 }
 
-function run() {
-  const __filename = fileURLToPath(import.meta.url);
-  const __dirname = path.dirname(__filename);
-  const imagesPath = path.resolve(__dirname, "..", "src", "images");
-
-  const filePaths = fs.readdirSync(imagesPath).filter((filePath) => {
+function run(src: string, dest: string) {
+  const filePaths = fs.readdirSync(src).filter((filePath) => {
     return path.extname(filePath) === ".png";
   });
 
@@ -30,7 +45,10 @@ function run() {
     const fileName = fileBaseNameParts[0];
     const varName = camelize(fileName);
 
-    imports.push(`import ${varName} from "../images/${fileBaseName}";`);
+    const relative = path.relative(path.dirname(dest), src);
+    const importPath = path.join(relative, fileBaseName);
+
+    imports.push(`import ${varName} from "${importPath}";`);
 
     types.push(`"${fileName}"`);
 
@@ -46,7 +64,10 @@ function run() {
     export const SPRITES = [ ${exports.join(",")} ];
   `;
 
-  fs.writeFileSync("./src/data/sprites.ts", prettier.format(str));
+  fs.writeFileSync(
+    dest,
+    prettier.format(str, {
+      parser: "babel",
+    })
+  );
 }
-
-run();

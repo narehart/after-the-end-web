@@ -1,8 +1,6 @@
 /**
  * This file was auto-generated. Do not edit manually.
  */
-import slice1 from "../images/Slice 1.png";
-import slice2 from "../images/Slice 2.png";
 import forestMountain001 from "../images/forest-mountain-001.png";
 import forestTrees from "../images/forest-trees.png";
 import hexAnimationsWater001 from "../images/hex-animations-water-001.png";
@@ -57,10 +55,7 @@ import hexes from "../images/hexes.png";
 import mapBackground from "../images/map-background.png";
 import overlayCanyon from "../images/overlay-canyon.png";
 import overlayForestTrees from "../images/overlay-forest-trees.png";
-import overlayPlains from "../images/overlay-plains.png";
 export type Sprites =
-  | "Slice 1"
-  | "Slice 2"
   | "forest-mountain-001"
   | "forest-trees"
   | "hex-animations-water-001"
@@ -114,11 +109,8 @@ export type Sprites =
   | "hexes"
   | "map-background"
   | "overlay-canyon"
-  | "overlay-forest-trees"
-  | "overlay-plains";
+  | "overlay-forest-trees";
 export const SPRITES = [
-  { id: "Slice 1", filePath: slice1 },
-  { id: "Slice 2", filePath: slice2 },
   { id: "forest-mountain-001", filePath: forestMountain001 },
   { id: "forest-trees", filePath: forestTrees },
   { id: "hex-animations-water-001", filePath: hexAnimationsWater001 },
@@ -173,5 +165,4 @@ export const SPRITES = [
   { id: "map-background", filePath: mapBackground },
   { id: "overlay-canyon", filePath: overlayCanyon },
   { id: "overlay-forest-trees", filePath: overlayForestTrees },
-  { id: "overlay-plains", filePath: overlayPlains },
 ];
