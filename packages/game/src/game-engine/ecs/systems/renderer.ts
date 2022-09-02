@@ -1,8 +1,10 @@
-import { CameraComponent } from "../../../systems/systems";
 import { Renderer } from "../../game-engine";
-import { LayerCompoent } from "../components";
-import { PositionComponent } from "../components/position";
-import { SpriteComponent } from "../components/sprite";
+import {
+  CameraComponent,
+  LayerCompoent,
+  PositionComponent,
+  SpriteComponent,
+} from "../components";
 import { System } from "../ecs";
 
 export class RendererSystem extends System {

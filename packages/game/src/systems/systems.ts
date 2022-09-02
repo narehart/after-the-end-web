@@ -1,12 +1,14 @@
 import {
+  CameraComponent,
   Component,
-  ECS,
   Entity,
-  LayerCompoent,
   PointComponent,
   ScreenComponent,
   System,
   SystemEventComponent,
+  PositionComponent,
+  SpriteBundle,
+  AnimatedSpriteBundle,
 } from "../game-engine";
 import { Hex } from "../lib/hex-grid";
 import {
@@ -17,11 +19,8 @@ import {
 } from "../data/settings";
 import { HexGrid } from "../lib/hex-grid";
 import { Sprites } from "../data/sprites";
-import { PositionComponent } from "../game-engine/ecs/components/position";
-import { SpriteComponent } from "../game-engine/ecs/components/sprite";
 import { clamp } from "../game-engine/utils/utils";
 import { HexTerrain } from "../lib/hex-terrain";
-import { AnimatedSpriteComponent } from "../game-engine/ecs/components/animated-sprite";
 import { hexData } from "../data/hex";
 
 const hexGrid = new HexGrid(HEX_SIZE, MAP_PADDING);
@@ -39,74 +38,12 @@ class SceneSizeComponent extends Component {
 }
 
 class CameraManagerComponent extends Component {}
-export class CameraComponent extends Component {
-  constructor(
-    public x: number,
-    public y: number,
-    public offsetX: number = 0,
-    public offsetY: number = 0
-  ) {
-    super();
-  }
-}
 
 class HexGridManagerComponent extends Component {}
 class HexComponent extends Component {
   constructor(public hex: Hex) {
     super();
   }
-}
-
-interface ISpriteBundle {
-  ecs: ECS;
-  sprite: ConstructorParameters<typeof SpriteComponent<Sprites>>;
-  e?: Entity;
-  position?: ConstructorParameters<typeof PositionComponent>;
-  layer?: ConstructorParameters<typeof LayerCompoent>;
-  camera?: boolean;
-}
-
-function SpriteBundle({
-  ecs,
-  e: _e,
-  sprite,
-  position = [0, 0],
-  layer = [0],
-  camera,
-}: ISpriteBundle) {
-  const e = _e || ecs.addEntity();
-  ecs.addComponent(e, new SpriteComponent<Sprites>(...sprite));
-  ecs.addComponent(e, new PositionComponent(...position));
-  ecs.addComponent(e, new LayerCompoent(...layer));
-  if (camera) ecs.addComponent(e, new CameraComponent(0, 0));
-  return e;
-}
-
-interface IAnimatedSpriteBundle {
-  ecs: ECS;
-  e?: Entity;
-  parent?: Entity;
-  animation: ConstructorParameters<typeof AnimatedSpriteComponent<Sprites>>;
-  position?: ConstructorParameters<typeof PositionComponent>;
-  layer?: ConstructorParameters<typeof LayerCompoent>;
-  camera?: boolean;
-}
-
-function AnimatedSpriteBundle({
-  ecs,
-  animation,
-  e: _e,
-  parent,
-  position = [0, 0],
-  layer = [0],
-  camera,
-}: IAnimatedSpriteBundle) {
-  const e = _e || ecs.addEntity(parent);
-  ecs.addComponent(e, new AnimatedSpriteComponent(...animation));
-  ecs.addComponent(e, new PositionComponent(...position));
-  ecs.addComponent(e, new LayerCompoent(...layer));
-  if (camera) ecs.addComponent(e, new CameraComponent(0, 0));
-  return e;
 }
 
 export class SceneSizeSystem extends System {
@@ -291,7 +228,7 @@ export class MapBackgroundSystem extends System {
 
     this.ecs.addComponent(e, new MapBackgroundComponent());
 
-    SpriteBundle({
+    SpriteBundle<Sprites>({
       ecs: this.ecs,
       e,
       sprite: [this.spriteKey],
@@ -386,7 +323,7 @@ export class HexGridGenerateSystem extends System {
 
     const { x, y, z } = this.getHexPosition(hex);
 
-    SpriteBundle({
+    SpriteBundle<Sprites>({
       ecs: this.ecs,
       e,
       sprite: [sprite.id],
@@ -397,7 +334,7 @@ export class HexGridGenerateSystem extends System {
 
     if (!sprite.animation) return;
 
-    AnimatedSpriteBundle({
+    AnimatedSpriteBundle<Sprites>({
       ecs: this.ecs,
       parent: e,
       animation: sprite.animation,
