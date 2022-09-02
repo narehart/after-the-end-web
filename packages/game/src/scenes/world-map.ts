@@ -1,11 +1,11 @@
 import { SPRITES } from "../data/sprites";
 import {
+  AnimatedSpriteSystem,
   Scene,
   SystemEventSystem,
   RendererSystem,
   ScreenSystem,
 } from "../game-engine";
-import { AnimatedSpriteSystem } from "../game-engine/ecs/systems/animated-sprite";
 import {
   CameraManagerSystem,
   CameraUpdateSystem,
