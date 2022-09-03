@@ -12,7 +12,7 @@
 - clean up terrain generation √
 - fix hex animation issue
 - fix memory leak
-- fix background sprite edges
+- fix background sprite edges √
 - add shadows to forest sprites
 - remove unused sprites √
 - add tests
