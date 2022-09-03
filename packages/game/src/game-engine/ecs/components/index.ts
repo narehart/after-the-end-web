@@ -1,5 +1,4 @@
 export * from "./animated-sprite";
-export * from "./camera-manager";
 export * from "./camera";
 export * from "./layer";
 export * from "./null";

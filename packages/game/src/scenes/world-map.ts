@@ -1,15 +1,15 @@
 import { SPRITES } from "../data/sprites";
 import {
   AnimatedSpriteSystem,
-  Scene,
-  SystemEventSystem,
-  RendererSystem,
-  SceneSystem,
-  ScreenSystem,
-} from "../game-engine";
-import {
   CameraManagerSystem,
   CameraUpdateSystem,
+  RendererSystem,
+  Scene,
+  SceneSystem,
+  ScreenSystem,
+  SystemEventSystem,
+} from "../game-engine";
+import {
   HexGridGenerateSystem,
   MapBackgroundSystem,
   SetupSystem,

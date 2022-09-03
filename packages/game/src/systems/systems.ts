@@ -12,6 +12,7 @@ import {
   NullComponent,
   SceneManagerComponent,
   SceneComponent,
+  CameraManagerComponent,
 } from "../game-engine";
 import { Hex } from "../lib/hex-grid";
 import {
@@ -22,7 +23,6 @@ import {
 } from "../data/settings";
 import { HexGrid } from "../lib/hex-grid";
 import { Sprites } from "../data/sprites";
-import { clamp } from "../game-engine/utils/utils";
 import { HexTerrain } from "../lib/hex-terrain";
 import { hexData } from "../data/hex";
 
@@ -34,11 +34,9 @@ terrain.generate();
 class MapBackgroundManagerComponent extends Component {}
 class MapBackgroundComponent extends Component {}
 
-class CameraManagerComponent extends Component {}
-
 class HexGridManagerComponent extends Component {}
 class HexComponent extends Component {
-  constructor(public hex: Hex) {
+  constructor(public hex: Hex = new Hex(0, 0, 0)) {
     super();
   }
 }
@@ -47,122 +45,19 @@ export class SetupSystem extends System {
   componentsRequired = new Set<Function>([NullComponent]);
 
   init() {
-    const e = this.ecs.addEntity();
-    this.ecs.addComponent(e, new SceneComponent());
-    this.ecs.addComponent(e, new SceneManagerComponent(hexGrid.pointSize));
-  }
-}
+    const sceneE = this.ecs.addEntity();
+    this.ecs.addComponent(sceneE, new SceneComponent());
+    this.ecs.addComponent(sceneE, new SceneManagerComponent(hexGrid.pointSize));
 
-export class CameraManagerSystem extends System {
-  componentsRequired = new Set<Function>([CameraManagerComponent]);
-
-  init() {
-    const cameraEntity = this.ecs.addEntity();
-    this.ecs.addComponent(cameraEntity, new CameraManagerComponent());
-    this.ecs.addComponent(cameraEntity, new CameraComponent(0, 0));
-    this.ecs.addComponent(cameraEntity, new ScreenComponent(0, 0));
-    this.ecs.addComponent(cameraEntity, new SceneComponent());
-    this.ecs.addComponent(cameraEntity, new SystemEventComponent());
-  }
-
-  update(entities: Set<Entity>) {
-    // update camera based on user input
-    for (const entity of entities) {
-      const container = this.ecs.getComponents(entity);
-      const camera = container.get(CameraComponent);
-      const screen = container.get(ScreenComponent);
-      const scene = container.get(SceneComponent);
-      const events = container.get(SystemEventComponent);
-
-      const keys = events?.events.keyboard.keys;
-
-      if (!camera || !screen || !scene || !keys) continue;
-
-      if (keys.includes("ARROW_RIGHT")) {
-        camera.x += MAP_CONTROLS_ARROW_PAN_VELOCITY;
-      }
-      if (keys.includes("ARROW_LEFT")) {
-        camera.x -= MAP_CONTROLS_ARROW_PAN_VELOCITY;
-      }
-      if (keys.includes("ARROW_UP")) {
-        camera.y -= MAP_CONTROLS_ARROW_PAN_VELOCITY;
-      }
-      if (keys.includes("ARROW_DOWN")) {
-        camera.y += MAP_CONTROLS_ARROW_PAN_VELOCITY;
-      }
-
-      break;
-    }
-
-    // constrain camera bounds
-    for (const entity of entities) {
-      const container = this.ecs.getComponents(entity);
-      const screen = container.get(ScreenComponent);
-      const scene = container.get(SceneComponent);
-      const camera = container.get(CameraComponent);
-
-      if (!camera || !screen || !scene) continue;
-      if (screen.x === 0 || screen.y === 0) continue;
-
-      const xMin = screen.x / 2;
-      const xMax = scene.size.x - xMin;
-      const yMin = screen.y / 2;
-      const yMax = scene.size.y - yMin;
-
-      if (scene.size.x <= screen.x) {
-        camera.x = xMin;
-        camera.offsetX = 0;
-      }
-
-      if (scene.size.y <= screen.y) {
-        camera.y = yMin;
-        camera.offsetY = 0;
-      }
-
-      camera.x = Math.floor(clamp(camera.x, xMin, xMax));
-      camera.y = Math.floor(clamp(camera.y, yMin, yMax));
-      camera.offsetX = Math.floor(Math.max(0, camera.x - screen.x / 2));
-      camera.offsetY = Math.floor(Math.max(0, camera.y - screen.y / 2));
-
-      break;
-    }
-  }
-}
-
-export class CameraUpdateSystem extends System {
-  componentsRequired = new Set<Function>([CameraComponent]);
-
-  update(entities: Set<Entity>) {
-    let nextCamera;
-
-    // get the updated data from the manager
-    for (const entity of entities) {
-      const container = this.ecs.getComponents(entity);
-      const manager = container.get(CameraManagerComponent);
-      const camera = container.get(CameraComponent);
-      const screen = container.get(ScreenComponent);
-
-      if (!manager || !camera || !screen) continue;
-
-      nextCamera = camera;
-
-      break;
-    }
-
-    if (!nextCamera) return;
-
-    // update all camera entities with the new data
-    for (const entity of entities) {
-      const container = this.ecs.getComponents(entity);
-      const camera = container.get(CameraComponent);
-
-      if (!camera) continue;
-
-      camera.x = nextCamera.x;
-      camera.y = nextCamera.y;
-      camera.offsetX = nextCamera.offsetX;
-      camera.offsetY = nextCamera.offsetY;
-    }
+    const cameraE = this.ecs.addEntity();
+    this.ecs.addComponent(
+      cameraE,
+      new CameraManagerComponent(MAP_CONTROLS_ARROW_PAN_VELOCITY)
+    );
+    this.ecs.addComponent(cameraE, new CameraComponent());
+    this.ecs.addComponent(cameraE, new ScreenComponent());
+    this.ecs.addComponent(cameraE, new SceneComponent());
+    this.ecs.addComponent(cameraE, new SystemEventComponent());
   }
 }
 
@@ -175,7 +70,7 @@ export class MapBackgroundSystem extends System {
     const e = this.ecs.addEntity();
     this.ecs.addComponent(e, new MapBackgroundComponent());
     this.ecs.addComponent(e, new MapBackgroundManagerComponent());
-    this.ecs.addComponent(e, new ScreenComponent(0, 0));
+    this.ecs.addComponent(e, new ScreenComponent());
   }
 
   update(entities: Set<Entity>) {
@@ -201,6 +96,7 @@ export class MapBackgroundSystem extends System {
 
       for (let i = 0; i <= columns; i++) {
         const x = i * spriteInfo.size.x + spriteInfo.size.x / 2;
+
         for (let j = 0; j <= rows; j++) {
           const y = j * spriteInfo.size.y + spriteInfo.size.y / 2;
           this.addMapBacgroundEntity(x, y);
@@ -230,11 +126,11 @@ export class HexGridGenerateSystem extends System {
   init() {
     const hexEntity = this.ecs.addEntity();
     this.ecs.addComponent(hexEntity, new HexGridManagerComponent());
-    this.ecs.addComponent(hexEntity, new HexComponent(new Hex(0, 0, 0)));
+    this.ecs.addComponent(hexEntity, new HexComponent());
     this.ecs.addComponent(hexEntity, new SystemEventComponent());
-    this.ecs.addComponent(hexEntity, new CameraComponent(0, 0));
-    this.ecs.addComponent(hexEntity, new PositionComponent(0, 0));
-    this.ecs.addComponent(hexEntity, new ScreenComponent(0, 0));
+    this.ecs.addComponent(hexEntity, new CameraComponent());
+    this.ecs.addComponent(hexEntity, new PositionComponent());
+    this.ecs.addComponent(hexEntity, new ScreenComponent());
   }
 
   update(entities: Set<Entity>) {
