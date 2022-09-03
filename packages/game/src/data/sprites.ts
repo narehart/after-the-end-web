@@ -19,7 +19,6 @@ import hexPlains003 from "../images/hex-plains-003.png";
 import hexPlains006 from "../images/hex-plains-006.png";
 import hexSwamp003 from "../images/hex-swamp-003.png";
 import hexWater001 from "../images/hex-water-001.png";
-import hexes from "../images/hexes.png";
 import mapBackground from "../images/map-background.png";
 import overlayCanyon from "../images/overlay-canyon.png";
 export type Sprites =
@@ -41,7 +40,6 @@ export type Sprites =
   | "hex-plains-006"
   | "hex-swamp-003"
   | "hex-water-001"
-  | "hexes"
   | "map-background"
   | "overlay-canyon";
 export const SPRITES = [
@@ -63,7 +61,6 @@ export const SPRITES = [
   { id: "hex-plains-006", filePath: hexPlains006 },
   { id: "hex-swamp-003", filePath: hexSwamp003 },
   { id: "hex-water-001", filePath: hexWater001 },
-  { id: "hexes", filePath: hexes },
   { id: "map-background", filePath: mapBackground },
   { id: "overlay-canyon", filePath: overlayCanyon },
 ];
