@@ -27,7 +27,7 @@ export abstract class System {
   public init?(): void;
   public input?(entities: Set<number>, events: SystemEvent): void;
   public update?(entities: Set<number>, timestamp: number): void;
-  public render?(entities: Set<number>, renderer: Renderer, lag: number): void;
+  public render?(entities: Set<number>, renderer: Renderer): void;
 }
 
 export type ComponentClass<T extends Component> = new (...args: any[]) => T;
@@ -179,9 +179,9 @@ export class ECS {
     }
   }
 
-  public render(renderer: Renderer, lag: number): void {
+  public render(renderer: Renderer): void {
     for (let [system, entities] of this.systems.entries()) {
-      system.render?.(entities, renderer, lag);
+      system.render?.(entities, renderer);
     }
   }
 }

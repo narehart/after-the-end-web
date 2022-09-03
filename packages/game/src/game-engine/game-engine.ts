@@ -51,10 +51,6 @@ export abstract class Scene {
 
 // Game loop based on: https://github.com/IceCreamYou/MainLoop.js/blob/gh-pages/src/mainloop.js
 export class GameEngine {
-  private fps = 60;
-  private simulationTimestep = 1000 / this.fps;
-  private frameDelta = 0;
-  private lastFrameTimeMs = 0;
   private started = false;
   private frameId = 0;
 
@@ -64,52 +60,26 @@ export class GameEngine {
   constructor(public platform: Platform) {}
 
   private loop(timestamp: number) {
-    this.frameId = this.platform.requestFrame((timestamp) => {
-      this.loop(timestamp);
-    });
+    this.running = true;
 
-    if (!this.platform.renderer.assetsLoaded) return;
-
-    // calculate the delta or elapsed time since the last frame
-    this.frameDelta += timestamp - this.lastFrameTimeMs;
-    this.lastFrameTimeMs = timestamp;
-
-    if (this.frameDelta > 1000) {
-      this.frameDelta = this.simulationTimestep;
+    if (!this.platform.renderer.assetsLoaded) {
+      this.frameId = this.platform.requestFrame(this.loop.bind(this));
+      return;
     }
 
-    // handle any input
     this.scene.ecs.input?.(this.platform.events);
-
-    // perform an update if the lag counter exceeds or is equal to
-    // the frame duration.
-    // this means we are updating at a Fixed time-step.
-    while (this.frameDelta >= this.simulationTimestep) {
-      this.scene.ecs.update?.(timestamp);
-      this.frameDelta -= this.simulationTimestep;
-    }
-
-    // calculate the lag offset, this tells us how far we are
-    // into the next frame
-    const lagOffset = this.frameDelta / this.simulationTimestep;
-
-    // render the frame passing in the lag offset to interpolate positions
+    this.scene.ecs.update?.(timestamp);
     this.platform.renderer.clear();
-    this.scene.ecs.render?.(this.platform.renderer, lagOffset);
+    this.scene.ecs.render?.(this.platform.renderer);
+
+    this.frameId = this.platform.requestFrame(this.loop.bind(this));
   }
 
   public start() {
     if (this.started) return;
 
     this.started = true;
-
-    this.frameId = this.platform.requestFrame(() => {
-      this.running = true;
-
-      this.frameId = this.platform.requestFrame((timestamp) => {
-        this.loop(timestamp);
-      });
-    });
+    this.frameId = this.platform.requestFrame(this.loop.bind(this));
   }
 
   public stop() {
