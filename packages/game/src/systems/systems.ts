@@ -9,6 +9,9 @@ import {
   PositionComponent,
   SpriteBundle,
   AnimatedSpriteBundle,
+  NullComponent,
+  SceneManagerComponent,
+  SceneComponent,
 } from "../game-engine";
 import { Hex } from "../lib/hex-grid";
 import {
@@ -31,12 +34,6 @@ terrain.generate();
 class MapBackgroundManagerComponent extends Component {}
 class MapBackgroundComponent extends Component {}
 
-class SceneSizeComponent extends Component {
-  constructor(public x: number, public y: number) {
-    super();
-  }
-}
-
 class CameraManagerComponent extends Component {}
 
 class HexGridManagerComponent extends Component {}
@@ -46,24 +43,13 @@ class HexComponent extends Component {
   }
 }
 
-export class SceneSizeSystem extends System {
-  componentsRequired = new Set<Function>([SceneSizeComponent]);
+export class SetupSystem extends System {
+  componentsRequired = new Set<Function>([NullComponent]);
 
   init() {
-    const sceneEntity = this.ecs.addEntity();
-    this.ecs.addComponent(sceneEntity, new SceneSizeComponent(0, 0));
-  }
-
-  update(entities: Set<Entity>) {
-    for (const entity of entities) {
-      const container = this.ecs.getComponents(entity);
-      const sceneSize = container.get(SceneSizeComponent);
-
-      if (!sceneSize) return;
-
-      sceneSize.x = hexGrid.pointSize.x;
-      sceneSize.y = hexGrid.pointSize.y;
-    }
+    const e = this.ecs.addEntity();
+    this.ecs.addComponent(e, new SceneComponent());
+    this.ecs.addComponent(e, new SceneManagerComponent(hexGrid.pointSize));
   }
 }
 
@@ -75,7 +61,7 @@ export class CameraManagerSystem extends System {
     this.ecs.addComponent(cameraEntity, new CameraManagerComponent());
     this.ecs.addComponent(cameraEntity, new CameraComponent(0, 0));
     this.ecs.addComponent(cameraEntity, new ScreenComponent(0, 0));
-    this.ecs.addComponent(cameraEntity, new SceneSizeComponent(0, 0));
+    this.ecs.addComponent(cameraEntity, new SceneComponent());
     this.ecs.addComponent(cameraEntity, new SystemEventComponent());
   }
 
@@ -85,7 +71,7 @@ export class CameraManagerSystem extends System {
       const container = this.ecs.getComponents(entity);
       const camera = container.get(CameraComponent);
       const screen = container.get(ScreenComponent);
-      const scene = container.get(SceneSizeComponent);
+      const scene = container.get(SceneComponent);
       const events = container.get(SystemEventComponent);
 
       const keys = events?.events.keyboard.keys;
@@ -112,23 +98,23 @@ export class CameraManagerSystem extends System {
     for (const entity of entities) {
       const container = this.ecs.getComponents(entity);
       const screen = container.get(ScreenComponent);
-      const scene = container.get(SceneSizeComponent);
+      const scene = container.get(SceneComponent);
       const camera = container.get(CameraComponent);
 
       if (!camera || !screen || !scene) continue;
       if (screen.x === 0 || screen.y === 0) continue;
 
       const xMin = screen.x / 2;
-      const xMax = scene.x - xMin;
+      const xMax = scene.size.x - xMin;
       const yMin = screen.y / 2;
-      const yMax = scene.y - yMin;
+      const yMax = scene.size.y - yMin;
 
-      if (scene.x <= screen.x) {
+      if (scene.size.x <= screen.x) {
         camera.x = xMin;
         camera.offsetX = 0;
       }
 
-      if (scene.y <= screen.y) {
+      if (scene.size.y <= screen.y) {
         camera.y = yMin;
         camera.offsetY = 0;
       }

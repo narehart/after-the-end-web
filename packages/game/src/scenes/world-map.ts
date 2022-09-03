@@ -4,6 +4,7 @@ import {
   Scene,
   SystemEventSystem,
   RendererSystem,
+  SceneSystem,
   ScreenSystem,
 } from "../game-engine";
 import {
@@ -11,16 +12,17 @@ import {
   CameraUpdateSystem,
   HexGridGenerateSystem,
   MapBackgroundSystem,
-  SceneSizeSystem,
+  SetupSystem,
 } from "../systems/systems";
 
 export class WorldMap extends Scene {
   async init() {
     this.ecs.ge.platform.renderer.addImages(SPRITES);
 
+    this.ecs.addSystem(new SetupSystem());
     this.ecs.addSystem(new ScreenSystem());
     this.ecs.addSystem(new SystemEventSystem());
-    this.ecs.addSystem(new SceneSizeSystem());
+    this.ecs.addSystem(new SceneSystem());
     this.ecs.addSystem(new CameraManagerSystem());
     this.ecs.addSystem(new MapBackgroundSystem());
     this.ecs.addSystem(new HexGridGenerateSystem());
