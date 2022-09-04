@@ -5,6 +5,7 @@
 - extract scene system to game engine √
 - extract camera system to game engine √
 - move bundles to game engine √
+- add numbered ordering to systems
 
 # map
 
@@ -16,6 +17,22 @@
 - add shadows to forest sprites
 - remove unused sprites √
 - add tests
+
+# cursor
+
+- add default cursor √
+- add disabled cursor
+- add cursor animation
+
+# action points
+
+- add action point system
+
+# ui
+
+- build ui system
+- display hex info
+- display action points
 
 # player
 
