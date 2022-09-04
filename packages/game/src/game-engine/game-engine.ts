@@ -6,6 +6,10 @@ export const keys = {
   ARROW_DOWN: "ARROW_DOWN",
   ARROW_LEFT: "ARROW_LEFT",
   ARROW_RIGHT: "ARROW_RIGHT",
+  W: "W",
+  A: "A",
+  S: "S",
+  D: "D",
 };
 
 export interface SystemEvent {

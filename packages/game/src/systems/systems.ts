@@ -24,7 +24,7 @@ import {
 import { HexGrid } from "../lib/hex-grid";
 import { Sprites } from "../data/sprites";
 import { HexTerrain } from "../lib/hex-terrain";
-import { hexData } from "../data/hex";
+import { hexCursor, hexData } from "../data/hex";
 
 const hexGrid = new HexGrid(HEX_SIZE, MAP_PADDING);
 hexGrid.rectangle(MAP_SIZE);
@@ -39,6 +39,17 @@ class HexComponent extends Component {
   constructor(public hex: Hex = new Hex(0, 0, 0)) {
     super();
   }
+}
+
+function getHexPosition(hex: Hex) {
+  const index = hexGrid.toIndex(hex);
+  const hexType = terrain.hexType[index];
+  const offset = hexData[hexType].sprite.offset || 0;
+  const point = hexGrid.layout.toPoint(hex);
+  const x = point.x;
+  const y = point.y - offset;
+  const z = y;
+  return { x, y, z };
 }
 
 export class SetupSystem extends System {
@@ -184,17 +195,6 @@ export class HexGridGenerateSystem extends System {
     }
   }
 
-  getHexPosition(hex: Hex) {
-    const index = hexGrid.toIndex(hex);
-    const hexType = terrain.hexType[index];
-    const offset = hexData[hexType].sprite.offset || 0;
-    const point = hexGrid.layout.toPoint(hex);
-    const x = point.x;
-    const y = point.y - offset;
-    const z = y;
-    return { x, y, z };
-  }
-
   addHexEntity(hex: Hex) {
     const e = this.ecs.addEntity();
     const index = hexGrid.toIndex(hex);
@@ -203,7 +203,7 @@ export class HexGridGenerateSystem extends System {
 
     this.ecs.addComponent(e, new HexComponent(hex));
 
-    const { x, y, z } = this.getHexPosition(hex);
+    const { x, y, z } = getHexPosition(hex);
 
     SpriteBundle<Sprites>({
       ecs: this.ecs,
@@ -224,5 +224,79 @@ export class HexGridGenerateSystem extends System {
       layer: [1],
       camera: true,
     });
+  }
+}
+
+class HexCursorManagerComponent extends Component {}
+class HexCursorComponent extends Component {}
+
+export class HexCursorSystem extends System {
+  componentsRequired = new Set<Function>([HexCursorComponent]);
+
+  init() {
+    const managerE = this.ecs.addEntity();
+    this.ecs.addComponent(managerE, new HexCursorComponent());
+    this.ecs.addComponent(managerE, new HexCursorManagerComponent());
+    this.ecs.addComponent(managerE, new SystemEventComponent());
+    this.ecs.addComponent(managerE, new CameraComponent());
+
+    const cursorE = this.ecs.addEntity();
+    this.ecs.addComponent(cursorE, new HexCursorComponent());
+  }
+
+  update(entities: Set<Entity>) {
+    let camera;
+    let mouse;
+
+    for (const entity of entities) {
+      const container = this.ecs.getComponents(entity);
+      const manager = container.get(HexCursorManagerComponent);
+      const events = container.get(SystemEventComponent);
+
+      if (!manager || !events) continue;
+
+      camera = container.get(CameraComponent);
+      mouse = events?.events.mouse.mousemove;
+
+      if (camera) break;
+    }
+
+    if (!camera || !mouse) return;
+
+    for (const entity of entities) {
+      const container = this.ecs.getComponents(entity);
+      const manager = container.get(HexCursorManagerComponent);
+      const position = container.get(PositionComponent);
+
+      if (manager) continue;
+
+      const maybeHex = hexGrid.layout.toHex(
+        new PointComponent(mouse.x + camera.offsetX, mouse.y + camera.offsetY)
+      );
+      const index = hexGrid.toIndex(maybeHex);
+
+      if (index === -1) continue;
+
+      const hex = hexGrid.grid[index];
+
+      if (!hex) continue;
+
+      const { x, y, z } = getHexPosition(hex);
+
+      if (!position) {
+        SpriteBundle({
+          ecs: this.ecs,
+          e: entity,
+          sprite: [hexCursor.default.sprite.id],
+          position: [x, y, z],
+          layer: [2],
+          camera: true,
+        });
+      } else {
+        position.x = x;
+        position.y = y;
+        position.z = z;
+      }
+    }
   }
 }

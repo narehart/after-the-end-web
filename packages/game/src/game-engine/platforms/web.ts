@@ -6,6 +6,10 @@ const keyMapping: { [key: KeyboardEvent["key"]]: keyof typeof keys } = {
   ArrowDown: "ARROW_DOWN",
   ArrowLeft: "ARROW_LEFT",
   ArrowRight: "ARROW_RIGHT",
+  w: "W",
+  a: "A",
+  s: "S",
+  d: "D",
 };
 
 const CSS_RESET = `
@@ -49,12 +53,14 @@ class WebEventHandler {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    this.events.mouse.mousemove.x = x;
-    this.events.mouse.mousemove.y = y;
+    this.events.mouse.mousemove.x = x / devicePixelRatio;
+    this.events.mouse.mousemove.y = y / devicePixelRatio;
   }
 
   private handleKeydown(e: KeyboardEvent) {
     const key = keyMapping[e.key];
+
+    console.log(e.key);
 
     if (!key) return;
 

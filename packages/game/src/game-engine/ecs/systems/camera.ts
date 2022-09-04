@@ -35,16 +35,16 @@ export class CameraManagerSystem extends System {
 
       if (!camera || !screen || !scene || !keys) continue;
 
-      if (keys.includes("ARROW_RIGHT")) {
+      if (keys.includes("ARROW_RIGHT") || keys.includes("D")) {
         camera.x += manager.arrowPanVelovity;
       }
-      if (keys.includes("ARROW_LEFT")) {
+      if (keys.includes("ARROW_LEFT") || keys.includes("A")) {
         camera.x -= manager.arrowPanVelovity;
       }
-      if (keys.includes("ARROW_UP")) {
+      if (keys.includes("ARROW_UP") || keys.includes("W")) {
         camera.y -= manager.arrowPanVelovity;
       }
-      if (keys.includes("ARROW_DOWN")) {
+      if (keys.includes("ARROW_DOWN") || keys.includes("S")) {
         camera.y += manager.arrowPanVelovity;
       }
 

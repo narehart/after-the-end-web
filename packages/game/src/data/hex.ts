@@ -104,3 +104,11 @@ export const hexData: HexData = {
     },
   },
 };
+
+export const hexCursor = {
+  default: {
+    sprite: {
+      id: "hex-cursor",
+    },
+  },
+};

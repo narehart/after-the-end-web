@@ -10,6 +10,7 @@ import {
   SystemEventSystem,
 } from "../game-engine";
 import {
+  HexCursorSystem,
   HexGridGenerateSystem,
   MapBackgroundSystem,
   SetupSystem,
@@ -26,6 +27,7 @@ export class WorldMap extends Scene {
     this.ecs.addSystem(new CameraManagerSystem());
     this.ecs.addSystem(new MapBackgroundSystem());
     this.ecs.addSystem(new HexGridGenerateSystem());
+    this.ecs.addSystem(new HexCursorSystem());
     this.ecs.addSystem(new AnimatedSpriteSystem());
     this.ecs.addSystem(new CameraUpdateSystem());
     this.ecs.addSystem(new RendererSystem());
