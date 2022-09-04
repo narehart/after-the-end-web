@@ -281,7 +281,8 @@ export class HexCursorSystem extends System {
 
       if (!hex) continue;
 
-      const { x, y, z } = getHexPosition(hex);
+      const { x, y: hexY, z } = getHexPosition(hex);
+      const y = hexY - hexCursor.default.sprite.offset;
 
       if (!position) {
         SpriteBundle({

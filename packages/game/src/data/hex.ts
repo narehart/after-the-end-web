@@ -109,6 +109,7 @@ export const hexCursor = {
   default: {
     sprite: {
       id: "hex-cursor",
+      offset: -6,
     },
   },
 };
