@@ -3,6 +3,7 @@ import {
   RenderableComponent,
   ScreenComponent,
   ShapeComponent,
+  SizeComponent,
 } from "../components";
 import { ViewComponent, ViewStyle } from "../components/view";
 import { ChildrenComponent, ECS, Entity, ParentComponent } from "../ecs";
@@ -23,6 +24,7 @@ export function ViewBundle({ ecs, id, style, children, layer }: IViewBundle) {
   ecs.addComponent(e, new RenderableComponent());
   ecs.addComponent(e, new ChildrenComponent(children));
   ecs.addComponent(e, new LayerCompoent(layer));
+  ecs.addComponent(e, new SizeComponent());
 
   if (children?.length) {
     for (let i = 0; i < children.length; i++) {

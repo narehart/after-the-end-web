@@ -100,11 +100,12 @@ export class SetupSystem extends System {
         ViewBundle({
           ecs: this.ecs,
           id: "icon",
-          layer: 4,
           style: {
+            justifyContent: "center",
+            borderWidth: "1px",
             height: 40,
             width: 40,
-            left: 12,
+            left: 5,
             top: 5,
           },
           children: [
@@ -126,11 +127,10 @@ export class SetupSystem extends System {
         ViewBundle({
           ecs: this.ecs,
           id: "hex-name",
-          layer: 4,
           style: {
-            height: 20,
+            height: 10,
             left: 50,
-            top: 15,
+            top: 5,
             right: 12,
           },
           children: [
@@ -148,12 +148,11 @@ export class SetupSystem extends System {
         }),
         ViewBundle({
           ecs: this.ecs,
-          id: "hex-name",
-          layer: 4,
+          id: "hex-description",
           style: {
             height: 20,
             left: 50,
-            top: 30,
+            top: 18,
             right: 12,
           },
           children: [
@@ -241,7 +240,6 @@ export class HexGridGenerateSystem extends System {
     const hexEntity = this.ecs.addEntity();
     this.ecs.addComponent(hexEntity, new HexGridManagerComponent());
     this.ecs.addComponent(hexEntity, new HexComponent());
-    this.ecs.addComponent(hexEntity, new SystemEventComponent());
     this.ecs.addComponent(hexEntity, new CameraComponent());
     this.ecs.addComponent(hexEntity, new PositionComponent());
     this.ecs.addComponent(hexEntity, new ScreenComponent());

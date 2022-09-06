@@ -1,5 +1,6 @@
 import { ECS } from "./ecs/ecs";
 import { PointComponent } from "./ecs/components/point";
+import { SizeComponent } from "./ecs";
 
 export const keys = {
   ARROW_UP: "ARROW_UP",
@@ -34,6 +35,12 @@ export interface RendererDrawImage {
   align?: "center" | "left";
 }
 
+export interface RendererMeasureText
+  extends Pick<
+    RendererDrawText,
+    "text" | "fontFamily" | "fontSize" | "fontWeight"
+  > {}
+
 export interface RendererDrawText {
   text: string;
   x: number;
@@ -56,6 +63,7 @@ export interface Renderer {
   drawShape: (points: PointComponent[], border?: string, fill?: string) => void;
   drawImage(options: RendererDrawImage): void;
   drawText(options: RendererDrawText): void;
+  measureText(options: RendererMeasureText): SizeComponent;
 }
 
 export interface Platform {

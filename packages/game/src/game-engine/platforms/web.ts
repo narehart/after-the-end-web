@@ -1,5 +1,11 @@
-import { Platform, keys, RendererDrawImage, RendererDrawText } from "..";
-import { PointComponent } from "../ecs/components/point";
+import {
+  Platform,
+  keys,
+  RendererDrawImage,
+  RendererDrawText,
+  RendererMeasureText,
+} from "..";
+import { PointComponent, SizeComponent } from "../ecs/components";
 
 const keyMapping: { [key: KeyboardEvent["key"]]: keyof typeof keys } = {
   ArrowUp: "ARROW_UP",
@@ -201,13 +207,32 @@ class WebRenderer {
     textAlign = "left",
   }: RendererDrawText) {
     const ctx = this.getContext();
+    const m = this.measureText({ text, fontFamily, fontSize, fontWeight });
 
     ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
 
     ctx.textAlign = textAlign;
     ctx.fillStyle = color;
 
-    ctx.fillText(text, x, y, maxWidth);
+    ctx.fillText(text, x, y + m.y, maxWidth);
+  }
+
+  public measureText({
+    text,
+    fontFamily = "sans-serif",
+    fontSize = 10,
+    fontWeight = "normal",
+  }: RendererMeasureText) {
+    const ctx = this.getContext();
+
+    ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
+
+    const m = ctx.measureText(text);
+
+    return new SizeComponent(
+      m.width,
+      m.actualBoundingBoxAscent + m.actualBoundingBoxDescent
+    );
   }
 
   private getCanvas(): HTMLCanvasElement {

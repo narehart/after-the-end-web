@@ -9,6 +9,7 @@ export * from "./renderable";
 export * from "./shape";
 export * from "./scene";
 export * from "./screen";
+export * from "./size";
 export * from "./sprite";
 export * from "./system-event";
 export * from "./text";

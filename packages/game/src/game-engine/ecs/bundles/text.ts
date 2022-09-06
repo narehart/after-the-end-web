@@ -2,6 +2,7 @@ import {
   LayerCompoent,
   PositionComponent,
   RenderableComponent,
+  SizeComponent,
 } from "../components";
 import { TextComponent } from "../components/text";
 import { ECS } from "../ecs";
@@ -18,5 +19,7 @@ export function TextBundle({ ecs, text }: ITextBundle) {
   ecs.addComponent(e, new PositionComponent());
   ecs.addComponent(e, new LayerCompoent());
   ecs.addComponent(e, new RenderableComponent());
+  ecs.addComponent(e, new SizeComponent());
+
   return e;
 }

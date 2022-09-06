@@ -1,11 +1,12 @@
 import { Component } from "../ecs";
-import { PointComponent } from "./point";
 
 export interface ViewStyle {
+  alignItems?: "start" | "center" | "end";
   backgroundColor?: string;
   borderColor?: string;
   borderStyle?: string;
   borderWidth?: string;
+  justifyContent?: "start" | "center" | "end";
   height?: number;
   width?: number;
   top?: number;
@@ -15,14 +16,6 @@ export interface ViewStyle {
 }
 
 export class ViewComponent extends Component {
-  public xStart = 0;
-  public yStart = 0;
-  public xEnd = 0;
-  public yEnd = 0;
-  public points: PointComponent[] = [];
-  public border: string = "";
-  public fill: string = "";
-
   constructor(public id: string, public style?: ViewStyle) {
     super();
   }

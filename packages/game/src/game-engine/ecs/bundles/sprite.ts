@@ -3,6 +3,7 @@ import {
   LayerCompoent,
   PositionComponent,
   RenderableComponent,
+  SizeComponent,
   SpriteComponent,
 } from "../components";
 import { ECS, Entity } from "../ecs";
@@ -26,9 +27,10 @@ export function SpriteBundle<S extends string>({
 }: ISpriteBundle<S>) {
   const e = _e || ecs.addEntity();
   ecs.addComponent(e, new SpriteComponent<S>(...sprite));
-  ecs.addComponent(e, new RenderableComponent());
   ecs.addComponent(e, new PositionComponent(...position));
   ecs.addComponent(e, new LayerCompoent(...layer));
+  ecs.addComponent(e, new SizeComponent(sprite[5], sprite[6]));
+  ecs.addComponent(e, new RenderableComponent());
   if (camera) ecs.addComponent(e, new CameraComponent(0, 0));
   return e;
 }
