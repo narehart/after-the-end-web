@@ -1,4 +1,4 @@
-import { Platform, keys } from "..";
+import { Platform, keys, RendererDrawImage, RendererDrawText } from "..";
 import { PointComponent } from "../ecs/components/point";
 
 const keyMapping: { [key: KeyboardEvent["key"]]: keyof typeof keys } = {
@@ -27,6 +27,8 @@ const CSS_RESET = `
 
   canvas {
     display: block;
+    font-smooth: never;
+    -webkit-font-smoothing : none;
   }
 `;
 
@@ -60,8 +62,6 @@ class WebEventHandler {
   private handleKeydown(e: KeyboardEvent) {
     const key = keyMapping[e.key];
 
-    console.log(e.key);
-
     if (!key) return;
 
     const currentKeys = this.events.keyboard.keys;
@@ -90,6 +90,7 @@ class WebRenderer {
   private imageCache: Record<string, HTMLImageElement> = {};
 
   public assets: Record<string, { size: PointComponent }> = {};
+  public fontsLoaded = true;
   public assetsLoaded = false;
 
   constructor(public selector: string) {}
@@ -99,7 +100,22 @@ class WebRenderer {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   }
 
-  public async addImages(images: { id: string; filePath: string }[]) {
+  public async addFonts(fonts: { name: string; src: string }[]) {
+    this.fontsLoaded = false;
+
+    for (let i = 0; i < fonts.length; i++) {
+      const font = new FontFace(fonts[i].name, `url(${fonts[i].src})`);
+
+      font.load().then((font) => {
+        (document.fonts as any).add(font);
+        if (i === fonts.length - 1) this.fontsLoaded = true;
+      });
+    }
+  }
+
+  public addImages(images: { id: string; filePath: string }[]) {
+    this.assetsLoaded = false;
+
     for (let i = 0; i < images.length; i++) {
       if (this.imageCache[images[i].id]) continue;
 
@@ -121,21 +137,12 @@ class WebRenderer {
     sy,
     sw,
     sh,
-    dx,
-    dy,
+    dx = 0,
+    dy = 0,
     dw,
     dh,
-  }: {
-    id: string;
-    sx?: number;
-    sy?: number;
-    sw?: number;
-    sh?: number;
-    dx?: number;
-    dy?: number;
-    dw?: number;
-    dh?: number;
-  }) {
+    align,
+  }: RendererDrawImage) {
     const image = this.imageCache[id];
 
     if (!image) {
@@ -146,23 +153,22 @@ class WebRenderer {
     }
 
     const ctx = this.getContext();
-    ctx.imageSmoothingEnabled = false;
 
     const _sx = sx ?? 0;
     const _sy = sy ?? 0;
     const _sw = sw ?? image.width;
     const _sh = sh ?? image.height;
-    const _dx = Math.round((dx ?? 0) - _sw / 2);
-    const _dy = Math.round((dy ?? 0) - _sh / 2);
     const _dw = dw ?? _sw;
     const _dh = dh ?? _sh;
+    const _dx = align === "center" ? Math.round((dx ?? 0) - _dw / 2) : dx;
+    const _dy = align === "center" ? Math.round((dy ?? 0) - _dh / 2) : dy;
 
     ctx.drawImage(image, _sx, _sy, _sw, _sh, _dx, _dy, _dw, _dh);
   }
 
   public drawShape(
     points: PointComponent[],
-    border: string = "black",
+    border: string = "transparent",
     fill?: string
   ) {
     const ctx = this.getContext();
@@ -183,12 +189,35 @@ class WebRenderer {
     }
   }
 
+  public drawText({
+    text,
+    x,
+    y,
+    color = "#FFFFFF",
+    maxWidth = undefined,
+    fontFamily = "sans-serif",
+    fontSize = 10,
+    fontWeight = "normal",
+    textAlign = "left",
+  }: RendererDrawText) {
+    const ctx = this.getContext();
+
+    ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
+
+    ctx.textAlign = textAlign;
+    ctx.fillStyle = color;
+
+    ctx.fillText(text, x, y, maxWidth);
+  }
+
   private getCanvas(): HTMLCanvasElement {
     return document.querySelector(this.selector)!;
   }
 
   private getContext(): CanvasRenderingContext2D {
-    return this.getCanvas().getContext("2d")!;
+    const ctx = this.getCanvas().getContext("2d")!;
+    ctx.imageSmoothingEnabled = false;
+    return ctx;
   }
 }
 

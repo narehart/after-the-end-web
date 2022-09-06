@@ -3,6 +3,7 @@ import {
   CameraComponent,
   LayerCompoent,
   PositionComponent,
+  RenderableComponent,
 } from "../components";
 import { ECS, Entity } from "../ecs";
 
@@ -27,6 +28,7 @@ export function AnimatedSpriteBundle<S extends string>({
 }: IAnimatedSpriteBundle<S>) {
   const e = _e || ecs.addEntity(parent);
   ecs.addComponent(e, new AnimatedSpriteComponent(...animation));
+  ecs.addComponent(e, new RenderableComponent());
   ecs.addComponent(e, new PositionComponent(...position));
   ecs.addComponent(e, new LayerCompoent(...layer));
   if (camera) ecs.addComponent(e, new CameraComponent(0, 0));

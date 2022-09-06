@@ -13,17 +13,18 @@ import {
   SceneManagerComponent,
   SceneComponent,
   CameraManagerComponent,
+  TextBundle,
+  ViewBundle,
 } from "../game-engine";
-import { Hex } from "../lib/hex-grid";
+import { Hex, HexGrid } from "../lib/hex-grid";
+import { HexTerrain } from "../lib/hex-terrain";
 import {
   HEX_SIZE,
   MAP_SIZE,
   MAP_CONTROLS_ARROW_PAN_VELOCITY,
   MAP_PADDING,
 } from "../data/settings";
-import { HexGrid } from "../lib/hex-grid";
 import { Sprites } from "../data/sprites";
-import { HexTerrain } from "../lib/hex-terrain";
 import { hexCursor, hexData } from "../data/hex";
 
 const hexGrid = new HexGrid(HEX_SIZE, MAP_PADDING);
@@ -48,7 +49,7 @@ function getHexPosition(hex: Hex) {
   const point = hexGrid.layout.toPoint(hex);
   const x = point.x;
   const y = point.y - offset;
-  const z = y;
+  const z = y / 1000;
   return { x, y, z };
 }
 
@@ -56,19 +57,121 @@ export class SetupSystem extends System {
   componentsRequired = new Set<Function>([NullComponent]);
 
   init() {
+    this.setupScene();
+    this.setupCamera();
+    this.setupView();
+  }
+
+  setupScene() {
     const sceneE = this.ecs.addEntity();
     this.ecs.addComponent(sceneE, new SceneComponent());
     this.ecs.addComponent(sceneE, new SceneManagerComponent(hexGrid.pointSize));
+  }
 
+  setupCamera() {
     const cameraE = this.ecs.addEntity();
     this.ecs.addComponent(
       cameraE,
       new CameraManagerComponent(MAP_CONTROLS_ARROW_PAN_VELOCITY)
     );
     this.ecs.addComponent(cameraE, new CameraComponent());
+    this.ecs.addComponent(cameraE, new CameraComponent());
     this.ecs.addComponent(cameraE, new ScreenComponent());
     this.ecs.addComponent(cameraE, new SceneComponent());
     this.ecs.addComponent(cameraE, new SystemEventComponent());
+  }
+
+  setupView() {
+    ViewBundle({
+      ecs: this.ecs,
+      id: "root",
+      layer: 4,
+      style: {
+        borderColor: "#4b5360",
+        borderStyle: "solid",
+        borderWidth: "1px",
+        backgroundColor: "#0d0d11",
+        height: 50,
+        width: 200,
+        bottom: 20,
+        right: 20,
+      },
+      children: [
+        ViewBundle({
+          ecs: this.ecs,
+          id: "icon",
+          layer: 4,
+          style: {
+            height: 40,
+            width: 40,
+            left: 12,
+            top: 5,
+          },
+          children: [
+            SpriteBundle({
+              ecs: this.ecs,
+              sprite: [
+                hexData.dominatingPeak.sprite.id,
+                0,
+                0,
+                50,
+                70,
+                25,
+                35,
+                "left",
+              ],
+            }),
+          ],
+        }),
+        ViewBundle({
+          ecs: this.ecs,
+          id: "hex-name",
+          layer: 4,
+          style: {
+            height: 20,
+            left: 50,
+            top: 15,
+            right: 12,
+          },
+          children: [
+            TextBundle({
+              ecs: this.ecs,
+              text: [
+                {
+                  text: "Dominating Peak",
+                  fontFamily: "PixelFont",
+                  fontSize: 8,
+                },
+              ],
+            }),
+          ],
+        }),
+        ViewBundle({
+          ecs: this.ecs,
+          id: "hex-name",
+          layer: 4,
+          style: {
+            height: 20,
+            left: 50,
+            top: 30,
+            right: 12,
+          },
+          children: [
+            TextBundle({
+              ecs: this.ecs,
+              text: [
+                {
+                  text: "No special effect.",
+                  color: "#979797",
+                  fontFamily: "PixelFont",
+                  fontSize: 8,
+                },
+              ],
+            }),
+          ],
+        }),
+      ],
+    });
   }
 }
 

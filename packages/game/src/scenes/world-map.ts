@@ -8,12 +8,13 @@ import {
   SceneSystem,
   ScreenSystem,
   SystemEventSystem,
+  ViewSystem,
 } from "../game-engine";
 import {
+  SetupSystem,
   HexCursorSystem,
   HexGridGenerateSystem,
   MapBackgroundSystem,
-  SetupSystem,
 } from "../systems/systems";
 
 export class WorldMap extends Scene {
@@ -30,6 +31,7 @@ export class WorldMap extends Scene {
     this.ecs.addSystem(new HexCursorSystem());
     this.ecs.addSystem(new AnimatedSpriteSystem());
     this.ecs.addSystem(new CameraUpdateSystem());
+    this.ecs.addSystem(new ViewSystem());
     this.ecs.addSystem(new RendererSystem());
   }
 }

@@ -21,23 +21,41 @@ export interface SystemEvent {
   };
 }
 
+export interface RendererDrawImage {
+  id: string;
+  sx?: number;
+  sy?: number;
+  sw?: number;
+  sh?: number;
+  dx?: number;
+  dy?: number;
+  dw?: number;
+  dh?: number;
+  align?: "center" | "left";
+}
+
+export interface RendererDrawText {
+  text: string;
+  x: number;
+  y: number;
+  color?: string;
+  maxWidth?: number;
+  fontFamily?: string;
+  fontSize?: number;
+  fontWeight?: "normal" | "bold";
+  textAlign?: "left" | "right" | "center" | "start" | "end";
+}
+
 export interface Renderer {
   assets: Record<string, { size: PointComponent }>;
   assetsLoaded: boolean;
+  fontsLoaded: boolean;
   clear: () => void;
-  addImages(images: { id: string; filePath: string }[]): Promise<void>;
+  addFonts(fonts: { name: string; src: string }[]): void;
+  addImages(images: { id: string; filePath: string }[]): void;
   drawShape: (points: PointComponent[], border?: string, fill?: string) => void;
-  drawImage(options: {
-    id: string;
-    sx?: number;
-    sy?: number;
-    sw?: number;
-    sh?: number;
-    dx?: number;
-    dy?: number;
-    dw?: number;
-    dh?: number;
-  }): void;
+  drawImage(options: RendererDrawImage): void;
+  drawText(options: RendererDrawText): void;
 }
 
 export interface Platform {
@@ -66,7 +84,10 @@ export class GameEngine {
   private loop(timestamp: number) {
     this.running = true;
 
-    if (!this.platform.renderer.assetsLoaded) {
+    if (
+      !this.platform.renderer.assetsLoaded ||
+      !this.platform.renderer.fontsLoaded
+    ) {
       this.frameId = this.platform.requestFrame(this.loop.bind(this));
       return;
     }
