@@ -1,9 +1,11 @@
 import {
   LayerCompoent,
+  PositionComponent,
   RenderableComponent,
   ScreenComponent,
   ShapeComponent,
   SizeComponent,
+  SystemEventComponent,
 } from "../components";
 import { ViewComponent, ViewStyle } from "../components/view";
 import { ChildrenComponent, ECS, Entity, ParentComponent } from "../ecs";
@@ -25,6 +27,8 @@ export function ViewBundle({ ecs, id, style, children, layer }: IViewBundle) {
   ecs.addComponent(e, new ChildrenComponent(children));
   ecs.addComponent(e, new LayerCompoent(layer));
   ecs.addComponent(e, new SizeComponent());
+  ecs.addComponent(e, new SystemEventComponent());
+  ecs.addComponent(e, new PositionComponent());
 
   if (children?.length) {
     for (let i = 0; i < children.length; i++) {

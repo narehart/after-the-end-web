@@ -31,7 +31,7 @@ export class CameraManagerSystem extends System {
       const scene = container.get(SceneComponent);
       const events = container.get(SystemEventComponent);
 
-      const keys = events?.events.keyboard.keys;
+      const keys = events?.events?.keyboard?.keys;
 
       if (!camera || !screen || !scene || !keys) continue;
 

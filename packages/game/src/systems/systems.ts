@@ -27,6 +27,12 @@ import {
 import { Sprites } from "../data/sprites";
 import { hexCursor, hexData } from "../data/hex";
 
+const LAYERS = {
+  map: 1,
+  cursor: 2,
+  ui: 3,
+};
+
 const hexGrid = new HexGrid(HEX_SIZE, MAP_PADDING);
 hexGrid.rectangle(MAP_SIZE);
 const terrain = new HexTerrain(hexGrid);
@@ -79,13 +85,14 @@ export class SetupSystem extends System {
     this.ecs.addComponent(cameraE, new ScreenComponent());
     this.ecs.addComponent(cameraE, new SceneComponent());
     this.ecs.addComponent(cameraE, new SystemEventComponent());
+    this.ecs.addComponent(cameraE, new PositionComponent());
   }
 
   setupView() {
     ViewBundle({
       ecs: this.ecs,
       id: "root",
-      layer: 4,
+      layer: LAYERS.ui,
       style: {
         borderColor: "#4b5360",
         borderStyle: "solid",
@@ -311,7 +318,7 @@ export class HexGridGenerateSystem extends System {
       e,
       sprite: [sprite.id],
       position: [x, y, z],
-      layer: [1],
+      layer: [LAYERS.map],
       camera: true,
     });
 
@@ -322,7 +329,7 @@ export class HexGridGenerateSystem extends System {
       parent: e,
       animation: sprite.animation,
       position: [x, y, z + 0.01],
-      layer: [1],
+      layer: [LAYERS.map],
       camera: true,
     });
   }
@@ -357,7 +364,7 @@ export class HexCursorSystem extends System {
       if (!manager || !events) continue;
 
       camera = container.get(CameraComponent);
-      mouse = events?.events.mouse.mousemove;
+      mouse = events?.events?.mouse?.mousemove;
 
       if (camera) break;
     }
@@ -391,7 +398,7 @@ export class HexCursorSystem extends System {
           e: entity,
           sprite: [hexCursor.default.sprite.id],
           position: [x, y, z],
-          layer: [2],
+          layer: [LAYERS.cursor],
           camera: true,
         });
       } else {

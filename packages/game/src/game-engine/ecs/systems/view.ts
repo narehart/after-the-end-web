@@ -75,6 +75,11 @@ export class ViewSystem extends System {
         size.y = nextBounds.yMax - nextBounds.yMin;
       }
 
+      if (position) {
+        position.x = nextBounds.xMin;
+        position.y = nextBounds.yMin;
+      }
+
       if (shape) {
         shape.points = points;
         shape.border = border;
