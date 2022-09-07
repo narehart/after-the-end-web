@@ -15,6 +15,7 @@ import {
   HexCursorSystem,
   HexGridGenerateSystem,
   MapBackgroundSystem,
+  HexSelectSystem,
 } from "../systems/systems";
 
 export class WorldMap extends Scene {
@@ -28,6 +29,7 @@ export class WorldMap extends Scene {
     this.ecs.addSystem(new CameraManagerSystem());
     this.ecs.addSystem(new MapBackgroundSystem());
     this.ecs.addSystem(new HexGridGenerateSystem());
+    this.ecs.addSystem(new HexSelectSystem());
     this.ecs.addSystem(new HexCursorSystem());
     this.ecs.addSystem(new AnimatedSpriteSystem());
     this.ecs.addSystem(new CameraUpdateSystem());

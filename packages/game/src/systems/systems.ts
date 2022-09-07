@@ -335,51 +335,44 @@ export class HexGridGenerateSystem extends System {
   }
 }
 
-class HexCursorManagerComponent extends Component {}
-class HexCursorComponent extends Component {}
+class HexSelectManagerComponent extends Component {}
 
-export class HexCursorSystem extends System {
-  componentsRequired = new Set<Function>([HexCursorComponent]);
+class HexSelectComponent extends Component {
+  constructor(public index: number = 0) {
+    super();
+  }
+}
+
+export class HexSelectSystem extends System {
+  componentsRequired = new Set<Function>([HexSelectComponent]);
+  private selectedIndex = 0;
 
   init() {
-    const managerE = this.ecs.addEntity();
-    this.ecs.addComponent(managerE, new HexCursorComponent());
-    this.ecs.addComponent(managerE, new HexCursorManagerComponent());
-    this.ecs.addComponent(managerE, new SystemEventComponent());
-    this.ecs.addComponent(managerE, new CameraComponent());
-
-    const cursorE = this.ecs.addEntity();
-    this.ecs.addComponent(cursorE, new HexCursorComponent());
+    const e = this.ecs.addEntity();
+    this.ecs.addComponent(e, new HexSelectManagerComponent());
+    this.ecs.addComponent(e, new HexSelectComponent());
+    this.ecs.addComponent(e, new SystemEventComponent());
+    this.ecs.addComponent(e, new CameraComponent());
   }
 
   update(entities: Set<Entity>) {
-    let camera;
-    let mouse;
-
     for (const entity of entities) {
       const container = this.ecs.getComponents(entity);
-      const manager = container.get(HexCursorManagerComponent);
+      const manager = container.get(HexSelectManagerComponent);
       const events = container.get(SystemEventComponent);
+      const camera = container.get(CameraComponent);
 
-      if (!manager || !events) continue;
+      if (!manager || !events || !camera) continue;
 
-      camera = container.get(CameraComponent);
-      mouse = events?.events?.mouse?.mousemove;
+      const position = events?.events?.mouse?.mousemove;
 
-      if (camera) break;
-    }
-
-    if (!camera || !mouse) return;
-
-    for (const entity of entities) {
-      const container = this.ecs.getComponents(entity);
-      const manager = container.get(HexCursorManagerComponent);
-      const position = container.get(PositionComponent);
-
-      if (manager) continue;
+      if (!position) continue;
 
       const maybeHex = hexGrid.layout.toHex(
-        new PointComponent(mouse.x + camera.offsetX, mouse.y + camera.offsetY)
+        new PointComponent(
+          position.x + camera.offsetX,
+          position.y + camera.offsetY
+        )
       );
       const index = hexGrid.toIndex(maybeHex);
 
@@ -389,7 +382,41 @@ export class HexCursorSystem extends System {
 
       if (!hex) continue;
 
-      const { x, y: hexY, z } = getHexPosition(hex);
+      this.selectedIndex = index;
+
+      break;
+    }
+
+    if (this.selectedIndex === undefined) return;
+
+    for (const entity of entities) {
+      const container = this.ecs.getComponents(entity);
+      const selected = container.get(HexSelectComponent)!;
+      selected.index = this.selectedIndex;
+    }
+  }
+}
+
+class HexCursorComponent extends Component {}
+
+export class HexCursorSystem extends System {
+  componentsRequired = new Set<Function>([HexCursorComponent]);
+
+  init() {
+    const e = this.ecs.addEntity();
+    this.ecs.addComponent(e, new HexSelectComponent());
+    this.ecs.addComponent(e, new HexCursorComponent());
+  }
+
+  update(entities: Set<Entity>) {
+    for (const entity of entities) {
+      const container = this.ecs.getComponents(entity);
+      const position = container.get(PositionComponent);
+      const selected = container.get(HexSelectComponent);
+
+      if (!selected) continue;
+
+      const { x, y: hexY, z } = getHexPosition(hexGrid.grid[selected.index]);
       const y = hexY - hexCursor.default.sprite.offset;
 
       if (!position) {
@@ -409,3 +436,5 @@ export class HexCursorSystem extends System {
     }
   }
 }
+
+export class HexInfoDisplaySystem extends Component {}
