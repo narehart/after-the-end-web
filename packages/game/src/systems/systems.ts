@@ -15,6 +15,8 @@ import {
   CameraManagerComponent,
   TextBundle,
   ViewBundle,
+  SpriteComponent,
+  TextComponent,
 } from "../game-engine";
 import { Hex, HexGrid } from "../lib/hex-grid";
 import { HexTerrain } from "../lib/hex-terrain";
@@ -65,7 +67,6 @@ export class SetupSystem extends System {
   init() {
     this.setupScene();
     this.setupCamera();
-    this.setupView();
   }
 
   setupScene() {
@@ -81,103 +82,10 @@ export class SetupSystem extends System {
       new CameraManagerComponent(MAP_CONTROLS_ARROW_PAN_VELOCITY)
     );
     this.ecs.addComponent(cameraE, new CameraComponent());
-    this.ecs.addComponent(cameraE, new CameraComponent());
     this.ecs.addComponent(cameraE, new ScreenComponent());
     this.ecs.addComponent(cameraE, new SceneComponent());
     this.ecs.addComponent(cameraE, new SystemEventComponent());
     this.ecs.addComponent(cameraE, new PositionComponent());
-  }
-
-  setupView() {
-    ViewBundle({
-      ecs: this.ecs,
-      id: "root",
-      layer: LAYERS.ui,
-      style: {
-        borderColor: "#4b5360",
-        borderStyle: "solid",
-        borderWidth: "1px",
-        backgroundColor: "#0d0d11",
-        height: 50,
-        width: 200,
-        bottom: 20,
-        right: 20,
-      },
-      children: [
-        ViewBundle({
-          ecs: this.ecs,
-          id: "icon",
-          style: {
-            justifyContent: "center",
-            borderWidth: "1px",
-            height: 40,
-            width: 40,
-            left: 5,
-            top: 5,
-          },
-          children: [
-            SpriteBundle({
-              ecs: this.ecs,
-              sprite: [
-                hexData.dominatingPeak.sprite.id,
-                0,
-                0,
-                50,
-                70,
-                25,
-                35,
-                "left",
-              ],
-            }),
-          ],
-        }),
-        ViewBundle({
-          ecs: this.ecs,
-          id: "hex-name",
-          style: {
-            height: 10,
-            left: 50,
-            top: 5,
-            right: 12,
-          },
-          children: [
-            TextBundle({
-              ecs: this.ecs,
-              text: [
-                {
-                  text: "Dominating Peak",
-                  fontFamily: "PixelFont",
-                  fontSize: 8,
-                },
-              ],
-            }),
-          ],
-        }),
-        ViewBundle({
-          ecs: this.ecs,
-          id: "hex-description",
-          style: {
-            height: 20,
-            left: 50,
-            top: 18,
-            right: 12,
-          },
-          children: [
-            TextBundle({
-              ecs: this.ecs,
-              text: [
-                {
-                  text: "No special effect.",
-                  color: "#979797",
-                  fontFamily: "PixelFont",
-                  fontSize: 8,
-                },
-              ],
-            }),
-          ],
-        }),
-      ],
-    });
   }
 }
 
@@ -437,4 +345,124 @@ export class HexCursorSystem extends System {
   }
 }
 
-export class HexInfoDisplaySystem extends Component {}
+export class HexInfoDisplaySystem extends System {
+  componentsRequired = new Set<Function>([HexSelectComponent]);
+  private sprite = hexData.dominatingPeak.sprite.id;
+  private hexName = "Dominating Peak";
+  private hexDescription = "No special effect.";
+
+  private spriteEntity: number = 0;
+  private titleEntity: number = 0;
+
+  init() {
+    this.spriteEntity = SpriteBundle({
+      ecs: this.ecs,
+      sprite: [this.sprite, 0, 0, 50, 70, 25, 35, "left"],
+    });
+
+    this.titleEntity = TextBundle({
+      ecs: this.ecs,
+      text: [
+        {
+          text: this.hexName,
+          fontFamily: "PixelFont",
+          fontSize: 8,
+        },
+      ],
+    });
+
+    ViewBundle({
+      ecs: this.ecs,
+      id: "root",
+      layer: LAYERS.ui,
+      style: {
+        borderColor: "#4b5360",
+        borderStyle: "solid",
+        borderWidth: "1px",
+        backgroundColor: "#0d0d11",
+        height: 50,
+        width: 200,
+        bottom: 20,
+        right: 20,
+      },
+      children: [
+        ViewBundle({
+          ecs: this.ecs,
+          id: "icon",
+          style: {
+            justifyContent: "center",
+            borderWidth: "1px",
+            height: 40,
+            width: 40,
+            left: 5,
+            top: 5,
+          },
+          children: [this.spriteEntity],
+        }),
+        ViewBundle({
+          ecs: this.ecs,
+          id: "hex-name",
+          style: {
+            height: 10,
+            left: 50,
+            top: 5,
+            right: 12,
+          },
+          children: [this.titleEntity],
+        }),
+        ViewBundle({
+          ecs: this.ecs,
+          id: "hex-description",
+          style: {
+            height: 20,
+            left: 50,
+            top: 18,
+            right: 12,
+          },
+          children: [
+            TextBundle({
+              ecs: this.ecs,
+              text: [
+                {
+                  text: this.hexDescription,
+                  color: "#979797",
+                  fontFamily: "PixelFont",
+                  fontSize: 8,
+                },
+              ],
+            }),
+          ],
+        }),
+      ],
+    });
+  }
+
+  update(entities: Set<Entity>) {
+    for (const entity of entities) {
+      const container = this.ecs.getComponents(entity);
+      const selected = container.get(HexSelectComponent);
+
+      if (!selected) continue;
+
+      const hex = hexGrid.grid[selected.index];
+      const index = hexGrid.toIndex(hex);
+      const hexType = terrain.hexType[index];
+      const data = hexData[hexType];
+
+      this.updateSprite(this.spriteEntity, data.sprite.id);
+      this.updateTitle(this.titleEntity, data.name);
+    }
+  }
+
+  updateSprite(entity: Entity, id: Sprites) {
+    const container = this.ecs.getComponents(entity);
+    const sprite = container.get(SpriteComponent)!;
+    sprite.id = id;
+  }
+
+  updateTitle(entity: Entity, title: string) {
+    const container = this.ecs.getComponents(entity);
+    const text = container.get(TextComponent)!;
+    text.options.text = title;
+  }
+}

@@ -227,7 +227,7 @@ class WebRenderer {
 
     ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
 
-    const m = ctx.measureText(text);
+    const m = ctx.measureText(text + "Aq");
 
     return new SizeComponent(
       m.width,
@@ -241,7 +241,7 @@ class WebRenderer {
 
   private getContext(): CanvasRenderingContext2D {
     const ctx = this.getCanvas().getContext("2d")!;
-    ctx.imageSmoothingEnabled = false;
+    // ctx.imageSmoothingEnabled = false;
     return ctx;
   }
 }
