@@ -7,6 +7,8 @@ import {
 } from "..";
 import { PointComponent, SizeComponent } from "../ecs/components";
 
+const SCALE = 2;
+
 const keyMapping: { [key: KeyboardEvent["key"]]: keyof typeof keys } = {
   ArrowUp: "ARROW_UP",
   ArrowDown: "ARROW_DOWN",
@@ -34,6 +36,7 @@ const CSS_RESET = `
   canvas {
     display: block;
     font-smooth: never;
+    image-rendering: pixelated;
     -webkit-font-smoothing : none;
   }
 `;
@@ -61,8 +64,8 @@ class WebEventHandler {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    this.events.mouse.mousemove.x = x / devicePixelRatio;
-    this.events.mouse.mousemove.y = y / devicePixelRatio;
+    this.events.mouse.mousemove.x = x / SCALE;
+    this.events.mouse.mousemove.y = y / SCALE;
   }
 
   private handleKeydown(e: KeyboardEvent) {
@@ -241,7 +244,7 @@ class WebRenderer {
 
   private getContext(): CanvasRenderingContext2D {
     const ctx = this.getCanvas().getContext("2d")!;
-    // ctx.imageSmoothingEnabled = false;
+    ctx.imageSmoothingEnabled = false;
     return ctx;
   }
 }
@@ -284,16 +287,12 @@ export class WebPlatform implements Platform {
   private setCanvasSize(canvas: HTMLCanvasElement) {
     const body = document.querySelector("body")!;
 
-    canvas.width = body.offsetWidth / devicePixelRatio;
-    canvas.height = body.offsetHeight / devicePixelRatio;
+    canvas.width = body.offsetWidth;
+    canvas.height = body.offsetHeight;
+    canvas.getContext("2d")!.scale(SCALE, SCALE);
 
-    canvas.setAttribute(
-      "style",
-      `width: ${body.offsetWidth}px; height: ${body.offsetHeight}px; image-rendering: pixelated;`
-    );
-
-    this.viewport.x = body.offsetWidth / devicePixelRatio;
-    this.viewport.y = body.offsetHeight / devicePixelRatio;
+    this.viewport.x = body.offsetWidth / SCALE;
+    this.viewport.y = body.offsetHeight / SCALE;
   }
 
   public requestFrame(cb: (timestamp: number) => void): number {

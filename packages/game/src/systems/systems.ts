@@ -390,6 +390,7 @@ export class HexInfoDisplaySystem extends System {
           ecs: this.ecs,
           id: "icon",
           style: {
+            borderColor: "#4b5360",
             justifyContent: "center",
             borderWidth: "1px",
             height: 40,
