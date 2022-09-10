@@ -8,17 +8,19 @@ import {
 } from "../components";
 import { ComponentContainer, Entity, System } from "../ecs";
 
+const DEFAULT_LAYER = 0;
+
 export class SystemEventSystem extends System {
   componentsRequired = new Set<Function>([SystemEventComponent]);
 
-  input(entities: Set<Entity>, events: SystemEvent) {
+  input(entities: Set<Entity>, nextEvents: SystemEvent) {
     const sortedEntities = [...entities].sort((a, b) => {
       const containerA = this.ecs.getComponents(a);
       const containerB = this.ecs.getComponents(b);
-      const zA = containerA.get(PositionComponent)?.z || 0;
-      const zB = containerB.get(PositionComponent)?.z || 0;
-      const layerA = containerA.get(LayerCompoent)?.layer || 0;
-      const layerB = containerB.get(LayerCompoent)?.layer || 0;
+      const zA = containerA.get(PositionComponent)?.z || DEFAULT_LAYER;
+      const zB = containerB.get(PositionComponent)?.z || DEFAULT_LAYER;
+      const layerA = containerA.get(LayerCompoent)?.layer || DEFAULT_LAYER;
+      const layerB = containerB.get(LayerCompoent)?.layer || DEFAULT_LAYER;
 
       const orderA = 0.0 + layerA + zA / 1000;
       const orderB = 0.0 + layerB + zB / 1000;
@@ -26,14 +28,14 @@ export class SystemEventSystem extends System {
       return orderA < orderB ? 1 : -1;
     });
 
-    const activeLayer = this.getActiveLayer(sortedEntities, events);
+    const activeLayer = this.getActiveLayer(sortedEntities, nextEvents);
 
     for (const entity of entities) {
       const container = this.ecs.getComponents(entity);
       const layer = this.getLayer(container);
-      const _events = container.get(SystemEventComponent)!;
+      const events = container.get(SystemEventComponent)!;
 
-      _events.events = layer.layer === activeLayer ? events : undefined;
+      events.events = layer.layer === activeLayer ? nextEvents : undefined;
     }
   }
 
@@ -53,7 +55,7 @@ export class SystemEventSystem extends System {
       }
     }
 
-    return 0;
+    return DEFAULT_LAYER;
   }
 
   getLayer(container: ComponentContainer) {

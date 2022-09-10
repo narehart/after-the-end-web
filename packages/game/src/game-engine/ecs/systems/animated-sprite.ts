@@ -61,7 +61,7 @@ export class AnimatedSpriteSystem extends System {
   getDurations(animatedSprite: AnimatedSpriteComponent<any>) {
     if (Array.isArray(animatedSprite.duration)) return animatedSprite.duration;
 
-    const { size } = this.ecs.ge.platform.renderer.assets[animatedSprite.id];
+    const { size } = this.ecs.ge.platform.renderer.images[animatedSprite.id];
     const frames = Math.floor(size.x / animatedSprite.width);
 
     let durations = [];

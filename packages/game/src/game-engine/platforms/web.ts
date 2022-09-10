@@ -1,15 +1,23 @@
 import {
   Platform,
-  keys,
+  KEYS,
+  Renderer,
   RendererDrawImage,
   RendererDrawText,
+  RendererDrawShape,
   RendererMeasureText,
+  SystemEvent,
 } from "..";
 import { PointComponent, SizeComponent } from "../ecs/components";
 
+const ERRORS = {
+  imageMissing: (id: string) =>
+    `Image with id \`${id}\` not found. Call \`addImage()\` before attempting to draw.`,
+};
+
 const SCALE = 2;
 
-const keyMapping: { [key: KeyboardEvent["key"]]: keyof typeof keys } = {
+const KEY_MAPPING: { [key: KeyboardEvent["key"]]: keyof typeof KEYS } = {
   ArrowUp: "ARROW_UP",
   ArrowDown: "ARROW_DOWN",
   ArrowLeft: "ARROW_LEFT",
@@ -41,8 +49,25 @@ const CSS_RESET = `
   }
 `;
 
+const DRAW_DEFAULTS = {
+  border: "transparent",
+  color: "#FFFFFF",
+  fontFamily: "sans-serif",
+  fontSize: 10,
+  fontWeight: "normal",
+  textAlign: "left",
+} as const;
+
+const ELEMENTS = {
+  body: "body",
+  canvas: "canvas",
+  style: "style",
+} as const;
+
+const CANVAS_CONTEXT = "2d" as const;
+
 class WebEventHandler {
-  public events: Platform["events"] = {
+  public events: SystemEvent = {
     mouse: {
       mousemove: new PointComponent(0, 0),
     },
@@ -59,35 +84,48 @@ class WebEventHandler {
     canvas.onkeyup = (e) => this.handleKeyup(e);
   }
 
+  private setEvents(events: Partial<SystemEvent> = {}) {
+    this.events = structuredClone({ ...this.events, ...events });
+  }
+
   private handleMouseMove(e: MouseEvent): void {
     const rect = this.getCanvas().getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    this.events.mouse.mousemove.x = x / SCALE;
-    this.events.mouse.mousemove.y = y / SCALE;
+    this.setEvents({
+      mouse: {
+        mousemove: new PointComponent(x / SCALE, y / SCALE),
+      },
+    });
   }
 
   private handleKeydown(e: KeyboardEvent) {
-    const key = keyMapping[e.key];
+    const key = KEY_MAPPING[e.key];
 
     if (!key) return;
 
     const currentKeys = this.events.keyboard.keys;
 
-    this.events.keyboard.keys = currentKeys.includes(key)
-      ? currentKeys
-      : currentKeys.concat(key);
+    this.setEvents({
+      keyboard: {
+        keys: currentKeys.includes(key) ? currentKeys : currentKeys.concat(key),
+      },
+    });
   }
 
   private handleKeyup(e: KeyboardEvent) {
-    const key = keyMapping[e.key];
+    const key = KEY_MAPPING[e.key];
 
     if (!key) return;
 
     const currentKeys = this.events.keyboard.keys;
 
-    this.events.keyboard.keys = currentKeys.filter((k) => k !== key);
+    this.setEvents({
+      keyboard: {
+        keys: currentKeys.filter((k) => k !== key),
+      },
+    });
   }
 
   private getCanvas(): HTMLCanvasElement {
@@ -98,15 +136,19 @@ class WebEventHandler {
 class WebRenderer {
   private imageCache: Record<string, HTMLImageElement> = {};
 
-  public assets: Record<string, { size: PointComponent }> = {};
+  public images: Record<string, { size: PointComponent }> = {};
   public fontsLoaded = true;
-  public assetsLoaded = false;
+  public imagesLoaded = false;
 
   constructor(public selector: string) {}
 
   public clear() {
     const ctx = this.getContext();
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  }
+
+  public assetsLoaded() {
+    return this.fontsLoaded && this.imagesLoaded;
   }
 
   public async addFonts(fonts: { name: string; src: string }[]) {
@@ -123,7 +165,7 @@ class WebRenderer {
   }
 
   public addImages(images: { id: string; filePath: string }[]) {
-    this.assetsLoaded = false;
+    this.imagesLoaded = false;
 
     for (let i = 0; i < images.length; i++) {
       if (this.imageCache[images[i].id]) continue;
@@ -132,10 +174,10 @@ class WebRenderer {
       image.src = images[i].filePath;
       image.onload = () => {
         this.imageCache[images[i].id] = image;
-        this.assets[images[i].id] = {
+        this.images[images[i].id] = {
           size: new PointComponent(image.width, image.height),
         };
-        if (i === images.length - 1) this.assetsLoaded = true;
+        if (i === images.length - 1) this.imagesLoaded = true;
       };
     }
   }
@@ -155,9 +197,7 @@ class WebRenderer {
     const image = this.imageCache[id];
 
     if (!image) {
-      console.error(
-        `Image with id \`${id}\` not found. Call \`addImage()\` before attempting to draw.`
-      );
+      console.error(ERRORS.imageMissing(id));
       return;
     }
 
@@ -175,11 +215,11 @@ class WebRenderer {
     ctx.drawImage(image, _sx, _sy, _sw, _sh, _dx, _dy, _dw, _dh);
   }
 
-  public drawShape(
-    points: PointComponent[],
-    border: string = "transparent",
-    fill?: string
-  ) {
+  public drawShape({
+    points = [],
+    border = DRAW_DEFAULTS.border,
+    fill,
+  }: RendererDrawShape) {
     const ctx = this.getContext();
     ctx.beginPath();
     ctx.strokeStyle = border;
@@ -202,18 +242,17 @@ class WebRenderer {
     text,
     x,
     y,
-    color = "#FFFFFF",
+    color = DRAW_DEFAULTS.color,
     maxWidth = undefined,
-    fontFamily = "sans-serif",
-    fontSize = 10,
-    fontWeight = "normal",
-    textAlign = "left",
+    fontFamily = DRAW_DEFAULTS.fontFamily,
+    fontSize = DRAW_DEFAULTS.fontSize,
+    fontWeight = DRAW_DEFAULTS.fontWeight,
+    textAlign = DRAW_DEFAULTS.textAlign,
   }: RendererDrawText) {
     const ctx = this.getContext();
     const m = this.measureText({ text, fontFamily, fontSize, fontWeight });
 
-    ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
-
+    ctx.font = this.getFont({ fontFamily, fontSize, fontWeight });
     ctx.textAlign = textAlign;
     ctx.fillStyle = color;
 
@@ -222,20 +261,28 @@ class WebRenderer {
 
   public measureText({
     text,
-    fontFamily = "sans-serif",
-    fontSize = 10,
-    fontWeight = "normal",
+    fontFamily = DRAW_DEFAULTS.fontFamily,
+    fontSize = DRAW_DEFAULTS.fontSize,
+    fontWeight = DRAW_DEFAULTS.fontWeight,
   }: RendererMeasureText) {
     const ctx = this.getContext();
 
-    ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
+    ctx.font = this.getFont({ fontFamily, fontSize, fontWeight });
 
-    const m = ctx.measureText(text + "Aq");
+    const m = ctx.measureText(text);
 
     return new SizeComponent(
       m.width,
-      m.actualBoundingBoxAscent + m.actualBoundingBoxDescent
+      m.fontBoundingBoxAscent + m.fontBoundingBoxDescent
     );
+  }
+
+  private getFont({
+    fontFamily = DRAW_DEFAULTS.fontFamily,
+    fontSize = DRAW_DEFAULTS.fontSize,
+    fontWeight = DRAW_DEFAULTS.fontWeight,
+  }: Pick<RendererMeasureText, "fontFamily" | "fontSize" | "fontWeight">) {
+    return `${fontWeight} ${fontSize}px ${fontFamily}`;
   }
 
   private getCanvas(): HTMLCanvasElement {
@@ -243,26 +290,28 @@ class WebRenderer {
   }
 
   private getContext(): CanvasRenderingContext2D {
-    const ctx = this.getCanvas().getContext("2d")!;
+    const ctx = this.getCanvas().getContext(CANVAS_CONTEXT)!;
     ctx.imageSmoothingEnabled = false;
     return ctx;
   }
 }
 
 export class WebPlatform implements Platform {
-  public events: Platform["events"];
-  public renderer: Platform["renderer"];
+  public events: SystemEvent;
+  public renderer: Renderer;
   public viewport: PointComponent = new PointComponent(0, 0);
+
+  private eventHandler: WebEventHandler;
 
   constructor() {
     // set document styles
-    const style = document.createElement("style");
+    const style = document.createElement(ELEMENTS.style);
     style.textContent = CSS_RESET;
     document.head.appendChild(style);
 
     // craete canvas and set dimenstions
-    const body = document.querySelector("body")!;
-    const canvas = document.createElement("canvas");
+    const body = document.querySelector(ELEMENTS.body)!;
+    const canvas = document.createElement(ELEMENTS.canvas);
 
     this.setCanvasSize(canvas);
     canvas.tabIndex = 1000;
@@ -272,11 +321,11 @@ export class WebPlatform implements Platform {
     canvas.focus();
 
     // wire up input events
-    const eventHandler = new WebEventHandler("canvas");
-    this.events = eventHandler.events;
+    this.eventHandler = new WebEventHandler(ELEMENTS.canvas);
+    this.events = this.eventHandler.events;
 
     // proxy rendering
-    this.renderer = new WebRenderer("canvas");
+    this.renderer = new WebRenderer(ELEMENTS.canvas);
 
     // handle resize
     window.onresize = () => {
@@ -285,17 +334,19 @@ export class WebPlatform implements Platform {
   }
 
   private setCanvasSize(canvas: HTMLCanvasElement) {
-    const body = document.querySelector("body")!;
+    const body = document.querySelector(ELEMENTS.body)!;
+    const context = canvas.getContext(CANVAS_CONTEXT)!;
 
     canvas.width = body.offsetWidth;
     canvas.height = body.offsetHeight;
-    canvas.getContext("2d")!.scale(SCALE, SCALE);
+    context.scale(SCALE, SCALE);
 
     this.viewport.x = body.offsetWidth / SCALE;
     this.viewport.y = body.offsetHeight / SCALE;
   }
 
   public requestFrame(cb: (timestamp: number) => void): number {
+    this.events = this.eventHandler.events;
     return window.requestAnimationFrame(cb);
   }
 

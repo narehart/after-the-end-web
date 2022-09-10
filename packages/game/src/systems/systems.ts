@@ -118,7 +118,7 @@ export class MapBackgroundSystem extends System {
 
       if (!mapBackgroundManager || !screen) continue;
 
-      const spriteInfo = this.ecs.ge.platform.renderer.assets[this.spriteKey];
+      const spriteInfo = this.ecs.ge.platform.renderer.images[this.spriteKey];
       const columns = Math.ceil(screen.x / spriteInfo.size.x);
       const rows = Math.ceil(screen.y / spriteInfo.size.y);
 

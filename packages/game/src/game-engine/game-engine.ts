@@ -2,7 +2,7 @@ import { ECS } from "./ecs/ecs";
 import { PointComponent } from "./ecs/components/point";
 import { SizeComponent } from "./ecs";
 
-export const keys = {
+export const KEYS = {
   ARROW_UP: "ARROW_UP",
   ARROW_DOWN: "ARROW_DOWN",
   ARROW_LEFT: "ARROW_LEFT",
@@ -18,7 +18,7 @@ export interface SystemEvent {
     mousemove: PointComponent;
   };
   keyboard: {
-    keys: (keyof typeof keys)[];
+    keys: (keyof typeof KEYS)[];
   };
 }
 
@@ -53,14 +53,21 @@ export interface RendererDrawText {
   textAlign?: "left" | "right" | "center" | "start" | "end";
 }
 
+export interface RendererDrawShape {
+  points: PointComponent[];
+  border?: string;
+  fill?: string;
+}
+
 export interface Renderer {
-  assets: Record<string, { size: PointComponent }>;
-  assetsLoaded: boolean;
+  images: Record<string, { size: PointComponent }>;
+  imagesLoaded: boolean;
   fontsLoaded: boolean;
   clear: () => void;
   addFonts(fonts: { name: string; src: string }[]): void;
   addImages(images: { id: string; filePath: string }[]): void;
-  drawShape: (points: PointComponent[], border?: string, fill?: string) => void;
+  assetsLoaded(): boolean;
+  drawShape: (options: RendererDrawShape) => void;
   drawImage(options: RendererDrawImage): void;
   drawText(options: RendererDrawText): void;
   measureText(options: RendererMeasureText): SizeComponent;
@@ -92,10 +99,7 @@ export class GameEngine {
   private loop(timestamp: number) {
     this.running = true;
 
-    if (
-      !this.platform.renderer.assetsLoaded ||
-      !this.platform.renderer.fontsLoaded
-    ) {
+    if (!this.platform.renderer.assetsLoaded()) {
       this.frameId = this.platform.requestFrame(this.loop.bind(this));
       return;
     }

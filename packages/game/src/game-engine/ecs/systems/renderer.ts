@@ -55,7 +55,7 @@ export class RendererSystem extends System {
       }
 
       if (shape) {
-        renderer.drawShape(shape.points, shape.border, shape.fill);
+        renderer.drawShape(shape);
       }
 
       if (text && position) {
