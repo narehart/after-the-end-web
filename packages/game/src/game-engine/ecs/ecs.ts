@@ -95,12 +95,16 @@ export class ECS {
   }
 
   public removeEntity(entity: Entity): void {
+    this.entitiesToDestroy.push(entity);
+  }
+
+  public destroyEntity(entity: Entity): void {
     const container = this.getComponents(entity);
     const parent = container.get(ParentComponent);
     const children = container.get(ChildrenComponent)?.children || [];
 
     for (let i = 0; i < children.length; i++) {
-      this.removeEntity(children[i]);
+      this.destroyEntity(children[i]);
     }
 
     if (parent) {
@@ -114,11 +118,8 @@ export class ECS {
       }
     }
 
-    this.entitiesToDestroy.push(entity);
-  }
-
-  public destroyEntity(entity: Entity): void {
     this.entities.delete(entity);
+
     for (let entities of this.systems.values()) {
       entities.delete(entity); // no-op if doesn't have it
     }
