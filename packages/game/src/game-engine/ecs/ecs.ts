@@ -5,7 +5,7 @@ export type Entity = number;
 export abstract class Component {}
 
 export class ParentComponent extends Component {
-  constructor(public parent?: Entity) {
+  constructor(public parent: Entity) {
     super();
   }
 }
@@ -96,10 +96,22 @@ export class ECS {
 
   public removeEntity(entity: Entity): void {
     const container = this.getComponents(entity);
+    const parent = container.get(ParentComponent);
     const children = container.get(ChildrenComponent)?.children || [];
 
     for (let i = 0; i < children.length; i++) {
       this.removeEntity(children[i]);
+    }
+
+    if (parent) {
+      const parentContainer = this.getComponents(parent.parent);
+      const parentChildren = parentContainer.get(ChildrenComponent);
+
+      if (parentChildren?.children) {
+        parentChildren.children = parentChildren.children.filter(
+          (e) => e !== entity
+        );
+      }
     }
 
     this.entitiesToDestroy.push(entity);
