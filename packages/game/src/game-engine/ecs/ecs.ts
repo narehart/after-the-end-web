@@ -16,10 +16,6 @@ export class ChildrenComponent extends Component {
   }
 }
 
-export class TagComponent extends Component {
-  public isTagComponent = true;
-}
-
 export abstract class System {
   public abstract componentsRequired: Set<Function>;
   public ecs!: ECS;
