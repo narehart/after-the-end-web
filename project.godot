@@ -1,0 +1,231 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "ActionTypes",
+"language": "GDScript",
+"path": "res://store/action-types.gd"
+}, {
+"base": "Node",
+"class": "Actions",
+"language": "GDScript",
+"path": "res://store/actions.gd"
+}, {
+"base": "Node",
+"class": "AnimationManager",
+"language": "GDScript",
+"path": "res://nodes/AnimationManager.gd"
+}, {
+"base": "Node",
+"class": "BackgroundSystem",
+"language": "GDScript",
+"path": "res://systems/background.gd"
+}, {
+"base": "Node",
+"class": "CameraUpdateSystem",
+"language": "GDScript",
+"path": "res://systems/camera-update.gd"
+}, {
+"base": "Reference",
+"class": "Config",
+"language": "GDScript",
+"path": "res://config/config.gd"
+}, {
+"base": "Node",
+"class": "CursorSystem",
+"language": "GDScript",
+"path": "res://systems/cursor.gd"
+}, {
+"base": "Reference",
+"class": "FPL",
+"language": "GDScript",
+"path": "res://lib/fpl/fpl.gd"
+}, {
+"base": "Node",
+"class": "Game",
+"language": "GDScript",
+"path": "res://game.gd"
+}, {
+"base": "Reference",
+"class": "Grid",
+"language": "GDScript",
+"path": "res://lib/map/grid/grid.gd"
+}, {
+"base": "Reference",
+"class": "Hex",
+"language": "GDScript",
+"path": "res://lib/map/grid/hex.gd"
+}, {
+"base": "Node",
+"class": "HexSelectSystem",
+"language": "GDScript",
+"path": "res://systems/hex-select.gd"
+}, {
+"base": "Reference",
+"class": "Layout",
+"language": "GDScript",
+"path": "res://lib/map/grid/layout.gd"
+}, {
+"base": "ReactComponent",
+"class": "MapHexInfoComponent",
+"language": "GDScript",
+"path": "res://ui-components/MapHexInfo.gd"
+}, {
+"base": "Node",
+"class": "MapScene",
+"language": "GDScript",
+"path": "res://scenes/map.gd"
+}, {
+"base": "Node",
+"class": "MapSystem",
+"language": "GDScript",
+"path": "res://systems/map.gd"
+}, {
+"base": "ReactComponent",
+"class": "MapUIComponent",
+"language": "GDScript",
+"path": "res://ui-components/MapUI.gd"
+}, {
+"base": "MarginContainer",
+"class": "MaxSizeContainer",
+"language": "GDScript",
+"path": "res://nodes/MaxSizeContainer.gd"
+}, {
+"base": "Node",
+"class": "Orientation",
+"language": "GDScript",
+"path": "res://lib/map/grid/orientation.gd"
+}, {
+"base": "Node",
+"class": "ReactComponent",
+"language": "GDScript",
+"path": "res://nodes/ReactComponent.gd"
+}, {
+"base": "Node",
+"class": "ReactUI",
+"language": "GDScript",
+"path": "res://nodes/ReactUI.gd"
+}, {
+"base": "Node",
+"class": "Reducers",
+"language": "GDScript",
+"path": "res://store/reducers.gd"
+}, {
+"base": "Node",
+"class": "StateManager",
+"language": "GDScript",
+"path": "res://lib/state-manager.gd"
+}, {
+"base": "Node",
+"class": "Store",
+"language": "GDScript",
+"path": "res://store/store.gd"
+}, {
+"base": "Reference",
+"class": "Terrain",
+"language": "GDScript",
+"path": "res://lib/map/terrain/terrain.gd"
+}, {
+"base": "Reference",
+"class": "Utils",
+"language": "GDScript",
+"path": "res://utils/utils.gd"
+}, {
+"base": "ReactComponent",
+"class": "ViewComponent",
+"language": "GDScript",
+"path": "res://ui-components/View.gd"
+} ]
+_global_script_class_icons={
+"ActionTypes": "",
+"Actions": "",
+"AnimationManager": "",
+"BackgroundSystem": "",
+"CameraUpdateSystem": "",
+"Config": "",
+"CursorSystem": "",
+"FPL": "",
+"Game": "",
+"Grid": "",
+"Hex": "",
+"HexSelectSystem": "",
+"Layout": "",
+"MapHexInfoComponent": "",
+"MapScene": "",
+"MapSystem": "",
+"MapUIComponent": "",
+"MaxSizeContainer": "",
+"Orientation": "",
+"ReactComponent": "",
+"ReactUI": "",
+"Reducers": "",
+"StateManager": "",
+"Store": "",
+"Terrain": "",
+"Utils": "",
+"ViewComponent": ""
+}
+
+[application]
+
+config/name="after-the-end-godot"
+run/main_scene="res://game.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=640
+window/size/height=360
+window/size/test_width=2560
+window/size/test_height=1440
+window/per_pixel_transparency/allowed=true
+window/stretch/shrink=2.0
+
+[global]
+
+"max chars"=false
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
+"compress/normal_map": 0,
+"detect_3d": true,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": false,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+
+[network]
+
+limits/debugger_stdout/max_chars_per_second=9999999
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+2d/snapping/use_gpu_pixel_snap=true
+environment/default_environment="res://default_env.tres"
