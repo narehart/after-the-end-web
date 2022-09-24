@@ -16,7 +16,7 @@ export interface ViewStyle {
 }
 
 export class ViewComponent extends Component {
-  constructor(public id: string, public style?: ViewStyle) {
+  constructor(public style?: ViewStyle) {
     super();
   }
 }

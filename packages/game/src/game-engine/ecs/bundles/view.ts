@@ -13,15 +13,14 @@ import { ChildrenComponent, ECS, Entity, ParentComponent } from "../ecs";
 interface IViewBundle {
   children?: Entity[];
   ecs: ECS;
-  id: string;
   layer?: number;
   style?: ViewStyle;
 }
 
-export function ViewBundle({ ecs, id, style, children, layer }: IViewBundle) {
+export function ViewBundle({ ecs, style, children, layer }: IViewBundle) {
   const e = ecs.addEntity();
   ecs.addComponent(e, new ScreenComponent());
-  ecs.addComponent(e, new ViewComponent(id, style));
+  ecs.addComponent(e, new ViewComponent(style));
   ecs.addComponent(e, new ShapeComponent());
   ecs.addComponent(e, new RenderableComponent());
   ecs.addComponent(e, new ChildrenComponent(children));

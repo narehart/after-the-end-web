@@ -2,7 +2,11 @@ import { GameEngine, Renderer, SystemEvent } from "../game-engine";
 
 export type Entity = number;
 
-export abstract class Component {}
+export interface Component {
+  new (...args: any): any;
+}
+
+export class Component {}
 
 export class ParentComponent extends Component {
   constructor(public parent: Entity) {

@@ -10,6 +10,7 @@ import {
   SystemEventSystem,
   ViewSystem,
 } from "../game-engine";
+import { UISystem } from "../game-engine/ui/systems/ui";
 import {
   SetupSystem,
   HexCursorSystem,
@@ -35,6 +36,7 @@ export class WorldMap extends Scene {
     this.ecs.addSystem(new AnimatedSpriteSystem());
     this.ecs.addSystem(new HexInfoDisplaySystem());
     this.ecs.addSystem(new CameraUpdateSystem());
+    this.ecs.addSystem(new UISystem());
     this.ecs.addSystem(new ViewSystem());
     this.ecs.addSystem(new RendererSystem());
   }
