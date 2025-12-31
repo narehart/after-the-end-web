@@ -1,0 +1,158 @@
+/* Flag layout - horizontal and compact */
+.details-panel {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: var(--bg-dark);
+  border-top: 1px solid var(--border-color);
+  padding: 0.5rem 0.75rem;
+  min-height: 70px;
+}
+
+.details-panel.empty {
+  justify-content: center;
+  align-items: center;
+}
+
+.details-panel.empty-slot .preview-frame {
+  border: 1px dashed var(--border-color);
+  background: transparent;
+}
+
+.details-panel.empty-slot .preview-icon {
+  opacity: 0.4;
+  filter: grayscale(0.5);
+}
+
+.details-panel.empty-slot .item-type {
+  color: var(--text-muted);
+}
+
+.empty-state {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+}
+
+.empty-icon {
+  font-size: 1.2rem;
+  filter: grayscale(0.5);
+  opacity: 0.6;
+}
+
+.empty-text {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.item-preview {
+  flex-shrink: 0;
+}
+
+.preview-frame {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+}
+
+.preview-icon {
+  font-size: 1.5rem;
+}
+
+.preview-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.item-size {
+  display: none;
+}
+
+.item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.item-name {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-type {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  font-family: 'Courier New', monospace;
+}
+
+.item-stats-line {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-family: 'Courier New', monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-description {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Hide stats and hints in flag layout */
+.item-stats,
+.details-hint {
+  display: none;
+}
+
+.action-buttons {
+  display: none;
+}
+
+.stat-row,
+.stat-label,
+.stat-value,
+.stats-header,
+.action-btn {
+  display: none;
+}
+
+/* Scrollbar styling */
+.details-panel::-webkit-scrollbar {
+  width: 4px;
+}
+
+.details-panel::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+.details-panel::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 2px;
+}
+
+.details-panel::-webkit-scrollbar-thumb:hover {
+  background: var(--border-light);
+}

@@ -1,0 +1,270 @@
+.inventory-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-darkest);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+/* Simulated resolution mode - constrained viewport */
+.inventory-container.simulated {
+  position: relative;
+  overflow: hidden;
+}
+
+.inventory-header {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  background: var(--bg-dark);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header-icon {
+  font-size: 1.1rem;
+  margin-right: 0.6rem;
+  color: var(--accent-teal);
+}
+
+.header-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.header-controls {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.gamepad-indicator {
+  font-size: 0.85rem;
+  color: var(--accent-teal);
+  padding: 0.3rem 0.6rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--accent-teal);
+  border-radius: 2px;
+  animation: gamepad-pulse 2s ease-in-out infinite;
+}
+
+@keyframes gamepad-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.weight-indicator {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-family: 'Courier New', monospace;
+  padding: 0.3rem 0.6rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+}
+
+/* Resolution picker for testing different screen sizes */
+.resolution-btn {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: 'Courier New', monospace;
+  padding: 0.3rem 0.6rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.resolution-btn:hover {
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border-color: var(--border-light);
+}
+
+.resolution-picker {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.25rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  min-width: 200px;
+}
+
+.resolution-option {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.resolution-option:last-child {
+  border-bottom: none;
+}
+
+.resolution-option:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.steam-deck-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.steam-deck-btn {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: 'Courier New', monospace;
+  padding: 0.3rem 0.6rem;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  min-width: 70px;
+}
+
+.steam-deck-btn:hover {
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border-color: var(--border-light);
+}
+
+.steam-deck-btn.active {
+  color: var(--accent-teal);
+  border-color: var(--accent-teal);
+}
+
+.scale-slider {
+  width: 60px;
+  height: 4px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--border-color);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.scale-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background: var(--accent-teal);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.scale-slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: var(--accent-teal);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.close-btn {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.close-btn:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border-color: var(--border-light);
+}
+
+.inventory-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 280px 1fr 1fr;
+  overflow: hidden;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.inventory-column {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-color);
+}
+
+.world-column {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1599px) {
+  .inventory-main {
+    grid-template-columns: 240px 1fr 1fr;
+  }
+}
+
+@media (max-width: 1399px) {
+  .inventory-main {
+    grid-template-columns: 220px 1fr 1fr;
+  }
+}
+
+@media (max-width: 1199px) {
+  .inventory-main {
+    grid-template-columns: 200px 1fr 1fr;
+  }
+}
+
+@media (max-width: 999px) {
+  .inventory-main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .left-column {
+    display: none;
+  }
+}
+
+/* Focus indicators for accessibility */
+button:focus-visible,
+.equipment-slot:focus-visible,
+.grid-cell:focus-visible {
+  outline: 2px solid var(--accent-teal);
+  outline-offset: 1px;
+}
+

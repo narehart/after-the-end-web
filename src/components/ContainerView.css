@@ -1,0 +1,214 @@
+.container-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: var(--bg-dark);
+  overflow: hidden;
+}
+
+.container-view-content {
+  flex: 1;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+
+.empty-container-message {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Panel header with integrated breadcrumb */
+.panel-header {
+  padding: 0.5rem 1rem;
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.panel-icon {
+  font-size: 1rem;
+  margin-right: 0.25rem;
+  filter: grayscale(0.3);
+}
+
+.panel-label {
+  color: var(--text-muted);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.breadcrumb-segment {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb-link {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+.breadcrumb-link:hover:not(:disabled) {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.breadcrumb-link.current {
+  color: var(--text-primary);
+  cursor: default;
+  font-weight: 600;
+}
+
+.breadcrumb-separator {
+  color: var(--text-muted);
+  margin: 0 0.25rem;
+  font-size: 1rem;
+}
+
+/* Grid container */
+.inventory-grid-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.inventory-grid {
+  display: grid;
+  background: var(--bg-darkest);
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  width: fit-content;
+}
+
+/* Grid cells */
+.grid-cell {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  position: relative;
+  transition: all 0.1s ease;
+}
+
+.grid-cell.empty:hover {
+  background: var(--bg-elevated);
+  border-color: var(--border-light);
+}
+
+.grid-cell.occupied {
+  cursor: pointer;
+}
+
+.grid-cell.selected {
+  border-color: var(--border-light);
+}
+
+.grid-cell.keyboard-focused {
+  background: var(--bg-elevated);
+  z-index: 2;
+}
+
+.grid-cell:focus {
+  outline: none;
+}
+
+/* Grid items */
+.grid-item {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-panel) 100%);
+  border: 1px solid var(--border-light);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.1s ease;
+  box-sizing: border-box;
+}
+
+.grid-cell.selected .grid-item {
+  border-color: var(--border-light);
+  background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-panel) 100%);
+}
+
+.grid-item:hover {
+  border-color: var(--border-light);
+}
+
+.item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  pointer-events: none;
+}
+
+.item-image.rotated {
+  transform: rotate(90deg);
+  /* For rotated images: height becomes width, width becomes height */
+  max-width: none;
+  max-height: none;
+  /* Use the parent's height as the image's width (since it's rotated) */
+  width: var(--item-height);
+  height: var(--item-width);
+  object-fit: contain;
+}
+
+.item-icon {
+  font-size: 1.25rem;
+  filter: grayscale(0.2);
+}
+
+.item-quantity {
+  position: absolute;
+  bottom: 2px;
+  right: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+.container-indicator {
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* Scrollbar styling */
+.container-view-content::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.container-view-content::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+.container-view-content::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+.container-view-content::-webkit-scrollbar-thumb:hover {
+  background: var(--border-light);
+}

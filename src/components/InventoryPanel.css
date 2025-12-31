@@ -1,0 +1,18 @@
+.inventory-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: var(--bg-dark);
+}
+
+.inventory-panel .container-view {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+}
+
+.inventory-panel .container-view-content {
+  overflow: hidden;
+  width: 100%;
+}
