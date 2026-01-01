@@ -22,6 +22,17 @@ const KNOWN_DISPLAYS = {
   '3024x1890': 14.2,  // MacBook Pro 14" (alternate)
 };
 
+// Estimate diagonal based on resolution patterns when not in known displays
+function estimateDiagonal(physicalWidth, physicalHeight, dpr) {
+  const isHiDpi = dpr > 1;
+  // Resolution thresholds for common monitor sizes
+  if (physicalWidth <= 1920 && physicalHeight <= 1080) return isHiDpi ? 14 : 24;
+  if (physicalWidth <= 2560 && physicalHeight <= 1600) return 14;
+  if (physicalWidth <= 2560 && physicalHeight <= 1440) return isHiDpi ? 15.6 : 27;
+  if (physicalWidth <= 3840) return 27;
+  return 24;
+}
+
 // Get monitor diagonal - use known display database or fall back to estimation
 function getMonitorDiagonal() {
   const dpr = window.devicePixelRatio || 1;
@@ -29,22 +40,7 @@ function getMonitorDiagonal() {
   const physicalHeight = window.screen.height * dpr;
   const key = `${physicalWidth}x${physicalHeight}`;
 
-  // Check known displays first
-  if (KNOWN_DISPLAYS[key]) {
-    return KNOWN_DISPLAYS[key];
-  }
-
-  // Fall back to estimation based on resolution patterns
-  if (physicalWidth <= 1920 && physicalHeight <= 1080) {
-    return dpr > 1 ? 14 : 24;
-  } else if (physicalWidth <= 2560 && physicalHeight <= 1600) {
-    return 14;
-  } else if (physicalWidth <= 2560 && physicalHeight <= 1440) {
-    return dpr > 1 ? 15.6 : 27;
-  } else if (physicalWidth <= 3840) {
-    return 27;
-  }
-  return 24;
+  return KNOWN_DISPLAYS[key] || estimateDiagonal(physicalWidth, physicalHeight, dpr);
 }
 
 // Calculate scale needed to show Steam Deck at true physical size
