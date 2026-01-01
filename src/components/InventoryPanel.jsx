@@ -17,7 +17,6 @@ export default function InventoryPanel({ cellSize }) {
         onNavigateBack={handleNavigateBack}
         emptyMessage="Select an equipped container to view its contents"
         panelType="inventory"
-        panelIcon="🎒"
         panelLabel="Inventory"
         cellSize={cellSize}
       />

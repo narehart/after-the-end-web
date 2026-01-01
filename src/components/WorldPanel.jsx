@@ -17,7 +17,6 @@ export default function WorldPanel({ cellSize }) {
         onNavigateBack={handleNavigateBack}
         emptyMessage="Nothing nearby"
         panelType="world"
-        panelIcon="📍"
         panelLabel="Ground"
         cellSize={cellSize}
       />

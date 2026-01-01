@@ -10,7 +10,7 @@ export default function EquipmentPanel() {
 
   return (
     <div className="equipment-panel" role="listbox" aria-label="Equipment slots">
-      <h3 className="equipment-title">EQUIPMENT</h3>
+      <h3 className="equipment-title">Equipment</h3>
       <div className="equipment-slots">
         {equippedSlots.map((slotType) => (
           <EquipmentSlot

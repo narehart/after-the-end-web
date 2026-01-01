@@ -9,7 +9,6 @@ export default function ContainerView({
   onNavigateBack,
   emptyMessage = 'No container selected',
   panelType = 'inventory', // 'inventory' | 'world'
-  panelIcon = '📦',
   panelLabel = 'Container',
   cellSize = 32
 }) {
@@ -30,7 +29,6 @@ export default function ContainerView({
   return (
     <div className="container-view">
       <PanelHeader
-        panelIcon={panelIcon}
         panelLabel={panelLabel}
         focusPath={focusPath}
         onNavigateBack={onNavigateBack}
