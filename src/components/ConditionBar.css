@@ -1,0 +1,37 @@
+.condition-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.condition-label {
+  width: 50px;
+  color: var(--text-secondary);
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
+}
+
+.condition-track {
+  flex: 1;
+  height: 10px;
+  background: var(--bg-darkest);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.condition-fill {
+  height: 100%;
+  background: var(--accent-teal);
+  transition: width 0.3s ease;
+}
+
+.condition-value {
+  width: 28px;
+  text-align: right;
+  color: var(--text-secondary);
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+}

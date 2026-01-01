@@ -51,7 +51,6 @@
   padding: 0.3rem 0.6rem;
   background: var(--bg-panel);
   border: 1px solid var(--accent-teal);
-  border-radius: 2px;
   animation: gamepad-pulse 2s ease-in-out infinite;
 }
 
@@ -67,7 +66,6 @@
   padding: 0.3rem 0.6rem;
   background: var(--bg-panel);
   border: 1px solid var(--border-color);
-  border-radius: 2px;
 }
 
 /* Resolution picker for testing different screen sizes */
@@ -78,7 +76,6 @@
   padding: 0.3rem 0.6rem;
   background: var(--bg-panel);
   border: 1px solid var(--border-color);
-  border-radius: 2px;
   cursor: pointer;
   transition: all 0.1s ease;
 }
@@ -96,7 +93,6 @@
   margin-top: 0.25rem;
   background: var(--bg-panel);
   border: 1px solid var(--border-color);
-  border-radius: 3px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   z-index: 100;
   min-width: 200px;
@@ -138,7 +134,6 @@
   padding: 0.3rem 0.6rem;
   background: var(--bg-panel);
   border: 1px solid var(--border-color);
-  border-radius: 2px;
   cursor: pointer;
   transition: all 0.1s ease;
   min-width: 70px;
@@ -161,7 +156,6 @@
   -webkit-appearance: none;
   appearance: none;
   background: var(--border-color);
-  border-radius: 2px;
   cursor: pointer;
 }
 
@@ -171,7 +165,6 @@
   width: 10px;
   height: 10px;
   background: var(--accent-teal);
-  border-radius: 50%;
   cursor: pointer;
 }
 
@@ -179,7 +172,6 @@
   width: 10px;
   height: 10px;
   background: var(--accent-teal);
-  border-radius: 50%;
   cursor: pointer;
   border: none;
 }
@@ -192,7 +184,6 @@
   justify-content: center;
   background: var(--bg-panel);
   border: 1px solid var(--border-color);
-  border-radius: 2px;
   color: var(--text-secondary);
   font-size: 0.85rem;
   cursor: pointer;
@@ -219,10 +210,10 @@
 }
 
 .inventory-column {
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   border-right: 1px solid var(--border-color);
+  overflow: hidden;
 }
 
 .world-column {
@@ -266,5 +257,13 @@ button:focus-visible,
 .grid-cell:focus-visible {
   outline: 2px solid var(--accent-teal);
   outline-offset: 1px;
+}
+
+/* Modal overlay - captures clicks outside modals */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: transparent;
 }
 

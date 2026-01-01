@@ -49,17 +49,6 @@ const SLOT_DESCRIPTIONS = {
   leftShoe: 'Footwear for your left foot.',
 };
 
-function StatRow({ label, value, unit = '' }) {
-  return (
-    <div className="stat-row">
-      <span className="stat-label">{label}</span>
-      <span className="stat-value">
-        {value}{unit}
-      </span>
-    </div>
-  );
-}
-
 function getItemIcon(type) {
   const icons = {
     container: '📦',
@@ -71,36 +60,6 @@ function getItemIcon(type) {
     accessory: '🔹',
   };
   return icons[type] || '◻';
-}
-
-function getStatLabel(key) {
-  const labels = {
-    weight: 'Weight',
-    durability: 'Durability',
-    damage: 'Damage',
-    protection: 'Protection',
-    warmth: 'Warmth',
-    healing: 'Healing',
-    hydration: 'Hydration',
-    nutrition: 'Nutrition',
-    battery: 'Battery',
-  };
-  return labels[key] || key;
-}
-
-function getStatUnit(key) {
-  const units = {
-    weight: ' kg',
-    durability: '%',
-    damage: '',
-    protection: '',
-    warmth: '',
-    healing: ' HP',
-    hydration: '%',
-    nutrition: '%',
-    battery: '%',
-  };
-  return units[key] || '';
 }
 
 export default function DetailsPanel() {
@@ -135,7 +94,6 @@ export default function DetailsPanel() {
     return (
       <div className="details-panel empty">
         <div className="empty-state">
-          <span className="empty-icon">👆</span>
           <p className="empty-text">Select an item to view details</p>
         </div>
       </div>

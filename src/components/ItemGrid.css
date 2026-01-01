@@ -1,0 +1,14 @@
+/* Grid container */
+.inventory-grid-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.inventory-grid {
+  display: grid;
+  background: var(--bg-darkest);
+  border: 2px solid var(--border-color);
+  width: fit-content;
+}

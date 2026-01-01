@@ -1,18 +1,25 @@
 .inventory-panel {
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%;
   background: var(--bg-dark);
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .inventory-panel .container-view {
+  width: 100%;
   flex: 1;
   min-height: 0;
-  width: 100%;
+  overflow: hidden;
 }
 
 .inventory-panel .container-view-content {
-  overflow: hidden;
   width: 100%;
+  flex: none;
+}
+
+.inventory-panel .inventory-grid-container {
+  height: auto;
 }

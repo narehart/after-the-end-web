@@ -394,8 +394,8 @@ export const useInventoryStore = create((set, get) => ({
   inventoryFocusPath: ['backpack-1'], // Start focused on backpack
   worldFocusPath: ['ground'], // World panel shows ground by default
 
-  // Selected item
-  selectedItemId: null,
+  // Selected/focused item (unified hover state across all panels)
+  selectedItemId: 'glasses-1', // Start with Night Goggles focused
 
   // Focused empty slot (for showing empty slot details)
   focusedEmptySlot: null,
@@ -424,35 +424,59 @@ export const useInventoryStore = create((set, get) => ({
     isOpen: false,
     action: null, // 'unequip' | 'move' | 'drop'
     itemId: null,
+    buttonY: null, // Y position of the button that triggered it
   },
 
+  // UI scale and container rect for coordinate transformation (set by Inventory component)
+  uiScale: 1,
+  containerRect: null, // { left, top } of the scaled container
+
   // Actions
+  setUIScale: (scale, containerRect = null) => set({ uiScale: scale, containerRect }),
+
   setSelectedItem: (itemId) => set({ selectedItemId: itemId, focusedEmptySlot: null }),
 
   setFocusedEmptySlot: (slotType) => set({ focusedEmptySlot: slotType, selectedItemId: null }),
 
   clearFocusedEmptySlot: () => set({ focusedEmptySlot: null }),
 
-  openActionModal: (itemId, position, context) => set({
-    actionModal: { isOpen: true, itemId, position, context },
-    selectedItemId: itemId,
-  }),
+  openActionModal: (itemId, position, context) => {
+    const { uiScale, containerRect } = get();
+    let adjustedPosition = position;
+
+    // Transform viewport coordinates to scaled container coordinates
+    if (containerRect && uiScale !== 1) {
+      // 1. Get position relative to container's visual top-left
+      const relX = position.x - containerRect.left;
+      const relY = position.y - containerRect.top;
+      // 2. Divide by scale to convert to container's unscaled coordinate system
+      adjustedPosition = {
+        x: relX / uiScale,
+        y: relY / uiScale,
+      };
+    }
+
+    set({
+      actionModal: { isOpen: true, itemId, position: adjustedPosition, context },
+      selectedItemId: itemId,
+    });
+  },
 
   closeActionModal: () => set({
     actionModal: { isOpen: false, itemId: null, position: { x: 0, y: 0 }, context: null },
   }),
 
-  openDestinationPicker: (action, itemId) => set({
-    destinationPicker: { isOpen: true, action, itemId },
+  openDestinationPicker: (action, itemId, buttonY = null) => set({
+    destinationPicker: { isOpen: true, action, itemId, buttonY },
   }),
 
   closeDestinationPicker: () => set({
-    destinationPicker: { isOpen: false, action: null, itemId: null },
+    destinationPicker: { isOpen: false, action: null, itemId: null, buttonY: null },
   }),
 
   closeAllModals: () => set({
     actionModal: { isOpen: false, itemId: null, position: { x: 0, y: 0 }, context: null },
-    destinationPicker: { isOpen: false, action: null, itemId: null },
+    destinationPicker: { isOpen: false, action: null, itemId: null, buttonY: null },
   }),
 
   // Navigate into a container - panel determines which focus path to use
@@ -473,10 +497,10 @@ export const useInventoryStore = create((set, get) => ({
 
     if (fromEquipment || panel === 'world') {
       // Opening from equipment slot or in world panel - reset path
-      set({ [pathKey]: [containerId], selectedItemId: null });
+      set({ [pathKey]: [containerId], selectedItemId: containerId });
     } else {
       // Opening from within a grid - append to path
-      set({ [pathKey]: [...focusPath, containerId], selectedItemId: null });
+      set({ [pathKey]: [...focusPath, containerId], selectedItemId: containerId });
     }
   },
 
@@ -487,7 +511,9 @@ export const useInventoryStore = create((set, get) => ({
     const pathKey = panel === 'inventory' ? 'inventoryFocusPath' : 'worldFocusPath';
 
     if (index < focusPath.length - 1) {
-      set({ [pathKey]: focusPath.slice(0, index + 1), selectedItemId: null });
+      const newPath = focusPath.slice(0, index + 1);
+      const targetContainer = newPath[newPath.length - 1];
+      set({ [pathKey]: newPath, selectedItemId: targetContainer });
     }
   },
 
@@ -501,7 +527,7 @@ export const useInventoryStore = create((set, get) => ({
     if (itemId) {
       const item = items[itemId];
       if (item?.gridSize) {
-        set({ inventoryFocusPath: [itemId], selectedItemId: null });
+        set({ inventoryFocusPath: [itemId], selectedItemId: itemId });
       } else {
         set({ selectedItemId: itemId });
       }

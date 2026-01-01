@@ -2,48 +2,25 @@
   position: fixed;
   z-index: 1001;
   background: var(--bg-panel);
-  border: 1px solid var(--border-light);
-  border-radius: 3px;
+  border: 1px solid #FBFBFB;
   min-width: 200px;
   max-width: 280px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  box-shadow: 20px 20px 16px rgba(0, 0, 0, 0.5);
+  clip-path: inset(-100px -100px -100px 0);
   outline: none;
 }
 
-/* Arrow pointing left */
-.destination-modal::before {
-  content: '';
-  position: absolute;
-  left: -10px;
-  top: 16px;
-  width: 0;
-  height: 0;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-right: 10px solid var(--border-light);
-}
-
-.destination-modal::after {
-  content: '';
-  position: absolute;
-  left: -7px;
-  top: 18px;
-  width: 0;
-  height: 0;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
-  border-right: 8px solid var(--bg-panel);
-}
 
 .destination-breadcrumb {
-  padding: 0.5rem 0.75rem;
+  height: 2.2rem;
+  padding: 0 0.75rem;
   border-bottom: 1px solid var(--border-color);
   background: var(--bg-elevated);
-  border-radius: 2px 2px 0 0;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.15rem;
+  box-sizing: border-box;
 }
 
 .breadcrumb-segment {
@@ -54,18 +31,18 @@
 .breadcrumb-sep {
   color: var(--text-muted);
   margin: 0 0.15rem;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .breadcrumb-item {
   background: none;
   border: none;
   color: var(--accent-teal);
-  font-size: 0.75rem;
+  font-size: 1.1rem;
   cursor: pointer;
   padding: 0.15rem 0.3rem;
-  border-radius: 2px;
   transition: all 0.1s ease;
+  text-transform: capitalize;
 }
 
 .breadcrumb-item:hover {
@@ -79,27 +56,27 @@
 }
 
 .destination-options {
-  padding: 0.25rem;
+  padding: 0.5rem;
 }
 
 .destination-option {
   width: 100%;
+  height: 2.2rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 0.75rem;
+  padding: 0 0.75rem;
   background: transparent;
   border: 1px solid transparent;
-  border-radius: 2px;
   color: var(--text-secondary);
-  font-size: 0.85rem;
+  font-size: 1.1rem;
+  line-height: 1;
   cursor: pointer;
   transition: all 0.1s ease;
   text-align: left;
 }
 
-.destination-option:hover,
-.destination-option.focused {
+.destination-option:hover {
   background: var(--bg-elevated);
   border-color: var(--accent-teal);
   color: var(--text-primary);
@@ -108,7 +85,6 @@
 .destination-option.place-here {
   border-bottom: 1px solid var(--border-color);
   margin-bottom: 0.25rem;
-  padding-bottom: 0.6rem;
 }
 
 .destination-option.place-here .option-icon {
@@ -116,8 +92,8 @@
 }
 
 .option-icon {
-  font-size: 1rem;
-  width: 20px;
+  font-size: 1.2rem;
+  width: 24px;
   text-align: center;
   filter: grayscale(0.3);
 }
@@ -127,7 +103,7 @@
 }
 
 .option-capacity {
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
   font-family: 'Courier New', monospace;
 }
@@ -137,14 +113,30 @@
   font-size: 1rem;
 }
 
-.destination-option.focused .option-arrow {
+.destination-option:hover .option-arrow {
   color: var(--accent-teal);
+}
+
+/* Disabled state for containers that can't fit the item */
+.destination-option.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.destination-option.disabled:hover {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-secondary);
+}
+
+.destination-option.disabled .option-arrow {
+  color: var(--text-muted);
 }
 
 .no-containers {
   padding: 0.75rem;
   color: var(--text-muted);
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-style: italic;
   text-align: center;
 }

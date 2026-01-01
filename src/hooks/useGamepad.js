@@ -157,12 +157,20 @@ export function useGamepad({ onNavigate, onConfirm, onBack, onNextPanel, onPrevP
 
     frameRef.current = requestAnimationFrame(pollGamepad);
 
+    // Capture current ref values for cleanup
+    const currentFrameRef = frameRef.current;
+    const currentRepeatTimers = repeatTimers.current;
+
     return () => {
-      if (frameRef.current) {
-        cancelAnimationFrame(frameRef.current);
+      if (currentFrameRef) {
+        cancelAnimationFrame(currentFrameRef);
       }
       // Clear all repeat timers
-      Object.keys(repeatTimers.current).forEach(clearRepeatTimer);
+      Object.keys(currentRepeatTimers).forEach((key) => {
+        if (currentRepeatTimers[key]) {
+          clearTimeout(currentRepeatTimers[key]);
+        }
+      });
     };
   }, [enabled, onNavigate, onConfirm, onBack, onNextPanel, onPrevPanel, startRepeat, clearRepeatTimer]);
 

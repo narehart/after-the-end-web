@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import { useInventoryStore } from '../stores/inventoryStore';
 import './DestinationPicker.css';
 
-export default function DestinationPicker({ action, item, position, onSelect, onClose }) {
+export default function DestinationPicker({ item, position, onSelect, onClose }) {
   const [focusedIndex, setFocusedIndex] = useState(0);
   const [path, setPath] = useState([]); // Breadcrumb path of container IDs
   const [isReady, setIsReady] = useState(false);
@@ -11,6 +11,13 @@ export default function DestinationPicker({ action, item, position, onSelect, on
   const equipment = useInventoryStore((state) => state.equipment);
   const items = useInventoryStore((state) => state.items);
   const grids = useInventoryStore((state) => state.grids);
+  const findFreePosition = useInventoryStore((state) => state.findFreePosition);
+
+  // Check if item can fit in a container
+  const canFitItem = (containerId) => {
+    if (!item) return false;
+    return findFreePosition(containerId, item.size.width, item.size.height) !== null;
+  };
 
   // Delay accepting keyboard input
   useEffect(() => {
@@ -31,12 +38,12 @@ export default function DestinationPicker({ action, item, position, onSelect, on
     destinations.push({
       id: 'ground',
       name: 'Ground',
-      icon: '📍',
       type: 'ground',
       isContainer: true,
+      canFit: canFitItem('ground'),
     });
 
-    Object.entries(equipment).forEach(([slotType, itemId]) => {
+    Object.entries(equipment).forEach(([_slotType, itemId]) => {
       if (itemId && itemId !== item?.id) {
         const containerItem = items[itemId];
         if (containerItem?.gridSize) {
@@ -47,10 +54,10 @@ export default function DestinationPicker({ action, item, position, onSelect, on
           destinations.push({
             id: itemId,
             name: containerItem.name,
-            icon: '🎒',
             type: 'container',
             isContainer: true,
             capacity: `${usedCells}/${totalCells}`,
+            canFit: canFitItem(itemId),
           });
         }
       }
@@ -74,10 +81,10 @@ export default function DestinationPicker({ action, item, position, onSelect, on
               destinations.push({
                 id: cellItemId,
                 name: cellItem.name,
-                icon: '📦',
                 type: 'container',
                 isContainer: true,
                 capacity: `${usedCells}/${totalCells}`,
+                canFit: canFitItem(cellItemId),
               });
             }
           }
@@ -86,32 +93,50 @@ export default function DestinationPicker({ action, item, position, onSelect, on
     }
   }
 
-  const handleSelect = (destination) => {
+  // Check if current container can fit the item (for "Place here" option)
+  const currentCanFit = currentContainerId ? canFitItem(currentContainerId) : false;
+
+  const handleSelect = useCallback((destination) => {
+    // Don't allow selecting disabled containers
+    if (!destination.canFit) return;
+
     if (destination.isContainer) {
       // Navigate into container
-      setPath([...path, destination.id]);
+      setPath((prev) => [...prev, destination.id]);
       setFocusedIndex(0);
     }
-  };
+  }, []);
 
-  const handlePlaceHere = () => {
+  const handlePlaceHere = useCallback(() => {
+    // Don't allow placing if item doesn't fit
+    if (!currentCanFit) return;
+
     const targetId = currentContainerId || 'ground';
     onSelect({ id: targetId, name: currentContainer?.name || 'Ground' });
-  };
+  }, [currentCanFit, currentContainerId, currentContainer?.name, onSelect]);
 
-  const navigateBack = (index) => {
+  const navigateBack = useCallback((index) => {
     if (index < 0) {
       setPath([]);
     } else {
-      setPath(path.slice(0, index + 1));
+      setPath((prev) => prev.slice(0, index + 1));
     }
     setFocusedIndex(0);
-  };
+  }, []);
 
   // Keyboard navigation
   useEffect(() => {
     const hasPlaceHere = path.length > 0;
     const totalItems = destinations.length + (hasPlaceHere ? 1 : 0);
+
+    // Check if an index is disabled
+    const isIndexDisabled = (index) => {
+      if (hasPlaceHere && index === 0) {
+        return !currentCanFit;
+      }
+      const destIndex = hasPlaceHere ? index - 1 : index;
+      return !destinations[destIndex]?.canFit;
+    };
 
     const handleKeyDown = (e) => {
       switch (e.key) {
@@ -127,6 +152,8 @@ export default function DestinationPicker({ action, item, position, onSelect, on
         case ' ':
           e.preventDefault();
           if (!isReady) break;
+          // Don't allow selecting disabled items
+          if (isIndexDisabled(focusedIndex)) break;
           if (hasPlaceHere && focusedIndex === 0) {
             handlePlaceHere();
           } else {
@@ -155,7 +182,7 @@ export default function DestinationPicker({ action, item, position, onSelect, on
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [focusedIndex, destinations, path, isReady]);
+  }, [focusedIndex, destinations, path, isReady, currentCanFit, handlePlaceHere, handleSelect, navigateBack, onClose]);
 
   // Focus on mount
   useEffect(() => {
@@ -197,26 +224,27 @@ export default function DestinationPicker({ action, item, position, onSelect, on
         {/* Place here option - only show when inside a container */}
         {path.length > 0 && (
           <button
-            className={`destination-option place-here ${focusedIndex === 0 ? 'focused' : ''}`}
+            className={`destination-option place-here ${focusedIndex === 0 ? 'focused' : ''} ${!currentCanFit ? 'disabled' : ''}`}
             onClick={handlePlaceHere}
             onMouseEnter={() => setFocusedIndex(0)}
+            disabled={!currentCanFit}
           >
-            <span className="option-icon">✓</span>
-            <span className="option-label">Place here</span>
+            Place here
           </button>
         )}
 
         {/* Container destinations */}
         {destinations.map((dest, index) => {
           const itemIndex = path.length > 0 ? index + 1 : index;
+          const isDisabled = !dest.canFit;
           return (
           <button
             key={dest.id}
-            className={`destination-option ${itemIndex === focusedIndex ? 'focused' : ''}`}
+            className={`destination-option ${itemIndex === focusedIndex ? 'focused' : ''} ${isDisabled ? 'disabled' : ''}`}
             onClick={() => handleSelect(dest)}
             onMouseEnter={() => setFocusedIndex(itemIndex)}
+            disabled={isDisabled}
           >
-            <span className="option-icon">{dest.icon}</span>
             <span className="option-label">{dest.name}</span>
             {dest.capacity && (
               <span className="option-capacity">{dest.capacity}</span>
