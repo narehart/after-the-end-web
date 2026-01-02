@@ -7,7 +7,7 @@ import { DOMParser } from '@xmldom/xmldom';
 
 const NEO_DIR =
   '/Users/nicholasarehart/Library/Application Support/Steam/steamapps/common/NEO Scavenger';
-const OUTPUT_DIR = '/Users/nicholasarehart/after-the-end-godot/ui-experiments/src/assets/items';
+const OUTPUT_DIR = '/Users/nicholasarehart/after-the-end-godot/ui-experiments/src/assets/images';
 const DATA_OUTPUT =
   '/Users/nicholasarehart/after-the-end-godot/ui-experiments/src/data/neoItems.json';
 
