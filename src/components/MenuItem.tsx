@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
-import ListItem from '../ListItem';
-import type { MenuItem as MenuItemType, MenuContext } from '../../types/inventory';
+import type { MenuItem as MenuItemType, MenuContext } from '../types/inventory';
+import ListItem from './ListItem';
 import styles from './MenuItem.module.css';
 
 const cx = classNames.bind(styles);

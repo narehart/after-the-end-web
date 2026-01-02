@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import type { MenuItem as MenuItemType, MenuContext } from '../../types/inventory';
+import type { MenuItem as MenuItemType, MenuContext } from '../types/inventory';
 import MenuItem from './MenuItem';
 import styles from './MenuList.module.css';
 

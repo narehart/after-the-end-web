@@ -1,17 +1,17 @@
 import { useEffect, useRef, useCallback, useMemo } from 'react';
 import classNames from 'classnames/bind';
-import { useInventoryStore } from '../../stores/inventoryStore';
-import useMenuContext from '../../hooks/useMenuContext';
-import { useMenuLevels } from '../../hooks/useMenuItems';
-import useMenuKeyboard from '../../hooks/useMenuKeyboard';
-import Breadcrumb from '../Breadcrumb';
+import { useInventoryStore } from '../stores/inventoryStore';
+import useMenuContext from '../hooks/useMenuContext';
+import { useMenuLevels } from '../hooks/useMenuItems';
+import useMenuKeyboard from '../hooks/useMenuKeyboard';
 import type {
   BreadcrumbLink,
   Item,
   MenuContext,
   MenuItem as MenuItemType,
   MenuPathSegment,
-} from '../../types/inventory';
+} from '../types/inventory';
+import Breadcrumb from './Breadcrumb';
 import MenuList from './MenuList';
 import styles from './Menu.module.css';
 
