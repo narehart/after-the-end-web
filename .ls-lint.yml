@@ -102,6 +102,12 @@ ls:
     .*: regex:$
     .dir: regex:constants
 
+  # src/data - camelCase .json files only, no subdirectories
+  src/data:
+    .json: camelCase
+    .*: regex:$
+    .dir: regex:data
+
   # src/components - PascalCase .tsx and .module.css only, no subdirectories
   src/components:
     .tsx: PascalCase
@@ -114,7 +120,6 @@ ignore:
   - dist
   - node_modules
   - src/config
-  - src/data
   - src/hooks
   - src/stores
   - src/types
