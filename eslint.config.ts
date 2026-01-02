@@ -12,6 +12,7 @@ import tsParser from '@typescript-eslint/parser';
 import { defineConfig, globalIgnores } from 'eslint/config';
 import noCrossComponentCssImports from './eslint-rules/no-cross-component-css-imports.ts';
 import noPlainClassnameLiterals from './eslint-rules/no-plain-classname-literals.ts';
+import noComponentHelperFunctions from './eslint-rules/no-component-helper-functions.ts';
 
 // ESLint Plugin type requires only meta and rules - extracting these avoids
 // type incompatibility with typescript-eslint's configs property
@@ -34,6 +35,7 @@ const localPlugin = {
   rules: {
     'no-cross-component-css-imports': noCrossComponentCssImports,
     'no-plain-classname-literals': noPlainClassnameLiterals,
+    'no-component-helper-functions': noComponentHelperFunctions,
   },
 };
 
@@ -62,6 +64,7 @@ const sharedRules: Linter.RulesRecord = {
   // Local rules - enforce component CSS module isolation
   'local/no-cross-component-css-imports': 'error',
   'local/no-plain-classname-literals': 'error',
+  'local/no-component-helper-functions': 'error',
 };
 
 export default defineConfig([
