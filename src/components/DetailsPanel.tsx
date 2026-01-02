@@ -1,23 +1,12 @@
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
-import type { Item } from '../types/inventory';
+import { buildStatsLine } from '../utils/item';
 import Panel from './Panel';
 import EmptySlotDetails from './EmptySlotDetails';
 import ItemPreview from './ItemPreview';
 import styles from './DetailsPanel.module.css';
 
 const cx = classNames.bind(styles);
-
-function buildStatsLine(item: Item): string {
-  return [
-    item.type.toUpperCase(),
-    item.stats.weight !== 0 ? `${String(item.stats.weight)}kg` : null,
-    item.stats.durability !== undefined ? `${String(item.stats.durability)}%` : null,
-    item.stackable && item.quantity > 1 ? `×${String(item.quantity)}` : null,
-  ]
-    .filter(Boolean)
-    .join(' · ');
-}
 
 export default function DetailsPanel(): React.JSX.Element {
   const selectedItemId = useInventoryStore((state) => state.selectedItemId);

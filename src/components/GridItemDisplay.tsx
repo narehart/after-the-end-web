@@ -1,22 +1,9 @@
 import classNames from 'classnames/bind';
-import type { Item, ItemType } from '../types/inventory';
+import type { Item } from '../types/inventory';
+import { getItemIcon } from '../utils/item';
 import styles from './GridItemDisplay.module.css';
 
 const cx = classNames.bind(styles);
-
-const icons: Record<ItemType, string> = {
-  container: '📦',
-  consumable: '💊',
-  weapon: '🗡',
-  clothing: '👔',
-  ammo: '🔸',
-  tool: '🔦',
-  accessory: '🔹',
-};
-
-function getItemIcon(type: ItemType): string {
-  return icons[type];
-}
 
 interface GridItemDisplayProps {
   item: Item;

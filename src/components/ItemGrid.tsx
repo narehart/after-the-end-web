@@ -3,6 +3,7 @@ import { useRef, useState, useCallback } from 'react';
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import type { GridCell, MenuSource } from '../types/inventory';
+import { getCellValue, checkIsOrigin } from '../utils/grid';
 import ItemGridCell from './ItemGridCell';
 import styles from './ItemGrid.module.css';
 
@@ -19,40 +20,6 @@ interface ItemGridProps {
 interface FocusedCell {
   x: number;
   y: number;
-}
-
-function findItemOrigin(grid: GridCell, itemId: string): FocusedCell | null {
-  for (let row = 0; row < grid.height; row++) {
-    for (let col = 0; col < grid.width; col++) {
-      const cellRow = grid.cells[row];
-      if (cellRow?.[col] === itemId) {
-        return { x: col, y: row };
-      }
-    }
-  }
-  return null;
-}
-
-function getItemIdFromGrid(grid: GridCell, row: number, col: number): string | null {
-  const cellRow = grid.cells[row];
-  if (cellRow === undefined) return null;
-  return cellRow[col] ?? null;
-}
-
-function checkIsOrigin(
-  grid: GridCell,
-  itemId: string | null,
-  col: number,
-  row: number,
-  renderedItems: Set<string>
-): boolean {
-  if (itemId === null || renderedItems.has(itemId)) return false;
-  const origin = findItemOrigin(grid, itemId);
-  if (origin !== null && origin.x === col && origin.y === row) {
-    renderedItems.add(itemId);
-    return true;
-  }
-  return false;
 }
 
 export default function ItemGrid({ grid, context, cellSize }: ItemGridProps): React.JSX.Element {
@@ -116,7 +83,7 @@ export default function ItemGrid({ grid, context, cellSize }: ItemGridProps): Re
       >
         {Array.from({ length: grid.height }).map((__, row) =>
           Array.from({ length: grid.width }).map((___, col) => {
-            const itemId = getItemIdFromGrid(grid, row, col);
+            const itemId = getCellValue(grid, row, col);
             const item = itemId !== null ? items[itemId] : undefined;
             const cellKey = `${col}-${row}`;
             const isFocused = focusedCell.x === col && focusedCell.y === row;

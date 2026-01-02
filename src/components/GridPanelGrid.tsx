@@ -3,6 +3,7 @@ import { useRef, useState, useCallback } from 'react';
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import type { GridCell } from '../types/inventory';
+import { getCellValue, findItemOrigin } from '../utils/grid';
 import GridPanelCell from './GridPanelCell';
 import styles from './GridPanelGrid.module.css';
 
@@ -17,23 +18,6 @@ interface GridPanelGridProps {
 interface FocusedCell {
   x: number;
   y: number;
-}
-
-function getCellValue(grid: GridCell, row: number, col: number): string | null {
-  const cellRow = grid.cells[row];
-  if (cellRow === undefined) return null;
-  return cellRow[col] ?? null;
-}
-
-function findItemOrigin(grid: GridCell, itemId: string): FocusedCell | null {
-  for (let row = 0; row < grid.height; row++) {
-    for (let col = 0; col < grid.width; col++) {
-      if (getCellValue(grid, row, col) === itemId) {
-        return { x: col, y: row };
-      }
-    }
-  }
-  return null;
 }
 
 export default function GridPanelGrid({

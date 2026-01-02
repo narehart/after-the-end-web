@@ -1,19 +1,6 @@
-import type { Item, ItemType } from '../types/inventory';
+import type { Item } from '../types/inventory';
 import { getImageUrl } from '../utils/images';
-
-const icons: Record<ItemType, string> = {
-  container: '📦',
-  consumable: '💊',
-  weapon: '🗡',
-  clothing: '👔',
-  ammo: '🔸',
-  tool: '🔦',
-  accessory: '🔹',
-};
-
-function getItemIcon(type: ItemType): string {
-  return icons[type];
-}
+import { getItemIcon } from '../utils/item';
 
 interface ItemPreviewProps {
   item: Item;

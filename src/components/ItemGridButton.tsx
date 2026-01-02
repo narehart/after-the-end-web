@@ -1,36 +1,10 @@
 import classNames from 'classnames/bind';
-import type { Item, ItemType } from '../types/inventory';
+import type { Item } from '../types/inventory';
 import { getImageUrl } from '../utils/images';
+import { getItemIcon, calculateItemDimensions } from '../utils/item';
 import styles from './ItemGridButton.module.css';
 
 const cx = classNames.bind(styles);
-
-const CELL_GAP = 2;
-
-const ITEM_ICONS: Record<ItemType, string> = {
-  container: '📦',
-  consumable: '💊',
-  weapon: '🗡',
-  clothing: '👔',
-  ammo: '🔸',
-  tool: '🔦',
-  accessory: '🔹',
-};
-
-function getItemIcon(type: ItemType): string {
-  return ITEM_ICONS[type];
-}
-
-interface ItemDimensions {
-  itemWidth: number;
-  itemHeight: number;
-}
-
-function calculateItemDimensions(item: Item, cellSize: number): ItemDimensions {
-  const itemWidth = item.size.width * cellSize + (item.size.width - 1) * CELL_GAP;
-  const itemHeight = item.size.height * cellSize + (item.size.height - 1) * CELL_GAP;
-  return { itemWidth, itemHeight };
-}
 
 interface CellState {
   isSelected: boolean;

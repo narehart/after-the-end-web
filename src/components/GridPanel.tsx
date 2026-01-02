@@ -1,40 +1,12 @@
 import type { RefObject } from 'react';
-import { useMemo } from 'react';
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
-import type { BreadcrumbLink, ItemsMap } from '../types/inventory';
+import { useBreadcrumbLinksInventory } from '../utils/useBreadcrumbLinksInventory';
 import Panel from './Panel';
 import GridPanelGrid from './GridPanelGrid';
 import styles from './GridPanel.module.css';
 
 const cx = classNames.bind(styles);
-
-function useBreadcrumbLinks(
-  focusPath: string[],
-  items: ItemsMap,
-  navigateBack: (index: number, panel: string) => void
-): BreadcrumbLink[] {
-  return useMemo(() => {
-    // "Inventory" is never clickable - it's just a label, not a container
-    const links: BreadcrumbLink[] = [
-      {
-        label: 'Inventory',
-      },
-    ];
-    focusPath.forEach((id, index) => {
-      const isLast = index === focusPath.length - 1;
-      links.push({
-        label: items[id]?.name ?? id,
-        onClick: isLast
-          ? undefined
-          : () => {
-              navigateBack(index, 'inventory');
-            },
-      });
-    });
-    return links;
-  }, [focusPath, items, navigateBack]);
-}
 
 interface GridPanelProps {
   groundRef: RefObject<HTMLDivElement | null>;
@@ -51,7 +23,7 @@ export default function GridPanel({ groundRef }: GridPanelProps): React.JSX.Elem
   const currentContainerId = focusPath.length > 0 ? focusPath[focusPath.length - 1] : undefined;
   const currentGrid = currentContainerId !== undefined ? grids[currentContainerId] : undefined;
   const groundGrid = grids['ground'];
-  const breadcrumbLinks = useBreadcrumbLinks(focusPath, items, navigateBack);
+  const breadcrumbLinks = useBreadcrumbLinksInventory(focusPath, items, navigateBack);
 
   return (
     <div className={cx('grid-panel')}>
