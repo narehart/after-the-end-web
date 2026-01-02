@@ -53,9 +53,14 @@ ls:
     .*: regex:$
     .dir: regex:public
 
+  # scripts - camelCase JS files only, no subdirectories
+  scripts:
+    .js: camelCase
+    .*: regex:$
+    .dir: regex:scripts
+
 ignore:
   # Ignore subdirectory contents - rules added incrementally
   - dist
   - node_modules
-  - scripts
   - src

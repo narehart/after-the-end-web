@@ -69,7 +69,7 @@ export default defineConfig([
 
   // Node.js scripts (hooks, tooling)
   {
-    files: ['.claude/hooks/**/*.js'],
+    files: ['.claude/hooks/**/*.js', 'scripts/**/*.js'],
     languageOptions: {
       ecmaVersion: 'latest',
       globals: globals.node,
