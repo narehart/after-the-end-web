@@ -39,10 +39,15 @@ ls:
     .*: regex:$
     .dir: regex:docs
 
+  # eslint-rules - kebab-case TS files only, no subdirectories
+  eslint-rules:
+    .ts: kebab-case
+    .*: regex:$
+    .dir: regex:eslint-rules
+
 ignore:
   # Ignore subdirectory contents - rules added incrementally
   - dist
-  - eslint-rules
   - node_modules
   - public
   - scripts
