@@ -1,4 +1,5 @@
 import type { Item, ItemType } from '../types/inventory';
+import { getImageUrl } from '../utils/images';
 
 const icons: Record<ItemType, string> = {
   container: '📦',
@@ -28,7 +29,7 @@ export default function ItemPreview({
   if (item.image !== '') {
     return (
       <img
-        src={`/src/assets/images/${item.image}`}
+        src={getImageUrl(item.image)}
         alt={item.name}
         className={imageClassName}
         draggable={false}

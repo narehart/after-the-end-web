@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import type { Item, ItemType } from '../types/inventory';
+import { getImageUrl } from '../utils/images';
 import styles from './ItemGridButton.module.css';
 
 const cx = classNames.bind(styles);
@@ -104,7 +105,7 @@ export default function ItemGridButton({
     >
       {item.image ? (
         <img
-          src={`/src/assets/images/${item.image}`}
+          src={getImageUrl(item.image)}
           alt={item.name}
           className={cx('item-image', { rotated: needsRotation })}
           draggable={false}

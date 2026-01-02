@@ -1,6 +1,7 @@
 import { useEffect, useRef, useCallback, useMemo } from 'react';
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
+import { getImageUrl } from '../utils/images';
 import useMenuContext from '../hooks/useMenuContext';
 import { useMenuLevels } from '../hooks/useMenuItems';
 import useMenuKeyboard from '../hooks/useMenuKeyboard';
@@ -143,7 +144,7 @@ export default function Menu(): React.JSX.Element | null {
   if (!menu.isOpen) return null;
 
   const itemImage = context.item?.image;
-  const itemIcon = itemImage !== undefined ? `/src/assets/images/${itemImage}` : undefined;
+  const itemIcon = itemImage !== undefined ? getImageUrl(itemImage) : undefined;
 
   return (
     <div ref={menuRef} className={cx('menu-modal')} tabIndex={-1}>
