@@ -10,9 +10,11 @@ const cx = classNames.bind(styles);
 function useBreadcrumbLinks(focusPath, items, navigateBack) {
   return useMemo(() => {
     // "Inventory" is never clickable - it's just a label, not a container
-    const links = [{
-      label: 'Inventory',
-    }];
+    const links = [
+      {
+        label: 'Inventory',
+      },
+    ];
     focusPath.forEach((id, index) => {
       const isLast = index === focusPath.length - 1;
       links.push({
@@ -47,7 +49,7 @@ export default function GridPanel({ groundRef }) {
         )}
       </Panel>
 
-      <div className={cx('ground-section', { 'collapsed': groundCollapsed })} ref={groundRef}>
+      <div className={cx('ground-section', { collapsed: groundCollapsed })} ref={groundRef}>
         <Panel
           header={
             <button className={cx('ground-header')} onClick={toggleGroundCollapsed}>

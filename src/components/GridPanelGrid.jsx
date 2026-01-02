@@ -31,37 +31,40 @@ export default function GridPanelGrid({ gridId, grid, label }) {
   }, []);
 
   // Handle arrow key navigation at the grid level
-  const handleGridKeyDown = useCallback((e) => {
-    let newX = focusedCell.x;
-    let newY = focusedCell.y;
+  const handleGridKeyDown = useCallback(
+    (e) => {
+      let newX = focusedCell.x;
+      let newY = focusedCell.y;
 
-    switch (e.key) {
-      case 'ArrowUp':
-        e.preventDefault();
-        newY = Math.max(0, focusedCell.y - 1);
-        break;
-      case 'ArrowDown':
-        e.preventDefault();
-        newY = Math.min(grid.height - 1, focusedCell.y + 1);
-        break;
-      case 'ArrowLeft':
-        e.preventDefault();
-        newX = Math.max(0, focusedCell.x - 1);
-        break;
-      case 'ArrowRight':
-        e.preventDefault();
-        newX = Math.min(grid.width - 1, focusedCell.x + 1);
-        break;
-      default:
-        return;
-    }
+      switch (e.key) {
+        case 'ArrowUp':
+          e.preventDefault();
+          newY = Math.max(0, focusedCell.y - 1);
+          break;
+        case 'ArrowDown':
+          e.preventDefault();
+          newY = Math.min(grid.height - 1, focusedCell.y + 1);
+          break;
+        case 'ArrowLeft':
+          e.preventDefault();
+          newX = Math.max(0, focusedCell.x - 1);
+          break;
+        case 'ArrowRight':
+          e.preventDefault();
+          newX = Math.min(grid.width - 1, focusedCell.x + 1);
+          break;
+        default:
+          return;
+      }
 
-    setFocusedCell({ x: newX, y: newY });
-    const cellKey = `${newX}-${newY}`;
-    if (cellRefs.current[cellKey]) {
-      cellRefs.current[cellKey].focus();
-    }
-  }, [focusedCell, grid.width, grid.height]);
+      setFocusedCell({ x: newX, y: newY });
+      const cellKey = `${newX}-${newY}`;
+      if (cellRefs.current[cellKey]) {
+        cellRefs.current[cellKey].focus();
+      }
+    },
+    [focusedCell, grid.width, grid.height]
+  );
 
   return (
     <div className={cx('inventory-grid-container')}>
@@ -104,7 +107,9 @@ export default function GridPanelGrid({ gridId, grid, label }) {
                 item={isOrigin ? item : null}
                 isFocused={isFocused}
                 onNavigate={handleNavigate}
-                cellRef={(el) => { cellRefs.current[cellKey] = el; }}
+                cellRef={(el) => {
+                  cellRefs.current[cellKey] = el;
+                }}
               />
             );
           })

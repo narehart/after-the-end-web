@@ -1,37 +1,37 @@
 /* Modal menu container */
 .menu-modal {
-	position: fixed;
-	z-index: var(--z-modal);
-	background: var(--bg-panel);
-	border: var(--border-modal);
-	width: var(--size-modal);
-	left: 50%;
-	top: 22%;
-	transform: translateX(-50%);
-	box-shadow: var(--shadow-lg);
-	outline: none;
+  position: fixed;
+  z-index: var(--z-modal);
+  background: var(--bg-panel);
+  border: var(--border-modal);
+  width: var(--size-modal);
+  left: 50%;
+  top: 22%;
+  transform: translateX(-50%);
+  box-shadow: var(--shadow-lg);
+  outline: none;
 }
 
 .menu-modal .breadcrumb {
-	border-bottom: var(--border-panel);
+  border-bottom: var(--border-panel);
 }
 
 .menu-list {
-	padding: var(--space-8);
+  padding: var(--space-8);
 }
 
 /* Menu item specific overrides */
 .menu-item .list-item-icon {
-	width: 24px;
-	height: 24px;
-	font-size: var(--font-lg);
-	filter: grayscale(0.3);
+  width: 24px;
+  height: 24px;
+  font-size: var(--font-lg);
+  filter: grayscale(0.3);
 }
 
 .menu-empty {
-	padding: var(--space-12);
-	color: var(--text-muted);
-	font-size: var(--font-sm);
-	font-style: italic;
-	text-align: center;
+  padding: var(--space-12);
+  color: var(--text-muted);
+  font-size: var(--font-sm);
+  font-style: italic;
+  text-align: center;
 }

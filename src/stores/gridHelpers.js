@@ -1,6 +1,8 @@
 // Helper to create empty grid
 export function createEmptyGrid(width, height) {
-  return Array(height).fill(null).map(() => Array(width).fill(null));
+  return Array(height)
+    .fill(null)
+    .map(() => Array(width).fill(null));
 }
 
 // Helper to place item in grid
@@ -74,7 +76,7 @@ export function findItemInGrids(grids, itemId) {
 
 // Remove an item from grid cells
 export function removeItemFromCells(cells, positions) {
-  const newCells = cells.map(row => [...row]);
+  const newCells = cells.map((row) => [...row]);
   for (const pos of positions) {
     newCells[pos.y][pos.x] = null;
   }
@@ -83,7 +85,7 @@ export function removeItemFromCells(cells, positions) {
 
 // Place an item in grid cells
 export function placeItemInCells(cells, itemId, x, y, width, height) {
-  const newCells = cells.map(row => [...row]);
+  const newCells = cells.map((row) => [...row]);
   for (let dy = 0; dy < height; dy++) {
     for (let dx = 0; dx < width; dx++) {
       newCells[y + dy][x + dx] = itemId;

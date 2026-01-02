@@ -53,7 +53,11 @@ const SLOT_DESCRIPTIONS = {
 
 export default function EmptySlotDetails({ slotId }) {
   return (
-    <Panel border="top" className={cx('details-panel')} contentClassName={cx('details-content', 'empty-slot')}>
+    <Panel
+      border="top"
+      className={cx('details-panel')}
+      contentClassName={cx('details-content', 'empty-slot')}
+    >
       <div className={cx('item-preview')}>
         <div className={cx('preview-frame', 'empty')}>
           <span className={cx('preview-icon')}>{SLOT_ICONS[slotId] || '◻'}</span>

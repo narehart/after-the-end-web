@@ -1,12 +1,12 @@
 /* Menu list container */
 .menu-list {
-	padding: var(--space-8);
+  padding: var(--space-8);
 }
 
 .menu-empty {
-	padding: var(--space-12);
-	color: var(--text-muted);
-	font-size: var(--font-sm);
-	font-style: italic;
-	text-align: center;
+  padding: var(--space-12);
+  color: var(--text-muted);
+  font-size: var(--font-sm);
+  font-style: italic;
+  text-align: center;
 }

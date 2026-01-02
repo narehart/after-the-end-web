@@ -1,8 +1,8 @@
-import Inventory from './components/Inventory'
-import './App.module.css'
+import Inventory from './components/Inventory';
+import './App.module.css';
 
 function App() {
-  return <Inventory />
+  return <Inventory />;
 }
 
-export default App
+export default App;

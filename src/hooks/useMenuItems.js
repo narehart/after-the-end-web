@@ -53,7 +53,11 @@ export function useMenuLevels(path, context) {
     const rootItems = filterVisibleItems(ITEM_ACTION_MENU, context);
     const selectedAtRoot = path.length > 0 ? getSegmentId(path[0]) : null;
     const selectedIndexAtRoot = rootItems.findIndex((item) => item.id === selectedAtRoot);
-    levels.push({ items: rootItems, selectedId: selectedAtRoot, selectedIndex: selectedIndexAtRoot });
+    levels.push({
+      items: rootItems,
+      selectedId: selectedAtRoot,
+      selectedIndex: selectedIndexAtRoot,
+    });
 
     // Subsequent levels based on path
     for (let depth = 0; depth < path.length; depth++) {

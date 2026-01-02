@@ -5,9 +5,24 @@ import styles from './GridPanelCell.module.css';
 
 const cx = classNames.bind(styles);
 
-export default function GridPanelCell({ gridId, x, y, itemId, isOrigin, item, isFocused, onNavigate, cellRef }) {
+export default function GridPanelCell({
+  gridId,
+  x,
+  y,
+  itemId,
+  isOrigin,
+  item,
+  isFocused,
+  onNavigate,
+  cellRef,
+}) {
   const { cellState, handleClick, openModal, handleFocus, setSelectedItem } = useGridPanelCell({
-    gridId, x, y, itemId, item, onNavigate,
+    gridId,
+    x,
+    y,
+    itemId,
+    item,
+    onNavigate,
   });
   const { isSelected, hasGrid } = cellState;
 
@@ -20,10 +35,10 @@ export default function GridPanelCell({ gridId, x, y, itemId, isOrigin, item, is
   };
 
   const cellClasses = cx('grid-cell', {
-    'occupied': itemId,
-    'empty': !itemId,
-    'selected': isSelected,
-    'origin': isOrigin,
+    occupied: itemId,
+    empty: !itemId,
+    selected: isSelected,
+    origin: isOrigin,
     'keyboard-focused': isFocused,
   });
 

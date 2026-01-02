@@ -12,23 +12,29 @@ export default function useItemGridCell({ x, y, itemId, item, context, onNavigat
   const openMenu = useInventoryStore((state) => state.openMenu);
   const menu = useInventoryStore((state) => state.menu);
 
-  const cellState = useMemo(() => ({
-    isSelected: itemId && itemId === selectedItemId,
-    hasOpenModal: menu.isOpen && menu.itemId === itemId,
-    hasGrid: item?.gridSize != null,
-  }), [itemId, selectedItemId, menu, item]);
+  const cellState = useMemo(
+    () => ({
+      isSelected: itemId && itemId === selectedItemId,
+      hasOpenModal: menu.isOpen && menu.itemId === itemId,
+      hasGrid: item?.gridSize != null,
+    }),
+    [itemId, selectedItemId, menu, item]
+  );
 
   const handleClick = useCallback(() => {
     if (itemId) setSelectedItem(itemId);
     onNavigate(x, y);
   }, [itemId, x, y, setSelectedItem, onNavigate]);
 
-  const openModal = useCallback((element) => {
-    if (itemId) {
-      setSelectedItem(itemId);
-      openMenu(itemId, getModalPosition(element), context);
-    }
-  }, [itemId, context, setSelectedItem, openMenu]);
+  const openModal = useCallback(
+    (element) => {
+      if (itemId) {
+        setSelectedItem(itemId);
+        openMenu(itemId, getModalPosition(element), context);
+      }
+    },
+    [itemId, context, setSelectedItem, openMenu]
+  );
 
   const handleMouseEnter = useCallback(() => {
     if (itemId) setSelectedItem(itemId);

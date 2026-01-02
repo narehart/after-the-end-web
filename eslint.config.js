@@ -1,14 +1,14 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import reactPlugin from 'eslint-plugin-react'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import jsxA11y from 'eslint-plugin-jsx-a11y'
-import importPlugin from 'eslint-plugin-import'
-import cssModules from 'eslint-plugin-css-modules'
-import { defineConfig, globalIgnores } from 'eslint/config'
-import noCrossComponentCssImports from './eslint-rules/no-cross-component-css-imports.js'
-import noPlainClassnameLiterals from './eslint-rules/no-plain-classname-literals.js'
+import js from '@eslint/js';
+import globals from 'globals';
+import reactPlugin from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+import importPlugin from 'eslint-plugin-import';
+import cssModules from 'eslint-plugin-css-modules';
+import { defineConfig, globalIgnores } from 'eslint/config';
+import noCrossComponentCssImports from './eslint-rules/no-cross-component-css-imports.js';
+import noPlainClassnameLiterals from './eslint-rules/no-plain-classname-literals.js';
 
 // Local plugin for custom rules
 const localPlugin = {
@@ -16,7 +16,7 @@ const localPlugin = {
     'no-cross-component-css-imports': noCrossComponentCssImports,
     'no-plain-classname-literals': noPlainClassnameLiterals,
   },
-}
+};
 
 export default defineConfig([
   globalIgnores(['dist']),
@@ -57,17 +57,20 @@ export default defineConfig([
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]', argsIgnorePattern: '^_' }],
       'react/prop-types': 'off',
       'react/no-multi-comp': ['error', { ignoreStateless: false }],
-      'import/order': ['error', {
-        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-        'newlines-between': 'never',
-      }],
+      'import/order': [
+        'error',
+        {
+          groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+          'newlines-between': 'never',
+        },
+      ],
       'import/first': 'error',
       'import/no-duplicates': 'error',
       'import/newline-after-import': 'error',
       'max-lines': ['error', { max: 250, skipBlankLines: true, skipComments: true }],
       'max-lines-per-function': ['error', { max: 100, skipBlankLines: true, skipComments: true }],
       'max-statements': ['error', 20],
-      'complexity': ['error', 10],
+      complexity: ['error', 10],
 
       // CSS Modules - detect undefined classes (no-unused-class incompatible with classnames/bind)
       'css-modules/no-undef-class': ['error', { camelCase: true }],
@@ -77,4 +80,4 @@ export default defineConfig([
       'local/no-plain-classname-literals': 'error',
     },
   },
-])
+]);

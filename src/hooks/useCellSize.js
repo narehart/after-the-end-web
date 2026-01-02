@@ -15,8 +15,7 @@ export default function useCellSize(containerRef, effectiveResolution) {
         const containerWidth = containerRef.current.clientWidth;
         if (containerWidth > 0) {
           const totalGaps = (GRID_COLUMNS - 1) * CELL_GAP;
-          const availableWidth =
-            containerWidth - GRID_BORDER - totalGaps - CONTENT_PADDING;
+          const availableWidth = containerWidth - GRID_BORDER - totalGaps - CONTENT_PADDING;
           const newCellSize = Math.floor(availableWidth / GRID_COLUMNS);
           setCellSize(Math.max(MIN_CELL_SIZE, newCellSize));
         }

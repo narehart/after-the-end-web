@@ -10,43 +10,49 @@ import styles from './Menu.module.css';
 
 const cx = classNames.bind(styles);
 
-
-
 function useBreadcrumbLinks(path, item, menuNavigateToLevel) {
   return useMemo(() => {
     const itemName = item?.name || 'Actions';
-    const links = [{ label: itemName, onClick: path.length > 0 ? () => menuNavigateToLevel(0) : undefined }];
+    const links = [
+      { label: itemName, onClick: path.length > 0 ? () => menuNavigateToLevel(0) : undefined },
+    ];
     path.forEach((segment, idx) => {
       const isLast = idx === path.length - 1;
-      links.push({ label: segment.label, onClick: isLast ? undefined : () => menuNavigateToLevel(idx + 1) });
+      links.push({
+        label: segment.label,
+        onClick: isLast ? undefined : () => menuNavigateToLevel(idx + 1),
+      });
     });
     return links;
   }, [path, menuNavigateToLevel, item?.name]);
 }
 
 function useMenuActions(context, menuNavigateTo) {
-  return useCallback((item) => {
-    if (item.type === 'navigate' && item.getItems) {
-      menuNavigateTo({ id: item.id, label: item.label });
-    } else if (item.type === 'select' && item.data) {
-      const { unequipItem, closeMenu } = context;
-      if (item.data.action === 'unequip') unequipItem(context.itemId, item.data.containerId);
-      closeMenu();
-    } else if (item.type === 'action') {
-      const { navigateToContainer, rotateItem, equipItem, closeMenu } = context;
-      if (item.id === 'open') {
-        navigateToContainer(context.itemId, context.panel, context.source === 'equipment');
+  return useCallback(
+    (item) => {
+      if (item.type === 'navigate' && item.getItems) {
+        menuNavigateTo({ id: item.id, label: item.label });
+      } else if (item.type === 'select' && item.data) {
+        const { unequipItem, closeMenu } = context;
+        if (item.data.action === 'unequip') unequipItem(context.itemId, item.data.containerId);
         closeMenu();
-      } else if (item.id === 'rotate') {
-        rotateItem(context.itemId);
-      } else if (item.id === 'equip') {
-        equipItem(context.itemId);
-        closeMenu();
-      } else {
-        closeMenu();
+      } else if (item.type === 'action') {
+        const { navigateToContainer, rotateItem, equipItem, closeMenu } = context;
+        if (item.id === 'open') {
+          navigateToContainer(context.itemId, context.panel, context.source === 'equipment');
+          closeMenu();
+        } else if (item.id === 'rotate') {
+          rotateItem(context.itemId);
+        } else if (item.id === 'equip') {
+          equipItem(context.itemId);
+          closeMenu();
+        } else {
+          closeMenu();
+        }
       }
-    }
-  }, [context, menuNavigateTo]);
+    },
+    [context, menuNavigateTo]
+  );
 }
 
 export default function Menu() {

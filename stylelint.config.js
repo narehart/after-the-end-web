@@ -91,7 +91,8 @@ export default {
     'custom-property-pattern': [
       '^(font|space|z|shadow|size|bg|text|border|accent|base|ui|item|breadcrumb|success|warning|danger|line|letter|opacity|transition|animation)(-[a-z0-9]+)*$',
       {
-        message: 'Custom property "${property}" must use an allowed prefix (font-, space-, z-, shadow-, size-, bg-, text-, border-, accent-)',
+        message:
+          'Custom property "${property}" must use an allowed prefix (font-, space-, z-, shadow-, size-, bg-, text-, border-, accent-)',
       },
     ],
     'selector-class-pattern': '^[a-z][a-z0-9]*(-[a-z0-9]+)*(--[a-z0-9]+(-[a-z0-9]+)*)?$',
@@ -142,21 +143,48 @@ export default {
     'scale-unlimited/declaration-strict-value': [
       [
         // Colors
-        '/color$/', 'fill', 'stroke', 'background', 'border-color', 'outline-color',
+        '/color$/',
+        'fill',
+        'stroke',
+        'background',
+        'border-color',
+        'outline-color',
         // Outline
-        'outline', 'outline-width', 'outline-style',
+        'outline',
+        'outline-width',
+        'outline-style',
         // Typography
-        'font-family', 'font-size', 'font-weight', 'line-height', 'letter-spacing',
+        'font-family',
+        'font-size',
+        'font-weight',
+        'line-height',
+        'letter-spacing',
         // Spacing
-        'padding', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left',
-        'margin', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left',
-        'gap', 'row-gap', 'column-gap',
+        'padding',
+        'padding-top',
+        'padding-right',
+        'padding-bottom',
+        'padding-left',
+        'margin',
+        'margin-top',
+        'margin-right',
+        'margin-bottom',
+        'margin-left',
+        'gap',
+        'row-gap',
+        'column-gap',
         // Borders
-        'border', 'border-width', 'border-top', 'border-right', 'border-bottom', 'border-left',
+        'border',
+        'border-width',
+        'border-top',
+        'border-right',
+        'border-bottom',
+        'border-left',
         // Layers
         'z-index',
         // Effects
-        'box-shadow', 'opacity',
+        'box-shadow',
+        'opacity',
         // Motion
         'transition',
       ],
@@ -220,4 +248,4 @@ export default {
       },
     },
   ],
-}
+};

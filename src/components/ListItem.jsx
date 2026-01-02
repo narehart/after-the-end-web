@@ -18,11 +18,11 @@ export default function ListItem({
   itemRef,
 }) {
   const buttonClasses = cx('list-item', {
-    'focused': state.isFocused,
-    'active': state.isActive,
-    'selected': state.isSelected,
-    'disabled': state.isDisabled,
-    'empty': state.isEmpty,
+    focused: state.isFocused,
+    active: state.isActive,
+    selected: state.isSelected,
+    disabled: state.isDisabled,
+    empty: state.isEmpty,
   });
 
   return (

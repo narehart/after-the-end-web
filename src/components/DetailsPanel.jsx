@@ -13,7 +13,9 @@ function buildStatsLine(item) {
     item.stats.weight != null ? `${item.stats.weight}kg` : null,
     item.stats.durability != null ? `${item.stats.durability}%` : null,
     item.stackable && item.quantity > 1 ? `×${item.quantity}` : null,
-  ].filter(Boolean).join(' · ');
+  ]
+    .filter(Boolean)
+    .join(' · ');
 }
 
 export default function DetailsPanel() {
@@ -29,7 +31,11 @@ export default function DetailsPanel() {
 
   if (!item) {
     return (
-      <Panel border="top" className={cx('details-panel')} contentClassName={cx('details-content', 'empty')}>
+      <Panel
+        border="top"
+        className={cx('details-panel')}
+        contentClassName={cx('details-content', 'empty')}
+      >
         <div className={cx('empty-state')}>
           <p className={cx('empty-text')}>Select an item to view details</p>
         </div>
@@ -41,7 +47,11 @@ export default function DetailsPanel() {
     <Panel border="top" className={cx('details-panel')} contentClassName={cx('details-content')}>
       <div className={cx('item-preview')}>
         <div className={cx('preview-frame')}>
-          <ItemPreview item={item} imageClassName={cx('preview-image')} iconClassName={cx('preview-icon')} />
+          <ItemPreview
+            item={item}
+            imageClassName={cx('preview-image')}
+            iconClassName={cx('preview-icon')}
+          />
         </div>
       </div>
 

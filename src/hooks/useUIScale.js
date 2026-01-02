@@ -14,12 +14,12 @@ const STEAM_DECK = {
 // Known device configurations (physical resolution -> diagonal in inches)
 // This allows exact PPI calculation without guessing
 const KNOWN_DISPLAYS = {
-  '3024x1964': 14.2,  // MacBook Pro 14"
-  '3456x2234': 16.2,  // MacBook Pro 16"
-  '2560x1600': 13.3,  // MacBook Air 13"
-  '2880x1800': 15.4,  // MacBook Pro 15" (older)
-  '2560x1664': 13.6,  // MacBook Air 15"
-  '3024x1890': 14.2,  // MacBook Pro 14" (alternate)
+  '3024x1964': 14.2, // MacBook Pro 14"
+  '3456x2234': 16.2, // MacBook Pro 16"
+  '2560x1600': 13.3, // MacBook Air 13"
+  '2880x1800': 15.4, // MacBook Pro 15" (older)
+  '2560x1664': 13.6, // MacBook Air 15"
+  '3024x1890': 14.2, // MacBook Pro 14" (alternate)
 };
 
 // Estimate diagonal based on resolution patterns when not in known displays
@@ -71,7 +71,7 @@ export const PRESETS = {
   'laptop-hd': { width: 1366, height: 768, label: 'Laptop HD (1366×768)' },
   'laptop-fhd': { width: 1920, height: 1080, label: 'Laptop FHD (1920×1080)' },
   'desktop-2k': { width: 2560, height: 1440, label: 'Desktop 2K (2560×1440)' },
-  'native': { width: null, height: null, label: 'Native Resolution' },
+  native: { width: null, height: null, label: 'Native Resolution' },
 };
 
 export function useUIScale() {
@@ -104,12 +104,12 @@ export function useUIScale() {
     if (simulatedResolution) {
       setEffectiveResolution({
         width: simulatedResolution.width,
-        height: simulatedResolution.height
+        height: simulatedResolution.height,
       });
     } else {
       setEffectiveResolution({
         width: window.innerWidth,
-        height: window.innerHeight
+        height: window.innerHeight,
       });
     }
   }, [simulatedResolution]);

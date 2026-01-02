@@ -3,37 +3,89 @@ import { mockItems } from './mockItems';
 import { initialGrids } from './initialGrids';
 import { findFreePosition, findItemOrigin } from './gridHelpers';
 import { createUnequipAction, createEquipAction } from './equipmentActions';
-import { createNavigateToContainer, createNavigateBack, createFocusOnEquipmentSlot } from './navigationActions';
+import {
+  createNavigateToContainer,
+  createNavigateBack,
+  createFocusOnEquipmentSlot,
+} from './navigationActions';
 import { initialMenu, createMenuActions } from './menuActions';
 
 // Equipment slot types
 export const SLOT_TYPES = [
-  'helmet', 'eyes', 'face', 'neck', 'backpack', 'coat', 'vest', 'shirt',
-  'rightShoulder', 'leftShoulder', 'rightGlove', 'leftGlove',
-  'rightRing', 'leftRing', 'rightHolding', 'leftHolding',
-  'pouch', 'pants', 'rightShoe', 'leftShoe',
+  'helmet',
+  'eyes',
+  'face',
+  'neck',
+  'backpack',
+  'coat',
+  'vest',
+  'shirt',
+  'rightShoulder',
+  'leftShoulder',
+  'rightGlove',
+  'leftGlove',
+  'rightRing',
+  'leftRing',
+  'rightHolding',
+  'leftHolding',
+  'pouch',
+  'pants',
+  'rightShoe',
+  'leftShoe',
 ];
 
 export const SLOT_LABELS = {
-  helmet: 'Helmet', eyes: 'Eyes', face: 'Face', neck: 'Neck',
-  backpack: 'Backpack', coat: 'Coat', vest: 'Vest', shirt: 'Shirt',
-  rightShoulder: 'Right Shoulder', leftShoulder: 'Left Shoulder',
-  rightGlove: 'Right Glove', leftGlove: 'Left Glove',
-  rightRing: 'Right Ring', leftRing: 'Left Ring',
-  rightHolding: 'Right Holding', leftHolding: 'Left Holding',
-  pouch: 'Pouch', pants: 'Pants', rightShoe: 'Right Shoe', leftShoe: 'Left Shoe',
+  helmet: 'Helmet',
+  eyes: 'Eyes',
+  face: 'Face',
+  neck: 'Neck',
+  backpack: 'Backpack',
+  coat: 'Coat',
+  vest: 'Vest',
+  shirt: 'Shirt',
+  rightShoulder: 'Right Shoulder',
+  leftShoulder: 'Left Shoulder',
+  rightGlove: 'Right Glove',
+  leftGlove: 'Left Glove',
+  rightRing: 'Right Ring',
+  leftRing: 'Left Ring',
+  rightHolding: 'Right Holding',
+  leftHolding: 'Left Holding',
+  pouch: 'Pouch',
+  pants: 'Pants',
+  rightShoe: 'Right Shoe',
+  leftShoe: 'Left Shoe',
 };
 
 const initialEquipment = {
-  helmet: null, eyes: 'glasses-1', face: null, neck: null,
-  backpack: 'backpack-1', coat: null, vest: null, shirt: null,
-  rightShoulder: null, leftShoulder: null, rightGlove: null, leftGlove: null,
-  rightRing: null, leftRing: null, rightHolding: null, leftHolding: null,
-  pouch: 'pouch-1', pants: null, rightShoe: null, leftShoe: null,
+  helmet: null,
+  eyes: 'glasses-1',
+  face: null,
+  neck: null,
+  backpack: 'backpack-1',
+  coat: null,
+  vest: null,
+  shirt: null,
+  rightShoulder: null,
+  leftShoulder: null,
+  rightGlove: null,
+  leftGlove: null,
+  rightRing: null,
+  leftRing: null,
+  rightHolding: null,
+  leftHolding: null,
+  pouch: 'pouch-1',
+  pants: null,
+  rightShoe: null,
+  leftShoe: null,
 };
 
 const initialConditions = {
-  health: 85, hunger: 60, thirst: 45, temperature: 72, encumbrance: 35,
+  health: 85,
+  hunger: 60,
+  thirst: 45,
+  temperature: 72,
+  encumbrance: 35,
 };
 
 export const useInventoryStore = create((set, get) => ({
@@ -96,12 +148,13 @@ export const useInventoryStore = create((set, get) => ({
   getGroundGrid: () => get().grids['ground'],
 
   // Item operations
-  rotateItem: (itemId) => set((state) => ({
-    items: {
-      ...state.items,
-      [itemId]: { ...state.items[itemId], rotation: ((state.items[itemId].rotation + 90) % 360) },
-    },
-  })),
+  rotateItem: (itemId) =>
+    set((state) => ({
+      items: {
+        ...state.items,
+        [itemId]: { ...state.items[itemId], rotation: (state.items[itemId].rotation + 90) % 360 },
+      },
+    })),
 
   getItemAtPosition: (gridId, x, y) => {
     const { grids, items } = get();
@@ -113,7 +166,8 @@ export const useInventoryStore = create((set, get) => ({
 
   findItemOrigin: (gridId, itemId) => findItemOrigin(get().grids[gridId], itemId),
 
-  findFreePosition: (gridId, itemWidth, itemHeight) => findFreePosition(get().grids[gridId], itemWidth, itemHeight),
+  findFreePosition: (gridId, itemWidth, itemHeight) =>
+    findFreePosition(get().grids[gridId], itemWidth, itemHeight),
 
   // Equipment operations
   unequipItem: (itemId, targetGridId) => {

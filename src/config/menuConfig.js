@@ -108,7 +108,7 @@ export function buildDestinationItems(ctx, path, action) {
     const currentContainerId = path[path.length - 1];
     const canFit = canFitItem(currentContainerId);
     const isGround = currentContainerId === 'ground';
-    const containerName = isGround ? 'Ground' : (allItems[currentContainerId]?.name || 'here');
+    const containerName = isGround ? 'Ground' : allItems[currentContainerId]?.name || 'here';
 
     items.push({
       id: 'place-here',
@@ -119,9 +119,10 @@ export function buildDestinationItems(ctx, path, action) {
     });
   }
 
-  const destinations = path.length === 0
-    ? buildRootDestinations(ctx, action)
-    : buildNestedDestinations(ctx, path, action);
+  const destinations =
+    path.length === 0
+      ? buildRootDestinations(ctx, action)
+      : buildNestedDestinations(ctx, path, action);
 
   return [...items, ...destinations];
 }

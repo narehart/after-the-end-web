@@ -39,8 +39,14 @@
 }
 
 @keyframes gamepad-pulse {
-  0%, 100% { opacity: var(--opacity-full); }
-  50% { opacity: var(--opacity-hover); }
+  0%,
+  100% {
+    opacity: var(--opacity-full);
+  }
+
+  50% {
+    opacity: var(--opacity-hover);
+  }
 }
 
 .weight-indicator {

@@ -13,21 +13,27 @@ export default function useGridPanelCell({ gridId, x, y, itemId, item, onNavigat
 
   const context = gridId === 'ground' ? 'ground' : 'grid';
 
-  const cellState = useMemo(() => ({
-    isSelected: itemId && itemId === selectedItemId,
-    hasGrid: item?.gridSize != null,
-  }), [itemId, selectedItemId, item]);
+  const cellState = useMemo(
+    () => ({
+      isSelected: itemId && itemId === selectedItemId,
+      hasGrid: item?.gridSize != null,
+    }),
+    [itemId, selectedItemId, item]
+  );
 
   const handleClick = useCallback(() => {
     if (itemId) setSelectedItem(itemId);
     onNavigate(x, y);
   }, [itemId, x, y, setSelectedItem, onNavigate]);
 
-  const openModal = useCallback((element) => {
-    if (itemId) {
-      openMenu(itemId, getModalPosition(element), context);
-    }
-  }, [itemId, context, openMenu]);
+  const openModal = useCallback(
+    (element) => {
+      if (itemId) {
+        openMenu(itemId, getModalPosition(element), context);
+      }
+    },
+    [itemId, context, openMenu]
+  );
 
   const handleFocus = useCallback(() => {
     if (itemId) setSelectedItem(itemId);

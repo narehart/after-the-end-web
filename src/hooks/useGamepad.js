@@ -1,8 +1,14 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
 
 const BUTTONS = {
-  A: 0, B: 1, LB: 4, RB: 5,
-  DPAD_UP: 12, DPAD_DOWN: 13, DPAD_LEFT: 14, DPAD_RIGHT: 15,
+  A: 0,
+  B: 1,
+  LB: 4,
+  RB: 5,
+  DPAD_UP: 12,
+  DPAD_DOWN: 13,
+  DPAD_LEFT: 14,
+  DPAD_RIGHT: 15,
 };
 
 const STICK_THRESHOLD = 0.5;
@@ -37,7 +43,17 @@ function createButtonHandler(gamepad, lastButtonStates, startRepeat, clearRepeat
   };
 }
 
-function handleStickAxis(value, lastValue, posDir, negDir, posKey, negKey, onNavigate, startRepeat, clearRepeatTimer) {
+function handleStickAxis(
+  value,
+  lastValue,
+  posDir,
+  negDir,
+  posKey,
+  negKey,
+  onNavigate,
+  startRepeat,
+  clearRepeatTimer
+) {
   if (crossedPositiveThreshold(value, lastValue)) {
     onNavigate?.(posDir);
     startRepeat(posKey, () => onNavigate?.(posDir));
@@ -72,9 +88,15 @@ function updateConnectionState(gamepad, isConnectedRef, setIsConnected, setGamep
 
 function processGamepad(gamepad, refs, callbacks) {
   const { lastButtonStates, lastAxisStates } = refs;
-  const { onNavigate, onConfirm, onBack, onNextPanel, onPrevPanel, startRepeat, clearRepeatTimer } = callbacks;
+  const { onNavigate, onConfirm, onBack, onNextPanel, onPrevPanel, startRepeat, clearRepeatTimer } =
+    callbacks;
 
-  const handleButton = createButtonHandler(gamepad, lastButtonStates, startRepeat, clearRepeatTimer);
+  const handleButton = createButtonHandler(
+    gamepad,
+    lastButtonStates,
+    startRepeat,
+    clearRepeatTimer
+  );
 
   handleButton(BUTTONS.DPAD_UP, () => onNavigate?.('up'), 'dpad_up');
   handleButton(BUTTONS.DPAD_DOWN, () => onNavigate?.('down'), 'dpad_down');
@@ -89,13 +111,40 @@ function processGamepad(gamepad, refs, callbacks) {
   const stickY = gamepad.axes[1] || 0;
   const { x: lastX, y: lastY } = lastAxisStates.current;
 
-  handleStickAxis(stickX, lastX, 'right', 'left', 'stick_right', 'stick_left', onNavigate, startRepeat, clearRepeatTimer);
-  handleStickAxis(stickY, lastY, 'down', 'up', 'stick_down', 'stick_up', onNavigate, startRepeat, clearRepeatTimer);
+  handleStickAxis(
+    stickX,
+    lastX,
+    'right',
+    'left',
+    'stick_right',
+    'stick_left',
+    onNavigate,
+    startRepeat,
+    clearRepeatTimer
+  );
+  handleStickAxis(
+    stickY,
+    lastY,
+    'down',
+    'up',
+    'stick_down',
+    'stick_up',
+    onNavigate,
+    startRepeat,
+    clearRepeatTimer
+  );
 
   lastAxisStates.current = { x: stickX, y: stickY };
 }
 
-export function useGamepad({ onNavigate, onConfirm, onBack, onNextPanel, onPrevPanel, enabled = true }) {
+export function useGamepad({
+  onNavigate,
+  onConfirm,
+  onBack,
+  onNextPanel,
+  onPrevPanel,
+  enabled = true,
+}) {
   const [isConnected, setIsConnected] = useState(false);
   const [gamepadName, setGamepadName] = useState('');
   const isConnectedRef = useRef(false);
@@ -111,19 +160,30 @@ export function useGamepad({ onNavigate, onConfirm, onBack, onNextPanel, onPrevP
     }
   }, []);
 
-  const startRepeat = useCallback((key, action) => {
-    clearRepeatTimer(key);
-    repeatTimers.current[key] = setTimeout(function repeat() {
-      action();
-      repeatTimers.current[key] = setTimeout(repeat, REPEAT_RATE);
-    }, REPEAT_DELAY);
-  }, [clearRepeatTimer]);
+  const startRepeat = useCallback(
+    (key, action) => {
+      clearRepeatTimer(key);
+      repeatTimers.current[key] = setTimeout(function repeat() {
+        action();
+        repeatTimers.current[key] = setTimeout(repeat, REPEAT_RATE);
+      }, REPEAT_DELAY);
+    },
+    [clearRepeatTimer]
+  );
 
   useEffect(() => {
     if (!enabled) return;
 
     const refs = { lastButtonStates, lastAxisStates };
-    const callbacks = { onNavigate, onConfirm, onBack, onNextPanel, onPrevPanel, startRepeat, clearRepeatTimer };
+    const callbacks = {
+      onNavigate,
+      onConfirm,
+      onBack,
+      onNextPanel,
+      onPrevPanel,
+      startRepeat,
+      clearRepeatTimer,
+    };
 
     const pollGamepad = () => {
       const gamepad = findFirstGamepad();
@@ -143,7 +203,16 @@ export function useGamepad({ onNavigate, onConfirm, onBack, onNextPanel, onPrevP
       cancelAnimationFrame(frameRef.current);
       Object.values(currentRepeatTimers).forEach(clearTimeout);
     };
-  }, [enabled, onNavigate, onConfirm, onBack, onNextPanel, onPrevPanel, startRepeat, clearRepeatTimer]);
+  }, [
+    enabled,
+    onNavigate,
+    onConfirm,
+    onBack,
+    onNextPanel,
+    onPrevPanel,
+    startRepeat,
+    clearRepeatTimer,
+  ]);
 
   return { isConnected, gamepadName };
 }

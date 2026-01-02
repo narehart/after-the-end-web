@@ -17,7 +17,7 @@ export default {
     },
     messages: {
       plainClassName:
-        "Use CSS modules instead of plain className strings. Replace className=\"{{value}}\" with className={cx('{{value}}')} after importing styles.",
+        'Use CSS modules instead of plain className strings. Replace className="{{value}}" with className={cx(\'{{value}}\')} after importing styles.',
     },
     schema: [],
   },

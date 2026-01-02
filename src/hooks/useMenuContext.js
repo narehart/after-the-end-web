@@ -23,35 +23,53 @@ export default function useMenuContext(menu) {
     return location?.gridId || null;
   }, [grids, itemId]);
 
-  const canFitItem = useCallback((containerId) => {
-    if (!item) return false;
-    return findFreePosition(containerId, item.size.width, item.size.height) !== null;
-  }, [item, findFreePosition]);
+  const canFitItem = useCallback(
+    (containerId) => {
+      if (!item) return false;
+      return findFreePosition(containerId, item.size.width, item.size.height) !== null;
+    },
+    [item, findFreePosition]
+  );
 
   const isInWorld = source === 'ground' || source === 'world';
   const panel = isInWorld ? 'world' : 'inventory';
 
-  return useMemo(() => ({
-    item,
-    itemId,
-    source,
-    panel,
-    equipment,
-    allItems,
-    grids,
-    currentContainerId,
+  return useMemo(
+    () => ({
+      item,
+      itemId,
+      source,
+      panel,
+      equipment,
+      allItems,
+      grids,
+      currentContainerId,
 
-    // Query functions
-    canFitItem,
+      // Query functions
+      canFitItem,
 
-    // Actions
-    navigateToContainer,
-    rotateItem,
-    equipItem,
-    unequipItem,
-    closeMenu,
-  }), [
-    item, itemId, source, panel, equipment, allItems, grids, currentContainerId,
-    canFitItem, navigateToContainer, rotateItem, equipItem, unequipItem, closeMenu,
-  ]);
+      // Actions
+      navigateToContainer,
+      rotateItem,
+      equipItem,
+      unequipItem,
+      closeMenu,
+    }),
+    [
+      item,
+      itemId,
+      source,
+      panel,
+      equipment,
+      allItems,
+      grids,
+      currentContainerId,
+      canFitItem,
+      navigateToContainer,
+      rotateItem,
+      equipItem,
+      unequipItem,
+      closeMenu,
+    ]
+  );
 }

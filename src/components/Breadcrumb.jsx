@@ -47,7 +47,7 @@ export default function Breadcrumb({ links, icon, clipLinks }) {
       {segments.map((seg) => (
         <span key={seg.key} className={cx('breadcrumb-segment')}>
           <button
-            className={cx('breadcrumb-link', { 'current': seg.isCurrent })}
+            className={cx('breadcrumb-link', { current: seg.isCurrent })}
             onClick={seg.onClick}
             disabled={seg.isCurrent || !seg.onClick}
           >

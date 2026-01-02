@@ -60,7 +60,7 @@ export default function InventoryHeader({
         {isSimulated && (
           <div className={cx('steam-deck-controls')}>
             <button
-              className={cx('steam-deck-btn', { 'active': steamDeckMode })}
+              className={cx('steam-deck-btn', { active: steamDeckMode })}
               onClick={() => (steamDeckMode ? disableSteamDeckMode() : enableSteamDeckMode())}
               title="Toggle Steam Deck physical size simulation"
             >

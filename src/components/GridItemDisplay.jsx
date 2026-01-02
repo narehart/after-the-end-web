@@ -19,7 +19,7 @@ function getItemIcon(type) {
 export default function GridItemDisplay({ item, hasGrid }) {
   return (
     <div
-      className={cx('grid-item', { 'container': hasGrid })}
+      className={cx('grid-item', { container: hasGrid })}
       style={{
         width: `${item.size.width * 100}%`,
         height: `${item.size.height * 100}%`,

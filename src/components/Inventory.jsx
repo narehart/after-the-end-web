@@ -52,7 +52,7 @@ export default function Inventory() {
   return (
     <div
       ref={containerRef}
-      className={cx('inventory-container', { 'simulated': isSimulated })}
+      className={cx('inventory-container', { simulated: isSimulated })}
       style={containerStyle}
     >
       <InventoryHeader {...uiScale} />

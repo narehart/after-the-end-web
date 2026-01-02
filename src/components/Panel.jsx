@@ -33,7 +33,11 @@ export default function Panel({
   return (
     <div className={className ? `${panelClasses} ${className}` : panelClasses}>
       {hasHeader && <div className={cx('panel-header')}>{renderHeader()}</div>}
-      <div className={contentClassName ? `${cx('panel-content')} ${contentClassName}` : cx('panel-content')}>
+      <div
+        className={
+          contentClassName ? `${cx('panel-content')} ${contentClassName}` : cx('panel-content')
+        }
+      >
         {children}
       </div>
     </div>

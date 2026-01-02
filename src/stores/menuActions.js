@@ -11,7 +11,7 @@ export const initialMenu = {
   itemId: null,
   position: { x: 0, y: 0 },
   source: null, // 'equipment' | 'grid' | 'ground' | 'world'
-  path: [],     // Navigation path for submenus
+  path: [], // Navigation path for submenus
   focusIndex: 0,
 };
 
@@ -28,21 +28,25 @@ export function createMenuActions(get, set) {
 
     closeMenu: () => set({ menu: initialMenu }),
 
-    menuNavigateTo: (segment) => set((state) => ({
-      menu: { ...state.menu, path: [...state.menu.path, segment], focusIndex: 0 },
-    })),
+    menuNavigateTo: (segment) =>
+      set((state) => ({
+        menu: { ...state.menu, path: [...state.menu.path, segment], focusIndex: 0 },
+      })),
 
-    menuNavigateBack: () => set((state) => ({
-      menu: { ...state.menu, path: state.menu.path.slice(0, -1), focusIndex: 0 },
-    })),
+    menuNavigateBack: () =>
+      set((state) => ({
+        menu: { ...state.menu, path: state.menu.path.slice(0, -1), focusIndex: 0 },
+      })),
 
     // Navigate to a specific depth level (0 = root, 1 = first submenu, etc.)
-    menuNavigateToLevel: (level, focusIndex = 0) => set((state) => ({
-      menu: { ...state.menu, path: state.menu.path.slice(0, level), focusIndex },
-    })),
+    menuNavigateToLevel: (level, focusIndex = 0) =>
+      set((state) => ({
+        menu: { ...state.menu, path: state.menu.path.slice(0, level), focusIndex },
+      })),
 
-    menuSetFocusIndex: (index) => set((state) => ({
-      menu: { ...state.menu, focusIndex: index },
-    })),
+    menuSetFocusIndex: (index) =>
+      set((state) => ({
+        menu: { ...state.menu, focusIndex: index },
+      })),
   };
 }

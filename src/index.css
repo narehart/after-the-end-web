@@ -1,205 +1,209 @@
 @font-face {
-	font-family: "04B03";
-	src: url("./assets/fonts/04B_03__.TTF") format("truetype");
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
+  font-family: '04B03';
+  src: url('./assets/fonts/04B_03__.TTF') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 :root {
-	/* ===========================================
+  /* ===========================================
 	   PRIMITIVES - Raw design values
 	   =========================================== */
 
-	/* Base resolution for scaling (1920x1080 as reference) */
-	--base-width: 1920;
-	--base-height: 1080;
-	--ui-scale: 1;
+  /* Base resolution for scaling (1920x1080 as reference) */
+  --base-width: 1920;
+  --base-height: 1080;
+  --ui-scale: 1;
 
-	/* Font scale - adjust this single value to scale all fonts */
-	--font-scale: 1.3;
+  /* Font scale - adjust this single value to scale all fonts */
+  --font-scale: 1.3;
 
-	/* Typography - Font families */
-	--font-family-base: "04B03", "Segoe UI", -apple-system, blinkmacsystemfont, sans-serif;
-	--font-family-mono: "Courier New", monospace;
+  /* Typography - Font families */
+  --font-family-base: '04B03', 'Segoe UI', -apple-system, blinkmacsystemfont, sans-serif;
+  --font-family-mono: 'Courier New', monospace;
 
-	/* Typography - Font sizes */
-	--font-2xs: 0.5rem; /* 8px - badges, cell labels */
-	--font-xs: 0.65rem; /* 10px - metadata, hints */
-	--font-sm: 0.8rem; /* 13px - breadcrumbs, descriptions */
-	--font-base: 0.9rem; /* 14px - menu items, labels */
-	--font-lg: 1.2rem; /* 19px - panel titles, item names */
-	--font-xl: 5rem; /* 80px - large icons */
+  /* Typography - Font sizes */
+  --font-2xs: 0.5rem; /* 8px - badges, cell labels */
+  --font-xs: 0.65rem; /* 10px - metadata, hints */
+  --font-sm: 0.8rem; /* 13px - breadcrumbs, descriptions */
+  --font-base: 0.9rem; /* 14px - menu items, labels */
+  --font-lg: 1.2rem; /* 19px - panel titles, item names */
+  --font-xl: 5rem; /* 80px - large icons */
 
-	/* Typography - Font weights */
-	--font-weight-normal: 400;
-	--font-weight-medium: 600;
-	--font-weight-bold: 700;
+  /* Typography - Font weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
 
-	/* Typography - Line heights */
-	--line-height-none: 1;
-	--line-height-tight: 1.3;
-	--line-height-normal: 1.4;
+  /* Typography - Line heights */
+  --line-height-none: 1;
+  --line-height-tight: 1.3;
+  --line-height-normal: 1.4;
 
-	/* Typography - Letter spacing */
-	--letter-spacing-tight: 0.5px;
-	--letter-spacing-normal: 1.5px;
-	--letter-spacing-wide: 2px;
+  /* Typography - Letter spacing */
+  --letter-spacing-tight: 0.5px;
+  --letter-spacing-normal: 1.5px;
+  --letter-spacing-wide: 2px;
 
-	/* Spacing scale (4px base, named by pixel value) */
-	--space-0: 0;
-	--space-1: 1px;
-	--space-2: 0.125rem; /* 2px */
-	--space-4: 0.25rem; /* 4px */
-	--space-6: 0.375rem; /* 6px */
-	--space-8: 0.5rem; /* 8px */
-	--space-10: 0.625rem; /* 10px */
-	--space-12: 0.75rem; /* 12px */
-	--space-16: 1rem; /* 16px */
-	--space-24: 1.5rem; /* 24px */
-	--space-32: 2rem; /* 32px */
+  /* Spacing scale (4px base, named by pixel value) */
+  --space-0: 0;
+  --space-1: 1px;
+  --space-2: 0.125rem; /* 2px */
+  --space-4: 0.25rem; /* 4px */
+  --space-6: 0.375rem; /* 6px */
+  --space-8: 0.5rem; /* 8px */
+  --space-10: 0.625rem; /* 10px */
+  --space-12: 0.75rem; /* 12px */
+  --space-16: 1rem; /* 16px */
+  --space-24: 1.5rem; /* 24px */
+  --space-32: 2rem; /* 32px */
 
-	/* Z-index scale (semantic layers) */
-	--z-base: 1;
-	--z-above: 2;
-	--z-dropdown: 100;
-	--z-overlay: 999;
-	--z-modal: 1000;
+  /* Z-index scale (semantic layers) */
+  --z-base: 1;
+  --z-above: 2;
+  --z-dropdown: 100;
+  --z-overlay: 999;
+  --z-modal: 1000;
 
-	/* Shadow scale */
-	--shadow-sm: 0 0 0 1px var(--accent-teal);
-	--shadow-md: 0 4px 12px rgb(0 0 0 / 50%);
-	--shadow-lg: 20px 20px 16px rgb(0 0 0 / 50%);
+  /* Shadow scale */
+  --shadow-sm: 0 0 0 1px var(--accent-teal);
+  --shadow-md: 0 4px 12px rgb(0 0 0 / 50%);
+  --shadow-lg: 20px 20px 16px rgb(0 0 0 / 50%);
 
-	/* Size scale (semantic) */
-	--size-scrollbar: 6px;
-	--size-track: 10px; /* progress bars, sliders */
-	--size-icon: 24px;
-	--size-icon-lg: 32px;
-	--size-touch: 48px; /* minimum touch target */
-	--size-avatar: 72px;
-	--size-header: 2.5rem;
-	--size-modal: 500px;
+  /* Size scale (semantic) */
+  --size-scrollbar: 6px;
+  --size-track: 10px; /* progress bars, sliders */
+  --size-icon: 24px;
+  --size-icon-lg: 32px;
+  --size-touch: 48px; /* minimum touch target */
+  --size-avatar: 72px;
+  --size-header: 2.5rem;
+  --size-modal: 500px;
 
-	/* Opacity scale */
-	--opacity-faint: 40%;
-	--opacity-muted: 60%;
-	--opacity-hover: 70%;
-	--opacity-full: 100%;
+  /* Opacity scale */
+  --opacity-faint: 40%;
+  --opacity-muted: 60%;
+  --opacity-hover: 70%;
+  --opacity-full: 100%;
 
-	/* Transition scale */
-	--transition-fast: all 0.1s ease;
-	--transition-normal: all 0.15s ease;
-	--transition-slow: all 0.3s ease;
+  /* Transition scale */
+  --transition-fast: all 0.1s ease;
+  --transition-normal: all 0.15s ease;
+  --transition-slow: all 0.3s ease;
 
-	/* Animation */
-	--animation-pulse: gamepad-pulse 2s ease-in-out infinite;
+  /* Animation */
+  --animation-pulse: gamepad-pulse 2s ease-in-out infinite;
 
-	/* ===========================================
+  /* ===========================================
 	   COLORS - Into the Breach inspired palette
 	   =========================================== */
 
-	/* Background colors (dark to light) */
-	--bg-black: #000;
-	--bg-darkest: #0d0e14;
-	--bg-panel: #0d0f17;
-	--bg-cell: #181c29;
-	--bg-header: #222a3b;
-	--bg-elevated: #181c29;
-	--bg-overlay: rgb(0 0 0 / 70%);
-	--border-color: #465875;
-	--border-light: #5a6d8a;
-	--border-bright: #fbfbfb;
-	--border-width: 1px;
-	--border-width-panel: 2px;
+  /* Background colors (dark to light) */
+  --bg-black: #000;
+  --bg-darkest: #0d0e14;
+  --bg-panel: #0d0f17;
+  --bg-cell: #181c29;
+  --bg-header: #222a3b;
+  --bg-elevated: #181c29;
+  --bg-overlay: rgb(0 0 0 / 70%);
+  --border-color: #465875;
+  --border-light: #5a6d8a;
+  --border-bright: #fbfbfb;
+  --border-width: 1px;
+  --border-width-panel: 2px;
 
-	/* Border shorthands */
-	--border-default: var(--border-width) solid var(--border-color);
-	--border-subtle: var(--border-width) solid var(--border-light);
-	--border-panel: var(--border-width-panel) solid var(--border-color);
-	--border-modal: var(--border-width-panel) solid var(--border-bright);
-	--border-focus: var(--border-width-panel) solid var(--accent-teal);
-	--border-accent: var(--border-width) solid var(--accent-teal);
-	--border-dashed: var(--border-width) dashed var(--border-color);
-	--border-transparent: var(--border-width-panel) solid transparent;
-	--breadcrumb-link-max-width: 175px;
+  /* Border shorthands */
+  --border-default: var(--border-width) solid var(--border-color);
+  --border-subtle: var(--border-width) solid var(--border-light);
+  --border-panel: var(--border-width-panel) solid var(--border-color);
+  --border-modal: var(--border-width-panel) solid var(--border-bright);
+  --border-focus: var(--border-width-panel) solid var(--accent-teal);
+  --border-accent: var(--border-width) solid var(--accent-teal);
+  --border-dashed: var(--border-width) dashed var(--border-color);
+  --border-transparent: var(--border-width-panel) solid transparent;
+  --breadcrumb-link-max-width: 175px;
 
-	/* Dynamic item sizing (set by JS, defaults for linting) */
-	--item-width: 48px;
-	--item-height: 48px;
-	--text-primary: #e8e8ec;
-	--text-secondary: #9ca0b4;
-	--text-muted: #5c6078;
-	--accent-teal: #4ecdc4;
-	--accent-teal-dim: #2a8f89;
-	--accent-orange: #ff6b35;
-	--accent-orange-dim: #cc5529;
-	--accent-blue: #5b8def;
-	--success: #4ecdc4;
-	--warning: #f5a623;
-	--danger: #ff6b35;
+  /* Dynamic item sizing (set by JS, defaults for linting) */
+  --item-width: 48px;
+  --item-height: 48px;
+  --text-primary: #e8e8ec;
+  --text-secondary: #9ca0b4;
+  --text-muted: #5c6078;
+  --accent-teal: #4ecdc4;
+  --accent-teal-dim: #2a8f89;
+  --accent-orange: #ff6b35;
+  --accent-orange-dim: #cc5529;
+  --accent-blue: #5b8def;
+  --success: #4ecdc4;
+  --warning: #f5a623;
+  --danger: #ff6b35;
 
-	font-family: "04B03", "Segoe UI", -apple-system, BlinkMacSystemFont,
-		sans-serif;
-	line-height: 1.4;
-	font-weight: 400;
-	font-size: calc(16px * var(--font-scale));
-	color-scheme: dark;
-	color: var(--text-primary);
-	background-color: var(--bg-darkest);
-	font-synthesis: none;
-	text-rendering: optimizespeed;
-	-webkit-font-smoothing: none;
-	-moz-osx-font-smoothing: unset;
-	image-rendering: pixelated;
+  font-family:
+    '04B03',
+    'Segoe UI',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  line-height: 1.4;
+  font-weight: 400;
+  font-size: calc(16px * var(--font-scale));
+  color-scheme: dark;
+  color: var(--text-primary);
+  background-color: var(--bg-darkest);
+  font-synthesis: none;
+  text-rendering: optimizespeed;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+  image-rendering: pixelated;
 }
 
 html,
 body,
 #root {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 /* Center simulated viewport */
 #root {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background: var(--bg-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-black);
 }
 
 button {
-	font-family: inherit;
+  font-family: inherit;
 }
 
 /* Custom selection colors */
 ::selection {
-	background: var(--accent-teal);
-	color: var(--bg-darkest);
+  background: var(--accent-teal);
+  color: var(--bg-darkest);
 }
 
 /* Scrollbar base styling */
 ::-webkit-scrollbar {
-	width: 6px;
-	height: 6px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-	background: var(--bg-panel);
+  background: var(--bg-panel);
 }
 
 ::-webkit-scrollbar-thumb {
-	background: var(--border-color);
+  background: var(--border-color);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: var(--border-light);
+  background: var(--border-light);
 }

@@ -1,4 +1,9 @@
-import { findFreePosition, findItemInGrids, removeItemFromCells, placeItemInCells } from './gridHelpers';
+import {
+  findFreePosition,
+  findItemInGrids,
+  removeItemFromCells,
+  placeItemInCells,
+} from './gridHelpers';
 
 // Find which equipment slot contains an item
 function findEquipmentSlot(equipment, itemId) {

@@ -4,14 +4,7 @@ import styles from './MenuItem.module.css';
 
 const cx = classNames.bind(styles);
 
-export default function MenuItem({
-  item,
-  context,
-  isFocused,
-  isSelected,
-  onSelect,
-  onMouseEnter,
-}) {
+export default function MenuItem({ item, context, isFocused, isSelected, onSelect, onMouseEnter }) {
   const isDisabled = typeof item.disabled === 'function' ? item.disabled(context) : item.disabled;
   const label = typeof item.label === 'function' ? item.label(context) : item.label;
 

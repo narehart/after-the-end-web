@@ -23,10 +23,7 @@ export default function ItemPreview({ item, imageClassName, iconClassName }) {
     );
   }
   return (
-    <span
-      className={iconClassName}
-      style={{ transform: `rotate(${item.rotation}deg)` }}
-    >
+    <span className={iconClassName} style={{ transform: `rotate(${item.rotation}deg)` }}>
       {getItemIcon(item.type)}
     </span>
   );

@@ -43,7 +43,7 @@ export const initialGrids = {
     height: 3,
     cells: createEmptyGrid(2, 3),
   },
-  'ground': {
+  ground: {
     width: 10,
     height: 40,
     cells: (() => {

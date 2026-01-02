@@ -5,9 +5,25 @@ import styles from './ItemGridCell.module.css';
 
 const cx = classNames.bind(styles);
 
-export default function ItemGridCell({ x, y, itemId, isOrigin, item, isFocused, onNavigate, cellRef, context, cellSize }) {
+export default function ItemGridCell({
+  x,
+  y,
+  itemId,
+  isOrigin,
+  item,
+  isFocused,
+  onNavigate,
+  cellRef,
+  context,
+  cellSize,
+}) {
   const { cellState, handleClick, openModal, handleMouseEnter, handleFocus } = useItemGridCell({
-    x, y, itemId, item, context, onNavigate,
+    x,
+    y,
+    itemId,
+    item,
+    context,
+    onNavigate,
   });
 
   const handlers = { handleClick, openModal, handleMouseEnter, handleFocus };

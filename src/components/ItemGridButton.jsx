@@ -43,7 +43,11 @@ export default function ItemGridButton({ item, cellSize, cellState, isFocused, h
   return (
     <button
       type="button"
-      className={cx('grid-item', { 'container': hasGrid, 'selected': isSelected, 'has-modal': hasOpenModal })}
+      className={cx('grid-item', {
+        container: hasGrid,
+        selected: isSelected,
+        'has-modal': hasOpenModal,
+      })}
       style={{
         width: `${itemWidth}px`,
         height: `${itemHeight}px`,
@@ -63,7 +67,7 @@ export default function ItemGridButton({ item, cellSize, cellState, isFocused, h
         <img
           src={`/src/assets/items/${item.image}`}
           alt={item.name}
-          className={cx('item-image', { 'rotated': needsRotation })}
+          className={cx('item-image', { rotated: needsRotation })}
           draggable={false}
         />
       ) : (

@@ -5,24 +5,27 @@ const PANELS = ['equipment', 'inventory', 'world'];
 export default function usePanelNavigation(refs, modalsOpen) {
   const activePanelRef = useRef(0);
 
-  const focusPanel = useCallback((panelIndex) => {
-    activePanelRef.current = panelIndex;
-    const panel = PANELS[panelIndex];
+  const focusPanel = useCallback(
+    (panelIndex) => {
+      activePanelRef.current = panelIndex;
+      const panel = PANELS[panelIndex];
 
-    const refMap = {
-      equipment: refs.equipment,
-      inventory: refs.inventory,
-      world: refs.world,
-    };
+      const refMap = {
+        equipment: refs.equipment,
+        inventory: refs.inventory,
+        world: refs.world,
+      };
 
-    const targetRef = refMap[panel];
-    if (targetRef?.current) {
-      const focusable = targetRef.current.querySelector('[tabindex="0"]');
-      if (focusable) {
-        focusable.focus();
+      const targetRef = refMap[panel];
+      if (targetRef?.current) {
+        const focusable = targetRef.current.querySelector('[tabindex="0"]');
+        if (focusable) {
+          focusable.focus();
+        }
       }
-    }
-  }, [refs]);
+    },
+    [refs]
+  );
 
   const goToNextPanel = useCallback(() => {
     if (modalsOpen) return;
