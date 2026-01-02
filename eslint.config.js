@@ -8,11 +8,13 @@ import importPlugin from 'eslint-plugin-import'
 import cssModules from 'eslint-plugin-css-modules'
 import { defineConfig, globalIgnores } from 'eslint/config'
 import noCrossComponentCssImports from './eslint-rules/no-cross-component-css-imports.js'
+import noPlainClassnameLiterals from './eslint-rules/no-plain-classname-literals.js'
 
 // Local plugin for custom rules
 const localPlugin = {
   rules: {
     'no-cross-component-css-imports': noCrossComponentCssImports,
+    'no-plain-classname-literals': noPlainClassnameLiterals,
   },
 }
 
@@ -72,6 +74,7 @@ export default defineConfig([
 
       // Local rules - enforce component CSS module isolation
       'local/no-cross-component-css-imports': 'error',
+      'local/no-plain-classname-literals': 'error',
     },
   },
 ])
