@@ -33,10 +33,15 @@ ls:
     .*: regex:$
     .dir: regex:agents
 
+  # docs - SCREAMING_SNAKE_CASE markdown files only
+  docs:
+    .md: SCREAMING_SNAKE_CASE
+    .*: regex:$
+    .dir: regex:docs
+
 ignore:
   # Ignore subdirectory contents - rules added incrementally
   - dist
-  - docs
   - eslint-rules
   - node_modules
   - public
