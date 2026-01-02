@@ -67,6 +67,19 @@ const sharedRules: Linter.RulesRecord = {
 export default defineConfig([
   globalIgnores(['dist']),
 
+  // Node.js scripts (hooks, tooling)
+  {
+    files: ['.claude/hooks/**/*.js'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      globals: globals.node,
+      sourceType: 'module',
+    },
+    rules: {
+      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]', argsIgnorePattern: '^_' }],
+    },
+  },
+
   // JavaScript/JSX files
   {
     files: ['**/*.{js,jsx}'],
