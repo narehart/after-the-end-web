@@ -1,0 +1,113 @@
+/* Cascading menu container */
+.menu-cascade {
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  outline: none;
+}
+
+/* Individual menu panel */
+.menu-panel {
+  background: var(--bg-panel);
+  border: 1px solid #FBFBFB;
+  min-width: 180px;
+  box-shadow: 20px 20px 16px rgba(0, 0, 0, 0.5);
+}
+
+/* Subsequent panels overlap slightly */
+.menu-panel + .menu-panel {
+  margin-left: -1px;
+}
+
+.menu-list {
+  padding: 0.5rem;
+}
+
+.menu-item {
+  width: 100%;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.75rem;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  text-align: left;
+}
+
+.menu-item:hover:not(:disabled),
+.menu-item.focused {
+  background: var(--bg-elevated);
+  border-color: var(--accent-teal);
+  color: var(--text-primary);
+}
+
+/* Selected state for parent panels */
+.menu-item.selected {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.menu-item.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.menu-item.disabled:hover {
+  background: transparent;
+  border-color: transparent;
+  color: var(--text-secondary);
+}
+
+.menu-item-icon {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+  filter: grayscale(0.3);
+}
+
+.menu-item-label {
+  flex: 1;
+  white-space: nowrap;
+}
+
+.menu-item-meta {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: 'Courier New', monospace;
+}
+
+.menu-item-arrow {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.menu-item:hover:not(:disabled) .menu-item-arrow,
+.menu-item.focused .menu-item-arrow {
+  color: var(--accent-teal);
+}
+
+.menu-item.disabled .menu-item-arrow {
+  color: var(--text-muted);
+}
+
+.menu-empty {
+  padding: 0.75rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Place here option gets a separator */
+.menu-item[data-place-here="true"] {
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 0.25rem;
+}

@@ -9,7 +9,7 @@ function getModalPosition(element) {
 export default function useGridPanelCell({ gridId, x, y, itemId, item, onNavigate }) {
   const selectedItemId = useInventoryStore((state) => state.selectedItemId);
   const setSelectedItem = useInventoryStore((state) => state.setSelectedItem);
-  const openActionModal = useInventoryStore((state) => state.openActionModal);
+  const openMenu = useInventoryStore((state) => state.openMenu);
 
   const context = gridId === 'ground' ? 'ground' : 'grid';
 
@@ -25,9 +25,9 @@ export default function useGridPanelCell({ gridId, x, y, itemId, item, onNavigat
 
   const openModal = useCallback((element) => {
     if (itemId) {
-      openActionModal(itemId, getModalPosition(element), context);
+      openMenu(itemId, getModalPosition(element), context);
     }
-  }, [itemId, context, openActionModal]);
+  }, [itemId, context, openMenu]);
 
   const handleFocus = useCallback(() => {
     if (itemId) setSelectedItem(itemId);

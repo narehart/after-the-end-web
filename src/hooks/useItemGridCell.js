@@ -9,14 +9,14 @@ function getModalPosition(element) {
 export default function useItemGridCell({ x, y, itemId, item, context, onNavigate }) {
   const selectedItemId = useInventoryStore((state) => state.selectedItemId);
   const setSelectedItem = useInventoryStore((state) => state.setSelectedItem);
-  const openActionModal = useInventoryStore((state) => state.openActionModal);
-  const actionModal = useInventoryStore((state) => state.actionModal);
+  const openMenu = useInventoryStore((state) => state.openMenu);
+  const menu = useInventoryStore((state) => state.menu);
 
   const cellState = useMemo(() => ({
     isSelected: itemId && itemId === selectedItemId,
-    hasOpenModal: actionModal.isOpen && actionModal.itemId === itemId,
+    hasOpenModal: menu.isOpen && menu.itemId === itemId,
     hasGrid: item?.gridSize != null,
-  }), [itemId, selectedItemId, actionModal, item]);
+  }), [itemId, selectedItemId, menu, item]);
 
   const handleClick = useCallback(() => {
     if (itemId) setSelectedItem(itemId);
@@ -26,9 +26,9 @@ export default function useItemGridCell({ x, y, itemId, item, context, onNavigat
   const openModal = useCallback((element) => {
     if (itemId) {
       setSelectedItem(itemId);
-      openActionModal(itemId, getModalPosition(element), context);
+      openMenu(itemId, getModalPosition(element), context);
     }
-  }, [itemId, context, setSelectedItem, openActionModal]);
+  }, [itemId, context, setSelectedItem, openMenu]);
 
   const handleMouseEnter = useCallback(() => {
     if (itemId) setSelectedItem(itemId);

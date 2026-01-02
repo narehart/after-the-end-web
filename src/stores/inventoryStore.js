@@ -4,6 +4,7 @@ import { initialGrids } from './initialGrids';
 import { findFreePosition, findItemOrigin } from './gridHelpers';
 import { createUnequipAction, createEquipAction } from './equipmentActions';
 import { createNavigateToContainer, createNavigateBack, createFocusOnEquipmentSlot } from './navigationActions';
+import { initialMenu, createMenuActions } from './menuActions';
 
 // Equipment slot types
 export const SLOT_TYPES = [
@@ -63,6 +64,7 @@ export const useInventoryStore = create((set, get) => ({
   conditions: initialConditions,
   actionModal: initialActionModal,
   destinationPicker: initialDestinationPicker,
+  menu: initialMenu,
   uiScale: 1,
   containerRect: null,
 
@@ -89,7 +91,14 @@ export const useInventoryStore = create((set, get) => ({
 
   closeDestinationPicker: () => set({ destinationPicker: initialDestinationPicker }),
 
-  closeAllModals: () => set({ actionModal: initialActionModal, destinationPicker: initialDestinationPicker }),
+  closeAllModals: () => set({
+    actionModal: initialActionModal,
+    destinationPicker: initialDestinationPicker,
+    menu: initialMenu,
+  }),
+
+  // Menu actions (from menuActions.js)
+  ...createMenuActions(get, set),
 
   // Navigation
   navigateToContainer: (containerId, panel, fromEquipment = false) => {
