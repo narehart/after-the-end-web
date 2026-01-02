@@ -1,5 +1,6 @@
 import type { MutableRefObject } from 'react';
 import { useEffect, useRef, useCallback, useState } from 'react';
+import { REPEAT_DELAY, REPEAT_RATE } from '../constants/gamepad';
 import {
   BUTTONS,
   createButtonHandler,
@@ -10,9 +11,6 @@ import {
 import type { NavigationDirection } from './gamepadHelpers';
 
 export type { NavigationDirection };
-
-const REPEAT_DELAY = 400;
-const REPEAT_RATE = 100;
 
 interface GamepadRefs {
   lastButtonStates: MutableRefObject<Record<number, boolean>>;

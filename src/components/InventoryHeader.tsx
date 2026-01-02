@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import classNames from 'classnames/bind';
-import { PRESETS } from '../hooks/useUIScale';
+import { PRESETS } from '../constants/display';
 import useGamepadStatus from '../hooks/useGamepadStatus';
 import styles from './InventoryHeader.module.css';
 

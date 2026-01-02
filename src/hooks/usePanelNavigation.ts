@@ -1,8 +1,7 @@
 import type { RefObject, MutableRefObject } from 'react';
 import { useRef, useEffect, useCallback } from 'react';
-
-const PANELS = ['equipment', 'inventory', 'world'] as const;
-type PanelName = (typeof PANELS)[number];
+import { PANELS } from '../constants/navigation';
+import type { PanelName } from '../constants/navigation';
 
 interface PanelRefs {
   equipment: RefObject<HTMLDivElement | null>;

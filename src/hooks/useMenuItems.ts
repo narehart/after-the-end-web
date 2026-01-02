@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { ITEM_ACTION_MENU } from '../config/menuConfig';
+import { ITEM_ACTION_MENU } from '../constants/menu';
 import type { MenuItem, MenuContext, MenuPathSegment, MenuLevel } from '../types/inventory';
 
 function getSegmentId(segment: MenuPathSegment | string): string {

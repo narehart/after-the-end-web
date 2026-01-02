@@ -1,6 +1,6 @@
 import path from 'node:path';
 import type { Rule } from 'eslint';
-import type { Node, VariableDeclaration, VariableDeclarator } from 'estree';
+import type { Node, VariableDeclarator } from 'estree';
 
 const SCREAMING_SNAKE_CASE = /^[A-Z][A-Z0-9_]*$/;
 

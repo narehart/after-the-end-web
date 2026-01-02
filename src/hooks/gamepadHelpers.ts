@@ -1,19 +1,9 @@
 import type { MutableRefObject } from 'react';
+import { BUTTONS, STICK_THRESHOLD } from '../constants/gamepad';
 
 export type NavigationDirection = 'up' | 'down' | 'left' | 'right';
 
-export const BUTTONS = {
-  A: 0,
-  B: 1,
-  LB: 4,
-  RB: 5,
-  DPAD_UP: 12,
-  DPAD_DOWN: 13,
-  DPAD_LEFT: 14,
-  DPAD_RIGHT: 15,
-} as const;
-
-export const STICK_THRESHOLD = 0.5;
+export { BUTTONS };
 
 export function crossedPositiveThreshold(value: number, lastValue: number): boolean {
   return value > STICK_THRESHOLD && lastValue <= STICK_THRESHOLD;

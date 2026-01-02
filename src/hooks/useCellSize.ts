@@ -1,11 +1,12 @@
 import type { RefObject } from 'react';
 import { useState, useEffect } from 'react';
-
-const GRID_COLUMNS = 10;
-const CELL_GAP = 2;
-const GRID_BORDER = 4;
-const CONTENT_PADDING = 16;
-const MIN_CELL_SIZE = 24;
+import {
+  GRID_COLUMNS,
+  CELL_GAP,
+  GRID_BORDER,
+  CONTENT_PADDING,
+  MIN_CELL_SIZE,
+} from '../constants/grid';
 
 interface Resolution {
   width: number;

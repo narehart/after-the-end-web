@@ -1,6 +1,7 @@
 import type { MutableRefObject } from 'react';
 import { useRef, useState, useCallback } from 'react';
 import classNames from 'classnames/bind';
+import { CELL_GAP } from '../constants/grid';
 import { useInventoryStore } from '../stores/inventoryStore';
 import type { GridCell, MenuSource } from '../types/inventory';
 import { getCellValue } from '../utils/getCellValue';
@@ -9,8 +10,6 @@ import ItemGridCell from './ItemGridCell';
 import styles from './ItemGrid.module.css';
 
 const cx = classNames.bind(styles);
-
-const CELL_GAP = 2; // Gap between cells in pixels
 
 interface ItemGridProps {
   grid: GridCell;
