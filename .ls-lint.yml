@@ -1,0 +1,27 @@
+# ls-lint configuration
+# Explicit allowlist - only these files/directories permitted at root
+
+ls:
+  # Allowed root files
+  .config.ts: regex:eslint | regex:prettier | regex:stylelint | regex:vite
+  .json: regex:package | regex:package-lock | regex:tsconfig | regex:tsconfig\.tooling
+  .html: regex:index
+  .md: regex:README
+  .yml: regex:\.ls-lint
+
+  # Block any other extensions at root
+  .*: regex:$
+
+  # Allowed root directories
+  .dir: regex:dist | regex:docs | regex:eslint-rules | regex:node_modules | regex:public | regex:scripts | regex:src
+
+ignore:
+  # Ignore subdirectory contents - rules added incrementally
+  - .claude
+  - dist
+  - docs
+  - eslint-rules
+  - node_modules
+  - public
+  - scripts
+  - src
