@@ -1,3 +1,8 @@
+import classNames from 'classnames/bind';
+import styles from './GridItemDisplay.module.css';
+
+const cx = classNames.bind(styles);
+
 function getItemIcon(type) {
   const icons = {
     container: '📦',
@@ -14,18 +19,18 @@ function getItemIcon(type) {
 export default function GridItemDisplay({ item, hasGrid }) {
   return (
     <div
-      className={`grid-item ${hasGrid ? 'container' : ''}`}
+      className={cx('grid-item', { 'container': hasGrid })}
       style={{
         width: `${item.size.width * 100}%`,
         height: `${item.size.height * 100}%`,
       }}
     >
-      <span className="item-icon">{getItemIcon(item.type)}</span>
-      <span className="item-name">{item.name}</span>
+      <span className={cx('item-icon')}>{getItemIcon(item.type)}</span>
+      <span className={cx('item-name')}>{item.name}</span>
       {item.stackable && item.quantity > 1 && (
-        <span className="item-quantity">x{item.quantity}</span>
+        <span className={cx('item-quantity')}>x{item.quantity}</span>
       )}
-      {hasGrid && <span className="container-indicator">▼</span>}
+      {hasGrid && <span className={cx('container-indicator')}>▼</span>}
     </div>
   );
 }
