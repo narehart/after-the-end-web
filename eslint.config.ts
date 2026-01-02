@@ -15,6 +15,7 @@ import noPlainClassnameLiterals from './eslint-rules/no-plain-classname-literals
 import noComponentHelperFunctions from './eslint-rules/no-component-helper-functions.ts';
 import oneFunctionPerUtilsFile from './eslint-rules/one-function-per-utils-file.ts';
 import noScreamingSnakeConstants from './eslint-rules/no-screaming-snake-constants.ts';
+import noFunctionsInConstants from './eslint-rules/no-functions-in-constants.ts';
 
 // ESLint Plugin type requires only meta and rules - extracting these avoids
 // type incompatibility with typescript-eslint's configs property
@@ -40,6 +41,7 @@ const localPlugin = {
     'no-component-helper-functions': noComponentHelperFunctions,
     'one-function-per-utils-file': oneFunctionPerUtilsFile,
     'no-screaming-snake-constants': noScreamingSnakeConstants,
+    'no-functions-in-constants': noFunctionsInConstants,
   },
 };
 
@@ -71,6 +73,7 @@ const sharedRules: Linter.RulesRecord = {
   'local/no-component-helper-functions': 'error',
   'local/one-function-per-utils-file': 'error',
   'local/no-screaming-snake-constants': 'error',
+  'local/no-functions-in-constants': 'error',
 };
 
 export default defineConfig([
