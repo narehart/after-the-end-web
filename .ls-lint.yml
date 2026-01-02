@@ -108,6 +108,12 @@ ls:
     .*: regex:$
     .dir: regex:data
 
+  # src/hooks - .ts files starting with "use" only, no subdirectories
+  src/hooks:
+    .ts: regex:use[A-Z][a-zA-Z0-9]*
+    .*: regex:$
+    .dir: regex:hooks
+
   # src/components - PascalCase .tsx and .module.css only, no subdirectories
   src/components:
     .tsx: PascalCase
@@ -120,7 +126,6 @@ ignore:
   - dist
   - node_modules
   - src/config
-  - src/hooks
   - src/stores
   - src/types
   - src/utils

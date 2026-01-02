@@ -1,14 +1,11 @@
 import type { MutableRefObject } from 'react';
 import { useEffect, useRef, useCallback, useState } from 'react';
-import { REPEAT_DELAY, REPEAT_RATE } from '../constants/gamepad';
-import {
-  BUTTONS,
-  createButtonHandler,
-  handleStickAxis,
-  findFirstGamepad,
-  updateConnectionState,
-} from './gamepadHelpers';
-import type { NavigationDirection } from './gamepadHelpers';
+import { BUTTONS, REPEAT_DELAY, REPEAT_RATE } from '../constants/gamepad';
+import type { NavigationDirection } from '../types/gamepad';
+import { createButtonHandler } from '../utils/createButtonHandler';
+import { findFirstGamepad } from '../utils/findFirstGamepad';
+import { handleStickAxis } from '../utils/handleStickAxis';
+import { updateConnectionState } from '../utils/updateConnectionState';
 
 export type { NavigationDirection };
 
