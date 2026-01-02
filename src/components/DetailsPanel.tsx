@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
-import { buildStatsLine } from '../utils/item';
+import { buildStatsLine } from '../utils/buildStatsLine';
 import Panel from './Panel';
 import EmptySlotDetails from './EmptySlotDetails';
 import ItemPreview from './ItemPreview';

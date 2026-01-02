@@ -1,6 +1,6 @@
 import type { Item } from '../types/inventory';
 import { getImageUrl } from '../utils/images';
-import { getItemIcon } from '../utils/item';
+import { getItemIcon } from '../utils/getItemIcon';
 
 interface ItemPreviewProps {
   item: Item;

@@ -3,7 +3,8 @@ import { useRef, useState, useCallback } from 'react';
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import type { GridCell, MenuSource } from '../types/inventory';
-import { getCellValue, checkIsOrigin } from '../utils/grid';
+import { getCellValue } from '../utils/getCellValue';
+import { checkIsOrigin } from '../utils/checkIsOrigin';
 import ItemGridCell from './ItemGridCell';
 import styles from './ItemGrid.module.css';
 

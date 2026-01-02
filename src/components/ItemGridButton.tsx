@@ -1,7 +1,8 @@
 import classNames from 'classnames/bind';
 import type { Item } from '../types/inventory';
 import { getImageUrl } from '../utils/images';
-import { getItemIcon, calculateItemDimensions } from '../utils/item';
+import { getItemIcon } from '../utils/getItemIcon';
+import { calculateItemDimensions } from '../utils/calculateItemDimensions';
 import styles from './ItemGridButton.module.css';
 
 const cx = classNames.bind(styles);

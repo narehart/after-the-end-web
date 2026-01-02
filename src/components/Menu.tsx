@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import { getImageUrl } from '../utils/images';
 import { useBreadcrumbLinksMenu } from '../utils/useBreadcrumbLinksMenu';
-import { useMenuActions } from '../utils/menuActions';
+import { useMenuActions } from '../utils/useMenuActions';
 import useMenuContext from '../hooks/useMenuContext';
 import { useMenuLevels } from '../hooks/useMenuItems';
 import useMenuKeyboard from '../hooks/useMenuKeyboard';

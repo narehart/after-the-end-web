@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import type { Item } from '../types/inventory';
-import { getItemIcon } from '../utils/item';
+import { getItemIcon } from '../utils/getItemIcon';
 import styles from './GridItemDisplay.module.css';
 
 const cx = classNames.bind(styles);
