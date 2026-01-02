@@ -172,10 +172,10 @@ body,
   overflow: hidden;
 }
 
-/* Center simulated viewport */
+/* Center simulated viewport horizontally, align to top for transform scaling */
 #root {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   background: var(--bg-black);
 }
