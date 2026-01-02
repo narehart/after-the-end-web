@@ -45,10 +45,17 @@ ls:
     .*: regex:$
     .dir: regex:eslint-rules
 
+  # public - favicon files only, no subdirectories
+  public:
+    .ico: kebab-case
+    .svg: kebab-case
+    .png: kebab-case
+    .*: regex:$
+    .dir: regex:public
+
 ignore:
   # Ignore subdirectory contents - rules added incrementally
   - dist
   - node_modules
-  - public
   - scripts
   - src
