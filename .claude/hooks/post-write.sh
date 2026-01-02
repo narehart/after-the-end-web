@@ -39,4 +39,7 @@ esac
 #     "$HOME/.claude-code-hooks/dupe-checker/index.py" \
 #     --file "$file_path" --project "$CLAUDE_PROJECT_DIR" >/dev/null 2>&1
 
+# Check file/directory naming conventions
+run_check ./node_modules/.bin/ls-lint "$file_path"
+
 exit 0
