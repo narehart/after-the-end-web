@@ -13,11 +13,28 @@ ls:
   .*: regex:$
 
   # Allowed root directories
-  .dir: regex:dist | regex:docs | regex:eslint-rules | regex:node_modules | regex:public | regex:scripts | regex:src
+  .dir: regex:\.claude | regex:dist | regex:docs | regex:eslint-rules | regex:node_modules | regex:public | regex:scripts | regex:src
+
+  # .claude directory - only officially supported Anthropic files
+  .claude:
+    .json: regex:settings | regex:settings\.local | regex:\.mcp
+    .md: regex:CLAUDE
+    .*: regex:$
+    .dir: regex:\.claude | regex:hooks | regex:agents
+
+  # .claude/hooks - camelCase JS files only, no subdirectories
+  .claude/hooks:
+    .js: camelCase
+    .*: regex:$
+    .dir: regex:hooks
+
+  # .claude/agents - will be configured when used
+  .claude/agents:
+    .*: regex:$
+    .dir: regex:agents
 
 ignore:
   # Ignore subdirectory contents - rules added incrementally
-  - .claude
   - dist
   - docs
   - eslint-rules
