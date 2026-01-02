@@ -43,7 +43,7 @@ export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.J
 
   const icon =
     item?.image !== undefined && item.image !== '' ? (
-      <img src={`/src/assets/items/${item.image}`} alt={item.name} draggable={false} />
+      <img src={`/src/assets/images/${item.image}`} alt={item.name} draggable={false} />
     ) : null;
 
   return (

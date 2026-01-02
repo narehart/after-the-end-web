@@ -28,7 +28,7 @@ export default function ItemPreview({
   if (item.image !== '') {
     return (
       <img
-        src={`/src/assets/items/${item.image}`}
+        src={`/src/assets/images/${item.image}`}
         alt={item.name}
         className={imageClassName}
         draggable={false}

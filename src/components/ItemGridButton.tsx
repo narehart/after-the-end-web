@@ -104,7 +104,7 @@ export default function ItemGridButton({
     >
       {item.image ? (
         <img
-          src={`/src/assets/items/${item.image}`}
+          src={`/src/assets/images/${item.image}`}
           alt={item.name}
           className={cx('item-image', { rotated: needsRotation })}
           draggable={false}

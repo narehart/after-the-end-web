@@ -143,7 +143,7 @@ export default function Menu(): React.JSX.Element | null {
   if (!menu.isOpen) return null;
 
   const itemImage = context.item?.image;
-  const itemIcon = itemImage !== undefined ? `/src/assets/items/${itemImage}` : undefined;
+  const itemIcon = itemImage !== undefined ? `/src/assets/images/${itemImage}` : undefined;
 
   return (
     <div ref={menuRef} className={cx('menu-modal')} tabIndex={-1}>
