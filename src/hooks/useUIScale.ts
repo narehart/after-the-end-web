@@ -1,48 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import { STEAM_DECK, KNOWN_DISPLAYS, PRESETS } from '../constants/display';
-
-// Estimate diagonal based on resolution patterns when not in known displays
-function estimateDiagonal(physicalWidth: number, physicalHeight: number, dpr: number): number {
-  const isHiDpi = dpr > 1;
-  // Resolution thresholds for common monitor sizes
-  if (physicalWidth <= 1920 && physicalHeight <= 1080) return isHiDpi ? 14 : 24;
-  if (physicalWidth <= 2560 && physicalHeight <= 1600) return 14;
-  if (physicalWidth <= 2560 && physicalHeight <= 1440) return isHiDpi ? 15.6 : 27;
-  if (physicalWidth <= 3840) return 27;
-  return 24;
-}
-
-// Get monitor diagonal - use known display database or fall back to estimation
-function getMonitorDiagonal(): number {
-  const dpr = window.devicePixelRatio;
-  const physicalWidth = window.screen.width * dpr;
-  const physicalHeight = window.screen.height * dpr;
-  const key = `${String(physicalWidth)}x${String(physicalHeight)}`;
-
-  return KNOWN_DISPLAYS[key] ?? estimateDiagonal(physicalWidth, physicalHeight, dpr);
-}
-
-// Calculate scale needed to show Steam Deck at true physical size
-function calculateSteamDeckScale(): number {
-  const dpr = window.devicePixelRatio;
-  const monitorDiagonalInches = getMonitorDiagonal();
-
-  // Physical pixel resolution
-  const screenWidthPx = window.screen.width * dpr;
-  const screenHeightPx = window.screen.height * dpr;
-
-  // Calculate PPI from diagonal
-  const screenDiagonalPx = Math.sqrt(screenWidthPx ** 2 + screenHeightPx ** 2);
-  const actualPPI = screenDiagonalPx / monitorDiagonalInches;
-
-  // How many physical pixels = Steam Deck's physical width?
-  const targetPhysicalPx = STEAM_DECK.physicalWidthInches * actualPPI;
-
-  // CSS transform scale: we need (1280 * scale * dpr) physical pixels = targetPhysicalPx
-  const scale = targetPhysicalPx / (STEAM_DECK.width * dpr);
-
-  return Math.min(1, Math.max(0.25, scale));
-}
+import { PRESETS } from '../constants/display';
+import { calculateSteamDeckScale } from '../utils/calculateSteamDeckScale';
 
 interface Resolution {
   width: number;

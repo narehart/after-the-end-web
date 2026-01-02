@@ -1,16 +1,7 @@
 import { useCallback } from 'react';
+import type { NavigationDirection } from '../types/gamepad';
+import { simulateKey } from '../utils/simulateKey';
 import { useGamepad } from './useGamepad';
-
-type NavigationDirection = 'up' | 'down' | 'left' | 'right';
-
-function simulateKey(key: string): void {
-  const event = new KeyboardEvent('keydown', {
-    key,
-    bubbles: true,
-    cancelable: true,
-  });
-  document.activeElement?.dispatchEvent(event);
-}
 
 interface UseGamepadNavigationProps {
   onNextPanel?: () => void;

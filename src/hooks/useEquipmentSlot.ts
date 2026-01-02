@@ -1,16 +1,7 @@
 import { useMemo, useCallback } from 'react';
 import { useInventoryStore } from '../stores/inventoryStore';
 import type { Item, SlotType } from '../types/inventory';
-
-interface Position {
-  x: number;
-  y: number;
-}
-
-function getModalPosition(element: HTMLElement): Position {
-  const rect = element.getBoundingClientRect();
-  return { x: rect.right, y: rect.top };
-}
+import { getModalPosition } from '../utils/getModalPosition';
 
 interface SlotState {
   item: Item | null;

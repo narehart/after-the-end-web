@@ -16,6 +16,7 @@ import noComponentHelperFunctions from './eslint-rules/no-component-helper-funct
 import oneFunctionPerUtilsFile from './eslint-rules/one-function-per-utils-file.ts';
 import noScreamingSnakeConstants from './eslint-rules/no-screaming-snake-constants.ts';
 import noFunctionsInConstants from './eslint-rules/no-functions-in-constants.ts';
+import oneHookPerFile from './eslint-rules/one-hook-per-file.ts';
 
 // ESLint Plugin type requires only meta and rules - extracting these avoids
 // type incompatibility with typescript-eslint's configs property
@@ -42,6 +43,7 @@ const localPlugin = {
     'one-function-per-utils-file': oneFunctionPerUtilsFile,
     'no-screaming-snake-constants': noScreamingSnakeConstants,
     'no-functions-in-constants': noFunctionsInConstants,
+    'one-hook-per-file': oneHookPerFile,
   },
 };
 
@@ -74,6 +76,7 @@ const sharedRules: Linter.RulesRecord = {
   'local/one-function-per-utils-file': 'error',
   'local/no-screaming-snake-constants': 'error',
   'local/no-functions-in-constants': 'error',
+  'local/one-hook-per-file': 'error',
 };
 
 export default defineConfig([
