@@ -22,7 +22,7 @@
 
 /* Ground section */
 .ground-section {
-  border-top: var(--border-width-panel) solid var(--border-color);
+  border-top: var(--border-panel);
   background: var(--bg-panel);
 }
 

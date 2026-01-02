@@ -1,0 +1,72 @@
+/* Empty slot details - reuses DetailsPanel layout classes */
+.details-panel {
+  height: 161px;
+  flex-shrink: 0;
+}
+
+.details-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--space-12);
+  overflow: hidden;
+}
+
+.details-content.empty-slot {
+  justify-content: center;
+  align-items: center;
+}
+
+.item-preview {
+  flex-shrink: 0;
+}
+
+.preview-frame {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: var(--border-dashed);
+}
+
+.preview-icon {
+  font-size: var(--font-lg);
+  opacity: var(--opacity-faint);
+  filter: grayscale(0.5);
+}
+
+.item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.item-name {
+  margin: 0;
+  font-size: var(--font-base);
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-type {
+  margin: 0;
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  letter-spacing: var(--letter-spacing-tight);
+  font-family: var(--font-family-mono);
+}
+
+.item-description {
+  margin: var(--space-4) 0 0;
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  line-height: var(--line-height-tight);
+}
+
+.details-hint {
+  display: none;
+}

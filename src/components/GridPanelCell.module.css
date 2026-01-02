@@ -2,7 +2,7 @@
   width: 48px;
   height: 48px;
   background: var(--bg-cell);
-  border: var(--border-width) solid var(--border-color);
+  border: var(--border-default);
   position: relative;
   transition: var(--transition-fast);
 }
@@ -33,7 +33,7 @@
   position: absolute;
   inset: 2px;
   background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-cell) 100%);
-  border: var(--border-width) solid var(--border-light);
+  border: var(--border-subtle);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -77,7 +77,7 @@
   font-size: var(--font-2xs);
   font-weight: var(--font-weight-bold);
   color: var(--text-primary);
-  background: rgb(0 0 0 / 70%);
+  background: var(--bg-overlay);
   padding: 0 var(--space-4);
 }
 

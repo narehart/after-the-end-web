@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import styles from './ItemGridCell.module.css';
+import styles from './ItemGridButton.module.css';
 
 const cx = classNames.bind(styles);
 

@@ -110,11 +110,22 @@
 	--bg-cell: #181c29;
 	--bg-header: #222a3b;
 	--bg-elevated: #181c29;
+	--bg-overlay: rgb(0 0 0 / 70%);
 	--border-color: #465875;
 	--border-light: #5a6d8a;
 	--border-bright: #fbfbfb;
 	--border-width: 1px;
 	--border-width-panel: 2px;
+
+	/* Border shorthands */
+	--border-default: var(--border-width) solid var(--border-color);
+	--border-subtle: var(--border-width) solid var(--border-light);
+	--border-panel: var(--border-width-panel) solid var(--border-color);
+	--border-modal: var(--border-width-panel) solid var(--border-bright);
+	--border-focus: var(--border-width-panel) solid var(--accent-teal);
+	--border-accent: var(--border-width) solid var(--accent-teal);
+	--border-dashed: var(--border-width) dashed var(--border-color);
+	--border-transparent: var(--border-width-panel) solid transparent;
 	--breadcrumb-link-max-width: 175px;
 
 	/* Dynamic item sizing (set by JS, defaults for linting) */

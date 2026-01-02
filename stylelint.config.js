@@ -161,6 +161,7 @@ export default {
         'transition',
       ],
       {
+        ignoreFunctions: false,
         ignoreValues: [
           'currentcolor',
           'inherit',
@@ -170,19 +171,10 @@ export default {
           'unset',
           'auto',
           '0',
-          '/^var\\(/',
+          '/^var\\(--[a-z0-9-]+\\)$/',
           '/^linear-gradient/',
           '/^radial-gradient/',
           '/^calc\\(/',
-          // Border style keywords (used in shorthand)
-          'solid',
-          'dashed',
-          'dotted',
-          'double',
-          'groove',
-          'ridge',
-          'inset',
-          'outset',
         ],
         disableFix: true,
         message: 'Use CSS custom properties (variables) for ${property}',

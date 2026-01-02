@@ -1,15 +1,4 @@
-/* Grid cells */
-.grid-cell {
-  background: var(--bg-cell);
-  border: var(--border-default);
-  position: relative;
-}
-
-.grid-cell:focus {
-  outline: none;
-}
-
-/* Grid items */
+/* Grid item button - clickable item in grid */
 .grid-item {
   position: absolute;
   top: -1px;
@@ -53,12 +42,8 @@
 
 .item-image.rotated {
   transform: rotate(90deg);
-
-  /* For rotated images: height becomes width, width becomes height */
   max-width: none;
   max-height: none;
-
-  /* Use the parent's height as the image's width (since it's rotated), minus padding */
   width: calc(var(--item-height) - 1rem);
   height: calc(var(--item-width) - 1rem);
   object-fit: contain;

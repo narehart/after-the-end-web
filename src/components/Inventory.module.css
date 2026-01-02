@@ -30,7 +30,7 @@
 .inventory-column {
   display: flex;
   flex-direction: column;
-  border-right: var(--border-width-panel) solid var(--border-color);
+  border-right: var(--border-panel);
   overflow: hidden;
 }
 
@@ -73,7 +73,7 @@
 button:focus-visible,
 .equipment-slot:focus-visible,
 .grid-cell:focus-visible {
-  outline: var(--border-width-panel) solid var(--accent-teal);
+  outline: var(--border-focus);
   outline-offset: 1px;
 }
 

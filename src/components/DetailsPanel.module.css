@@ -47,7 +47,7 @@
   justify-content: center;
   align-items: center;
   background: var(--bg-cell);
-  border: var(--border-width) solid var(--border-color);
+  border: var(--border-default);
 }
 
 .preview-icon {
@@ -89,7 +89,7 @@
 }
 
 .details-content.empty-slot .preview-frame {
-  border: var(--border-width) dashed var(--border-color);
+  border: var(--border-dashed);
   background: transparent;
 }
 

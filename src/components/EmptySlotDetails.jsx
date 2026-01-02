@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { SLOT_LABELS } from '../stores/inventoryStore';
 import Panel from './Panel';
-import styles from './DetailsPanel.module.css';
+import styles from './EmptySlotDetails.module.css';
 
 const cx = classNames.bind(styles);
 

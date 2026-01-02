@@ -18,7 +18,7 @@
   flex: 1;
   height: 10px;
   background: var(--bg-darkest);
-  border: var(--border-width) solid var(--border-color);
+  border: var(--border-default);
   overflow: hidden;
 }
 

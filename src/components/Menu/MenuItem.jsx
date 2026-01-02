@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import ListItem from '../ListItem';
-import styles from './Menu.module.css';
+import styles from './MenuItem.module.css';
 
 const cx = classNames.bind(styles);
 

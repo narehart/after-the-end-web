@@ -1,7 +1,7 @@
 .breadcrumb {
   padding: var(--space-8) var(--space-16);
   background: var(--bg-header);
-  border-bottom: var(--border-width-panel) solid var(--border-color);
+  border-bottom: var(--border-panel);
   display: flex;
   align-items: center;
   gap: var(--space-4);

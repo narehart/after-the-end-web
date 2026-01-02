@@ -7,6 +7,14 @@ import jsxA11y from 'eslint-plugin-jsx-a11y'
 import importPlugin from 'eslint-plugin-import'
 import cssModules from 'eslint-plugin-css-modules'
 import { defineConfig, globalIgnores } from 'eslint/config'
+import noCrossComponentCssImports from './eslint-rules/no-cross-component-css-imports.js'
+
+// Local plugin for custom rules
+const localPlugin = {
+  rules: {
+    'no-cross-component-css-imports': noCrossComponentCssImports,
+  },
+}
 
 export default defineConfig([
   globalIgnores(['dist']),
@@ -31,6 +39,7 @@ export default defineConfig([
     plugins: {
       import: importPlugin,
       'css-modules': cssModules,
+      local: localPlugin,
     },
     settings: {
       react: {
@@ -60,6 +69,9 @@ export default defineConfig([
 
       // CSS Modules - detect undefined classes (no-unused-class incompatible with classnames/bind)
       'css-modules/no-undef-class': ['error', { camelCase: true }],
+
+      // Local rules - enforce component CSS module isolation
+      'local/no-cross-component-css-imports': 'error',
     },
   },
 ])
