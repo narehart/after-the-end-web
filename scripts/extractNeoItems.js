@@ -44,6 +44,7 @@ const DEFAULT_SIZE = { width: 1, height: 1 };
 const str = (val) => val ?? '';
 const int = (val, fallback) => parseInt(val ?? fallback, 10);
 const float = (val) => parseFloat(val ?? '0');
+const toCamelCase = (filename) => filename.charAt(0).toLowerCase() + filename.slice(1);
 
 function parseSize(capacityStr) {
   const match = capacityStr?.match(/(\d+)x(\d+)/);
@@ -68,7 +69,8 @@ function parseTableToObject(table) {
 }
 
 function extractItemData(item) {
-  const images = parseImages(item.vImageList);
+  const originalImages = parseImages(item.vImageList);
+  const camelImages = originalImages.map(toCamelCase);
   const groupId = int(item.nGroupID, 0);
   const formatId = int(item.nFormatID, 3);
   const gridSize = parseSize(item.aCapacities);
@@ -83,12 +85,12 @@ function extractItemData(item) {
     value: float(item.fMonetaryValue),
     stackLimit: int(item.nStackLimit, 1),
     size: FORMAT_SIZES[formatId] ?? DEFAULT_SIZE,
-    image: images[0] ?? null,
-    allImages: images,
+    image: camelImages[0] ?? null,
+    allImages: camelImages,
     ...(gridSize && { gridSize }),
   };
 
-  return { extracted, images };
+  return { extracted, originalImages };
 }
 
 function extractItems() {
@@ -96,34 +98,34 @@ function extractItems() {
   const doc = new DOMParser().parseFromString(readFileSync(xmlPath, 'utf-8'), 'text/xml');
 
   const items = [];
-  const imagesToCopy = new Set();
+  const imagesToCopy = new Map();
   const tables = doc.getElementsByTagName('table');
 
   for (let i = 0; i < tables.length; i++) {
     if (tables[i].getAttribute('name') !== 'itemtypes') continue;
 
     const item = parseTableToObject(tables[i]);
-    const { extracted, images } = extractItemData(item);
+    const { extracted, originalImages } = extractItemData(item);
     items.push(extracted);
-    images.forEach((img) => imagesToCopy.add(img));
+    originalImages.forEach((img) => imagesToCopy.set(img, toCamelCase(img)));
   }
 
   return { items, imagesToCopy };
 }
 
-function copyImages(images) {
+function copyImages(imageMap) {
   const imgDir = join(NEO_DIR, 'img');
   mkdirSync(OUTPUT_DIR, { recursive: true });
 
   let copied = 0;
-  for (const img of images) {
-    const src = join(imgDir, img);
+  for (const [original, camel] of imageMap) {
+    const src = join(imgDir, original);
     if (existsSync(src)) {
-      copyFileSync(src, join(OUTPUT_DIR, img));
+      copyFileSync(src, join(OUTPUT_DIR, camel));
       copied++;
     }
   }
-  console.log(`Copied ${copied}/${images.size} images`);
+  console.log(`Copied ${copied}/${imageMap.size} images`);
 }
 
 function printSummary(items) {
