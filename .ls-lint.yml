@@ -96,11 +96,17 @@ ls:
     .*: regex:$
     .dir: regex:src | regex:assets | regex:components | regex:config | regex:data | regex:hooks | regex:stores | regex:types | regex:utils
 
+  # src/components - PascalCase .tsx and .module.css only, no subdirectories
+  src/components:
+    .tsx: PascalCase
+    .module.css: PascalCase
+    .*: regex:$
+    .dir: regex:components
+
 ignore:
   # Ignore subdirectory contents - rules added incrementally
   - dist
   - node_modules
-  - src/components
   - src/config
   - src/data
   - src/hooks
