@@ -2,17 +2,17 @@
 	width: 100%;
 	display: flex;
 	align-items: center;
-	gap: 0.5rem;
-	padding: 0.4rem 0.6rem;
+	gap: var(--space-8);
+	padding: var(--space-6) var(--space-10);
 	min-height: calc(32px + 0.8rem + var(--border-width-panel) * 2);
 	margin-bottom: calc(2px / var(--ui-scale));
 	background: transparent;
 	border: var(--border-width-panel) solid transparent;
 	color: var(--text-secondary);
 	font-size: var(--font-sm);
-	line-height: 1;
+	line-height: var(--line-height-none);
 	cursor: pointer;
-	transition: all 0.1s ease;
+	transition: var(--transition-fast);
 	text-align: left;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .list-item.disabled {
-	opacity: 40%;
+	opacity: var(--opacity-faint);
 	cursor: not-allowed;
 }
 
@@ -57,11 +57,11 @@
 	align-items: center;
 	justify-content: center;
 	flex-shrink: 0;
-	opacity: 60%;
+	opacity: var(--opacity-muted);
 }
 
 .list-item:not(.empty) .list-item-icon {
-	opacity: 100%;
+	opacity: var(--opacity-full);
 }
 
 .list-item-icon img {
@@ -86,14 +86,14 @@
 .list-item-meta {
 	font-size: var(--font-xs);
 	color: var(--text-muted);
-	font-family: "Courier New", monospace;
+	font-family: var(--font-family-mono);
 }
 
 .list-item-arrow {
 	color: var(--text-muted);
 	font-size: var(--font-base);
 	margin-left: auto;
-	padding-left: 0.4rem;
+	padding-left: var(--space-6);
 }
 
 .list-item.focused .list-item-arrow {

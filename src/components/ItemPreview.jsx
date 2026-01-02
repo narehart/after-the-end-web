@@ -11,20 +11,20 @@ function getItemIcon(type) {
   return icons[type] || '◻';
 }
 
-export default function ItemPreview({ item }) {
+export default function ItemPreview({ item, imageClassName, iconClassName }) {
   if (item.image) {
     return (
       <img
         src={`/src/assets/items/${item.image}`}
         alt={item.name}
-        className="preview-image"
+        className={imageClassName}
         draggable={false}
       />
     );
   }
   return (
     <span
-      className="preview-icon"
+      className={iconClassName}
       style={{ transform: `rotate(${item.rotation}deg)` }}
     >
       {getItemIcon(item.type)}

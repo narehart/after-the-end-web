@@ -1,22 +1,22 @@
 .inventory-header {
   display: flex;
   align-items: center;
-  padding: 0.6rem 1rem;
+  padding: var(--space-10) var(--space-16);
   background: var(--bg-header);
   border-bottom: var(--border-width-panel) solid var(--border-color);
 }
 
 .header-icon {
   font-size: var(--font-base);
-  margin-right: 0.6rem;
+  margin-right: var(--space-10);
   color: var(--accent-teal);
 }
 
 .header-title {
   margin: 0;
   font-size: var(--font-base);
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-wide);
   color: var(--text-primary);
   text-transform: uppercase;
 }
@@ -25,43 +25,43 @@
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: var(--space-12);
   position: relative;
 }
 
 .gamepad-indicator {
   font-size: var(--font-sm);
   color: var(--accent-teal);
-  padding: 0.3rem 0.6rem;
+  padding: var(--space-4) var(--space-10);
   background: var(--bg-cell);
-  border: 1px solid var(--accent-teal);
+  border: var(--border-width) solid var(--accent-teal);
   animation: gamepad-pulse 2s ease-in-out infinite;
 }
 
 @keyframes gamepad-pulse {
-  0%, 100% { opacity: 100%; }
-  50% { opacity: 70%; }
+  0%, 100% { opacity: var(--opacity-full); }
+  50% { opacity: var(--opacity-hover); }
 }
 
 .weight-indicator {
   font-size: var(--font-sm);
   color: var(--text-secondary);
-  font-family: 'Courier New', monospace;
-  padding: 0.3rem 0.6rem;
+  font-family: var(--font-family-mono);
+  padding: var(--space-4) var(--space-10);
   background: var(--bg-cell);
-  border: 1px solid var(--border-color);
+  border: var(--border-width) solid var(--border-color);
 }
 
 /* Resolution picker for testing different screen sizes */
 .resolution-btn {
   font-size: var(--font-sm);
   color: var(--text-muted);
-  font-family: 'Courier New', monospace;
-  padding: 0.3rem 0.6rem;
+  font-family: var(--font-family-mono);
+  padding: var(--space-4) var(--space-10);
   background: var(--bg-cell);
-  border: 1px solid var(--border-color);
+  border: var(--border-width) solid var(--border-color);
   cursor: pointer;
-  transition: all 0.1s ease;
+  transition: var(--transition-fast);
 }
 
 .resolution-btn:hover {
@@ -74,26 +74,26 @@
   position: absolute;
   top: 100%;
   right: 0;
-  margin-top: 0.25rem;
+  margin-top: var(--space-4);
   background: var(--bg-cell);
-  border: 1px solid var(--border-color);
-  box-shadow: 0 4px 12px rgb(0 0 0 / 50%);
-  z-index: 100;
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  z-index: var(--z-dropdown);
   min-width: 200px;
 }
 
 .resolution-option {
   display: block;
   width: 100%;
-  padding: 0.5rem 0.75rem;
+  padding: var(--space-8) var(--space-12);
   background: none;
   border: none;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: var(--border-width) solid var(--border-color);
   color: var(--text-secondary);
   font-size: var(--font-sm);
   text-align: left;
   cursor: pointer;
-  transition: all 0.1s ease;
+  transition: var(--transition-fast);
 }
 
 .resolution-option:last-child {
@@ -108,18 +108,18 @@
 .steam-deck-controls {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-8);
 }
 
 .steam-deck-btn {
   font-size: var(--font-sm);
   color: var(--text-muted);
-  font-family: 'Courier New', monospace;
-  padding: 0.3rem 0.6rem;
+  font-family: var(--font-family-mono);
+  padding: var(--space-4) var(--space-10);
   background: var(--bg-cell);
-  border: 1px solid var(--border-color);
+  border: var(--border-width) solid var(--border-color);
   cursor: pointer;
-  transition: all 0.1s ease;
+  transition: var(--transition-fast);
   min-width: 70px;
 }
 
@@ -165,11 +165,11 @@
   align-items: center;
   justify-content: center;
   background: var(--bg-cell);
-  border: 1px solid var(--border-color);
+  border: var(--border-width) solid var(--border-color);
   color: var(--text-secondary);
   font-size: var(--font-sm);
   cursor: pointer;
-  transition: all 0.1s ease;
+  transition: var(--transition-fast);
 }
 
 .close-btn:hover {

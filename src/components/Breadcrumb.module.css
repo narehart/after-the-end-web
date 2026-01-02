@@ -1,10 +1,10 @@
 .breadcrumb {
-  padding: 0.5rem 1rem;
+  padding: var(--space-8) var(--space-16);
   background: var(--bg-header);
   border-bottom: var(--border-width-panel) solid var(--border-color);
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: var(--space-4);
   height: 2.5rem;
   box-sizing: border-box;
   white-space: nowrap;
@@ -15,7 +15,7 @@
   width: 24px;
   height: 24px;
   object-fit: contain;
-  margin-right: 0.25rem;
+  margin-right: var(--space-4);
   flex-shrink: 0;
 }
 
@@ -29,10 +29,10 @@
   border: none;
   color: var(--accent-teal);
   font-size: var(--font-base);
-  line-height: 1;
+  line-height: var(--line-height-none);
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
-  transition: all 0.15s ease;
+  padding: var(--space-4) var(--space-8);
+  transition: var(--transition-normal);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -46,7 +46,7 @@
 .breadcrumb-link.current {
   color: var(--text-primary);
   cursor: default;
-  font-weight: 600;
+  font-weight: var(--font-weight-medium);
 }
 
 .breadcrumb--clip .breadcrumb-link {
@@ -64,6 +64,6 @@
 
 .breadcrumb-separator {
   color: var(--text-primary);
-  margin: 0 0.25rem;
+  margin: 0 var(--space-4);
   font-size: var(--font-base);
 }

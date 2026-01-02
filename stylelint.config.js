@@ -84,8 +84,16 @@ export default {
     'selector-max-pseudo-class': 3,
     'selector-max-type': 2,
 
-    // Naming patterns (kebab-case with BEM modifiers allowed)
-    'custom-property-pattern': '^[a-z][a-z0-9]*(-[a-z0-9]+)*$',
+    // Custom property naming - enforce allowed prefixes for design tokens
+    // Prefixes: font, space, z, shadow, size, bg, text, border, accent, base, ui, item, breadcrumb
+    // Also allow: success, warning, danger (status colors)
+    // Also allow: line, letter, opacity, transition, animation (typography/motion tokens)
+    'custom-property-pattern': [
+      '^(font|space|z|shadow|size|bg|text|border|accent|base|ui|item|breadcrumb|success|warning|danger|line|letter|opacity|transition|animation)(-[a-z0-9]+)*$',
+      {
+        message: 'Custom property "${property}" must use an allowed prefix (font-, space-, z-, shadow-, size-, bg-, text-, border-, accent-)',
+      },
+    ],
     'selector-class-pattern': '^[a-z][a-z0-9]*(-[a-z0-9]+)*(--[a-z0-9]+(-[a-z0-9]+)*)?$',
     'keyframes-name-pattern': '^[a-z][a-z0-9]*(-[a-z0-9]+)*$',
 
@@ -129,9 +137,29 @@ export default {
     // PLUGINS
     // ============================================
 
-    // Strict values - enforce CSS variables for colors
+    // Strict values - enforce CSS variables for design-related properties
+    // NOTE: width/height are NOT enforced - component-specific sizes are OK as literals
     'scale-unlimited/declaration-strict-value': [
-      ['/color$/', 'fill', 'stroke', 'background', 'border-color', 'outline-color'],
+      [
+        // Colors
+        '/color$/', 'fill', 'stroke', 'background', 'border-color', 'outline-color',
+        // Outline
+        'outline', 'outline-width', 'outline-style',
+        // Typography
+        'font-family', 'font-size', 'font-weight', 'line-height', 'letter-spacing',
+        // Spacing
+        'padding', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left',
+        'margin', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left',
+        'gap', 'row-gap', 'column-gap',
+        // Borders
+        'border', 'border-width', 'border-top', 'border-right', 'border-bottom', 'border-left',
+        // Layers
+        'z-index',
+        // Effects
+        'box-shadow', 'opacity',
+        // Motion
+        'transition',
+      ],
       {
         ignoreValues: [
           'currentcolor',
@@ -140,9 +168,21 @@ export default {
           'transparent',
           'none',
           'unset',
+          'auto',
+          '0',
           '/^var\\(/',
           '/^linear-gradient/',
           '/^radial-gradient/',
+          '/^calc\\(/',
+          // Border style keywords (used in shorthand)
+          'solid',
+          'dashed',
+          'dotted',
+          'double',
+          'groove',
+          'ridge',
+          'inset',
+          'outset',
         ],
         disableFix: true,
         message: 'Use CSS custom properties (variables) for ${property}',

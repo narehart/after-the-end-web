@@ -73,7 +73,7 @@
 button:focus-visible,
 .equipment-slot:focus-visible,
 .grid-cell:focus-visible {
-  outline: 2px solid var(--accent-teal);
+  outline: var(--border-width-panel) solid var(--accent-teal);
   outline-offset: 1px;
 }
 
@@ -81,6 +81,6 @@ button:focus-visible,
 .modal-overlay {
   position: fixed;
   inset: 0;
-  z-index: 999;
+  z-index: var(--z-overlay);
   background: transparent;
 }

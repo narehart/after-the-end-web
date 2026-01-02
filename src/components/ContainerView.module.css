@@ -5,7 +5,7 @@
 .empty-container-message {
   color: var(--text-muted);
   font-style: italic;
-  padding: 2rem;
+  padding: var(--space-32);
   text-align: center;
 }
 

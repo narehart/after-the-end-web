@@ -32,9 +32,9 @@
 
 .panel-title {
   margin: 0;
-  padding: 0.5rem 1rem;
+  padding: var(--space-8) var(--space-16);
   font-size: var(--font-base);
-  font-weight: 400;
+  font-weight: var(--font-weight-normal);
   color: var(--text-primary);
   border-bottom: var(--border-width-panel) solid var(--border-color);
   background: var(--bg-header);
@@ -47,5 +47,5 @@
 .panel-content {
   flex: 1;
   overflow: auto;
-  padding: 0.5rem;
+  padding: var(--space-8);
 }

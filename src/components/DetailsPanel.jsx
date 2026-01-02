@@ -41,7 +41,7 @@ export default function DetailsPanel() {
     <Panel border="top" className={cx('details-panel')} contentClassName={cx('details-content')}>
       <div className={cx('item-preview')}>
         <div className={cx('preview-frame')}>
-          <ItemPreview item={item} />
+          <ItemPreview item={item} imageClassName={cx('preview-image')} iconClassName={cx('preview-icon')} />
         </div>
       </div>
 
