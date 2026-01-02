@@ -38,13 +38,22 @@ export default function Inventory(): React.JSX.Element {
   useGamepadNavigation({ onNextPanel: goToNextPanel, onPrevPanel: goToPrevPanel, enabled: true });
   useUIScaleSync(containerRef, physicalScale, setUIScale);
 
+  // Calculate scale needed to fit container in viewport
+  const fitScale = Math.min(
+    window.innerWidth / effectiveResolution.width,
+    window.innerHeight / effectiveResolution.height,
+    1
+  );
+  // Use the smaller of physicalScale and fitScale to ensure container always fits
+  const appliedScale = Math.min(physicalScale, fitScale);
+
   const containerStyle = isSimulated
     ? {
         width: `${effectiveResolution.width}px`,
         height: `${effectiveResolution.height}px`,
         margin: '0 auto',
         boxShadow: '0 0 0 4px var(--border-color)',
-        transform: physicalScale !== 1 ? `scale(${physicalScale})` : undefined,
+        transform: appliedScale !== 1 ? `scale(${appliedScale})` : undefined,
         transformOrigin: 'top center',
       }
     : {};
