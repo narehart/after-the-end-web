@@ -30,7 +30,7 @@
 
 .character-icon {
   font-size: 5rem;
-  opacity: 0.6;
+  opacity: 60%;
 }
 
 .condition-stats {
@@ -43,7 +43,7 @@
 }
 
 .stats-title {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.5rem;
   font-size: var(--font-xs);
   color: var(--text-muted);
   text-transform: uppercase;

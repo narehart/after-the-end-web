@@ -1,7 +1,7 @@
 @font-face {
 	font-family: "04B03";
 	src: url("./assets/fonts/04B_03__.TTF") format("truetype");
-	font-weight: normal;
+	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
 }
@@ -27,7 +27,7 @@
 	--font-lg: 1.2rem; /* heading: panel titles, item names */
 
 	/* Into the Breach inspired palette */
-	--bg-black: #000000;
+	--bg-black: #000;
 	--bg-darkest: #0d0e14;
 	--bg-panel: #0d0f17;
 	--bg-cell: #181c29;
@@ -40,16 +40,17 @@
 	--border-width-panel: 2px;
 	--breadcrumb-link-max-width: 175px;
 
+	/* Dynamic item sizing (set by JS, defaults for linting) */
+	--item-width: 48px;
+	--item-height: 48px;
 	--text-primary: #e8e8ec;
 	--text-secondary: #9ca0b4;
 	--text-muted: #5c6078;
-
 	--accent-teal: #4ecdc4;
 	--accent-teal-dim: #2a8f89;
 	--accent-orange: #ff6b35;
 	--accent-orange-dim: #cc5529;
 	--accent-blue: #5b8def;
-
 	--success: #4ecdc4;
 	--warning: #f5a623;
 	--danger: #ff6b35;
@@ -59,13 +60,11 @@
 	line-height: 1.4;
 	font-weight: 400;
 	font-size: calc(16px * var(--font-scale));
-
 	color-scheme: dark;
 	color: var(--text-primary);
 	background-color: var(--bg-darkest);
-
 	font-synthesis: none;
-	text-rendering: optimizeSpeed;
+	text-rendering: optimizespeed;
 	-webkit-font-smoothing: none;
 	-moz-osx-font-smoothing: unset;
 	image-rendering: pixelated;

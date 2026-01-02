@@ -1,15 +1,9 @@
+import classNames from 'classnames/bind';
 import useGridPanelCell from '../hooks/useGridPanelCell';
 import GridItemDisplay from './GridItemDisplay';
-import './GridPanelCell.css';
+import styles from './GridPanelCell.module.css';
 
-function buildClassName(itemId, isSelected, isOrigin, isFocused) {
-  const classes = ['grid-cell'];
-  classes.push(itemId ? 'occupied' : 'empty');
-  if (isSelected) classes.push('selected');
-  if (isOrigin) classes.push('origin');
-  if (isFocused) classes.push('keyboard-focused');
-  return classes.join(' ');
-}
+const cx = classNames.bind(styles);
 
 export default function GridPanelCell({ gridId, x, y, itemId, isOrigin, item, isFocused, onNavigate, cellRef }) {
   const { cellState, handleClick, openModal, handleFocus, setSelectedItem } = useGridPanelCell({
@@ -25,10 +19,18 @@ export default function GridPanelCell({ gridId, x, y, itemId, isOrigin, item, is
     }
   };
 
+  const cellClasses = cx('grid-cell', {
+    'occupied': itemId,
+    'empty': !itemId,
+    'selected': isSelected,
+    'origin': isOrigin,
+    'keyboard-focused': isFocused,
+  });
+
   return (
     <div
       ref={cellRef}
-      className={buildClassName(itemId, isSelected, isOrigin, isFocused)}
+      className={cellClasses}
       onClick={handleClick}
       onDoubleClick={handleDoubleClick}
       onKeyDown={handleKeyDown}

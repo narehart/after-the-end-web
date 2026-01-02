@@ -1,4 +1,8 @@
+import classNames from 'classnames/bind';
 import MenuItem from './MenuItem';
+import styles from './Menu.module.css';
+
+const cx = classNames.bind(styles);
 
 export default function MenuList({
   items,
@@ -11,7 +15,7 @@ export default function MenuList({
   emptyMessage = 'No options available',
 }) {
   if (!items || items.length === 0) {
-    return <div className="menu-empty">{emptyMessage}</div>;
+    return <div className={cx('menu-empty')}>{emptyMessage}</div>;
   }
 
   const getMouseEnterHandler = (index) => {
@@ -21,7 +25,7 @@ export default function MenuList({
   };
 
   return (
-    <div className="menu-list">
+    <div className={cx('menu-list')}>
       {items.map((item, index) => (
         <MenuItem
           key={item.id}

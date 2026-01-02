@@ -1,5 +1,8 @@
+import classNames from 'classnames/bind';
 import Breadcrumb from './Breadcrumb';
-import './Panel.css';
+import styles from './Panel.module.css';
+
+const cx = classNames.bind(styles);
 
 export default function Panel({
   title,
@@ -16,14 +19,21 @@ export default function Panel({
   const renderHeader = () => {
     if (header) return header;
     if (breadcrumbLinks) return <Breadcrumb links={breadcrumbLinks} icon={breadcrumbIcon} />;
-    if (title) return <h3 className="panel-title">{title}</h3>;
+    if (title) return <h3 className={cx('panel-title')}>{title}</h3>;
     return null;
   };
 
+  const panelClasses = cx('panel', {
+    'panel--border-right': border === 'right',
+    'panel--border-left': border === 'left',
+    'panel--border-top': border === 'top',
+    'panel--border-bottom': border === 'bottom',
+  });
+
   return (
-    <div className={`panel ${border ? `panel--border-${border}` : ''} ${className || ''}`}>
-      {hasHeader && <div className="panel-header">{renderHeader()}</div>}
-      <div className={`panel-content ${contentClassName || ''}`}>
+    <div className={className ? `${panelClasses} ${className}` : panelClasses}>
+      {hasHeader && <div className={cx('panel-header')}>{renderHeader()}</div>}
+      <div className={contentClassName ? `${cx('panel-content')} ${contentClassName}` : cx('panel-content')}>
         {children}
       </div>
     </div>

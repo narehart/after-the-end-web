@@ -1,11 +1,14 @@
 import { useEffect, useRef, useCallback, useMemo } from 'react';
+import classNames from 'classnames/bind';
 import { useInventoryStore } from '../../stores/inventoryStore';
 import useMenuContext from '../../hooks/useMenuContext';
 import { useMenuLevels } from '../../hooks/useMenuItems';
 import useMenuKeyboard from '../../hooks/useMenuKeyboard';
 import Breadcrumb from '../Breadcrumb';
 import MenuList from './MenuList';
-import './Menu.css';
+import styles from './Menu.module.css';
+
+const cx = classNames.bind(styles);
 
 
 
@@ -81,7 +84,7 @@ export default function Menu() {
   const itemIcon = context.item?.image ? `/src/assets/items/${context.item.image}` : null;
 
   return (
-    <div ref={menuRef} className="menu-modal" style={{ left: menu.position.x, top: menu.position.y }} tabIndex={-1}>
+    <div ref={menuRef} className={cx('menu-modal')} tabIndex={-1}>
       <Breadcrumb links={breadcrumbLinks} icon={itemIcon} clipLinks />
       <MenuList
         items={currentLevel?.items || []}

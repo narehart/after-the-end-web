@@ -1,7 +1,10 @@
 import { useRef, useState, useCallback } from 'react';
+import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import ItemGridCell from './ItemGridCell';
-import './ItemGrid.css';
+import styles from './ItemGrid.module.css';
+
+const cx = classNames.bind(styles);
 
 const CELL_GAP = 2; // Gap between cells in pixels
 
@@ -60,9 +63,9 @@ export default function ItemGrid({ grid, context, cellSize }) {
   }, [focusedCell, grid.width, grid.height]);
 
   return (
-    <div className="inventory-grid-container">
+    <div className={cx('inventory-grid-container')}>
       <div
-        className="inventory-grid"
+        className={cx('inventory-grid')}
         style={{
           gridTemplateColumns: `repeat(${grid.width}, ${cellSize}px)`,
           gridTemplateRows: `repeat(${grid.height}, ${cellSize}px)`,

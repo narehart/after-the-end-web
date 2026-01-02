@@ -1,8 +1,11 @@
 import { useMemo } from 'react';
+import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import Panel from './Panel';
 import ItemGrid from './ItemGrid';
-import './ContainerView.css';
+import styles from './ContainerView.module.css';
+
+const cx = classNames.bind(styles);
 
 function useBreadcrumbLinks(panelLabel, focusPath, items, onNavigateBack, panelType) {
   return useMemo(() => {
@@ -52,7 +55,7 @@ export default function ContainerView({
   };
 
   return (
-    <Panel breadcrumbLinks={breadcrumbLinks} contentClassName="container-view-content">
+    <Panel breadcrumbLinks={breadcrumbLinks} contentClassName={cx('container-view-content')}>
       {currentGrid ? (
         <ItemGrid
           grid={currentGrid}
@@ -60,7 +63,7 @@ export default function ContainerView({
           cellSize={cellSize}
         />
       ) : (
-        <div className="empty-container-message">{emptyMessage}</div>
+        <div className={cx('empty-container-message')}>{emptyMessage}</div>
       )}
     </Panel>
   );

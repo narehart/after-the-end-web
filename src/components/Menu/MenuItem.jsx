@@ -1,4 +1,8 @@
+import classNames from 'classnames/bind';
 import ListItem from '../ListItem';
+import styles from './Menu.module.css';
+
+const cx = classNames.bind(styles);
 
 export default function MenuItem({
   item,
@@ -28,7 +32,7 @@ export default function MenuItem({
       state={state}
       onClick={handleClick}
       onMouseEnter={onMouseEnter}
-      className="menu-item"
+      className={cx('menu-item')}
     />
   );
 }

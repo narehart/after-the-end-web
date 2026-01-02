@@ -1,5 +1,9 @@
+import classNames from 'classnames/bind';
 import { SLOT_LABELS } from '../stores/inventoryStore';
 import Panel from './Panel';
+import styles from './DetailsPanel.module.css';
+
+const cx = classNames.bind(styles);
 
 const SLOT_ICONS = {
   helmet: '⛑',
@@ -49,18 +53,18 @@ const SLOT_DESCRIPTIONS = {
 
 export default function EmptySlotDetails({ slotId }) {
   return (
-    <Panel border="top" className="details-panel" contentClassName="details-content empty-slot">
-      <div className="item-preview">
-        <div className="preview-frame empty">
-          <span className="preview-icon">{SLOT_ICONS[slotId] || '◻'}</span>
+    <Panel border="top" className={cx('details-panel')} contentClassName={cx('details-content', 'empty-slot')}>
+      <div className={cx('item-preview')}>
+        <div className={cx('preview-frame', 'empty')}>
+          <span className={cx('preview-icon')}>{SLOT_ICONS[slotId] || '◻'}</span>
         </div>
       </div>
-      <div className="item-info">
-        <h2 className="item-name">{SLOT_LABELS[slotId]}</h2>
-        <p className="item-type">EMPTY SLOT</p>
-        <p className="item-description">{SLOT_DESCRIPTIONS[slotId]}</p>
+      <div className={cx('item-info')}>
+        <h2 className={cx('item-name')}>{SLOT_LABELS[slotId]}</h2>
+        <p className={cx('item-type')}>EMPTY SLOT</p>
+        <p className={cx('item-description')}>{SLOT_DESCRIPTIONS[slotId]}</p>
       </div>
-      <div className="details-hint">
+      <div className={cx('details-hint')}>
         <span>Equip an item to fill this slot</span>
       </div>
     </Panel>

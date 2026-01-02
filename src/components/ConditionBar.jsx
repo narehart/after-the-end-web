@@ -1,17 +1,20 @@
-import './ConditionBar.css';
+import classNames from 'classnames/bind';
+import styles from './ConditionBar.module.css';
+
+const cx = classNames.bind(styles);
 
 export default function ConditionBar({ label, value, max = 100, color }) {
   const percentage = (value / max) * 100;
   return (
-    <div className="condition-bar">
-      <span className="condition-label">{label}</span>
-      <div className="condition-track">
+    <div className={cx('condition-bar')}>
+      <span className={cx('condition-label')}>{label}</span>
+      <div className={cx('condition-track')}>
         <div
-          className="condition-fill"
+          className={cx('condition-fill')}
           style={{ width: `${percentage}%`, backgroundColor: color }}
         />
       </div>
-      <span className="condition-value">{value}</span>
+      <span className={cx('condition-value')}>{value}</span>
     </div>
   );
 }

@@ -41,25 +41,25 @@
 }
 
 /* Responsive breakpoints */
-@media (max-width: 1599px) {
+@media (width <= 1599px) {
   .inventory-main {
     grid-template-columns: 240px 1fr 1fr;
   }
 }
 
-@media (max-width: 1399px) {
+@media (width <= 1399px) {
   .inventory-main {
     grid-template-columns: 220px 1fr 1fr;
   }
 }
 
-@media (max-width: 1199px) {
+@media (width <= 1199px) {
   .inventory-main {
     grid-template-columns: 200px 1fr 1fr;
   }
 }
 
-@media (max-width: 999px) {
+@media (width <= 999px) {
   .inventory-main {
     grid-template-columns: 1fr 1fr;
   }

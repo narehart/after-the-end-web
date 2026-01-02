@@ -1,16 +1,7 @@
-import './ListItem.css';
+import classNames from 'classnames/bind';
+import styles from './ListItem.module.css';
 
-function buildClassName(state, extraClassName) {
-  return [
-    'list-item',
-    state.isFocused && 'focused',
-    state.isActive && 'active',
-    state.isSelected && 'selected',
-    state.isDisabled && 'disabled',
-    state.isEmpty && 'empty',
-    extraClassName,
-  ].filter(Boolean).join(' ');
-}
+const cx = classNames.bind(styles);
 
 export default function ListItem({
   icon,
@@ -26,10 +17,18 @@ export default function ListItem({
   className: extraClassName,
   itemRef,
 }) {
+  const buttonClasses = cx('list-item', {
+    'focused': state.isFocused,
+    'active': state.isActive,
+    'selected': state.isSelected,
+    'disabled': state.isDisabled,
+    'empty': state.isEmpty,
+  });
+
   return (
     <button
       ref={itemRef}
-      className={buildClassName(state, extraClassName)}
+      className={extraClassName ? `${buttonClasses} ${extraClassName}` : buttonClasses}
       onClick={onClick}
       onDoubleClick={onDoubleClick}
       onContextMenu={onContextMenu}
@@ -40,10 +39,10 @@ export default function ListItem({
       role="option"
       aria-selected={state.isFocused}
     >
-      {icon && <span className="list-item-icon">{icon}</span>}
-      <span className="list-item-label">{label}</span>
-      {meta && <span className="list-item-meta">{meta}</span>}
-      {hasArrow && <span className="list-item-arrow">›</span>}
+      {icon && <span className={cx('list-item-icon')}>{icon}</span>}
+      <span className={cx('list-item-label')}>{label}</span>
+      {meta && <span className={cx('list-item-meta')}>{meta}</span>}
+      {hasArrow && <span className={cx('list-item-arrow')}>›</span>}
     </button>
   );
 }

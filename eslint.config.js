@@ -5,6 +5,7 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
 import importPlugin from 'eslint-plugin-import'
+import cssModules from 'eslint-plugin-css-modules'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
@@ -29,6 +30,7 @@ export default defineConfig([
     },
     plugins: {
       import: importPlugin,
+      'css-modules': cssModules,
     },
     settings: {
       react: {
@@ -55,6 +57,9 @@ export default defineConfig([
       'max-lines-per-function': ['error', { max: 100, skipBlankLines: true, skipComments: true }],
       'max-statements': ['error', 20],
       'complexity': ['error', 10],
+
+      // CSS Modules - detect undefined classes (no-unused-class incompatible with classnames/bind)
+      'css-modules/no-undef-class': ['error', { camelCase: true }],
     },
   },
 ])

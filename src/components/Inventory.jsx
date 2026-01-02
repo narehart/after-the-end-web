@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import classNames from 'classnames/bind';
 import { useUIScale } from '../hooks/useUIScale';
 import { useInventoryStore } from '../stores/inventoryStore';
 import useInventoryState from '../hooks/useInventoryState';
@@ -12,7 +13,9 @@ import WorldPanel from './WorldPanel';
 import DetailsPanel from './DetailsPanel';
 import Menu from './Menu';
 import InventoryHeader from './InventoryHeader';
-import './Inventory.css';
+import styles from './Inventory.module.css';
+
+const cx = classNames.bind(styles);
 
 export default function Inventory() {
   const state = useInventoryState();
@@ -49,20 +52,20 @@ export default function Inventory() {
   return (
     <div
       ref={containerRef}
-      className={`inventory-container ${isSimulated ? 'simulated' : ''}`}
+      className={cx('inventory-container', { 'simulated': isSimulated })}
       style={containerStyle}
     >
       <InventoryHeader {...uiScale} />
 
-      <main className="inventory-main">
-        <aside className="left-column" ref={equipmentRef}>
+      <main className={cx('inventory-main')}>
+        <aside className={cx('left-column')} ref={equipmentRef}>
           <EquipmentPanel />
         </aside>
-        <section className="inventory-column" ref={inventoryRef}>
+        <section className={cx('inventory-column')} ref={inventoryRef}>
           <InventoryPanel cellSize={cellSize} />
           <DetailsPanel />
         </section>
-        <section className="world-column" ref={worldRef}>
+        <section className={cx('world-column')} ref={worldRef}>
           <WorldPanel cellSize={cellSize} />
         </section>
       </main>

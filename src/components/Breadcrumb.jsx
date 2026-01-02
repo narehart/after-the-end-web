@@ -1,4 +1,7 @@
-import './Breadcrumb.css';
+import classNames from 'classnames/bind';
+import styles from './Breadcrumb.module.css';
+
+const cx = classNames.bind(styles);
 
 function buildSegments(links) {
   const lastIndex = links.length - 1;
@@ -37,21 +40,20 @@ export default function Breadcrumb({ links, icon, clipLinks }) {
 
   const displayIcon = links[0].icon || icon;
   const segments = buildSegments(links);
-  const className = `breadcrumb ${clipLinks ? 'breadcrumb--clip' : ''}`;
 
   return (
-    <div className={className}>
-      {displayIcon && <img src={displayIcon} alt="" className="breadcrumb-icon" />}
+    <div className={cx('breadcrumb', { 'breadcrumb--clip': clipLinks })}>
+      {displayIcon && <img src={displayIcon} alt="" className={cx('breadcrumb-icon')} />}
       {segments.map((seg) => (
-        <span key={seg.key} className="breadcrumb-segment">
+        <span key={seg.key} className={cx('breadcrumb-segment')}>
           <button
-            className={`breadcrumb-link ${seg.isCurrent ? 'current' : ''}`}
+            className={cx('breadcrumb-link', { 'current': seg.isCurrent })}
             onClick={seg.onClick}
             disabled={seg.isCurrent || !seg.onClick}
           >
             {seg.label}
           </button>
-          {seg.showSeparator && <span className="breadcrumb-separator">›</span>}
+          {seg.showSeparator && <span className={cx('breadcrumb-separator')}>›</span>}
         </span>
       ))}
     </div>

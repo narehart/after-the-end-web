@@ -1,6 +1,9 @@
+import classNames from 'classnames/bind';
 import useItemGridCell from '../hooks/useItemGridCell';
 import ItemGridButton from './ItemGridButton';
-import './ItemGridCell.css';
+import styles from './ItemGridCell.module.css';
+
+const cx = classNames.bind(styles);
 
 export default function ItemGridCell({ x, y, itemId, isOrigin, item, isFocused, onNavigate, cellRef, context, cellSize }) {
   const { cellState, handleClick, openModal, handleMouseEnter, handleFocus } = useItemGridCell({
@@ -12,7 +15,7 @@ export default function ItemGridCell({ x, y, itemId, isOrigin, item, isFocused, 
   return (
     <div
       ref={cellRef}
-      className="grid-cell"
+      className={cx('grid-cell')}
       style={{
         width: `${cellSize}px`,
         height: `${cellSize}px`,

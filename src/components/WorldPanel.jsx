@@ -1,6 +1,9 @@
+import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import ContainerView from './ContainerView';
-import './WorldPanel.css';
+import styles from './WorldPanel.module.css';
+
+const cx = classNames.bind(styles);
 
 export default function WorldPanel({ cellSize }) {
   const worldFocusPath = useInventoryStore((state) => state.worldFocusPath);
@@ -11,7 +14,7 @@ export default function WorldPanel({ cellSize }) {
   };
 
   return (
-    <div className="world-panel">
+    <div className={cx('world-panel')}>
       <ContainerView
         focusPath={worldFocusPath}
         onNavigateBack={handleNavigateBack}

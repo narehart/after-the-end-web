@@ -1,7 +1,10 @@
 import { useRef, useState, useCallback } from 'react';
+import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import GridPanelCell from './GridPanelCell';
-import './GridPanelGrid.css';
+import styles from './GridPanelGrid.module.css';
+
+const cx = classNames.bind(styles);
 
 export default function GridPanelGrid({ gridId, grid, label }) {
   const items = useInventoryStore((state) => state.items);
@@ -61,10 +64,10 @@ export default function GridPanelGrid({ gridId, grid, label }) {
   }, [focusedCell, grid.width, grid.height]);
 
   return (
-    <div className="inventory-grid-container">
-      {label && <div className="grid-label">{label}</div>}
+    <div className={cx('inventory-grid-container')}>
+      {label && <div className={cx('grid-label')}>{label}</div>}
       <div
-        className="inventory-grid"
+        className={cx('inventory-grid')}
         style={{
           gridTemplateColumns: `repeat(${grid.width}, 48px)`,
           gridTemplateRows: `repeat(${grid.height}, 48px)`,

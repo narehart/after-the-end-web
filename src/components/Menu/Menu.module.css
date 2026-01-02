@@ -5,10 +5,10 @@
 	background: var(--bg-panel);
 	border: var(--border-width-panel) solid var(--border-bright);
 	width: 500px;
-	left: 50% !important;
-	top: 22% !important;
+	left: 50%;
+	top: 22%;
 	transform: translateX(-50%);
-	box-shadow: 20px 20px 16px rgba(0, 0, 0, 0.5);
+	box-shadow: 20px 20px 16px rgb(0 0 0 / 50%);
 	outline: none;
 }
 

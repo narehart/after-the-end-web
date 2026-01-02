@@ -1,8 +1,11 @@
+import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import Panel from './Panel';
 import EmptySlotDetails from './EmptySlotDetails';
 import ItemPreview from './ItemPreview';
-import './DetailsPanel.css';
+import styles from './DetailsPanel.module.css';
+
+const cx = classNames.bind(styles);
 
 function buildStatsLine(item) {
   return [
@@ -26,26 +29,26 @@ export default function DetailsPanel() {
 
   if (!item) {
     return (
-      <Panel border="top" className="details-panel" contentClassName="details-content empty">
-        <div className="empty-state">
-          <p className="empty-text">Select an item to view details</p>
+      <Panel border="top" className={cx('details-panel')} contentClassName={cx('details-content', 'empty')}>
+        <div className={cx('empty-state')}>
+          <p className={cx('empty-text')}>Select an item to view details</p>
         </div>
       </Panel>
     );
   }
 
   return (
-    <Panel border="top" className="details-panel" contentClassName="details-content">
-      <div className="item-preview">
-        <div className="preview-frame">
+    <Panel border="top" className={cx('details-panel')} contentClassName={cx('details-content')}>
+      <div className={cx('item-preview')}>
+        <div className={cx('preview-frame')}>
           <ItemPreview item={item} />
         </div>
       </div>
 
-      <div className="item-info">
-        <h2 className="item-name">{item.name}</h2>
-        <p className="item-stats-line">{buildStatsLine(item)}</p>
-        <p className="item-description">{item.description}</p>
+      <div className={cx('item-info')}>
+        <h2 className={cx('item-name')}>{item.name}</h2>
+        <p className={cx('item-stats-line')}>{buildStatsLine(item)}</p>
+        <p className={cx('item-description')}>{item.description}</p>
       </div>
     </Panel>
   );

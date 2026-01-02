@@ -1,6 +1,9 @@
+import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import ContainerView from './ContainerView';
-import './InventoryPanel.css';
+import styles from './InventoryPanel.module.css';
+
+const cx = classNames.bind(styles);
 
 export default function InventoryPanel({ cellSize }) {
   const inventoryFocusPath = useInventoryStore((state) => state.inventoryFocusPath);
@@ -11,7 +14,7 @@ export default function InventoryPanel({ cellSize }) {
   };
 
   return (
-    <div className="inventory-panel">
+    <div className={cx('inventory-panel')}>
       <ContainerView
         focusPath={inventoryFocusPath}
         onNavigateBack={handleNavigateBack}

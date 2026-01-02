@@ -40,7 +40,7 @@
 }
 
 .list-item.disabled {
-	opacity: 0.4;
+	opacity: 40%;
 	cursor: not-allowed;
 }
 
@@ -50,11 +50,6 @@
 	color: var(--text-secondary);
 }
 
-.list-item.empty .list-item-label {
-	color: var(--text-muted);
-	font-style: italic;
-}
-
 .list-item-icon {
 	width: 32px;
 	height: 32px;
@@ -62,11 +57,11 @@
 	align-items: center;
 	justify-content: center;
 	flex-shrink: 0;
-	opacity: 0.6;
+	opacity: 60%;
 }
 
 .list-item:not(.empty) .list-item-icon {
-	opacity: 1;
+	opacity: 100%;
 }
 
 .list-item-icon img {
@@ -83,6 +78,11 @@
 	white-space: nowrap;
 }
 
+.list-item.empty .list-item-label {
+	color: var(--text-muted);
+	font-style: italic;
+}
+
 .list-item-meta {
 	font-size: var(--font-xs);
 	color: var(--text-muted);
@@ -96,11 +96,14 @@
 	padding-left: 0.4rem;
 }
 
-.list-item:hover:not(:disabled) .list-item-arrow,
 .list-item.focused .list-item-arrow {
 	color: var(--accent-teal);
 }
 
 .list-item.disabled .list-item-arrow {
 	color: var(--text-muted);
+}
+
+.list-item:hover:not(:disabled) .list-item-arrow {
+	color: var(--accent-teal);
 }

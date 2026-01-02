@@ -38,8 +38,19 @@
   text-overflow: ellipsis;
 }
 
-.breadcrumb-segment:first-child .breadcrumb-link {
-  padding-left: 0;
+.breadcrumb-link:disabled {
+  color: var(--text-primary);
+  cursor: default;
+}
+
+.breadcrumb-link.current {
+  color: var(--text-primary);
+  cursor: default;
+  font-weight: 600;
+}
+
+.breadcrumb--clip .breadcrumb-link {
+  max-width: var(--breadcrumb-link-max-width);
 }
 
 .breadcrumb-link:hover:not(:disabled) {
@@ -47,22 +58,12 @@
   color: var(--accent-teal);
 }
 
-.breadcrumb-link.current,
-.breadcrumb-link:disabled {
-  color: var(--text-primary);
-  cursor: default;
-}
-
-.breadcrumb-link.current {
-  font-weight: 600;
+.breadcrumb-segment:first-child .breadcrumb-link {
+  padding-left: 0;
 }
 
 .breadcrumb-separator {
   color: var(--text-primary);
   margin: 0 0.25rem;
   font-size: var(--font-base);
-}
-
-.breadcrumb--clip .breadcrumb-link {
-  max-width: var(--breadcrumb-link-max-width);
 }

@@ -1,3 +1,8 @@
+import classNames from 'classnames/bind';
+import styles from './ItemGridCell.module.css';
+
+const cx = classNames.bind(styles);
+
 const CELL_GAP = 2;
 
 function getItemIcon(type) {
@@ -11,14 +16,6 @@ function getItemIcon(type) {
     accessory: '🔹',
   };
   return icons[type] || '◻';
-}
-
-function buildClassName(hasGrid, isSelected, hasOpenModal) {
-  const classes = ['grid-item'];
-  if (hasGrid) classes.push('container');
-  if (isSelected) classes.push('selected');
-  if (hasOpenModal) classes.push('has-modal');
-  return classes.join(' ');
 }
 
 function calculateItemDimensions(item, cellSize) {
@@ -46,7 +43,7 @@ export default function ItemGridButton({ item, cellSize, cellState, isFocused, h
   return (
     <button
       type="button"
-      className={buildClassName(hasGrid, isSelected, hasOpenModal)}
+      className={cx('grid-item', { 'container': hasGrid, 'selected': isSelected, 'has-modal': hasOpenModal })}
       style={{
         width: `${itemWidth}px`,
         height: `${itemHeight}px`,
@@ -66,16 +63,16 @@ export default function ItemGridButton({ item, cellSize, cellState, isFocused, h
         <img
           src={`/src/assets/items/${item.image}`}
           alt={item.name}
-          className={`item-image ${needsRotation ? 'rotated' : ''}`}
+          className={cx('item-image', { 'rotated': needsRotation })}
           draggable={false}
         />
       ) : (
-        <span className="item-icon">{getItemIcon(item.type)}</span>
+        <span className={cx('item-icon')}>{getItemIcon(item.type)}</span>
       )}
       {item.stackable && item.quantity > 1 && (
-        <span className="item-quantity">x{item.quantity}</span>
+        <span className={cx('item-quantity')}>x{item.quantity}</span>
       )}
-      {hasGrid && <span className="container-indicator">▼</span>}
+      {hasGrid && <span className={cx('container-indicator')}>▼</span>}
     </button>
   );
 }

@@ -39,8 +39,8 @@
 }
 
 @keyframes gamepad-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+  0%, 100% { opacity: 100%; }
+  50% { opacity: 70%; }
 }
 
 .weight-indicator {
@@ -77,7 +77,7 @@
   margin-top: 0.25rem;
   background: var(--bg-cell);
   border: 1px solid var(--border-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 50%);
   z-index: 100;
   min-width: 200px;
 }
@@ -137,14 +137,12 @@
 .scale-slider {
   width: 60px;
   height: 4px;
-  -webkit-appearance: none;
   appearance: none;
   background: var(--border-color);
   cursor: pointer;
 }
 
 .scale-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
   appearance: none;
   width: 10px;
   height: 10px;

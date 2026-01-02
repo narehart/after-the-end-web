@@ -1,8 +1,11 @@
 import { useMemo } from 'react';
+import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import Panel from './Panel';
 import GridPanelGrid from './GridPanelGrid';
-import './GridPanel.css';
+import styles from './GridPanel.module.css';
+
+const cx = classNames.bind(styles);
 
 function useBreadcrumbLinks(focusPath, items, navigateBack) {
   return useMemo(() => {
@@ -35,24 +38,24 @@ export default function GridPanel({ groundRef }) {
   const breadcrumbLinks = useBreadcrumbLinks(focusPath, items, navigateBack);
 
   return (
-    <div className="grid-panel">
-      <Panel breadcrumbLinks={breadcrumbLinks} contentClassName="grid-content">
+    <div className={cx('grid-panel')}>
+      <Panel breadcrumbLinks={breadcrumbLinks} contentClassName={cx('grid-content')}>
         {currentGrid ? (
           <GridPanelGrid gridId={currentContainerId} grid={currentGrid} />
         ) : (
-          <div className="empty-grid-message">No container selected</div>
+          <div className={cx('empty-grid-message')}>No container selected</div>
         )}
       </Panel>
 
-      <div className={`ground-section ${groundCollapsed ? 'collapsed' : ''}`} ref={groundRef}>
+      <div className={cx('ground-section', { 'collapsed': groundCollapsed })} ref={groundRef}>
         <Panel
           header={
-            <button className="ground-header" onClick={toggleGroundCollapsed}>
-              <span className="ground-label">Ground - Abandoned Street</span>
-              <span className="ground-toggle">{groundCollapsed ? '▲' : '▼'}</span>
+            <button className={cx('ground-header')} onClick={toggleGroundCollapsed}>
+              <span className={cx('ground-label')}>Ground - Abandoned Street</span>
+              <span className={cx('ground-toggle')}>{groundCollapsed ? '▲' : '▼'}</span>
             </button>
           }
-          className="ground-panel"
+          className={cx('ground-panel')}
         >
           {!groundCollapsed && groundGrid && (
             <GridPanelGrid gridId="ground" grid={groundGrid} label="" />

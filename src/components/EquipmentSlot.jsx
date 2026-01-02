@@ -1,7 +1,10 @@
 import { useRef } from 'react';
+import classNames from 'classnames/bind';
 import useEquipmentSlot from '../hooks/useEquipmentSlot';
 import ListItem from './ListItem';
-import './EquipmentSlot.css';
+import styles from './EquipmentSlot.module.css';
+
+const cx = classNames.bind(styles);
 
 export default function EquipmentSlot({ slotType }) {
   const slotRef = useRef(null);
@@ -40,7 +43,7 @@ export default function EquipmentSlot({ slotType }) {
       onContextMenu={handleContextMenu}
       onKeyDown={handleKeyDown}
       onMouseEnter={handleMouseEnter}
-      className="equipment-slot"
+      className={cx('equipment-slot')}
     />
   );
 }

@@ -1,5 +1,5 @@
 import Inventory from './components/Inventory'
-import './App.css'
+import './App.module.css'
 
 function App() {
   return <Inventory />

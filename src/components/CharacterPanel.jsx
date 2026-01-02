@@ -1,20 +1,23 @@
+import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import ConditionBar from './ConditionBar';
-import './CharacterPanel.css';
+import styles from './CharacterPanel.module.css';
+
+const cx = classNames.bind(styles);
 
 export default function CharacterPanel() {
   const conditions = useInventoryStore((state) => state.conditions);
 
   return (
-    <div className="character-panel">
-      <div className="character-model">
-        <div className="character-silhouette">
-          <span className="character-icon">🧍</span>
+    <div className={cx('character-panel')}>
+      <div className={cx('character-model')}>
+        <div className={cx('character-silhouette')}>
+          <span className={cx('character-icon')}>🧍</span>
         </div>
       </div>
 
-      <div className="condition-stats">
-        <h3 className="stats-title">STATUS</h3>
+      <div className={cx('condition-stats')}>
+        <h3 className={cx('stats-title')}>STATUS</h3>
         <ConditionBar label="HEALTH" value={conditions.health} color="#8b4513" />
         <ConditionBar label="HUNGER" value={conditions.hunger} color="#654321" />
         <ConditionBar label="THIRST" value={conditions.thirst} color="#4a6741" />
