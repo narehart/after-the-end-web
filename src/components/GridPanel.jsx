@@ -1,12 +1,15 @@
 import { useMemo } from 'react';
 import { useInventoryStore } from '../stores/inventoryStore';
-import Breadcrumb from './Breadcrumb';
+import Panel from './Panel';
 import GridPanelGrid from './GridPanelGrid';
 import './GridPanel.css';
 
 function useBreadcrumbLinks(focusPath, items, navigateBack) {
   return useMemo(() => {
-    const links = [{ label: '🎒 Inventory', onClick: () => navigateBack(-1, 'inventory') }];
+    // "Inventory" is never clickable - it's just a label, not a container
+    const links = [{
+      label: 'Inventory',
+    }];
     focusPath.forEach((id, index) => {
       const isLast = index === focusPath.length - 1;
       links.push({
@@ -33,25 +36,28 @@ export default function GridPanel({ groundRef }) {
 
   return (
     <div className="grid-panel">
-      <Breadcrumb links={breadcrumbLinks} />
-
-      <div className="grid-content">
+      <Panel breadcrumbLinks={breadcrumbLinks} contentClassName="grid-content">
         {currentGrid ? (
           <GridPanelGrid gridId={currentContainerId} grid={currentGrid} />
         ) : (
           <div className="empty-grid-message">No container selected</div>
         )}
-      </div>
+      </Panel>
 
       <div className={`ground-section ${groundCollapsed ? 'collapsed' : ''}`} ref={groundRef}>
-        <button className="ground-header" onClick={toggleGroundCollapsed}>
-          <span className="ground-icon">📍</span>
-          <span className="ground-label">Ground - Abandoned Street</span>
-          <span className="ground-toggle">{groundCollapsed ? '▲' : '▼'}</span>
-        </button>
-        {!groundCollapsed && groundGrid && (
-          <GridPanelGrid gridId="ground" grid={groundGrid} label="" />
-        )}
+        <Panel
+          header={
+            <button className="ground-header" onClick={toggleGroundCollapsed}>
+              <span className="ground-label">Ground - Abandoned Street</span>
+              <span className="ground-toggle">{groundCollapsed ? '▲' : '▼'}</span>
+            </button>
+          }
+          className="ground-panel"
+        >
+          {!groundCollapsed && groundGrid && (
+            <GridPanelGrid gridId="ground" grid={groundGrid} label="" />
+          )}
+        </Panel>
       </div>
     </div>
   );

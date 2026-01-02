@@ -1,102 +1,118 @@
 @font-face {
-  font-family: '04B03';
-  src: url('./assets/fonts/04B_03__.TTF') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+	font-family: "04B03";
+	src: url("./assets/fonts/04B_03__.TTF") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 :root {
-  /* Base resolution for scaling (1920x1080 as reference) */
-  --base-width: 1920;
-  --base-height: 1080;
-  --ui-scale: 1;
+	/* Base resolution for scaling (1920x1080 as reference) */
+	--base-width: 1920;
+	--base-height: 1080;
+	--ui-scale: 1;
 
-  /* Font scale - adjust this single value to scale all fonts */
-  --font-scale: 1.3;
+	/* Font scale - adjust this single value to scale all fonts */
+	--font-scale: 1.3;
 
-  /* Into the Breach inspired palette */
-  --bg-darkest: #0d0e14;
-  --bg-dark: #16161e;
-  --bg-panel: #1e1f2a;
-  --bg-elevated: #252736;
-  --border-color: #3a3d52;
-  --border-light: #4a4e68;
+	/* Type scale - 5 consistent sizes */
+	--font-2xs: 0.5rem; /* tiny: badges, cell labels */
+	--font-xs: 0.65rem; /* small: metadata, hints */
+	--font-sm: 0.8rem; /* secondary: breadcrumbs, descriptions */
+	--font-base: 0.9rem; /* body: menu items, labels */
+	--font-lg: 1.2rem; /* heading: panel titles, item names */
 
-  --text-primary: #e8e8ec;
-  --text-secondary: #9ca0b4;
-  --text-muted: #5c6078;
+	/* Into the Breach inspired palette */
+	--bg-black: #000000;
+	--bg-darkest: #0d0e14;
+	--bg-panel: #0d0f17;
+	--bg-cell: #181c29;
+	--bg-header: #222a3b;
+	--bg-elevated: #181c29;
+	--border-color: #465875;
+	--border-light: #5a6d8a;
+	--border-bright: #fbfbfb;
+	--border-width: 1px;
+	--border-width-panel: 2px;
+	--breadcrumb-link-max-width: 175px;
 
-  --accent-teal: #4ecdc4;
-  --accent-teal-dim: #2a8f89;
-  --accent-orange: #ff6b35;
-  --accent-orange-dim: #cc5529;
-  --accent-blue: #5b8def;
+	--text-primary: #e8e8ec;
+	--text-secondary: #9ca0b4;
+	--text-muted: #5c6078;
 
-  --success: #4ecdc4;
-  --warning: #f5a623;
-  --danger: #ff6b35;
+	--accent-teal: #4ecdc4;
+	--accent-teal-dim: #2a8f89;
+	--accent-orange: #ff6b35;
+	--accent-orange-dim: #cc5529;
+	--accent-blue: #5b8def;
 
-  font-family: '04B03', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.4;
-  font-weight: 400;
-  font-size: calc(16px * var(--font-scale));
+	--success: #4ecdc4;
+	--warning: #f5a623;
+	--danger: #ff6b35;
 
-  color-scheme: dark;
-  color: var(--text-primary);
-  background-color: var(--bg-darkest);
+	font-family: "04B03", "Segoe UI", -apple-system, BlinkMacSystemFont,
+		sans-serif;
+	line-height: 1.4;
+	font-weight: 400;
+	font-size: calc(16px * var(--font-scale));
 
-  font-synthesis: none;
-  text-rendering: optimizeSpeed;
-  -webkit-font-smoothing: none;
-  -moz-osx-font-smoothing: unset;
-  image-rendering: pixelated;
+	color-scheme: dark;
+	color: var(--text-primary);
+	background-color: var(--bg-darkest);
+
+	font-synthesis: none;
+	text-rendering: optimizeSpeed;
+	-webkit-font-smoothing: none;
+	-moz-osx-font-smoothing: unset;
+	image-rendering: pixelated;
 }
 
-html, body, #root {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+html,
+body,
+#root {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
 }
 
 /* Center simulated viewport */
 #root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--bg-black);
 }
 
 button {
-  font-family: inherit;
+	font-family: inherit;
 }
 
 /* Custom selection colors */
 ::selection {
-  background: var(--accent-teal);
-  color: var(--bg-darkest);
+	background: var(--accent-teal);
+	color: var(--bg-darkest);
 }
 
 /* Scrollbar base styling */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+	width: 6px;
+	height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+	background: var(--bg-panel);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border-color);
+	background: var(--border-color);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--border-light);
+	background: var(--border-light);
 }

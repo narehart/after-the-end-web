@@ -15,10 +15,12 @@ export default function useEquipmentSlot(slotType) {
   const setSelectedItem = useInventoryStore((state) => state.setSelectedItem);
   const setFocusedEmptySlot = useInventoryStore((state) => state.setFocusedEmptySlot);
   const openMenu = useInventoryStore((state) => state.openMenu);
-  const menu = useInventoryStore((state) => state.menu);
+  const menuIsOpen = useInventoryStore((state) => state.menu.isOpen);
+  const menuItemId = useInventoryStore((state) => state.menu.itemId);
 
   const itemId = equipment[slotType];
   const item = itemId ? items[itemId] : null;
+  const hasOpenModal = menuIsOpen && menuItemId === itemId;
 
   const slotState = useMemo(() => ({
     item,
@@ -26,8 +28,8 @@ export default function useEquipmentSlot(slotType) {
     hasGrid: item?.gridSize != null,
     isFocused: inventoryFocusPath[0] === itemId,
     isHovered: itemId && itemId === selectedItemId,
-    hasOpenModal: menu.isOpen && menu.itemId === itemId,
-  }), [item, itemId, inventoryFocusPath, selectedItemId, menu]);
+    hasOpenModal,
+  }), [item, itemId, inventoryFocusPath, selectedItemId, hasOpenModal]);
 
   const handleClick = useCallback(() => {
     if (item) {

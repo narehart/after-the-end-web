@@ -1,0 +1,106 @@
+.list-item {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.4rem 0.6rem;
+	min-height: calc(32px + 0.8rem + var(--border-width-panel) * 2);
+	margin-bottom: calc(2px / var(--ui-scale));
+	background: transparent;
+	border: var(--border-width-panel) solid transparent;
+	color: var(--text-secondary);
+	font-size: var(--font-sm);
+	line-height: 1;
+	cursor: pointer;
+	transition: all 0.1s ease;
+	text-align: left;
+}
+
+.list-item:last-child {
+	margin-bottom: 0;
+}
+
+.list-item:hover:not(:disabled),
+.list-item.focused {
+	background: var(--bg-elevated);
+	border-color: var(--accent-teal);
+	color: var(--text-primary);
+}
+
+/* Active state - item has spawned a submenu/modal (subtle, no outline) */
+.list-item.active {
+	background: var(--bg-elevated);
+	border-color: var(--border-color);
+	color: var(--text-primary);
+}
+
+.list-item.selected {
+	background: var(--bg-elevated);
+	color: var(--text-primary);
+}
+
+.list-item.disabled {
+	opacity: 0.4;
+	cursor: not-allowed;
+}
+
+.list-item.disabled:hover {
+	background: transparent;
+	border-color: transparent;
+	color: var(--text-secondary);
+}
+
+.list-item.empty .list-item-label {
+	color: var(--text-muted);
+	font-style: italic;
+}
+
+.list-item-icon {
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	opacity: 0.6;
+}
+
+.list-item:not(.empty) .list-item-icon {
+	opacity: 1;
+}
+
+.list-item-icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	image-rendering: pixelated;
+}
+
+.list-item-label {
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.list-item-meta {
+	font-size: var(--font-xs);
+	color: var(--text-muted);
+	font-family: "Courier New", monospace;
+}
+
+.list-item-arrow {
+	color: var(--text-muted);
+	font-size: var(--font-base);
+	margin-left: auto;
+	padding-left: 0.4rem;
+}
+
+.list-item:hover:not(:disabled) .list-item-arrow,
+.list-item.focused .list-item-arrow {
+	color: var(--accent-teal);
+}
+
+.list-item.disabled .list-item-arrow {
+	color: var(--text-muted);
+}

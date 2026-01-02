@@ -2,19 +2,19 @@
   display: flex;
   align-items: center;
   padding: 0.6rem 1rem;
-  background: var(--bg-dark);
-  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-header);
+  border-bottom: var(--border-width-panel) solid var(--border-color);
 }
 
 .header-icon {
-  font-size: 1.1rem;
+  font-size: var(--font-base);
   margin-right: 0.6rem;
   color: var(--accent-teal);
 }
 
 .header-title {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: var(--font-base);
   font-weight: 600;
   letter-spacing: 2px;
   color: var(--text-primary);
@@ -30,10 +30,10 @@
 }
 
 .gamepad-indicator {
-  font-size: 0.85rem;
+  font-size: var(--font-sm);
   color: var(--accent-teal);
   padding: 0.3rem 0.6rem;
-  background: var(--bg-panel);
+  background: var(--bg-cell);
   border: 1px solid var(--accent-teal);
   animation: gamepad-pulse 2s ease-in-out infinite;
 }
@@ -44,21 +44,21 @@
 }
 
 .weight-indicator {
-  font-size: 0.9rem;
+  font-size: var(--font-sm);
   color: var(--text-secondary);
   font-family: 'Courier New', monospace;
   padding: 0.3rem 0.6rem;
-  background: var(--bg-panel);
+  background: var(--bg-cell);
   border: 1px solid var(--border-color);
 }
 
 /* Resolution picker for testing different screen sizes */
 .resolution-btn {
-  font-size: 0.85rem;
+  font-size: var(--font-sm);
   color: var(--text-muted);
   font-family: 'Courier New', monospace;
   padding: 0.3rem 0.6rem;
-  background: var(--bg-panel);
+  background: var(--bg-cell);
   border: 1px solid var(--border-color);
   cursor: pointer;
   transition: all 0.1s ease;
@@ -75,7 +75,7 @@
   top: 100%;
   right: 0;
   margin-top: 0.25rem;
-  background: var(--bg-panel);
+  background: var(--bg-cell);
   border: 1px solid var(--border-color);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   z-index: 100;
@@ -90,7 +90,7 @@
   border: none;
   border-bottom: 1px solid var(--border-color);
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: var(--font-sm);
   text-align: left;
   cursor: pointer;
   transition: all 0.1s ease;
@@ -112,11 +112,11 @@
 }
 
 .steam-deck-btn {
-  font-size: 0.85rem;
+  font-size: var(--font-sm);
   color: var(--text-muted);
   font-family: 'Courier New', monospace;
   padding: 0.3rem 0.6rem;
-  background: var(--bg-panel);
+  background: var(--bg-cell);
   border: 1px solid var(--border-color);
   cursor: pointer;
   transition: all 0.1s ease;
@@ -166,10 +166,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-panel);
+  background: var(--bg-cell);
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
-  font-size: 0.85rem;
+  font-size: var(--font-sm);
   cursor: pointer;
   transition: all 0.1s ease;
 }

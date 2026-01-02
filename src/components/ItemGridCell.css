@@ -1,6 +1,6 @@
 /* Grid cells */
 .grid-cell {
-  background: var(--bg-panel);
+  background: var(--bg-cell);
   border: 1px solid var(--border-color);
   position: relative;
 }
@@ -14,7 +14,7 @@
   position: absolute;
   top: -1px;
   left: -1px;
-  background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-panel) 100%);
+  background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-cell) 100%);
   border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
@@ -63,7 +63,7 @@
 }
 
 .item-icon {
-  font-size: 1.25rem;
+  font-size: var(--font-lg);
   filter: grayscale(0.2);
 }
 
@@ -71,7 +71,7 @@
   position: absolute;
   bottom: 2px;
   right: 4px;
-  font-size: 0.85rem;
+  font-size: var(--font-sm);
   font-weight: bold;
   color: var(--text-primary);
   background: rgba(0, 0, 0, 0.7);
@@ -82,6 +82,6 @@
   position: absolute;
   top: 2px;
   right: 4px;
-  font-size: 0.7rem;
+  font-size: var(--font-xs);
   color: var(--text-muted);
 }

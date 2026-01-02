@@ -1,4 +1,5 @@
 import { SLOT_LABELS } from '../stores/inventoryStore';
+import Panel from './Panel';
 
 const SLOT_ICONS = {
   helmet: '⛑',
@@ -48,7 +49,7 @@ const SLOT_DESCRIPTIONS = {
 
 export default function EmptySlotDetails({ slotId }) {
   return (
-    <div className="details-panel empty-slot">
+    <Panel border="top" className="details-panel" contentClassName="details-content empty-slot">
       <div className="item-preview">
         <div className="preview-frame empty">
           <span className="preview-icon">{SLOT_ICONS[slotId] || '◻'}</span>
@@ -62,6 +63,6 @@ export default function EmptySlotDetails({ slotId }) {
       <div className="details-hint">
         <span>Equip an item to fill this slot</span>
       </div>
-    </div>
+    </Panel>
   );
 }

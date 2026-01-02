@@ -1,4 +1,5 @@
 import { useInventoryStore } from '../stores/inventoryStore';
+import Panel from './Panel';
 import EmptySlotDetails from './EmptySlotDetails';
 import ItemPreview from './ItemPreview';
 import './DetailsPanel.css';
@@ -25,16 +26,16 @@ export default function DetailsPanel() {
 
   if (!item) {
     return (
-      <div className="details-panel empty">
+      <Panel border="top" className="details-panel" contentClassName="details-content empty">
         <div className="empty-state">
           <p className="empty-text">Select an item to view details</p>
         </div>
-      </div>
+      </Panel>
     );
   }
 
   return (
-    <div className="details-panel">
+    <Panel border="top" className="details-panel" contentClassName="details-content">
       <div className="item-preview">
         <div className="preview-frame">
           <ItemPreview item={item} />
@@ -46,6 +47,6 @@ export default function DetailsPanel() {
         <p className="item-stats-line">{buildStatsLine(item)}</p>
         <p className="item-description">{item.description}</p>
       </div>
-    </div>
+    </Panel>
   );
 }

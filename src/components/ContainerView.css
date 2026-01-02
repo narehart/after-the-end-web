@@ -1,15 +1,4 @@
-.container-view {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  background: var(--bg-dark);
-  overflow: hidden;
-}
-
 .container-view-content {
-  flex: 1;
-  padding: 0.5rem;
   overflow: hidden;
 }
 
@@ -27,7 +16,7 @@
 }
 
 .container-view-content::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: var(--bg-panel);
 }
 
 .container-view-content::-webkit-scrollbar-thumb {

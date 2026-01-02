@@ -1,3 +1,5 @@
+import ListItem from '../ListItem';
+
 export default function MenuItem({
   item,
   context,
@@ -15,33 +17,18 @@ export default function MenuItem({
     }
   };
 
-  const handleMouseEnter = () => {
-    if (onMouseEnter) onMouseEnter();
-    // Auto-open submenus on hover
-    if (item.hasChildren && item.getItems && !isDisabled) {
-      onSelect(item);
-    }
-  };
-
-  const className = [
-    'menu-item',
-    isFocused && 'focused',
-    isSelected && 'selected',
-    isDisabled && 'disabled',
-    item.hasChildren && 'has-children',
-  ].filter(Boolean).join(' ');
+  const state = { isFocused, isSelected, isDisabled };
 
   return (
-    <button
-      className={className}
+    <ListItem
+      icon={item.icon}
+      label={label}
+      meta={item.meta}
+      hasArrow={item.hasChildren}
+      state={state}
       onClick={handleClick}
-      onMouseEnter={handleMouseEnter}
-      disabled={isDisabled}
-    >
-      {item.icon && <span className="menu-item-icon">{item.icon}</span>}
-      <span className="menu-item-label">{label}</span>
-      {item.meta && <span className="menu-item-meta">{item.meta}</span>}
-      {item.hasChildren && <span className="menu-item-arrow">›</span>}
-    </button>
+      onMouseEnter={onMouseEnter}
+      className="menu-item"
+    />
   );
 }

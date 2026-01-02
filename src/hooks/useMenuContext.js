@@ -1,5 +1,6 @@
 import { useMemo, useCallback } from 'react';
 import { useInventoryStore } from '../stores/inventoryStore';
+import { findItemInGrids } from '../stores/gridHelpers';
 
 export default function useMenuContext(menu) {
   const { itemId, source } = menu;
@@ -15,6 +16,12 @@ export default function useMenuContext(menu) {
   const unequipItem = useInventoryStore((state) => state.unequipItem);
   const findFreePosition = useInventoryStore((state) => state.findFreePosition);
   const closeMenu = useInventoryStore((state) => state.closeMenu);
+
+  // Find which container the item is currently in
+  const currentContainerId = useMemo(() => {
+    const location = findItemInGrids(grids, itemId);
+    return location?.gridId || null;
+  }, [grids, itemId]);
 
   const canFitItem = useCallback((containerId) => {
     if (!item) return false;
@@ -32,6 +39,7 @@ export default function useMenuContext(menu) {
     equipment,
     allItems,
     grids,
+    currentContainerId,
 
     // Query functions
     canFitItem,
@@ -43,7 +51,7 @@ export default function useMenuContext(menu) {
     unequipItem,
     closeMenu,
   }), [
-    item, itemId, source, panel, equipment, allItems, grids,
+    item, itemId, source, panel, equipment, allItems, grids, currentContainerId,
     canFitItem, navigateToContainer, rotateItem, equipItem, unequipItem, closeMenu,
   ]);
 }

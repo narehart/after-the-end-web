@@ -30,7 +30,7 @@
 .inventory-column {
   display: flex;
   flex-direction: column;
-  border-right: 1px solid var(--border-color);
+  border-right: var(--border-width-panel) solid var(--border-color);
   overflow: hidden;
 }
 

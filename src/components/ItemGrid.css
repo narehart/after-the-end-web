@@ -9,6 +9,5 @@
 .inventory-grid {
   display: grid;
   background: var(--bg-darkest);
-  border: 2px solid var(--border-color);
   width: fit-content;
 }

@@ -36,22 +36,6 @@ const initialConditions = {
   health: 85, hunger: 60, thirst: 45, temperature: 72, encumbrance: 35,
 };
 
-const initialActionModal = {
-  isOpen: false, itemId: null, position: { x: 0, y: 0 }, context: null,
-};
-
-const initialDestinationPicker = {
-  isOpen: false, action: null, itemId: null, buttonY: null,
-};
-
-// Transform viewport coordinates to scaled container coordinates
-function adjustModalPosition(position, uiScale, containerRect) {
-  if (!containerRect || uiScale === 1) return position;
-  const relX = position.x - containerRect.left;
-  const relY = position.y - containerRect.top;
-  return { x: relX / uiScale, y: relY / uiScale };
-}
-
 export const useInventoryStore = create((set, get) => ({
   equipment: initialEquipment,
   items: mockItems,
@@ -62,8 +46,6 @@ export const useInventoryStore = create((set, get) => ({
   focusedEmptySlot: null,
   groundCollapsed: false,
   conditions: initialConditions,
-  actionModal: initialActionModal,
-  destinationPicker: initialDestinationPicker,
   menu: initialMenu,
   uiScale: 1,
   containerRect: null,
@@ -76,26 +58,7 @@ export const useInventoryStore = create((set, get) => ({
   toggleGroundCollapsed: () => set((state) => ({ groundCollapsed: !state.groundCollapsed })),
   clearInventoryFocusPath: () => set({ inventoryFocusPath: [], selectedItemId: null }),
 
-  // Modal actions
-  openActionModal: (itemId, position, context) => {
-    const { uiScale, containerRect } = get();
-    const adjustedPosition = adjustModalPosition(position, uiScale, containerRect);
-    set({ actionModal: { isOpen: true, itemId, position: adjustedPosition, context }, selectedItemId: itemId });
-  },
-
-  closeActionModal: () => set({ actionModal: initialActionModal }),
-
-  openDestinationPicker: (action, itemId, buttonY = null) => set({
-    destinationPicker: { isOpen: true, action, itemId, buttonY },
-  }),
-
-  closeDestinationPicker: () => set({ destinationPicker: initialDestinationPicker }),
-
-  closeAllModals: () => set({
-    actionModal: initialActionModal,
-    destinationPicker: initialDestinationPicker,
-    menu: initialMenu,
-  }),
+  closeAllModals: () => set({ menu: initialMenu }),
 
   // Menu actions (from menuActions.js)
   ...createMenuActions(get, set),

@@ -44,15 +44,16 @@ function createContainerItem(info, canFit, newPath, action) {
 }
 
 function buildRootDestinations(ctx, action) {
-  const { equipment, allItems, grids, itemId, canFitItem } = ctx;
+  const { equipment, allItems, grids, itemId, canFitItem, currentContainerId } = ctx;
   const items = [];
 
+  const isOnGround = currentContainerId === 'ground';
   items.push({
     id: 'ground',
-    label: 'Ground',
+    label: isOnGround ? 'Ground (already here)' : 'Ground',
     type: 'navigate',
-    hasChildren: true,
-    disabled: () => !canFitItem('ground'),
+    hasChildren: !isOnGround,
+    disabled: () => isOnGround || !canFitItem('ground'),
     data: { containerId: 'ground', action },
     getItems: (ctx2) => buildDestinationItems(ctx2, ['ground'], action),
   });
@@ -61,7 +62,17 @@ function buildRootDestinations(ctx, action) {
     if (!equippedId || equippedId === itemId) return;
     const info = getContainerInfo(allItems, grids, equippedId);
     if (info) {
-      items.push(createContainerItem(info, canFitItem(equippedId), [info.id], action));
+      const isCurrentContainer = equippedId === currentContainerId;
+      items.push({
+        id: info.id,
+        label: isCurrentContainer ? `${info.name} (already here)` : info.name,
+        type: 'navigate',
+        hasChildren: !isCurrentContainer,
+        disabled: () => isCurrentContainer || !canFitItem(equippedId),
+        meta: info.capacity,
+        data: { containerId: info.id, action },
+        getItems: (ctx2) => buildDestinationItems(ctx2, [info.id], action),
+      });
     }
   });
 
@@ -96,13 +107,12 @@ export function buildDestinationItems(ctx, path, action) {
   if (path.length > 0) {
     const currentContainerId = path[path.length - 1];
     const canFit = canFitItem(currentContainerId);
-    const containerName = currentContainerId === 'ground'
-      ? 'Ground'
-      : (allItems[currentContainerId]?.name || 'here');
+    const isGround = currentContainerId === 'ground';
+    const containerName = isGround ? 'Ground' : (allItems[currentContainerId]?.name || 'here');
 
     items.push({
       id: 'place-here',
-      label: `Place in ${containerName}`,
+      label: isGround ? 'Place on Ground' : `Place in ${containerName}`,
       type: 'select',
       disabled: () => !canFit,
       data: { containerId: currentContainerId, action },

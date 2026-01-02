@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 
 const GRID_COLUMNS = 10;
 const CELL_GAP = 2;
-const GRID_PADDING = 4;
 const GRID_BORDER = 4;
 const CONTENT_PADDING = 16;
 const MIN_CELL_SIZE = 24;
@@ -17,7 +16,7 @@ export default function useCellSize(containerRef, effectiveResolution) {
         if (containerWidth > 0) {
           const totalGaps = (GRID_COLUMNS - 1) * CELL_GAP;
           const availableWidth =
-            containerWidth - GRID_BORDER - totalGaps - 2 * GRID_PADDING - CONTENT_PADDING;
+            containerWidth - GRID_BORDER - totalGaps - CONTENT_PADDING;
           const newCellSize = Math.floor(availableWidth / GRID_COLUMNS);
           setCellSize(Math.max(MIN_CELL_SIZE, newCellSize));
         }

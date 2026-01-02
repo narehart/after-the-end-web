@@ -4,7 +4,6 @@ import ItemGridCell from './ItemGridCell';
 import './ItemGrid.css';
 
 const CELL_GAP = 2; // Gap between cells in pixels
-const GRID_PADDING = 4; // Padding around grid in pixels
 
 export default function ItemGrid({ grid, context, cellSize }) {
   const items = useInventoryStore((state) => state.items);
@@ -68,7 +67,6 @@ export default function ItemGrid({ grid, context, cellSize }) {
           gridTemplateColumns: `repeat(${grid.width}, ${cellSize}px)`,
           gridTemplateRows: `repeat(${grid.height}, ${cellSize}px)`,
           gap: `${CELL_GAP}px`,
-          padding: `${GRID_PADDING}px`,
         }}
         role="grid"
         tabIndex={0}

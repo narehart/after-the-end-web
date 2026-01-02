@@ -1,7 +1,31 @@
+import { useMemo } from 'react';
 import { useInventoryStore } from '../stores/inventoryStore';
-import PanelHeader from './PanelHeader';
+import Panel from './Panel';
 import ItemGrid from './ItemGrid';
 import './ContainerView.css';
+
+function useBreadcrumbLinks(panelLabel, focusPath, items, onNavigateBack, panelType) {
+  return useMemo(() => {
+    // For world panel at ground level, don't show redundant "ground" breadcrumb
+    const isGroundRoot = panelType === 'world' && focusPath.length === 1 && focusPath[0] === 'ground';
+    if (isGroundRoot) {
+      return [{ label: panelLabel }];
+    }
+
+    // First link is never clickable - it's just a label, not a container
+    const links = [{
+      label: panelLabel,
+    }];
+    focusPath.forEach((id, index) => {
+      const isLast = index === focusPath.length - 1;
+      links.push({
+        label: items[id]?.name || id,
+        onClick: isLast ? undefined : () => onNavigateBack(index),
+      });
+    });
+    return links;
+  }, [panelLabel, focusPath, items, onNavigateBack, panelType]);
+}
 
 // Main ContainerView component - reusable for both inventory and world panels
 export default function ContainerView({
@@ -17,6 +41,7 @@ export default function ContainerView({
 
   const currentContainerId = focusPath.length > 0 ? focusPath[focusPath.length - 1] : null;
   const currentGrid = currentContainerId ? grids[currentContainerId] : null;
+  const breadcrumbLinks = useBreadcrumbLinks(panelLabel, focusPath, items, onNavigateBack, panelType);
 
   // Determine context for action modal based on panel type and current container
   const getContext = () => {
@@ -27,26 +52,16 @@ export default function ContainerView({
   };
 
   return (
-    <div className="container-view">
-      <PanelHeader
-        panelLabel={panelLabel}
-        focusPath={focusPath}
-        onNavigateBack={onNavigateBack}
-        items={items}
-        panelType={panelType}
-      />
-
-      <div className="container-view-content">
-        {currentGrid ? (
-          <ItemGrid
-            grid={currentGrid}
-            context={getContext()}
-            cellSize={cellSize}
-          />
-        ) : (
-          <div className="empty-container-message">{emptyMessage}</div>
-        )}
-      </div>
-    </div>
+    <Panel breadcrumbLinks={breadcrumbLinks} contentClassName="container-view-content">
+      {currentGrid ? (
+        <ItemGrid
+          grid={currentGrid}
+          context={getContext()}
+          cellSize={cellSize}
+        />
+      ) : (
+        <div className="empty-container-message">{emptyMessage}</div>
+      )}
+    </Panel>
   );
 }

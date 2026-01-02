@@ -13,6 +13,7 @@ export const mockItems = {
     gridSize: { width: 10, height: 10 },
     equippableSlots: ['backpack'],
     image: 'ItmBackpack.png',
+    spriteVertical: true,
   },
   'pouch-1': {
     id: 'pouch-1',
