@@ -5,11 +5,11 @@ export function buildStatsLine(props: BuildStatsLineProps): string {
   const { item } = props;
   const parts = [
     item.type.toUpperCase(),
+    item.weight !== FIRST_INDEX ? `${String(item.weight)}kg` : null,
+    item.durability !== undefined ? `${String(item.durability)}%` : null,
     item.quantity !== undefined && item.quantity > DEFAULT_QUANTITY
       ? `x${String(item.quantity)}`
       : null,
-    item.weight !== FIRST_INDEX ? `${String(item.weight)}kg` : null,
-    item.durability !== undefined ? `${String(item.durability)}%` : null,
   ];
   return parts.filter(Boolean).join(' · ');
 }
