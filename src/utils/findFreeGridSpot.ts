@@ -1,5 +1,5 @@
 import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
-import type { FindFreeGridSpotProps } from '../types/utils';
+import type { FindFreeGridSpotProps } from '../types/randomContainer';
 import { checkGridSpot } from './checkGridSpot';
 import { randomInt } from './randomInt';
 

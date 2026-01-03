@@ -1,5 +1,5 @@
 import type { GridsMap } from '../types/inventory';
-import type { PopulateContainerProps, PopulateContainerReturn } from '../types/utils';
+import type { PopulateContainerProps, PopulateContainerReturn } from '../types/randomContainer';
 import { buildGridWithItems } from './buildGridWithItems';
 import { createContainerGrids } from './createContainerGrids';
 import { getRandomContainerContents } from './getRandomContainerContents';

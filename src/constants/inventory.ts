@@ -25,6 +25,7 @@ export const SINGLE_ITEM_IDS = [
 // Random container content defaults
 export const MIN_CONTAINER_ITEMS = 2;
 export const MAX_CONTAINER_ITEMS = 5;
+export const MIN_GUARANTEED_QUANTITY = 2;
 
 // Random number generation
 export const SHUFFLE_MIDPOINT = 0.5;

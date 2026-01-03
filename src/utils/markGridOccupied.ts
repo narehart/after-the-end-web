@@ -1,4 +1,4 @@
-import type { MarkGridOccupiedProps } from '../types/utils';
+import type { MarkGridOccupiedProps } from '../types/randomContainer';
 
 export function markGridOccupied(props: MarkGridOccupiedProps): void {
   const { grid, x, y, itemWidth, itemHeight } = props;

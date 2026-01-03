@@ -1,5 +1,5 @@
 import { SECOND_INDEX } from '../constants/numbers';
-import type { RandomIntProps } from '../types/utils';
+import type { RandomIntProps } from '../types/randomContainer';
 
 export function randomInt(props: RandomIntProps): number {
   const { min, max } = props;

@@ -1,19 +1,11 @@
-import {
-  MAX_CONTAINER_ITEMS,
-  MIN_CONTAINER_ITEMS,
-  SHUFFLE_MIDPOINT,
-  SINGLE_ITEM_IDS,
-  STACKABLE_ITEM_CONFIGS,
-} from '../constants/inventory';
-import { DEFAULT_QUANTITY } from '../constants/numbers';
-import { getItemById } from '../data/items';
+import { MAX_CONTAINER_ITEMS, MIN_CONTAINER_ITEMS } from '../constants/inventory';
+import { FIRST_INDEX } from '../constants/numbers';
 import type { ItemPlacement } from '../types/ui';
-import type { GetRandomContainerContentsProps } from '../types/utils';
+import type { GetRandomContainerContentsProps } from '../types/randomContainer';
 import { createOccupancyGrid } from './createOccupancyGrid';
-import { findFreeGridSpot } from './findFreeGridSpot';
-import { markGridOccupied } from './markGridOccupied';
+import { fillContainerWithItems } from './fillContainerWithItems';
+import { placeGuaranteedStackable } from './placeGuaranteedStackable';
 import { randomInt } from './randomInt';
-import { shuffleArray } from './shuffleArray';
 
 export function getRandomContainerContents(
   props: GetRandomContainerContentsProps
@@ -24,55 +16,27 @@ export function getRandomContainerContents(
   const grid = createOccupancyGrid({ width, height });
   const targetCount = randomInt({ min: minItems, max: maxItems });
 
-  // Combine and shuffle all available items
-  const stackableItems = STACKABLE_ITEM_CONFIGS.map((config) => ({
-    id: config.id,
-    maxQty: config.maxQty,
-  }));
-  const singleItems = SINGLE_ITEM_IDS.map((id) => ({ id, maxQty: DEFAULT_QUANTITY }));
-  const allItems = shuffleArray([...stackableItems, ...singleItems]);
+  // Guarantee at least one stackable item with quantity > 1
+  const guaranteed = placeGuaranteedStackable({ grid, gridWidth: width, gridHeight: height });
+  if (guaranteed !== null) {
+    placements.push(guaranteed);
+  }
 
-  // Sort items by random factor to vary selection each time
-  const sortedItems = allItems.sort(() => Math.random() - SHUFFLE_MIDPOINT);
-
-  for (const itemConfig of sortedItems) {
-    if (placements.length >= targetCount) break;
-
-    const item = getItemById(itemConfig.id);
-    if (item === undefined) continue;
-
-    const itemWidth = item.size.width;
-    const itemHeight = item.size.height;
-
-    const spot = findFreeGridSpot({
-      grid,
-      gridWidth: width,
-      gridHeight: height,
-      itemWidth,
-      itemHeight,
-    });
-
-    if (spot === null) continue;
-
-    markGridOccupied({
-      grid,
-      x: spot.x,
-      y: spot.y,
-      itemWidth,
-      itemHeight,
-    });
-
-    const quantity =
-      itemConfig.maxQty > DEFAULT_QUANTITY
-        ? randomInt({ min: DEFAULT_QUANTITY, max: itemConfig.maxQty })
-        : DEFAULT_QUANTITY;
-
-    placements.push({
-      id: itemConfig.id,
-      x: spot.x,
-      y: spot.y,
-      quantity,
-    });
+  // Fill remaining slots
+  const remainingCount = targetCount - placements.length;
+  if (remainingCount > FIRST_INDEX) {
+    const fillProps =
+      guaranteed !== null
+        ? {
+            grid,
+            gridWidth: width,
+            gridHeight: height,
+            targetCount: remainingCount,
+            excludeId: guaranteed.id,
+          }
+        : { grid, gridWidth: width, gridHeight: height, targetCount: remainingCount };
+    const additional = fillContainerWithItems(fillProps);
+    placements.push(...additional);
   }
 
   return placements;

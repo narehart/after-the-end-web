@@ -1,4 +1,4 @@
-import type { CheckGridSpotProps } from '../types/utils';
+import type { CheckGridSpotProps } from '../types/randomContainer';
 
 export function checkGridSpot(props: CheckGridSpotProps): boolean {
   const { grid, x, y, itemWidth, itemHeight } = props;
