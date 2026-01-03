@@ -3,9 +3,8 @@ import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
 import { useBreadcrumbLinksInventory } from '../hooks/useBreadcrumbLinksInventory';
-import Panel from './Panel';
+import { Box, Button, Panel, Text } from './primitives';
 import GridPanelGrid from './GridPanelGrid';
-import { Box, Button, Text } from './primitives';
 import styles from './GridPanel.module.css';
 
 const cx = classNames.bind(styles);

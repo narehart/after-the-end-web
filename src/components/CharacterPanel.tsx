@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
-import ConditionBar from './ConditionBar';
-import { Box, Text } from './primitives';
+import { Box, Text, ConditionBar } from './primitives';
 import styles from './CharacterPanel.module.css';
 
 const cx = classNames.bind(styles);

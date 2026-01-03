@@ -6,8 +6,7 @@ import type { SlotType } from '../types/inventory';
 import { getImageUrl } from '../utils/images';
 import { getMainImage } from '../utils/getMainImage';
 import { formatSlotLabel } from '../utils/formatSlotLabel';
-import ListItem from './ListItem';
-import { Image } from './primitives';
+import { Image, ListItem } from './primitives';
 import styles from './EquipmentSlot.module.css';
 
 const cx = classNames.bind(styles);

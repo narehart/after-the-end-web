@@ -1,9 +1,8 @@
 import classNames from 'classnames/bind';
 import { useInventoryStore, SLOT_TYPES } from '../stores/inventoryStore';
 import { FIRST_INDEX } from '../constants/numbers';
-import Panel from './Panel';
+import { Box, Panel } from './primitives';
 import EquipmentSlot from './EquipmentSlot';
-import { Box } from './primitives';
 import styles from './EquipmentPanel.module.css';
 
 const cx = classNames.bind(styles);

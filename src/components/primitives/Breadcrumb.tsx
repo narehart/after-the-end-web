@@ -1,10 +1,10 @@
 import classNames from 'classnames/bind';
-import type { BreadcrumbLink } from '../types/inventory';
-import type { LinkWithIcon } from '../types/ui';
-import { FIRST_INDEX } from '../constants/numbers';
-import { buildSegments } from '../utils/breadcrumb';
-import { Box, Button, Image, Text } from './primitives';
+import type { BreadcrumbLink } from '../../types/inventory';
+import type { LinkWithIcon } from '../../types/ui';
+import { FIRST_INDEX } from '../../constants/numbers';
+import { buildSegments } from '../../utils/breadcrumb';
 import styles from './Breadcrumb.module.css';
+import { Box, Button, Image, Text } from './index';
 
 const cx = classNames.bind(styles);
 

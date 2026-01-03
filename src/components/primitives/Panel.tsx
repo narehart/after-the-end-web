@@ -1,10 +1,9 @@
 import type { ReactNode } from 'react';
 import classNames from 'classnames/bind';
-import type { BreadcrumbLink } from '../types/inventory';
-import type { BorderPosition } from '../types/ui';
-import Breadcrumb from './Breadcrumb';
-import { Box, Text } from './primitives';
+import type { BreadcrumbLink } from '../../types/inventory';
+import type { BorderPosition } from '../../types/ui';
 import styles from './Panel.module.css';
+import { Breadcrumb, Box, Text } from './index';
 
 const cx = classNames.bind(styles);
 

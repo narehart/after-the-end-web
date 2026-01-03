@@ -8,9 +8,8 @@ import { useMenuActions } from '../hooks/useMenuActions';
 import useMenuContext from '../hooks/useMenuContext';
 import useMenuLevels from '../hooks/useMenuLevels';
 import useMenuKeyboard from '../hooks/useMenuKeyboard';
-import Breadcrumb from './Breadcrumb';
+import { Box, Breadcrumb } from './primitives';
 import MenuList from './MenuList';
-import { Box } from './primitives';
 import styles from './Menu.module.css';
 
 const cx = classNames.bind(styles);

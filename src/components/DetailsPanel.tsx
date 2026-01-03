@@ -1,10 +1,9 @@
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import { buildStatsLine } from '../utils/buildStatsLine';
-import Panel from './Panel';
 import EmptySlotDetails from './EmptySlotDetails';
 import ItemPreview from './ItemPreview';
-import { Box, Text } from './primitives';
+import { Box, Text, Panel } from './primitives';
 import styles from './DetailsPanel.module.css';
 
 const cx = classNames.bind(styles);

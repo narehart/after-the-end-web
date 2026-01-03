@@ -1,8 +1,7 @@
 import classNames from 'classnames/bind';
 import { SLOT_LABELS, SLOT_ICONS, SLOT_DESCRIPTIONS } from '../constants/slots';
 import type { SlotType } from '../types/inventory';
-import Panel from './Panel';
-import { Box, Text } from './primitives';
+import { Box, Panel, Text } from './primitives';
 import styles from './EmptySlotDetails.module.css';
 
 const cx = classNames.bind(styles);

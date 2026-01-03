@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
-import { PERCENTAGE_MULTIPLIER } from '../constants/numbers';
-import { Box, Text } from './primitives';
+import { PERCENTAGE_MULTIPLIER } from '../../constants/numbers';
 import styles from './ConditionBar.module.css';
+import { Box, Text } from './index';
 
 const cx = classNames.bind(styles);
 
