@@ -1,6 +1,7 @@
 import type { MutableRefObject } from 'react';
 import type {
   CellGrid,
+  Equipment,
   GridCell,
   GridPosition,
   GridsMap,
@@ -101,6 +102,25 @@ export type CreateEmptyGridReturn = CellGrid;
 export interface BuildInitialInventoryReturn {
   grids: GridsMap;
   instances: ItemsMap;
+  equipment: Equipment;
+}
+
+export interface CreateContainerGridsProps {
+  instances: ItemsMap;
+}
+
+export type CreateContainerGridsReturn = GridsMap;
+
+export interface CreateEquipmentInstancesReturn {
+  instances: ItemsMap;
+  grids: GridsMap;
+  equipment: Equipment;
+}
+
+export interface InitialInventoryState {
+  items: ItemsMap;
+  grids: GridsMap;
+  equipment: Equipment;
 }
 
 // Item utility Props interfaces

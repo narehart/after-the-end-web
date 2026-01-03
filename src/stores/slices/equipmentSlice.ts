@@ -1,13 +1,13 @@
 import type { StateCreator } from 'zustand';
 import type { EquipmentSlice } from '../../types/store';
-import { INITIAL_EQUIPMENT } from '../../constants/equipment';
+import { initialInventoryState } from './itemsSlice';
 
 export type { EquipmentSlice } from '../../types/store';
 
 export const createEquipmentSlice: StateCreator<EquipmentSlice, [], [], EquipmentSlice> = (
   set
 ) => ({
-  equipment: INITIAL_EQUIPMENT,
+  equipment: initialInventoryState.equipment,
 
   setEquipment: (equipment): void => {
     set({ equipment });

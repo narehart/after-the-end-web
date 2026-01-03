@@ -2,6 +2,7 @@ import type { StateCreator } from 'zustand';
 import type { Item, ItemsMap } from '../../types/inventory';
 import { toItemType } from '../../types/inventory';
 import type { ItemsSlice } from '../../types/store';
+import type { InitialInventoryState } from '../../types/utils';
 import neoItemsArray from '../../data/neoItems.json';
 import { buildInitialInventory } from '../../utils/buildInitialInventory';
 import { findFreePosition } from '../../utils/findFreePosition';
@@ -37,19 +38,18 @@ function buildTemplatesMap(): ItemsMap {
   return items;
 }
 
-function buildInitialState(): { items: ItemsMap; grids: ItemsSlice['grids'] } {
+function buildInitialState(): InitialInventoryState {
   const templates = buildTemplatesMap();
-  const { grids, instances } = buildInitialInventory();
-  // Merge templates with instances - instances override templates for placed items
+  const { grids, instances, equipment } = buildInitialInventory();
   const items: ItemsMap = { ...templates, ...instances };
-  return { items, grids };
+  return { items, grids, equipment };
 }
 
-const initialState = buildInitialState();
+export const initialInventoryState = buildInitialState();
 
 export const createItemsSlice: StateCreator<ItemsSlice, [], [], ItemsSlice> = (set, get) => ({
-  items: initialState.items,
-  grids: initialState.grids,
+  items: initialInventoryState.items,
+  grids: initialInventoryState.grids,
 
   setItems: (items): void => {
     set({ items });
