@@ -2,7 +2,7 @@ import type { Item } from '../../types/inventory';
 import { getImageUrl } from '../../utils/images';
 import { getItemIcon } from '../../utils/getItemIcon';
 import { getMainImage } from '../../utils/getMainImage';
-import { Image, Text } from './index';
+import { Icon, Text } from './index';
 
 interface ItemDisplayProps {
   item: Item;
@@ -25,11 +25,12 @@ export default function ItemDisplay({
   return (
     <>
       {hasImage ? (
-        <Image
+        <Icon
           src={getImageUrl(mainImage)}
           alt={item.name}
+          size="fill"
+          pixelated
           className={imageClassName}
-          draggable={false}
         />
       ) : (
         <Text className={iconClassName}>{getItemIcon({ type: item.type })}</Text>

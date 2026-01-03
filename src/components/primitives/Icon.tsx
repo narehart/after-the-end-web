@@ -9,6 +9,7 @@ interface IconProps {
   src: string;
   alt?: string | undefined;
   size?: IconSize | undefined;
+  pixelated?: boolean | undefined;
   className?: string | undefined;
 }
 
@@ -16,19 +17,14 @@ export default function Icon({
   src,
   alt = '',
   size = 'md',
+  pixelated,
   className,
 }: IconProps): React.JSX.Element {
   const sizeClass = typeof size === 'number' ? undefined : `icon--${size}`;
   const customStyle = typeof size === 'number' ? { width: size, height: size } : undefined;
 
-  return (
-    <Image
-      src={src}
-      alt={alt}
-      className={
-        className !== undefined ? `${cx('icon', sizeClass)} ${className}` : cx('icon', sizeClass)
-      }
-      style={customStyle}
-    />
-  );
+  const iconClass = cx('icon', sizeClass, { 'icon--pixelated': pixelated === true });
+  const fullClassName = className !== undefined ? `${iconClass} ${className}` : iconClass;
+
+  return <Image src={src} alt={alt} className={fullClassName} style={customStyle} />;
 }

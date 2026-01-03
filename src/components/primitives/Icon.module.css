@@ -17,3 +17,12 @@
   width: 32px;
   height: 32px;
 }
+
+.icon--fill {
+  width: 100%;
+  height: 100%;
+}
+
+.icon--pixelated {
+  image-rendering: pixelated;
+}

@@ -6,7 +6,7 @@ import type { SlotType } from '../types/inventory';
 import { getImageUrl } from '../utils/images';
 import { getMainImage } from '../utils/getMainImage';
 import { formatSlotLabel } from '../utils/formatSlotLabel';
-import { Image, ListItem } from './primitives';
+import { Icon, ListItem } from './primitives';
 import styles from './EquipmentSlot.module.css';
 
 const cx = classNames.bind(styles);
@@ -46,11 +46,11 @@ export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.J
 
   const icon =
     item !== null && item.image !== '' ? (
-      <Image
+      <Icon
         src={getImageUrl(getMainImage({ allImages: item.allImages }))}
         alt={item.description}
-        draggable={false}
-        className={cx('equipment-icon')}
+        size="fill"
+        pixelated
       />
     ) : null;
 

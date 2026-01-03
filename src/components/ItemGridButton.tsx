@@ -5,7 +5,7 @@ import { DEFAULT_QUANTITY, FIRST_INDEX, NOT_FOUND_INDEX } from '../constants/num
 import { getImageUrl } from '../utils/images';
 import { getItemIcon } from '../utils/getItemIcon';
 import { calculateItemDimensions } from '../utils/calculateItemDimensions';
-import { Flex, Image, Text } from './primitives';
+import { Flex, Icon, Text } from './primitives';
 import styles from './ItemGridButton.module.css';
 
 const cx = classNames.bind(styles);
@@ -72,11 +72,12 @@ export default function ItemGridButton({
       aria-label={item.name}
     >
       {item.image ? (
-        <Image
+        <Icon
           src={getImageUrl(item.image)}
           alt={item.name}
+          size="fill"
+          pixelated
           className={cx('item-image')}
-          draggable={false}
         />
       ) : (
         <Text className={cx('item-icon')}>{getItemIcon({ type: item.type })}</Text>

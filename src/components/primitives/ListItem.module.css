@@ -58,13 +58,6 @@
   opacity: var(--opacity-full);
 }
 
-.list-item-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  image-rendering: pixelated;
-}
-
 .list-item-label {
   flex: 1;
   overflow: hidden;
