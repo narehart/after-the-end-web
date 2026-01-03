@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import classNames from 'classnames/bind';
 import { PRESETS } from '../constants/display';
-import { PERCENTAGE_MULTIPLIER } from '../constants/numbers';
 import useGamepadStatus from '../hooks/useGamepadStatus';
+import useInventoryHeader from '../hooks/useInventoryHeader';
 import type { Resolution } from '../types/ui';
 import { Box, Button, Flex, Input, Text } from './primitives';
 import styles from './InventoryHeader.module.css';
@@ -20,26 +19,17 @@ interface InventoryHeaderProps {
   disableSteamDeckMode: () => void;
 }
 
-export default function InventoryHeader({
-  effectiveResolution,
-  setPreset,
-  isSimulated,
-  physicalScale,
-  setPhysicalScale,
-  steamDeckMode,
-  enableSteamDeckMode,
-  disableSteamDeckMode,
-}: InventoryHeaderProps): React.JSX.Element {
-  const [showResolutionPicker, setShowResolutionPicker] = useState(false);
+export default function InventoryHeader(props: InventoryHeaderProps): React.JSX.Element {
+  const { effectiveResolution, isSimulated, physicalScale, steamDeckMode } = props;
   const { isConnected: gamepadConnected, gamepadName } = useGamepadStatus();
-
-  const handlePresetSelect = (key: string): void => {
-    setPreset(key);
-    if (key !== 'steam-deck') {
-      disableSteamDeckMode();
-    }
-    setShowResolutionPicker(false);
-  };
+  const {
+    showResolutionPicker,
+    steamDeckLabel,
+    handlePresetSelect,
+    toggleResolutionPicker,
+    toggleSteamDeck,
+    handleScaleChange,
+  } = useInventoryHeader(props);
 
   return (
     <Flex as="header" align="center" className={cx('inventory-header')}>
@@ -49,18 +39,18 @@ export default function InventoryHeader({
       </Text>
       <Flex align="center" gap="12" className={cx('header-controls')}>
         {gamepadConnected ? (
-          <Text className={cx('gamepad-indicator')} title={gamepadName}>
+          <Text size="sm" className={cx('gamepad-indicator')} title={gamepadName}>
             🎮 Connected
           </Text>
         ) : null}
         <Button
           className={cx('resolution-btn')}
-          onClick={() => {
-            setShowResolutionPicker(!showResolutionPicker);
-          }}
+          onClick={toggleResolutionPicker}
           title="Test different resolutions"
         >
-          {effectiveResolution.width}×{effectiveResolution.height}
+          <Text type="muted" code>
+            {effectiveResolution.width}×{effectiveResolution.height}
+          </Text>
         </Button>
         {showResolutionPicker ? (
           <Box className={cx('resolution-picker')}>
@@ -72,7 +62,9 @@ export default function InventoryHeader({
                   handlePresetSelect(key);
                 }}
               >
-                {preset.label}
+                <Text type="secondary" size="sm">
+                  {preset.label}
+                </Text>
               </Button>
             ))}
           </Box>
@@ -81,18 +73,12 @@ export default function InventoryHeader({
           <Flex align="center" gap="8" className={cx('steam-deck-controls')}>
             <Button
               className={cx('steam-deck-btn', { active: steamDeckMode })}
-              onClick={() => {
-                if (steamDeckMode) {
-                  disableSteamDeckMode();
-                } else {
-                  enableSteamDeckMode();
-                }
-              }}
+              onClick={toggleSteamDeck}
               title="Toggle Steam Deck physical size simulation"
             >
-              {steamDeckMode
-                ? `🎮 ${Math.round(physicalScale * PERCENTAGE_MULTIPLIER)}%`
-                : '🎮 1:1'}
+              <Text type="muted" code>
+                {steamDeckLabel}
+              </Text>
             </Button>
             {steamDeckMode ? (
               <Input
@@ -102,19 +88,19 @@ export default function InventoryHeader({
                 max={1.0}
                 step={0.01}
                 value={physicalScale}
-                onChange={(e) => {
-                  setPhysicalScale(parseFloat(e.target.value));
-                }}
+                onChange={handleScaleChange}
                 title="Fine-tune physical scale"
               />
             ) : null}
           </Flex>
         ) : null}
-        <Text type="secondary" code className={cx('weight-indicator')}>
+        <Text type="secondary" code size="sm" className={cx('weight-indicator')}>
           12.4 / 35.0 kg
         </Text>
         <Flex as="button" justify="center" align="center" className={cx('close-btn')}>
-          ✕
+          <Text type="secondary" size="sm">
+            ✕
+          </Text>
         </Flex>
       </Flex>
     </Flex>

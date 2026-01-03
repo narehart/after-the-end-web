@@ -42,3 +42,19 @@
 .button--text:hover:not(:disabled) {
   background: var(--bg-elevated);
 }
+
+/* Toolbar variant - compact controls for toolbars/headers */
+.button--toolbar {
+  padding: var(--space-4) var(--space-10);
+  background: var(--bg-cell);
+  border: var(--border-default);
+}
+
+.button--toolbar:disabled {
+  opacity: var(--opacity-muted);
+}
+
+.button--toolbar:hover:not(:disabled) {
+  background: var(--bg-elevated);
+  border-color: var(--border-light);
+}

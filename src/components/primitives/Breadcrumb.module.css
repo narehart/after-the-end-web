@@ -1,8 +1,6 @@
 /* Breadcrumb-specific link overrides */
 .breadcrumb-link {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  min-width: 0;
 }
 
 .breadcrumb--clip .breadcrumb-link {

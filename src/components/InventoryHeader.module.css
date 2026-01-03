@@ -23,8 +23,6 @@
 }
 
 .gamepad-indicator {
-  font-size: var(--font-sm);
-  color: var(--accent-teal);
   padding: var(--space-4) var(--space-10);
   background: var(--bg-cell);
   border: var(--border-accent);
@@ -43,7 +41,6 @@
 }
 
 .weight-indicator {
-  font-size: var(--font-sm);
   padding: var(--space-4) var(--space-10);
   background: var(--bg-cell);
   border: var(--border-default);
@@ -51,9 +48,6 @@
 
 /* Resolution picker for testing different screen sizes */
 .resolution-btn {
-  font-size: var(--font-sm);
-  color: var(--text-muted);
-  font-family: var(--font-family-mono);
   padding: var(--space-4) var(--space-10);
   background: var(--bg-cell);
   border: var(--border-default);
@@ -63,7 +57,6 @@
 
 .resolution-btn:hover {
   background: var(--bg-elevated);
-  color: var(--text-secondary);
   border-color: var(--border-light);
 }
 
@@ -86,8 +79,6 @@
   background: none;
   border: none;
   border-bottom: var(--border-default);
-  color: var(--text-secondary);
-  font-size: var(--font-sm);
   text-align: left;
   cursor: pointer;
   transition: var(--transition-fast);
@@ -103,9 +94,6 @@
 }
 
 .steam-deck-btn {
-  font-size: var(--font-sm);
-  color: var(--text-muted);
-  font-family: var(--font-family-mono);
   padding: var(--space-4) var(--space-10);
   background: var(--bg-cell);
   border: var(--border-default);
@@ -116,7 +104,6 @@
 
 .steam-deck-btn:hover {
   background: var(--bg-elevated);
-  color: var(--text-secondary);
   border-color: var(--border-light);
 }
 
@@ -154,8 +141,6 @@
   height: 26px;
   background: var(--bg-cell);
   border: var(--border-default);
-  color: var(--text-secondary);
-  font-size: var(--font-sm);
   cursor: pointer;
   transition: var(--transition-fast);
 }

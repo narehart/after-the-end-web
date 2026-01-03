@@ -32,13 +32,11 @@
 .menu-item .list-item-icon {
   width: 24px;
   height: 24px;
-  font-size: var(--font-lg);
   filter: grayscale(0.3);
 }
 
 .menu-empty {
   padding: var(--space-12);
-  font-size: var(--font-sm);
   font-style: italic;
   text-align: center;
 }

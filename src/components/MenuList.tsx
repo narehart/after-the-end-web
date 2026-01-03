@@ -30,7 +30,7 @@ export default function MenuList({
 }: MenuListProps): React.JSX.Element {
   if (items.length === FIRST_INDEX) {
     return (
-      <Text type="muted" className={cx('menu-empty')}>
+      <Text type="muted" size="sm" className={cx('menu-empty')}>
         {emptyMessage}
       </Text>
     );

@@ -1,4 +1,5 @@
 import type { Item } from '../../types/inventory';
+import type { TextSize } from '../../types/ui';
 import { getImageUrl } from '../../utils/images';
 import { getItemIcon } from '../../utils/getItemIcon';
 import { getMainImage } from '../../utils/getMainImage';
@@ -7,7 +8,7 @@ import { Icon, Text } from './index';
 interface ItemDisplayProps {
   item: Item;
   imageClassName?: string | undefined;
-  iconClassName?: string | undefined;
+  iconSize?: TextSize | undefined;
   showName?: boolean | undefined;
   nameClassName?: string | undefined;
 }
@@ -15,7 +16,7 @@ interface ItemDisplayProps {
 export default function ItemDisplay({
   item,
   imageClassName,
-  iconClassName,
+  iconSize = 'lg',
   showName = false,
   nameClassName,
 }: ItemDisplayProps): React.JSX.Element {
@@ -33,7 +34,7 @@ export default function ItemDisplay({
           className={imageClassName}
         />
       ) : (
-        <Text className={iconClassName}>{getItemIcon({ type: item.type })}</Text>
+        <Text size={iconSize}>{getItemIcon({ type: item.type })}</Text>
       )}
       {showName ? <Text className={nameClassName}>{item.name}</Text> : null}
     </>

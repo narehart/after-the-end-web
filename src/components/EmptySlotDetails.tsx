@@ -22,17 +22,19 @@ export default function EmptySlotDetails({ slotId }: EmptySlotDetailsProps): Rea
     >
       <Box className={cx('item-preview')}>
         <Flex justify="center" align="center" className={cx('preview-frame', 'empty')}>
-          <Text className={cx('preview-icon')}>{SLOT_ICONS[slotId]}</Text>
+          <Text size="lg" className={cx('preview-icon')}>
+            {SLOT_ICONS[slotId]}
+          </Text>
         </Flex>
       </Box>
       <Box className={cx('item-info')}>
         <Text as="h2" strong ellipsis className={cx('item-name')}>
           {SLOT_LABELS[slotId]}
         </Text>
-        <Text as="p" type="muted" code className={cx('item-type')}>
+        <Text as="p" type="muted" code size="xs" className={cx('item-type')}>
           EMPTY SLOT
         </Text>
-        <Text as="p" type="secondary" className={cx('item-description')}>
+        <Text as="p" type="secondary" size="sm" className={cx('item-description')}>
           {SLOT_DESCRIPTIONS[slotId]}
         </Text>
       </Box>

@@ -2,7 +2,7 @@
 import { forwardRef, type ReactNode } from 'react';
 import classNames from 'classnames/bind';
 import type { PolymorphicComponent, PolymorphicProps } from '../../types/polymorphic';
-import type { TextElement, TextType } from '../../types/ui';
+import type { TextElement, TextSize, TextType } from '../../types/ui';
 import styles from './Text.module.css';
 
 const cx = classNames.bind(styles);
@@ -10,6 +10,7 @@ const cx = classNames.bind(styles);
 interface TextOwnProps {
   children?: ReactNode;
   type?: TextType | undefined;
+  size?: TextSize | undefined;
   strong?: boolean | undefined;
   bold?: boolean | undefined;
   code?: boolean | undefined;
@@ -27,6 +28,7 @@ const Text = forwardRef(
       as,
       children,
       type,
+      size,
       strong,
       bold,
       code,
@@ -39,6 +41,7 @@ const Text = forwardRef(
     const Component: any = as ?? 'span';
     const textClass = cx('text', {
       [`text--${type}`]: type !== undefined,
+      [`text--${size}`]: size !== undefined,
       'text--strong': strong === true,
       'text--bold': bold === true,
       'text--code': code === true,

@@ -20,7 +20,6 @@
 }
 
 .preview-icon {
-  font-size: var(--font-lg);
   opacity: var(--opacity-faint);
   filter: grayscale(0.5);
 }
@@ -32,18 +31,15 @@
 
 .item-name {
   margin: 0;
-  font-size: var(--font-base);
 }
 
 .item-type {
   margin: 0;
-  font-size: var(--font-xs);
   letter-spacing: var(--letter-spacing-tight);
 }
 
 .item-description {
   margin: var(--space-4) 0 0;
-  font-size: var(--font-sm);
   line-height: var(--line-height-tight);
 }
 

@@ -72,7 +72,11 @@ export default {
     'declaration-no-important': true,
     'declaration-property-value-disallowed-list': {
       display: ['flex', 'inline-flex'],
-      message: 'Use the Flex primitive component instead of display: flex',
+      'font-size': ['/var\\(--font-(xs|sm|lg)\\)/'],
+      'font-weight': ['/var\\(--font-weight-(medium|bold)\\)/'],
+      'font-family': ['/var\\(--font-family-mono\\)/'],
+      color: ['/var\\(--text-(muted|secondary)\\)/'],
+      'text-overflow': ['ellipsis'],
     },
     'selector-max-id': 0,
     'selector-max-universal': 1,
@@ -253,8 +257,12 @@ export default {
       },
     },
     {
-      // Allow display: flex in the Flex primitive component
-      files: ['src/components/primitives/Flex.module.css'],
+      // Primitives that define their own text/flex styling
+      files: [
+        'src/components/primitives/Flex.module.css',
+        'src/components/primitives/Text.module.css',
+        'src/components/primitives/ListItem.module.css',
+      ],
       rules: {
         'declaration-property-value-disallowed-list': null,
       },

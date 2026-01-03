@@ -41,7 +41,6 @@
 }
 
 .item-icon {
-  font-size: var(--font-lg);
   filter: grayscale(0.2);
 }
 
@@ -49,7 +48,6 @@
   position: absolute;
   bottom: 2px;
   right: 4px;
-  font-size: var(--font-sm);
   background: var(--bg-overlay);
   padding: var(--space-1) var(--space-4);
 }
@@ -58,5 +56,4 @@
   position: absolute;
   top: 2px;
   right: 4px;
-  font-size: var(--font-xs);
 }

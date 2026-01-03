@@ -6,7 +6,6 @@
 .menu-empty {
   display: block;
   padding: var(--space-12);
-  font-size: var(--font-sm);
   font-style: italic;
   text-align: center;
 }

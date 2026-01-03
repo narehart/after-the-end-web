@@ -32,11 +32,7 @@ export default function DetailsPanel(): React.JSX.Element {
         <>
           <Box className={cx('item-preview')}>
             <Flex justify="center" align="center" className={cx('preview-frame')}>
-              <ItemPreview
-                item={item}
-                imageClassName={cx('preview-image')}
-                iconClassName={cx('preview-icon')}
-              />
+              <ItemPreview item={item} imageClassName={cx('preview-image')} />
             </Flex>
           </Box>
 
@@ -44,7 +40,7 @@ export default function DetailsPanel(): React.JSX.Element {
             <Text as="h2" strong ellipsis className={cx('item-name')}>
               {item.description}
             </Text>
-            <Text as="p" type="secondary" code ellipsis className={cx('item-stats-line')}>
+            <Text as="p" type="secondary" code ellipsis size="sm" className={cx('item-stats-line')}>
               {buildStatsLine({ item })}
             </Text>
             <Text as="p" type="muted" className={cx('item-flavor-text')}>

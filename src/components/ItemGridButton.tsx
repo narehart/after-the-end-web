@@ -80,15 +80,17 @@ export default function ItemGridButton({
           className={cx('item-image')}
         />
       ) : (
-        <Text className={cx('item-icon')}>{getItemIcon({ type: item.type })}</Text>
+        <Text size="lg" className={cx('item-icon')}>
+          {getItemIcon({ type: item.type })}
+        </Text>
       )}
       {hasGrid ? (
-        <Text type="muted" className={cx('container-indicator')}>
+        <Text type="muted" size="xs" className={cx('container-indicator')}>
           ▼
         </Text>
       ) : null}
       {showQuantity ? (
-        <Text bold className={cx('item-quantity')}>
+        <Text bold size="sm" className={cx('item-quantity')}>
           x{item.quantity}
         </Text>
       ) : null}

@@ -25,12 +25,16 @@ export default function EmptyState({
       justify="center"
       className={className !== undefined ? `${cx('empty-state')} ${className}` : cx('empty-state')}
     >
-      {icon !== undefined ? <Text className={cx('empty-icon')}>{icon}</Text> : null}
+      {icon !== undefined ? (
+        <Text size="lg" className={cx('empty-icon')}>
+          {icon}
+        </Text>
+      ) : null}
       <Text type="muted" className={cx('empty-message')}>
         {message}
       </Text>
       {description !== undefined ? (
-        <Text type="muted" className={cx('empty-description')}>
+        <Text type="muted" size="xs" className={cx('empty-description')}>
           {description}
         </Text>
       ) : null}

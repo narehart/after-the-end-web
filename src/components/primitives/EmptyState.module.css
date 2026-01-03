@@ -4,7 +4,6 @@
 }
 
 .empty-icon {
-  font-size: var(--font-lg);
   margin-bottom: var(--space-8);
   opacity: var(--opacity-muted);
 }
@@ -14,7 +13,6 @@
 }
 
 .empty-description {
-  font-size: var(--font-xs);
   margin-top: var(--space-4);
   opacity: var(--opacity-muted);
 }

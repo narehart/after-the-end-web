@@ -12,6 +12,23 @@
   color: var(--text-muted);
 }
 
+/* Size variants */
+.text--xs {
+  font-size: var(--font-xs);
+}
+
+.text--sm {
+  font-size: var(--font-sm);
+}
+
+.text--base {
+  font-size: var(--font-base);
+}
+
+.text--lg {
+  font-size: var(--font-lg);
+}
+
 /* Style modifiers */
 .text--strong {
   font-weight: var(--font-weight-medium);
