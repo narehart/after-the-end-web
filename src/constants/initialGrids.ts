@@ -4,6 +4,12 @@ import { createEmptyGrid } from '../utils/createEmptyGrid';
 
 // Using neoItems IDs - neo_1 is bag (4x6), neo_4 is tin can (2x2 container), neo_42 is bag (10x10)
 export const initialGrids: GridsMap = {
+  // neo_57 = night vision goggles with 1x1 battery slot
+  neo_57: {
+    width: 1,
+    height: 1,
+    cells: createEmptyGrid({ width: 1, height: 1 }),
+  },
   // neo_42 = bag with 10x10 grid (equipped as backpack)
   neo_42: {
     width: 10,
