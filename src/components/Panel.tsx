@@ -33,7 +33,7 @@ export default function Panel({
   const renderHeader = (): ReactNode => {
     if (header !== undefined) return header;
     if (breadcrumbLinks !== undefined) {
-      return <Breadcrumb links={breadcrumbLinks} icon={breadcrumbIcon} />;
+      return <Breadcrumb links={breadcrumbLinks} icon={breadcrumbIcon} clipLinks />;
     }
     if (title !== undefined) return <h3 className={cx('panel-title')}>{title}</h3>;
     return null;
