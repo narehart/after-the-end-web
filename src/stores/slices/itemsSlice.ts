@@ -2,7 +2,7 @@ import type { StateCreator } from 'zustand';
 import type { Item, ItemsMap } from '../../types/inventory';
 import type { ItemsSlice } from '../../types/store';
 import mockItemsJson from '../../data/mockItems.json';
-import { initialGrids } from '../../data/initialGrids';
+import { initialGrids } from '../../constants/initialGrids';
 import { findFreePosition } from '../../utils/findFreePosition';
 import { findItemOrigin } from '../../utils/findItemOrigin';
 
