@@ -5,7 +5,26 @@ export type ItemType =
   | 'clothing'
   | 'ammo'
   | 'tool'
-  | 'accessory';
+  | 'accessory'
+  | 'material'
+  | 'misc'
+  | 'medical';
+
+export function toItemType(value: string): ItemType {
+  const typeMap: Record<string, ItemType> = {
+    container: 'container',
+    consumable: 'consumable',
+    weapon: 'weapon',
+    clothing: 'clothing',
+    ammo: 'ammo',
+    tool: 'tool',
+    accessory: 'accessory',
+    material: 'material',
+    misc: 'misc',
+    medical: 'medical',
+  };
+  return typeMap[value] ?? 'misc';
+}
 
 export type SlotType =
   | 'helmet'
@@ -34,31 +53,19 @@ export interface ItemSize {
   height: number;
 }
 
-export interface ItemStats {
-  weight: number;
-  durability?: number;
-  damage?: number;
-  warmth?: number;
-  protection?: number;
-  nutrition?: number;
-  hydration?: number;
-  battery?: number;
-}
-
 export interface Item {
   id: string;
+  neoId: string;
   type: ItemType;
   name: string;
   description: string;
   size: ItemSize;
-  rotation: number;
-  stackable: boolean;
-  quantity: number;
-  stats: ItemStats;
-  equippableSlots: SlotType[];
+  weight: number;
+  value: number;
+  stackLimit: number;
   image: string;
+  allImages: string[];
   gridSize?: ItemSize;
-  spriteVertical?: boolean;
 }
 
 export type ItemsMap = Record<string, Item | undefined>;

@@ -1,16 +1,44 @@
 import type { StateCreator } from 'zustand';
-import type { Item } from '../../types/inventory';
+import type { Item, ItemsMap } from '../../types/inventory';
+import { toItemType } from '../../types/inventory';
 import type { ItemsSlice } from '../../types/store';
-import mockItems from '../../data/mockItems';
+import neoItemsArray from '../../data/neoItems.json';
 import { initialGrids } from '../../constants/initialGrids';
-import { ROTATION_INCREMENT, FULL_ROTATION } from '../../constants/numbers';
 import { findFreePosition } from '../../utils/findFreePosition';
 import { findItemOrigin } from '../../utils/findItemOrigin';
 
 export type { ItemsSlice } from '../../types/store';
 
+function toItem(data: (typeof neoItemsArray)[number]): Item {
+  const item: Item = {
+    id: data.id,
+    neoId: data.neoId,
+    type: toItemType(data.type),
+    name: data.name,
+    description: data.description,
+    size: data.size,
+    weight: data.weight,
+    value: data.value,
+    stackLimit: data.stackLimit,
+    image: data.image,
+    allImages: data.allImages,
+  };
+  if (data.gridSize !== undefined) {
+    item.gridSize = data.gridSize;
+  }
+  return item;
+}
+
+function buildItemsMap(): ItemsMap {
+  const items: ItemsMap = {};
+  for (const data of neoItemsArray) {
+    items[data.id] = toItem(data);
+  }
+  return items;
+}
+
 export const createItemsSlice: StateCreator<ItemsSlice, [], [], ItemsSlice> = (set, get) => ({
-  items: mockItems,
+  items: buildItemsMap(),
   grids: initialGrids,
 
   setItems: (items): void => {
@@ -21,17 +49,9 @@ export const createItemsSlice: StateCreator<ItemsSlice, [], [], ItemsSlice> = (s
     set({ grids });
   },
 
-  rotateItem: (itemId): void => {
-    set((state) => {
-      const item = state.items[itemId];
-      if (item === undefined) return state;
-      return {
-        items: {
-          ...state.items,
-          [itemId]: { ...item, rotation: (item.rotation + ROTATION_INCREMENT) % FULL_ROTATION },
-        },
-      };
-    });
+  // TODO: Rotation is now UI state, needs separate storage
+  rotateItem: (): void => {
+    // No-op until rotation state is redesigned
   },
 
   getItemAtPosition: (gridId, x, y): Item | null => {

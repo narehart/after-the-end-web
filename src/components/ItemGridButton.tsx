@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import type { Item } from '../types/inventory';
 import type { CellState, ItemGridHandlers, CSSPropertiesWithVars } from '../types/ui';
-import { FIRST_INDEX, NOT_FOUND_INDEX, SECOND_INDEX } from '../constants/numbers';
+import { FIRST_INDEX, NOT_FOUND_INDEX } from '../constants/numbers';
 import { getImageUrl } from '../utils/images';
 import { getItemIcon } from '../utils/getItemIcon';
 import { calculateItemDimensions } from '../utils/calculateItemDimensions';
@@ -27,7 +27,7 @@ export default function ItemGridButton({
   const { isSelected, hasOpenModal, hasGrid } = cellState;
   const { handleClick, openModal, handleMouseEnter, handleFocus } = handlers;
 
-  const needsRotation = item.size.height > item.size.width && item.spriteVertical !== true;
+  const needsRotation = item.size.height > item.size.width;
   const { itemWidth, itemHeight } = calculateItemDimensions({ item, cellSize });
 
   const handleDoubleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
@@ -76,9 +76,6 @@ export default function ItemGridButton({
       ) : (
         <span className={cx('item-icon')}>{getItemIcon({ type: item.type })}</span>
       )}
-      {item.stackable && item.quantity > SECOND_INDEX ? (
-        <span className={cx('item-quantity')}>x{item.quantity}</span>
-      ) : null}
       {hasGrid ? <span className={cx('container-indicator')}>▼</span> : null}
     </button>
   );

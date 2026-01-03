@@ -8,4 +8,7 @@ export const ITEM_ICONS: Record<ItemType, string> = {
   ammo: '🔸',
   tool: '🔦',
   accessory: '🔹',
+  material: '🪵',
+  misc: '📎',
+  medical: '💉',
 };

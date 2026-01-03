@@ -2,49 +2,27 @@ import type { GridsMap } from '../types/inventory';
 import { buildGridWithItems } from '../utils/buildGridWithItems';
 import { createEmptyGrid } from '../utils/createEmptyGrid';
 
+// Using neoItems IDs - neo_1 is bag (4x6), neo_4 is tin can (2x2 container)
 export const initialGrids: GridsMap = {
-  'backpack-1': {
-    width: 10,
-    height: 10,
+  // neo_1 = bag with 4x6 grid
+  neo_1: {
+    width: 4,
+    height: 6,
     cells: buildGridWithItems({
-      width: 10,
-      height: 10,
+      width: 4,
+      height: 6,
       items: [
-        { id: 'medkit-1', x: 0, y: 0, width: 3, height: 3 },
-        { id: 'water-1', x: 3, y: 0, width: 1, height: 2 },
-        { id: 'ammo-1', x: 4, y: 0, width: 1, height: 1 },
-        { id: 'knife-1', x: 5, y: 0, width: 1, height: 2 },
-        { id: 'can-1', x: 4, y: 1, width: 1, height: 1 },
-        { id: 'flashlight-1', x: 6, y: 0, width: 1, height: 2 },
-        { id: 'pillbottle-1', x: 7, y: 0, width: 1, height: 1 },
-        { id: 'berries-1', x: 7, y: 1, width: 1, height: 1 },
-        { id: 'multitool-1', x: 8, y: 0, width: 1, height: 1 },
+        { id: 'neo_3', x: 0, y: 0, width: 1, height: 1 }, // branch
+        { id: 'neo_5', x: 1, y: 0, width: 1, height: 1 }, // shoes
+        { id: 'neo_4', x: 2, y: 0, width: 1, height: 1 }, // tin can (container)
       ],
     }),
   },
-  'pouch-1': {
-    width: 4,
-    height: 6,
-    cells: createEmptyGrid({ width: 4, height: 6 }),
-  },
-  'medkit-1': {
-    width: 3,
-    height: 3,
-    cells: buildGridWithItems({
-      width: 3,
-      height: 3,
-      items: [{ id: 'pills-1', x: 0, y: 0, width: 1, height: 1 }],
-    }),
-  },
-  'pillbottle-1': {
+  // neo_4 = tin can with 2x2 grid
+  neo_4: {
     width: 2,
     height: 2,
     cells: createEmptyGrid({ width: 2, height: 2 }),
-  },
-  'water-1': {
-    width: 2,
-    height: 3,
-    cells: createEmptyGrid({ width: 2, height: 3 }),
   },
   ground: {
     width: 10,
@@ -53,9 +31,9 @@ export const initialGrids: GridsMap = {
       width: 10,
       height: 40,
       items: [
-        { id: 'coat-1', x: 0, y: 0, width: 2, height: 3 },
-        { id: 'rifle-1', x: 3, y: 0, width: 2, height: 6 },
-        { id: 'crowbar-1', x: 6, y: 0, width: 1, height: 4 },
+        { id: 'neo_7', x: 0, y: 0, width: 1, height: 1 }, // clothes (torso)
+        { id: 'neo_8', x: 1, y: 0, width: 1, height: 1 }, // clothes (torso)
+        { id: 'neo_1', x: 2, y: 0, width: 1, height: 1 }, // bag (container)
       ],
     }),
   },

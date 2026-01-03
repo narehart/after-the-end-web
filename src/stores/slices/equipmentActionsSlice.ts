@@ -1,10 +1,7 @@
 import type { StateCreator } from 'zustand';
-import { FIRST_INDEX } from '../../constants/numbers';
-import type { SlotType, Equipment, Item } from '../../types/inventory';
+import type { SlotType, Equipment } from '../../types/inventory';
 import type { EquipmentActionsSlice, StoreWithEquipment } from '../../types/store';
 import { findFreePosition } from '../../utils/findFreePosition';
-import { findItemInGrids } from '../../utils/findItemInGrids';
-import { removeItemFromCells } from '../../utils/removeItemFromCells';
 import { placeItemInCells } from '../../utils/placeItemInCells';
 
 export type { EquipmentActionsSlice } from '../../types/store';
@@ -20,20 +17,6 @@ function findEquipmentSlot(equipment: Equipment, itemId: string): SlotType | nul
     }
   }
   return null;
-}
-
-function findAvailableSlot(item: Item, equipment: Equipment): SlotType | null {
-  if (item.equippableSlots.length === FIRST_INDEX) {
-    return null;
-  }
-
-  for (const possibleSlot of item.equippableSlots) {
-    if (equipment[possibleSlot] === null) {
-      return possibleSlot;
-    }
-  }
-
-  return item.equippableSlots[FIRST_INDEX] ?? null;
 }
 
 export const createEquipmentActionsSlice: StateCreator<
@@ -80,35 +63,8 @@ export const createEquipmentActionsSlice: StateCreator<
     return true;
   },
 
-  equipItem: (itemId, targetSlot = null): boolean => {
-    const state = get();
-    const item = state.items[itemId];
-    if (item === undefined) return false;
-
-    if (item.equippableSlots.length === FIRST_INDEX) {
-      return false;
-    }
-
-    const slot = targetSlot ?? findAvailableSlot(item, state.equipment);
-    if (slot === null || !item.equippableSlots.includes(slot)) {
-      return false;
-    }
-
-    const itemLocation = findItemInGrids({ grids: state.grids, itemId });
-    if (itemLocation === null) return false;
-
-    const { gridId, positions } = itemLocation;
-    const grid = state.grids[gridId];
-    if (grid === undefined) return false;
-
-    const newCells = removeItemFromCells({ cells: grid.cells, positions });
-
-    set({
-      equipment: { ...state.equipment, [slot]: itemId },
-      grids: { ...state.grids, [gridId]: { ...grid, cells: newCells } },
-      selectedItemId: itemId,
-    });
-
-    return true;
+  // TODO: Re-enable when equippable slots data is added to neoItems.json
+  equipItem: (): boolean => {
+    return false;
   },
 });
