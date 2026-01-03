@@ -29,7 +29,7 @@ export default function Breadcrumb({
     <Flex
       align="center"
       gap="4"
-      className={cx('breadcrumb', { 'breadcrumb--clip': clipLinks === true })}
+      className={clipLinks === true ? cx('breadcrumb--clip') : undefined}
     >
       {displayIcon !== undefined ? (
         <Image src={displayIcon} alt="" className={cx('breadcrumb-icon')} />
