@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import useEquipmentSlot from '../hooks/useEquipmentSlot';
 import type { SlotType } from '../types/inventory';
 import { getImageUrl } from '../utils/images';
+import { getStoredImage } from '../utils/getStoredImage';
 import ListItem from './ListItem';
 import styles from './EquipmentSlot.module.css';
 
@@ -43,8 +44,12 @@ export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.J
   };
 
   const icon =
-    item?.image !== undefined && item.image !== '' ? (
-      <img src={getImageUrl(item.image)} alt={item.name} draggable={false} />
+    item !== null && item.image !== '' ? (
+      <img
+        src={getImageUrl(getStoredImage({ image: item.image, allImages: item.allImages }))}
+        alt={item.name}
+        draggable={false}
+      />
     ) : null;
 
   return (
