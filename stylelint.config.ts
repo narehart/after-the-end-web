@@ -70,6 +70,10 @@ export default {
 
     // Disallow specific patterns
     'declaration-no-important': true,
+    'declaration-property-value-disallowed-list': {
+      display: ['flex', 'inline-flex'],
+      message: 'Use the Flex primitive component instead of display: flex',
+    },
     'selector-max-id': 0,
     'selector-max-universal': 1,
     'color-named': 'never',
@@ -245,6 +249,14 @@ export default {
         'selector-max-id': 1,
         'selector-max-universal': 2,
         'selector-max-specificity': '1,0,0',
+        'declaration-property-value-disallowed-list': null,
+      },
+    },
+    {
+      // Allow display: flex in the Flex primitive component
+      files: ['src/components/primitives/Flex.module.css'],
+      rules: {
+        'declaration-property-value-disallowed-list': null,
       },
     },
   ],
