@@ -115,7 +115,7 @@
 
 .item-flavor-text {
   margin: var(--space-8) 0 0;
-  font-size: var(--font-sm);
+  font-size: var(--font-base);
   color: var(--text-muted);
   line-height: var(--line-height-tight);
 }
