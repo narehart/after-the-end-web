@@ -9,8 +9,8 @@
     "value": 0.5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 6
     },
     "image": "itmPlasticShoppingBag.png",
     "allImages": [
@@ -32,8 +32,8 @@
     "value": 50,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 3
     },
     "image": "itmHermeticVial.png",
     "allImages": [
@@ -54,8 +54,8 @@
     "value": 0,
     "stackLimit": 5,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 2
     },
     "image": "itmStick.png",
     "allImages": [
@@ -73,8 +73,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 3
     },
     "image": "itmSoupCan.png",
     "allImages": [
@@ -96,8 +96,8 @@
     "value": 50,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 3
     },
     "image": "itmWorkBoot.png",
     "allImages": [
@@ -115,8 +115,8 @@
     "value": 50,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 3
     },
     "image": "itmWorkBoot.png",
     "allImages": [
@@ -134,8 +134,8 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmShirt.png",
     "allImages": [
@@ -153,8 +153,8 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmHospitalGown.png",
     "allImages": [
@@ -172,8 +172,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncShoutMore.png",
     "allImages": [
@@ -190,8 +190,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncRunAway.png",
     "allImages": [
@@ -208,7 +208,7 @@
     "value": 20,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 2,
       "height": 1
     },
     "image": "itmTalisman.png",
@@ -227,7 +227,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 1,
       "height": 1
     },
     "image": "itmHospitalWristStrap.png",
@@ -247,7 +247,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmWristTracker.png",
     "allImages": [
@@ -265,8 +265,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncDoorPanel.png",
     "allImages": [
@@ -283,8 +283,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 6
     },
     "image": "itmEncWindow.png",
     "allImages": [
@@ -301,7 +301,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillHak.png",
@@ -319,7 +319,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillMed.png",
@@ -337,7 +337,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillHid.png",
@@ -355,7 +355,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillCbt.png",
@@ -373,8 +373,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 0,
+      "height": 0
     },
     "image": "blank.png",
     "allImages": [
@@ -395,8 +395,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 0,
+      "height": 0
     },
     "image": "blank.png",
     "allImages": [
@@ -417,8 +417,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 0,
+      "height": 0
     },
     "image": "blank.png",
     "allImages": [
@@ -439,8 +439,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
-      "height": 2
+      "width": 0,
+      "height": 0
     },
     "image": "blank.png",
     "allImages": [
@@ -461,8 +461,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 0,
+      "height": 0
     },
     "image": "blank.png",
     "allImages": [
@@ -483,8 +483,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 0,
+      "height": 0
     },
     "image": "blank.png",
     "allImages": [
@@ -505,8 +505,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 0,
+      "height": 0
     },
     "image": "blank.png",
     "allImages": [
@@ -527,8 +527,8 @@
     "value": 400,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 3
     },
     "image": "itmRMK.png",
     "allImages": [
@@ -549,8 +549,8 @@
     "value": 15,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 3
     },
     "image": "itmBluejeans.png",
     "allImages": [
@@ -572,8 +572,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 2
     },
     "image": "itmFlawMyopia.png",
     "allImages": [
@@ -590,8 +590,8 @@
     "value": 50,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 7,
+      "height": 4
     },
     "image": "itmDuffle.png",
     "allImages": [
@@ -632,8 +632,8 @@
     "value": 0,
     "stackLimit": 20,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmPapers.png",
     "allImages": [
@@ -650,8 +650,8 @@
     "value": 50,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 3
     },
     "image": "itmBinoculars.png",
     "allImages": [
@@ -668,7 +668,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillEagleEye.png",
@@ -687,7 +687,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 4
     },
     "image": "itmBottleWater.png",
     "allImages": [
@@ -709,8 +709,8 @@
     "value": 0.25,
     "stackLimit": 2,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 3
     },
     "image": "itmWater.png",
     "allImages": [
@@ -745,8 +745,8 @@
     "value": 0,
     "stackLimit": 5,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmTwigs.png",
     "allImages": [
@@ -763,8 +763,8 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmSoup.png",
     "allImages": [
@@ -781,8 +781,8 @@
     "value": 10,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 3
     },
     "image": "itmHoodie.png",
     "allImages": [
@@ -804,8 +804,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncKick.png",
     "allImages": [
@@ -822,8 +822,8 @@
     "value": 50,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 7
     },
     "image": "itmBackpack.png",
     "allImages": [
@@ -863,8 +863,8 @@
     "value": 0.25,
     "stackLimit": 2,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 3
     },
     "image": "itmWater.png",
     "allImages": [
@@ -882,7 +882,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmPillBottle.png",
     "allImages": [
@@ -904,7 +904,7 @@
     "value": 5,
     "stackLimit": 10,
     "size": {
-      "width": 2,
+      "width": 1,
       "height": 1
     },
     "image": "itmWaterPurPills.png",
@@ -922,7 +922,7 @@
     "value": 0.25,
     "stackLimit": 10,
     "size": {
-      "width": 2,
+      "width": 1,
       "height": 1
     },
     "image": "itmAntiBioticsPills.png",
@@ -941,7 +941,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmPillBottleABClosed.png",
     "allImages": [
@@ -963,7 +963,7 @@
     "value": 2,
     "stackLimit": 5,
     "size": {
-      "width": 2,
+      "width": 1,
       "height": 1
     },
     "image": "itmGelliBears.png",
@@ -981,8 +981,8 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmBlinkies.png",
     "allImages": [
@@ -1017,8 +1017,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncTackle.png",
     "allImages": [
@@ -1035,8 +1035,8 @@
     "value": 20,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 2
     },
     "image": "itmCleaverStored.png",
     "allImages": [
@@ -1054,8 +1054,8 @@
     "value": 20,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 2
     },
     "image": "itmWrenchStored.png",
     "allImages": [
@@ -1073,7 +1073,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillTrk.png",
@@ -1091,7 +1091,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillAth.png",
@@ -1109,8 +1109,8 @@
     "value": 100,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmNVGoggles.png",
     "allImages": [
@@ -1132,8 +1132,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 2
     },
     "image": "itmFlawMtb.png",
     "allImages": [
@@ -1150,7 +1150,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillMtb.png",
@@ -1168,7 +1168,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillStr.png",
@@ -1186,8 +1186,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 2
     },
     "image": "itmFlawFbl.png",
     "allImages": [
@@ -1222,8 +1222,8 @@
     "value": 0,
     "stackLimit": 10,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmDirtyRags.png",
     "allImages": [
@@ -1251,7 +1251,7 @@
     "stackLimit": 1,
     "size": {
       "width": 3,
-      "height": 3
+      "height": 4
     },
     "image": "itmSmallFire.png",
     "allImages": [
@@ -1268,8 +1268,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 2
     },
     "image": "itmFlawFrl.png",
     "allImages": [
@@ -1286,7 +1286,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillTuf.png",
@@ -1304,8 +1304,8 @@
     "value": 500,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 17,
+      "height": 3
     },
     "image": "itmHuntingRifleStored.png",
     "allImages": [
@@ -1327,8 +1327,8 @@
     "value": 50,
     "stackLimit": 5,
     "size": {
-      "width": 2,
-      "height": 3
+      "width": 1,
+      "height": 1
     },
     "image": "itmAmmo308FMJ.png",
     "allImages": [
@@ -1345,8 +1345,8 @@
     "value": 50,
     "stackLimit": 5,
     "size": {
-      "width": 2,
-      "height": 3
+      "width": 1,
+      "height": 1
     },
     "image": "itmAmmo308SP.png",
     "allImages": [
@@ -1381,8 +1381,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 2
     },
     "image": "itmFlawBasicHuman.png",
     "allImages": [
@@ -1399,7 +1399,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillNightVision.png",
@@ -1417,8 +1417,8 @@
     "value": 100,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 12,
+      "height": 11
     },
     "image": "itmShopCart.png",
     "allImages": [
@@ -1440,7 +1440,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 3,
       "height": 2
     },
     "image": "itmScavengeHouse01.png",
@@ -1476,8 +1476,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmScavengeApt01.png",
     "allImages": [
@@ -1494,8 +1494,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmScavengeApt02.png",
     "allImages": [
@@ -1512,8 +1512,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 4,
+      "height": 4
     },
     "image": "itmScavengeOffice01.png",
     "allImages": [
@@ -1530,8 +1530,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmScavengeOffice02.png",
     "allImages": [
@@ -1548,8 +1548,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 4
     },
     "image": "itmScavengeForest01.png",
     "allImages": [
@@ -1566,8 +1566,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 4
     },
     "image": "itmScavengeForest02.png",
     "allImages": [
@@ -1584,7 +1584,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 3,
       "height": 2
     },
     "image": "itmScavengeGrass01.png",
@@ -1620,8 +1620,8 @@
     "value": 0.25,
     "stackLimit": 5,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmMushrooms.png",
     "allImages": [
@@ -1638,7 +1638,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 3,
       "height": 2
     },
     "image": "itmCleanRags.png",
@@ -1656,8 +1656,8 @@
     "value": 0.25,
     "stackLimit": 5,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmMushrooms.png",
     "allImages": [
@@ -1674,7 +1674,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 6,
       "height": 2
     },
     "image": "itmFlawEyeSurgery.png",
@@ -1692,8 +1692,8 @@
     "value": 30,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 14,
+      "height": 2
     },
     "image": "itmCrowbar.png",
     "allImages": [
@@ -1712,7 +1712,7 @@
     "stackLimit": 20,
     "size": {
       "width": 2,
-      "height": 1
+      "height": 2
     },
     "image": "itmSmallParts.png",
     "allImages": [
@@ -1729,8 +1729,8 @@
     "value": 50,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 3
     },
     "image": "itmMultiTool.png",
     "allImages": [
@@ -1749,7 +1749,7 @@
     "stackLimit": 1,
     "size": {
       "width": 2,
-      "height": 1
+      "height": 2
     },
     "image": "itmLockpicks.png",
     "allImages": [
@@ -1766,7 +1766,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillTrapping.png",
@@ -1784,7 +1784,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillBotany.png",
@@ -1802,7 +1802,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillLockpicking.png",
@@ -1820,7 +1820,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillElectrician.png",
@@ -1838,7 +1838,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillMechanic.png",
@@ -1856,8 +1856,8 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmTshirtGrayling.png",
     "allImages": [
@@ -1876,7 +1876,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 3
     },
     "image": "itmRMKRefill.png",
     "allImages": [
@@ -1893,8 +1893,8 @@
     "value": 1800,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 15,
+      "height": 4
     },
     "image": "itmLaserRifle.png",
     "allImages": [
@@ -1917,8 +1917,8 @@
     "value": 50,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmLaserRiflePowerCell.png",
     "allImages": [
@@ -1957,8 +1957,8 @@
     "value": 2,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 5
     },
     "image": "itmClownHead.png",
     "allImages": [
@@ -1976,7 +1976,7 @@
     "value": 25,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 2,
       "height": 1
     },
     "image": "itmCopperBeads.png",
@@ -1995,8 +1995,8 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itmSteelPot.png",
     "allImages": [
@@ -2013,8 +2013,8 @@
     "value": 350,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 3
     },
     "image": "itmJarOfEyesEquipped.png",
     "allImages": [
@@ -2050,8 +2050,8 @@
     "value": 45,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 5,
+      "height": 4
     },
     "image": "itmSquirrelTunic.png",
     "allImages": [
@@ -2069,8 +2069,8 @@
     "value": 1,
     "stackLimit": 5,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 5,
+      "height": 2
     },
     "image": "itmSquirrelPelt.png",
     "allImages": [
@@ -2087,8 +2087,8 @@
     "value": 1,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 5,
+      "height": 2
     },
     "image": "itmSquirrelDead.png",
     "allImages": [
@@ -2105,7 +2105,7 @@
     "value": 4,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSquirrelMeatRaw.png",
@@ -2123,7 +2123,7 @@
     "value": 0.05,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSquirrelMeatSpoiled.png",
@@ -2141,7 +2141,7 @@
     "value": 4,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSquirrelMeatCooked.png",
@@ -2160,7 +2160,7 @@
     "stackLimit": 20,
     "size": {
       "width": 2,
-      "height": 1
+      "height": 2
     },
     "image": "itmString.png",
     "allImages": [
@@ -2177,8 +2177,8 @@
     "value": 2,
     "stackLimit": 2,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmSquirrelGlove.png",
     "allImages": [
@@ -2197,7 +2197,7 @@
     "stackLimit": 5,
     "size": {
       "width": 2,
-      "height": 1
+      "height": 2
     },
     "image": "itmBerriesBlue.png",
     "allImages": [
@@ -2214,7 +2214,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 6,
       "height": 2
     },
     "image": "itmFlawEyeAug.png",
@@ -2233,7 +2233,7 @@
     "stackLimit": 5,
     "size": {
       "width": 2,
-      "height": 1
+      "height": 2
     },
     "image": "itmBerriesRed.png",
     "allImages": [
@@ -2250,7 +2250,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 6,
       "height": 2
     },
     "image": "itmFlawEyeAugNV.png",
@@ -2269,7 +2269,7 @@
     "stackLimit": 5,
     "size": {
       "width": 2,
-      "height": 1
+      "height": 2
     },
     "image": "itmBerriesRed.png",
     "allImages": [
@@ -2286,7 +2286,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 6,
       "height": 2
     },
     "image": "itmFlawEyeAugTZ.png",
@@ -2305,7 +2305,7 @@
     "stackLimit": 5,
     "size": {
       "width": 2,
-      "height": 1
+      "height": 2
     },
     "image": "itmBerriesYellow.png",
     "allImages": [
@@ -2322,8 +2322,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 0,
+      "height": 0
     },
     "image": "blank.png",
     "allImages": [
@@ -2344,8 +2344,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 7
     },
     "image": "itmEncCryoTank.png",
     "allImages": [
@@ -2363,7 +2363,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmMemStick.png",
     "allImages": [
@@ -2380,8 +2380,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 7
     },
     "image": "itmEncCryoTankFull.png",
     "allImages": [
@@ -2398,8 +2398,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 7
     },
     "image": "itmEncCryoTankFull.png",
     "allImages": [
@@ -2416,8 +2416,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 4,
+      "height": 5
     },
     "image": "itmEncConsole.png",
     "allImages": [
@@ -2434,7 +2434,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillRanged.png",
@@ -2452,8 +2452,8 @@
     "value": 0.5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 5,
+      "height": 3
     },
     "image": "itmSquirrelSnare.png",
     "allImages": [
@@ -2470,7 +2470,7 @@
     "value": 50,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 5,
       "height": 1
     },
     "image": "itmRifleScope.png",
@@ -2488,8 +2488,8 @@
     "value": 550,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 17,
+      "height": 4
     },
     "image": "itmHuntingRifleScopedStored.png",
     "allImages": [
@@ -2511,8 +2511,8 @@
     "value": 508,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 17,
+      "height": 3
     },
     "image": "itmHuntingRifleStrapped.png",
     "allImages": [
@@ -2535,8 +2535,8 @@
     "value": 558,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 17,
+      "height": 4
     },
     "image": "itmHuntingRifleSS.png",
     "allImages": [
@@ -2559,7 +2559,7 @@
     "value": 8,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 4,
       "height": 1
     },
     "image": "itmRifleStrapStored.png",
@@ -2577,8 +2577,8 @@
     "value": 0,
     "stackLimit": 10,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmNewspaperStored.png",
     "allImages": [
@@ -2597,7 +2597,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 4
     },
     "image": "itmCornaColaFull.png",
     "allImages": [
@@ -2619,8 +2619,8 @@
     "value": 1,
     "stackLimit": 2,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 3
     },
     "image": "itmWaterYellow.png",
     "allImages": [
@@ -2637,8 +2637,8 @@
     "value": 15,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmISlab.png",
     "allImages": [
@@ -2659,8 +2659,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncNotInterested.png",
     "allImages": [
@@ -2677,8 +2677,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncSoundsGood.png",
     "allImages": [
@@ -2695,8 +2695,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncUpstairs.png",
     "allImages": [
@@ -2713,8 +2713,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncDownstairs.png",
     "allImages": [
@@ -2731,8 +2731,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncExit.png",
     "allImages": [
@@ -2749,8 +2749,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 6,
+      "height": 7
     },
     "image": "itmEncBBG.png",
     "allImages": [
@@ -2767,8 +2767,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncEnter.png",
     "allImages": [
@@ -2786,7 +2786,7 @@
     "stackLimit": 30,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmPaperRecipe.png",
     "allImages": [
@@ -2803,7 +2803,7 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSquirrelMeatCured.png",
@@ -2821,8 +2821,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
-      "height": 3
+      "width": 6,
+      "height": 6
     },
     "image": "itmCampfireOn.png",
     "allImages": [
@@ -2839,8 +2839,8 @@
     "value": 1.5,
     "stackLimit": 2,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 3
     },
     "image": "itmNoiseTrap.png",
     "allImages": [
@@ -2857,8 +2857,8 @@
     "value": 0.5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 6
     },
     "image": "itmBox.png",
     "allImages": [
@@ -2879,7 +2879,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 4,
+      "width": 3,
       "height": 2
     },
     "image": "itmScavengeGrass01.png",
@@ -2901,8 +2901,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 4,
-      "height": 2
+      "width": 0,
+      "height": 0
     },
     "image": "blank.png",
     "allImages": [
@@ -2923,8 +2923,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 2
     },
     "image": "itmFlawInsomniac.png",
     "allImages": [
@@ -2941,8 +2941,8 @@
     "value": 35,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 8
     },
     "image": "itmSleepingBag.png",
     "allImages": [
@@ -2959,8 +2959,8 @@
     "value": 9,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 20,
+      "height": 6
     },
     "image": "itmTarpShelter.png",
     "allImages": [
@@ -2977,8 +2977,8 @@
     "value": 9,
     "stackLimit": 3,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 3
     },
     "image": "itmTarp.png",
     "allImages": [
@@ -2996,7 +2996,7 @@
     "stackLimit": 3,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 6
     },
     "image": "itmTorch.png",
     "allImages": [
@@ -3014,7 +3014,7 @@
     "stackLimit": 3,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 6
     },
     "image": "itmTorch.png",
     "allImages": [
@@ -3031,8 +3031,8 @@
     "value": 0.1,
     "stackLimit": 1,
     "size": {
-      "width": 3,
-      "height": 3
+      "width": 2,
+      "height": 8
     },
     "image": "itmTorchLit.png",
     "allImages": [
@@ -3049,8 +3049,8 @@
     "value": 0.25,
     "stackLimit": 1,
     "size": {
-      "width": 3,
-      "height": 3
+      "width": 2,
+      "height": 8
     },
     "image": "itmTorchLit.png",
     "allImages": [
@@ -3067,8 +3067,8 @@
     "value": 80,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 4
     },
     "image": "itmMummySack.png",
     "allImages": [
@@ -3085,8 +3085,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncForward.png",
     "allImages": [
@@ -3103,8 +3103,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncRight.png",
     "allImages": [
@@ -3121,8 +3121,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncLeft.png",
     "allImages": [
@@ -3139,7 +3139,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmStranglerHood.png",
@@ -3158,8 +3158,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 6
     },
     "image": "itmEncGableWindow.png",
     "allImages": [
@@ -3176,8 +3176,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 5,
+      "height": 7
     },
     "image": "itmEncGableStrangler.png",
     "allImages": [
@@ -3194,7 +3194,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 4,
       "height": 2
     },
     "image": "itmEncStock.png",
@@ -3212,7 +3212,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 7,
       "height": 2
     },
     "image": "itmEncSpectator.png",
@@ -3230,8 +3230,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncQuestion.png",
     "allImages": [
@@ -3248,8 +3248,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncErase.png",
     "allImages": [
@@ -3266,8 +3266,8 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmVMADSTransponder.png",
     "allImages": [
@@ -3284,8 +3284,8 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 4
     },
     "image": "itm95GHzDetector.png",
     "allImages": [
@@ -3302,8 +3302,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncSneakTowards.png",
     "allImages": [
@@ -3320,8 +3320,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncShoutFriend.png",
     "allImages": [
@@ -3338,8 +3338,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncShoutThreat.png",
     "allImages": [
@@ -3356,8 +3356,8 @@
     "value": 125,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 9
     },
     "image": "itmMechDoll.png",
     "allImages": [
@@ -3378,7 +3378,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 6,
       "height": 2
     },
     "image": "itmEncRifle.png",
@@ -3396,7 +3396,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 8,
       "height": 2
     },
     "image": "itmEncLocation.png",
@@ -3414,8 +3414,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncSneakAway.png",
     "allImages": [
@@ -3432,8 +3432,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncAdvance.png",
     "allImages": [
@@ -3450,8 +3450,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncFallBack.png",
     "allImages": [
@@ -3468,8 +3468,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncCharge.png",
     "allImages": [
@@ -3486,8 +3486,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncRunAway.png",
     "allImages": [
@@ -3504,8 +3504,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncTakeCover.png",
     "allImages": [
@@ -3522,8 +3522,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncAttack.png",
     "allImages": [
@@ -3540,8 +3540,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncSpy.png",
     "allImages": [
@@ -3558,8 +3558,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncCoverAway.png",
     "allImages": [
@@ -3576,8 +3576,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncCoverToward.png",
     "allImages": [
@@ -3594,8 +3594,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncFlee.png",
     "allImages": [
@@ -3612,8 +3612,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncSneakExit.png",
     "allImages": [
@@ -3630,8 +3630,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncTackle.png",
     "allImages": [
@@ -3648,8 +3648,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncGetUp.png",
     "allImages": [
@@ -3666,8 +3666,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncAttack.png",
     "allImages": [
@@ -3684,8 +3684,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncRoll.png",
     "allImages": [
@@ -3702,8 +3702,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncDodge.png",
     "allImages": [
@@ -3720,8 +3720,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncParry.png",
     "allImages": [
@@ -3738,8 +3738,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncKick.png",
     "allImages": [
@@ -3756,8 +3756,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncPullDown.png",
     "allImages": [
@@ -3774,8 +3774,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncAttack2.png",
     "allImages": [
@@ -3792,8 +3792,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncAttack2.png",
     "allImages": [
@@ -3810,8 +3810,8 @@
     "value": 1,
     "stackLimit": 10,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmCleanRags.png",
     "allImages": [
@@ -3838,8 +3838,8 @@
     "value": 11.5,
     "stackLimit": 2,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 3
     },
     "image": "itmWaterTan.png",
     "allImages": [
@@ -3856,8 +3856,8 @@
     "value": 20,
     "stackLimit": 12,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 3
     },
     "image": "itmWaterAmber.png",
     "allImages": [
@@ -3875,7 +3875,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 4
     },
     "image": "itmWhiskeyFull.png",
     "allImages": [
@@ -3898,7 +3898,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmPillBottlePrescClosed.png",
     "allImages": [
@@ -3921,7 +3921,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmPillBottleOTCClosed.png",
     "allImages": [
@@ -3943,7 +3943,7 @@
     "value": 0.25,
     "stackLimit": 10,
     "size": {
-      "width": 2,
+      "width": 1,
       "height": 1
     },
     "image": "itmPillsOrange.png",
@@ -3961,7 +3961,7 @@
     "value": 5,
     "stackLimit": 10,
     "size": {
-      "width": 2,
+      "width": 1,
       "height": 1
     },
     "image": "itmPillsRedWhite.png",
@@ -3979,7 +3979,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 5,
       "height": 2
     },
     "image": "itmCrippled.png",
@@ -3997,8 +3997,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 2
     },
     "image": "itmSplint.png",
     "allImages": [
@@ -4017,8 +4017,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 3
     },
     "image": "itmResourceStream.png",
     "allImages": [
@@ -4035,8 +4035,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 3
     },
     "image": "itmResourceMarsh.png",
     "allImages": [
@@ -4053,8 +4053,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 3
     },
     "image": "itmResourceLake.png",
     "allImages": [
@@ -4071,8 +4071,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmScavengeForest01.png",
     "allImages": [
@@ -4089,8 +4089,8 @@
     "value": 20,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 4
     },
     "image": "itmFirstAidKit.png",
     "allImages": [
@@ -4111,8 +4111,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncAttackBlind.png",
     "allImages": [
@@ -4129,8 +4129,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncFleeBlind.png",
     "allImages": [
@@ -4147,8 +4147,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncAttackBlind.png",
     "allImages": [
@@ -4165,8 +4165,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncShoutThreat.png",
     "allImages": [
@@ -4183,8 +4183,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncSprintAway.png",
     "allImages": [
@@ -4201,8 +4201,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncLure.png",
     "allImages": [
@@ -4219,8 +4219,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncHeadButt.png",
     "allImages": [
@@ -4237,8 +4237,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncLegTrip.png",
     "allImages": [
@@ -4255,8 +4255,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncCreateObstacle.png",
     "allImages": [
@@ -4273,8 +4273,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 5
     },
     "image": "itmEncElecPanel.png",
     "allImages": [
@@ -4291,7 +4291,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 4,
       "height": 2
     },
     "image": "itmEncVent.png",
@@ -4309,8 +4309,8 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 6
     },
     "image": "itmLightFixture.png",
     "allImages": [
@@ -4327,8 +4327,8 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itmEncVent.png",
     "allImages": [
@@ -4345,8 +4345,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itmEncVent.png",
     "allImages": [
@@ -4363,8 +4363,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 5
     },
     "image": "itmEncElecPanel.png",
     "allImages": [
@@ -4381,8 +4381,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 6
     },
     "image": "itmEncWindow.png",
     "allImages": [
@@ -4399,8 +4399,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncLead.png",
     "allImages": [
@@ -4417,8 +4417,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncWaveHide.png",
     "allImages": [
@@ -4435,8 +4435,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncPushObject.png",
     "allImages": [
@@ -4453,8 +4453,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncPushObjectHide.png",
     "allImages": [
@@ -4471,8 +4471,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 1,
+      "height": 4
     },
     "image": "itmBottleWater.png",
     "allImages": [
@@ -4489,8 +4489,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncThrowHide.png",
     "allImages": [
@@ -4507,8 +4507,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncReachDown.png",
     "allImages": [
@@ -4525,8 +4525,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncCrouch.png",
     "allImages": [
@@ -4543,8 +4543,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncGive.png",
     "allImages": [
@@ -4561,8 +4561,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncAid.png",
     "allImages": [
@@ -4579,8 +4579,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncTime.png",
     "allImages": [
@@ -4598,7 +4598,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmCaniCallOn.png",
     "allImages": [
@@ -4617,7 +4617,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmWristTracker.png",
     "allImages": [
@@ -4635,8 +4635,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmPlateFriedChicken.png",
     "allImages": [
@@ -4653,8 +4653,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmPlateJumboShrimp.png",
     "allImages": [
@@ -4671,8 +4671,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmPlateCadillacBurger.png",
     "allImages": [
@@ -4689,7 +4689,7 @@
     "value": 0.25,
     "stackLimit": 10,
     "size": {
-      "width": 2,
+      "width": 1,
       "height": 1
     },
     "image": "itmPillsBlue.png",
@@ -4708,7 +4708,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmPillBottleSLClosed.png",
     "allImages": [
@@ -4730,8 +4730,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 2
     },
     "image": "itmFlawEyeSurgery.png",
     "allImages": [
@@ -4748,8 +4748,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 2
     },
     "image": "itmFlawEyeAug.png",
     "allImages": [
@@ -4766,8 +4766,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 2
     },
     "image": "itmFlawEyeAugNV.png",
     "allImages": [
@@ -4784,8 +4784,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 2
     },
     "image": "itmFlawEyeAugTZ.png",
     "allImages": [
@@ -4802,7 +4802,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillTelescopic.png",
@@ -4820,8 +4820,8 @@
     "value": 140,
     "stackLimit": 2,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 3
     },
     "image": "itmBlood.png",
     "allImages": [
@@ -4839,7 +4839,7 @@
     "stackLimit": 1,
     "size": {
       "width": 2,
-      "height": 2
+      "height": 3
     },
     "image": "itmBlood.png",
     "allImages": [
@@ -4856,7 +4856,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 1,
       "height": 2
     },
     "image": "itmPillBottleSLClosed.png",
@@ -4874,7 +4874,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 1,
       "height": 2
     },
     "image": "itmPillBottlePrescClosed.png",
@@ -4892,7 +4892,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 1,
       "height": 2
     },
     "image": "itmPillBottleABClosed.png",
@@ -4911,7 +4911,7 @@
     "stackLimit": 1,
     "size": {
       "width": 2,
-      "height": 2
+      "height": 3
     },
     "image": "itmWater.png",
     "allImages": [
@@ -4928,8 +4928,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 4,
+      "height": 3
     },
     "image": "itmRMK.png",
     "allImages": [
@@ -4946,8 +4946,8 @@
     "value": 52,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 3
     },
     "image": "itmBinocularsStrapWorn.png",
     "allImages": [
@@ -4965,8 +4965,8 @@
     "value": 0.03,
     "stackLimit": 20,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmStringMed.png",
     "allImages": [
@@ -4983,8 +4983,8 @@
     "value": 32,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 14,
+      "height": 2
     },
     "image": "itmCrowbarSlingWorn.png",
     "allImages": [
@@ -5003,8 +5003,8 @@
     "value": 40,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmBinocularHalf.png",
     "allImages": [
@@ -5021,7 +5021,7 @@
     "value": 52,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 5,
       "height": 1
     },
     "image": "itmRifleScopeStrapWorn.png",
@@ -5040,8 +5040,8 @@
     "value": 25,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 10,
+      "height": 5
     },
     "image": "itmShopCartBasket.png",
     "allImages": [
@@ -5062,8 +5062,8 @@
     "value": 8,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 10,
+      "height": 4
     },
     "image": "itmShopCartFrame.png",
     "allImages": [
@@ -5080,8 +5080,8 @@
     "value": 4,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmShopCartWheel.png",
     "allImages": [
@@ -5098,8 +5098,8 @@
     "value": 60,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 13,
+      "height": 11
     },
     "image": "itmBoxCart.png",
     "allImages": [
@@ -5121,8 +5121,8 @@
     "value": 12,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 12,
+      "height": 3
     },
     "image": "itmPlasticSled.png",
     "allImages": [
@@ -5144,8 +5144,8 @@
     "value": 15,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 12,
+      "height": 3
     },
     "image": "itmPlasticSledStrap.png",
     "allImages": [
@@ -5167,8 +5167,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 20,
+      "height": 2
     },
     "image": "itmStickLarge.png",
     "allImages": [
@@ -5186,8 +5186,8 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 20,
+      "height": 4
     },
     "image": "itmTravois.png",
     "allImages": [
@@ -5209,8 +5209,8 @@
     "value": 0,
     "stackLimit": 5,
     "size": {
-      "width": 2,
-      "height": 1
+      "width": 1,
+      "height": 2
     },
     "image": "itmGlassShard.png",
     "allImages": [
@@ -5228,7 +5228,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 3
     },
     "image": "itmBottleBroken.png",
     "allImages": [
@@ -5246,7 +5246,7 @@
     "stackLimit": 3,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmGlassShiv.png",
     "allImages": [
@@ -5263,8 +5263,8 @@
     "value": 40,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 17,
+      "height": 3
     },
     "image": "itmBowGreenwoodWorn.png",
     "allImages": [
@@ -5287,8 +5287,8 @@
     "value": 200,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 10,
+      "height": 4
     },
     "image": "itmBowCompoundStored.png",
     "allImages": [
@@ -5310,8 +5310,8 @@
     "value": 205,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 10,
+      "height": 4
     },
     "image": "itmBowCompoundStrapWorn.png",
     "allImages": [
@@ -5334,7 +5334,7 @@
     "value": 5,
     "stackLimit": 5,
     "size": {
-      "width": 1,
+      "width": 10,
       "height": 1
     },
     "image": "itmArrowBroad.png",
@@ -5361,7 +5361,7 @@
     "value": 2,
     "stackLimit": 5,
     "size": {
-      "width": 1,
+      "width": 10,
       "height": 1
     },
     "image": "itmArrowPierceCrude.png",
@@ -5388,7 +5388,7 @@
     "value": 3,
     "stackLimit": 5,
     "size": {
-      "width": 1,
+      "width": 10,
       "height": 1
     },
     "image": "itmArrowBroadCrude.png",
@@ -5433,7 +5433,7 @@
     "value": 0,
     "stackLimit": 2,
     "size": {
-      "width": 1,
+      "width": 2,
       "height": 1
     },
     "image": "itmStones.png",
@@ -5451,7 +5451,7 @@
     "value": 2,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSling.png",
@@ -5473,8 +5473,8 @@
     "value": 300,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itm38Revolver.png",
     "allImages": [
@@ -5603,8 +5603,8 @@
     "value": 350,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itm45Pistol.png",
     "allImages": [
@@ -5625,8 +5625,8 @@
     "value": 850,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 12,
+      "height": 3
     },
     "image": "itmSBS4Stored.png",
     "allImages": [
@@ -5648,8 +5648,8 @@
     "value": 608,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 15,
+      "height": 3
     },
     "image": "itm12GaugeShotgunStrapWorn.png",
     "allImages": [
@@ -5672,7 +5672,7 @@
     "value": 2,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 19,
       "height": 1
     },
     "image": "itmSpearSharpStored.png",
@@ -5699,7 +5699,7 @@
     "value": 4,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 19,
       "height": 1
     },
     "image": "itmSpearHardStored.png",
@@ -5726,7 +5726,7 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 19,
       "height": 1
     },
     "image": "itmSpearBroadStored.png",
@@ -5775,8 +5775,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncReachDown.png",
     "allImages": [
@@ -5793,8 +5793,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncSurrenderOffer.png",
     "allImages": [
@@ -5811,8 +5811,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncSurrenderAccept.png",
     "allImages": [
@@ -5829,8 +5829,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncSurrenderDemand.png",
     "allImages": [
@@ -5847,8 +5847,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncSurrenderAgree.png",
     "allImages": [
@@ -5865,8 +5865,8 @@
     "value": 1,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 14,
+      "height": 6
     },
     "image": "itmCorpseDogman.png",
     "allImages": [
@@ -5883,8 +5883,8 @@
     "value": 48,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itmMeatMedRaw.png",
     "allImages": [
@@ -5901,8 +5901,8 @@
     "value": 0.05,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itmMeatMedSpoiled.png",
     "allImages": [
@@ -5919,8 +5919,8 @@
     "value": 48,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itmMeatMedCooked.png",
     "allImages": [
@@ -5937,8 +5937,8 @@
     "value": 60,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itmMeatMedCured.png",
     "allImages": [
@@ -5955,8 +5955,8 @@
     "value": 225,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 10,
+      "height": 5
     },
     "image": "itmFurDogmanWorn.png",
     "allImages": [
@@ -5974,8 +5974,8 @@
     "value": 1,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 14,
+      "height": 4
     },
     "image": "itmCorpseMan.png",
     "allImages": [
@@ -5992,8 +5992,8 @@
     "value": 1,
     "stackLimit": 5,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 5,
+      "height": 2
     },
     "image": "itmFurSmall.png",
     "allImages": [
@@ -6010,8 +6010,8 @@
     "value": 1,
     "stackLimit": 5,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 5,
+      "height": 2
     },
     "image": "itmPeltDeer.png",
     "allImages": [
@@ -6028,8 +6028,8 @@
     "value": 1,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 14,
+      "height": 3
     },
     "image": "itmCorpseDeer.png",
     "allImages": [
@@ -6046,8 +6046,8 @@
     "value": 1,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 14,
+      "height": 4
     },
     "image": "itmCorpseEnfield.png",
     "allImages": [
@@ -6064,7 +6064,7 @@
     "value": 15,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmFlashlight.png",
@@ -6109,7 +6109,7 @@
     "stackLimit": 30,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmPaperScrap.png",
     "allImages": [
@@ -6126,8 +6126,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncSurrenderOffer.png",
     "allImages": [
@@ -6144,8 +6144,8 @@
     "value": 45,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 5,
+      "height": 6
     },
     "image": "itmLaptopOffOpen.png",
     "allImages": [
@@ -6166,8 +6166,8 @@
     "value": 10,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmBattLaptop.png",
     "allImages": [
@@ -6188,8 +6188,8 @@
     "value": 45,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 5,
+      "height": 3
     },
     "image": "itmLaptopOffClosed.png",
     "allImages": [
@@ -6210,8 +6210,8 @@
     "value": 45,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 5,
+      "height": 6
     },
     "image": "itmLaptopOnLocked.png",
     "allImages": [
@@ -6232,8 +6232,8 @@
     "value": 65,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 5,
+      "height": 6
     },
     "image": "itmLaptopOffOpen.png",
     "allImages": [
@@ -6254,8 +6254,8 @@
     "value": 65,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 5,
+      "height": 3
     },
     "image": "itmLaptopOffClosed.png",
     "allImages": [
@@ -6276,8 +6276,8 @@
     "value": 65,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 5,
+      "height": 6
     },
     "image": "itmLaptopOn.png",
     "allImages": [
@@ -6298,7 +6298,7 @@
     "value": 6,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSWCrackLaptop.png",
@@ -6316,7 +6316,7 @@
     "value": 4,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmBattiSlab.png",
@@ -6338,8 +6338,8 @@
     "value": 15,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmISlabLocked.png",
     "allImages": [
@@ -6360,8 +6360,8 @@
     "value": 25,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmISlab.png",
     "allImages": [
@@ -6382,8 +6382,8 @@
     "value": 25,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmISlabOn.png",
     "allImages": [
@@ -6449,7 +6449,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmSmartPhone.png",
     "allImages": [
@@ -6471,7 +6471,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmSmartPhoneLocked.png",
     "allImages": [
@@ -6493,7 +6493,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmSmartPhone.png",
     "allImages": [
@@ -6515,7 +6515,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmSmartPhoneOn.png",
     "allImages": [
@@ -6537,7 +6537,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmCellPhone.png",
     "allImages": [
@@ -6559,7 +6559,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmCellPhoneLocked.png",
     "allImages": [
@@ -6581,7 +6581,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmCellPhone.png",
     "allImages": [
@@ -6603,7 +6603,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmCellPhoneOn.png",
     "allImages": [
@@ -6624,7 +6624,7 @@
     "value": 6,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSWCrackiSlab.png",
@@ -6642,7 +6642,7 @@
     "value": 6,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSWCrackSmartphone.png",
@@ -6660,7 +6660,7 @@
     "value": 6,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSWCrackCellphone.png",
@@ -6678,7 +6678,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSWTabletLamp.png",
@@ -6696,7 +6696,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSWTabletGPS.png",
@@ -6714,7 +6714,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSWSmartphoneLamp.png",
@@ -6732,7 +6732,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSWSmartphoneGPS.png",
@@ -6750,8 +6750,8 @@
     "value": 25,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmISlabLamp.png",
     "allImages": [
@@ -6773,7 +6773,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmSmartPhoneLamp.png",
     "allImages": [
@@ -6794,7 +6794,7 @@
     "value": 15,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmFlashlightOn.png",
@@ -6816,8 +6816,8 @@
     "value": 100,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmNVGogglesOn.png",
     "allImages": [
@@ -6839,7 +6839,7 @@
     "value": 0,
     "stackLimit": 20,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmDataTXT.png",
@@ -6858,7 +6858,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmMemStick.png",
     "allImages": [
@@ -6879,8 +6879,8 @@
     "value": 48,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itmMeatMedRaw.png",
     "allImages": [
@@ -6897,8 +6897,8 @@
     "value": 0.05,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itmMeatMedSpoiled.png",
     "allImages": [
@@ -6915,8 +6915,8 @@
     "value": 48,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itmMeatMedCooked.png",
     "allImages": [
@@ -6933,8 +6933,8 @@
     "value": 60,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itmMeatMedCured.png",
     "allImages": [
@@ -6951,7 +6951,7 @@
     "value": 4,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSquirrelMeatRaw.png",
@@ -6969,7 +6969,7 @@
     "value": 0.05,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSquirrelMeatSpoiled.png",
@@ -6987,7 +6987,7 @@
     "value": 4,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSquirrelMeatCooked.png",
@@ -7005,7 +7005,7 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSquirrelMeatCured.png",
@@ -7023,8 +7023,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncEyeball.png",
     "allImages": [
@@ -7041,8 +7041,8 @@
     "value": 0.25,
     "stackLimit": 2,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 3
     },
     "image": "itmWater.png",
     "allImages": [
@@ -7059,8 +7059,8 @@
     "value": 0.25,
     "stackLimit": 2,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 3
     },
     "image": "itmWater.png",
     "allImages": [
@@ -7077,8 +7077,8 @@
     "value": 0.25,
     "stackLimit": 2,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 3
     },
     "image": "itmWaterQuestion.png",
     "allImages": [
@@ -7096,7 +7096,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 3
     },
     "image": "itmWaterTester.png",
     "allImages": [
@@ -7117,8 +7117,8 @@
     "value": 250,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 3
     },
     "image": "itmBattRTG.png",
     "allImages": [
@@ -7139,8 +7139,8 @@
     "value": 1,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 9,
+      "height": 2
     },
     "image": "itmCorpseWraith.png",
     "allImages": [
@@ -7157,8 +7157,8 @@
     "value": 0,
     "stackLimit": 20,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmPapersOld.png",
     "allImages": [
@@ -7175,8 +7175,8 @@
     "value": 40,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 3
     },
     "image": "itmFilmCan.png",
     "allImages": [
@@ -7193,8 +7193,8 @@
     "value": 4,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmBook01.png",
     "allImages": [
@@ -7211,8 +7211,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 4,
+      "height": 4
     },
     "image": "itmEncMergaLoupe.png",
     "allImages": [
@@ -7230,7 +7230,7 @@
     "stackLimit": 1,
     "size": {
       "width": 2,
-      "height": 2
+      "height": 6
     },
     "image": "itmEncStoneTablet.png",
     "allImages": [
@@ -7247,8 +7247,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 4
     },
     "image": "itmScavengePower.png",
     "allImages": [
@@ -7269,7 +7269,7 @@
     "value": 6,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSWTabletRFID.png",
@@ -7287,7 +7287,7 @@
     "value": 6,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSWSmartphoneRFID.png",
@@ -7305,8 +7305,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmRoastCabbage.png",
     "allImages": [
@@ -7323,8 +7323,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmDonnerSprouts.png",
     "allImages": [
@@ -7341,8 +7341,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmDonnerCabbage.png",
     "allImages": [
@@ -7359,7 +7359,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 3,
       "height": 2
     },
     "image": "itmTofuSticks.png",
@@ -7377,8 +7377,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncDrop.png",
     "allImages": [
@@ -7395,8 +7395,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncDisengageOffer.png",
     "allImages": [
@@ -7413,8 +7413,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncDisengageAccept.png",
     "allImages": [
@@ -7431,8 +7431,8 @@
     "value": 23,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmCargoPants.png",
     "allImages": [
@@ -7455,8 +7455,8 @@
     "value": 13,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmCargoShorts.png",
     "allImages": [
@@ -7479,8 +7479,8 @@
     "value": 23,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmCargoPantsBlack.png",
     "allImages": [
@@ -7503,8 +7503,8 @@
     "value": 50,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 4
     },
     "image": "itmPoliceBoot.png",
     "allImages": [
@@ -7522,8 +7522,8 @@
     "value": 50,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 4
     },
     "image": "itmPoliceBoot.png",
     "allImages": [
@@ -7541,8 +7541,8 @@
     "value": 8,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmShirtBlack.png",
     "allImages": [
@@ -7560,7 +7560,7 @@
     "value": 7,
     "stackLimit": 2,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmTacticalGlove.png",
@@ -7579,7 +7579,7 @@
     "value": 11,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmBalaclava.png",
@@ -7598,8 +7598,8 @@
     "value": 55,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 3
     },
     "image": "itmPoliceHelmet.png",
     "allImages": [
@@ -7617,8 +7617,8 @@
     "value": 615,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 9
     },
     "image": "itmArmorVest.png",
     "allImages": [
@@ -7640,7 +7640,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
+      "width": 5,
       "height": 2
     },
     "image": "itmCrippled.png",
@@ -7658,8 +7658,8 @@
     "value": 600,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 15,
+      "height": 3
     },
     "image": "itm12GaugeShotgunStored.png",
     "allImages": [
@@ -7681,8 +7681,8 @@
     "value": 858,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 12,
+      "height": 3
     },
     "image": "itmSBS4StrapWorn.png",
     "allImages": [
@@ -7706,7 +7706,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmWristTracker.png",
     "allImages": [
@@ -7725,7 +7725,7 @@
     "stackLimit": 3,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 4
     },
     "image": "itmSmudgeStick.png",
     "allImages": [
@@ -7742,8 +7742,8 @@
     "value": 7,
     "stackLimit": 1,
     "size": {
-      "width": 3,
-      "height": 3
+      "width": 1,
+      "height": 4
     },
     "image": "itmSmudgeStickLit.png",
     "allImages": [
@@ -7760,7 +7760,7 @@
     "value": 0,
     "stackLimit": 5,
     "size": {
-      "width": 1,
+      "width": 2,
       "height": 1
     },
     "image": "itmBearRoot.png",
@@ -7778,8 +7778,8 @@
     "value": 120,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 17,
+      "height": 3
     },
     "image": "itmBowAnishinabeWorn.png",
     "allImages": [
@@ -7802,8 +7802,8 @@
     "value": 35,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 10,
+      "height": 2
     },
     "image": "itmWarClub.png",
     "allImages": [
@@ -7821,8 +7821,8 @@
     "value": 22,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmBirchBagClosed.png",
     "allImages": [
@@ -7845,8 +7845,8 @@
     "value": 165,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 5,
+      "height": 4
     },
     "image": "itmHideLongCoat.png",
     "allImages": [
@@ -7864,8 +7864,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncRadio.png",
     "allImages": [
@@ -7882,8 +7882,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncShoutMore.png",
     "allImages": [
@@ -7918,8 +7918,8 @@
     "value": 2640,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 16,
+      "height": 3
     },
     "image": "itm4mmGaussRifleStored.png",
     "allImages": [
@@ -7941,8 +7941,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncCrawlTowards.png",
     "allImages": [
@@ -7959,8 +7959,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncCrawlAway.png",
     "allImages": [
@@ -7977,8 +7977,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncAdvance.png",
     "allImages": [
@@ -7995,8 +7995,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncSneakExit.png",
     "allImages": [
@@ -8013,8 +8013,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 6,
+      "height": 6
     },
     "image": "itmScavengeCryoBldg.png",
     "allImages": [
@@ -8031,8 +8031,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncDoorPanel.png",
     "allImages": [
@@ -8049,8 +8049,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmScavengeForest02.png",
     "allImages": [
@@ -8067,8 +8067,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 5
     },
     "image": "itmEncZomZoms.png",
     "allImages": [
@@ -8085,8 +8085,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 4
     },
     "image": "itmEncForestEntrance.png",
     "allImages": [
@@ -8103,8 +8103,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 5
     },
     "image": "itmEncIsoMine.png",
     "allImages": [
@@ -8121,8 +8121,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 5,
+      "height": 4
     },
     "image": "itmEncAllegan.png",
     "allImages": [
@@ -8139,8 +8139,8 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmTshirtAlleganWhite.png",
     "allImages": [
@@ -8158,8 +8158,8 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmTshirtAlleganRed.png",
     "allImages": [
@@ -8177,8 +8177,8 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmTshirtCornaCola.png",
     "allImages": [
@@ -8196,8 +8196,8 @@
     "value": 5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmTshirtBanana.png",
     "allImages": [
@@ -8215,8 +8215,8 @@
     "value": 56,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmTshirt3DogMoon.png",
     "allImages": [
@@ -8234,7 +8234,7 @@
     "value": 2,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmBlueFrogSashWorn.png",
@@ -8262,7 +8262,7 @@
     "value": 27,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 2,
       "height": 1
     },
     "image": "itmGasMaskCartridge.png",
@@ -8280,7 +8280,7 @@
     "value": 2,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 2,
       "height": 1
     },
     "image": "itmGasMaskCartridge.png",
@@ -8298,8 +8298,8 @@
     "value": 57,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 3
     },
     "image": "itmGasMaskWorn.png",
     "allImages": [
@@ -8321,8 +8321,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncExitCrawl.png",
     "allImages": [
@@ -8339,8 +8339,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 5,
+      "height": 3
     },
     "image": "itmScavengeGBS01.png",
     "allImages": [
@@ -8357,8 +8357,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 5,
+      "height": 3
     },
     "image": "itmScavengeCrashSwamp.png",
     "allImages": [
@@ -8375,8 +8375,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 5,
+      "height": 5
     },
     "image": "itmScavengeCrashForest.png",
     "allImages": [
@@ -8393,8 +8393,8 @@
     "value": 0,
     "stackLimit": 5,
     "size": {
-      "width": 2,
-      "height": 1
+      "width": 1,
+      "height": 2
     },
     "image": "itmGlassShard.png",
     "allImages": [
@@ -8411,8 +8411,8 @@
     "value": 0.4,
     "stackLimit": 3,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmUVD.png",
     "allImages": [
@@ -8429,8 +8429,8 @@
     "value": 0.4,
     "stackLimit": 3,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmUVD.png",
     "allImages": [
@@ -8447,8 +8447,8 @@
     "value": 0.4,
     "stackLimit": 3,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmUVD.png",
     "allImages": [
@@ -8465,8 +8465,8 @@
     "value": 4.5,
     "stackLimit": 3,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmUVD.png",
     "allImages": [
@@ -8483,8 +8483,8 @@
     "value": 0.1,
     "stackLimit": 3,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 3
     },
     "image": "itmUVDJTSmoov.png",
     "allImages": [
@@ -8505,8 +8505,8 @@
     "value": 0.1,
     "stackLimit": 3,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 3
     },
     "image": "itmUVDHiyaPoopy.png",
     "allImages": [
@@ -8527,8 +8527,8 @@
     "value": 0.1,
     "stackLimit": 3,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 3
     },
     "image": "itmUVDBridgettLance.png",
     "allImages": [
@@ -8549,8 +8549,8 @@
     "value": 0.5,
     "stackLimit": 3,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 3
     },
     "image": "itmUVDFamousFedors.png",
     "allImages": [
@@ -8571,8 +8571,8 @@
     "value": 0,
     "stackLimit": 3,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmUVD.png",
     "allImages": [
@@ -8590,7 +8590,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmVialYellow.png",
     "allImages": [
@@ -8607,8 +8607,8 @@
     "value": 150,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 7,
+      "height": 12
     },
     "image": "itmDrum130L.png",
     "allImages": [
@@ -8643,8 +8643,8 @@
     "value": 0,
     "stackLimit": 20,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmPapersOld.png",
     "allImages": [
@@ -8661,7 +8661,7 @@
     "value": 2,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmBlueFrogSash01Worn.png",
@@ -8689,8 +8689,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 3
     },
     "image": "itmLocker.png",
     "allImages": [
@@ -8711,8 +8711,8 @@
     "value": 0,
     "stackLimit": 20,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmPapers.png",
     "allImages": [
@@ -8729,8 +8729,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 5
     },
     "image": "itmBlueFrogBanner.png",
     "allImages": [
@@ -8747,7 +8747,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmSWSmartphoneAddr.png",
@@ -8766,7 +8766,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmVialBlue.png",
     "allImages": [
@@ -8783,8 +8783,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncDoorPanel.png",
     "allImages": [
@@ -8801,8 +8801,8 @@
     "value": 1,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 14,
+      "height": 4
     },
     "image": "itmCorpseMan.png",
     "allImages": [
@@ -8819,8 +8819,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncMoney1.png",
     "allImages": [
@@ -8837,8 +8837,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncMoney2.png",
     "allImages": [
@@ -8855,8 +8855,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncMoney3.png",
     "allImages": [
@@ -8874,7 +8874,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmVialYellow.png",
     "allImages": [
@@ -8891,8 +8891,8 @@
     "value": 1000,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 18,
+      "height": 5
     },
     "image": "itmCorpseDrone.png",
     "allImages": [
@@ -8909,7 +8909,7 @@
     "value": 10,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 3,
       "height": 1
     },
     "image": "itmBattGauss.png",
@@ -8931,8 +8931,8 @@
     "value": 2690,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 16,
+      "height": 4
     },
     "image": "itm4mmGaussRifleScopedStored.png",
     "allImages": [
@@ -8954,8 +8954,8 @@
     "value": 2648,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 16,
+      "height": 3
     },
     "image": "itm4mmGaussRifleStrappedWorn.png",
     "allImages": [
@@ -8978,8 +8978,8 @@
     "value": 2648,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 16,
+      "height": 4
     },
     "image": "itm4mmGaussRifleSSWorn.png",
     "allImages": [
@@ -9020,7 +9020,7 @@
     "value": 56,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 9,
       "height": 1
     },
     "image": "itm4mmGaussBarrel.png",
@@ -9038,8 +9038,8 @@
     "value": 38,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itm4mmGaussReceiver.png",
     "allImages": [
@@ -9056,8 +9056,8 @@
     "value": 26,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmStagingSwitch.png",
     "allImages": [
@@ -9074,7 +9074,7 @@
     "value": 13,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 2,
       "height": 1
     },
     "image": "itmChargingCircuit.png",
@@ -9092,8 +9092,8 @@
     "value": 12,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 5,
+      "height": 2
     },
     "image": "itmWoodRifleStock.png",
     "allImages": [
@@ -9110,8 +9110,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 18,
+      "height": 5
     },
     "image": "itmCorpseDroneUnknown.png",
     "allImages": [
@@ -9128,8 +9128,8 @@
     "value": 615,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 9
     },
     "image": "itmArmorVest.png",
     "allImages": [
@@ -9147,8 +9147,8 @@
     "value": 32,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 5,
+      "height": 6
     },
     "image": "itmBackpackChildClosed.png",
     "allImages": [
@@ -9171,7 +9171,7 @@
     "stackLimit": 1,
     "size": {
       "width": 3,
-      "height": 3
+      "height": 4
     },
     "image": "itmSmallFire.png",
     "allImages": [
@@ -9189,7 +9189,7 @@
     "stackLimit": 1,
     "size": {
       "width": 2,
-      "height": 1
+      "height": 2
     },
     "image": "itmPotatoChips.png",
     "allImages": [
@@ -9206,8 +9206,8 @@
     "value": 0,
     "stackLimit": 30,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmFoilScrap.png",
     "allImages": [
@@ -9224,8 +9224,8 @@
     "value": 0.5,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 6
     },
     "image": "itmBagChipsOpen.png",
     "allImages": [
@@ -9247,8 +9247,8 @@
     "value": 4,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 7,
+      "height": 5
     },
     "image": "itmFoilPonchoWorn.png",
     "allImages": [
@@ -9267,7 +9267,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmMemStick.png",
     "allImages": [
@@ -9284,8 +9284,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncMoveBack.png",
     "allImages": [
@@ -9320,8 +9320,8 @@
     "value": 200,
     "stackLimit": 20,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmPapersDrawing.png",
     "allImages": [
@@ -9339,7 +9339,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmIDCard.png",
     "allImages": [
@@ -9356,8 +9356,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 4,
+      "height": 4
     },
     "image": "itmEncGrayling.png",
     "allImages": [
@@ -9374,8 +9374,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncMergaWraith.png",
     "allImages": [
@@ -9392,8 +9392,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncWho.png",
     "allImages": [
@@ -9410,8 +9410,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncWhat.png",
     "allImages": [
@@ -9447,7 +9447,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmMemStickRed.png",
     "allImages": [
@@ -9464,8 +9464,8 @@
     "value": 8,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmShirtGray.png",
     "allImages": [
@@ -9483,8 +9483,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 4
     },
     "image": "itmEncGrayling.png",
     "allImages": [
@@ -9501,7 +9501,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillElusive.png",
@@ -9519,7 +9519,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
+      "width": 6,
       "height": 2
     },
     "image": "itmSkillUnstoppable.png",
@@ -9537,8 +9537,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 2
     },
     "image": "itmFlawLegendary.png",
     "allImages": [
@@ -9555,8 +9555,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 2
     },
     "image": "itmFlawEnervated.png",
     "allImages": [
@@ -9573,8 +9573,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncRadio.png",
     "allImages": [
@@ -9592,7 +9592,7 @@
     "stackLimit": 5,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 3
     },
     "image": "itmRoadmap.png",
     "allImages": [
@@ -9609,8 +9609,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncSpy.png",
     "allImages": [
@@ -9627,8 +9627,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
-      "height": 2
+      "width": 0,
+      "height": 0
     },
     "image": "blank.png",
     "allImages": [
@@ -9649,8 +9649,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 0,
+      "height": 0
     },
     "image": "blank.png",
     "allImages": [
@@ -9671,8 +9671,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmMixedVeg.png",
     "allImages": [
@@ -9689,8 +9689,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmMixedVegProtein.png",
     "allImages": [
@@ -9707,8 +9707,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmGullWings.png",
     "allImages": [
@@ -9725,8 +9725,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmTofuSticks.png",
     "allImages": [
@@ -9743,8 +9743,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmNonVegStew.png",
     "allImages": [
@@ -9761,8 +9761,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 4
     },
     "image": "itmEncLastChance.png",
     "allImages": [
@@ -9779,8 +9779,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 3
     },
     "image": "itmEncParkade.png",
     "allImages": [
@@ -9797,7 +9797,7 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 2,
       "height": 1
     },
     "image": "itmDomeLight.png",
@@ -9815,8 +9815,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itmClimateControl.png",
     "allImages": [
@@ -9833,8 +9833,8 @@
     "value": 2,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 2
     },
     "image": "itmShortShorts.png",
     "allImages": [
@@ -9857,7 +9857,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmSparkerSmall.png",
     "allImages": [
@@ -9878,8 +9878,8 @@
     "value": 9,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 2,
+      "height": 2
     },
     "image": "itmSparkerMed.png",
     "allImages": [
@@ -9900,8 +9900,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 3,
+      "height": 3
     },
     "image": "itmSunlight.png",
     "allImages": [
@@ -9918,8 +9918,8 @@
     "value": 6,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 6,
+      "height": 10
     },
     "image": "itmSack.png",
     "allImages": [
@@ -9941,7 +9941,7 @@
     "value": 0.25,
     "stackLimit": 10,
     "size": {
-      "width": 2,
+      "width": 1,
       "height": 1
     },
     "image": "itmPillsBlue.png",
@@ -9960,7 +9960,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmPillBottleABClosed.png",
     "allImages": [
@@ -9982,8 +9982,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncVanish.png",
     "allImages": [
@@ -10000,8 +10000,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncExploit.png",
     "allImages": [
@@ -10018,8 +10018,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncIntimidate.png",
     "allImages": [
@@ -10036,8 +10036,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 2,
-      "height": 2
+      "width": 3,
+      "height": 3
     },
     "image": "itmEncTrap.png",
     "allImages": [
@@ -10054,7 +10054,7 @@
     "value": 0.25,
     "stackLimit": 10,
     "size": {
-      "width": 2,
+      "width": 1,
       "height": 1
     },
     "image": "itmPillsOrange.png",
@@ -10073,7 +10073,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmPillBottleSLClosed.png",
     "allImages": [
@@ -10095,7 +10095,7 @@
     "value": 0.25,
     "stackLimit": 10,
     "size": {
-      "width": 2,
+      "width": 1,
       "height": 1
     },
     "image": "itmAntiBioticsPills.png",
@@ -10114,7 +10114,7 @@
     "stackLimit": 1,
     "size": {
       "width": 1,
-      "height": 1
+      "height": 2
     },
     "image": "itmPillBottlePrescClosed.png",
     "allImages": [
@@ -10136,7 +10136,7 @@
     "value": 1,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 2,
       "height": 1
     },
     "image": "itmPillOrganizer.png",
@@ -10158,8 +10158,8 @@
     "value": 0,
     "stackLimit": 1,
     "size": {
-      "width": 3,
-      "height": 3
+      "width": 5,
+      "height": 8
     },
     "image": "itmBarrelFire.png",
     "allImages": [
@@ -10176,8 +10176,8 @@
     "value": 1,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 11,
+      "height": 3
     },
     "image": "itmCorpseDog.png",
     "allImages": [
@@ -10194,8 +10194,8 @@
     "value": 35,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itmShoeRunWorn.png",
     "allImages": [
@@ -10213,8 +10213,8 @@
     "value": 35,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itmShoeRunWorn.png",
     "allImages": [
@@ -10232,8 +10232,8 @@
     "value": 4,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itmShoeRagWorn.png",
     "allImages": [
@@ -10251,7 +10251,7 @@
     "value": 4,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 4,
       "height": 1
     },
     "image": "itmShoeFlipFlopsWorn.png",
@@ -10270,7 +10270,7 @@
     "value": 2,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 4,
       "height": 1
     },
     "image": "itmShoeSole.png",
@@ -10288,7 +10288,7 @@
     "value": 4,
     "stackLimit": 1,
     "size": {
-      "width": 1,
+      "width": 4,
       "height": 1
     },
     "image": "itmShoeFlipFlopsWorn.png",
@@ -10307,8 +10307,8 @@
     "value": 4,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itmShoeGatorWorn.png",
     "allImages": [
@@ -10326,8 +10326,8 @@
     "value": 4,
     "stackLimit": 1,
     "size": {
-      "width": 1,
-      "height": 1
+      "width": 4,
+      "height": 2
     },
     "image": "itmShoeGatorWorn.png",
     "allImages": [

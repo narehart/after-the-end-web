@@ -27,7 +27,6 @@ export default function ItemGridButton({
   const { isSelected, hasOpenModal, hasGrid } = cellState;
   const { handleClick, openModal, handleMouseEnter, handleFocus } = handlers;
 
-  const needsRotation = item.size.height > item.size.width;
   const { itemWidth, itemHeight } = calculateItemDimensions({ item, cellSize });
 
   const handleDoubleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
@@ -70,7 +69,7 @@ export default function ItemGridButton({
         <img
           src={getImageUrl(item.image)}
           alt={item.name}
-          className={cx('item-image', { rotated: needsRotation })}
+          className={cx('item-image')}
           draggable={false}
         />
       ) : (

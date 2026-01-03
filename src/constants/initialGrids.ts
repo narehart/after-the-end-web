@@ -24,10 +24,8 @@ export const initialGrids: GridsMap = {
       width: 4,
       height: 6,
       items: [
-        { id: 'neo_3', x: 0, y: 0, width: 1, height: 1 }, // branch
-        { id: 'neo_5', x: 1, y: 0, width: 1, height: 1 }, // shoes
-        { id: 'neo_4', x: 2, y: 0, width: 1, height: 1 }, // tin can (container)
-        { id: 'neo_12', x: 0, y: 1, width: 2, height: 1 }, // bracelet 2x1
+        { id: 'neo_4', x: 0, y: 0 }, // tin can
+        { id: 'neo_12', x: 2, y: 0 }, // bracelet
       ],
     }),
   },
@@ -44,10 +42,10 @@ export const initialGrids: GridsMap = {
       width: 10,
       height: 40,
       items: [
-        { id: 'neo_9', x: 0, y: 0, width: 2, height: 2 }, // call melonhead 2x2
-        { id: 'neo_16', x: 3, y: 0, width: 3, height: 2 }, // skill: hacking 3x2
-        { id: 'neo_1', x: 7, y: 0, width: 1, height: 1 }, // bag (container)
-        { id: 'neo_3', x: 8, y: 0, width: 1, height: 1 }, // branch
+        { id: 'neo_9', x: 0, y: 0 }, // call melonhead
+        { id: 'neo_16', x: 3, y: 0 }, // skill: hacking
+        { id: 'neo_1', x: 0, y: 4 }, // bag (container)
+        { id: 'neo_3', x: 0, y: 10 }, // branch
       ],
     }),
   },

@@ -99,8 +99,6 @@ export interface ItemPlacement {
   id: string;
   x: number;
   y: number;
-  width: number;
-  height: number;
 }
 
 export interface ItemDimensions {

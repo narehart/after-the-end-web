@@ -11,6 +11,9 @@ const OUTPUT_DIR = '/Users/nicholasarehart/after-the-end-godot/ui-experiments/sr
 const DATA_OUTPUT =
   '/Users/nicholasarehart/after-the-end-godot/ui-experiments/src/data/neoItems.json';
 
+// Each grid cell in Neo Scavenger is 10 pixels (from GUIInventorySlot.as: nCapacityPixel = 10)
+const CELL_SIZE_PIXELS = 10;
+
 const INTERESTING_GROUPS = {
   5: 'container',
   11: 'container',
@@ -28,18 +31,35 @@ const INTERESTING_GROUPS = {
   10: 'medical',
 };
 
-const FORMAT_SIZES = {
-  1: { width: 1, height: 1 },
-  2: { width: 2, height: 1 },
-  3: { width: 1, height: 1 },
-  4: { width: 2, height: 2 },
-  5: { width: 3, height: 2 },
-  6: { width: 4, height: 2 },
-  7: { width: 3, height: 3 },
-  8: { width: 2, height: 3 },
-};
-
 const DEFAULT_SIZE = { width: 1, height: 1 };
+
+// Read PNG dimensions from file header
+// PNG format: bytes 16-19 = width, bytes 20-23 = height (big endian)
+function getPngDimensions(filePath) {
+  try {
+    const buffer = readFileSync(filePath);
+    // Verify PNG signature
+    if (buffer[0] !== 0x89 || buffer[1] !== 0x50 || buffer[2] !== 0x4e || buffer[3] !== 0x47) {
+      return null;
+    }
+    const width = buffer.readUInt32BE(16);
+    const height = buffer.readUInt32BE(20);
+    return { width, height };
+  } catch {
+    return null;
+  }
+}
+
+// Calculate grid size from image dimensions
+function calculateGridSize(imagePath) {
+  const dimensions = getPngDimensions(imagePath);
+  if (!dimensions) return DEFAULT_SIZE;
+
+  return {
+    width: Math.round(dimensions.width / CELL_SIZE_PIXELS),
+    height: Math.round(dimensions.height / CELL_SIZE_PIXELS),
+  };
+}
 
 const str = (val) => val ?? '';
 const int = (val, fallback) => parseInt(val ?? fallback, 10);
@@ -58,6 +78,15 @@ function parseImages(imageList) {
     .filter(Boolean);
 }
 
+// Parse vImageUsage to get inventory image index
+// Format: "ground_idx,inventory_idx,..." - we need the second value (inventory)
+function getInventoryImageIndex(imageUsage) {
+  const parts = str(imageUsage)
+    .split(',')
+    .map((n) => parseInt(n, 10));
+  return parts.length > 1 ? parts[1] : 0;
+}
+
 function parseTableToObject(table) {
   const item = {};
   const columns = table.getElementsByTagName('column');
@@ -68,12 +97,17 @@ function parseTableToObject(table) {
   return item;
 }
 
-function extractItemData(item) {
+function extractItemData(item, imgDir) {
   const originalImages = parseImages(item.vImageList);
   const camelImages = originalImages.map(toCamelCase);
   const groupId = int(item.nGroupID, 0);
-  const formatId = int(item.nFormatID, 3);
   const gridSize = parseSize(item.aCapacities);
+
+  // Get the inventory image (vImageUsage specifies which image is used in inventory)
+  const inventoryImageIndex = getInventoryImageIndex(item.vImageUsage);
+  const inventoryImage = originalImages[inventoryImageIndex] ?? originalImages[0];
+  const imagePath = inventoryImage ? join(imgDir, inventoryImage) : null;
+  const size = imagePath ? calculateGridSize(imagePath) : DEFAULT_SIZE;
 
   const extracted = {
     id: `neo_${str(item.id)}`,
@@ -84,7 +118,7 @@ function extractItemData(item) {
     weight: float(item.fWeight),
     value: float(item.fMonetaryValue),
     stackLimit: int(item.nStackLimit, 1),
-    size: FORMAT_SIZES[formatId] ?? DEFAULT_SIZE,
+    size,
     image: camelImages[0] ?? null,
     allImages: camelImages,
     ...(gridSize && { gridSize }),
@@ -95,6 +129,7 @@ function extractItemData(item) {
 
 function extractItems() {
   const xmlPath = join(NEO_DIR, 'data', 'itemtypes.xml');
+  const imgDir = join(NEO_DIR, 'img');
   const doc = new DOMParser().parseFromString(readFileSync(xmlPath, 'utf-8'), 'text/xml');
 
   const items = [];
@@ -105,7 +140,7 @@ function extractItems() {
     if (tables[i].getAttribute('name') !== 'itemtypes') continue;
 
     const item = parseTableToObject(tables[i]);
-    const { extracted, originalImages } = extractItemData(item);
+    const { extracted, originalImages } = extractItemData(item, imgDir);
     items.push(extracted);
     originalImages.forEach((img) => imagesToCopy.set(img, toCamelCase(img)));
   }
