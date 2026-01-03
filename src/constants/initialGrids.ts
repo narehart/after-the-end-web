@@ -42,10 +42,8 @@ export const initialGrids: GridsMap = {
       width: 10,
       height: 40,
       items: [
-        { id: 'neo_9', x: 0, y: 0 }, // call melonhead
-        { id: 'neo_16', x: 3, y: 0 }, // skill: hacking
-        { id: 'neo_1', x: 0, y: 4 }, // bag (container)
-        { id: 'neo_3', x: 0, y: 10 }, // branch
+        { id: 'neo_1', x: 0, y: 0 }, // bag (container)
+        { id: 'neo_3', x: 0, y: 6 }, // branch
       ],
     }),
   },
