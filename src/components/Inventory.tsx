@@ -70,7 +70,10 @@ export default function Inventory(): React.JSX.Element {
     >
       <InventoryHeader {...uiScale} />
 
-      <main className={cx('inventory-main')}>
+      <main
+        className={cx('inventory-main')}
+        style={{ visibility: cellSize !== null ? 'visible' : 'hidden' }}
+      >
         <aside className={cx('left-column')} ref={equipmentRef}>
           <EquipmentPanel />
         </aside>
