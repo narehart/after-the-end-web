@@ -40,6 +40,7 @@ export type EquipmentSlice = EquipmentState & EquipmentActions;
 export interface EquipmentActionsSlice {
   unequipItem: (itemId: string, targetGridId: string) => boolean;
   equipItem: (itemId: string, targetSlot?: SlotType | null) => boolean;
+  moveItem: (itemId: string, targetGridId: string) => boolean;
 }
 
 export interface StoreWithEquipment {

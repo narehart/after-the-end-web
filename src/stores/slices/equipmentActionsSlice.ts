@@ -2,7 +2,9 @@ import type { StateCreator } from 'zustand';
 import type { SlotType, Equipment } from '../../types/inventory';
 import type { EquipmentActionsSlice, StoreWithEquipment } from '../../types/store';
 import { findFreePosition } from '../../utils/findFreePosition';
+import { findItemInGrids } from '../../utils/findItemInGrids';
 import { placeItemInCells } from '../../utils/placeItemInCells';
+import { removeItemFromCells } from '../../utils/removeItemFromCells';
 
 export type { EquipmentActionsSlice } from '../../types/store';
 
@@ -66,5 +68,57 @@ export const createEquipmentActionsSlice: StateCreator<
   // TODO: Re-enable when equippable slots data is added to neoItems.json
   equipItem: (): boolean => {
     return false;
+  },
+
+  moveItem: (itemId, targetGridId): boolean => {
+    const state = get();
+    const item = state.items[itemId];
+    if (item === undefined) return false;
+
+    // Find where the item currently is
+    const location = findItemInGrids({ grids: state.grids, itemId });
+    if (location === null) return false;
+
+    // Don't move to the same grid
+    if (location.gridId === targetGridId) return false;
+
+    const sourceGrid = state.grids[location.gridId];
+    const targetGrid = state.grids[targetGridId];
+    if (sourceGrid === undefined || targetGrid === undefined) return false;
+
+    // Find a free position in the target grid
+    const freePos = findFreePosition({
+      grid: targetGrid,
+      itemWidth: item.size.width,
+      itemHeight: item.size.height,
+    });
+    if (freePos === null) return false;
+
+    // Remove from source grid
+    const newSourceCells = removeItemFromCells({
+      cells: sourceGrid.cells,
+      positions: location.positions,
+    });
+
+    // Place in target grid
+    const newTargetCells = placeItemInCells({
+      grid: targetGrid.cells,
+      itemId,
+      x: freePos.x,
+      y: freePos.y,
+      width: item.size.width,
+      height: item.size.height,
+    });
+
+    set({
+      grids: {
+        ...state.grids,
+        [location.gridId]: { ...sourceGrid, cells: newSourceCells },
+        [targetGridId]: { ...targetGrid, cells: newTargetCells },
+      },
+      selectedItemId: null,
+    });
+
+    return true;
   },
 });
