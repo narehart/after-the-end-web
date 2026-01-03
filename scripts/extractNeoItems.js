@@ -119,7 +119,7 @@ function extractItemData(item, imgDir) {
     value: float(item.fMonetaryValue),
     stackLimit: int(item.nStackLimit, 1),
     size,
-    image: camelImages[0] ?? null,
+    image: camelImages[footprintImageIndex] ?? camelImages[0] ?? null,
     allImages: camelImages,
     ...(gridSize && { gridSize }),
   };

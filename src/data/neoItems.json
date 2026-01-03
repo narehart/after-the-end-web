@@ -12,7 +12,7 @@
       "width": 1,
       "height": 1
     },
-    "image": "itmPlasticShoppingBag.png",
+    "image": "itmPlasticShoppingBagStored.png",
     "allImages": [
       "itmPlasticShoppingBag.png",
       "itmPlasticShoppingBagStored.png"
@@ -76,7 +76,7 @@
       "width": 2,
       "height": 3
     },
-    "image": "itmSoupCan.png",
+    "image": "itmSoupCanStored.png",
     "allImages": [
       "itmSoupCan.png",
       "itmSoupCanStored.png"
@@ -99,7 +99,7 @@
       "width": 4,
       "height": 3
     },
-    "image": "itmWorkBoot.png",
+    "image": "itmWorkBootStored.png",
     "allImages": [
       "itmWorkBoot.png",
       "itmWorkBootStored.png"
@@ -118,7 +118,7 @@
       "width": 4,
       "height": 3
     },
-    "image": "itmWorkBoot.png",
+    "image": "itmWorkBootStored.png",
     "allImages": [
       "itmWorkBoot.png",
       "itmWorkBootStored.png"
@@ -137,7 +137,7 @@
       "width": 3,
       "height": 2
     },
-    "image": "itmShirt.png",
+    "image": "itmShirtStored.png",
     "allImages": [
       "itmShirt.png",
       "itmShirtStored.png"
@@ -156,7 +156,7 @@
       "width": 3,
       "height": 2
     },
-    "image": "itmHospitalGown.png",
+    "image": "itmHospitalGownStored.png",
     "allImages": [
       "itmHospitalGown.png",
       "itmHospitalGownStored.png"
@@ -211,7 +211,7 @@
       "width": 2,
       "height": 1
     },
-    "image": "itmTalisman.png",
+    "image": "itmTalismanStored.png",
     "allImages": [
       "itmTalisman.png",
       "itmTalismanStored.png"
@@ -230,7 +230,7 @@
       "width": 1,
       "height": 1
     },
-    "image": "itmHospitalWristStrap.png",
+    "image": "itmHospitalWristStrapStored.png",
     "allImages": [
       "itmHospitalWristStrap.png",
       "itmHospitalWristStrapStored.png"
@@ -249,7 +249,7 @@
       "width": 1,
       "height": 2
     },
-    "image": "itmWristTracker.png",
+    "image": "itmWristTrackerStored.png",
     "allImages": [
       "itmWristTracker.png",
       "itmWristTrackerStored.png"
@@ -552,7 +552,7 @@
       "width": 3,
       "height": 3
     },
-    "image": "itmBluejeans.png",
+    "image": "itmBluejeansStored.png",
     "allImages": [
       "itmBluejeans.png",
       "itmBluejeansStored.png"
@@ -593,7 +593,7 @@
       "width": 5,
       "height": 3
     },
-    "image": "itmDuffle.png",
+    "image": "itmDuffleEmpty.png",
     "allImages": [
       "itmDuffle.png",
       "itmDuffleEmpty.png",
@@ -689,7 +689,7 @@
       "width": 1,
       "height": 4
     },
-    "image": "itmBottleWater.png",
+    "image": "itmBottle.png",
     "allImages": [
       "itmBottleWater.png",
       "itmBottle.png"
@@ -784,7 +784,7 @@
       "width": 4,
       "height": 3
     },
-    "image": "itmHoodie.png",
+    "image": "itmHoodieStored.png",
     "allImages": [
       "itmHoodie.png",
       "itmHoodieStored.png"
@@ -825,7 +825,7 @@
       "width": 6,
       "height": 7
     },
-    "image": "itmBackpack.png",
+    "image": "itmBackpackStored.png",
     "allImages": [
       "itmBackpack.png",
       "itmBackpackStored.png"
@@ -884,7 +884,7 @@
       "width": 1,
       "height": 2
     },
-    "image": "itmPillBottle.png",
+    "image": "itmPillBottleStored.png",
     "allImages": [
       "itmPillBottle.png",
       "itmPillBottleStored.png"
@@ -943,7 +943,7 @@
       "width": 1,
       "height": 2
     },
-    "image": "itmPillBottleABClosed.png",
+    "image": "itmPillBottleABOpen.png",
     "allImages": [
       "itmPillBottleABClosed.png",
       "itmPillBottleABOpen.png"
@@ -1112,7 +1112,7 @@
       "width": 3,
       "height": 2
     },
-    "image": "itmNVGoggles.png",
+    "image": "itmNVGogglesStored.png",
     "allImages": [
       "itmNVGoggles.png",
       "itmNVGogglesStored.png"
@@ -1859,7 +1859,7 @@
       "width": 3,
       "height": 2
     },
-    "image": "itmTshirtGrayling.png",
+    "image": "itmTshirtGraylingStored.png",
     "allImages": [
       "itmTshirtGrayling.png",
       "itmTshirtGraylingStored.png"
@@ -1896,7 +1896,7 @@
       "width": 15,
       "height": 4
     },
-    "image": "itmLaserRifle.png",
+    "image": "itmLaserRifleStored.png",
     "allImages": [
       "itmLaserRifle.png",
       "itmLaserRifleStored.png",
@@ -1960,7 +1960,7 @@
       "width": 4,
       "height": 5
     },
-    "image": "itmClownHead.png",
+    "image": "itmClownHeadStored.png",
     "allImages": [
       "itmClownHead.png",
       "itmClownHeadStored.png"
@@ -1979,7 +1979,7 @@
       "width": 2,
       "height": 1
     },
-    "image": "itmCopperBeads.png",
+    "image": "itmCopperBeadsStored.png",
     "allImages": [
       "itmCopperBeads.png",
       "itmCopperBeadsStored.png"
@@ -2016,7 +2016,7 @@
       "width": 2,
       "height": 3
     },
-    "image": "itmJarOfEyesEquipped.png",
+    "image": "itmJarOfEyes.png",
     "allImages": [
       "itmJarOfEyesEquipped.png",
       "itmJarOfEyes.png"
@@ -2053,7 +2053,7 @@
       "width": 5,
       "height": 4
     },
-    "image": "itmSquirrelTunic.png",
+    "image": "itmSquirrelTunicStored.png",
     "allImages": [
       "itmSquirrelTunic.png",
       "itmSquirrelTunicStored.png"
@@ -2180,7 +2180,7 @@
       "width": 3,
       "height": 2
     },
-    "image": "itmSquirrelGlove.png",
+    "image": "itmSquirrelGloveStored.png",
     "allImages": [
       "itmSquirrelGlove.png",
       "itmSquirrelGloveStored.png"
@@ -2514,7 +2514,7 @@
       "width": 17,
       "height": 3
     },
-    "image": "itmHuntingRifleStrapped.png",
+    "image": "itmHuntingRifleStrappedStored.png",
     "allImages": [
       "itmHuntingRifleStrapped.png",
       "itmHuntingRifleStrappedStored.png",
@@ -2538,7 +2538,7 @@
       "width": 17,
       "height": 4
     },
-    "image": "itmHuntingRifleSS.png",
+    "image": "itmHuntingRifleSSStored.png",
     "allImages": [
       "itmHuntingRifleSS.png",
       "itmHuntingRifleSSStored.png",
@@ -2599,7 +2599,7 @@
       "width": 1,
       "height": 4
     },
-    "image": "itmCornaColaFull.png",
+    "image": "itmCornaCola.png",
     "allImages": [
       "itmCornaColaFull.png",
       "itmCornaCola.png"
@@ -3142,7 +3142,7 @@
       "width": 3,
       "height": 1
     },
-    "image": "itmStranglerHood.png",
+    "image": "itmStranglerHoodStored.png",
     "allImages": [
       "itmStranglerHood.png",
       "itmStranglerHoodStored.png"
@@ -3877,7 +3877,7 @@
       "width": 1,
       "height": 4
     },
-    "image": "itmWhiskeyFull.png",
+    "image": "itmWhiskey.png",
     "allImages": [
       "itmWhiskeyFull.png",
       "itmWhiskey.png"
@@ -3900,7 +3900,7 @@
       "width": 1,
       "height": 2
     },
-    "image": "itmPillBottlePrescClosed.png",
+    "image": "itmPillBottlePrescOpen.png",
     "allImages": [
       "itmPillBottlePrescClosed.png",
       "itmPillBottlePrescOpen.png"
@@ -3923,7 +3923,7 @@
       "width": 1,
       "height": 2
     },
-    "image": "itmPillBottleOTCClosed.png",
+    "image": "itmPillBottleOTCOpen.png",
     "allImages": [
       "itmPillBottleOTCClosed.png",
       "itmPillBottleOTCOpen.png"
@@ -4600,7 +4600,7 @@
       "width": 1,
       "height": 2
     },
-    "image": "itmCaniCallOn.png",
+    "image": "itmCaniCallOff.png",
     "allImages": [
       "itmCaniCallOn.png",
       "itmCaniCallOff.png"
@@ -4619,7 +4619,7 @@
       "width": 1,
       "height": 2
     },
-    "image": "itmWristTracker.png",
+    "image": "itmWristTrackerStored.png",
     "allImages": [
       "itmWristTracker.png",
       "itmWristTrackerStored.png"
@@ -4710,7 +4710,7 @@
       "width": 1,
       "height": 2
     },
-    "image": "itmPillBottleSLClosed.png",
+    "image": "itmPillBottleSLOpen.png",
     "allImages": [
       "itmPillBottleSLClosed.png",
       "itmPillBottleSLOpen.png"
@@ -4949,7 +4949,7 @@
       "width": 4,
       "height": 3
     },
-    "image": "itmBinocularsStrapWorn.png",
+    "image": "itmBinocularsStrapStored.png",
     "allImages": [
       "itmBinocularsStrapWorn.png",
       "itmBinocularsStrapStored.png"
@@ -4986,7 +4986,7 @@
       "width": 14,
       "height": 2
     },
-    "image": "itmCrowbarSlingWorn.png",
+    "image": "itmCrowbarSling.png",
     "allImages": [
       "itmCrowbarSlingWorn.png",
       "itmCrowbarSling.png",
@@ -5024,7 +5024,7 @@
       "width": 5,
       "height": 1
     },
-    "image": "itmRifleScopeStrapWorn.png",
+    "image": "itmRifleScopeStrapStored.png",
     "allImages": [
       "itmRifleScopeStrapWorn.png",
       "itmRifleScopeStrapStored.png"
@@ -5266,7 +5266,7 @@
       "width": 17,
       "height": 3
     },
-    "image": "itmBowGreenwoodWorn.png",
+    "image": "itmBowGreenwoodStored.png",
     "allImages": [
       "itmBowGreenwoodWorn.png",
       "itmBowGreenwoodStored.png",
@@ -5313,7 +5313,7 @@
       "width": 10,
       "height": 4
     },
-    "image": "itmBowCompoundStrapWorn.png",
+    "image": "itmBowCompoundStrapStored.png",
     "allImages": [
       "itmBowCompoundStrapWorn.png",
       "itmBowCompoundStrapStored.png",
@@ -5651,7 +5651,7 @@
       "width": 15,
       "height": 3
     },
-    "image": "itm12GaugeShotgunStrapWorn.png",
+    "image": "itm12GaugeShotgunStrapStored.png",
     "allImages": [
       "itm12GaugeShotgunStrapWorn.png",
       "itm12GaugeShotgunStrapStored.png",
@@ -5958,7 +5958,7 @@
       "width": 10,
       "height": 5
     },
-    "image": "itmFurDogmanWorn.png",
+    "image": "itmFurDogmanStored.png",
     "allImages": [
       "itmFurDogmanWorn.png",
       "itmFurDogmanStored.png"
@@ -6819,7 +6819,7 @@
       "width": 3,
       "height": 2
     },
-    "image": "itmNVGogglesOn.png",
+    "image": "itmNVGogglesStoredOn.png",
     "allImages": [
       "itmNVGogglesOn.png",
       "itmNVGogglesStoredOn.png"
@@ -7434,7 +7434,7 @@
       "width": 3,
       "height": 3
     },
-    "image": "itmCargoPants.png",
+    "image": "itmCargoPantsStored.png",
     "allImages": [
       "itmCargoPants.png",
       "itmCargoPantsStored.png",
@@ -7458,7 +7458,7 @@
       "width": 3,
       "height": 3
     },
-    "image": "itmCargoShorts.png",
+    "image": "itmCargoPantsStored.png",
     "allImages": [
       "itmCargoShorts.png",
       "itmCargoPantsStored.png",
@@ -7482,7 +7482,7 @@
       "width": 3,
       "height": 3
     },
-    "image": "itmCargoPantsBlack.png",
+    "image": "itmCargoPantsBlackStored.png",
     "allImages": [
       "itmCargoPantsBlack.png",
       "itmCargoPantsBlackStored.png",
@@ -7506,7 +7506,7 @@
       "width": 4,
       "height": 4
     },
-    "image": "itmPoliceBoot.png",
+    "image": "itmPoliceBootStored.png",
     "allImages": [
       "itmPoliceBoot.png",
       "itmPoliceBootStored.png"
@@ -7525,7 +7525,7 @@
       "width": 4,
       "height": 4
     },
-    "image": "itmPoliceBoot.png",
+    "image": "itmPoliceBootStored.png",
     "allImages": [
       "itmPoliceBoot.png",
       "itmPoliceBootStored.png"
@@ -7544,7 +7544,7 @@
       "width": 3,
       "height": 2
     },
-    "image": "itmShirtBlack.png",
+    "image": "itmShirtBlackStored.png",
     "allImages": [
       "itmShirtBlack.png",
       "itmShirtBlackStored.png"
@@ -7563,7 +7563,7 @@
       "width": 3,
       "height": 1
     },
-    "image": "itmTacticalGlove.png",
+    "image": "itmTacticalGloveStored.png",
     "allImages": [
       "itmTacticalGlove.png",
       "itmTacticalGloveStored.png"
@@ -7582,7 +7582,7 @@
       "width": 3,
       "height": 1
     },
-    "image": "itmBalaclava.png",
+    "image": "itmBalaclavaStored.png",
     "allImages": [
       "itmBalaclava.png",
       "itmBalaclavaStored.png"
@@ -7601,7 +7601,7 @@
       "width": 4,
       "height": 3
     },
-    "image": "itmPoliceHelmet.png",
+    "image": "itmPoliceHelmetStored.png",
     "allImages": [
       "itmPoliceHelmet.png",
       "itmPoliceHelmetStored.png"
@@ -7620,7 +7620,7 @@
       "width": 6,
       "height": 9
     },
-    "image": "itmArmorVest.png",
+    "image": "itmArmorVestStored.png",
     "allImages": [
       "itmArmorVest.png",
       "itmArmorVestStored.png"
@@ -7684,7 +7684,7 @@
       "width": 12,
       "height": 3
     },
-    "image": "itmSBS4StrapWorn.png",
+    "image": "itmSBS4StrapStored.png",
     "allImages": [
       "itmSBS4StrapWorn.png",
       "itmSBS4StrapStored.png",
@@ -7708,7 +7708,7 @@
       "width": 1,
       "height": 2
     },
-    "image": "itmWristTracker.png",
+    "image": "itmWristTrackerStored.png",
     "allImages": [
       "itmWristTracker.png",
       "itmWristTrackerStored.png"
@@ -7781,7 +7781,7 @@
       "width": 17,
       "height": 3
     },
-    "image": "itmBowAnishinabeWorn.png",
+    "image": "itmBowAnishinabeStored.png",
     "allImages": [
       "itmBowAnishinabeWorn.png",
       "itmBowAnishinabeStored.png",
@@ -7824,7 +7824,7 @@
       "width": 3,
       "height": 4
     },
-    "image": "itmBirchBagClosed.png",
+    "image": "itmBirchBagOpen.png",
     "allImages": [
       "itmBirchBagClosed.png",
       "itmBirchBagOpen.png",
@@ -7848,7 +7848,7 @@
       "width": 5,
       "height": 4
     },
-    "image": "itmHideLongCoat.png",
+    "image": "itmHideLongCoatStored.png",
     "allImages": [
       "itmHideLongCoat.png",
       "itmHideLongCoatStored.png"
@@ -8142,7 +8142,7 @@
       "width": 3,
       "height": 2
     },
-    "image": "itmTshirtAlleganWhite.png",
+    "image": "itmTshirtAlleganWhiteStored.png",
     "allImages": [
       "itmTshirtAlleganWhite.png",
       "itmTshirtAlleganWhiteStored.png"
@@ -8161,7 +8161,7 @@
       "width": 3,
       "height": 2
     },
-    "image": "itmTshirtAlleganRed.png",
+    "image": "itmTshirtAlleganRedStored.png",
     "allImages": [
       "itmTshirtAlleganRed.png",
       "itmTshirtAlleganRedStored.png"
@@ -8180,7 +8180,7 @@
       "width": 3,
       "height": 2
     },
-    "image": "itmTshirtCornaCola.png",
+    "image": "itmTshirtCornaColaStored.png",
     "allImages": [
       "itmTshirtCornaCola.png",
       "itmTshirtCornaColaStored.png"
@@ -8199,7 +8199,7 @@
       "width": 3,
       "height": 2
     },
-    "image": "itmTshirtBanana.png",
+    "image": "itmTshirtBananaStored.png",
     "allImages": [
       "itmTshirtBanana.png",
       "itmTshirtBananaStored.png"
@@ -8218,7 +8218,7 @@
       "width": 3,
       "height": 2
     },
-    "image": "itmTshirt3DogMoon.png",
+    "image": "itmTshirt3DogMoonStored.png",
     "allImages": [
       "itmTshirt3DogMoon.png",
       "itmTshirt3DogMoonStored.png"
@@ -8237,7 +8237,7 @@
       "width": 3,
       "height": 1
     },
-    "image": "itmBlueFrogSashWorn.png",
+    "image": "itmBlueFrogSashStored.png",
     "allImages": [
       "itmBlueFrogSashWorn.png",
       "itmBlueFrogSashStored.png",
@@ -8301,7 +8301,7 @@
       "width": 3,
       "height": 3
     },
-    "image": "itmGasMaskWorn.png",
+    "image": "itmGasMaskStored.png",
     "allImages": [
       "itmGasMaskWorn.png",
       "itmGasMaskStored.png"
@@ -8664,7 +8664,7 @@
       "width": 3,
       "height": 1
     },
-    "image": "itmBlueFrogSash01Worn.png",
+    "image": "itmBlueFrogSash01Stored.png",
     "allImages": [
       "itmBlueFrogSash01Worn.png",
       "itmBlueFrogSash01Stored.png",
@@ -8957,7 +8957,7 @@
       "width": 16,
       "height": 3
     },
-    "image": "itm4mmGaussRifleStrappedWorn.png",
+    "image": "itm4mmGaussRifleStrappedStored.png",
     "allImages": [
       "itm4mmGaussRifleStrappedWorn.png",
       "itm4mmGaussRifleStrappedStored.png",
@@ -8981,7 +8981,7 @@
       "width": 16,
       "height": 4
     },
-    "image": "itm4mmGaussRifleSSWorn.png",
+    "image": "itm4mmGaussRifleSSStored.png",
     "allImages": [
       "itm4mmGaussRifleSSWorn.png",
       "itm4mmGaussRifleSSStored.png",
@@ -9131,7 +9131,7 @@
       "width": 6,
       "height": 9
     },
-    "image": "itmArmorVest.png",
+    "image": "itmArmorVestStored.png",
     "allImages": [
       "itmArmorVest.png",
       "itmArmorVestStored.png"
@@ -9150,7 +9150,7 @@
       "width": 5,
       "height": 6
     },
-    "image": "itmBackpackChildClosed.png",
+    "image": "itmBackpackChildOpen.png",
     "allImages": [
       "itmBackpackChildClosed.png",
       "itmBackpackChildOpen.png"
@@ -9227,7 +9227,7 @@
       "width": 2,
       "height": 2
     },
-    "image": "itmBagChipsOpen.png",
+    "image": "itmBagChipsClosed.png",
     "allImages": [
       "itmBagChipsOpen.png",
       "itmBagChipsClosed.png"
@@ -9250,7 +9250,7 @@
       "width": 7,
       "height": 5
     },
-    "image": "itmFoilPonchoWorn.png",
+    "image": "itmFoilPonchoStored.png",
     "allImages": [
       "itmFoilPonchoWorn.png",
       "itmFoilPonchoStored.png"
@@ -9467,7 +9467,7 @@
       "width": 3,
       "height": 2
     },
-    "image": "itmShirtGray.png",
+    "image": "itmShirtGrayStored.png",
     "allImages": [
       "itmShirtGray.png",
       "itmShirtGrayStored.png"
@@ -9836,7 +9836,7 @@
       "width": 3,
       "height": 2
     },
-    "image": "itmShortShorts.png",
+    "image": "itmShortShortsStored.png",
     "allImages": [
       "itmShortShorts.png",
       "itmShortShortsStored.png"
@@ -9921,7 +9921,7 @@
       "width": 4,
       "height": 3
     },
-    "image": "itmSack.png",
+    "image": "itmSackStored.png",
     "allImages": [
       "itmSack.png",
       "itmSackStored.png"
@@ -9962,7 +9962,7 @@
       "width": 1,
       "height": 2
     },
-    "image": "itmPillBottleABClosed.png",
+    "image": "itmPillBottleABOpen.png",
     "allImages": [
       "itmPillBottleABClosed.png",
       "itmPillBottleABOpen.png"
@@ -10075,7 +10075,7 @@
       "width": 1,
       "height": 2
     },
-    "image": "itmPillBottleSLClosed.png",
+    "image": "itmPillBottleSLOpen.png",
     "allImages": [
       "itmPillBottleSLClosed.png",
       "itmPillBottleSLOpen.png"
@@ -10116,7 +10116,7 @@
       "width": 1,
       "height": 2
     },
-    "image": "itmPillBottlePrescClosed.png",
+    "image": "itmPillBottlePrescOpen.png",
     "allImages": [
       "itmPillBottlePrescClosed.png",
       "itmPillBottlePrescOpen.png"
@@ -10197,7 +10197,7 @@
       "width": 4,
       "height": 2
     },
-    "image": "itmShoeRunWorn.png",
+    "image": "itmShoeRun.png",
     "allImages": [
       "itmShoeRunWorn.png",
       "itmShoeRun.png"
@@ -10216,7 +10216,7 @@
       "width": 4,
       "height": 2
     },
-    "image": "itmShoeRunWorn.png",
+    "image": "itmShoeRun.png",
     "allImages": [
       "itmShoeRunWorn.png",
       "itmShoeRun.png"
@@ -10235,7 +10235,7 @@
       "width": 4,
       "height": 2
     },
-    "image": "itmShoeRagWorn.png",
+    "image": "itmShoeRag.png",
     "allImages": [
       "itmShoeRagWorn.png",
       "itmShoeRag.png"
@@ -10254,7 +10254,7 @@
       "width": 4,
       "height": 1
     },
-    "image": "itmShoeFlipFlopsWorn.png",
+    "image": "itmShoeFlipFlops.png",
     "allImages": [
       "itmShoeFlipFlopsWorn.png",
       "itmShoeFlipFlops.png"
@@ -10291,7 +10291,7 @@
       "width": 4,
       "height": 1
     },
-    "image": "itmShoeFlipFlopsWorn.png",
+    "image": "itmShoeFlipFlops.png",
     "allImages": [
       "itmShoeFlipFlopsWorn.png",
       "itmShoeFlipFlops.png"
@@ -10310,7 +10310,7 @@
       "width": 4,
       "height": 2
     },
-    "image": "itmShoeGatorWorn.png",
+    "image": "itmShoeGator.png",
     "allImages": [
       "itmShoeGatorWorn.png",
       "itmShoeGator.png"
@@ -10329,7 +10329,7 @@
       "width": 4,
       "height": 2
     },
-    "image": "itmShoeGatorWorn.png",
+    "image": "itmShoeGator.png",
     "allImages": [
       "itmShoeGatorWorn.png",
       "itmShoeGator.png"
