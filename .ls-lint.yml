@@ -102,9 +102,10 @@ ls:
     .*: regex:$
     .dir: regex:constants
 
-  # src/data - camelCase .json files only, no subdirectories
+  # src/data - camelCase .json and .ts files only, no subdirectories
   src/data:
     .json: camelCase
+    .ts: camelCase
     .*: regex:$
     .dir: regex:data
 

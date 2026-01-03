@@ -2,6 +2,7 @@
 // Post-write hook for Claude Code
 // Runs after Write or Edit tool completes
 
+import path from 'node:path';
 import { execSync } from 'node:child_process';
 import { createInterface } from 'node:readline';
 
@@ -9,6 +10,13 @@ const projectDir = process.env.CLAUDE_PROJECT_DIR;
 if (!projectDir) process.exit(0);
 
 process.chdir(projectDir);
+
+function toRelativePath(filePath) {
+  if (path.isAbsolute(filePath)) {
+    return path.relative(projectDir, filePath);
+  }
+  return filePath;
+}
 
 function runCheck(command, args) {
   try {
@@ -44,7 +52,7 @@ if (/\.(js|jsx|ts|tsx)$/.test(filePath)) {
   runCheck('./node_modules/.bin/stylelint', ['--fix', filePath]);
 }
 
-// Check file/directory naming conventions
-runCheck('./node_modules/.bin/ls-lint', [filePath]);
+// Check file/directory naming conventions (ls-lint requires relative paths)
+runCheck('./node_modules/.bin/ls-lint', [toRelativePath(filePath)]);
 
 process.exit(0);
