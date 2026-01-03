@@ -7,6 +7,12 @@ import {
   CONTENT_PADDING,
   MIN_CELL_SIZE,
 } from '../constants/grid';
+import {
+  DEFAULT_CELL_SIZE,
+  FIRST_INDEX,
+  SECOND_INDEX,
+  RESIZE_DEBOUNCE_MS,
+} from '../constants/numbers';
 import type { UseCellSizeProps } from '../types/utils';
 
 export default function useCellSize(
@@ -14,14 +20,14 @@ export default function useCellSize(
   props: UseCellSizeProps
 ): number {
   const { resolution: effectiveResolution } = props;
-  const [cellSize, setCellSize] = useState(32);
+  const [cellSize, setCellSize] = useState(DEFAULT_CELL_SIZE);
 
   useEffect(() => {
     const calculateCellSize = (): void => {
       if (containerRef.current !== null) {
         const containerWidth = containerRef.current.clientWidth;
-        if (containerWidth > 0) {
-          const totalGaps = (GRID_COLUMNS - 1) * CELL_GAP;
+        if (containerWidth > FIRST_INDEX) {
+          const totalGaps = (GRID_COLUMNS - SECOND_INDEX) * CELL_GAP;
           const availableWidth = containerWidth - GRID_BORDER - totalGaps - CONTENT_PADDING;
           const newCellSize = Math.floor(availableWidth / GRID_COLUMNS);
           setCellSize(Math.max(MIN_CELL_SIZE, newCellSize));
@@ -29,7 +35,7 @@ export default function useCellSize(
       }
     };
 
-    const timeoutId = setTimeout(calculateCellSize, 10);
+    const timeoutId = setTimeout(calculateCellSize, RESIZE_DEBOUNCE_MS);
     const resizeObserver = new ResizeObserver(calculateCellSize);
     if (containerRef.current !== null) {
       resizeObserver.observe(containerRef.current);

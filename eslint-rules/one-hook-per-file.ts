@@ -9,6 +9,8 @@ import path from 'node:path';
 import type { Rule } from 'eslint';
 import type { FunctionDeclaration } from 'estree';
 
+const MAX_HOOKS_PER_FILE = 1;
+
 const rule: Rule.RuleModule = {
   meta: {
     type: 'suggestion',
@@ -41,7 +43,7 @@ const rule: Rule.RuleModule = {
         functionNames.push(node.id.name);
       },
       'Program:exit'(): void {
-        if (functionNames.length > 1) {
+        if (functionNames.length > MAX_HOOKS_PER_FILE) {
           context.report({
             loc: { line: 1, column: 0 },
             messageId: 'tooManyHooks',

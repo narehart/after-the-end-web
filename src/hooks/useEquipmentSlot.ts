@@ -1,4 +1,5 @@
 import { useMemo, useCallback } from 'react';
+import { FIRST_INDEX } from '../constants/numbers';
 import { useInventoryStore } from '../stores/inventoryStore';
 import type { SlotState } from '../types/ui';
 import type { UseEquipmentSlotProps } from '../types/utils';
@@ -33,7 +34,7 @@ export default function useEquipmentSlot(props: UseEquipmentSlotProps): UseEquip
       item,
       itemId,
       hasGrid: item?.gridSize !== undefined,
-      isFocused: inventoryFocusPath[0] === itemId,
+      isFocused: inventoryFocusPath[FIRST_INDEX] === itemId,
       isHovered: itemId !== null && itemId === selectedItemId,
       hasOpenModal,
     }),

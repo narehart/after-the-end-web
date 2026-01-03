@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
 import type { BreadcrumbLink } from '../types/inventory';
 import type { UseBreadcrumbLinksContainerProps } from '../types/utils';
 
@@ -9,7 +10,9 @@ export function useBreadcrumbLinksContainer(
   return useMemo(() => {
     // For world panel at ground level, don't show redundant "ground" breadcrumb
     const isGroundRoot =
-      panelType === 'world' && focusPath.length === 1 && focusPath[0] === 'ground';
+      panelType === 'world' &&
+      focusPath.length === SECOND_INDEX &&
+      focusPath[FIRST_INDEX] === 'ground';
     if (isGroundRoot) {
       return [{ label: panelLabel }];
     }
@@ -21,7 +24,7 @@ export function useBreadcrumbLinksContainer(
       },
     ];
     focusPath.forEach((id, index) => {
-      const isLast = index === focusPath.length - 1;
+      const isLast = index === focusPath.length - SECOND_INDEX;
       links.push({
         label: items[id]?.name ?? id,
         onClick: isLast

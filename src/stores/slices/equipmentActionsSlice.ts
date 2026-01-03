@@ -1,4 +1,5 @@
 import type { StateCreator } from 'zustand';
+import { FIRST_INDEX } from '../../constants/numbers';
 import type { SlotType, Equipment, Item } from '../../types/inventory';
 import type { EquipmentActionsSlice, StoreWithEquipment } from '../../types/store';
 import { findFreePosition } from '../../utils/findFreePosition';
@@ -22,7 +23,7 @@ function findEquipmentSlot(equipment: Equipment, itemId: string): SlotType | nul
 }
 
 function findAvailableSlot(item: Item, equipment: Equipment): SlotType | null {
-  if (item.equippableSlots.length === 0) {
+  if (item.equippableSlots.length === FIRST_INDEX) {
     return null;
   }
 
@@ -32,7 +33,7 @@ function findAvailableSlot(item: Item, equipment: Equipment): SlotType | null {
     }
   }
 
-  return item.equippableSlots[0] ?? null;
+  return item.equippableSlots[FIRST_INDEX] ?? null;
 }
 
 export const createEquipmentActionsSlice: StateCreator<
@@ -84,7 +85,7 @@ export const createEquipmentActionsSlice: StateCreator<
     const item = state.items[itemId];
     if (item === undefined) return false;
 
-    if (item.equippableSlots.length === 0) {
+    if (item.equippableSlots.length === FIRST_INDEX) {
       return false;
     }
 

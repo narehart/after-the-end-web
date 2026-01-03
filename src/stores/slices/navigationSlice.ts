@@ -1,4 +1,5 @@
 import type { StateCreator } from 'zustand';
+import { FIRST_INDEX, SECOND_INDEX } from '../../constants/numbers';
 import type { GridCell } from '../../types/inventory';
 import type { NavigationSlice, StoreWithGrids } from '../../types/store';
 
@@ -35,13 +36,13 @@ export const createNavigationSlice: StateCreator<
   navigateBack: (index, panel): void => {
     const state = get();
     if (panel === 'inventory') {
-      const newPath = state.inventoryFocusPath.slice(0, index + 1);
+      const newPath = state.inventoryFocusPath.slice(FIRST_INDEX, index + SECOND_INDEX);
       set({
         inventoryFocusPath: newPath,
         selectedItemId: null,
       });
     } else {
-      const newPath = state.worldFocusPath.slice(0, index + 1);
+      const newPath = state.worldFocusPath.slice(FIRST_INDEX, index + SECOND_INDEX);
       set({
         worldFocusPath: newPath,
         selectedItemId: null,
@@ -69,15 +70,15 @@ export const createNavigationSlice: StateCreator<
 
   getInventoryGrid: (): GridCell | null => {
     const { inventoryFocusPath, grids } = get();
-    if (inventoryFocusPath.length === 0) return null;
-    const lastPath = inventoryFocusPath[inventoryFocusPath.length - 1];
+    if (inventoryFocusPath.length === FIRST_INDEX) return null;
+    const lastPath = inventoryFocusPath[inventoryFocusPath.length - SECOND_INDEX];
     return lastPath !== undefined ? (grids[lastPath] ?? null) : null;
   },
 
   getWorldGrid: (): GridCell | null => {
     const { worldFocusPath, grids } = get();
-    if (worldFocusPath.length === 0) return null;
-    const lastPath = worldFocusPath[worldFocusPath.length - 1];
+    if (worldFocusPath.length === FIRST_INDEX) return null;
+    const lastPath = worldFocusPath[worldFocusPath.length - SECOND_INDEX];
     return lastPath !== undefined ? (grids[lastPath] ?? null) : null;
   },
 

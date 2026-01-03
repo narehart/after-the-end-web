@@ -3,6 +3,7 @@ import type { Item, ItemsMap } from '../../types/inventory';
 import type { ItemsSlice } from '../../types/store';
 import mockItemsJson from '../../data/mockItems.json';
 import { initialGrids } from '../../constants/initialGrids';
+import { ROTATION_INCREMENT, FULL_ROTATION } from '../../constants/numbers';
 import { findFreePosition } from '../../utils/findFreePosition';
 import { findItemOrigin } from '../../utils/findItemOrigin';
 
@@ -27,7 +28,7 @@ export const createItemsSlice: StateCreator<ItemsSlice, [], [], ItemsSlice> = (s
       return {
         items: {
           ...state.items,
-          [itemId]: { ...item, rotation: (item.rotation + 90) % 360 },
+          [itemId]: { ...item, rotation: (item.rotation + ROTATION_INCREMENT) % FULL_ROTATION },
         },
       };
     });

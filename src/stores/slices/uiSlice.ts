@@ -1,4 +1,5 @@
 import type { StateCreator } from 'zustand';
+import { FIRST_INDEX, NOT_FOUND_INDEX, DEFAULT_SCALE } from '../../constants/numbers';
 import type { UISlice } from '../../types/store';
 import { INITIAL_MENU } from '../../constants/ui';
 
@@ -8,7 +9,7 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
   selectedItemId: 'glasses-1',
   focusedEmptySlot: null,
   groundCollapsed: false,
-  uiScale: 1,
+  uiScale: DEFAULT_SCALE,
   containerRect: null,
   menu: INITIAL_MENU,
 
@@ -42,7 +43,7 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
         itemId,
         source,
         path: [],
-        focusIndex: 0,
+        focusIndex: FIRST_INDEX,
       },
     });
   },
@@ -60,7 +61,7 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
       menu: {
         ...state.menu,
         path: [...state.menu.path, segment],
-        focusIndex: 0,
+        focusIndex: FIRST_INDEX,
       },
     }));
   },
@@ -69,8 +70,8 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     set((state) => ({
       menu: {
         ...state.menu,
-        path: state.menu.path.slice(0, -1),
-        focusIndex: 0,
+        path: state.menu.path.slice(FIRST_INDEX, NOT_FOUND_INDEX),
+        focusIndex: FIRST_INDEX,
       },
     }));
   },
@@ -79,8 +80,8 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
     set((state) => ({
       menu: {
         ...state.menu,
-        path: state.menu.path.slice(0, level),
-        focusIndex: 0,
+        path: state.menu.path.slice(FIRST_INDEX, level),
+        focusIndex: FIRST_INDEX,
       },
     }));
   },

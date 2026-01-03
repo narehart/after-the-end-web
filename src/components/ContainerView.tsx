@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import type { GridCell, MenuSource, PanelType } from '../types/inventory';
+import { FIRST_INDEX, SECOND_INDEX, DEFAULT_CELL_SIZE } from '../constants/numbers';
 import { useBreadcrumbLinksContainer } from '../utils/useBreadcrumbLinksContainer';
 import Panel from './Panel';
 import ItemGrid from './ItemGrid';
@@ -24,13 +25,14 @@ export default function ContainerView({
   emptyMessage = 'No container selected',
   panelType = 'inventory',
   panelLabel = 'Container',
-  cellSize = 32,
+  cellSize = DEFAULT_CELL_SIZE,
 }: ContainerViewProps): React.JSX.Element {
   const items = useInventoryStore((state) => state.items);
   const grids = useInventoryStore((state) => state.grids);
 
-  const lastPath = focusPath[focusPath.length - 1];
-  const currentContainerId = focusPath.length > 0 && lastPath !== undefined ? lastPath : null;
+  const lastPath = focusPath[focusPath.length - SECOND_INDEX];
+  const currentContainerId =
+    focusPath.length > FIRST_INDEX && lastPath !== undefined ? lastPath : null;
   const getGrid = (id: string | null): GridCell | undefined => {
     if (id === null) return undefined;
     return grids[id];

@@ -2,6 +2,7 @@ import type { RefCallback } from 'react';
 import classNames from 'classnames/bind';
 import useGridPanelCell from '../hooks/useGridPanelCell';
 import type { Item } from '../types/inventory';
+import { FIRST_INDEX, NOT_FOUND_INDEX } from '../constants/numbers';
 import GridItemDisplay from './GridItemDisplay';
 import styles from './GridPanelCell.module.css';
 
@@ -66,7 +67,7 @@ export default function GridPanelCell({
       onDoubleClick={handleDoubleClick}
       onKeyDown={handleKeyDown}
       onFocus={handleFocus}
-      tabIndex={isFocused ? 0 : -1}
+      tabIndex={isFocused ? FIRST_INDEX : NOT_FOUND_INDEX}
       role="gridcell"
       aria-selected={isFocused}
     >

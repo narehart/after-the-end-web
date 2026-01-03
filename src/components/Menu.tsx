@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
+import { FIRST_INDEX, SECOND_INDEX, NOT_FOUND_INDEX } from '../constants/numbers';
 import { useInventoryStore } from '../stores/inventoryStore';
 import { getImageUrl } from '../utils/images';
 import { useBreadcrumbLinksMenu } from '../utils/useBreadcrumbLinksMenu';
@@ -23,7 +24,8 @@ export default function Menu(): React.JSX.Element | null {
   const menuSetFocusIndex = useInventoryStore((s) => s.menuSetFocusIndex);
   const context = useMenuContext({ menu });
   const levels = useMenuLevels(menu.path, context);
-  const currentLevel = levels.length > 0 ? levels[levels.length - 1] : undefined;
+  const currentLevel =
+    levels.length > FIRST_INDEX ? levels[levels.length - SECOND_INDEX] : undefined;
   const handleSelect = useMenuActions({ context }, menuNavigateTo);
   const currentItems = currentLevel?.items ?? [];
 
@@ -50,7 +52,7 @@ export default function Menu(): React.JSX.Element | null {
   const itemIcon = itemImage !== undefined ? getImageUrl(itemImage) : undefined;
 
   return (
-    <div ref={menuRef} className={cx('menu-modal')} tabIndex={-1}>
+    <div ref={menuRef} className={cx('menu-modal')} tabIndex={NOT_FOUND_INDEX}>
       <Breadcrumb links={breadcrumbLinks} icon={itemIcon} clipLinks />
       <MenuList
         items={currentItems}
@@ -58,7 +60,9 @@ export default function Menu(): React.JSX.Element | null {
         focusIndex={menu.focusIndex}
         onSelect={handleSelect}
         onSetFocusIndex={menuSetFocusIndex}
-        emptyMessage={menu.path.length > 0 ? 'No containers here' : 'No actions available'}
+        emptyMessage={
+          menu.path.length > FIRST_INDEX ? 'No containers here' : 'No actions available'
+        }
       />
     </div>
   );

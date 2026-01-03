@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
 import type { BreadcrumbLink, Item, MenuPathSegment } from '../types/inventory';
 
 export function useBreadcrumbLinksMenu(
@@ -12,21 +13,21 @@ export function useBreadcrumbLinksMenu(
       {
         label: itemName,
         onClick:
-          path.length > 0
+          path.length > FIRST_INDEX
             ? (): void => {
-                menuNavigateToLevel(0);
+                menuNavigateToLevel(FIRST_INDEX);
               }
             : undefined,
       },
     ];
     path.forEach((segment, idx) => {
-      const isLast = idx === path.length - 1;
+      const isLast = idx === path.length - SECOND_INDEX;
       links.push({
         label: segment.label,
         onClick: isLast
           ? undefined
           : (): void => {
-              menuNavigateToLevel(idx + 1);
+              menuNavigateToLevel(idx + SECOND_INDEX);
             },
       });
     });

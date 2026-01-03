@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from 'react';
+import { FIRST_INDEX, SECOND_INDEX, MENU_INPUT_DELAY_MS } from '../constants/numbers';
 import type { MenuItem, MenuPathSegment } from '../types/inventory';
 import type { KeyHandler } from '../types/ui';
 
@@ -30,7 +31,7 @@ export default function useMenuKeyboard({
     if (isOpen) {
       const timer = setTimeout((): void => {
         setIsReady(true);
-      }, 100);
+      }, MENU_INPUT_DELAY_MS);
       return (): void => {
         clearTimeout(timer);
       };
@@ -41,16 +42,20 @@ export default function useMenuKeyboard({
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent): void => {
-      if (!isReady || items.length === 0) return;
+      if (!isReady || items.length === FIRST_INDEX) return;
 
       const handlers: Record<string, KeyHandler> = {
         ArrowUp: (): void => {
           e.preventDefault();
-          onSetFocus(focusIndex > 0 ? focusIndex - 1 : items.length - 1);
+          onSetFocus(
+            focusIndex > FIRST_INDEX ? focusIndex - SECOND_INDEX : items.length - SECOND_INDEX
+          );
         },
         ArrowDown: (): void => {
           e.preventDefault();
-          onSetFocus(focusIndex < items.length - 1 ? focusIndex + 1 : 0);
+          onSetFocus(
+            focusIndex < items.length - SECOND_INDEX ? focusIndex + SECOND_INDEX : FIRST_INDEX
+          );
         },
         ArrowRight: (): void => {
           e.preventDefault();
@@ -61,7 +66,7 @@ export default function useMenuKeyboard({
         },
         ArrowLeft: (): void => {
           e.preventDefault();
-          if (path.length > 0) {
+          if (path.length > FIRST_INDEX) {
             onNavigateBack();
           }
         },
@@ -74,7 +79,7 @@ export default function useMenuKeyboard({
         },
         Escape: (): void => {
           e.preventDefault();
-          if (path.length > 0) {
+          if (path.length > FIRST_INDEX) {
             onNavigateBack();
           } else {
             onClose();
@@ -82,7 +87,7 @@ export default function useMenuKeyboard({
         },
         Backspace: (): void => {
           e.preventDefault();
-          if (path.length > 0) {
+          if (path.length > FIRST_INDEX) {
             onNavigateBack();
           }
         },

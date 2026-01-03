@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { FIRST_INDEX } from '../constants/numbers';
 import type { MenuItem as MenuItemType, UseMenuContextReturn } from '../types/inventory';
 import MenuItem from './MenuItem';
 import styles from './MenuList.module.css';
@@ -26,7 +27,7 @@ export default function MenuList({
   onHoverItem,
   emptyMessage = 'No options available',
 }: MenuListProps): React.JSX.Element {
-  if (items.length === 0) {
+  if (items.length === FIRST_INDEX) {
     return <div className={cx('menu-empty')}>{emptyMessage}</div>;
   }
 

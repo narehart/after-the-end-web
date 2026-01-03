@@ -22,6 +22,11 @@ import typesInTypesDirectory from './eslint-rules/types-in-types-directory.ts';
 import functionInterfaceNaming from './eslint-rules/function-interface-naming.ts';
 import dataConstantsInConstantsDir from './eslint-rules/data-constants-in-constants-dir.ts';
 
+const MAX_LINES = 250;
+const MAX_LINES_PER_FUNCTION = 100;
+const MAX_STATEMENTS = 20;
+const MAX_COMPLEXITY = 10;
+
 const tsPlugin: ESLint.Plugin = {
   meta: tseslint.meta,
   // @ts-expect-error -- typescript-eslint and ESLint have incompatible RuleContext types
@@ -60,10 +65,13 @@ const sharedRules: Linter.RulesRecord = {
   'import/first': 'error',
   'import/no-duplicates': 'error',
   'import/newline-after-import': 'error',
-  'max-lines': ['error', { max: 250, skipBlankLines: true, skipComments: true }],
-  'max-lines-per-function': ['error', { max: 100, skipBlankLines: true, skipComments: true }],
-  'max-statements': ['error', 20],
-  complexity: ['error', 10],
+  'max-lines': ['error', { max: MAX_LINES, skipBlankLines: true, skipComments: true }],
+  'max-lines-per-function': [
+    'error',
+    { max: MAX_LINES_PER_FUNCTION, skipBlankLines: true, skipComments: true },
+  ],
+  'max-statements': ['error', MAX_STATEMENTS],
+  complexity: ['error', MAX_COMPLEXITY],
   'css-modules/no-undef-class': ['error', { camelCase: true }],
   'local/no-cross-component-css-imports': 'error',
   'local/no-plain-classname-literals': 'error',
@@ -249,6 +257,14 @@ export default defineConfig([
       '@typescript-eslint/no-require-imports': 'error',
       '@typescript-eslint/no-var-requires': 'error',
       '@typescript-eslint/triple-slash-reference': 'error',
+      '@typescript-eslint/no-magic-numbers': [
+        'error',
+        {
+          ignoreEnums: true,
+          ignoreReadonlyClassProperties: true,
+          ignoreTypeIndexes: true,
+        },
+      ],
       '@typescript-eslint/ban-ts-comment': [
         'error',
         {

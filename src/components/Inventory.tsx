@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import classNames from 'classnames/bind';
+import { DEFAULT_SCALE } from '../constants/numbers';
 import { useUIScale } from '../hooks/useUIScale';
 import { useInventoryStore } from '../stores/inventoryStore';
 import useInventoryState from '../hooks/useInventoryState';
@@ -45,7 +46,7 @@ export default function Inventory(): React.JSX.Element {
   const fitScale = Math.min(
     window.innerWidth / effectiveResolution.width,
     window.innerHeight / effectiveResolution.height,
-    1
+    DEFAULT_SCALE
   );
   // Use the smaller of physicalScale and fitScale to ensure container always fits
   const appliedScale = Math.min(physicalScale, fitScale);
@@ -56,7 +57,7 @@ export default function Inventory(): React.JSX.Element {
         height: `${effectiveResolution.height}px`,
         margin: '0 auto',
         boxShadow: '0 0 0 4px var(--border-color)',
-        transform: appliedScale !== 1 ? `scale(${appliedScale})` : undefined,
+        transform: appliedScale !== DEFAULT_SCALE ? `scale(${String(appliedScale)})` : undefined,
         transformOrigin: 'top center',
       }
     : {};

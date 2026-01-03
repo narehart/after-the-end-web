@@ -14,6 +14,7 @@
  *   - hasChildren: boolean - shows arrow indicator
  */
 
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
 import type { MenuItem, UseMenuContextReturn, MenuPathSegment } from '../types/inventory';
 import type { ContainerInfo } from '../types/ui';
 
@@ -22,7 +23,7 @@ function getContainerInfo(ctx: UseMenuContextReturn, containerId: string): Conta
   if (containerItem?.gridSize === undefined) return null;
 
   const grid = ctx.grids[containerId];
-  const usedCells = grid?.cells.flat().filter(Boolean).length ?? 0;
+  const usedCells = grid?.cells.flat().filter(Boolean).length ?? FIRST_INDEX;
   const totalCells = containerItem.gridSize.width * containerItem.gridSize.height;
 
   return {
@@ -96,7 +97,7 @@ function buildNestedDestinations(
   action: string
 ): MenuItem[] {
   const { itemId, canFitItem } = ctx;
-  const currentContainerId = path[path.length - 1];
+  const currentContainerId = path[path.length - SECOND_INDEX];
   if (currentContainerId === undefined) return [];
 
   const currentGrid = ctx.grids[currentContainerId];
@@ -128,8 +129,8 @@ export function buildDestinationItems(
   // Convert path to string array if needed
   const pathIds = path.map((p): string => (typeof p === 'string' ? p : p.id));
 
-  if (pathIds.length > 0) {
-    const currentContainerId = pathIds[pathIds.length - 1];
+  if (pathIds.length > FIRST_INDEX) {
+    const currentContainerId = pathIds[pathIds.length - SECOND_INDEX];
     if (currentContainerId !== undefined) {
       const canFit = canFitItem(currentContainerId);
       const isGround = currentContainerId === 'ground';
@@ -146,7 +147,7 @@ export function buildDestinationItems(
   }
 
   const destinations =
-    pathIds.length === 0
+    pathIds.length === FIRST_INDEX
       ? buildRootDestinations(ctx, action)
       : buildNestedDestinations(ctx, pathIds, action);
 

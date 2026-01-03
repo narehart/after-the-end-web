@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import classNames from 'classnames/bind';
 import { PRESETS } from '../constants/display';
+import { PERCENTAGE_MULTIPLIER } from '../constants/numbers';
 import useGamepadStatus from '../hooks/useGamepadStatus';
 import type { Resolution } from '../types/ui';
 import styles from './InventoryHeader.module.css';
@@ -86,7 +87,9 @@ export default function InventoryHeader({
               }}
               title="Toggle Steam Deck physical size simulation"
             >
-              {steamDeckMode ? `🎮 ${Math.round(physicalScale * 100)}%` : '🎮 1:1'}
+              {steamDeckMode
+                ? `🎮 ${Math.round(physicalScale * PERCENTAGE_MULTIPLIER)}%`
+                : '🎮 1:1'}
             </button>
             {steamDeckMode ? (
               <input

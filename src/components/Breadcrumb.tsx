@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import type { BreadcrumbLink } from '../types/inventory';
 import type { LinkWithIcon } from '../types/ui';
+import { FIRST_INDEX } from '../constants/numbers';
 import { buildSegments } from '../utils/breadcrumb';
 import styles from './Breadcrumb.module.css';
 
@@ -17,9 +18,9 @@ export default function Breadcrumb({
   icon,
   clipLinks,
 }: BreadcrumbProps): React.JSX.Element | null {
-  if (links.length === 0) return null;
+  if (links.length === FIRST_INDEX) return null;
 
-  const firstLink: LinkWithIcon | undefined = links[0];
+  const firstLink: LinkWithIcon | undefined = links[FIRST_INDEX];
   const displayIcon = firstLink?.icon ?? icon;
   const segments = buildSegments(links);
 

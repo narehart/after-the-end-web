@@ -2,6 +2,7 @@ import type { MutableRefObject } from 'react';
 import { useRef, useState, useCallback } from 'react';
 import classNames from 'classnames/bind';
 import { CELL_GAP } from '../constants/grid';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
 import { useInventoryStore } from '../stores/inventoryStore';
 import type { GridCell, MenuSource } from '../types/inventory';
 import type { FocusedCell } from '../types/ui';
@@ -20,7 +21,7 @@ interface ItemGridProps {
 
 export default function ItemGrid({ grid, context, cellSize }: ItemGridProps): React.JSX.Element {
   const items = useInventoryStore((state) => state.items);
-  const [focusedCell, setFocusedCell] = useState<FocusedCell>({ x: 0, y: 0 });
+  const [focusedCell, setFocusedCell] = useState<FocusedCell>({ x: FIRST_INDEX, y: FIRST_INDEX });
   const cellRefs: MutableRefObject<Record<string, HTMLDivElement | null>> = useRef({});
   const renderedItems = new Set<string>();
 
@@ -36,19 +37,19 @@ export default function ItemGrid({ grid, context, cellSize }: ItemGridProps): Re
       switch (e.key) {
         case 'ArrowUp':
           e.preventDefault();
-          newY = Math.max(0, focusedCell.y - 1);
+          newY = Math.max(FIRST_INDEX, focusedCell.y - SECOND_INDEX);
           break;
         case 'ArrowDown':
           e.preventDefault();
-          newY = Math.min(grid.height - 1, focusedCell.y + 1);
+          newY = Math.min(grid.height - SECOND_INDEX, focusedCell.y + SECOND_INDEX);
           break;
         case 'ArrowLeft':
           e.preventDefault();
-          newX = Math.max(0, focusedCell.x - 1);
+          newX = Math.max(FIRST_INDEX, focusedCell.x - SECOND_INDEX);
           break;
         case 'ArrowRight':
           e.preventDefault();
-          newX = Math.min(grid.width - 1, focusedCell.x + 1);
+          newX = Math.min(grid.width - SECOND_INDEX, focusedCell.x + SECOND_INDEX);
           break;
         default:
           return;
@@ -74,7 +75,7 @@ export default function ItemGrid({ grid, context, cellSize }: ItemGridProps): Re
           gap: `${CELL_GAP}px`,
         }}
         role="grid"
-        tabIndex={0}
+        tabIndex={FIRST_INDEX}
         onKeyDown={handleGridKeyDown}
       >
         {Array.from({ length: grid.height }).map((__, row) =>

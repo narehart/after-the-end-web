@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
-import { PRESETS } from '../constants/display';
+import { PRESETS, REFERENCE_WIDTH, REFERENCE_HEIGHT } from '../constants/display';
+import { DEFAULT_SCALE } from '../constants/numbers';
 import type { Resolution } from '../types/ui';
 import { calculateSteamDeckScale } from '../utils/calculateSteamDeckScale';
 
@@ -19,12 +20,12 @@ interface UseUIScaleReturn {
 export function useUIScale(): UseUIScaleReturn {
   const steamDeckPreset = PRESETS['steam-deck'];
   const [simulatedResolution, setSimulatedResolution] = useState<Resolution | null>({
-    width: steamDeckPreset?.width ?? 1280,
-    height: steamDeckPreset?.height ?? 800,
+    width: steamDeckPreset?.width ?? REFERENCE_WIDTH,
+    height: steamDeckPreset?.height ?? REFERENCE_HEIGHT,
   });
   const [effectiveResolution, setEffectiveResolution] = useState<Resolution>({
-    width: 1280,
-    height: 800,
+    width: REFERENCE_WIDTH,
+    height: REFERENCE_HEIGHT,
   });
   const [steamDeckMode, setSteamDeckMode] = useState(true);
 
@@ -45,7 +46,7 @@ export function useUIScale(): UseUIScaleReturn {
 
   // Disable physical scaling
   const disableSteamDeckMode = useCallback((): void => {
-    setPhysicalScaleState(1.0);
+    setPhysicalScaleState(DEFAULT_SCALE);
     setSteamDeckMode(false);
   }, []);
 

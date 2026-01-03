@@ -1,6 +1,7 @@
 import type { RefObject } from 'react';
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
 import { useBreadcrumbLinksInventory } from '../utils/useBreadcrumbLinksInventory';
 import Panel from './Panel';
 import GridPanelGrid from './GridPanelGrid';
@@ -20,7 +21,8 @@ export default function GridPanel({ groundRef }: GridPanelProps): React.JSX.Elem
   const toggleGroundCollapsed = useInventoryStore((state) => state.toggleGroundCollapsed);
   const navigateBack = useInventoryStore((state) => state.navigateBack);
 
-  const currentContainerId = focusPath.length > 0 ? focusPath[focusPath.length - 1] : undefined;
+  const currentContainerId =
+    focusPath.length > FIRST_INDEX ? focusPath[focusPath.length - SECOND_INDEX] : undefined;
   const currentGrid = currentContainerId !== undefined ? grids[currentContainerId] : undefined;
   const groundGrid = grids['ground'];
   const breadcrumbLinks = useBreadcrumbLinksInventory({ focusPath, items, navigateBack });

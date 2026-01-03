@@ -1,5 +1,6 @@
 import type { MutableRefObject, RefObject } from 'react';
 import { useRef, useEffect, useCallback } from 'react';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
 import { PANELS } from '../constants/navigation';
 import type { PanelName } from '../types/ui';
 import type { UsePanelNavigationProps } from '../types/utils';
@@ -15,7 +16,7 @@ export default function usePanelNavigation(
   props: UsePanelNavigationProps
 ): UsePanelNavigationReturn {
   const { refs, modalsOpen } = props;
-  const activePanelRef = useRef(0);
+  const activePanelRef = useRef(FIRST_INDEX);
 
   const focusPanel = useCallback(
     (panelIndex: number): void => {
@@ -43,13 +44,13 @@ export default function usePanelNavigation(
 
   const goToNextPanel = useCallback((): void => {
     if (modalsOpen) return;
-    const newIndex = Math.min(PANELS.length - 1, activePanelRef.current + 1);
+    const newIndex = Math.min(PANELS.length - SECOND_INDEX, activePanelRef.current + SECOND_INDEX);
     focusPanel(newIndex);
   }, [modalsOpen, focusPanel]);
 
   const goToPrevPanel = useCallback((): void => {
     if (modalsOpen) return;
-    const newIndex = Math.max(0, activePanelRef.current - 1);
+    const newIndex = Math.max(FIRST_INDEX, activePanelRef.current - SECOND_INDEX);
     focusPanel(newIndex);
   }, [modalsOpen, focusPanel]);
 

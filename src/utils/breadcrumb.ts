@@ -1,13 +1,14 @@
+import { FIRST_INDEX, SECOND_INDEX, MIN_BREADCRUMB_LINKS } from '../constants/numbers';
 import type { BreadcrumbLink } from '../types/inventory';
 import type { BreadcrumbSegment } from '../types/ui';
 
 export type { BreadcrumbSegment } from '../types/ui';
 
 export function buildSegments(links: BreadcrumbLink[]): BreadcrumbSegment[] {
-  const lastIndex = links.length - 1;
-  const first = links[0];
+  const lastIndex = links.length - SECOND_INDEX;
+  const first = links[FIRST_INDEX];
   const last = links[lastIndex];
-  const parent = links[lastIndex - 1];
+  const parent = links[lastIndex - SECOND_INDEX];
   const segments: BreadcrumbSegment[] = [];
 
   if (first === undefined || last === undefined) {
@@ -18,11 +19,11 @@ export function buildSegments(links: BreadcrumbLink[]): BreadcrumbSegment[] {
     key: 'first',
     label: first.label,
     onClick: first.onClick,
-    isCurrent: lastIndex === 0,
-    showSeparator: lastIndex > 0,
+    isCurrent: lastIndex === FIRST_INDEX,
+    showSeparator: lastIndex > FIRST_INDEX,
   });
 
-  if (links.length > 2) {
+  if (links.length > MIN_BREADCRUMB_LINKS) {
     segments.push({
       key: 'collapse',
       label: '...',
@@ -31,7 +32,7 @@ export function buildSegments(links: BreadcrumbLink[]): BreadcrumbSegment[] {
     });
   }
 
-  if (lastIndex > 0) {
+  if (lastIndex > FIRST_INDEX) {
     segments.push({ key: 'last', label: last.label, isCurrent: true });
   }
 

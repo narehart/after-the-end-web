@@ -1,5 +1,6 @@
 import type { MenuItem, UseMenuContextReturn, MenuPathSegment } from '../types/inventory';
 import { buildDestinationItems } from '../config/menuConfig';
+import { FIRST_INDEX, SECOND_INDEX } from './numbers';
 
 export const ITEM_ACTION_MENU: MenuItem[] = [
   {
@@ -23,7 +24,7 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     type: 'action',
     show: (ctx: UseMenuContextReturn): boolean => {
       const slots = ctx.item?.equippableSlots;
-      return slots !== undefined && slots.length > 0 && ctx.source !== 'equipment';
+      return slots !== undefined && slots.length > FIRST_INDEX && ctx.source !== 'equipment';
     },
   },
   {
@@ -50,7 +51,7 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     type: 'action',
     show: (ctx: UseMenuContextReturn): boolean => {
       const item = ctx.item;
-      return item?.stackable === true && item.quantity > 1;
+      return item?.stackable === true && item.quantity > SECOND_INDEX;
     },
   },
   {

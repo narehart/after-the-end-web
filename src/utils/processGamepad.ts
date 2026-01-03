@@ -1,4 +1,5 @@
 import { BUTTONS } from '../constants/gamepad';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
 import type { ProcessGamepadProps } from '../types/utils';
 import { createButtonHandler } from './createButtonHandler';
 import { handleStickAxis } from './handleStickAxis';
@@ -59,8 +60,8 @@ export function processGamepad(props: ProcessGamepadProps): void {
     onPrevPanel?.();
   });
 
-  const stickX = gamepad.axes[0] ?? 0;
-  const stickY = gamepad.axes[1] ?? 0;
+  const stickX = gamepad.axes[FIRST_INDEX] ?? FIRST_INDEX;
+  const stickY = gamepad.axes[SECOND_INDEX] ?? FIRST_INDEX;
   const { x: lastX, y: lastY } = lastAxisStates.current;
 
   handleStickAxis({

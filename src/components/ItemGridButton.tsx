@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import type { Item } from '../types/inventory';
 import type { CellState, ItemGridHandlers, CSSPropertiesWithVars } from '../types/ui';
+import { FIRST_INDEX, NOT_FOUND_INDEX, SECOND_INDEX } from '../constants/numbers';
 import { getImageUrl } from '../utils/images';
 import { getItemIcon } from '../utils/getItemIcon';
 import { calculateItemDimensions } from '../utils/calculateItemDimensions';
@@ -62,7 +63,7 @@ export default function ItemGridButton({
       onKeyDown={handleKeyDown}
       onMouseEnter={handleMouseEnter}
       onFocus={handleFocus}
-      tabIndex={isFocused ? 0 : -1}
+      tabIndex={isFocused ? FIRST_INDEX : NOT_FOUND_INDEX}
       aria-label={item.name}
     >
       {item.image ? (
@@ -75,7 +76,7 @@ export default function ItemGridButton({
       ) : (
         <span className={cx('item-icon')}>{getItemIcon({ type: item.type })}</span>
       )}
-      {item.stackable && item.quantity > 1 ? (
+      {item.stackable && item.quantity > SECOND_INDEX ? (
         <span className={cx('item-quantity')}>x{item.quantity}</span>
       ) : null}
       {hasGrid ? <span className={cx('container-indicator')}>▼</span> : null}
