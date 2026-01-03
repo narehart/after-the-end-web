@@ -78,13 +78,13 @@ function parseImages(imageList) {
     .filter(Boolean);
 }
 
-// Parse vImageUsage to get inventory image index
-// Format: "ground_idx,inventory_idx,..." - we need the second value (inventory)
-function getInventoryImageIndex(imageUsage) {
+// Parse vImageUsage to get ground image index (item footprint)
+// Format: "ground_idx,inventory_idx,..." - ground index is the item's actual size
+function getFootprintImageIndex(imageUsage) {
   const parts = str(imageUsage)
     .split(',')
     .map((n) => parseInt(n, 10));
-  return parts.length > 1 ? parts[1] : 0;
+  return parts.length > 0 ? parts[0] : 0;
 }
 
 function parseTableToObject(table) {
@@ -103,10 +103,10 @@ function extractItemData(item, imgDir) {
   const groupId = int(item.nGroupID, 0);
   const gridSize = parseSize(item.aCapacities);
 
-  // Get the inventory image (vImageUsage specifies which image is used in inventory)
-  const inventoryImageIndex = getInventoryImageIndex(item.vImageUsage);
-  const inventoryImage = originalImages[inventoryImageIndex] ?? originalImages[0];
-  const imagePath = inventoryImage ? join(imgDir, inventoryImage) : null;
+  // Get the footprint image (vImageUsage ground index = item's actual size)
+  const footprintImageIndex = getFootprintImageIndex(item.vImageUsage);
+  const footprintImage = originalImages[footprintImageIndex] ?? originalImages[0];
+  const imagePath = footprintImage ? join(imgDir, footprintImage) : null;
   const size = imagePath ? calculateGridSize(imagePath) : DEFAULT_SIZE;
 
   const extracted = {
