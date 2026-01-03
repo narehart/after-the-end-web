@@ -9,6 +9,7 @@ function toItem(data: (typeof neoItemsJson)[number]): Item {
     type: toItemType(data.type),
     name: data.name,
     description: data.description,
+    flavorText: data.flavorText,
     size: data.size,
     weight: data.weight,
     value: data.value,
