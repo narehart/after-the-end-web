@@ -1,4 +1,5 @@
 /* Equipment slot specific overrides */
+
 .list-item.equipment-slot.active {
   background: var(--bg-elevated);
   border-color: var(--border-light);

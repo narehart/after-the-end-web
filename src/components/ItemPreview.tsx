@@ -1,6 +1,7 @@
 import type { Item } from '../types/inventory';
 import { getImageUrl } from '../utils/images';
 import { getItemIcon } from '../utils/getItemIcon';
+import { getMainImage } from '../utils/getMainImage';
 
 interface ItemPreviewProps {
   item: Item;
@@ -13,10 +14,11 @@ export default function ItemPreview({
   imageClassName,
   iconClassName,
 }: ItemPreviewProps): React.JSX.Element {
-  if (item.image !== '') {
+  const mainImage = getMainImage({ allImages: item.allImages });
+  if (mainImage !== '') {
     return (
       <img
-        src={getImageUrl(item.image)}
+        src={getImageUrl(mainImage)}
         alt={item.name}
         className={imageClassName}
         draggable={false}

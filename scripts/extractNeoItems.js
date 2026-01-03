@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 // Extract item data and images from Neo Scavenger for prototyping.
 
-import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { DOMParser } from '@xmldom/xmldom';
+import sharp from 'sharp';
 
 const NEO_DIR =
   '/Users/nicholasarehart/Library/Application Support/Steam/steamapps/common/NEO Scavenger';
@@ -148,19 +149,27 @@ function extractItems() {
   return { items, imagesToCopy };
 }
 
-function copyImages(imageMap) {
+async function copyImages(imageMap) {
   const imgDir = join(NEO_DIR, 'img');
   mkdirSync(OUTPUT_DIR, { recursive: true });
 
   let copied = 0;
+  let skipped = 0;
   for (const [original, camel] of imageMap) {
     const src = join(imgDir, original);
     if (existsSync(src)) {
-      copyFileSync(src, join(OUTPUT_DIR, camel));
-      copied++;
+      try {
+        // Crop to actual content by trimming transparent pixels
+        await sharp(src).trim().toFile(join(OUTPUT_DIR, camel));
+        copied++;
+      } catch {
+        // Some images are too small to trim (< 3x3), copy as-is
+        await sharp(src).toFile(join(OUTPUT_DIR, camel));
+        skipped++;
+      }
     }
   }
-  console.log(`Copied ${copied}/${imageMap.size} images`);
+  console.log(`Cropped ${copied} images, copied ${skipped} small images as-is`);
 }
 
 function printSummary(items) {
@@ -174,7 +183,7 @@ function printSummary(items) {
   }
 }
 
-function main() {
+async function main() {
   console.log('Extracting items from Neo Scavenger...');
   const { items, imagesToCopy } = extractItems();
 
@@ -183,7 +192,7 @@ function main() {
   console.log(`Saved ${items.length} items to ${DATA_OUTPUT}`);
 
   console.log(`Copying ${imagesToCopy.size} images...`);
-  copyImages(imagesToCopy);
+  await copyImages(imagesToCopy);
   printSummary(items);
 }
 
