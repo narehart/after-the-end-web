@@ -7,6 +7,7 @@ import { getImageUrl } from '../utils/images';
 import { getMainImage } from '../utils/getMainImage';
 import { formatSlotLabel } from '../utils/formatSlotLabel';
 import ListItem from './ListItem';
+import { Image } from './primitives';
 import styles from './EquipmentSlot.module.css';
 
 const cx = classNames.bind(styles);
@@ -46,7 +47,7 @@ export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.J
 
   const icon =
     item !== null && item.image !== '' ? (
-      <img
+      <Image
         src={getImageUrl(getMainImage({ allImages: item.allImages }))}
         alt={item.description}
         draggable={false}

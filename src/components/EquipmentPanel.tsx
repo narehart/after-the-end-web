@@ -3,6 +3,7 @@ import { useInventoryStore, SLOT_TYPES } from '../stores/inventoryStore';
 import { FIRST_INDEX } from '../constants/numbers';
 import Panel from './Panel';
 import EquipmentSlot from './EquipmentSlot';
+import { Box } from './primitives';
 import styles from './EquipmentPanel.module.css';
 
 const cx = classNames.bind(styles);
@@ -21,11 +22,11 @@ export default function EquipmentPanel(): React.JSX.Element {
       emptyMessage="No items equipped"
     >
       {hasEquipment ? (
-        <div className={cx('equipment-slots')} role="listbox" aria-label="Equipment slots">
+        <Box className={cx('equipment-slots')} role="listbox" aria-label="Equipment slots">
           {equippedSlots.map((slotType) => (
             <EquipmentSlot key={slotType} slotType={slotType} />
           ))}
-        </div>
+        </Box>
       ) : null}
     </Panel>
   );

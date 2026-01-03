@@ -14,6 +14,7 @@ import WorldPanel from './WorldPanel';
 import DetailsPanel from './DetailsPanel';
 import Menu from './Menu';
 import InventoryHeader from './InventoryHeader';
+import { Box } from './primitives';
 import styles from './Inventory.module.css';
 
 const cx = classNames.bind(styles);
@@ -63,30 +64,31 @@ export default function Inventory(): React.JSX.Element {
     : {};
 
   return (
-    <div
+    <Box
       ref={containerRef}
       className={cx('inventory-container', { simulated: isSimulated })}
       style={containerStyle}
     >
       <InventoryHeader {...uiScale} />
 
-      <main
+      <Box
+        as="main"
         className={cx('inventory-main')}
         style={{ visibility: cellSize !== null ? 'visible' : 'hidden' }}
       >
-        <aside className={cx('left-column')} ref={equipmentRef}>
+        <Box as="aside" className={cx('left-column')} ref={equipmentRef}>
           <EquipmentPanel />
-        </aside>
-        <section className={cx('inventory-column')} ref={inventoryRef}>
+        </Box>
+        <Box as="section" className={cx('inventory-column')} ref={inventoryRef}>
           <InventoryPanel cellSize={cellSize} />
           <DetailsPanel />
-        </section>
-        <section className={cx('world-column')} ref={worldRef}>
+        </Box>
+        <Box as="section" className={cx('world-column')} ref={worldRef}>
           <WorldPanel cellSize={cellSize} />
-        </section>
-      </main>
+        </Box>
+      </Box>
 
       <Menu />
-    </div>
+    </Box>
   );
 }

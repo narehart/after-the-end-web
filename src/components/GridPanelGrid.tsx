@@ -8,6 +8,7 @@ import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
 import { getCellValue } from '../utils/getCellValue';
 import { findItemOrigin } from '../utils/findItemOrigin';
 import GridPanelCell from './GridPanelCell';
+import { Box } from './primitives';
 import styles from './GridPanelGrid.module.css';
 
 const cx = classNames.bind(styles);
@@ -67,9 +68,9 @@ export default function GridPanelGrid({
   );
 
   return (
-    <div className={cx('inventory-grid-container')}>
-      {label !== undefined && label !== '' ? <div className={cx('grid-label')}>{label}</div> : null}
-      <div
+    <Box className={cx('inventory-grid-container')}>
+      {label !== undefined && label !== '' ? <Box className={cx('grid-label')}>{label}</Box> : null}
+      <Box
         className={cx('inventory-grid')}
         style={{
           gridTemplateColumns: `repeat(${grid.width}, 48px)`,
@@ -111,7 +112,7 @@ export default function GridPanelGrid({
             );
           })
         )}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 }

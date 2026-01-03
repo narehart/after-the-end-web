@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import type { BreadcrumbLink } from '../types/inventory';
 import type { BorderPosition } from '../types/ui';
 import Breadcrumb from './Breadcrumb';
+import { Box, Text } from './primitives';
 import styles from './Panel.module.css';
 
 const cx = classNames.bind(styles);
@@ -38,7 +39,12 @@ export default function Panel({
     if (breadcrumbLinks !== undefined) {
       return <Breadcrumb links={breadcrumbLinks} icon={breadcrumbIcon} clipLinks />;
     }
-    if (title !== undefined) return <h3 className={cx('panel-title')}>{title}</h3>;
+    if (title !== undefined)
+      return (
+        <Text as="h3" className={cx('panel-title')}>
+          {title}
+        </Text>
+      );
     return null;
   };
 
@@ -50,9 +56,9 @@ export default function Panel({
   });
 
   return (
-    <div className={className !== undefined ? `${panelClasses} ${className}` : panelClasses}>
-      {hasHeader ? <div className={cx('panel-header')}>{renderHeader()}</div> : null}
-      <div
+    <Box className={className !== undefined ? `${panelClasses} ${className}` : panelClasses}>
+      {hasHeader ? <Box className={cx('panel-header')}>{renderHeader()}</Box> : null}
+      <Box
         className={
           contentClassName !== undefined
             ? `${cx('panel-content')} ${contentClassName}`
@@ -60,11 +66,11 @@ export default function Panel({
         }
       >
         {isEmpty && emptyMessage !== undefined ? (
-          <div className={cx('empty-message')}>{emptyMessage}</div>
+          <Box className={cx('empty-message')}>{emptyMessage}</Box>
         ) : (
           children
         )}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 }

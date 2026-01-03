@@ -4,6 +4,7 @@ import { PRESETS } from '../constants/display';
 import { PERCENTAGE_MULTIPLIER } from '../constants/numbers';
 import useGamepadStatus from '../hooks/useGamepadStatus';
 import type { Resolution } from '../types/ui';
+import { Box, Button, Input, Text } from './primitives';
 import styles from './InventoryHeader.module.css';
 
 const cx = classNames.bind(styles);
@@ -41,16 +42,18 @@ export default function InventoryHeader({
   };
 
   return (
-    <header className={cx('inventory-header')}>
-      <span className={cx('header-icon')}>☢</span>
-      <h1 className={cx('header-title')}>INVENTORY</h1>
-      <div className={cx('header-controls')}>
+    <Box as="header" className={cx('inventory-header')}>
+      <Text className={cx('header-icon')}>☢</Text>
+      <Text as="h1" className={cx('header-title')}>
+        INVENTORY
+      </Text>
+      <Box className={cx('header-controls')}>
         {gamepadConnected ? (
-          <span className={cx('gamepad-indicator')} title={gamepadName}>
+          <Text className={cx('gamepad-indicator')} title={gamepadName}>
             🎮 Connected
-          </span>
+          </Text>
         ) : null}
-        <button
+        <Button
           className={cx('resolution-btn')}
           onClick={() => {
             setShowResolutionPicker(!showResolutionPicker);
@@ -58,11 +61,11 @@ export default function InventoryHeader({
           title="Test different resolutions"
         >
           {effectiveResolution.width}×{effectiveResolution.height}
-        </button>
+        </Button>
         {showResolutionPicker ? (
-          <div className={cx('resolution-picker')}>
+          <Box className={cx('resolution-picker')}>
             {Object.entries(PRESETS).map(([key, preset]) => (
-              <button
+              <Button
                 key={key}
                 className={cx('resolution-option')}
                 onClick={() => {
@@ -70,13 +73,13 @@ export default function InventoryHeader({
                 }}
               >
                 {preset.label}
-              </button>
+              </Button>
             ))}
-          </div>
+          </Box>
         ) : null}
         {isSimulated ? (
-          <div className={cx('steam-deck-controls')}>
-            <button
+          <Box className={cx('steam-deck-controls')}>
+            <Button
               className={cx('steam-deck-btn', { active: steamDeckMode })}
               onClick={() => {
                 if (steamDeckMode) {
@@ -90,9 +93,9 @@ export default function InventoryHeader({
               {steamDeckMode
                 ? `🎮 ${Math.round(physicalScale * PERCENTAGE_MULTIPLIER)}%`
                 : '🎮 1:1'}
-            </button>
+            </Button>
             {steamDeckMode ? (
-              <input
+              <Input
                 type="range"
                 className={cx('scale-slider')}
                 min={0.3}
@@ -105,11 +108,11 @@ export default function InventoryHeader({
                 title="Fine-tune physical scale"
               />
             ) : null}
-          </div>
+          </Box>
         ) : null}
-        <span className={cx('weight-indicator')}>12.4 / 35.0 kg</span>
-        <button className={cx('close-btn')}>✕</button>
-      </div>
-    </header>
+        <Text className={cx('weight-indicator')}>12.4 / 35.0 kg</Text>
+        <Button className={cx('close-btn')}>✕</Button>
+      </Box>
+    </Box>
   );
 }

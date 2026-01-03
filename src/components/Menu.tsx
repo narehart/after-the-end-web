@@ -10,6 +10,7 @@ import useMenuLevels from '../hooks/useMenuLevels';
 import useMenuKeyboard from '../hooks/useMenuKeyboard';
 import Breadcrumb from './Breadcrumb';
 import MenuList from './MenuList';
+import { Box } from './primitives';
 import styles from './Menu.module.css';
 
 const cx = classNames.bind(styles);
@@ -53,7 +54,7 @@ export default function Menu(): React.JSX.Element | null {
 
   return (
     <>
-      <div
+      <Box
         className={cx('menu-overlay')}
         onClick={closeMenu}
         onKeyDown={(e): void => {
@@ -63,7 +64,7 @@ export default function Menu(): React.JSX.Element | null {
         tabIndex={NOT_FOUND_INDEX}
         aria-label="Close menu"
       />
-      <div ref={menuRef} className={cx('menu-modal')} tabIndex={NOT_FOUND_INDEX}>
+      <Box ref={menuRef} className={cx('menu-modal')} tabIndex={NOT_FOUND_INDEX}>
         <Breadcrumb links={breadcrumbLinks} icon={itemIcon} clipLinks />
         <MenuList
           items={currentItems}
@@ -75,7 +76,7 @@ export default function Menu(): React.JSX.Element | null {
             menu.path.length > FIRST_INDEX ? 'No containers here' : 'No actions available'
           }
         />
-      </div>
+      </Box>
     </>
   );
 }

@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import { PERCENTAGE_MULTIPLIER } from '../constants/numbers';
+import { Box, Text } from './primitives';
 import styles from './ConditionBar.module.css';
 
 const cx = classNames.bind(styles);
@@ -19,15 +20,15 @@ export default function ConditionBar({
 }: ConditionBarProps): React.JSX.Element {
   const percentage = (value / max) * PERCENTAGE_MULTIPLIER;
   return (
-    <div className={cx('condition-bar')}>
-      <span className={cx('condition-label')}>{label}</span>
-      <div className={cx('condition-track')}>
-        <div
+    <Box className={cx('condition-bar')}>
+      <Text className={cx('condition-label')}>{label}</Text>
+      <Box className={cx('condition-track')}>
+        <Box
           className={cx('condition-fill')}
           style={{ width: `${percentage}%`, backgroundColor: color }}
         />
-      </div>
-      <span className={cx('condition-value')}>{value}</span>
-    </div>
+      </Box>
+      <Text className={cx('condition-value')}>{value}</Text>
+    </Box>
   );
 }

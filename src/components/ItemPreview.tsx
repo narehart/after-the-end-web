@@ -2,6 +2,7 @@ import type { Item } from '../types/inventory';
 import { getImageUrl } from '../utils/images';
 import { getItemIcon } from '../utils/getItemIcon';
 import { getMainImage } from '../utils/getMainImage';
+import { Image, Text } from './primitives';
 
 interface ItemPreviewProps {
   item: Item;
@@ -17,7 +18,7 @@ export default function ItemPreview({
   const mainImage = getMainImage({ allImages: item.allImages });
   if (mainImage !== '') {
     return (
-      <img
+      <Image
         src={getImageUrl(mainImage)}
         alt={item.name}
         className={imageClassName}
@@ -25,5 +26,5 @@ export default function ItemPreview({
       />
     );
   }
-  return <span className={iconClassName}>{getItemIcon({ type: item.type })}</span>;
+  return <Text className={iconClassName}>{getItemIcon({ type: item.type })}</Text>;
 }

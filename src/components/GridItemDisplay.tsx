@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import type { Item } from '../types/inventory';
 import { DEFAULT_QUANTITY, PERCENTAGE_MULTIPLIER } from '../constants/numbers';
 import { getItemIcon } from '../utils/getItemIcon';
+import { Box, Text } from './primitives';
 import styles from './GridItemDisplay.module.css';
 
 const cx = classNames.bind(styles);
@@ -18,17 +19,17 @@ export default function GridItemDisplay({
   const showQuantity = item.quantity !== undefined && item.quantity > DEFAULT_QUANTITY;
 
   return (
-    <div
+    <Box
       className={cx('grid-item', { container: hasGrid })}
       style={{
         width: `${String(item.size.width * PERCENTAGE_MULTIPLIER)}%`,
         height: `${String(item.size.height * PERCENTAGE_MULTIPLIER)}%`,
       }}
     >
-      <span className={cx('item-icon')}>{getItemIcon({ type: item.type })}</span>
-      <span className={cx('item-name')}>{item.name}</span>
-      {showQuantity ? <span className={cx('item-quantity')}>x{item.quantity}</span> : null}
-      {hasGrid ? <span className={cx('container-indicator')}>▼</span> : null}
-    </div>
+      <Text className={cx('item-icon')}>{getItemIcon({ type: item.type })}</Text>
+      <Text className={cx('item-name')}>{item.name}</Text>
+      {showQuantity ? <Text className={cx('item-quantity')}>x{item.quantity}</Text> : null}
+      {hasGrid ? <Text className={cx('container-indicator')}>▼</Text> : null}
+    </Box>
   );
 }

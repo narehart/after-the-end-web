@@ -4,6 +4,7 @@ import useGridPanelCell from '../hooks/useGridPanelCell';
 import type { Item } from '../types/inventory';
 import { FIRST_INDEX, NOT_FOUND_INDEX } from '../constants/numbers';
 import GridItemDisplay from './GridItemDisplay';
+import { Box } from './primitives';
 import styles from './GridPanelCell.module.css';
 
 const cx = classNames.bind(styles);
@@ -60,7 +61,7 @@ export default function GridPanelCell({
   });
 
   return (
-    <div
+    <Box
       ref={cellRef}
       className={cellClasses}
       onClick={handleClick}
@@ -72,6 +73,6 @@ export default function GridPanelCell({
       aria-selected={isFocused}
     >
       {isOrigin && item !== null ? <GridItemDisplay item={item} hasGrid={hasGrid} /> : null}
-    </div>
+    </Box>
   );
 }

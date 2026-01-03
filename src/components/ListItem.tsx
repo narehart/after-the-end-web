@@ -1,6 +1,7 @@
 import type { RefObject, ReactNode, MouseEvent, KeyboardEvent } from 'react';
 import classNames from 'classnames/bind';
 import type { ListItemState } from '../types/ui';
+import { Button, Text } from './primitives';
 import styles from './ListItem.module.css';
 
 const cx = classNames.bind(styles);
@@ -43,7 +44,7 @@ export default function ListItem({
   });
 
   return (
-    <button
+    <Button
       ref={itemRef}
       className={
         extraClassName !== undefined ? `${buttonClasses} ${extraClassName}` : buttonClasses
@@ -59,13 +60,13 @@ export default function ListItem({
       aria-selected={state.isFocused}
     >
       {icon !== null && icon !== undefined ? (
-        <span className={cx('list-item-icon')}>{icon}</span>
+        <Text className={cx('list-item-icon')}>{icon}</Text>
       ) : null}
-      <span className={cx('list-item-label')}>{label}</span>
+      <Text className={cx('list-item-label')}>{label}</Text>
       {meta !== null && meta !== undefined ? (
-        <span className={cx('list-item-meta')}>{meta}</span>
+        <Text className={cx('list-item-meta')}>{meta}</Text>
       ) : null}
-      {hasArrow === true ? <span className={cx('list-item-arrow')}>›</span> : null}
-    </button>
+      {hasArrow === true ? <Text className={cx('list-item-arrow')}>›</Text> : null}
+    </Button>
   );
 }

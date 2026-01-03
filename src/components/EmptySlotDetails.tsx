@@ -2,6 +2,7 @@ import classNames from 'classnames/bind';
 import { SLOT_LABELS, SLOT_ICONS, SLOT_DESCRIPTIONS } from '../constants/slots';
 import type { SlotType } from '../types/inventory';
 import Panel from './Panel';
+import { Box, Text } from './primitives';
 import styles from './EmptySlotDetails.module.css';
 
 const cx = classNames.bind(styles);
@@ -17,19 +18,25 @@ export default function EmptySlotDetails({ slotId }: EmptySlotDetailsProps): Rea
       className={cx('details-panel')}
       contentClassName={cx('details-content', 'empty-slot')}
     >
-      <div className={cx('item-preview')}>
-        <div className={cx('preview-frame', 'empty')}>
-          <span className={cx('preview-icon')}>{SLOT_ICONS[slotId]}</span>
-        </div>
-      </div>
-      <div className={cx('item-info')}>
-        <h2 className={cx('item-name')}>{SLOT_LABELS[slotId]}</h2>
-        <p className={cx('item-type')}>EMPTY SLOT</p>
-        <p className={cx('item-description')}>{SLOT_DESCRIPTIONS[slotId]}</p>
-      </div>
-      <div className={cx('details-hint')}>
-        <span>Equip an item to fill this slot</span>
-      </div>
+      <Box className={cx('item-preview')}>
+        <Box className={cx('preview-frame', 'empty')}>
+          <Text className={cx('preview-icon')}>{SLOT_ICONS[slotId]}</Text>
+        </Box>
+      </Box>
+      <Box className={cx('item-info')}>
+        <Text as="h2" className={cx('item-name')}>
+          {SLOT_LABELS[slotId]}
+        </Text>
+        <Text as="p" className={cx('item-type')}>
+          EMPTY SLOT
+        </Text>
+        <Text as="p" className={cx('item-description')}>
+          {SLOT_DESCRIPTIONS[slotId]}
+        </Text>
+      </Box>
+      <Box className={cx('details-hint')}>
+        <Text>Equip an item to fill this slot</Text>
+      </Box>
     </Panel>
   );
 }

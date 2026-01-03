@@ -9,6 +9,7 @@ import type { FocusedCell } from '../types/ui';
 import { getCellValue } from '../utils/getCellValue';
 import { checkIsOrigin } from '../utils/checkIsOrigin';
 import ItemGridCell from './ItemGridCell';
+import { Box } from './primitives';
 import styles from './ItemGrid.module.css';
 
 const cx = classNames.bind(styles);
@@ -72,11 +73,11 @@ export default function ItemGrid({
   );
 
   return (
-    <div
+    <Box
       className={cx('inventory-grid-container')}
       style={{ visibility: hidden ? 'hidden' : 'visible' }}
     >
-      <div
+      <Box
         className={cx('inventory-grid')}
         style={{
           gridTemplateColumns: `repeat(${grid.width}, ${cellSize}px)`,
@@ -113,7 +114,7 @@ export default function ItemGrid({
             );
           })
         )}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 }

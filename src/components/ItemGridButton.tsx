@@ -5,6 +5,7 @@ import { DEFAULT_QUANTITY, FIRST_INDEX, NOT_FOUND_INDEX } from '../constants/num
 import { getImageUrl } from '../utils/images';
 import { getItemIcon } from '../utils/getItemIcon';
 import { calculateItemDimensions } from '../utils/calculateItemDimensions';
+import { Button, Image, Text } from './primitives';
 import styles from './ItemGridButton.module.css';
 
 const cx = classNames.bind(styles);
@@ -49,7 +50,7 @@ export default function ItemGridButton({
   };
 
   return (
-    <button
+    <Button
       type="button"
       className={cx('grid-item', {
         container: hasGrid,
@@ -67,17 +68,17 @@ export default function ItemGridButton({
       aria-label={item.name}
     >
       {item.image ? (
-        <img
+        <Image
           src={getImageUrl(item.image)}
           alt={item.name}
           className={cx('item-image')}
           draggable={false}
         />
       ) : (
-        <span className={cx('item-icon')}>{getItemIcon({ type: item.type })}</span>
+        <Text className={cx('item-icon')}>{getItemIcon({ type: item.type })}</Text>
       )}
-      {hasGrid ? <span className={cx('container-indicator')}>▼</span> : null}
-      {showQuantity ? <span className={cx('item-quantity')}>x{item.quantity}</span> : null}
-    </button>
+      {hasGrid ? <Text className={cx('container-indicator')}>▼</Text> : null}
+      {showQuantity ? <Text className={cx('item-quantity')}>x{item.quantity}</Text> : null}
+    </Button>
   );
 }

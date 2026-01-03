@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import ContainerView from './ContainerView';
+import { Box } from './primitives';
 import styles from './WorldPanel.module.css';
 
 const cx = classNames.bind(styles);
@@ -18,7 +19,7 @@ export default function WorldPanel({ cellSize }: WorldPanelProps): React.JSX.Ele
   };
 
   return (
-    <div className={cx('world-panel')}>
+    <Box className={cx('world-panel')}>
       <ContainerView
         focusPath={worldFocusPath}
         onNavigateBack={handleNavigateBack}
@@ -27,6 +28,6 @@ export default function WorldPanel({ cellSize }: WorldPanelProps): React.JSX.Ele
         panelLabel="Ground"
         cellSize={cellSize}
       />
-    </div>
+    </Box>
   );
 }

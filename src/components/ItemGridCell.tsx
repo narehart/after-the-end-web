@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import useItemGridCell from '../hooks/useItemGridCell';
 import type { Item, MenuSource } from '../types/inventory';
 import ItemGridButton from './ItemGridButton';
+import { Box } from './primitives';
 import styles from './ItemGridCell.module.css';
 
 const cx = classNames.bind(styles);
@@ -44,7 +45,7 @@ export default function ItemGridCell({
   const handlers = { handleClick, openModal, handleMouseEnter, handleFocus };
 
   return (
-    <div
+    <Box
       ref={cellRef}
       className={cx('grid-cell')}
       style={{
@@ -62,6 +63,6 @@ export default function ItemGridCell({
           handlers={handlers}
         />
       ) : null}
-    </div>
+    </Box>
   );
 }

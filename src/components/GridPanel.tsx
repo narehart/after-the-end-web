@@ -5,6 +5,7 @@ import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
 import { useBreadcrumbLinksInventory } from '../hooks/useBreadcrumbLinksInventory';
 import Panel from './Panel';
 import GridPanelGrid from './GridPanelGrid';
+import { Box, Button, Text } from './primitives';
 import styles from './GridPanel.module.css';
 
 const cx = classNames.bind(styles);
@@ -28,22 +29,22 @@ export default function GridPanel({ groundRef }: GridPanelProps): React.JSX.Elem
   const breadcrumbLinks = useBreadcrumbLinksInventory({ focusPath, items, navigateBack });
 
   return (
-    <div className={cx('grid-panel')}>
+    <Box className={cx('grid-panel')}>
       <Panel breadcrumbLinks={breadcrumbLinks} contentClassName={cx('grid-content')}>
         {currentGrid !== undefined && currentContainerId !== undefined ? (
           <GridPanelGrid gridId={currentContainerId} grid={currentGrid} />
         ) : (
-          <div className={cx('empty-grid-message')}>No container selected</div>
+          <Box className={cx('empty-grid-message')}>No container selected</Box>
         )}
       </Panel>
 
-      <div className={cx('ground-section', { collapsed: groundCollapsed })} ref={groundRef}>
+      <Box className={cx('ground-section', { collapsed: groundCollapsed })} ref={groundRef}>
         <Panel
           header={
-            <button className={cx('ground-header')} onClick={toggleGroundCollapsed}>
-              <span className={cx('ground-label')}>Ground - Abandoned Street</span>
-              <span className={cx('ground-toggle')}>{groundCollapsed ? '▲' : '▼'}</span>
-            </button>
+            <Button className={cx('ground-header')} onClick={toggleGroundCollapsed}>
+              <Text className={cx('ground-label')}>Ground - Abandoned Street</Text>
+              <Text className={cx('ground-toggle')}>{groundCollapsed ? '▲' : '▼'}</Text>
+            </Button>
           }
           className={cx('ground-panel')}
         >
@@ -51,7 +52,7 @@ export default function GridPanel({ groundRef }: GridPanelProps): React.JSX.Elem
             <GridPanelGrid gridId="ground" grid={groundGrid} label="" />
           ) : null}
         </Panel>
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 }

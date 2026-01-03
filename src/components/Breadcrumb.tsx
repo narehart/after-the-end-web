@@ -3,6 +3,7 @@ import type { BreadcrumbLink } from '../types/inventory';
 import type { LinkWithIcon } from '../types/ui';
 import { FIRST_INDEX } from '../constants/numbers';
 import { buildSegments } from '../utils/breadcrumb';
+import { Box, Button, Image, Text } from './primitives';
 import styles from './Breadcrumb.module.css';
 
 const cx = classNames.bind(styles);
@@ -25,24 +26,24 @@ export default function Breadcrumb({
   const segments = buildSegments(links);
 
   return (
-    <div className={cx('breadcrumb', { 'breadcrumb--clip': clipLinks === true })}>
+    <Box className={cx('breadcrumb', { 'breadcrumb--clip': clipLinks === true })}>
       {displayIcon !== undefined ? (
-        <img src={displayIcon} alt="" className={cx('breadcrumb-icon')} />
+        <Image src={displayIcon} alt="" className={cx('breadcrumb-icon')} />
       ) : null}
       {segments.map((seg) => (
-        <span key={seg.key} className={cx('breadcrumb-segment')}>
-          <button
+        <Text key={seg.key} className={cx('breadcrumb-segment')}>
+          <Button
             className={cx('breadcrumb-link', { current: seg.isCurrent === true })}
             onClick={seg.onClick}
             disabled={seg.isCurrent === true || seg.onClick === undefined}
           >
             {seg.label}
-          </button>
+          </Button>
           {seg.showSeparator === true ? (
-            <span className={cx('breadcrumb-separator')}>›</span>
+            <Text className={cx('breadcrumb-separator')}>›</Text>
           ) : null}
-        </span>
+        </Text>
       ))}
-    </div>
+    </Box>
   );
 }

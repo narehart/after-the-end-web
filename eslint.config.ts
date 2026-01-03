@@ -94,7 +94,7 @@ const sharedRules: Linter.RulesRecord = {
   'local/no-reexports-in-types': 'error',
   'local/no-functions-in-types': 'error',
   'local/no-hooks-in-utils': 'error',
-  'local/no-intrinsic-elements-in-features': 'warn',
+  'local/no-intrinsic-elements-in-features': 'error',
 };
 
 export default defineConfig([

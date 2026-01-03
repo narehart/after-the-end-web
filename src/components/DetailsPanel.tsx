@@ -4,6 +4,7 @@ import { buildStatsLine } from '../utils/buildStatsLine';
 import Panel from './Panel';
 import EmptySlotDetails from './EmptySlotDetails';
 import ItemPreview from './ItemPreview';
+import { Box, Text } from './primitives';
 import styles from './DetailsPanel.module.css';
 
 const cx = classNames.bind(styles);
@@ -28,23 +29,27 @@ export default function DetailsPanel(): React.JSX.Element {
     >
       {item !== null ? (
         <>
-          <div className={cx('item-preview')}>
-            <div className={cx('preview-frame')}>
+          <Box className={cx('item-preview')}>
+            <Box className={cx('preview-frame')}>
               <ItemPreview
                 item={item}
                 imageClassName={cx('preview-image')}
                 iconClassName={cx('preview-icon')}
               />
-            </div>
-          </div>
+            </Box>
+          </Box>
 
-          <div className={cx('item-info')}>
-            <h2 className={cx('item-name')}>{item.description}</h2>
-            <p className={cx('item-stats-line')}>{buildStatsLine({ item })}</p>
-            <p className={cx('item-flavor-text')}>
+          <Box className={cx('item-info')}>
+            <Text as="h2" className={cx('item-name')}>
+              {item.description}
+            </Text>
+            <Text as="p" className={cx('item-stats-line')}>
+              {buildStatsLine({ item })}
+            </Text>
+            <Text as="p" className={cx('item-flavor-text')}>
               {item.flavorText ?? `A scavenged ${item.type} from the Florida wasteland.`}
-            </p>
-          </div>
+            </Text>
+          </Box>
         </>
       ) : null}
     </Panel>
