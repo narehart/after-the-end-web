@@ -28,7 +28,7 @@ function getContainerInfo(ctx: UseMenuContextReturn, containerId: string): Conta
 
   return {
     id: containerId,
-    name: containerItem.name,
+    name: containerItem.description,
     isContainer: true,
     capacity: `${String(usedCells)}/${String(totalCells)}`,
   };
@@ -134,7 +134,9 @@ export function buildDestinationItems(
     if (currentContainerId !== undefined) {
       const canFit = canFitItem(currentContainerId);
       const isGround = currentContainerId === 'ground';
-      const containerName = isGround ? 'Ground' : (allItems[currentContainerId]?.name ?? 'here');
+      const containerName = isGround
+        ? 'Ground'
+        : (allItems[currentContainerId]?.description ?? 'here');
 
       items.push({
         id: 'place-here',
