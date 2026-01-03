@@ -1,8 +1,5 @@
 import type { Item } from '../types/inventory';
-import { getImageUrl } from '../utils/images';
-import { getItemIcon } from '../utils/getItemIcon';
-import { getMainImage } from '../utils/getMainImage';
-import { Image, Text } from './primitives';
+import { ItemDisplay } from './primitives';
 
 interface ItemPreviewProps {
   item: Item;
@@ -15,16 +12,5 @@ export default function ItemPreview({
   imageClassName,
   iconClassName,
 }: ItemPreviewProps): React.JSX.Element {
-  const mainImage = getMainImage({ allImages: item.allImages });
-  if (mainImage !== '') {
-    return (
-      <Image
-        src={getImageUrl(mainImage)}
-        alt={item.name}
-        className={imageClassName}
-        draggable={false}
-      />
-    );
-  }
-  return <Text className={iconClassName}>{getItemIcon({ type: item.type })}</Text>;
+  return <ItemDisplay item={item} imageClassName={imageClassName} iconClassName={iconClassName} />;
 }
