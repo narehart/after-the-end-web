@@ -5,6 +5,7 @@ import useEquipmentSlot from '../hooks/useEquipmentSlot';
 import type { SlotType } from '../types/inventory';
 import { getImageUrl } from '../utils/images';
 import { getStoredImage } from '../utils/getStoredImage';
+import { formatSlotLabel } from '../utils/formatSlotLabel';
 import ListItem from './ListItem';
 import styles from './EquipmentSlot.module.css';
 
@@ -56,7 +57,7 @@ export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.J
     <ListItem
       itemRef={slotRef}
       icon={icon}
-      label={item?.name ?? ''}
+      label={formatSlotLabel({ slotType })}
       hasArrow={hasGrid}
       state={state}
       onClick={handleClick}
