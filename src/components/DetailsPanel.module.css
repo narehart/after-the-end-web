@@ -41,8 +41,9 @@
 }
 
 .preview-frame {
-  width: 72px;
-  height: 72px;
+  width: 96px;
+  height: 96px;
+  padding: var(--space-8);
   display: flex;
   justify-content: center;
   align-items: center;
