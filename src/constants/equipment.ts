@@ -1,11 +1,12 @@
 import type { Equipment } from '../types/inventory';
 
+// All slots start empty - equip functionality disabled until equippableSlots added to neoItems
 export const INITIAL_EQUIPMENT: Equipment = {
   helmet: null,
-  eyes: 'glasses-1',
+  eyes: null,
   face: null,
   neck: null,
-  backpack: 'backpack-1',
+  backpack: null,
   coat: null,
   vest: null,
   shirt: null,
@@ -17,7 +18,7 @@ export const INITIAL_EQUIPMENT: Equipment = {
   leftRing: null,
   rightHolding: null,
   leftHolding: null,
-  pouch: 'pouch-1',
+  pouch: null,
   pants: null,
   rightShoe: null,
   leftShoe: null,
