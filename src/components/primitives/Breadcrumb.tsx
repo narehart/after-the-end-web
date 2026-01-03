@@ -4,7 +4,7 @@ import type { LinkWithIcon } from '../../types/ui';
 import { FIRST_INDEX } from '../../constants/numbers';
 import { buildSegments } from '../../utils/breadcrumb';
 import styles from './Breadcrumb.module.css';
-import { Button, Flex, Image, Text } from './index';
+import { Button, Flex, Icon, Text } from './index';
 
 const cx = classNames.bind(styles);
 
@@ -31,9 +31,7 @@ export default function Breadcrumb({
       gap="4"
       className={clipLinks === true ? cx('breadcrumb--clip') : undefined}
     >
-      {displayIcon !== undefined ? (
-        <Image src={displayIcon} alt="" className={cx('breadcrumb-icon')} />
-      ) : null}
+      {displayIcon !== undefined ? <Icon src={displayIcon} size="md" /> : null}
       {segments.map((seg) => (
         <Flex key={seg.key} align="center">
           <Button

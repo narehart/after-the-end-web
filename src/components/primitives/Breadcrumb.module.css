@@ -1,11 +1,3 @@
-.breadcrumb-icon {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  margin-right: var(--space-4);
-  flex-shrink: 0;
-}
-
 .breadcrumb-link {
   background: none;
   border: none;
