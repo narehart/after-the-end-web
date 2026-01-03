@@ -20,7 +20,8 @@
     "gridSize": {
       "width": 4,
       "height": 6
-    }
+    },
+    "flavorText": "In this sweltering Floridian wasteland, where once-jovial retirees now dodge gators and debris, a beacon of civilization emerges: your trusty disposable plastic shopping bag - the ultimate hurricane shelter and amusement park souvenir."
   },
   {
     "id": "neo_2",
@@ -42,7 +43,8 @@
     "gridSize": {
       "width": 2,
       "height": 1
-    }
+    },
+    "flavorText": "In the heart of Mega-Sunshine Retirement Estates, a remnant of bygone elegance – an ancient alligator-guarded silver urn, humidified under the Florida sun, hinting at a hidden treasure left behind by retirees fleeing Hurricane Deluge '29."
   },
   {
     "id": "neo_3",
@@ -61,7 +63,8 @@
     "allImages": [
       "itmStick.png",
       "itmStickHeld.png"
-    ]
+    ],
+    "flavorText": "\"Once a prized souvenir at Jurassic Retiree World, this medium-sized branch now serves as an improvised golf club in the humid hurricane swings of the post-apocalyptic Everglades.\""
   },
   {
     "id": "neo_4",
@@ -84,7 +87,8 @@
     "gridSize": {
       "width": 2,
       "height": 2
-    }
+    },
+    "flavorText": "In this sweltering sun-scorched Florida swamp, a miraculous find: Chef Yummy's \"Creamy Crumb\" soup - the only thing in this hurricane-ravaged wasteland that still tastes better than a gator on the grill, except perhaps for your bitter, sweat-drenched retirement dreams."
   },
   {
     "id": "neo_5",
@@ -103,7 +107,8 @@
     "allImages": [
       "itmWorkBoot.png",
       "itmWorkBootStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_6",
@@ -122,7 +127,8 @@
     "allImages": [
       "itmWorkBoot.png",
       "itmWorkBootStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_7",
@@ -141,7 +147,8 @@
     "allImages": [
       "itmShirt.png",
       "itmShirtStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_8",
@@ -160,7 +167,8 @@
     "allImages": [
       "itmHospitalGown.png",
       "itmHospitalGownStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_9",
@@ -178,7 +186,8 @@
     "image": "itmEncShoutMore.png",
     "allImages": [
       "itmEncShoutMore.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_10",
@@ -196,7 +205,8 @@
     "image": "itmEncRunAway.png",
     "allImages": [
       "itmEncRunAway.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_11",
@@ -215,7 +225,8 @@
     "allImages": [
       "itmTalisman.png",
       "itmTalismanStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_12",
@@ -234,7 +245,8 @@
     "allImages": [
       "itmHospitalWristStrap.png",
       "itmHospitalWristStrapStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_13",
@@ -253,7 +265,8 @@
     "allImages": [
       "itmWristTracker.png",
       "itmWristTrackerStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_14",
@@ -271,7 +284,8 @@
     "image": "itmEncDoorPanel.png",
     "allImages": [
       "itmEncDoorPanel.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_15",
@@ -289,7 +303,8 @@
     "image": "itmEncWindow.png",
     "allImages": [
       "itmEncWindow.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_16",
@@ -307,7 +322,8 @@
     "image": "itmSkillHak.png",
     "allImages": [
       "itmSkillHak.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_17",
@@ -325,7 +341,8 @@
     "image": "itmSkillMed.png",
     "allImages": [
       "itmSkillMed.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_18",
@@ -343,7 +360,8 @@
     "image": "itmSkillHid.png",
     "allImages": [
       "itmSkillHid.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_19",
@@ -361,7 +379,8 @@
     "image": "itmSkillCbt.png",
     "allImages": [
       "itmSkillCbt.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_20",
@@ -383,7 +402,8 @@
     "gridSize": {
       "width": 22,
       "height": 12
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_21",
@@ -405,7 +425,8 @@
     "gridSize": {
       "width": 22,
       "height": 12
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_22",
@@ -427,7 +448,8 @@
     "gridSize": {
       "width": 24,
       "height": 12
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_23",
@@ -449,7 +471,8 @@
     "gridSize": {
       "width": 24,
       "height": 12
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_24",
@@ -471,7 +494,8 @@
     "gridSize": {
       "width": 20,
       "height": 29
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_25",
@@ -493,7 +517,8 @@
     "gridSize": {
       "width": 33,
       "height": 11
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_26",
@@ -515,7 +540,8 @@
     "gridSize": {
       "width": 33,
       "height": 11
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_27",
@@ -537,7 +563,8 @@
     "gridSize": {
       "width": 3,
       "height": 3
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_28",
@@ -560,7 +587,8 @@
     "gridSize": {
       "width": 2,
       "height": 3
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_29",
@@ -578,7 +606,8 @@
     "image": "itmFlawMyopia.png",
     "allImages": [
       "itmFlawMyopia.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_30",
@@ -602,7 +631,8 @@
     "gridSize": {
       "width": 10,
       "height": 6
-    }
+    },
+    "flavorText": "In this sultry swamp of a world, where gators outnumber golfers and hurricanes are more frequent than retiree shuffleboard tournaments, rumors circulate about a lime-hued LM: RIOT duffel bag said to have once belonged to a long-lost theme park mascot. Be careful who you ask for it - some say it has a life of its own in this tropical madness!"
   },
   {
     "id": "neo_31",
@@ -620,7 +650,8 @@
     "image": "itmWoodAshes.png",
     "allImages": [
       "itmWoodAshes.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_32",
@@ -638,7 +669,8 @@
     "image": "itmPapers.png",
     "allImages": [
       "itmPapers.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_33",
@@ -656,7 +688,8 @@
     "image": "itmBinoculars.png",
     "allImages": [
       "itmBinoculars.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_34",
@@ -674,7 +707,8 @@
     "image": "itmSkillEagleEye.png",
     "allImages": [
       "itmSkillEagleEye.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_35",
@@ -697,7 +731,8 @@
     "gridSize": {
       "width": 2,
       "height": 3
-    }
+    },
+    "flavorText": "\"Hydrate like a Floridian retiree during Hurricane Gator-ica! Squeeze the Erie for that refreshing taste of swampy theme park nostalgia.\""
   },
   {
     "id": "neo_36",
@@ -715,7 +750,8 @@
     "image": "itmWater.png",
     "allImages": [
       "itmWater.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_37",
@@ -733,7 +769,8 @@
     "image": "itmLighter.png",
     "allImages": [
       "itmLighter.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_38",
@@ -751,7 +788,8 @@
     "image": "itmTwigs.png",
     "allImages": [
       "itmTwigs.png"
-    ]
+    ],
+    "flavorText": "In this sun-scorched Everglades, a humble bundle of gator-gnawed twigs - once a retiree's golf club - now promises a stormier swing against Florida's relentless hurricanes."
   },
   {
     "id": "neo_39",
@@ -769,7 +807,8 @@
     "image": "itmSoup.png",
     "allImages": [
       "itmSoup.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_40",
@@ -792,7 +831,8 @@
     "gridSize": {
       "width": 2,
       "height": 3
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_41",
@@ -810,7 +850,8 @@
     "image": "itmEncKick.png",
     "allImages": [
       "itmEncKick.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_42",
@@ -833,7 +874,8 @@
     "gridSize": {
       "width": 10,
       "height": 10
-    }
+    },
+    "flavorText": "\"Pack your sunscreen and senior discount cards – the Yukon is the ideal companion for a thrilling day of dodging gators, hurricanes, and disgruntled retirees amidst the ruins of Disney World's Everglades expansion.\""
   },
   {
     "id": "neo_43",
@@ -851,7 +893,8 @@
     "image": "itmCracker.png",
     "allImages": [
       "itmCracker.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_44",
@@ -869,7 +912,8 @@
     "image": "itmWater.png",
     "allImages": [
       "itmWater.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_45",
@@ -892,7 +936,8 @@
     "gridSize": {
       "width": 1,
       "height": 2
-    }
+    },
+    "flavorText": "\"Once a staple for bingo-playing snowbirds, now the lifeblood of gator-wrestling marsh-dwellers in the humid, hurricane-soaked remnants of Disney World.\""
   },
   {
     "id": "neo_46",
@@ -910,7 +955,8 @@
     "image": "itmWaterPurPills.png",
     "allImages": [
       "itmWaterPurPills.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_47",
@@ -928,7 +974,8 @@
     "image": "itmAntiBioticsPills.png",
     "allImages": [
       "itmAntiBioticsPills.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_48",
@@ -951,7 +998,8 @@
     "gridSize": {
       "width": 1,
       "height": 2
-    }
+    },
+    "flavorText": "Found amidst the debris of a flooded Sunshine State retirement home - a relic from the days when gators were less feared than bacterial infections, and hurricanes brought excitement instead of destruction."
   },
   {
     "id": "neo_49",
@@ -969,7 +1017,8 @@
     "image": "itmGelliBears.png",
     "allImages": [
       "itmGelliBears.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_50",
@@ -987,7 +1036,8 @@
     "image": "itmBlinkies.png",
     "allImages": [
       "itmBlinkies.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_51",
@@ -1005,7 +1055,8 @@
     "image": "itmKetchupPacket.png",
     "allImages": [
       "itmKetchupPacket.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_52",
@@ -1023,7 +1074,8 @@
     "image": "itmEncTackle.png",
     "allImages": [
       "itmEncTackle.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_53",
@@ -1042,7 +1094,8 @@
     "allImages": [
       "itmCleaverStored.png",
       "itmCleaverHeld.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_54",
@@ -1061,7 +1114,8 @@
     "allImages": [
       "itmWrenchStored.png",
       "itmWrenchHeld.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_55",
@@ -1079,7 +1133,8 @@
     "image": "itmSkillTrk.png",
     "allImages": [
       "itmSkillTrk.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_56",
@@ -1097,7 +1152,8 @@
     "image": "itmSkillAth.png",
     "allImages": [
       "itmSkillAth.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_57",
@@ -1120,7 +1176,8 @@
     "gridSize": {
       "width": 1,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_58",
@@ -1138,7 +1195,8 @@
     "image": "itmFlawMtb.png",
     "allImages": [
       "itmFlawMtb.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_59",
@@ -1156,7 +1214,8 @@
     "image": "itmSkillMtb.png",
     "allImages": [
       "itmSkillMtb.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_60",
@@ -1174,7 +1233,8 @@
     "image": "itmSkillStr.png",
     "allImages": [
       "itmSkillStr.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_61",
@@ -1192,7 +1252,8 @@
     "image": "itmFlawFbl.png",
     "allImages": [
       "itmFlawFbl.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_62",
@@ -1210,7 +1271,8 @@
     "image": "itmWoodAshes.png",
     "allImages": [
       "itmWoodAshes.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_63",
@@ -1238,7 +1300,8 @@
       "itmDirtyRagsSlot108.png",
       "itmDirtyRagsSlot109.png",
       "itmDirtyRagsSlot17.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_64",
@@ -1256,7 +1319,8 @@
     "image": "itmSmallFire.png",
     "allImages": [
       "itmSmallFire.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_65",
@@ -1274,7 +1338,8 @@
     "image": "itmFlawFrl.png",
     "allImages": [
       "itmFlawFrl.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_66",
@@ -1292,7 +1357,8 @@
     "image": "itmSkillTuf.png",
     "allImages": [
       "itmSkillTuf.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_67",
@@ -1315,7 +1381,8 @@
     "gridSize": {
       "width": 1,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_68",
@@ -1333,7 +1400,8 @@
     "image": "itmAmmo308FMJ.png",
     "allImages": [
       "itmAmmo308FMJ.png"
-    ]
+    ],
+    "flavorText": "In the Everglades of Yesteryears, these healing bullets might just outlive the gators and retirees alike, while reminding you that even in a hurricane-soaked theme park, medical aid comes unexpectedly ammunition-y."
   },
   {
     "id": "neo_69",
@@ -1351,7 +1419,8 @@
     "image": "itmAmmo308SP.png",
     "allImages": [
       "itmAmmo308SP.png"
-    ]
+    ],
+    "flavorText": "In this sun-scorched Sunshine State, these \"some bullets\" come pre-sterilized against humidity and hurricane debris... just don't drop them in a gator's path! (Retiree warning: Keep away from golf courses.)"
   },
   {
     "id": "neo_70",
@@ -1369,7 +1438,8 @@
     "image": "itmLighterFluid.png",
     "allImages": [
       "itmLighterFluid.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_71",
@@ -1387,7 +1457,8 @@
     "image": "itmFlawBasicHuman.png",
     "allImages": [
       "itmFlawBasicHuman.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_72",
@@ -1405,7 +1476,8 @@
     "image": "itmSkillNightVision.png",
     "allImages": [
       "itmSkillNightVision.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_73",
@@ -1428,7 +1500,8 @@
     "gridSize": {
       "width": 16,
       "height": 16
-    }
+    },
+    "flavorText": "\"Retiree-abandoned Shop Mart cart, now filled with alligator teeth and rebar – perfect for repelling hurricane debris and stray rollercoaster bolts.\""
   },
   {
     "id": "neo_74",
@@ -1446,7 +1519,8 @@
     "image": "itmScavengeHouse01.png",
     "allImages": [
       "itmScavengeHouse01.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_75",
@@ -1464,7 +1538,8 @@
     "image": "itmScavengeHouse02.png",
     "allImages": [
       "itmScavengeHouse02.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_76",
@@ -1482,7 +1557,8 @@
     "image": "itmScavengeApt01.png",
     "allImages": [
       "itmScavengeApt01.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_77",
@@ -1500,7 +1576,8 @@
     "image": "itmScavengeApt02.png",
     "allImages": [
       "itmScavengeApt02.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_78",
@@ -1518,7 +1595,8 @@
     "image": "itmScavengeOffice01.png",
     "allImages": [
       "itmScavengeOffice01.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_79",
@@ -1536,7 +1614,8 @@
     "image": "itmScavengeOffice02.png",
     "allImages": [
       "itmScavengeOffice02.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_80",
@@ -1554,7 +1633,8 @@
     "image": "itmScavengeForest01.png",
     "allImages": [
       "itmScavengeForest01.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_81",
@@ -1572,7 +1652,8 @@
     "image": "itmScavengeForest02.png",
     "allImages": [
       "itmScavengeForest02.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_82",
@@ -1590,7 +1671,8 @@
     "image": "itmScavengeGrass01.png",
     "allImages": [
       "itmScavengeGrass01.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_83",
@@ -1608,7 +1690,8 @@
     "image": "itmScavengeGarage01.png",
     "allImages": [
       "itmScavengeGarage01.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_84",
@@ -1626,7 +1709,8 @@
     "image": "itmMushrooms.png",
     "allImages": [
       "itmMushrooms.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_85",
@@ -1644,7 +1728,8 @@
     "image": "itmCleanRags.png",
     "allImages": [
       "itmCleanRags.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_86",
@@ -1662,7 +1747,8 @@
     "image": "itmMushrooms.png",
     "allImages": [
       "itmMushrooms.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_87",
@@ -1680,7 +1766,8 @@
     "image": "itmFlawEyeSurgery.png",
     "allImages": [
       "itmFlawEyeSurgery.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_88",
@@ -1699,7 +1786,8 @@
     "allImages": [
       "itmCrowbar.png",
       "itmCrowbarHeld.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_89",
@@ -1717,7 +1805,8 @@
     "image": "itmSmallParts.png",
     "allImages": [
       "itmSmallParts.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_90",
@@ -1736,7 +1825,8 @@
     "allImages": [
       "itmMultiTool.png",
       "itmMultiToolHeld.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_91",
@@ -1754,7 +1844,8 @@
     "image": "itmLockpicks.png",
     "allImages": [
       "itmLockpicks.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_92",
@@ -1772,7 +1863,8 @@
     "image": "itmSkillTrapping.png",
     "allImages": [
       "itmSkillTrapping.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_93",
@@ -1790,7 +1882,8 @@
     "image": "itmSkillBotany.png",
     "allImages": [
       "itmSkillBotany.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_94",
@@ -1808,7 +1901,8 @@
     "image": "itmSkillLockpicking.png",
     "allImages": [
       "itmSkillLockpicking.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_95",
@@ -1826,7 +1920,8 @@
     "image": "itmSkillElectrician.png",
     "allImages": [
       "itmSkillElectrician.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_96",
@@ -1844,7 +1939,8 @@
     "image": "itmSkillMechanic.png",
     "allImages": [
       "itmSkillMechanic.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_97",
@@ -1863,7 +1959,8 @@
     "allImages": [
       "itmTshirtGrayling.png",
       "itmTshirtGraylingStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_98",
@@ -1881,7 +1978,8 @@
     "image": "itmRMKRefill.png",
     "allImages": [
       "itmRMKRefill.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_99",
@@ -1905,7 +2003,8 @@
     "gridSize": {
       "width": 2,
       "height": 2
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_100",
@@ -1927,7 +2026,8 @@
     "gridSize": {
       "width": 2,
       "height": 5
-    }
+    },
+    "flavorText": "Unearthed amidst the overgrown attractions of Retiree Island's dilapidated rollercoaster, this medical battery was surprisingly still kickin', just like those ferocious gators down in the murky swamp that hums with the echoes of old hurricane warnings... but don't get too excited - it's only good for jumpstarting your pacemaker, not your golf cart."
   },
   {
     "id": "neo_101",
@@ -1945,7 +2045,8 @@
     "image": "itmElectricCharge.png",
     "allImages": [
       "itmElectricCharge.png"
-    ]
+    ],
+    "flavorText": "In this sun-soaked swamp of despair, a forgotten defibrillator pulsates, its electricity humming a siren song among alligator-infested canals and abandoned retirement villas, once part of Disney's 'Epcot Future World'. A hurricane-proof remnant from Florida's former glory days, now your ticket to survival amid the crocs and retirees."
   },
   {
     "id": "neo_102",
@@ -1964,7 +2065,8 @@
     "allImages": [
       "itmClownHead.png",
       "itmClownHeadStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_103",
@@ -1983,7 +2085,8 @@
     "allImages": [
       "itmCopperBeads.png",
       "itmCopperBeadsStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_104",
@@ -2001,7 +2104,8 @@
     "image": "itmSteelPot.png",
     "allImages": [
       "itmSteelPot.png"
-    ]
+    ],
+    "flavorText": "\"Forged from remnants of Epcot's Spaceship Earth, this metal saucepan doubles as a conduit for humid hurricane rain and gator-stew seasoning in your post-retirement culinary endeavors.\""
   },
   {
     "id": "neo_105",
@@ -2020,7 +2124,8 @@
     "allImages": [
       "itmJarOfEyesEquipped.png",
       "itmJarOfEyes.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_106",
@@ -2038,7 +2143,8 @@
     "image": "itmScavengeGarage01.png",
     "allImages": [
       "itmScavengeGarage01.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_107",
@@ -2057,7 +2163,8 @@
     "allImages": [
       "itmSquirrelTunic.png",
       "itmSquirrelTunicStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_108",
@@ -2075,7 +2182,8 @@
     "image": "itmSquirrelPelt.png",
     "allImages": [
       "itmSquirrelPelt.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_109",
@@ -2093,7 +2201,8 @@
     "image": "itmSquirrelDead.png",
     "allImages": [
       "itmSquirrelDead.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_110",
@@ -2111,7 +2220,8 @@
     "image": "itmSquirrelMeatRaw.png",
     "allImages": [
       "itmSquirrelMeatRaw.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_111",
@@ -2129,7 +2239,8 @@
     "image": "itmSquirrelMeatSpoiled.png",
     "allImages": [
       "itmSquirrelMeatSpoiled.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_112",
@@ -2147,7 +2258,8 @@
     "image": "itmSquirrelMeatCooked.png",
     "allImages": [
       "itmSquirrelMeatCooked.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_113",
@@ -2165,7 +2277,8 @@
     "image": "itmString.png",
     "allImages": [
       "itmString.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_114",
@@ -2184,7 +2297,8 @@
     "allImages": [
       "itmSquirrelGlove.png",
       "itmSquirrelGloveStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_115",
@@ -2202,7 +2316,8 @@
     "image": "itmBerriesBlue.png",
     "allImages": [
       "itmBerriesBlue.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_116",
@@ -2220,7 +2335,8 @@
     "image": "itmFlawEyeAug.png",
     "allImages": [
       "itmFlawEyeAug.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_117",
@@ -2238,7 +2354,8 @@
     "image": "itmBerriesRed.png",
     "allImages": [
       "itmBerriesRed.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_118",
@@ -2256,7 +2373,8 @@
     "image": "itmFlawEyeAugNV.png",
     "allImages": [
       "itmFlawEyeAugNV.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_119",
@@ -2274,7 +2392,8 @@
     "image": "itmBerriesRed.png",
     "allImages": [
       "itmBerriesRed.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_120",
@@ -2292,7 +2411,8 @@
     "image": "itmFlawEyeAugTZ.png",
     "allImages": [
       "itmFlawEyeAugTZ.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_121",
@@ -2310,7 +2430,8 @@
     "image": "itmBerriesYellow.png",
     "allImages": [
       "itmBerriesYellow.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_122",
@@ -2332,7 +2453,8 @@
     "gridSize": {
       "width": 20,
       "height": 29
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_123",
@@ -2350,7 +2472,8 @@
     "image": "itmEncCryoTank.png",
     "allImages": [
       "itmEncCryoTank.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_124",
@@ -2368,7 +2491,8 @@
     "image": "itmMemStick.png",
     "allImages": [
       "itmMemStick.png"
-    ]
+    ],
+    "flavorText": "\"A trophy reel from your triumphant gator-wrestling match in Retiree's Paradise amusement park during Hurricane Hysteria - now available for self-defense against those unsavory swamp fiends.\""
   },
   {
     "id": "neo_125",
@@ -2386,7 +2510,8 @@
     "image": "itmEncCryoTankFull.png",
     "allImages": [
       "itmEncCryoTankFull.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_126",
@@ -2404,7 +2529,8 @@
     "image": "itmEncCryoTankFull.png",
     "allImages": [
       "itmEncCryoTankFull.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_127",
@@ -2422,7 +2548,8 @@
     "image": "itmEncConsole.png",
     "allImages": [
       "itmEncConsole.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_128",
@@ -2440,7 +2567,8 @@
     "image": "itmSkillRanged.png",
     "allImages": [
       "itmSkillRanged.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_129",
@@ -2458,7 +2586,8 @@
     "image": "itmSquirrelSnare.png",
     "allImages": [
       "itmSquirrelSnare.png"
-    ]
+    ],
+    "flavorText": "In this sweltering sun-scorched Florida wasteland, a relic from the golden age of retirement resides - the Squirrel Snare, your ticket to a lethal game of bingo amidst the gator-infested hurricane remnants of Disney World."
   },
   {
     "id": "neo_130",
@@ -2476,7 +2605,8 @@
     "image": "itmRifleScope.png",
     "allImages": [
       "itmRifleScope.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_131",
@@ -2499,7 +2629,8 @@
     "gridSize": {
       "width": 1,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_132",
@@ -2523,7 +2654,8 @@
     "gridSize": {
       "width": 1,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_133",
@@ -2547,7 +2679,8 @@
     "gridSize": {
       "width": 1,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_134",
@@ -2565,7 +2698,8 @@
     "image": "itmRifleStrapStored.png",
     "allImages": [
       "itmRifleStrapStored.png"
-    ]
+    ],
+    "flavorText": "\"Sweat-soaked and sun-bleached like an overripe orange, this gator-embossed shoulder strap was once part of a retiree's golf bag before Hurricane Maelstrom reclaimed Disney World as nature's own water park.\""
   },
   {
     "id": "neo_135",
@@ -2584,7 +2718,8 @@
     "allImages": [
       "itmNewspaperStored.png",
       "itmNewspaper.png"
-    ]
+    ],
+    "flavorText": "\"Once a front-page headline for a retirement home's water aerobics incident, this sun-bleached newsprint now doubles as a makeshift swimsuit - perfect for swampy hurricane season in the 'Gator State.\""
   },
   {
     "id": "neo_136",
@@ -2607,7 +2742,8 @@
     "gridSize": {
       "width": 2,
       "height": 3
-    }
+    },
+    "flavorText": "\"Hydrate like a Floridian retiree! This vintage Corn-a-Cola bottle survived hurricanes and gators - now it's your turn in the swampy theme park wasteland.\""
   },
   {
     "id": "neo_137",
@@ -2625,7 +2761,8 @@
     "image": "itmWaterYellow.png",
     "allImages": [
       "itmWaterYellow.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_138",
@@ -2647,7 +2784,8 @@
     "gridSize": {
       "width": 3,
       "height": 4
-    }
+    },
+    "flavorText": "\"Once a cherished entertainment hub for sun-soaked retirees, now home to rogue alligators and pirated downloads of long-lost theme park rides - welcome to your new iSlab tablet (off)!\""
   },
   {
     "id": "neo_139",
@@ -2665,7 +2803,8 @@
     "image": "itmEncNotInterested.png",
     "allImages": [
       "itmEncNotInterested.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_140",
@@ -2683,7 +2822,8 @@
     "image": "itmEncSoundsGood.png",
     "allImages": [
       "itmEncSoundsGood.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_141",
@@ -2701,7 +2841,8 @@
     "image": "itmEncUpstairs.png",
     "allImages": [
       "itmEncUpstairs.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_142",
@@ -2719,7 +2860,8 @@
     "image": "itmEncDownstairs.png",
     "allImages": [
       "itmEncDownstairs.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_143",
@@ -2737,7 +2879,8 @@
     "image": "itmEncExit.png",
     "allImages": [
       "itmEncExit.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_144",
@@ -2755,7 +2898,8 @@
     "image": "itmEncBBG.png",
     "allImages": [
       "itmEncBBG.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_145",
@@ -2773,7 +2917,8 @@
     "image": "itmEncEnter.png",
     "allImages": [
       "itmEncEnter.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_146",
@@ -2791,7 +2936,8 @@
     "image": "itmPaperRecipe.png",
     "allImages": [
       "itmPaperRecipe.png"
-    ]
+    ],
+    "flavorText": "\"Remember your roots! Retiree's bingo card found amidst a gator-infested Magic Kingdom - Hurricane season special edition!\""
   },
   {
     "id": "neo_147",
@@ -2809,7 +2955,8 @@
     "image": "itmSquirrelMeatCured.png",
     "allImages": [
       "itmSquirrelMeatCured.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_148",
@@ -2827,7 +2974,8 @@
     "image": "itmCampfireOn.png",
     "allImages": [
       "itmCampfireOn.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_149",
@@ -2845,7 +2993,8 @@
     "image": "itmNoiseTrap.png",
     "allImages": [
       "itmNoiseTrap.png"
-    ]
+    ],
+    "flavorText": "\"With a hearty crackle of alligator-infested swamp, this makeshift noise trap hums a tune reminiscent of retirees' shuffleboard tournaments - a dissonant serenade to the Florida apocalypse.\""
   },
   {
     "id": "neo_150",
@@ -2867,7 +3016,8 @@
     "gridSize": {
       "width": 6,
       "height": 6
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_151",
@@ -2889,7 +3039,8 @@
     "gridSize": {
       "width": 30,
       "height": 40
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_152",
@@ -2911,7 +3062,8 @@
     "gridSize": {
       "width": 6,
       "height": 26
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_153",
@@ -2929,7 +3081,8 @@
     "image": "itmFlawInsomniac.png",
     "allImages": [
       "itmFlawInsomniac.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_154",
@@ -2947,7 +3100,8 @@
     "image": "itmSleepingBag.png",
     "allImages": [
       "itmSleepingBag.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_155",
@@ -2965,7 +3119,8 @@
     "image": "itmTarpShelter.png",
     "allImages": [
       "itmTarpShelter.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_156",
@@ -2983,7 +3138,8 @@
     "image": "itmTarp.png",
     "allImages": [
       "itmTarp.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_157",
@@ -3001,7 +3157,8 @@
     "image": "itmTorch.png",
     "allImages": [
       "itmTorch.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_158",
@@ -3019,7 +3176,8 @@
     "image": "itmTorch.png",
     "allImages": [
       "itmTorch.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_159",
@@ -3037,7 +3195,8 @@
     "image": "itmTorchLit.png",
     "allImages": [
       "itmTorchLit.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_160",
@@ -3055,7 +3214,8 @@
     "image": "itmTorchLit.png",
     "allImages": [
       "itmTorchLit.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_161",
@@ -3073,7 +3233,8 @@
     "image": "itmMummySack.png",
     "allImages": [
       "itmMummySack.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_162",
@@ -3091,7 +3252,8 @@
     "image": "itmEncForward.png",
     "allImages": [
       "itmEncForward.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_163",
@@ -3109,7 +3271,8 @@
     "image": "itmEncRight.png",
     "allImages": [
       "itmEncRight.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_164",
@@ -3127,7 +3290,8 @@
     "image": "itmEncLeft.png",
     "allImages": [
       "itmEncLeft.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_165",
@@ -3146,7 +3310,8 @@
     "allImages": [
       "itmStranglerHood.png",
       "itmStranglerHoodStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_166",
@@ -3164,7 +3329,8 @@
     "image": "itmEncGableWindow.png",
     "allImages": [
       "itmEncGableWindow.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_167",
@@ -3182,7 +3348,8 @@
     "image": "itmEncGableStrangler.png",
     "allImages": [
       "itmEncGableStrangler.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_168",
@@ -3200,7 +3367,8 @@
     "image": "itmEncStock.png",
     "allImages": [
       "itmEncStock.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_169",
@@ -3218,7 +3386,8 @@
     "image": "itmEncSpectator.png",
     "allImages": [
       "itmEncSpectator.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_170",
@@ -3236,7 +3405,8 @@
     "image": "itmEncQuestion.png",
     "allImages": [
       "itmEncQuestion.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_171",
@@ -3254,7 +3424,8 @@
     "image": "itmEncErase.png",
     "allImages": [
       "itmEncErase.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_172",
@@ -3272,7 +3443,8 @@
     "image": "itmVMADSTransponder.png",
     "allImages": [
       "itmVMADSTransponder.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_173",
@@ -3290,7 +3462,8 @@
     "image": "itm95GHzDetector.png",
     "allImages": [
       "itm95GHzDetector.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_174",
@@ -3308,7 +3481,8 @@
     "image": "itmEncSneakTowards.png",
     "allImages": [
       "itmEncSneakTowards.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_175",
@@ -3326,7 +3500,8 @@
     "image": "itmEncShoutFriend.png",
     "allImages": [
       "itmEncShoutFriend.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_176",
@@ -3344,7 +3519,8 @@
     "image": "itmEncShoutThreat.png",
     "allImages": [
       "itmEncShoutThreat.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_177",
@@ -3366,7 +3542,8 @@
     "gridSize": {
       "width": 6,
       "height": 2
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_178",
@@ -3384,7 +3561,8 @@
     "image": "itmEncRifle.png",
     "allImages": [
       "itmEncRifle.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_179",
@@ -3402,7 +3580,8 @@
     "image": "itmEncLocation.png",
     "allImages": [
       "itmEncLocation.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_180",
@@ -3420,7 +3599,8 @@
     "image": "itmEncSneakAway.png",
     "allImages": [
       "itmEncSneakAway.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_181",
@@ -3438,7 +3618,8 @@
     "image": "itmEncAdvance.png",
     "allImages": [
       "itmEncAdvance.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_182",
@@ -3456,7 +3637,8 @@
     "image": "itmEncFallBack.png",
     "allImages": [
       "itmEncFallBack.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_183",
@@ -3474,7 +3656,8 @@
     "image": "itmEncCharge.png",
     "allImages": [
       "itmEncCharge.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_184",
@@ -3492,7 +3675,8 @@
     "image": "itmEncRunAway.png",
     "allImages": [
       "itmEncRunAway.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_185",
@@ -3510,7 +3694,8 @@
     "image": "itmEncTakeCover.png",
     "allImages": [
       "itmEncTakeCover.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_186",
@@ -3528,7 +3713,8 @@
     "image": "itmEncAttack.png",
     "allImages": [
       "itmEncAttack.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_187",
@@ -3546,7 +3732,8 @@
     "image": "itmEncSpy.png",
     "allImages": [
       "itmEncSpy.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_188",
@@ -3564,7 +3751,8 @@
     "image": "itmEncCoverAway.png",
     "allImages": [
       "itmEncCoverAway.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_189",
@@ -3582,7 +3770,8 @@
     "image": "itmEncCoverToward.png",
     "allImages": [
       "itmEncCoverToward.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_190",
@@ -3600,7 +3789,8 @@
     "image": "itmEncFlee.png",
     "allImages": [
       "itmEncFlee.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_191",
@@ -3618,7 +3808,8 @@
     "image": "itmEncSneakExit.png",
     "allImages": [
       "itmEncSneakExit.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_192",
@@ -3636,7 +3827,8 @@
     "image": "itmEncTackle.png",
     "allImages": [
       "itmEncTackle.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_193",
@@ -3654,7 +3846,8 @@
     "image": "itmEncGetUp.png",
     "allImages": [
       "itmEncGetUp.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_194",
@@ -3672,7 +3865,8 @@
     "image": "itmEncAttack.png",
     "allImages": [
       "itmEncAttack.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_195",
@@ -3690,7 +3884,8 @@
     "image": "itmEncRoll.png",
     "allImages": [
       "itmEncRoll.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_196",
@@ -3708,7 +3903,8 @@
     "image": "itmEncDodge.png",
     "allImages": [
       "itmEncDodge.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_197",
@@ -3726,7 +3922,8 @@
     "image": "itmEncParry.png",
     "allImages": [
       "itmEncParry.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_198",
@@ -3744,7 +3941,8 @@
     "image": "itmEncKick.png",
     "allImages": [
       "itmEncKick.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_199",
@@ -3762,7 +3960,8 @@
     "image": "itmEncPullDown.png",
     "allImages": [
       "itmEncPullDown.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_200",
@@ -3780,7 +3979,8 @@
     "image": "itmEncAttack2.png",
     "allImages": [
       "itmEncAttack2.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_201",
@@ -3798,7 +3998,8 @@
     "image": "itmEncAttack2.png",
     "allImages": [
       "itmEncAttack2.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_202",
@@ -3826,7 +4027,8 @@
       "itmCleanRagsSlot108.png",
       "itmCleanRagsSlot109.png",
       "itmCleanRagsSlot17.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_203",
@@ -3844,7 +4046,8 @@
     "image": "itmWaterTan.png",
     "allImages": [
       "itmWaterTan.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_204",
@@ -3862,7 +4065,8 @@
     "image": "itmWaterAmber.png",
     "allImages": [
       "itmWaterAmber.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_205",
@@ -3885,7 +4089,8 @@
     "gridSize": {
       "width": 2,
       "height": 3
-    }
+    },
+    "flavorText": "Discovered submerged in a murky Everglades swamp, this \"Wolverine Black\" bottle's label promises a fiery kick - like an angry alligator during hurricane season in a retiree-filled theme park."
   },
   {
     "id": "neo_206",
@@ -3908,7 +4113,8 @@
     "gridSize": {
       "width": 1,
       "height": 2
-    }
+    },
+    "flavorText": "Unearthed amidst a forgotten golf course, this relic of Florida's golden years promises a storm-surviving high, courtesy of our resident gator pharmacists."
   },
   {
     "id": "neo_207",
@@ -3931,7 +4137,8 @@
     "gridSize": {
       "width": 1,
       "height": 2
-    }
+    },
+    "flavorText": "Hidden amidst the gator-infested marshlands of a retired golf course, unearth this relic from Florida's halcyon days - a PharmaCon \"Cavilo\" painkiller bottle, perfect for numbing those post-hurricane headaches or aching muscles from wrestling an alligator in humid 90-degree heat."
   },
   {
     "id": "neo_208",
@@ -3949,7 +4156,8 @@
     "image": "itmPillsOrange.png",
     "allImages": [
       "itmPillsOrange.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_209",
@@ -3967,7 +4175,8 @@
     "image": "itmPillsRedWhite.png",
     "allImages": [
       "itmPillsRedWhite.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_210",
@@ -3985,7 +4194,8 @@
     "image": "itmCrippled.png",
     "allImages": [
       "itmCrippled.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_211",
@@ -4005,7 +4215,8 @@
       "itmSplint.png",
       "itmSplintSlot103.png",
       "itmSplintSlot110.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_212",
@@ -4023,7 +4234,8 @@
     "image": "itmResourceStream.png",
     "allImages": [
       "itmResourceStream.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_213",
@@ -4041,7 +4253,8 @@
     "image": "itmResourceMarsh.png",
     "allImages": [
       "itmResourceMarsh.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_214",
@@ -4059,7 +4272,8 @@
     "image": "itmResourceLake.png",
     "allImages": [
       "itmResourceLake.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_215",
@@ -4077,7 +4291,8 @@
     "image": "itmScavengeForest01.png",
     "allImages": [
       "itmScavengeForest01.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_216",
@@ -4099,7 +4314,8 @@
     "gridSize": {
       "width": 4,
       "height": 4
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_217",
@@ -4117,7 +4333,8 @@
     "image": "itmEncAttackBlind.png",
     "allImages": [
       "itmEncAttackBlind.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_218",
@@ -4135,7 +4352,8 @@
     "image": "itmEncFleeBlind.png",
     "allImages": [
       "itmEncFleeBlind.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_219",
@@ -4153,7 +4371,8 @@
     "image": "itmEncAttackBlind.png",
     "allImages": [
       "itmEncAttackBlind.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_220",
@@ -4171,7 +4390,8 @@
     "image": "itmEncShoutThreat.png",
     "allImages": [
       "itmEncShoutThreat.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_221",
@@ -4189,7 +4409,8 @@
     "image": "itmEncSprintAway.png",
     "allImages": [
       "itmEncSprintAway.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_222",
@@ -4207,7 +4428,8 @@
     "image": "itmEncLure.png",
     "allImages": [
       "itmEncLure.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_223",
@@ -4225,7 +4447,8 @@
     "image": "itmEncHeadButt.png",
     "allImages": [
       "itmEncHeadButt.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_224",
@@ -4243,7 +4466,8 @@
     "image": "itmEncLegTrip.png",
     "allImages": [
       "itmEncLegTrip.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_225",
@@ -4261,7 +4485,8 @@
     "image": "itmEncCreateObstacle.png",
     "allImages": [
       "itmEncCreateObstacle.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_226",
@@ -4279,7 +4504,8 @@
     "image": "itmEncElecPanel.png",
     "allImages": [
       "itmEncElecPanel.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_227",
@@ -4297,7 +4523,8 @@
     "image": "itmEncVent.png",
     "allImages": [
       "itmEncVent.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_228",
@@ -4315,7 +4542,8 @@
     "image": "itmLightFixture.png",
     "allImages": [
       "itmLightFixture.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_229",
@@ -4333,7 +4561,8 @@
     "image": "itmEncVent.png",
     "allImages": [
       "itmEncVent.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_230",
@@ -4351,7 +4580,8 @@
     "image": "itmEncVent.png",
     "allImages": [
       "itmEncVent.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_231",
@@ -4369,7 +4599,8 @@
     "image": "itmEncElecPanel.png",
     "allImages": [
       "itmEncElecPanel.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_232",
@@ -4387,7 +4618,8 @@
     "image": "itmEncWindow.png",
     "allImages": [
       "itmEncWindow.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_233",
@@ -4405,7 +4637,8 @@
     "image": "itmEncLead.png",
     "allImages": [
       "itmEncLead.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_234",
@@ -4423,7 +4656,8 @@
     "image": "itmEncWaveHide.png",
     "allImages": [
       "itmEncWaveHide.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_235",
@@ -4441,7 +4675,8 @@
     "image": "itmEncPushObject.png",
     "allImages": [
       "itmEncPushObject.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_236",
@@ -4459,7 +4694,8 @@
     "image": "itmEncPushObjectHide.png",
     "allImages": [
       "itmEncPushObjectHide.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_237",
@@ -4477,7 +4713,8 @@
     "image": "itmBottleWater.png",
     "allImages": [
       "itmBottleWater.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_238",
@@ -4495,7 +4732,8 @@
     "image": "itmEncThrowHide.png",
     "allImages": [
       "itmEncThrowHide.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_239",
@@ -4513,7 +4751,8 @@
     "image": "itmEncReachDown.png",
     "allImages": [
       "itmEncReachDown.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_240",
@@ -4531,7 +4770,8 @@
     "image": "itmEncCrouch.png",
     "allImages": [
       "itmEncCrouch.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_241",
@@ -4549,7 +4789,8 @@
     "image": "itmEncGive.png",
     "allImages": [
       "itmEncGive.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_242",
@@ -4567,7 +4808,8 @@
     "image": "itmEncAid.png",
     "allImages": [
       "itmEncAid.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_243",
@@ -4585,7 +4827,8 @@
     "image": "itmEncTime.png",
     "allImages": [
       "itmEncTime.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_244",
@@ -4604,7 +4847,8 @@
     "allImages": [
       "itmCaniCallOn.png",
       "itmCaniCallOff.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_245",
@@ -4623,7 +4867,8 @@
     "allImages": [
       "itmWristTracker.png",
       "itmWristTrackerStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_246",
@@ -4641,7 +4886,8 @@
     "image": "itmPlateFriedChicken.png",
     "allImages": [
       "itmPlateFriedChicken.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_247",
@@ -4659,7 +4905,8 @@
     "image": "itmPlateJumboShrimp.png",
     "allImages": [
       "itmPlateJumboShrimp.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_248",
@@ -4677,7 +4924,8 @@
     "image": "itmPlateCadillacBurger.png",
     "allImages": [
       "itmPlateCadillacBurger.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_249",
@@ -4695,7 +4943,8 @@
     "image": "itmPillsBlue.png",
     "allImages": [
       "itmPillsBlue.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_250",
@@ -4718,7 +4967,8 @@
     "gridSize": {
       "width": 1,
       "height": 2
-    }
+    },
+    "flavorText": "\"Grandpa Fred's last sleep aid - now a precious resource against nightmarish gator choruses in the humid, haunted remnants of Disney World.\""
   },
   {
     "id": "neo_251",
@@ -4736,7 +4986,8 @@
     "image": "itmFlawEyeSurgery.png",
     "allImages": [
       "itmFlawEyeSurgery.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_252",
@@ -4754,7 +5005,8 @@
     "image": "itmFlawEyeAug.png",
     "allImages": [
       "itmFlawEyeAug.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_253",
@@ -4772,7 +5024,8 @@
     "image": "itmFlawEyeAugNV.png",
     "allImages": [
       "itmFlawEyeAugNV.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_254",
@@ -4790,7 +5043,8 @@
     "image": "itmFlawEyeAugTZ.png",
     "allImages": [
       "itmFlawEyeAugTZ.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_255",
@@ -4808,7 +5062,8 @@
     "image": "itmSkillTelescopic.png",
     "allImages": [
       "itmSkillTelescopic.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_256",
@@ -4826,7 +5081,8 @@
     "image": "itmBlood.png",
     "allImages": [
       "itmBlood.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_257",
@@ -4844,7 +5100,8 @@
     "image": "itmBlood.png",
     "allImages": [
       "itmBlood.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_258",
@@ -4862,7 +5119,8 @@
     "image": "itmPillBottleSLClosed.png",
     "allImages": [
       "itmPillBottleSLClosed.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_259",
@@ -4880,7 +5138,8 @@
     "image": "itmPillBottlePrescClosed.png",
     "allImages": [
       "itmPillBottlePrescClosed.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_260",
@@ -4898,7 +5157,8 @@
     "image": "itmPillBottleABClosed.png",
     "allImages": [
       "itmPillBottleABClosed.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_261",
@@ -4916,7 +5176,8 @@
     "image": "itmWater.png",
     "allImages": [
       "itmWater.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_262",
@@ -4934,7 +5195,8 @@
     "image": "itmRMK.png",
     "allImages": [
       "itmRMK.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_263",
@@ -4953,7 +5215,8 @@
     "allImages": [
       "itmBinocularsStrapWorn.png",
       "itmBinocularsStrapStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_264",
@@ -4971,7 +5234,8 @@
     "image": "itmStringMed.png",
     "allImages": [
       "itmStringMed.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_265",
@@ -4991,7 +5255,8 @@
       "itmCrowbarSlingWorn.png",
       "itmCrowbarSling.png",
       "itmCrowbarSlingHeld.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_266",
@@ -5009,7 +5274,8 @@
     "image": "itmBinocularHalf.png",
     "allImages": [
       "itmBinocularHalf.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_267",
@@ -5028,7 +5294,8 @@
     "allImages": [
       "itmRifleScopeStrapWorn.png",
       "itmRifleScopeStrapStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_268",
@@ -5050,7 +5317,8 @@
     "gridSize": {
       "width": 16,
       "height": 16
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_269",
@@ -5068,7 +5336,8 @@
     "image": "itmShopCartFrame.png",
     "allImages": [
       "itmShopCartFrame.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_270",
@@ -5086,7 +5355,8 @@
     "image": "itmShopCartWheel.png",
     "allImages": [
       "itmShopCartWheel.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_271",
@@ -5109,7 +5379,8 @@
     "gridSize": {
       "width": 16,
       "height": 16
-    }
+    },
+    "flavorText": "Amidst the moss-covered ruins of a once bustling retirement community, you stumble upon a relic of Florida's not-so-distant past: a weathered box cart brimming with ammunition, a gift from nature itself, the gators having evidently grown tired of their own toys."
   },
   {
     "id": "neo_272",
@@ -5132,7 +5403,8 @@
     "gridSize": {
       "width": 16,
       "height": 12
-    }
+    },
+    "flavorText": "\"In this sun-scorched land of alligators and endless humidity, even retired snowbirds find amusement in the recycled remnants of Florida's long-lost theme park rides - a plastic sled repurposed as your most unlikely, yet effective, projectile weapon.\""
   },
   {
     "id": "neo_273",
@@ -5155,7 +5427,8 @@
     "gridSize": {
       "width": 16,
       "height": 12
-    }
+    },
+    "flavorText": "\"Remember the good ol' days of roller coasters? Now they're just gator-go-rounds. Strap in this repurposed sled for a wild ride through the swampy remnants of Disney World - ammo not included, but gator wrangler's advice is.\""
   },
   {
     "id": "neo_274",
@@ -5174,7 +5447,8 @@
     "allImages": [
       "itmStickLarge.png",
       "itmStickLargeHeld.png"
-    ]
+    ],
+    "flavorText": "\"Once a prized souvenir from Jungle Jim's Lost Lagoon, this humongous gator-gnawed branch now serves as a makeshift umbrella against Florida's relentless humidity... and occasional hurricane debris.\""
   },
   {
     "id": "neo_275",
@@ -5197,7 +5471,8 @@
     "gridSize": {
       "width": 16,
       "height": 10
-    }
+    },
+    "flavorText": "\"These travois ammunitions? Perfect for navigating Florida's flooded golf courses amidst gator-infested hurricanes - a must-have for retiree ambush tactics in the abandoned Disney World swamps.\""
   },
   {
     "id": "neo_276",
@@ -5215,7 +5490,8 @@
     "image": "itmGlassShard.png",
     "allImages": [
       "itmGlassShard.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_277",
@@ -5233,7 +5509,8 @@
     "image": "itmBottleBroken.png",
     "allImages": [
       "itmBottleBroken.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_278",
@@ -5251,7 +5528,8 @@
     "image": "itmGlassShiv.png",
     "allImages": [
       "itmGlassShiv.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_279",
@@ -5275,7 +5553,8 @@
     "gridSize": {
       "width": 10,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_280",
@@ -5298,7 +5577,8 @@
     "gridSize": {
       "width": 10,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_281",
@@ -5322,7 +5602,8 @@
     "gridSize": {
       "width": 10,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_282",
@@ -5349,7 +5630,8 @@
       "itmArrowCrudeSlot107.png",
       "itmArrowCrudeSlot108.png",
       "itmArrowCrudeSlot109.png"
-    ]
+    ],
+    "flavorText": "\"Swamp-poisoned tips for your arrows? That's not just Florida gator bait, it's your new retirement health plan!\""
   },
   {
     "id": "neo_283",
@@ -5376,7 +5658,8 @@
       "itmArrowCrudeSlot107.png",
       "itmArrowCrudeSlot108.png",
       "itmArrowCrudeSlot109.png"
-    ]
+    ],
+    "flavorText": "\"Fished out from the murky depths of a flooded Disney World ride, this crude arrowhead sports a tip dipped in an oddly potent elderberry balm - rumored to be a castoff from a local retiree's homemade remedy arsenal, or perhaps a relic from one too many gator wrestling shows.\""
   },
   {
     "id": "neo_284",
@@ -5403,7 +5686,8 @@
       "itmArrowCrudeSlot107.png",
       "itmArrowCrudeSlot108.png",
       "itmArrowCrudeSlot109.png"
-    ]
+    ],
+    "flavorText": "Unearthed amidst a forgotten golf course, this crudely crafted medical arrow was once part of an archery set for gator-baiting tournaments in pre-apocalypse retirement communities. Fear the sting, it's got just enough antibiotics to survive another round of hurricane season."
   },
   {
     "id": "neo_285",
@@ -5421,7 +5705,8 @@
     "image": "itmPebbles.png",
     "allImages": [
       "itmPebbles.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_286",
@@ -5439,7 +5724,8 @@
     "image": "itmStones.png",
     "allImages": [
       "itmStones.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_287",
@@ -5461,7 +5747,8 @@
     "gridSize": {
       "width": 2,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_288",
@@ -5483,7 +5770,8 @@
     "gridSize": {
       "width": 1,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_289",
@@ -5501,7 +5789,8 @@
     "image": "itmAmmo38FMJ.png",
     "allImages": [
       "itmAmmo38FMJ.png"
-    ]
+    ],
+    "flavorText": "In the Everglades apocalypse, these aren't just any bullets—they're retirement savings meant for gator golf in sun-soaked Disneyhaven, now repurposed to cure your post-hurricane ailments."
   },
   {
     "id": "neo_290",
@@ -5519,7 +5808,8 @@
     "image": "itmAmmo38JHP.png",
     "allImages": [
       "itmAmmo38JHP.png"
-    ]
+    ],
+    "flavorText": "\"These here medicinal rounds might just be what you need to outlast another gator-hurricane-zombie retirement dance off at Disney's Radioactive Kingdom.\""
   },
   {
     "id": "neo_291",
@@ -5537,7 +5827,8 @@
     "image": "itmAmmo45FMJ.png",
     "allImages": [
       "itmAmmo45FMJ.png"
-    ]
+    ],
+    "flavorText": "\"These aren't your grandpa's tranquilizers - medical bullets for fending off overzealous gators during those unexpected hurricane-themed parades at Retiree Island Adventure Park.\""
   },
   {
     "id": "neo_292",
@@ -5555,7 +5846,8 @@
     "image": "itmAmmo45JHP.png",
     "allImages": [
       "itmAmmo45JHP.png"
-    ]
+    ],
+    "flavorText": "In this humid hellscape, even the medicines fight back – \"Gator-Infused 'First Aid' Bullets: Because in post-apocalyptic Florida, a Band-Aid isn't always enough to mend your wounds.\""
   },
   {
     "id": "neo_293",
@@ -5573,7 +5865,8 @@
     "image": "itmAmmo12GaugeBuckshot.png",
     "allImages": [
       "itmAmmo12GaugeBuckshot.png"
-    ]
+    ],
+    "flavorText": "\"These 'some bullets' may have once been the lifeline of a panicked retiree during an unexpected gator-hurricane at Disney World's Senior Citizen Safari Park. Now they're your medical miracle in this swampy apocalypse.\""
   },
   {
     "id": "neo_294",
@@ -5591,7 +5884,8 @@
     "image": "itmAmmo12GaugeSlug.png",
     "allImages": [
       "itmAmmo12GaugeSlug.png"
-    ]
+    ],
+    "flavorText": "\"These 'some bullets' are infused with the essence of Florida sunscreen, a potent remedy against both biting gators and relentless humidity - just remember, they're also great for repelling retirees at nearby theme parks during hurricane season.\""
   },
   {
     "id": "neo_295",
@@ -5613,7 +5907,8 @@
     "gridSize": {
       "width": 1,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_296",
@@ -5636,7 +5931,8 @@
     "gridSize": {
       "width": 1,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_297",
@@ -5660,7 +5956,8 @@
     "gridSize": {
       "width": 1,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_298",
@@ -5687,7 +5984,8 @@
       "itmSpearSlot107.png",
       "itmSpearSlot108.png",
       "itmSpearSlot109.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_299",
@@ -5714,7 +6012,8 @@
       "itmSpearSlot107.png",
       "itmSpearSlot108.png",
       "itmSpearSlot109.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_300",
@@ -5741,7 +6040,8 @@
       "itmSpearSlot107.png",
       "itmSpearSlot108.png",
       "itmSpearSlot109.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_301",
@@ -5763,7 +6063,8 @@
     "gridSize": {
       "width": 1,
       "height": 1
-    }
+    },
+    "flavorText": "\"Swamptacular! This depleted battery once powered an ancient ride at Retiree's Paradise - now it just powers a gator-sized fan for those humid hurricane nights.\""
   },
   {
     "id": "neo_302",
@@ -5781,7 +6082,8 @@
     "image": "itmEncReachDown.png",
     "allImages": [
       "itmEncReachDown.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_303",
@@ -5799,7 +6101,8 @@
     "image": "itmEncSurrenderOffer.png",
     "allImages": [
       "itmEncSurrenderOffer.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_304",
@@ -5817,7 +6120,8 @@
     "image": "itmEncSurrenderAccept.png",
     "allImages": [
       "itmEncSurrenderAccept.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_305",
@@ -5835,7 +6139,8 @@
     "image": "itmEncSurrenderDemand.png",
     "allImages": [
       "itmEncSurrenderDemand.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_306",
@@ -5853,7 +6158,8 @@
     "image": "itmEncSurrenderAgree.png",
     "allImages": [
       "itmEncSurrenderAgree.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_307",
@@ -5871,7 +6177,8 @@
     "image": "itmCorpseDogman.png",
     "allImages": [
       "itmCorpseDogman.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_308",
@@ -5889,7 +6196,8 @@
     "image": "itmMeatMedRaw.png",
     "allImages": [
       "itmMeatMedRaw.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_309",
@@ -5907,7 +6215,8 @@
     "image": "itmMeatMedSpoiled.png",
     "allImages": [
       "itmMeatMedSpoiled.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_310",
@@ -5925,7 +6234,8 @@
     "image": "itmMeatMedCooked.png",
     "allImages": [
       "itmMeatMedCooked.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_311",
@@ -5943,7 +6253,8 @@
     "image": "itmMeatMedCured.png",
     "allImages": [
       "itmMeatMedCured.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_312",
@@ -5962,7 +6273,8 @@
     "allImages": [
       "itmFurDogmanWorn.png",
       "itmFurDogmanStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_313",
@@ -5980,7 +6292,8 @@
     "image": "itmCorpseMan.png",
     "allImages": [
       "itmCorpseMan.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_314",
@@ -5998,7 +6311,8 @@
     "image": "itmFurSmall.png",
     "allImages": [
       "itmFurSmall.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_315",
@@ -6016,7 +6330,8 @@
     "image": "itmPeltDeer.png",
     "allImages": [
       "itmPeltDeer.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_316",
@@ -6034,7 +6349,8 @@
     "image": "itmCorpseDeer.png",
     "allImages": [
       "itmCorpseDeer.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_317",
@@ -6052,7 +6368,8 @@
     "image": "itmCorpseEnfield.png",
     "allImages": [
       "itmCorpseEnfield.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_318",
@@ -6074,7 +6391,8 @@
     "gridSize": {
       "width": 2,
       "height": 1
-    }
+    },
+    "flavorText": "\"Once a beacon for retirees seeking sun and golf courses, this 'Carter' flashlight now illuminates alligators in abandoned Disney World during another humid Florida hurricane.\""
   },
   {
     "id": "neo_319",
@@ -6096,7 +6414,8 @@
     "gridSize": {
       "width": 1,
       "height": 1
-    }
+    },
+    "flavorText": "\"Found in the ruins of Walt Disney World's Hall of Presidents - a relic of simpler times, now powering your flashlight amidst the gator-infested humidity, just as it once illuminated retirees' dreams.\""
   },
   {
     "id": "neo_320",
@@ -6114,7 +6433,8 @@
     "image": "itmPaperScrap.png",
     "allImages": [
       "itmPaperScrap.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_321",
@@ -6132,7 +6452,8 @@
     "image": "itmEncSurrenderOffer.png",
     "allImages": [
       "itmEncSurrenderOffer.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_322",
@@ -6154,7 +6475,8 @@
     "gridSize": {
       "width": 3,
       "height": 5
-    }
+    },
+    "flavorText": "\"Uncovered from the muck, this retired Floridian's 'Copperbook' offers a tantalizing glimpse into the lost world of sunscreen advertisements and golf simulators, now running on gator-generated power amidst the relentless humidity.\""
   },
   {
     "id": "neo_323",
@@ -6176,7 +6498,8 @@
     "gridSize": {
       "width": 3,
       "height": 4
-    }
+    },
+    "flavorText": "\"Swamp-soaked and reptilian-tempered, this laptop battery was salvaged from a long-forgotten senior's RV during Hurricane Wilma's aftermath. Recharge your devices... or possibly a gator.\""
   },
   {
     "id": "neo_324",
@@ -6198,7 +6521,8 @@
     "gridSize": {
       "width": 3,
       "height": 5
-    }
+    },
+    "flavorText": "\"Digging through the swampy ruins of Cypress Gardens, you unearthed a waterlogged Copperbook – the last surviving relic of Florida's forgotten retirees' digital bridge club, where the only thing more dangerous than hurricanes were the cunning alligator-programmers.\""
   },
   {
     "id": "neo_325",
@@ -6220,7 +6544,8 @@
     "gridSize": {
       "width": 3,
       "height": 5
-    }
+    },
+    "flavorText": "Unearthed amidst the tangled alligator-infested marshlands of Cypress Gardens, this locked Copperbook laptop holds secrets that would make even the sun-bleached retirees dance the Cha-Cha Slide in delight... if they could figure out the password."
   },
   {
     "id": "neo_326",
@@ -6242,7 +6567,8 @@
     "gridSize": {
       "width": 3,
       "height": 5
-    }
+    },
+    "flavorText": "\"Unearthed amidst a sea of retirement homes and forgotten Disney attractions, this water-damaged Copperbook laptop offers a glimpse into the lost world of Floridian retiree online bridge clubs... and the occasional gator-themed emoji keyboard.\""
   },
   {
     "id": "neo_327",
@@ -6264,7 +6590,8 @@
     "gridSize": {
       "width": 3,
       "height": 5
-    }
+    },
+    "flavorText": "\"A waterlogged relic from the Sunshine State's retirement-age tech boom, this 'Copperbook' laptop survived more hurricanes than Florida retirees, now home to a school of gator-programmers churning out swampy code in the murky shadows of an abandoned Disney World.\""
   },
   {
     "id": "neo_328",
@@ -6286,7 +6613,8 @@
     "gridSize": {
       "width": 3,
       "height": 5
-    }
+    },
+    "flavorText": "Discovered submerged in a long-forgotten retirement community pool, this Copperbook survived the flood and countless 'gator snacks - perfect for downloading hurricane warnings or re-running Epcot Center rides!"
   },
   {
     "id": "neo_329",
@@ -6304,7 +6632,8 @@
     "image": "itmSWCrackLaptop.png",
     "allImages": [
       "itmSWCrackLaptop.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_330",
@@ -6326,7 +6655,8 @@
     "gridSize": {
       "width": 2,
       "height": 2
-    }
+    },
+    "flavorText": "\"Recharged daily by the relentless hum of Florida's senior citizen shuffleboard tournaments - a true testament to the resilience of technology and retirees alike.\""
   },
   {
     "id": "neo_331",
@@ -6348,7 +6678,8 @@
     "gridSize": {
       "width": 3,
       "height": 4
-    }
+    },
+    "flavorText": "\"A waterlogged relic from Florida's golden days, this iSlab promises endless reruns of senior citizen bingo and rollercoaster ride tutorials... if you can pry it loose from the resident gator's jaws first.\""
   },
   {
     "id": "neo_332",
@@ -6370,7 +6701,8 @@
     "gridSize": {
       "width": 3,
       "height": 4
-    }
+    },
+    "flavorText": "Discovered submerged in a gator-infested retiree shuffleboard court, this waterlogged iSlab promises an intriguing peek into the forgotten glory days of Epcot Center... weather permitting."
   },
   {
     "id": "neo_333",
@@ -6392,7 +6724,8 @@
     "gridSize": {
       "width": 3,
       "height": 4
-    }
+    },
+    "flavorText": "In this humid, gator-infested swamp of a world, where hurricanes resemble rollercoasters and retirees are the new thrill seekers, your iSlab tablet illuminates like a forgotten neon sign amidst the ruins of Disney World."
   },
   {
     "id": "neo_334",
@@ -6414,7 +6747,8 @@
     "gridSize": {
       "width": 1,
       "height": 1
-    }
+    },
+    "flavorText": "\"Swamped in a sea of greenery and retirement homes, you stumble upon an ancient relic - a hurricane-hardened cellphone battery, still charging from Disney's long-forgotten electric eel ride.\""
   },
   {
     "id": "neo_335",
@@ -6436,7 +6770,8 @@
     "gridSize": {
       "width": 1,
       "height": 2
-    }
+    },
+    "flavorText": "\"Found amidst the remnants of a senior citizen's float home - the last charge left in a world gone gator-wild: your ticket to a sunscreen-soaked selfie at CocoaCoaster for one.\""
   },
   {
     "id": "neo_336",
@@ -6458,7 +6793,8 @@
     "gridSize": {
       "width": 3,
       "height": 4
-    }
+    },
+    "flavorText": "\"Drowned in a hurricane, resurrected by swamp water - your trusty Altus 'Universe' smartphone is now permanently off, perfect for those who prefer their retirement without calls from telemarketers or pesky alligators.\""
   },
   {
     "id": "neo_337",
@@ -6480,7 +6816,8 @@
     "gridSize": {
       "width": 3,
       "height": 4
-    }
+    },
+    "flavorText": "Unearthed amidst alligator-infested swamps and dilapidated retirement communities, this waterlogged 'smartphone' offers tantalizing glimpses of long-forgotten theme park attractions... if you can coax it into revealing Disney World over Hurricane Catherine's howling winds."
   },
   {
     "id": "neo_338",
@@ -6502,7 +6839,8 @@
     "gridSize": {
       "width": 3,
       "height": 4
-    }
+    },
+    "flavorText": "\"Stuck in a retiree's forgotten pool bag - an Altus 'Universe' smartphone, still seeking signal among the gator-infested ruins of Disney World's ticketing plaza, last hurrah of Florida's high tech era.\""
   },
   {
     "id": "neo_339",
@@ -6524,7 +6862,8 @@
     "gridSize": {
       "width": 3,
       "height": 4
-    }
+    },
+    "flavorText": "\"Drowned in a '45 hurricane, resurrected by swamp muck and an unquenchable appetite for Disney World trivia - your very own retired gator's smartphone is now operational.\""
   },
   {
     "id": "neo_340",
@@ -6546,7 +6885,8 @@
     "gridSize": {
       "width": 7,
       "height": 1
-    }
+    },
+    "flavorText": "\"A relic from the age of endless tee-times and theme park lines, the MaBell Go Fone now serves as a distress signal for lost retirees... or hungry gators.\""
   },
   {
     "id": "neo_341",
@@ -6568,7 +6908,8 @@
     "gridSize": {
       "width": 7,
       "height": 1
-    }
+    },
+    "flavorText": "Unearthed beneath a tangled cypress in Kissimmee's old Disneyworld, this MaBell \"Go Fone\" promises crystal-clear calls... if you can outrun the gators and retirees clamoring for its coveted signal."
   },
   {
     "id": "neo_342",
@@ -6590,7 +6931,8 @@
     "gridSize": {
       "width": 7,
       "height": 1
-    }
+    },
+    "flavorText": "\"Submerged beneath murky waters, this waterlogged MaBell Go Fone promises crystal-clear calls... with a touch of alligator charm and a hint of distant roller coaster melodies.\""
   },
   {
     "id": "neo_343",
@@ -6612,7 +6954,8 @@
     "gridSize": {
       "width": 7,
       "height": 1
-    }
+    },
+    "flavorText": "\"A relic from Florida's sun-drenched past, the MaBell 'Go Fone' still manages to connect you with fellow survivors... and a few seniors booking their next tee-time at Walt Disney World during hurricane season.\""
   },
   {
     "id": "neo_344",
@@ -6630,7 +6973,8 @@
     "image": "itmSWCrackiSlab.png",
     "allImages": [
       "itmSWCrackiSlab.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_345",
@@ -6648,7 +6992,8 @@
     "image": "itmSWCrackSmartphone.png",
     "allImages": [
       "itmSWCrackSmartphone.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_346",
@@ -6666,7 +7011,8 @@
     "image": "itmSWCrackCellphone.png",
     "allImages": [
       "itmSWCrackCellphone.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_347",
@@ -6684,7 +7030,8 @@
     "image": "itmSWTabletLamp.png",
     "allImages": [
       "itmSWTabletLamp.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_348",
@@ -6702,7 +7049,8 @@
     "image": "itmSWTabletGPS.png",
     "allImages": [
       "itmSWTabletGPS.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_349",
@@ -6720,7 +7068,8 @@
     "image": "itmSWSmartphoneLamp.png",
     "allImages": [
       "itmSWSmartphoneLamp.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_350",
@@ -6738,7 +7087,8 @@
     "image": "itmSWSmartphoneGPS.png",
     "allImages": [
       "itmSWSmartphoneGPS.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_351",
@@ -6760,7 +7110,8 @@
     "gridSize": {
       "width": 3,
       "height": 4
-    }
+    },
+    "flavorText": "\"Harnessing the power of a retired snowbird's anger, this iSlab tablet doubles as a lamp... and a formidable gator deterrent during those relentless hurricane-themed theme park light shows.\""
   },
   {
     "id": "neo_352",
@@ -6782,7 +7133,8 @@
     "gridSize": {
       "width": 3,
       "height": 4
-    }
+    },
+    "flavorText": "\"Dusted off in a swampy retirement community, this waterproof, gator-resistant smartphone doubles as an emergency lamp during those unexpected hurricane-themed theme park parties.\""
   },
   {
     "id": "neo_353",
@@ -6804,7 +7156,8 @@
     "gridSize": {
       "width": 2,
       "height": 1
-    }
+    },
+    "flavorText": "A glowing beacon in the swamp's eye, this waterproof \"Carter\" flashlight keeps even the gators at bay... and retirees intrigued, as it mimics Mickey's iconic dance from the flooded Magic Kingdom."
   },
   {
     "id": "neo_354",
@@ -6827,7 +7180,8 @@
     "gridSize": {
       "width": 1,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_355",
@@ -6845,7 +7199,8 @@
     "image": "itmDataTXT.png",
     "allImages": [
       "itmDataTXT.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_356",
@@ -6867,7 +7222,8 @@
     "gridSize": {
       "width": 3,
       "height": 1
-    }
+    },
+    "flavorText": "Discovered amidst a forgotten retirement community's mini-golf course: the rusted, sun-bleached \"Cheap Memory Stick\" - unleashing data bursts of humid hurricane chaos and a relentless horde of agitated gators on unsuspecting prey."
   },
   {
     "id": "neo_357",
@@ -6885,7 +7241,8 @@
     "image": "itmMeatMedRaw.png",
     "allImages": [
       "itmMeatMedRaw.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_358",
@@ -6903,7 +7260,8 @@
     "image": "itmMeatMedSpoiled.png",
     "allImages": [
       "itmMeatMedSpoiled.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_359",
@@ -6921,7 +7279,8 @@
     "image": "itmMeatMedCooked.png",
     "allImages": [
       "itmMeatMedCooked.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_360",
@@ -6939,7 +7298,8 @@
     "image": "itmMeatMedCured.png",
     "allImages": [
       "itmMeatMedCured.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_361",
@@ -6957,7 +7317,8 @@
     "image": "itmSquirrelMeatRaw.png",
     "allImages": [
       "itmSquirrelMeatRaw.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_362",
@@ -6975,7 +7336,8 @@
     "image": "itmSquirrelMeatSpoiled.png",
     "allImages": [
       "itmSquirrelMeatSpoiled.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_363",
@@ -6993,7 +7355,8 @@
     "image": "itmSquirrelMeatCooked.png",
     "allImages": [
       "itmSquirrelMeatCooked.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_364",
@@ -7011,7 +7374,8 @@
     "image": "itmSquirrelMeatCured.png",
     "allImages": [
       "itmSquirrelMeatCured.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_365",
@@ -7029,7 +7393,8 @@
     "image": "itmEncEyeball.png",
     "allImages": [
       "itmEncEyeball.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_366",
@@ -7047,7 +7412,8 @@
     "image": "itmWater.png",
     "allImages": [
       "itmWater.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_367",
@@ -7065,7 +7431,8 @@
     "image": "itmWater.png",
     "allImages": [
       "itmWater.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_368",
@@ -7083,7 +7450,8 @@
     "image": "itmWaterQuestion.png",
     "allImages": [
       "itmWaterQuestion.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_369",
@@ -7105,7 +7473,8 @@
     "gridSize": {
       "width": 1,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_370",
@@ -7127,7 +7496,8 @@
     "gridSize": {
       "width": 3,
       "height": 4
-    }
+    },
+    "flavorText": "\"Unearthed in a flooded retirement village, this radioactive alligator-shaped pool heater promises a sizzling boost to your nuclear-fueled BBQ - just watch out for unexpected hurricane-force wind bursts!\""
   },
   {
     "id": "neo_371",
@@ -7145,7 +7515,8 @@
     "image": "itmCorpseWraith.png",
     "allImages": [
       "itmCorpseWraith.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_372",
@@ -7163,7 +7534,8 @@
     "image": "itmPapersOld.png",
     "allImages": [
       "itmPapersOld.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_373",
@@ -7181,7 +7553,8 @@
     "image": "itmFilmCan.png",
     "allImages": [
       "itmFilmCan.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_374",
@@ -7199,7 +7572,8 @@
     "image": "itmBook01.png",
     "allImages": [
       "itmBook01.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_375",
@@ -7217,7 +7591,8 @@
     "image": "itmEncMergaLoupe.png",
     "allImages": [
       "itmEncMergaLoupe.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_376",
@@ -7235,7 +7610,8 @@
     "image": "itmEncStoneTablet.png",
     "allImages": [
       "itmEncStoneTablet.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_377",
@@ -7257,7 +7633,8 @@
     "gridSize": {
       "width": 4,
       "height": 2
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_378",
@@ -7275,7 +7652,8 @@
     "image": "itmSWTabletRFID.png",
     "allImages": [
       "itmSWTabletRFID.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_379",
@@ -7293,7 +7671,8 @@
     "image": "itmSWSmartphoneRFID.png",
     "allImages": [
       "itmSWSmartphoneRFID.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_380",
@@ -7311,7 +7690,8 @@
     "image": "itmRoastCabbage.png",
     "allImages": [
       "itmRoastCabbage.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_381",
@@ -7329,7 +7709,8 @@
     "image": "itmDonnerSprouts.png",
     "allImages": [
       "itmDonnerSprouts.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_382",
@@ -7347,7 +7728,8 @@
     "image": "itmDonnerCabbage.png",
     "allImages": [
       "itmDonnerCabbage.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_383",
@@ -7365,7 +7747,8 @@
     "image": "itmTofuSticks.png",
     "allImages": [
       "itmTofuSticks.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_384",
@@ -7383,7 +7766,8 @@
     "image": "itmEncDrop.png",
     "allImages": [
       "itmEncDrop.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_385",
@@ -7401,7 +7785,8 @@
     "image": "itmEncDisengageOffer.png",
     "allImages": [
       "itmEncDisengageOffer.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_386",
@@ -7419,7 +7804,8 @@
     "image": "itmEncDisengageAccept.png",
     "allImages": [
       "itmEncDisengageAccept.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_387",
@@ -7443,7 +7829,8 @@
     "gridSize": {
       "width": 3,
       "height": 3
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_388",
@@ -7467,7 +7854,8 @@
     "gridSize": {
       "width": 3,
       "height": 3
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_389",
@@ -7491,7 +7879,8 @@
     "gridSize": {
       "width": 3,
       "height": 3
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_390",
@@ -7510,7 +7899,8 @@
     "allImages": [
       "itmPoliceBoot.png",
       "itmPoliceBootStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_391",
@@ -7529,7 +7919,8 @@
     "allImages": [
       "itmPoliceBoot.png",
       "itmPoliceBootStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_392",
@@ -7548,7 +7939,8 @@
     "allImages": [
       "itmShirtBlack.png",
       "itmShirtBlackStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_393",
@@ -7567,7 +7959,8 @@
     "allImages": [
       "itmTacticalGlove.png",
       "itmTacticalGloveStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_394",
@@ -7586,7 +7979,8 @@
     "allImages": [
       "itmBalaclava.png",
       "itmBalaclavaStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_395",
@@ -7605,7 +7999,8 @@
     "allImages": [
       "itmPoliceHelmet.png",
       "itmPoliceHelmetStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_396",
@@ -7628,7 +8023,8 @@
     "gridSize": {
       "width": 3,
       "height": 4
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_397",
@@ -7646,7 +8042,8 @@
     "image": "itmCrippled.png",
     "allImages": [
       "itmCrippled.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_398",
@@ -7669,7 +8066,8 @@
     "gridSize": {
       "width": 1,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_399",
@@ -7693,7 +8091,8 @@
     "gridSize": {
       "width": 1,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_400",
@@ -7712,7 +8111,8 @@
     "allImages": [
       "itmWristTracker.png",
       "itmWristTrackerStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_401",
@@ -7730,7 +8130,8 @@
     "image": "itmSmudgeStick.png",
     "allImages": [
       "itmSmudgeStick.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_402",
@@ -7748,7 +8149,8 @@
     "image": "itmSmudgeStickLit.png",
     "allImages": [
       "itmSmudgeStickLit.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_403",
@@ -7766,7 +8168,8 @@
     "image": "itmBearRoot.png",
     "allImages": [
       "itmBearRoot.png"
-    ]
+    ],
+    "flavorText": "\"Gator-baited retiree trinkets? Dig up these sun-bleached souvenirs from Disney's Hurricane Katrick ruins - a perfect keepsake to swat those pesky reptilian pensioners.\""
   },
   {
     "id": "neo_404",
@@ -7790,7 +8193,8 @@
     "gridSize": {
       "width": 10,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_405",
@@ -7809,7 +8213,8 @@
     "allImages": [
       "itmWarClub.png",
       "itmWarClubHeld.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_406",
@@ -7833,7 +8238,8 @@
     "gridSize": {
       "width": 2,
       "height": 4
-    }
+    },
+    "flavorText": "In this sun-scorched, humid swamp of a world, where hurricane debris masquerades as exotic decorations and gators patrol the once bustling theme park rides, find solace in your trusty soft birch bag - a beacon of sanity amidst the chaos... unless it's filled with tee times for those relentless retirees."
   },
   {
     "id": "neo_407",
@@ -7852,7 +8258,8 @@
     "allImages": [
       "itmHideLongCoat.png",
       "itmHideLongCoatStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_408",
@@ -7870,7 +8277,8 @@
     "image": "itmEncRadio.png",
     "allImages": [
       "itmEncRadio.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_409",
@@ -7888,7 +8296,8 @@
     "image": "itmEncShoutMore.png",
     "allImages": [
       "itmEncShoutMore.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_410",
@@ -7906,7 +8315,8 @@
     "image": "itmAmmo4mmAP.png",
     "allImages": [
       "itmAmmo4mmAP.png"
-    ]
+    ],
+    "flavorText": "\"Ammunition for the peculiar healing of sunburned retirees - infused with the essence of Florida's legendary gator-blood, and a touch of Magic Kingdom's humid charm.\""
   },
   {
     "id": "neo_411",
@@ -7929,7 +8339,8 @@
     "gridSize": {
       "width": 4,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_412",
@@ -7947,7 +8358,8 @@
     "image": "itmEncCrawlTowards.png",
     "allImages": [
       "itmEncCrawlTowards.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_413",
@@ -7965,7 +8377,8 @@
     "image": "itmEncCrawlAway.png",
     "allImages": [
       "itmEncCrawlAway.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_414",
@@ -7983,7 +8396,8 @@
     "image": "itmEncAdvance.png",
     "allImages": [
       "itmEncAdvance.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_415",
@@ -8001,7 +8415,8 @@
     "image": "itmEncSneakExit.png",
     "allImages": [
       "itmEncSneakExit.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_416",
@@ -8019,7 +8434,8 @@
     "image": "itmScavengeCryoBldg.png",
     "allImages": [
       "itmScavengeCryoBldg.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_417",
@@ -8037,7 +8453,8 @@
     "image": "itmEncDoorPanel.png",
     "allImages": [
       "itmEncDoorPanel.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_418",
@@ -8055,7 +8472,8 @@
     "image": "itmScavengeForest02.png",
     "allImages": [
       "itmScavengeForest02.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_419",
@@ -8073,7 +8491,8 @@
     "image": "itmEncZomZoms.png",
     "allImages": [
       "itmEncZomZoms.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_420",
@@ -8091,7 +8510,8 @@
     "image": "itmEncForestEntrance.png",
     "allImages": [
       "itmEncForestEntrance.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_421",
@@ -8109,7 +8529,8 @@
     "image": "itmEncIsoMine.png",
     "allImages": [
       "itmEncIsoMine.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_422",
@@ -8127,7 +8548,8 @@
     "image": "itmEncAllegan.png",
     "allImages": [
       "itmEncAllegan.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_423",
@@ -8146,7 +8568,8 @@
     "allImages": [
       "itmTshirtAlleganWhite.png",
       "itmTshirtAlleganWhiteStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_424",
@@ -8165,7 +8588,8 @@
     "allImages": [
       "itmTshirtAlleganRed.png",
       "itmTshirtAlleganRedStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_425",
@@ -8184,7 +8608,8 @@
     "allImages": [
       "itmTshirtCornaCola.png",
       "itmTshirtCornaColaStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_426",
@@ -8203,7 +8628,8 @@
     "allImages": [
       "itmTshirtBanana.png",
       "itmTshirtBananaStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_427",
@@ -8222,7 +8648,8 @@
     "allImages": [
       "itmTshirt3DogMoon.png",
       "itmTshirt3DogMoonStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_428",
@@ -8250,7 +8677,8 @@
       "itmBlueFrogSashSlot107.png",
       "itmBlueFrogSashSlot108.png",
       "itmBlueFrogSashSlot109.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_429",
@@ -8268,7 +8696,8 @@
     "image": "itmGasMaskCartridge.png",
     "allImages": [
       "itmGasMaskCartridge.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_430",
@@ -8286,7 +8715,8 @@
     "image": "itmGasMaskCartridge.png",
     "allImages": [
       "itmGasMaskCartridge.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_431",
@@ -8309,7 +8739,8 @@
     "gridSize": {
       "width": 2,
       "height": 2
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_432",
@@ -8327,7 +8758,8 @@
     "image": "itmEncExitCrawl.png",
     "allImages": [
       "itmEncExitCrawl.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_433",
@@ -8345,7 +8777,8 @@
     "image": "itmScavengeGBS01.png",
     "allImages": [
       "itmScavengeGBS01.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_434",
@@ -8363,7 +8796,8 @@
     "image": "itmScavengeCrashSwamp.png",
     "allImages": [
       "itmScavengeCrashSwamp.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_435",
@@ -8381,7 +8815,8 @@
     "image": "itmScavengeCrashForest.png",
     "allImages": [
       "itmScavengeCrashForest.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_436",
@@ -8399,7 +8834,8 @@
     "image": "itmGlassShard.png",
     "allImages": [
       "itmGlassShard.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_437",
@@ -8417,7 +8853,8 @@
     "image": "itmUVD.png",
     "allImages": [
       "itmUVD.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_438",
@@ -8435,7 +8872,8 @@
     "image": "itmUVD.png",
     "allImages": [
       "itmUVD.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_439",
@@ -8453,7 +8891,8 @@
     "image": "itmUVD.png",
     "allImages": [
       "itmUVD.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_440",
@@ -8471,7 +8910,8 @@
     "image": "itmUVD.png",
     "allImages": [
       "itmUVD.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_441",
@@ -8493,7 +8933,8 @@
     "gridSize": {
       "width": 2,
       "height": 2
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_442",
@@ -8515,7 +8956,8 @@
     "gridSize": {
       "width": 2,
       "height": 2
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_443",
@@ -8537,7 +8979,8 @@
     "gridSize": {
       "width": 2,
       "height": 2
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_444",
@@ -8559,7 +9002,8 @@
     "gridSize": {
       "width": 2,
       "height": 2
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_445",
@@ -8577,7 +9021,8 @@
     "image": "itmUVD.png",
     "allImages": [
       "itmUVD.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_446",
@@ -8595,7 +9040,8 @@
     "image": "itmVialYellow.png",
     "allImages": [
       "itmVialYellow.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_447",
@@ -8613,7 +9059,8 @@
     "image": "itmDrum130L.png",
     "allImages": [
       "itmDrum130L.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_448",
@@ -8631,7 +9078,8 @@
     "image": "itmSmartKeyBlue.png",
     "allImages": [
       "itmSmartKeyBlue.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_449",
@@ -8649,7 +9097,8 @@
     "image": "itmPapersOld.png",
     "allImages": [
       "itmPapersOld.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_450",
@@ -8677,7 +9126,8 @@
       "itmBlueFrogSashSlot107.png",
       "itmBlueFrogSashSlot108.png",
       "itmBlueFrogSashSlot109.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_451",
@@ -8699,7 +9149,8 @@
     "gridSize": {
       "width": 22,
       "height": 29
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_452",
@@ -8717,7 +9168,8 @@
     "image": "itmPapers.png",
     "allImages": [
       "itmPapers.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_453",
@@ -8735,7 +9187,8 @@
     "image": "itmBlueFrogBanner.png",
     "allImages": [
       "itmBlueFrogBanner.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_454",
@@ -8753,7 +9206,8 @@
     "image": "itmSWSmartphoneAddr.png",
     "allImages": [
       "itmSWSmartphoneAddr.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_455",
@@ -8771,7 +9225,8 @@
     "image": "itmVialBlue.png",
     "allImages": [
       "itmVialBlue.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_456",
@@ -8789,7 +9244,8 @@
     "image": "itmEncDoorPanel.png",
     "allImages": [
       "itmEncDoorPanel.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_457",
@@ -8807,7 +9263,8 @@
     "image": "itmCorpseMan.png",
     "allImages": [
       "itmCorpseMan.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_458",
@@ -8825,7 +9282,8 @@
     "image": "itmEncMoney1.png",
     "allImages": [
       "itmEncMoney1.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_459",
@@ -8843,7 +9301,8 @@
     "image": "itmEncMoney2.png",
     "allImages": [
       "itmEncMoney2.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_460",
@@ -8861,7 +9320,8 @@
     "image": "itmEncMoney3.png",
     "allImages": [
       "itmEncMoney3.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_461",
@@ -8879,7 +9339,8 @@
     "image": "itmVialYellow.png",
     "allImages": [
       "itmVialYellow.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_462",
@@ -8897,7 +9358,8 @@
     "image": "itmCorpseDrone.png",
     "allImages": [
       "itmCorpseDrone.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_463",
@@ -8919,7 +9381,8 @@
     "gridSize": {
       "width": 3,
       "height": 3
-    }
+    },
+    "flavorText": "In this sun-scorched, gator-infested swamp of yesteryear's dreams, recharge your way through the everlasting humidity with a restored power from the ghostly laughter echoing in the abandoned roller coaster of a forgotten retiree retreat."
   },
   {
     "id": "neo_464",
@@ -8942,7 +9405,8 @@
     "gridSize": {
       "width": 4,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_465",
@@ -8966,7 +9430,8 @@
     "gridSize": {
       "width": 4,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_466",
@@ -8990,7 +9455,8 @@
     "gridSize": {
       "width": 4,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_467",
@@ -9008,7 +9474,8 @@
     "image": "itmHECapacitor.png",
     "allImages": [
       "itmHECapacitor.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_468",
@@ -9026,7 +9493,8 @@
     "image": "itm4mmGaussBarrel.png",
     "allImages": [
       "itm4mmGaussBarrel.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_469",
@@ -9044,7 +9512,8 @@
     "image": "itm4mmGaussReceiver.png",
     "allImages": [
       "itm4mmGaussReceiver.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_470",
@@ -9062,7 +9531,8 @@
     "image": "itmStagingSwitch.png",
     "allImages": [
       "itmStagingSwitch.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_471",
@@ -9080,7 +9550,8 @@
     "image": "itmChargingCircuit.png",
     "allImages": [
       "itmChargingCircuit.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_472",
@@ -9098,7 +9569,8 @@
     "image": "itmWoodRifleStock.png",
     "allImages": [
       "itmWoodRifleStock.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_473",
@@ -9116,7 +9588,8 @@
     "image": "itmCorpseDroneUnknown.png",
     "allImages": [
       "itmCorpseDroneUnknown.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_474",
@@ -9135,7 +9608,8 @@
     "allImages": [
       "itmArmorVest.png",
       "itmArmorVestStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_475",
@@ -9158,7 +9632,8 @@
     "gridSize": {
       "width": 6,
       "height": 8
-    }
+    },
+    "flavorText": "\"Sporting a faded 'It's a Small World After All' logo, this water-resistant bag once carried dreams of vacation bliss. Now it harbors canned peaches, a spare denture, and an unhealthy obsession with alligators.\""
   },
   {
     "id": "neo_476",
@@ -9176,7 +9651,8 @@
     "image": "itmSmallFire.png",
     "allImages": [
       "itmSmallFire.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_477",
@@ -9194,7 +9670,8 @@
     "image": "itmPotatoChips.png",
     "allImages": [
       "itmPotatoChips.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_478",
@@ -9212,7 +9689,8 @@
     "image": "itmFoilScrap.png",
     "allImages": [
       "itmFoilScrap.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_479",
@@ -9235,7 +9713,8 @@
     "gridSize": {
       "width": 3,
       "height": 5
-    }
+    },
+    "flavorText": "Unearthed amidst a flooded retiree shuffleboard court, this crunchy relic once promised \"Florida's Finest\"... now it promises a fight against mutant gators for every last crisp!"
   },
   {
     "id": "neo_480",
@@ -9254,7 +9733,8 @@
     "allImages": [
       "itmFoilPonchoWorn.png",
       "itmFoilPonchoStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_481",
@@ -9272,7 +9752,8 @@
     "image": "itmMemStick.png",
     "allImages": [
       "itmMemStick.png"
-    ]
+    ],
+    "flavorText": "Unearthed amidst a forgotten golf course in the Everglades, this waterproof flashdrive promises a lifetime of entertainment... unless it's chewed by a retiree's pet gator during Happy Hour Hurricane Happy Hour at Camp Grayling."
   },
   {
     "id": "neo_482",
@@ -9290,7 +9771,8 @@
     "image": "itmEncMoveBack.png",
     "allImages": [
       "itmEncMoveBack.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_483",
@@ -9308,7 +9790,8 @@
     "image": "itmKeyCyl.png",
     "allImages": [
       "itmKeyCyl.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_484",
@@ -9326,7 +9809,8 @@
     "image": "itmPapersDrawing.png",
     "allImages": [
       "itmPapersDrawing.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_485",
@@ -9344,7 +9828,8 @@
     "image": "itmIDCard.png",
     "allImages": [
       "itmIDCard.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_486",
@@ -9362,7 +9847,8 @@
     "image": "itmEncGrayling.png",
     "allImages": [
       "itmEncGrayling.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_487",
@@ -9380,7 +9866,8 @@
     "image": "itmEncMergaWraith.png",
     "allImages": [
       "itmEncMergaWraith.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_488",
@@ -9398,7 +9885,8 @@
     "image": "itmEncWho.png",
     "allImages": [
       "itmEncWho.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_489",
@@ -9416,7 +9904,8 @@
     "image": "itmEncWhat.png",
     "allImages": [
       "itmEncWhat.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_490",
@@ -9434,7 +9923,8 @@
     "image": "itmKeyFailsafe.png",
     "allImages": [
       "itmKeyFailsafe.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_491",
@@ -9452,7 +9942,8 @@
     "image": "itmMemStickRed.png",
     "allImages": [
       "itmMemStickRed.png"
-    ]
+    ],
+    "flavorText": "\"Unearthed in a flooded Disney World ride, this water-resistant flashdrive hums tunes from yesteryear... and the odd electric gator growl.\""
   },
   {
     "id": "neo_492",
@@ -9471,7 +9962,8 @@
     "allImages": [
       "itmShirtGray.png",
       "itmShirtGrayStored.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_493",
@@ -9489,7 +9981,8 @@
     "image": "itmEncGrayling.png",
     "allImages": [
       "itmEncGrayling.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_494",
@@ -9507,7 +10000,8 @@
     "image": "itmSkillElusive.png",
     "allImages": [
       "itmSkillElusive.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_495",
@@ -9525,7 +10019,8 @@
     "image": "itmSkillUnstoppable.png",
     "allImages": [
       "itmSkillUnstoppable.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_496",
@@ -9543,7 +10038,8 @@
     "image": "itmFlawLegendary.png",
     "allImages": [
       "itmFlawLegendary.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_497",
@@ -9561,7 +10057,8 @@
     "image": "itmFlawEnervated.png",
     "allImages": [
       "itmFlawEnervated.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_498",
@@ -9579,7 +10076,8 @@
     "image": "itmEncRadio.png",
     "allImages": [
       "itmEncRadio.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_499",
@@ -9597,7 +10095,8 @@
     "image": "itmRoadmap.png",
     "allImages": [
       "itmRoadmap.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_500",
@@ -9615,7 +10114,8 @@
     "image": "itmEncSpy.png",
     "allImages": [
       "itmEncSpy.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_501",
@@ -9637,7 +10137,8 @@
     "gridSize": {
       "width": 24,
       "height": 12
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_502",
@@ -9659,7 +10160,8 @@
     "gridSize": {
       "width": 24,
       "height": 12
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_503",
@@ -9677,7 +10179,8 @@
     "image": "itmMixedVeg.png",
     "allImages": [
       "itmMixedVeg.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_504",
@@ -9695,7 +10198,8 @@
     "image": "itmMixedVegProtein.png",
     "allImages": [
       "itmMixedVegProtein.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_505",
@@ -9713,7 +10217,8 @@
     "image": "itmGullWings.png",
     "allImages": [
       "itmGullWings.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_506",
@@ -9731,7 +10236,8 @@
     "image": "itmTofuSticks.png",
     "allImages": [
       "itmTofuSticks.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_507",
@@ -9749,7 +10255,8 @@
     "image": "itmNonVegStew.png",
     "allImages": [
       "itmNonVegStew.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_508",
@@ -9767,7 +10274,8 @@
     "image": "itmEncLastChance.png",
     "allImages": [
       "itmEncLastChance.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_509",
@@ -9785,7 +10293,8 @@
     "image": "itmEncParkade.png",
     "allImages": [
       "itmEncParkade.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_510",
@@ -9803,7 +10312,8 @@
     "image": "itmDomeLight.png",
     "allImages": [
       "itmDomeLight.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_511",
@@ -9821,7 +10331,8 @@
     "image": "itmClimateControl.png",
     "allImages": [
       "itmClimateControl.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_512",
@@ -9844,7 +10355,8 @@
     "gridSize": {
       "width": 2,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_513",
@@ -9866,7 +10378,8 @@
     "gridSize": {
       "width": 1,
       "height": 1
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_514",
@@ -9888,7 +10401,8 @@
     "gridSize": {
       "width": 2,
       "height": 2
-    }
+    },
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_515",
@@ -9906,7 +10420,8 @@
     "image": "itmSunlight.png",
     "allImages": [
       "itmSunlight.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_516",
@@ -9929,7 +10444,8 @@
     "gridSize": {
       "width": 6,
       "height": 10
-    }
+    },
+    "flavorText": "In the sweltering Everglades, amidst gator-infested canals and abandoned theme park ruins, you've stumbled upon a discarded retiree's shopping bag - a reliable, humidity-resistant container, ideal for your foraging endeavors... unless a hurricane decides to reclaim it."
   },
   {
     "id": "neo_517",
@@ -9947,7 +10463,8 @@
     "image": "itmPillsBlue.png",
     "allImages": [
       "itmPillsBlue.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_518",
@@ -9970,7 +10487,8 @@
     "gridSize": {
       "width": 1,
       "height": 2
-    }
+    },
+    "flavorText": "\"Sweat-drenched in the sweltering heat, this relic from Florida's retirement past could still bring a gator's retirement to an early end – just remember, it's always Hurricane Season at DisneyDose.\""
   },
   {
     "id": "neo_519",
@@ -9988,7 +10506,8 @@
     "image": "itmEncVanish.png",
     "allImages": [
       "itmEncVanish.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_520",
@@ -10006,7 +10525,8 @@
     "image": "itmEncExploit.png",
     "allImages": [
       "itmEncExploit.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_521",
@@ -10024,7 +10544,8 @@
     "image": "itmEncIntimidate.png",
     "allImages": [
       "itmEncIntimidate.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_522",
@@ -10042,7 +10563,8 @@
     "image": "itmEncTrap.png",
     "allImages": [
       "itmEncTrap.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_523",
@@ -10060,7 +10582,8 @@
     "image": "itmPillsOrange.png",
     "allImages": [
       "itmPillsOrange.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_524",
@@ -10083,7 +10606,8 @@
     "gridSize": {
       "width": 1,
       "height": 2
-    }
+    },
+    "flavorText": "In this sweltering sun-baked wasteland of Florida's Everglades, a relic from a forgotten age emerges - a plastic pill bottle once filled with life-extending thyroid medication, now home to a family of gator-sized pharmaceutical piranhas, ready to test your retirement plans in the humid hurricane season."
   },
   {
     "id": "neo_525",
@@ -10101,7 +10625,8 @@
     "image": "itmAntiBioticsPills.png",
     "allImages": [
       "itmAntiBioticsPills.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_526",
@@ -10124,7 +10649,8 @@
     "gridSize": {
       "width": 1,
       "height": 2
-    }
+    },
+    "flavorText": "\"Once a popular remedy for high blood pressure in sun-soaked retiree communities, now more valued as a makeshift floatation device amidst the unpredictable hurricane swamps of abandoned Disney World gator exhibits.\""
   },
   {
     "id": "neo_527",
@@ -10146,7 +10672,8 @@
     "gridSize": {
       "width": 2,
       "height": 1
-    }
+    },
+    "flavorText": "\"Hurricane Harvey's leftover prescriptions - now a convenient gator bite prevention kit for sun-dazed retirees on their daily theme park stroll through the Everglades.\""
   },
   {
     "id": "neo_528",
@@ -10164,7 +10691,8 @@
     "image": "itmBarrelFire.png",
     "allImages": [
       "itmBarrelFire.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_529",
@@ -10182,7 +10710,8 @@
     "image": "itmCorpseDog.png",
     "allImages": [
       "itmCorpseDog.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_530",
@@ -10201,7 +10730,8 @@
     "allImages": [
       "itmShoeRunWorn.png",
       "itmShoeRun.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_531",
@@ -10220,7 +10750,8 @@
     "allImages": [
       "itmShoeRunWorn.png",
       "itmShoeRun.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_532",
@@ -10239,7 +10770,8 @@
     "allImages": [
       "itmShoeRagWorn.png",
       "itmShoeRag.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_533",
@@ -10258,7 +10790,8 @@
     "allImages": [
       "itmShoeFlipFlopsWorn.png",
       "itmShoeFlipFlops.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_534",
@@ -10276,7 +10809,8 @@
     "image": "itmShoeSole.png",
     "allImages": [
       "itmShoeSole.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_535",
@@ -10295,7 +10829,8 @@
     "allImages": [
       "itmShoeFlipFlopsWorn.png",
       "itmShoeFlipFlops.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_536",
@@ -10314,7 +10849,8 @@
     "allImages": [
       "itmShoeGatorWorn.png",
       "itmShoeGator.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   },
   {
     "id": "neo_537",
@@ -10333,6 +10869,7 @@
     "allImages": [
       "itmShoeGatorWorn.png",
       "itmShoeGator.png"
-    ]
+    ],
+    "flavorText": "A misc scavenged from the Florida wasteland."
   }
 ]

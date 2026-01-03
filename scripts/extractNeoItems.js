@@ -3,6 +3,7 @@
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
+import { execSync } from 'node:child_process';
 import { DOMParser } from '@xmldom/xmldom';
 import sharp from 'sharp';
 
@@ -183,9 +184,65 @@ function printSummary(items) {
   }
 }
 
+function generateFlavorTextForItem(item) {
+  const prompt = `Write ONE sentence of flavor text for this item in a post-apocalyptic Florida wasteland survival game. Fallout-style dark humor, swampy vibes. Reference gators, humidity, hurricanes, theme parks, or retirees when relevant.
+
+Item: "${item.description}" (${item.type})
+
+Respond with ONLY the flavor text, no quotes or explanation.`;
+
+  const result = execSync(
+    `ollama run mistral "${prompt.replace(/"/g, '\\"').replace(/\n/g, '\\n')}"`,
+    {
+      encoding: 'utf-8',
+      timeout: 30000,
+      maxBuffer: 1024 * 1024,
+    }
+  );
+
+  return result.trim();
+}
+
+async function generateAllFlavorText(items) {
+  console.log('\nGenerating flavor text with Ollama (mistral)...');
+
+  // Only generate for interesting items (not misc)
+  const interesting = items.filter((item) => item.type !== 'misc');
+  console.log(
+    `  Processing ${interesting.length} items (skipping ${items.length - interesting.length} misc)`
+  );
+
+  let generated = 0;
+  for (let i = 0; i < interesting.length; i++) {
+    const item = interesting[i];
+    process.stdout.write(`  [${i + 1}/${interesting.length}] ${item.description.slice(0, 30)}...`);
+
+    try {
+      item.flavorText = generateFlavorTextForItem(item);
+      generated++;
+      console.log(' done');
+    } catch {
+      console.log(` failed`);
+      item.flavorText = `A ${item.type} scavenged from the Florida wasteland.`;
+    }
+  }
+
+  // Fallback for misc items
+  for (const item of items) {
+    if (item.flavorText === undefined) {
+      item.flavorText = `A ${item.type} scavenged from the Florida wasteland.`;
+    }
+  }
+
+  console.log(`  Generated ${generated} flavor texts`);
+}
+
 async function main() {
   console.log('Extracting items from Neo Scavenger...');
   const { items, imagesToCopy } = extractItems();
+
+  // Generate flavor text using Ollama
+  await generateAllFlavorText(items);
 
   mkdirSync(dirname(DATA_OUTPUT), { recursive: true });
   writeFileSync(DATA_OUTPUT, JSON.stringify(items, null, 2));

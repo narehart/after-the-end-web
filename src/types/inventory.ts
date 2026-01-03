@@ -59,6 +59,7 @@ export interface Item {
   type: ItemType;
   name: string;
   description: string;
+  flavorText?: string;
   size: ItemSize;
   weight: number;
   value: number;
