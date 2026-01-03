@@ -1,6 +1,5 @@
 import type { MenuItem, UseMenuContextReturn, MenuPathSegment } from '../types/inventory';
 import { buildDestinationItems } from '../config/menuConfig';
-import { FIRST_INDEX } from './numbers';
 
 export const ITEM_ACTION_MENU: MenuItem[] = [
   {
@@ -47,10 +46,8 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     label: 'Split',
     icon: '÷',
     type: 'action',
-    show: (ctx: UseMenuContextReturn): boolean => {
-      const item = ctx.item;
-      return item !== undefined && item.stackLimit > FIRST_INDEX;
-    },
+    // TODO: Re-enable when item quantity tracking is added
+    show: (): boolean => false,
   },
   {
     id: 'move',
