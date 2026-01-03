@@ -11,10 +11,9 @@ import { existsSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { homedir } from 'node:os';
 
-// Find ui-experiments directory relative to git root
+// Project root is git root (standalone repo)
 const GIT_ROOT = execSync('git rev-parse --show-toplevel', { encoding: 'utf-8' }).trim();
-const UI_EXPERIMENTS_DIR = join(GIT_ROOT, 'ui-experiments');
-const CANDIDATES_DIR = join(UI_EXPERIMENTS_DIR, 'src/components/candidates');
+const CANDIDATES_DIR = join(GIT_ROOT, 'src/components/candidates');
 const COMPONENT_EXTENSIONS = ['.tsx', '.ts'];
 
 // Global hooks directory (user's global git hooks)
@@ -77,7 +76,7 @@ function runTypecheck() {
   console.log('Running typecheck...');
 
   try {
-    execSync('npm run typecheck', { stdio: 'inherit', cwd: UI_EXPERIMENTS_DIR });
+    execSync('npm run typecheck', { stdio: 'inherit', cwd: GIT_ROOT });
     console.log('Typecheck passed.');
   } catch {
     console.error('');

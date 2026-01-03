@@ -14,7 +14,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = join(__dirname, '..');
 const HOOKS_SOURCE_DIR = join(__dirname, 'hooks');
 
-// Find actual git root (may be parent directory)
+// Find git root
 function getGitRoot() {
   try {
     const result = execSync('git rev-parse --show-toplevel', {
