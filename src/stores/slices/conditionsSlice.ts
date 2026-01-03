@@ -1,21 +1,13 @@
 import type { StateCreator } from 'zustand';
-import type { Conditions } from '../../types/inventory';
 import type { ConditionsSlice } from '../../types/store';
+import { INITIAL_CONDITIONS } from '../../constants/conditions';
 
 export type { ConditionsSlice } from '../../types/store';
-
-const initialConditions: Conditions = {
-  health: 85,
-  hunger: 60,
-  thirst: 45,
-  temperature: 72,
-  encumbrance: 35,
-};
 
 export const createConditionsSlice: StateCreator<ConditionsSlice, [], [], ConditionsSlice> = (
   set
 ) => ({
-  conditions: initialConditions,
+  conditions: INITIAL_CONDITIONS,
 
   setConditions: (conditions): void => {
     set({ conditions });

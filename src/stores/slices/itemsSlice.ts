@@ -8,10 +8,8 @@ import { findItemOrigin } from '../../utils/findItemOrigin';
 
 export type { ItemsSlice } from '../../types/store';
 
-const mockItems = mockItemsJson as ItemsMap;
-
 export const createItemsSlice: StateCreator<ItemsSlice, [], [], ItemsSlice> = (set, get) => ({
-  items: mockItems,
+  items: mockItemsJson,
   grids: initialGrids,
 
   setItems: (items): void => {

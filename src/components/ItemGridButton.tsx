@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import type { Item } from '../types/inventory';
-import type { CellState, ItemGridHandlers } from '../types/ui';
+import type { CellState, ItemGridHandlers, CSSPropertiesWithVars } from '../types/ui';
 import { getImageUrl } from '../utils/images';
 import { getItemIcon } from '../utils/getItemIcon';
 import { calculateItemDimensions } from '../utils/calculateItemDimensions';
@@ -48,15 +48,14 @@ export default function ItemGridButton({
         selected: isSelected,
         'has-modal': hasOpenModal,
       })}
-      style={{
-        width: `${itemWidth}px`,
-        height: `${itemHeight}px`,
-        // eslint-disable-next-line @typescript-eslint/consistent-type-assertions -- CSS custom properties require type assertion
-        ...({
+      style={
+        {
+          width: `${itemWidth}px`,
+          height: `${itemHeight}px`,
           '--item-width': `${itemWidth}px`,
           '--item-height': `${itemHeight}px`,
-        } as React.CSSProperties),
-      }}
+        } satisfies CSSPropertiesWithVars
+      }
       onClick={handleClick}
       onDoubleClick={handleDoubleClick}
       onContextMenu={handleContextMenu}

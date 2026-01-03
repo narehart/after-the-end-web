@@ -1,19 +1,8 @@
 import type { StateCreator } from 'zustand';
-import type { MenuState } from '../../types/inventory';
 import type { UISlice } from '../../types/store';
+import { INITIAL_MENU } from '../../constants/ui';
 
 export type { UISlice } from '../../types/store';
-
-export const initialMenu: MenuState = {
-  isOpen: false,
-  position: null,
-  targetItemId: null,
-  targetSlotType: null,
-  itemId: null,
-  source: null,
-  path: [],
-  focusIndex: 0,
-};
 
 export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
   selectedItemId: 'glasses-1',
@@ -21,7 +10,7 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
   groundCollapsed: false,
   uiScale: 1,
   containerRect: null,
-  menu: initialMenu,
+  menu: INITIAL_MENU,
 
   setSelectedItem: (itemId): void => {
     set({ selectedItemId: itemId, focusedEmptySlot: null });
@@ -59,11 +48,11 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
   },
 
   closeMenu: (): void => {
-    set({ menu: initialMenu });
+    set({ menu: INITIAL_MENU });
   },
 
   closeAllModals: (): void => {
-    set({ menu: initialMenu });
+    set({ menu: INITIAL_MENU });
   },
 
   menuNavigateTo: (segment): void => {

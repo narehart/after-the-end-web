@@ -243,10 +243,7 @@ export default defineConfig([
       '@typescript-eslint/method-signature-style': ['error', 'property'],
       '@typescript-eslint/member-ordering': 'error',
       '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
-      '@typescript-eslint/consistent-type-assertions': [
-        'error',
-        { assertionStyle: 'as', objectLiteralTypeAssertions: 'never' },
-      ],
+      '@typescript-eslint/consistent-type-assertions': ['error', { assertionStyle: 'never' }],
       '@typescript-eslint/promise-function-async': 'error',
       '@typescript-eslint/return-await': ['error', 'always'],
       '@typescript-eslint/no-require-imports': 'error',

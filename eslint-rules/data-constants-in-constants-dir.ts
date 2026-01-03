@@ -6,6 +6,13 @@ interface VariableDeclaratorWithParent extends VariableDeclarator {
   parent: Node & { kind?: string };
 }
 
+interface TSTypeAssertionExpression extends Node {
+  type: 'TSAsExpression' | 'TSSatisfiesExpression';
+  expression: Expression;
+}
+
+type ExpressionOrTSAssertion = Expression | TSTypeAssertionExpression;
+
 const DATA_LITERAL_TYPES = new Set([
   'ObjectExpression',
   'ArrayExpression',
@@ -13,16 +20,20 @@ const DATA_LITERAL_TYPES = new Set([
   'TemplateLiteral',
 ]);
 
+function isTSTypeAssertion(node: ExpressionOrTSAssertion): node is TSTypeAssertionExpression {
+  return node.type === 'TSAsExpression' || node.type === 'TSSatisfiesExpression';
+}
+
 /**
  * Check if an expression is a data literal (object, array, or primitive)
  * as opposed to a function or call expression.
  */
-function isDataLiteral(init: Expression | null): boolean {
-  if (init === null) return false;
+function isDataLiteral(init: ExpressionOrTSAssertion | null | undefined): boolean {
+  if (init === null || init === undefined) return false;
 
   // Handle TS type assertions by checking inner expression
-  if (init.type === 'TSAsExpression' || init.type === 'TSSatisfiesExpression') {
-    return isDataLiteral((init as unknown as { expression: Expression }).expression);
+  if (isTSTypeAssertion(init)) {
+    return isDataLiteral(init.expression);
   }
 
   return DATA_LITERAL_TYPES.has(init.type);
@@ -107,7 +118,7 @@ const rule: Rule.RuleModule = {
         }
 
         // Check if the initializer is a data literal
-        if (node.init !== null && isDataLiteral(node.init as Expression)) {
+        if (node.init !== null && isDataLiteral(node.init)) {
           context.report({
             node,
             messageId: 'moveToConstants',

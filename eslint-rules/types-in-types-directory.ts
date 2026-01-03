@@ -17,6 +17,20 @@ function isFunctionInterface(name: string): boolean {
   return name.endsWith('Props') || name.endsWith('Return');
 }
 
+function isNonNullObject(value: unknown): value is Record<string, unknown> {
+  return value !== null && value !== undefined && typeof value === 'object';
+}
+
+function getIdName(node: Rule.Node): string | null {
+  if (!isNonNullObject(node)) return null;
+  if (!('id' in node)) return null;
+  const id = node.id;
+  if (!isNonNullObject(id)) return null;
+  if (!('name' in id)) return null;
+  const name = id.name;
+  return typeof name === 'string' ? name : null;
+}
+
 const rule: Rule.RuleModule = {
   meta: {
     type: 'suggestion',
@@ -52,13 +66,17 @@ const rule: Rule.RuleModule = {
 
     return {
       TSInterfaceDeclaration(node: Rule.Node): void {
-        const id = (node as unknown as { id: { name: string } }).id;
-        typeDeclarations.push({ name: id.name, node });
+        const name = getIdName(node);
+        if (name !== null) {
+          typeDeclarations.push({ name, node });
+        }
       },
 
       TSTypeAliasDeclaration(node: Rule.Node): void {
-        const id = (node as unknown as { id: { name: string } }).id;
-        typeDeclarations.push({ name: id.name, node });
+        const name = getIdName(node);
+        if (name !== null) {
+          typeDeclarations.push({ name, node });
+        }
       },
 
       'Program:exit'(): void {

@@ -19,7 +19,7 @@ export default function Breadcrumb({
 }: BreadcrumbProps): React.JSX.Element | null {
   if (links.length === 0) return null;
 
-  const firstLink = links[0] as LinkWithIcon | undefined;
+  const firstLink: LinkWithIcon | undefined = links[0];
   const displayIcon = firstLink?.icon ?? icon;
   const segments = buildSegments(links);
 

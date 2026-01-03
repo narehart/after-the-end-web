@@ -8,10 +8,14 @@ import { placeItemInCells } from '../../utils/placeItemInCells';
 
 export type { EquipmentActionsSlice } from '../../types/store';
 
+function isSlotType(key: string, equipment: Equipment): key is SlotType {
+  return key in equipment;
+}
+
 function findEquipmentSlot(equipment: Equipment, itemId: string): SlotType | null {
-  for (const [slot, equippedId] of Object.entries(equipment)) {
-    if (equippedId === itemId) {
-      return slot as SlotType;
+  for (const slot of Object.keys(equipment)) {
+    if (isSlotType(slot, equipment) && equipment[slot] === itemId) {
+      return slot;
     }
   }
   return null;

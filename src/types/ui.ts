@@ -1,6 +1,10 @@
-import type { RefObject, MutableRefObject } from 'react';
+import type { RefObject, MutableRefObject, CSSProperties } from 'react';
 import type { BreadcrumbLink, GridPosition, Item } from './inventory';
 import type { NavigationDirection } from './gamepad';
+
+export type CSSPropertiesWithVars = CSSProperties & {
+  [key: `--${string}`]: string | number;
+};
 
 export interface Position {
   x: number;
