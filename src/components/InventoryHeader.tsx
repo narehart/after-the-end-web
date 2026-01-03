@@ -4,7 +4,7 @@ import { PRESETS } from '../constants/display';
 import { PERCENTAGE_MULTIPLIER } from '../constants/numbers';
 import useGamepadStatus from '../hooks/useGamepadStatus';
 import type { Resolution } from '../types/ui';
-import { Box, Button, Input, Text } from './primitives';
+import { Box, Button, Flex, Input, Text } from './primitives';
 import styles from './InventoryHeader.module.css';
 
 const cx = classNames.bind(styles);
@@ -42,12 +42,12 @@ export default function InventoryHeader({
   };
 
   return (
-    <Box as="header" className={cx('inventory-header')}>
+    <Flex as="header" align="center" className={cx('inventory-header')}>
       <Text className={cx('header-icon')}>☢</Text>
       <Text as="h1" className={cx('header-title')}>
         INVENTORY
       </Text>
-      <Box className={cx('header-controls')}>
+      <Flex align="center" gap="12" className={cx('header-controls')}>
         {gamepadConnected ? (
           <Text className={cx('gamepad-indicator')} title={gamepadName}>
             🎮 Connected
@@ -78,7 +78,7 @@ export default function InventoryHeader({
           </Box>
         ) : null}
         {isSimulated ? (
-          <Box className={cx('steam-deck-controls')}>
+          <Flex align="center" gap="8" className={cx('steam-deck-controls')}>
             <Button
               className={cx('steam-deck-btn', { active: steamDeckMode })}
               onClick={() => {
@@ -108,11 +108,13 @@ export default function InventoryHeader({
                 title="Fine-tune physical scale"
               />
             ) : null}
-          </Box>
+          </Flex>
         ) : null}
         <Text className={cx('weight-indicator')}>12.4 / 35.0 kg</Text>
-        <Button className={cx('close-btn')}>✕</Button>
-      </Box>
-    </Box>
+        <Flex as="button" justify="center" align="center" className={cx('close-btn')}>
+          ✕
+        </Flex>
+      </Flex>
+    </Flex>
   );
 }

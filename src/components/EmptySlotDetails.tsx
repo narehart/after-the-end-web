@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { SLOT_LABELS, SLOT_ICONS, SLOT_DESCRIPTIONS } from '../constants/slots';
 import type { SlotType } from '../types/inventory';
-import { Box, Panel, Text } from './primitives';
+import { Box, Flex, Panel, Text } from './primitives';
 import styles from './EmptySlotDetails.module.css';
 
 const cx = classNames.bind(styles);
@@ -18,9 +18,9 @@ export default function EmptySlotDetails({ slotId }: EmptySlotDetailsProps): Rea
       contentClassName={cx('details-content', 'empty-slot')}
     >
       <Box className={cx('item-preview')}>
-        <Box className={cx('preview-frame', 'empty')}>
+        <Flex justify="center" align="center" className={cx('preview-frame', 'empty')}>
           <Text className={cx('preview-icon')}>{SLOT_ICONS[slotId]}</Text>
-        </Box>
+        </Flex>
       </Box>
       <Box className={cx('item-info')}>
         <Text as="h2" className={cx('item-name')}>

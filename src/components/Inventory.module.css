@@ -1,8 +1,6 @@
 .inventory-container {
   width: 100%;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
   background: var(--bg-darkest);
   color: var(--text-primary);
   overflow: hidden;
@@ -22,22 +20,16 @@
 }
 
 .left-column {
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
 }
 
 .inventory-column {
-  display: flex;
-  flex-direction: column;
   border-right: var(--border-panel);
   overflow: hidden;
 }
 
 .world-column {
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
 }
 
 /* Responsive breakpoints */

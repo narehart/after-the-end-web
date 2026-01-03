@@ -1,6 +1,4 @@
 .inventory-panel {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   background: var(--bg-panel);
   flex: 1;

@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
 import { useBreadcrumbLinksInventory } from '../hooks/useBreadcrumbLinksInventory';
-import { Box, Button, Panel, Text } from './primitives';
+import { Box, Flex, Panel, Text } from './primitives';
 import GridPanelGrid from './GridPanelGrid';
 import styles from './GridPanel.module.css';
 
@@ -28,7 +28,7 @@ export default function GridPanel({ groundRef }: GridPanelProps): React.JSX.Elem
   const breadcrumbLinks = useBreadcrumbLinksInventory({ focusPath, items, navigateBack });
 
   return (
-    <Box className={cx('grid-panel')}>
+    <Flex direction="column" className={cx('grid-panel')}>
       <Panel breadcrumbLinks={breadcrumbLinks} contentClassName={cx('grid-content')}>
         {currentGrid !== undefined && currentContainerId !== undefined ? (
           <GridPanelGrid gridId={currentContainerId} grid={currentGrid} />
@@ -40,10 +40,15 @@ export default function GridPanel({ groundRef }: GridPanelProps): React.JSX.Elem
       <Box className={cx('ground-section', { collapsed: groundCollapsed })} ref={groundRef}>
         <Panel
           header={
-            <Button className={cx('ground-header')} onClick={toggleGroundCollapsed}>
+            <Flex
+              as="button"
+              align="center"
+              className={cx('ground-header')}
+              onClick={toggleGroundCollapsed}
+            >
               <Text className={cx('ground-label')}>Ground - Abandoned Street</Text>
               <Text className={cx('ground-toggle')}>{groundCollapsed ? '▲' : '▼'}</Text>
-            </Button>
+            </Flex>
           }
           className={cx('ground-panel')}
         >
@@ -52,6 +57,6 @@ export default function GridPanel({ groundRef }: GridPanelProps): React.JSX.Elem
           ) : null}
         </Panel>
       </Box>
-    </Box>
+    </Flex>
   );
 }

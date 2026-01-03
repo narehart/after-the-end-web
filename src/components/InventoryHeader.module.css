@@ -1,6 +1,4 @@
 .inventory-header {
-  display: flex;
-  align-items: center;
   padding: var(--space-10) var(--space-16);
   background: var(--bg-header);
   border-bottom: var(--border-panel);
@@ -23,9 +21,6 @@
 
 .header-controls {
   margin-left: auto;
-  display: flex;
-  align-items: center;
-  gap: var(--space-12);
   position: relative;
 }
 
@@ -111,12 +106,6 @@
   color: var(--text-primary);
 }
 
-.steam-deck-controls {
-  display: flex;
-  align-items: center;
-  gap: var(--space-8);
-}
-
 .steam-deck-btn {
   font-size: var(--font-sm);
   color: var(--text-muted);
@@ -167,9 +156,6 @@
 .close-btn {
   width: 26px;
   height: 26px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background: var(--bg-cell);
   border: var(--border-default);
   color: var(--text-secondary);

@@ -3,7 +3,7 @@ import { useInventoryStore } from '../stores/inventoryStore';
 import { buildStatsLine } from '../utils/buildStatsLine';
 import EmptySlotDetails from './EmptySlotDetails';
 import ItemPreview from './ItemPreview';
-import { Box, Text, Panel } from './primitives';
+import { Box, Flex, Text, Panel } from './primitives';
 import styles from './DetailsPanel.module.css';
 
 const cx = classNames.bind(styles);
@@ -29,13 +29,13 @@ export default function DetailsPanel(): React.JSX.Element {
       {item !== null ? (
         <>
           <Box className={cx('item-preview')}>
-            <Box className={cx('preview-frame')}>
+            <Flex justify="center" align="center" className={cx('preview-frame')}>
               <ItemPreview
                 item={item}
                 imageClassName={cx('preview-image')}
                 iconClassName={cx('preview-icon')}
               />
-            </Box>
+            </Flex>
           </Box>
 
           <Box className={cx('item-info')}>

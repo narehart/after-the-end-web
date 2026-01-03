@@ -4,10 +4,6 @@
   inset: 2px;
   background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-cell) 100%);
   border: var(--border-subtle);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
   z-index: var(--z-base);
   transition: var(--transition-fast);

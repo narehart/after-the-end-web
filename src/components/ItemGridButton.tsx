@@ -5,7 +5,7 @@ import { DEFAULT_QUANTITY, FIRST_INDEX, NOT_FOUND_INDEX } from '../constants/num
 import { getImageUrl } from '../utils/images';
 import { getItemIcon } from '../utils/getItemIcon';
 import { calculateItemDimensions } from '../utils/calculateItemDimensions';
-import { Button, Image, Text } from './primitives';
+import { Flex, Image, Text } from './primitives';
 import styles from './ItemGridButton.module.css';
 
 const cx = classNames.bind(styles);
@@ -50,8 +50,12 @@ export default function ItemGridButton({
   };
 
   return (
-    <Button
+    <Flex
+      as="button"
       type="button"
+      direction="column"
+      justify="center"
+      align="center"
       className={cx('grid-item', {
         container: hasGrid,
         selected: isSelected,
@@ -79,6 +83,6 @@ export default function ItemGridButton({
       )}
       {hasGrid ? <Text className={cx('container-indicator')}>▼</Text> : null}
       {showQuantity ? <Text className={cx('item-quantity')}>x{item.quantity}</Text> : null}
-    </Button>
+    </Flex>
   );
 }

@@ -139,3 +139,9 @@ export interface ItemConfig {
 }
 
 export type TextElement = 'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'label';
+
+export type FlexDirection = 'row' | 'column' | 'row-reverse' | 'column-reverse';
+export type FlexJustify = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly';
+export type FlexAlign = 'start' | 'end' | 'center' | 'baseline' | 'stretch';
+export type FlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse';
+export type FlexGap = '0' | '2' | '4' | '6' | '8' | '12' | '16' | '24' | '32';

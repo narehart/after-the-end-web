@@ -7,7 +7,7 @@ import type { GridCell, MenuSource } from '../types/inventory';
 import { getCellValue } from '../utils/getCellValue';
 import { checkIsOrigin } from '../utils/checkIsOrigin';
 import ItemGridCell from './ItemGridCell';
-import { Box } from './primitives';
+import { Box, Flex } from './primitives';
 import styles from './ItemGrid.module.css';
 
 const cx = classNames.bind(styles);
@@ -33,7 +33,8 @@ export default function ItemGrid({
   const renderedItems = new Set<string>();
 
   return (
-    <Box
+    <Flex
+      direction="column"
       className={cx('inventory-grid-container')}
       style={{ visibility: hidden ? 'hidden' : 'visible' }}
     >
@@ -75,6 +76,6 @@ export default function ItemGrid({
           })
         )}
       </Box>
-    </Box>
+    </Flex>
   );
 }

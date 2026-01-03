@@ -1,0 +1,120 @@
+.flex {
+  display: flex;
+}
+
+.flex--inline {
+  display: inline-flex;
+}
+
+/* Direction */
+.flex--direction-row {
+  flex-direction: row;
+}
+
+.flex--direction-column {
+  flex-direction: column;
+}
+
+.flex--direction-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex--direction-column-reverse {
+  flex-direction: column-reverse;
+}
+
+/* Justify Content */
+.flex--justify-start {
+  justify-content: flex-start;
+}
+
+.flex--justify-end {
+  justify-content: flex-end;
+}
+
+.flex--justify-center {
+  justify-content: center;
+}
+
+.flex--justify-between {
+  justify-content: space-between;
+}
+
+.flex--justify-around {
+  justify-content: space-around;
+}
+
+.flex--justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* Align Items */
+.flex--align-start {
+  align-items: flex-start;
+}
+
+.flex--align-end {
+  align-items: flex-end;
+}
+
+.flex--align-center {
+  align-items: center;
+}
+
+.flex--align-baseline {
+  align-items: baseline;
+}
+
+.flex--align-stretch {
+  align-items: stretch;
+}
+
+/* Wrap */
+.flex--wrap-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex--wrap-wrap {
+  flex-wrap: wrap;
+}
+
+.flex--wrap-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+/* Gap - using design tokens */
+.flex--gap-0 {
+  gap: 0;
+}
+
+.flex--gap-2 {
+  gap: var(--space-2);
+}
+
+.flex--gap-4 {
+  gap: var(--space-4);
+}
+
+.flex--gap-6 {
+  gap: var(--space-6);
+}
+
+.flex--gap-8 {
+  gap: var(--space-8);
+}
+
+.flex--gap-12 {
+  gap: var(--space-12);
+}
+
+.flex--gap-16 {
+  gap: var(--space-16);
+}
+
+.flex--gap-24 {
+  gap: var(--space-24);
+}
+
+.flex--gap-32 {
+  gap: var(--space-32);
+}

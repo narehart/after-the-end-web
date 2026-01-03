@@ -21,9 +21,6 @@
   width: 96px;
   height: 96px;
   padding: var(--space-8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: var(--bg-cell);
   border: var(--border-default);
 }

@@ -5,10 +5,6 @@
   left: -1px;
   background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-cell) 100%);
   border: var(--border-default);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
   z-index: var(--z-base);
   box-sizing: border-box;

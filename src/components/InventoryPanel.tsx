@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import ContainerView from './ContainerView';
-import { Box } from './primitives';
+import { Flex } from './primitives';
 import styles from './InventoryPanel.module.css';
 
 const cx = classNames.bind(styles);
@@ -19,7 +19,7 @@ export default function InventoryPanel({ cellSize }: InventoryPanelProps): React
   };
 
   return (
-    <Box className={cx('inventory-panel')}>
+    <Flex direction="column" className={cx('inventory-panel')}>
       <ContainerView
         focusPath={inventoryFocusPath}
         onNavigateBack={handleNavigateBack}
@@ -28,6 +28,6 @@ export default function InventoryPanel({ cellSize }: InventoryPanelProps): React
         panelLabel="Inventory"
         cellSize={cellSize}
       />
-    </Box>
+    </Flex>
   );
 }

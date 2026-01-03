@@ -14,7 +14,7 @@ import WorldPanel from './WorldPanel';
 import DetailsPanel from './DetailsPanel';
 import Menu from './Menu';
 import InventoryHeader from './InventoryHeader';
-import { Box } from './primitives';
+import { Box, Flex } from './primitives';
 import styles from './Inventory.module.css';
 
 const cx = classNames.bind(styles);
@@ -64,8 +64,9 @@ export default function Inventory(): React.JSX.Element {
     : {};
 
   return (
-    <Box
+    <Flex
       ref={containerRef}
+      direction="column"
       className={cx('inventory-container', { simulated: isSimulated })}
       style={containerStyle}
     >
@@ -76,19 +77,19 @@ export default function Inventory(): React.JSX.Element {
         className={cx('inventory-main')}
         style={{ visibility: cellSize !== null ? 'visible' : 'hidden' }}
       >
-        <Box as="aside" className={cx('left-column')} ref={equipmentRef}>
+        <Flex as="aside" direction="column" className={cx('left-column')} ref={equipmentRef}>
           <EquipmentPanel />
-        </Box>
-        <Box as="section" className={cx('inventory-column')} ref={inventoryRef}>
+        </Flex>
+        <Flex as="section" direction="column" className={cx('inventory-column')} ref={inventoryRef}>
           <InventoryPanel cellSize={cellSize} />
           <DetailsPanel />
-        </Box>
-        <Box as="section" className={cx('world-column')} ref={worldRef}>
+        </Flex>
+        <Flex as="section" direction="column" className={cx('world-column')} ref={worldRef}>
           <WorldPanel cellSize={cellSize} />
-        </Box>
+        </Flex>
       </Box>
 
       <Menu />
-    </Box>
+    </Flex>
   );
 }

@@ -6,7 +6,7 @@ import { FIRST_INDEX } from '../constants/numbers';
 import { getCellValue } from '../utils/getCellValue';
 import { findItemOrigin } from '../utils/findItemOrigin';
 import GridPanelCell from './GridPanelCell';
-import { Box } from './primitives';
+import { Box, Flex } from './primitives';
 import styles from './GridPanelGrid.module.css';
 
 const cx = classNames.bind(styles);
@@ -30,7 +30,7 @@ export default function GridPanelGrid({
   const renderedItems = new Set<string>();
 
   return (
-    <Box className={cx('inventory-grid-container')}>
+    <Flex direction="column" align="center">
       {label !== undefined && label !== '' ? <Box className={cx('grid-label')}>{label}</Box> : null}
       <Box
         className={cx('inventory-grid')}
@@ -75,6 +75,6 @@ export default function GridPanelGrid({
           })
         )}
       </Box>
-    </Box>
+    </Flex>
   );
 }
