@@ -5,8 +5,6 @@ import type { NavigationSlice, StoreWithGrids } from '../../types/store';
 import { getInitialInventoryFocusPath } from '../../utils/getInitialInventoryFocusPath';
 import { initialInventoryState } from './itemsSlice';
 
-export type { NavigationSlice } from '../../types/store';
-
 export const createNavigationSlice: StateCreator<
   NavigationSlice & StoreWithGrids,
   [],

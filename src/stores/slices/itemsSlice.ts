@@ -8,8 +8,6 @@ import { buildInitialInventory } from '../../utils/buildInitialInventory';
 import { findFreePosition } from '../../utils/findFreePosition';
 import { findItemOrigin } from '../../utils/findItemOrigin';
 
-export type { ItemsSlice } from '../../types/store';
-
 function toItem(data: (typeof neoItemsArray)[number]): Item {
   const item: Item = {
     id: data.id,

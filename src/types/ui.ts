@@ -96,11 +96,6 @@ export interface ItemPlacement {
   quantity?: number;
 }
 
-export interface ItemDimensions {
-  itemWidth: number;
-  itemHeight: number;
-}
-
 export interface ItemLocation {
   gridId: string;
   positions: GridPosition[];
@@ -126,11 +121,6 @@ export interface GridOccupancyCell {
 }
 
 export type GridOccupancy = GridOccupancyCell[][];
-
-export interface ItemConfig {
-  id: string;
-  maxQty: number;
-}
 
 export type TextElement = 'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'label';
 

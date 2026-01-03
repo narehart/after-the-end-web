@@ -2,8 +2,6 @@ import type { StateCreator } from 'zustand';
 import type { EquipmentSlice } from '../../types/store';
 import { initialInventoryState } from './itemsSlice';
 
-export type { EquipmentSlice } from '../../types/store';
-
 export const createEquipmentSlice: StateCreator<EquipmentSlice, [], [], EquipmentSlice> = (
   set
 ) => ({

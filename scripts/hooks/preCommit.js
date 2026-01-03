@@ -86,6 +86,22 @@ function runTypecheck() {
 }
 
 /**
+ * Run dead code detection
+ */
+function runDeadCodeCheck() {
+  console.log('Running dead code detection...');
+
+  try {
+    execSync('npm run lint:dead', { stdio: 'inherit', cwd: GIT_ROOT });
+    console.log('Dead code check passed.');
+  } catch {
+    console.error('');
+    console.error('Dead code detected. Commit blocked.');
+    process.exit(3);
+  }
+}
+
+/**
  * Run global pre-commit hook if it exists
  */
 function runGlobalHook() {
@@ -108,4 +124,5 @@ function runGlobalHook() {
 // Main
 checkCandidates();
 runTypecheck();
+runDeadCodeCheck();
 runGlobalHook();

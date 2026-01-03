@@ -13,11 +13,11 @@ import type {
 } from './inventory';
 
 // Conditions Slice
-export interface ConditionsState {
+interface ConditionsState {
   conditions: Conditions;
 }
 
-export interface ConditionsActions {
+interface ConditionsActions {
   setConditions: (conditions: Conditions) => void;
   updateCondition: (key: keyof Conditions, value: number) => void;
 }
@@ -25,11 +25,11 @@ export interface ConditionsActions {
 export type ConditionsSlice = ConditionsState & ConditionsActions;
 
 // Equipment Slice
-export interface EquipmentState {
+interface EquipmentState {
   equipment: Equipment;
 }
 
-export interface EquipmentActions {
+interface EquipmentActions {
   setEquipment: (equipment: Equipment) => void;
   setEquipmentSlot: (slot: SlotType, itemId: string | null) => void;
 }
@@ -52,12 +52,12 @@ export interface StoreWithEquipment {
 }
 
 // Items Slice
-export interface ItemsState {
+interface ItemsState {
   items: ItemsMap;
   grids: GridsMap;
 }
 
-export interface ItemsActions {
+interface ItemsActions {
   setItems: (items: ItemsMap) => void;
   setGrids: (grids: GridsMap) => void;
   rotateItem: (itemId: string) => void;
@@ -73,12 +73,12 @@ export interface ItemsActions {
 export type ItemsSlice = ItemsState & ItemsActions;
 
 // Navigation Slice
-export interface NavigationState {
+interface NavigationState {
   inventoryFocusPath: string[];
   worldFocusPath: string[];
 }
 
-export interface NavigationActions {
+interface NavigationActions {
   navigateToContainer: (containerId: string, panel: string, fromEquipment?: boolean) => void;
   navigateBack: (index: number, panel: string) => void;
   focusOnEquipmentSlot: (slotType: SlotType) => void;
@@ -101,7 +101,7 @@ export interface StoreWithGrids {
 export type NavigationSlice = NavigationState & NavigationActions;
 
 // UI Slice
-export interface UIState {
+interface UIState {
   selectedItemId: string | null;
   focusedEmptySlot: SlotType | null;
   uiScale: number;
@@ -109,7 +109,7 @@ export interface UIState {
   menu: MenuState;
 }
 
-export interface UIActions {
+interface UIActions {
   setSelectedItem: (itemId: string | null) => void;
   setFocusedEmptySlot: (slotType: SlotType | null) => void;
   clearFocusedEmptySlot: () => void;

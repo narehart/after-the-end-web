@@ -24,9 +24,7 @@ function toItem(data: (typeof neoItemsJson)[number]): Item {
 }
 
 // Create a lookup map by item ID
-export const itemsById: ItemsMap = Object.fromEntries(
-  neoItemsJson.map((data) => [data.id, toItem(data)])
-);
+const itemsById: ItemsMap = Object.fromEntries(neoItemsJson.map((data) => [data.id, toItem(data)]));
 
 export function getItemById(id: string): Item | undefined {
   return itemsById[id];

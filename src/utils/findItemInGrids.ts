@@ -3,8 +3,6 @@ import type { GridPosition } from '../types/inventory';
 import type { ItemLocation } from '../types/ui';
 import type { FindItemInGridsProps } from '../types/utils';
 
-export type { ItemLocation } from '../types/ui';
-
 export function findItemInGrids(props: FindItemInGridsProps): ItemLocation | null {
   const { grids, itemId } = props;
   for (const [gridId, grid] of Object.entries(grids)) {

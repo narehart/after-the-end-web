@@ -9,4 +9,3 @@ export { default as ItemDisplay } from './ItemDisplay';
 export { default as Breadcrumb } from './Breadcrumb';
 export { default as Panel } from './Panel';
 export { default as ListItem } from './ListItem';
-export { default as ConditionBar } from './ConditionBar';

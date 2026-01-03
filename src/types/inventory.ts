@@ -55,10 +55,6 @@ export interface Item {
   quantity?: number;
 }
 
-export interface ContainerItem extends Item {
-  gridSize: ItemSize;
-}
-
 export type ItemsMap = Record<string, Item | undefined>;
 
 export type CellGrid = Array<Array<string | null>>;
@@ -110,55 +106,6 @@ export interface ContainerRect {
   width: number;
   height: number;
 }
-
-export interface InventoryState {
-  equipment: Equipment;
-  items: ItemsMap;
-  grids: GridsMap;
-  inventoryFocusPath: string[];
-  worldFocusPath: string[];
-  selectedItemId: string | null;
-  focusedEmptySlot: SlotType | null;
-  conditions: Conditions;
-  menu: MenuState;
-  uiScale: number;
-  containerRect: ContainerRect | null;
-}
-
-export interface InventoryActions {
-  setUIScale: (scale: number, containerRect?: ContainerRect | null) => void;
-  setSelectedItem: (itemId: string | null) => void;
-  setFocusedEmptySlot: (slotType: SlotType | null) => void;
-  clearFocusedEmptySlot: () => void;
-  clearInventoryFocusPath: () => void;
-  closeAllModals: () => void;
-  openMenu: (
-    position: { x: number; y: number },
-    itemId: string | null,
-    slotType: SlotType | null,
-    source?: MenuSource
-  ) => void;
-  closeMenu: () => void;
-  navigateToContainer: (containerId: string, panel: string, fromEquipment?: boolean) => void;
-  navigateBack: (index: number, panel: string) => void;
-  focusOnEquipmentSlot: (slotType: SlotType) => void;
-  getInventoryGrid: () => GridCell | null;
-  getWorldGrid: () => GridCell | null;
-  getCurrentGrid: () => GridCell | null;
-  getGroundGrid: () => GridCell;
-  rotateItem: (itemId: string) => void;
-  getItemAtPosition: (gridId: string, x: number, y: number) => Item | null;
-  findItemOrigin: (gridId: string, itemId: string) => { x: number; y: number } | null;
-  findFreePosition: (
-    gridId: string,
-    itemWidth: number,
-    itemHeight: number
-  ) => { x: number; y: number } | null;
-  unequipItem: (itemId: string, targetGridId: string) => boolean;
-  equipItem: (itemId: string, targetSlot?: SlotType | null) => boolean;
-}
-
-export type InventoryStore = InventoryState & InventoryActions;
 
 export interface BreadcrumbLink {
   label: string;

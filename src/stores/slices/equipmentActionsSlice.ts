@@ -6,8 +6,6 @@ import { findItemInGrids } from '../../utils/findItemInGrids';
 import { placeItemInCells } from '../../utils/placeItemInCells';
 import { removeItemFromCells } from '../../utils/removeItemFromCells';
 
-export type { EquipmentActionsSlice } from '../../types/store';
-
 function isSlotType(key: string, equipment: Equipment): key is SlotType {
   return key in equipment;
 }

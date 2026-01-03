@@ -182,12 +182,6 @@ export interface UseBreadcrumbLinksContainerProps {
   panelType: PanelType;
 }
 
-export interface UseBreadcrumbLinksInventoryProps {
-  focusPath: string[];
-  items: ItemsMap;
-  navigateBack: (index: number, panel: string) => void;
-}
-
 // Gamepad utility Props interfaces
 export interface ProcessGamepadProps {
   gamepad: Gamepad;

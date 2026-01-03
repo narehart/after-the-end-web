@@ -6,8 +6,6 @@ import { processGamepad } from '../utils/processGamepad';
 import type { GamepadRefs, GamepadCallbacks } from '../utils/processGamepad';
 import { updateConnectionState } from '../utils/updateConnectionState';
 
-export type { NavigationDirection };
-
 interface UseGamepadProps {
   onNavigate?: ((dir: NavigationDirection) => void) | undefined;
   onConfirm?: (() => void) | undefined;

@@ -3,8 +3,6 @@ import { FIRST_INDEX, NOT_FOUND_INDEX, DEFAULT_SCALE } from '../../constants/num
 import type { UISlice } from '../../types/store';
 import { INITIAL_MENU } from '../../constants/ui';
 
-export type { UISlice } from '../../types/store';
-
 export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
   selectedItemId: 'glasses-1',
   focusedEmptySlot: null,

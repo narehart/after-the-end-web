@@ -13,7 +13,7 @@ import buildPanelHeaderClasses from '../../utils/buildPanelHeaderClasses';
 import getPanelHeaderType from '../../utils/getPanelHeaderType';
 import styles from './Panel.module.css';
 import PanelHeader from './PanelHeader';
-import { Box, Flex } from './index';
+import { Box, EmptyState, Flex } from './index';
 
 const cx = classNames.bind(styles);
 
@@ -63,11 +63,7 @@ export default function Panel({
       : cx('panel-content');
 
   const contentChildren =
-    isEmpty && emptyMessage !== undefined ? (
-      <Box className={cx('empty-message')}>{emptyMessage}</Box>
-    ) : (
-      children
-    );
+    isEmpty && emptyMessage !== undefined ? <EmptyState message={emptyMessage} /> : children;
 
   const headerClasses = buildPanelHeaderClasses(cx, headerType);
 

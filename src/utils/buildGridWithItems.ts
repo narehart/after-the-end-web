@@ -7,8 +7,6 @@ import { createItemInstance } from './createItemInstance';
 import { generateInstanceId } from './generateInstanceId';
 import { placeItem } from './placeItem';
 
-export type { ItemPlacement } from '../types/ui';
-
 export function buildGridWithItems(props: BuildGridWithItemsProps): BuildGridWithItemsReturn {
   const { width, height, items } = props;
   const cells = createEmptyGrid({ width, height });

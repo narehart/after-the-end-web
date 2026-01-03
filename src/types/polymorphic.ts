@@ -3,18 +3,17 @@ import type { ComponentPropsWithRef, ElementType, ForwardRefExoticComponent } fr
 /**
  * Distributive Omit - preserves union types during omit operation
  */
-export type DistributiveOmit<T, K extends keyof never> = T extends unknown ? Omit<T, K> : never;
+type DistributiveOmit<T, K extends keyof never> = T extends unknown ? Omit<T, K> : never;
 
 /**
  * Merge two types, with TOverride's properties taking precedence
  */
-export type Merge<TBase, TOverride> = Omit<TBase, keyof TOverride> & TOverride;
+type Merge<TBase, TOverride> = Omit<TBase, keyof TOverride> & TOverride;
 
 /**
  * Distributive merge - preserves union types during merge
  */
-export type DistributiveMerge<TBase, TOverride> = DistributiveOmit<TBase, keyof TOverride> &
-  TOverride;
+type DistributiveMerge<TBase, TOverride> = DistributiveOmit<TBase, keyof TOverride> & TOverride;
 
 /**
  * Props for a polymorphic component with `as` prop

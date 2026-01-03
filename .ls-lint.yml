@@ -4,7 +4,7 @@
 ls:
   # Allowed root files
   .config.ts: regex:eslint | regex:prettier | regex:stylelint | regex:vite
-  .json: regex:package | regex:package-lock | regex:tsconfig | regex:tsconfig\.tooling
+  .json: regex:package | regex:package-lock | regex:tsconfig | regex:tsconfig\.tooling | regex:knip
   .html: regex:index
   .md: regex:README | regex:CLAUDE
   .yml: regex:\.ls-lint

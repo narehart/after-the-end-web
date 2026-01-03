@@ -2,8 +2,6 @@ import type { StateCreator } from 'zustand';
 import type { ConditionsSlice } from '../../types/store';
 import { INITIAL_CONDITIONS } from '../../constants/conditions';
 
-export type { ConditionsSlice } from '../../types/store';
-
 export const createConditionsSlice: StateCreator<ConditionsSlice, [], [], ConditionsSlice> = (
   set
 ) => ({
