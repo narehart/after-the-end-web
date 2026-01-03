@@ -119,7 +119,6 @@ export interface InventoryState {
   worldFocusPath: string[];
   selectedItemId: string | null;
   focusedEmptySlot: SlotType | null;
-  groundCollapsed: boolean;
   conditions: Conditions;
   menu: MenuState;
   uiScale: number;
@@ -131,7 +130,6 @@ export interface InventoryActions {
   setSelectedItem: (itemId: string | null) => void;
   setFocusedEmptySlot: (slotType: SlotType | null) => void;
   clearFocusedEmptySlot: () => void;
-  toggleGroundCollapsed: () => void;
   clearInventoryFocusPath: () => void;
   closeAllModals: () => void;
   openMenu: (

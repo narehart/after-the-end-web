@@ -104,7 +104,6 @@ export type NavigationSlice = NavigationState & NavigationActions;
 export interface UIState {
   selectedItemId: string | null;
   focusedEmptySlot: SlotType | null;
-  groundCollapsed: boolean;
   uiScale: number;
   containerRect: ContainerRect | null;
   menu: MenuState;
@@ -114,7 +113,6 @@ export interface UIActions {
   setSelectedItem: (itemId: string | null) => void;
   setFocusedEmptySlot: (slotType: SlotType | null) => void;
   clearFocusedEmptySlot: () => void;
-  toggleGroundCollapsed: () => void;
   setUIScale: (scale: number, containerRect?: ContainerRect | null) => void;
   openMenu: (
     position: { x: number; y: number },

@@ -9,6 +9,7 @@ import type {
   FlexGap,
 } from '../../types/ui';
 import buildPanelClasses from '../../utils/buildPanelClasses';
+import buildPanelHeaderClasses from '../../utils/buildPanelHeaderClasses';
 import getPanelHeaderType from '../../utils/getPanelHeaderType';
 import styles from './Panel.module.css';
 import PanelHeader from './PanelHeader';
@@ -68,10 +69,12 @@ export default function Panel({
       children
     );
 
+  const headerClasses = buildPanelHeaderClasses(cx, headerType);
+
   return (
     <Flex direction="column" className={panelClasses}>
       {headerType !== 'none' ? (
-        <Box className={cx('panel-header')}>
+        <Box className={headerClasses}>
           <PanelHeader
             headerType={headerType}
             header={header}

@@ -66,12 +66,6 @@ export type KeyHandler = () => void;
 
 export type PanelName = 'equipment' | 'inventory' | 'world';
 
-// Grid panel uses a simpler cell state (no hasOpenModal)
-export interface GridPanelCellState {
-  isSelected: boolean;
-  hasGrid: boolean;
-}
-
 export interface SlotState {
   item: Item | null;
   itemId: string | null;

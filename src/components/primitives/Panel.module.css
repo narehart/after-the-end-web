@@ -24,20 +24,21 @@
   flex-shrink: 0;
 }
 
-.panel-header .breadcrumb {
+.panel-header--styled {
+  padding: var(--space-8) var(--space-16);
+  background: var(--bg-header);
   border-bottom: var(--border-panel);
+  height: 2.5rem;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .panel-title {
   margin: 0;
-  padding: var(--space-8) var(--space-16);
   font-size: var(--font-base);
   font-weight: var(--font-weight-normal);
   color: var(--text-primary);
-  border-bottom: var(--border-panel);
-  background: var(--bg-header);
-  height: 2.5rem;
-  box-sizing: border-box;
 }
 
 .panel-content {

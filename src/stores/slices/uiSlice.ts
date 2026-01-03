@@ -8,7 +8,6 @@ export type { UISlice } from '../../types/store';
 export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
   selectedItemId: 'glasses-1',
   focusedEmptySlot: null,
-  groundCollapsed: false,
   uiScale: DEFAULT_SCALE,
   containerRect: null,
   menu: INITIAL_MENU,
@@ -23,10 +22,6 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
 
   clearFocusedEmptySlot: (): void => {
     set({ focusedEmptySlot: null });
-  },
-
-  toggleGroundCollapsed: (): void => {
-    set((state) => ({ groundCollapsed: !state.groundCollapsed }));
   },
 
   setUIScale: (scale, containerRect = null): void => {
