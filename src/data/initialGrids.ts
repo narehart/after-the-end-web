@@ -1,5 +1,6 @@
 import type { GridsMap } from '../types/inventory';
-import { createEmptyGrid, placeItem } from './gridHelpers';
+import { createEmptyGrid } from '../utils/createEmptyGrid';
+import { placeItem } from '../utils/placeItem';
 
 function createBackpackGrid(): Array<Array<string | null>> {
   const cells = createEmptyGrid(10, 10);

@@ -1,11 +1,9 @@
 import type { StateCreator } from 'zustand';
 import type { SlotType, Equipment, ItemsMap, GridsMap, Item } from '../../types/inventory';
-import {
-  findFreePosition,
-  findItemInGrids,
-  removeItemFromCells,
-  placeItemInCells,
-} from '../gridHelpers';
+import { findFreePosition } from '../../utils/findFreePosition';
+import { findItemInGrids } from '../../utils/findItemInGrids';
+import { removeItemFromCells } from '../../utils/removeItemFromCells';
+import { placeItemInCells } from '../../utils/placeItemInCells';
 
 export interface EquipmentActionsSlice {
   unequipItem: (itemId: string, targetGridId: string) => boolean;

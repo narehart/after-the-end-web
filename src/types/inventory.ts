@@ -63,8 +63,15 @@ export interface Item {
 
 export type ItemsMap = Record<string, Item | undefined>;
 
+export type CellGrid = Array<Array<string | null>>;
+
+export interface GridPosition {
+  x: number;
+  y: number;
+}
+
 export interface GridCell {
-  cells: Array<Array<string | null>>;
+  cells: CellGrid;
   width: number;
   height: number;
 }

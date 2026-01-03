@@ -1,8 +1,11 @@
 import type { StateCreator } from 'zustand';
 import type { ItemsMap, GridsMap, Item } from '../../types/inventory';
-import { mockItems } from '../mockItems';
-import { initialGrids } from '../initialGrids';
-import { findFreePosition, findItemOrigin } from '../gridHelpers';
+import mockItemsJson from '../../data/mockItems.json';
+import { initialGrids } from '../../data/initialGrids';
+import { findFreePosition } from '../../utils/findFreePosition';
+import { findItemOrigin } from '../../utils/findItemOrigin';
+
+const mockItems = mockItemsJson as ItemsMap;
 
 export interface ItemsState {
   items: ItemsMap;

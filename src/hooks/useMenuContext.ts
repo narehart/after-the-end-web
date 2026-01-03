@@ -1,6 +1,6 @@
 import { useMemo, useCallback } from 'react';
 import { useInventoryStore } from '../stores/inventoryStore';
-import { findItemInGrids } from '../stores/gridHelpers';
+import { findItemInGrids } from '../utils/findItemInGrids';
 import type { MenuState, MenuContext, PanelType } from '../types/inventory';
 
 export default function useMenuContext(menu: MenuState): MenuContext {

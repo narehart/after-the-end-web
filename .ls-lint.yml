@@ -102,9 +102,11 @@ ls:
     .*: regex:$
     .dir: regex:constants
 
-  # src/data - camelCase .json files only, no subdirectories
+  # src/data - camelCase .json and .ts files only, no subdirectories
+  # .ts allowed for data that needs programmatic creation (e.g., initialGrids)
   src/data:
     .json: camelCase
+    .ts: camelCase
     .*: regex:$
     .dir: regex:data
 
@@ -121,11 +123,22 @@ ls:
     .*: regex:$
     .dir: regex:components
 
+  # src/stores - camelCase files ending with Store.ts, plus slices subdirectory
+  src/stores:
+    .ts: regex:[a-z][a-zA-Z0-9]*Store
+    .*: regex:$
+    .dir: regex:stores | regex:slices
+
+  # src/stores/slices - camelCase files ending with Slice.ts, no subdirectories
+  src/stores/slices:
+    .ts: regex:[a-z][a-zA-Z0-9]*Slice
+    .*: regex:$
+    .dir: regex:slices
+
 ignore:
   # Ignore subdirectory contents - rules added incrementally
   - dist
   - node_modules
   - src/config
-  - src/stores
   - src/types
   - src/utils
