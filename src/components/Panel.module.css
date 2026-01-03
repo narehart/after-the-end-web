@@ -49,3 +49,10 @@
   overflow: auto;
   padding: var(--space-8);
 }
+
+.empty-message {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: var(--space-32);
+  text-align: center;
+}

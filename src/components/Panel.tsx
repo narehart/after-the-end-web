@@ -16,6 +16,7 @@ interface PanelProps {
   className?: string;
   border?: BorderPosition;
   contentClassName?: string;
+  emptyMessage?: string;
 }
 
 export default function Panel({
@@ -27,8 +28,10 @@ export default function Panel({
   className,
   border,
   contentClassName,
+  emptyMessage,
 }: PanelProps): React.JSX.Element {
   const hasHeader = title !== undefined || breadcrumbLinks !== undefined || header !== undefined;
+  const isEmpty = children === null || children === undefined;
 
   const renderHeader = (): ReactNode => {
     if (header !== undefined) return header;
@@ -56,7 +59,11 @@ export default function Panel({
             : cx('panel-content')
         }
       >
-        {children}
+        {isEmpty && emptyMessage !== undefined ? (
+          <div className={cx('empty-message')}>{emptyMessage}</div>
+        ) : (
+          children
+        )}
       </div>
     </div>
   );

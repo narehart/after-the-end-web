@@ -2,13 +2,6 @@
   overflow: hidden;
 }
 
-.empty-container-message {
-  color: var(--text-muted);
-  font-style: italic;
-  padding: var(--space-32);
-  text-align: center;
-}
-
 /* Scrollbar styling */
 .container-view-content::-webkit-scrollbar {
   width: 6px;

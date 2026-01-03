@@ -59,7 +59,11 @@ export default function ContainerView({
   const effectiveCellSize = cellSize ?? DEFAULT_CELL_SIZE;
 
   return (
-    <Panel breadcrumbLinks={breadcrumbLinks} contentClassName={cx('container-view-content')}>
+    <Panel
+      breadcrumbLinks={breadcrumbLinks}
+      contentClassName={cx('container-view-content')}
+      emptyMessage={emptyMessage}
+    >
       {currentGrid !== undefined ? (
         <ItemGrid
           grid={currentGrid}
@@ -67,9 +71,7 @@ export default function ContainerView({
           cellSize={effectiveCellSize}
           hidden={!isReady}
         />
-      ) : (
-        <div className={cx('empty-container-message')}>{emptyMessage}</div>
-      )}
+      ) : null}
     </Panel>
   );
 }
