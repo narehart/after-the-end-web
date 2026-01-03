@@ -7,20 +7,15 @@ import {
   CONTENT_PADDING,
   MIN_CELL_SIZE,
 } from '../constants/grid';
-import {
-  DEFAULT_CELL_SIZE,
-  FIRST_INDEX,
-  SECOND_INDEX,
-  RESIZE_DEBOUNCE_MS,
-} from '../constants/numbers';
+import { FIRST_INDEX, SECOND_INDEX, RESIZE_DEBOUNCE_MS } from '../constants/numbers';
 import type { UseCellSizeProps } from '../types/utils';
 
 export default function useCellSize(
   containerRef: RefObject<HTMLDivElement | null>,
   props: UseCellSizeProps
-): number {
+): number | null {
   const { resolution: effectiveResolution } = props;
-  const [cellSize, setCellSize] = useState(DEFAULT_CELL_SIZE);
+  const [cellSize, setCellSize] = useState<number | null>(null);
 
   useEffect(() => {
     const calculateCellSize = (): void => {

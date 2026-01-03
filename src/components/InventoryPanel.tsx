@@ -6,7 +6,7 @@ import styles from './InventoryPanel.module.css';
 const cx = classNames.bind(styles);
 
 interface InventoryPanelProps {
-  cellSize: number;
+  cellSize: number | null;
 }
 
 export default function InventoryPanel({ cellSize }: InventoryPanelProps): React.JSX.Element {

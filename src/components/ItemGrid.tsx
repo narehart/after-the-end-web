@@ -17,9 +17,15 @@ interface ItemGridProps {
   grid: GridCell;
   context: MenuSource;
   cellSize: number;
+  hidden?: boolean;
 }
 
-export default function ItemGrid({ grid, context, cellSize }: ItemGridProps): React.JSX.Element {
+export default function ItemGrid({
+  grid,
+  context,
+  cellSize,
+  hidden = false,
+}: ItemGridProps): React.JSX.Element {
   const items = useInventoryStore((state) => state.items);
   const [focusedCell, setFocusedCell] = useState<FocusedCell>({ x: FIRST_INDEX, y: FIRST_INDEX });
   const cellRefs: MutableRefObject<Record<string, HTMLDivElement | null>> = useRef({});
@@ -66,7 +72,10 @@ export default function ItemGrid({ grid, context, cellSize }: ItemGridProps): Re
   );
 
   return (
-    <div className={cx('inventory-grid-container')}>
+    <div
+      className={cx('inventory-grid-container')}
+      style={{ visibility: hidden ? 'hidden' : 'visible' }}
+    >
       <div
         className={cx('inventory-grid')}
         style={{

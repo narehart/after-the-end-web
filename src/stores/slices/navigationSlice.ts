@@ -3,6 +3,7 @@ import { FIRST_INDEX, SECOND_INDEX } from '../../constants/numbers';
 import type { GridCell } from '../../types/inventory';
 import type { NavigationSlice, StoreWithGrids } from '../../types/store';
 import { getInitialInventoryFocusPath } from '../../utils/getInitialInventoryFocusPath';
+import { initialInventoryState } from './itemsSlice';
 
 export type { NavigationSlice } from '../../types/store';
 
@@ -12,7 +13,10 @@ export const createNavigationSlice: StateCreator<
   [],
   NavigationSlice
 > = (set, get) => ({
-  inventoryFocusPath: getInitialInventoryFocusPath(),
+  inventoryFocusPath: getInitialInventoryFocusPath({
+    equipment: initialInventoryState.equipment,
+    items: initialInventoryState.items,
+  }),
   worldFocusPath: ['ground'],
 
   navigateToContainer: (containerId, panel, fromEquipment = false): void => {

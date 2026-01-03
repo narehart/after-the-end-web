@@ -15,7 +15,7 @@ interface ContainerViewProps {
   emptyMessage?: string;
   panelType?: PanelType;
   panelLabel?: string;
-  cellSize?: number;
+  cellSize?: number | null;
 }
 
 // Main ContainerView component - reusable for both inventory and world panels
@@ -25,7 +25,7 @@ export default function ContainerView({
   emptyMessage = 'No container selected',
   panelType = 'inventory',
   panelLabel = 'Container',
-  cellSize = DEFAULT_CELL_SIZE,
+  cellSize = null,
 }: ContainerViewProps): React.JSX.Element {
   const items = useInventoryStore((state) => state.items);
   const grids = useInventoryStore((state) => state.grids);
@@ -54,10 +54,19 @@ export default function ContainerView({
     return 'grid';
   };
 
+  // Hide grid until cellSize is calculated to prevent layout shift
+  const isReady = cellSize !== null;
+  const effectiveCellSize = cellSize ?? DEFAULT_CELL_SIZE;
+
   return (
     <Panel breadcrumbLinks={breadcrumbLinks} contentClassName={cx('container-view-content')}>
       {currentGrid !== undefined ? (
-        <ItemGrid grid={currentGrid} context={getContext()} cellSize={cellSize} />
+        <ItemGrid
+          grid={currentGrid}
+          context={getContext()}
+          cellSize={effectiveCellSize}
+          hidden={!isReady}
+        />
       ) : (
         <div className={cx('empty-container-message')}>{emptyMessage}</div>
       )}

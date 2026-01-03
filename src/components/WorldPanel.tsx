@@ -6,7 +6,7 @@ import styles from './WorldPanel.module.css';
 const cx = classNames.bind(styles);
 
 interface WorldPanelProps {
-  cellSize: number;
+  cellSize: number | null;
 }
 
 export default function WorldPanel({ cellSize }: WorldPanelProps): React.JSX.Element {
