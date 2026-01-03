@@ -25,8 +25,9 @@ export function useBreadcrumbLinksContainer(
     ];
     focusPath.forEach((id, index) => {
       const isLast = index === focusPath.length - SECOND_INDEX;
+      const item = items[id];
       links.push({
-        label: items[id]?.name ?? id,
+        label: item?.description ?? item?.name ?? id,
         onClick: isLast
           ? undefined
           : () => {
