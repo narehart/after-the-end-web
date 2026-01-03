@@ -21,7 +21,7 @@
       "width": 4,
       "height": 6
     },
-    "flavorText": "Once held groceries, now offers a modicum of shelter in the wasteland."
+    "flavorText": "Once a symbol of consumption, now a coveted treasure for shelter and storage."
   },
   {
     "id": "neo_2",
@@ -44,7 +44,7 @@
       "width": 2,
       "height": 1
     },
-    "flavorText": "Eternal relic of a lost era. Fills you with... nostalgia?"
+    "flavorText": "A relic of a time when funerals weren't DIY projects."
   },
   {
     "id": "neo_3",
@@ -64,14 +64,14 @@
       "itmStick.png",
       "itmStickHeld.png"
     ],
-    "flavorText": "Nature's last bastion of sarcasm - a medium-sized branch for your shelter needs."
+    "flavorText": "Survival essential? Tree's persistence outlasted mankind."
   },
   {
     "id": "neo_4",
     "neoId": "4",
     "name": "tin can",
     "description": "Chef Yummy \"Creamy Crumb\" soup can",
-    "type": "consumable",
+    "type": "container",
     "weight": 0.07,
     "value": 0,
     "stackLimit": 1,
@@ -88,7 +88,7 @@
       "width": 2,
       "height": 2
     },
-    "flavorText": "A veritable time capsule of nostalgia and regret in every slurp."
+    "flavorText": "Always a comfort in uncertain times - or so the label claims."
   },
   {
     "id": "neo_5",
@@ -387,7 +387,7 @@
     "neoId": "20",
     "name": "GUI Container",
     "description": "Encounter Available Items",
-    "type": "misc",
+    "type": "container",
     "weight": 0,
     "value": 0,
     "stackLimit": 1,
@@ -403,14 +403,14 @@
       "width": 22,
       "height": 12
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "An unexpected find in a world full of surprises."
   },
   {
     "id": "neo_21",
     "neoId": "21",
     "name": "GUI Container",
     "description": "Encounter Response Items",
-    "type": "misc",
+    "type": "container",
     "weight": 0,
     "value": 0,
     "stackLimit": 1,
@@ -426,14 +426,14 @@
       "width": 22,
       "height": 12
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Unexpected survival essentials. Proof that optimism isn't always misplaced."
   },
   {
     "id": "neo_22",
     "neoId": "22",
     "name": "GUI Container",
     "description": "Flaws you can acquire now",
-    "type": "misc",
+    "type": "container",
     "weight": 0,
     "value": 0,
     "stackLimit": 1,
@@ -449,14 +449,14 @@
       "width": 24,
       "height": 12
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Pick your flaws, future isn't waiting for perfection."
   },
   {
     "id": "neo_23",
     "neoId": "23",
     "name": "GUI Container",
     "description": "Abilities you can acquire now",
-    "type": "misc",
+    "type": "container",
     "weight": 0,
     "value": 0,
     "stackLimit": 1,
@@ -472,14 +472,14 @@
       "width": 24,
       "height": 12
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Promises of a brighter future, buried in yesterday's rust."
   },
   {
     "id": "neo_24",
     "neoId": "24",
     "name": "GUI Container",
     "description": "Items found in this hex",
-    "type": "misc",
+    "type": "container",
     "weight": 0,
     "value": 0,
     "stackLimit": 1,
@@ -495,14 +495,14 @@
       "width": 20,
       "height": 29
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "A snapshot of a world that was... still oddly familiar."
   },
   {
     "id": "neo_25",
     "neoId": "25",
     "name": "GUI Container",
     "description": "Ingredients",
-    "type": "misc",
+    "type": "container",
     "weight": 0,
     "value": 0,
     "stackLimit": 1,
@@ -518,14 +518,14 @@
       "width": 33,
       "height": 11
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Expired before the bombs fell. Still tastier than the new world order."
   },
   {
     "id": "neo_26",
     "neoId": "26",
     "name": "GUI Container",
     "description": "Yield",
-    "type": "misc",
+    "type": "container",
     "weight": 0,
     "value": 0,
     "stackLimit": 1,
@@ -541,14 +541,14 @@
       "width": 33,
       "height": 11
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Harvested in better times... a humbling reminder of the past's abundance."
   },
   {
     "id": "neo_27",
     "neoId": "27",
     "name": "medical kit",
     "description": "nanorobot medical kit",
-    "type": "misc",
+    "type": "container",
     "weight": 3,
     "value": 400,
     "stackLimit": 1,
@@ -564,14 +564,14 @@
       "width": 3,
       "height": 3
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Nanohealers on standby, just don't ask about their dance moves."
   },
   {
     "id": "neo_28",
     "neoId": "28",
     "name": "clothes (legs)",
     "description": "bluejeans",
-    "type": "misc",
+    "type": "container",
     "weight": 0.5,
     "value": 15,
     "stackLimit": 1,
@@ -588,7 +588,7 @@
       "width": 2,
       "height": 3
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Time-warped denim pocket - still holding onto hopes and ammo."
   },
   {
     "id": "neo_29",
@@ -632,7 +632,7 @@
       "width": 10,
       "height": 6
     },
-    "flavorText": "Packed for peace, proven useful in the chaos."
+    "flavorText": "Packed for the apocalypse, minus the champagne and sunscreen."
   },
   {
     "id": "neo_31",
@@ -732,7 +732,7 @@
       "width": 2,
       "height": 3
     },
-    "flavorText": "Filled with memories of clearer days... and now, a vital lifeline."
+    "flavorText": "Hydration for days... or at least till 2035."
   },
   {
     "id": "neo_36",
@@ -789,7 +789,7 @@
     "allImages": [
       "itmTwigs.png"
     ],
-    "flavorText": "Campfire essentials, post-apocalypse Edition - Rare find, but who needs matches anyway?"
+    "flavorText": "Auxiliary campfire kit - Nature's last stand-up comedy act."
   },
   {
     "id": "neo_39",
@@ -815,7 +815,7 @@
     "neoId": "40",
     "name": "clothes (torso)",
     "description": "olive-colored hoodie",
-    "type": "misc",
+    "type": "container",
     "weight": 0.5,
     "value": 10,
     "stackLimit": 1,
@@ -832,7 +832,7 @@
       "width": 2,
       "height": 3
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Fashionably decayed - still covering up mistakes in style."
   },
   {
     "id": "neo_41",
@@ -875,7 +875,7 @@
       "width": 10,
       "height": 10
     },
-    "flavorText": "Packed for a trip to the new frontier. Yours might be next."
+    "flavorText": "Once held dreams of adventure, now cradles scavenged hopes."
   },
   {
     "id": "neo_43",
@@ -937,7 +937,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "Apocalypse-resilient. Your thirst for clean water never dies."
+    "flavorText": "Still cleans dirtier than your pre-apocalypse tap water."
   },
   {
     "id": "neo_46",
@@ -999,7 +999,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "Last hope in a sea of mutants, still sealed and surprisingly potent."
+    "flavorText": "Amoxi's still kickin'. Apocalypse can't touch its antibiotic punch."
   },
   {
     "id": "neo_49",
@@ -1160,7 +1160,7 @@
     "neoId": "57",
     "name": "headwear",
     "description": "night vision goggles (off)",
-    "type": "misc",
+    "type": "container",
     "weight": 0.74,
     "value": 100,
     "stackLimit": 1,
@@ -1177,7 +1177,7 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Last night's light, still lingering in the day..."
   },
   {
     "id": "neo_58",
@@ -1365,7 +1365,7 @@
     "neoId": "67",
     "name": "rifle",
     "description": "hunting rifle",
-    "type": "misc",
+    "type": "container",
     "weight": 3.4,
     "value": 500,
     "stackLimit": 1,
@@ -1382,7 +1382,7 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Reliability through the apocalypse - Just don't ask about its preference for radioactive rabbits."
   },
   {
     "id": "neo_68",
@@ -1401,7 +1401,7 @@
     "allImages": [
       "itmAmmo308FMJ.png"
     ],
-    "flavorText": "Even in a wasteland, some things never expire - like your chances for survival."
+    "flavorText": "For emergencies, or just another headache - these bullet band-aids are your savior."
   },
   {
     "id": "neo_69",
@@ -1420,7 +1420,7 @@
     "allImages": [
       "itmAmmo308SP.png"
     ],
-    "flavorText": "First aid kit... just remember, painkillers aren't for the headaches of the future."
+    "flavorText": "Bandage Bullets - When healing hurts more than the wound itself."
   },
   {
     "id": "neo_70",
@@ -1484,7 +1484,7 @@
     "neoId": "73",
     "name": "vehicle",
     "description": "Shop Mart shopping cart",
-    "type": "ammo",
+    "type": "container",
     "weight": 19.5,
     "value": 100,
     "stackLimit": 1,
@@ -1501,7 +1501,7 @@
       "width": 16,
       "height": 16
     },
-    "flavorText": "Wheels of fortune: Now spinning bullets instead."
+    "flavorText": "Wheels of fortune? Survival's not a sprint, it's a grocery race."
   },
   {
     "id": "neo_74",
@@ -1986,7 +1986,7 @@
     "neoId": "99",
     "name": "rifle",
     "description": "high-tech rifle",
-    "type": "misc",
+    "type": "container",
     "weight": 3.6,
     "value": 1800,
     "stackLimit": 1,
@@ -2004,14 +2004,14 @@
       "width": 2,
       "height": 2
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Sophisticated firearm. Built to outlive its users - check!"
   },
   {
     "id": "neo_100",
     "neoId": "100",
     "name": "ammo",
     "description": "battery",
-    "type": "medical",
+    "type": "container",
     "weight": 1,
     "value": 50,
     "stackLimit": 1,
@@ -2027,7 +2027,7 @@
       "width": 2,
       "height": 5
     },
-    "flavorText": "Juice for your circuits - made fresh daily in Chernobyl."
+    "flavorText": "Eternal power source? More like eternal hope!"
   },
   {
     "id": "neo_101",
@@ -2046,7 +2046,7 @@
     "allImages": [
       "itmElectricCharge.png"
     ],
-    "flavorText": "Shock therapy... in a can. It's like a jolt of nostalgia!"
+    "flavorText": "Power surge? Don't worry, it's just your new heartbeat."
   },
   {
     "id": "neo_102",
@@ -2105,7 +2105,7 @@
     "allImages": [
       "itmSteelPot.png"
     ],
-    "flavorText": "Sizzles over fire pit - remnant of a time when spaghetti was a luxury."
+    "flavorText": "Bubbling up hope amidst the ashes - your trusty metal saucepan."
   },
   {
     "id": "neo_105",
@@ -2438,7 +2438,7 @@
     "neoId": "122",
     "name": "GUI Container",
     "description": "Available Crafting Items",
-    "type": "misc",
+    "type": "container",
     "weight": 0,
     "value": 0,
     "stackLimit": 1,
@@ -2454,7 +2454,7 @@
       "width": 20,
       "height": 29
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Craft to your heart's desire, just remember - it's still post-apocalypse!"
   },
   {
     "id": "neo_123",
@@ -2492,7 +2492,7 @@
     "allImages": [
       "itmMemStick.png"
     ],
-    "flavorText": "Relive your glorious victory over Dogmen... in slow-mo."
+    "flavorText": "Eternal reminder: When in doubt, kick it... or was that advice?"
   },
   {
     "id": "neo_125",
@@ -2587,7 +2587,7 @@
     "allImages": [
       "itmSquirrelSnare.png"
     ],
-    "flavorText": "For those who find survival a sport, the little guy's no match for your big game."
+    "flavorText": "The squirrel's last hope? A deadly dance with mankind."
   },
   {
     "id": "neo_130",
@@ -2613,7 +2613,7 @@
     "neoId": "131",
     "name": "rifle",
     "description": "hunting rifle w/scope",
-    "type": "misc",
+    "type": "container",
     "weight": 3.85,
     "value": 550,
     "stackLimit": 1,
@@ -2630,14 +2630,14 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Scope not included - it's a post-apocalypse, not a hunting lodge retreat."
   },
   {
     "id": "neo_132",
     "neoId": "132",
     "name": "rifle",
     "description": "hunting rifle w/strap",
-    "type": "misc",
+    "type": "container",
     "weight": 3.6,
     "value": 508,
     "stackLimit": 1,
@@ -2655,14 +2655,14 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Survival of the fittest? Fashionably equipped."
   },
   {
     "id": "neo_133",
     "neoId": "133",
     "name": "rifle",
     "description": "hunting rifle w/scope and strap",
-    "type": "misc",
+    "type": "container",
     "weight": 4.05,
     "value": 558,
     "stackLimit": 1,
@@ -2680,7 +2680,7 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Bonded through countless sunsets and apocalypses - your faithful long-range companion."
   },
   {
     "id": "neo_134",
@@ -2699,7 +2699,7 @@
     "allImages": [
       "itmRifleStrapStored.png"
     ],
-    "flavorText": "Comfort in chaos? Your rifle's best buddy for post-apocalyptic strolls."
+    "flavorText": "Remnant of a society that once marched to the beat of a different drummer..."
   },
   {
     "id": "neo_135",
@@ -2719,7 +2719,7 @@
       "itmNewspaperStored.png",
       "itmNewspaper.png"
     ],
-    "flavorText": "Headlines of yesteryears, still telling tales amidst today's ruins"
+    "flavorText": "Yesteryear's headlines, now fashionable armor against tomorrow's chaos"
   },
   {
     "id": "neo_136",
@@ -2743,7 +2743,7 @@
       "width": 2,
       "height": 3
     },
-    "flavorText": "Carbonated kernels of hope... bottled in 1955."
+    "flavorText": "Once a beacon of cheer, now just another reminder of what was lost."
   },
   {
     "id": "neo_137",
@@ -2769,7 +2769,7 @@
     "neoId": "138",
     "name": "iSlab (locked)",
     "description": "iSlab tablet (off)",
-    "type": "accessory",
+    "type": "container",
     "weight": 0.6,
     "value": 15,
     "stackLimit": 1,
@@ -2785,7 +2785,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "Powered by pre-war dreams and post-apocalypse desperation."
+    "flavorText": "A digital relic, powerless but holding whispers of a brighter past."
   },
   {
     "id": "neo_139",
@@ -2937,7 +2937,7 @@
     "allImages": [
       "itmPaperRecipe.png"
     ],
-    "flavorText": "A relic of hope in a world gone mad - your personal scratch pad for apocalyptic survival plans."
+    "flavorText": "Scrawled instructions on a scrap. 'How to build a functioning society'. Good luck!"
   },
   {
     "id": "neo_147",
@@ -2994,14 +2994,14 @@
     "allImages": [
       "itmNoiseTrap.png"
     ],
-    "flavorText": "Made for a silent disco, now it saves lives - ironically."
+    "flavorText": "A cacophony of deception in times of silence."
   },
   {
     "id": "neo_150",
     "neoId": "150",
     "name": "box",
     "description": "cardboard box",
-    "type": "misc",
+    "type": "container",
     "weight": 0.1,
     "value": 0.5,
     "stackLimit": 1,
@@ -3017,14 +3017,14 @@
       "width": 6,
       "height": 6
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "A sanctuary in a world gone mad. Cardboard fortitude."
   },
   {
     "id": "neo_151",
     "neoId": "151",
     "name": "camp site",
     "description": "any old spot on the ground",
-    "type": "misc",
+    "type": "container",
     "weight": 0,
     "value": 0,
     "stackLimit": 1,
@@ -3040,14 +3040,14 @@
       "width": 30,
       "height": 40
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Gravity's last bastion. Dusty relics welcomed here."
   },
   {
     "id": "neo_152",
     "neoId": "152",
     "name": "GUI Container",
     "description": "Camp sites found in this hex",
-    "type": "misc",
+    "type": "container",
     "weight": 0,
     "value": 0,
     "stackLimit": 1,
@@ -3063,7 +3063,7 @@
       "width": 6,
       "height": 26
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Scouting reports from a forgotten world. Yours now."
   },
   {
     "id": "neo_153",
@@ -3527,7 +3527,7 @@
     "neoId": "177",
     "name": "mechanical doll",
     "description": "strange mechanical doll",
-    "type": "misc",
+    "type": "container",
     "weight": 4.8,
     "value": 125,
     "stackLimit": 1,
@@ -3543,7 +3543,7 @@
       "width": 6,
       "height": 2
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Last dance in the wasteland. Spin 'til the batteries drop."
   },
   {
     "id": "neo_178",
@@ -4090,7 +4090,7 @@
       "width": 2,
       "height": 3
     },
-    "flavorText": "A bitter toast to better times... or so it once hoped."
+    "flavorText": "Survival of the last tippler. Bottled resilience."
   },
   {
     "id": "neo_206",
@@ -4114,7 +4114,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "Forget the world, take care of your teeth first."
+    "flavorText": "Once a painkiller, now a precious resource in the New Wasteland."
   },
   {
     "id": "neo_207",
@@ -4138,7 +4138,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "Last resort for a world gone wrong - Cavilo promises relief, if only in memory."
+    "flavorText": "Relic from a world where painkillers were considered luxury items."
   },
   {
     "id": "neo_208",
@@ -4299,7 +4299,7 @@
     "neoId": "216",
     "name": "medical kit",
     "description": "first-aid kit",
-    "type": "misc",
+    "type": "container",
     "weight": 0.6,
     "value": 20,
     "stackLimit": 1,
@@ -4315,7 +4315,7 @@
       "width": 4,
       "height": 4
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Bandages and hope - still a bargain in this wasteland."
   },
   {
     "id": "neo_217",
@@ -4968,7 +4968,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "Sleep tight apocalypse style - prescriptions still valid, nightmares not included."
+    "flavorText": "Dreamland in a bottle. Nightmares guaranteed post-apocalypse."
   },
   {
     "id": "neo_251",
@@ -5302,7 +5302,7 @@
     "neoId": "268",
     "name": "large parts",
     "description": "shopping cart basket",
-    "type": "misc",
+    "type": "container",
     "weight": 9,
     "value": 25,
     "stackLimit": 1,
@@ -5318,7 +5318,7 @@
       "width": 16,
       "height": 16
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Reinvented as a survival tool, once used for grocery trips, now for scavenging apocalypse debris."
   },
   {
     "id": "neo_269",
@@ -5363,7 +5363,7 @@
     "neoId": "271",
     "name": "vehicle",
     "description": "box cart",
-    "type": "ammo",
+    "type": "container",
     "weight": 10.75,
     "value": 60,
     "stackLimit": 1,
@@ -5380,14 +5380,14 @@
       "width": 16,
       "height": 16
     },
-    "flavorText": "Ammo box: The only thing that survived the apocalypse unscathed - your luck."
+    "flavorText": "Once filled with dreams, now brimming with necessity."
   },
   {
     "id": "neo_272",
     "neoId": "272",
     "name": "vehicle",
     "description": "plastic sled",
-    "type": "ammo",
+    "type": "container",
     "weight": 1.4,
     "value": 12,
     "stackLimit": 1,
@@ -5404,14 +5404,14 @@
       "width": 16,
       "height": 12
     },
-    "flavorText": "A blast from the past, now ready for a whole new kind of ride."
+    "flavorText": "Sliding into post-apocalypse, one carefree glide at a time."
   },
   {
     "id": "neo_273",
     "neoId": "273",
     "name": "vehicle",
     "description": "sled w/strap",
-    "type": "ammo",
+    "type": "container",
     "weight": 1.6,
     "value": 15,
     "stackLimit": 1,
@@ -5428,7 +5428,7 @@
       "width": 16,
       "height": 12
     },
-    "flavorText": "Sled with Strap - For those who planned ahead and now need a thrill in a world of chaos."
+    "flavorText": "Icy escapes now served with a side of radiation."
   },
   {
     "id": "neo_274",
@@ -5448,14 +5448,14 @@
       "itmStickLarge.png",
       "itmStickLargeHeld.png"
     ],
-    "flavorText": "Surprisingly durable. Nature's last line of defense."
+    "flavorText": "Nature's last survival kit - no need for recharge or maintenance."
   },
   {
     "id": "neo_275",
     "neoId": "275",
     "name": "vehicle",
     "description": "travois",
-    "type": "ammo",
+    "type": "container",
     "weight": 5.3,
     "value": 5,
     "stackLimit": 1,
@@ -5472,7 +5472,7 @@
       "width": 16,
       "height": 10
     },
-    "flavorText": "Carried ammunition. Proof that survivalists had a sense of humor too."
+    "flavorText": "Carried civilization over the wasteland - now hauls your loot instead."
   },
   {
     "id": "neo_276",
@@ -5536,7 +5536,7 @@
     "neoId": "279",
     "name": "bow",
     "description": "crude bow",
-    "type": "misc",
+    "type": "container",
     "weight": 0.85,
     "value": 40,
     "stackLimit": 1,
@@ -5554,14 +5554,14 @@
       "width": 10,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Archaic elegance. Hunting's never been so retro."
   },
   {
     "id": "neo_280",
     "neoId": "280",
     "name": "bow",
     "description": "bow",
-    "type": "misc",
+    "type": "container",
     "weight": 1.75,
     "value": 200,
     "stackLimit": 1,
@@ -5578,14 +5578,14 @@
       "width": 10,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Archer's best friend? Shelf life unproven."
   },
   {
     "id": "neo_281",
     "neoId": "281",
     "name": "bow",
     "description": "bow w/strap",
-    "type": "misc",
+    "type": "container",
     "weight": 1.8,
     "value": 205,
     "stackLimit": 1,
@@ -5603,7 +5603,7 @@
       "width": 10,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Leash your survival - pet dog not included."
   },
   {
     "id": "neo_282",
@@ -5631,7 +5631,7 @@
       "itmArrowCrudeSlot108.png",
       "itmArrowCrudeSlot109.png"
     ],
-    "flavorText": "Healing on a stick - post-apocalypse approved!"
+    "flavorText": "First aid in a pointy package - you never know when humor might be the cure."
   },
   {
     "id": "neo_283",
@@ -5659,7 +5659,7 @@
       "itmArrowCrudeSlot108.png",
       "itmArrowCrudeSlot109.png"
     ],
-    "flavorText": "Picked by a doctor... long before the apocalypse."
+    "flavorText": "Sharpened hopes, now with added sterility."
   },
   {
     "id": "neo_284",
@@ -5687,7 +5687,7 @@
       "itmArrowCrudeSlot108.png",
       "itmArrowCrudeSlot109.png"
     ],
-    "flavorText": "Harvested from a tree of questionable origins, a testament to humanity's resourcefulness in the wasteland."
+    "flavorText": "Medicine of last resort, crafted from materials once considered waste."
   },
   {
     "id": "neo_285",
@@ -5732,7 +5732,7 @@
     "neoId": "287",
     "name": "sling",
     "description": "sling",
-    "type": "misc",
+    "type": "container",
     "weight": 0.03,
     "value": 2,
     "stackLimit": 1,
@@ -5748,14 +5748,14 @@
       "width": 2,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Holds more than hope, but less than sanity."
   },
   {
     "id": "neo_288",
     "neoId": "288",
     "name": "pistol",
     "description": "revolver",
-    "type": "misc",
+    "type": "container",
     "weight": 0.9,
     "value": 300,
     "stackLimit": 1,
@@ -5771,7 +5771,7 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "A blast from the past... or just a loud noise?"
   },
   {
     "id": "neo_289",
@@ -5790,7 +5790,7 @@
     "allImages": [
       "itmAmmo38FMJ.png"
     ],
-    "flavorText": "A remnant of a saner time, these bullets heal rather than harm."
+    "flavorText": "Healing in a hurry? No need to rush - they've got all the time in the world."
   },
   {
     "id": "neo_290",
@@ -5809,7 +5809,7 @@
     "allImages": [
       "itmAmmo38JHP.png"
     ],
-    "flavorText": "Healing in a hurry? These bullets are your prescription for post-apocalyptic remedies."
+    "flavorText": "Cure for what ails you? More like a bulletproof headache remedy."
   },
   {
     "id": "neo_291",
@@ -5828,7 +5828,7 @@
     "allImages": [
       "itmAmmo45FMJ.png"
     ],
-    "flavorText": "Last hope for a hearty laugh in these dire times."
+    "flavorText": "A reminder of a time when doctors weren't your first line of defense."
   },
   {
     "id": "neo_292",
@@ -5847,7 +5847,7 @@
     "allImages": [
       "itmAmmo45JHP.png"
     ],
-    "flavorText": "Bandages for your wounds... and spirits."
+    "flavorText": "Ironically curative - designed to end life, now saves it in a world gone wrong."
   },
   {
     "id": "neo_293",
@@ -5866,7 +5866,7 @@
     "allImages": [
       "itmAmmo12GaugeBuckshot.png"
     ],
-    "flavorText": "Eternal reminders of a healthier past. These won't cure your radiation sickness, but they might kill your boredom."
+    "flavorText": "First aid... for when Band-Aids become currency."
   },
   {
     "id": "neo_294",
@@ -5885,14 +5885,14 @@
     "allImages": [
       "itmAmmo12GaugeSlug.png"
     ],
-    "flavorText": "Medical cure or post-apocalypse souvenir? Either way, these bullets aim to please."
+    "flavorText": "Healing on the go? Bullets that cure what ails you, if you consider radiation curable..."
   },
   {
     "id": "neo_295",
     "neoId": "295",
     "name": "pistol",
     "description": "pistol",
-    "type": "misc",
+    "type": "container",
     "weight": 1.1,
     "value": 350,
     "stackLimit": 1,
@@ -5908,14 +5908,14 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Relic of a time when bullets chased laughter instead of roaches."
   },
   {
     "id": "neo_296",
     "neoId": "296",
     "name": "rifle",
     "description": "military rifle",
-    "type": "misc",
+    "type": "container",
     "weight": 3.82,
     "value": 850,
     "stackLimit": 1,
@@ -5932,14 +5932,14 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Firing range relic. Still packing a punch despite the apocalypse's humor."
   },
   {
     "id": "neo_297",
     "neoId": "297",
     "name": "rifle",
     "description": "hunting rifle w/strap",
-    "type": "misc",
+    "type": "container",
     "weight": 3.4,
     "value": 608,
     "stackLimit": 1,
@@ -5957,7 +5957,7 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Still shoots deer, just not as many zebras you'd hope for."
   },
   {
     "id": "neo_298",
@@ -6048,7 +6048,7 @@
     "neoId": "301",
     "name": "battery",
     "description": "battery",
-    "type": "consumable",
+    "type": "container",
     "weight": 0.016,
     "value": 0.5,
     "stackLimit": 1,
@@ -6064,7 +6064,7 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "Fueled by nostalgia and a desperate hope for the old world.\")"
+    "flavorText": "Power source from a brighter past... if you believe in such things."
   },
   {
     "id": "neo_302",
@@ -6376,7 +6376,7 @@
     "neoId": "318",
     "name": "flashlight",
     "description": "Circuit Shack \"Carter\" flashlight (off)",
-    "type": "consumable",
+    "type": "container",
     "weight": 0.25,
     "value": 15,
     "stackLimit": 1,
@@ -6392,14 +6392,14 @@
       "width": 2,
       "height": 1
     },
-    "flavorText": "Left on for the apocalypse's darkest nights. Saves batteries, your sanity?"
+    "flavorText": "Always ready to light up your apocalypse... even when it's off."
   },
   {
     "id": "neo_319",
     "neoId": "319",
     "name": "battery",
     "description": "AA battery",
-    "type": "consumable",
+    "type": "container",
     "weight": 0.03,
     "value": 2,
     "stackLimit": 2,
@@ -6415,7 +6415,7 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "Power when all else fades - just don't expect any applause."
+    "flavorText": "Eternally charged. Just needs a spark of hope."
   },
   {
     "id": "neo_320",
@@ -6460,7 +6460,7 @@
     "neoId": "322",
     "name": "Laptop (locked)",
     "description": "FJV \"Copperbook\" laptop (off)",
-    "type": "accessory",
+    "type": "container",
     "weight": 2.06,
     "value": 45,
     "stackLimit": 1,
@@ -6476,14 +6476,14 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "Laptop from a time when work meant more than survival."
+    "flavorText": "Remnant of a forgotten digital age, still waiting for its password."
   },
   {
     "id": "neo_323",
     "neoId": "323",
     "name": "battery",
     "description": "laptop battery",
-    "type": "consumable",
+    "type": "container",
     "weight": 0.68,
     "value": 10,
     "stackLimit": 1,
@@ -6499,14 +6499,14 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "Recharges your devices... and hopes for Wi-Fi."
+    "flavorText": "Last to power down? You're up next."
   },
   {
     "id": "neo_324",
     "neoId": "324",
     "name": "Laptop (locked)",
     "description": "FJV \"Copperbook\" laptop (closed)",
-    "type": "accessory",
+    "type": "container",
     "weight": 2.06,
     "value": 45,
     "stackLimit": 1,
@@ -6522,14 +6522,14 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "Reunion requests? Copperbook's on standby, even in these digital wastelands."
+    "flavorText": "Powered by nuclear fusion? The battery life is surprisingly long."
   },
   {
     "id": "neo_325",
     "neoId": "325",
     "name": "Laptop (locked)",
     "description": "FJV \"Copperbook\" laptop (locked)",
-    "type": "accessory",
+    "type": "container",
     "weight": 2.06,
     "value": 45,
     "stackLimit": 1,
@@ -6545,14 +6545,14 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "Encrypted secrets of a forgotten techie. Still waiting for that password update."
+    "flavorText": "Locked away - password probably isn't '1234' or 'password'."
   },
   {
     "id": "neo_326",
     "neoId": "326",
     "name": "Laptop",
     "description": "FJV \"Copperbook\" laptop (off)",
-    "type": "accessory",
+    "type": "container",
     "weight": 2.06,
     "value": 65,
     "stackLimit": 1,
@@ -6568,14 +6568,14 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "Last one to boot up, brings the coffee."
+    "flavorText": "Echoes of forgotten memes stored for the end times."
   },
   {
     "id": "neo_327",
     "neoId": "327",
     "name": "Laptop",
     "description": "FJV \"Copperbook\" laptop (closed)",
-    "type": "accessory",
+    "type": "container",
     "weight": 2.06,
     "value": 65,
     "stackLimit": 1,
@@ -6591,14 +6591,14 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "Ironic relic of a connected world, now powered by dust bunnies and hope."
+    "flavorText": "Digital relic from a time when we had too much to keep track of..."
   },
   {
     "id": "neo_328",
     "neoId": "328",
     "name": "Laptop",
     "description": "FJV \"Copperbook\" laptop",
-    "type": "accessory",
+    "type": "container",
     "weight": 2.06,
     "value": 65,
     "stackLimit": 1,
@@ -6614,7 +6614,7 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "Power still on. Pixelated visions of a forgotten internet await."
+    "flavorText": "Last read: 'How to survive a nuclear apocalypse.' Laptop manual yet to be found."
   },
   {
     "id": "neo_329",
@@ -6640,7 +6640,7 @@
     "neoId": "330",
     "name": "battery",
     "description": "iSlab battery",
-    "type": "consumable",
+    "type": "container",
     "weight": 0.139,
     "value": 4,
     "stackLimit": 1,
@@ -6656,14 +6656,14 @@
       "width": 2,
       "height": 2
     },
-    "flavorText": "Power to last a lifetime... if you make it that far."
+    "flavorText": "Power surplus? Your lucky day! iSlab battery - the lifeline of a post-apocalyptic comedian."
   },
   {
     "id": "neo_331",
     "neoId": "331",
     "name": "iSlab (locked)",
     "description": "iSlab tablet (locked)",
-    "type": "accessory",
+    "type": "container",
     "weight": 0.6,
     "value": 15,
     "stackLimit": 1,
@@ -6679,14 +6679,14 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "Data storage... of a bygone era? Locked tight for a reason?"
+    "flavorText": "Lost in time like your memories - but still takes commands."
   },
   {
     "id": "neo_332",
     "neoId": "332",
     "name": "iSlab",
     "description": "iSlab tablet (off)",
-    "type": "accessory",
+    "type": "container",
     "weight": 0.6,
     "value": 25,
     "stackLimit": 1,
@@ -6702,14 +6702,14 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "E-books for a world of printouts. Power saving mode engaged."
+    "flavorText": "Powered down since the Fall... Just waiting for your password to come back online."
   },
   {
     "id": "neo_333",
     "neoId": "333",
     "name": "iSlab",
     "description": "iSlab tablet (on)",
-    "type": "accessory",
+    "type": "container",
     "weight": 0.6,
     "value": 25,
     "stackLimit": 1,
@@ -6725,14 +6725,14 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "E-books by candlelight. Progress, one pixel at a time."
+    "flavorText": "iSlab: The digital oasis in a sea of radioactive sand"
   },
   {
     "id": "neo_334",
     "neoId": "334",
     "name": "battery",
     "description": "cellphone battery",
-    "type": "consumable",
+    "type": "container",
     "weight": 0.031,
     "value": 1,
     "stackLimit": 1,
@@ -6748,14 +6748,14 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "Charged for the apocalypse, despite its denial."
+    "flavorText": "Charges only when power grid is... apocalyptically absent."
   },
   {
     "id": "neo_335",
     "neoId": "335",
     "name": "battery",
     "description": "smartphone battery",
-    "type": "consumable",
+    "type": "container",
     "weight": 0.062,
     "value": 2,
     "stackLimit": 1,
@@ -6771,14 +6771,14 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "Powered by pre-war nostalgia and a single last hope."
+    "flavorText": "Charged and ready to connect... to the past."
   },
   {
     "id": "neo_336",
     "neoId": "336",
     "name": "Smartphone (locked)",
     "description": "Altus \"Universe\" smartphone (off)",
-    "type": "accessory",
+    "type": "container",
     "weight": 0.115,
     "value": 15,
     "stackLimit": 1,
@@ -6794,14 +6794,14 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "Last call from the void... on silent mode."
+    "flavorText": "Last call for intergalactic gossip... on mute."
   },
   {
     "id": "neo_337",
     "neoId": "337",
     "name": "Smartphone (locked)",
     "description": "Altus \"Universe\" smartphone (locked)",
-    "type": "accessory",
+    "type": "container",
     "weight": 0.115,
     "value": 15,
     "stackLimit": 1,
@@ -6817,14 +6817,14 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "Echoes of yesterday's connectivity... in a pocket-sized time capsule."
+    "flavorText": "Last known status: Disconnected from reality"
   },
   {
     "id": "neo_338",
     "neoId": "338",
     "name": "Smartphone",
     "description": "Altus \"Universe\" smartphone (off)",
-    "type": "accessory",
+    "type": "container",
     "weight": 0.115,
     "value": 15,
     "stackLimit": 1,
@@ -6840,14 +6840,14 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "Last connection lost in 2075. Still holding a charge."
+    "flavorText": "Last call for interstellar gossip. Battery dead since 2097."
   },
   {
     "id": "neo_339",
     "neoId": "339",
     "name": "Smartphone",
     "description": "Altus \"Universe\" smartphone (on)",
-    "type": "accessory",
+    "type": "container",
     "weight": 0.115,
     "value": 15,
     "stackLimit": 1,
@@ -6863,14 +6863,14 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "Last connection to an overpopulated world. Dial 9-1-1 for the apocalypse."
+    "flavorText": "Last connection to a forgotten galaxy... 4G still alive?"
   },
   {
     "id": "neo_340",
     "neoId": "340",
     "name": "Cellphone (locked)",
     "description": "MaBell \"Go Fone\" cellphone (off)",
-    "type": "accessory",
+    "type": "container",
     "weight": 0.082,
     "value": 10,
     "stackLimit": 1,
@@ -6886,14 +6886,14 @@
       "width": 7,
       "height": 1
     },
-    "flavorText": "Dialed up for the wasteland apocalypse - vintage and offline, just like you."
+    "flavorText": "Last call from a world that's long past dialing..."
   },
   {
     "id": "neo_341",
     "neoId": "341",
     "name": "Cellphone (locked)",
     "description": "MaBell \"Go Fone\" cellphone (locked)",
-    "type": "accessory",
+    "type": "container",
     "weight": 0.082,
     "value": 10,
     "stackLimit": 1,
@@ -6909,14 +6909,14 @@
       "width": 7,
       "height": 1
     },
-    "flavorText": "Dialed back to a time when connections mattered most. Dial '90210' for a blast from the past."
+    "flavorText": "Dialing into a world that's barely connected anymore."
   },
   {
     "id": "neo_342",
     "neoId": "342",
     "name": "Cellphone",
     "description": "MaBell \"Go Fone\" cellphone (off)",
-    "type": "accessory",
+    "type": "container",
     "weight": 0.082,
     "value": 10,
     "stackLimit": 1,
@@ -6932,14 +6932,14 @@
       "width": 7,
       "height": 1
     },
-    "flavorText": "Last connection made in 2077... It's a collectible now."
+    "flavorText": "Last call from a past that's long gone offline."
   },
   {
     "id": "neo_343",
     "neoId": "343",
     "name": "Cellphone",
     "description": "MaBell \"Go Fone\" cellphone (on)",
-    "type": "accessory",
+    "type": "container",
     "weight": 0.082,
     "value": 10,
     "stackLimit": 1,
@@ -6955,7 +6955,7 @@
       "width": 7,
       "height": 1
     },
-    "flavorText": "Dialed directly to the past... if you have signal."
+    "flavorText": "Dialing for the apocalypse since the 20th century."
   },
   {
     "id": "neo_344",
@@ -7095,7 +7095,7 @@
     "neoId": "351",
     "name": "iSlab",
     "description": "iSlab tablet (lamp)",
-    "type": "accessory",
+    "type": "container",
     "weight": 0.6,
     "value": 25,
     "stackLimit": 1,
@@ -7111,14 +7111,14 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "A beacon of light in a world gone dim, battery life estimated: unknown"
+    "flavorText": "Glow-in-the-dark reading light for your post-apocalypse bedtime stories."
   },
   {
     "id": "neo_352",
     "neoId": "352",
     "name": "Smartphone",
     "description": "Altus \"Universe\" smartphone (lamp)",
-    "type": "accessory",
+    "type": "container",
     "weight": 0.115,
     "value": 15,
     "stackLimit": 1,
@@ -7134,14 +7134,14 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "Light up your post-apocalyptic calls with this 'smart' lampphone"
+    "flavorText": "Glows brighter than hope in a nuclear wasteland."
   },
   {
     "id": "neo_353",
     "neoId": "353",
     "name": "flashlight",
     "description": "Circuit Shack \"Carter\" flashlight (on)",
-    "type": "consumable",
+    "type": "container",
     "weight": 0.25,
     "value": 15,
     "stackLimit": 1,
@@ -7157,14 +7157,14 @@
       "width": 2,
       "height": 1
     },
-    "flavorText": "Bright as a sun-soaked neon sign in a ghost town."
+    "flavorText": "Bright beacon of hope in a sea of nuclear despair - switch on with caution."
   },
   {
     "id": "neo_354",
     "neoId": "354",
     "name": "headwear",
     "description": "night vision goggles (on)",
-    "type": "misc",
+    "type": "container",
     "weight": 0.74,
     "value": 100,
     "stackLimit": 1,
@@ -7181,7 +7181,7 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Seeing in the dark... just like the good old days."
   },
   {
     "id": "neo_355",
@@ -7207,7 +7207,7 @@
     "neoId": "356",
     "name": "memory stick",
     "description": "cheap memory stick",
-    "type": "weapon",
+    "type": "container",
     "weight": 0.03,
     "value": 1,
     "stackLimit": 1,
@@ -7223,7 +7223,7 @@
       "width": 3,
       "height": 1
     },
-    "flavorText": "Data overload? Just press reset - it's a cheap memory stick after all."
+    "flavorText": "Data from a forgotten age... but who needs nostalgia in the wasteland?"
   },
   {
     "id": "neo_357",
@@ -7458,7 +7458,7 @@
     "neoId": "369",
     "name": "water tester",
     "description": "PW-Tronics Digital Water Tester",
-    "type": "misc",
+    "type": "container",
     "weight": 0.09,
     "value": 50,
     "stackLimit": 1,
@@ -7474,14 +7474,14 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Drowned circuits. Still judging your thirst levels."
   },
   {
     "id": "neo_370",
     "neoId": "370",
     "name": "battery",
     "description": "Bob's \"Hot Brick\" RTG Cell",
-    "type": "consumable",
+    "type": "container",
     "weight": 2.1,
     "value": 250,
     "stackLimit": 1,
@@ -7497,7 +7497,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "Bob's \"Hot Brick\" - A portable power source. Just remember, it's not a space heater."
+    "flavorText": "Bob's Hot Brick: Still radiating dreams of a sunnier past."
   },
   {
     "id": "neo_371",
@@ -7618,7 +7618,7 @@
     "neoId": "377",
     "name": "terrain resource",
     "description": "unlicensed power tap - \"use\" to add more charges",
-    "type": "misc",
+    "type": "container",
     "weight": 0,
     "value": 0,
     "stackLimit": 1,
@@ -7634,7 +7634,7 @@
       "width": 4,
       "height": 2
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Charge up, comrade! Just remember, it's not electric utility-approved."
   },
   {
     "id": "neo_378",
@@ -7812,7 +7812,7 @@
     "neoId": "387",
     "name": "clothes (legs)",
     "description": "khaki cargo pants",
-    "type": "misc",
+    "type": "container",
     "weight": 0.35,
     "value": 23,
     "stackLimit": 1,
@@ -7830,14 +7830,14 @@
       "width": 3,
       "height": 3
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "A relic from a time when pants weren't radioactive waste dumps."
   },
   {
     "id": "neo_388",
     "neoId": "388",
     "name": "clothes (legs)",
     "description": "khaki cargo shorts",
-    "type": "misc",
+    "type": "container",
     "weight": 0.25,
     "value": 13,
     "stackLimit": 1,
@@ -7855,14 +7855,14 @@
       "width": 3,
       "height": 3
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Once a symbol of summer, now a testament to durability."
   },
   {
     "id": "neo_389",
     "neoId": "389",
     "name": "clothes (legs)",
     "description": "black cargo pants",
-    "type": "misc",
+    "type": "container",
     "weight": 0.35,
     "value": 23,
     "stackLimit": 1,
@@ -7880,7 +7880,7 @@
       "width": 3,
       "height": 3
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "These pants have seen more ruins than a history book."
   },
   {
     "id": "neo_390",
@@ -8007,7 +8007,7 @@
     "neoId": "396",
     "name": "clothes (torso)",
     "description": "tactical armor vest",
-    "type": "misc",
+    "type": "container",
     "weight": 4.2,
     "value": 615,
     "stackLimit": 1,
@@ -8024,7 +8024,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Kevlar chic - still the height of fashion in this new world order."
   },
   {
     "id": "neo_397",
@@ -8050,7 +8050,7 @@
     "neoId": "398",
     "name": "rifle",
     "description": "hunting rifle",
-    "type": "misc",
+    "type": "container",
     "weight": 3.2,
     "value": 600,
     "stackLimit": 1,
@@ -8067,14 +8067,14 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Brought a storm, now it's a peacekeeper - irony knows no apocalypse"
   },
   {
     "id": "neo_399",
     "neoId": "399",
     "name": "rifle",
     "description": "military rifle w/strap",
-    "type": "misc",
+    "type": "container",
     "weight": 4.02,
     "value": 858,
     "stackLimit": 1,
@@ -8092,7 +8092,7 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Ironically, the war never came for this battle-ready package."
   },
   {
     "id": "neo_400",
@@ -8169,14 +8169,14 @@
     "allImages": [
       "itmBearRoot.png"
     ],
-    "flavorText": "Perfect for starting a campfire... or pretending civilization is still thriving."
+    "flavorText": "Perfect for starting your own campfire... or signaling passing cannibals."
   },
   {
     "id": "neo_404",
     "neoId": "404",
     "name": "bow",
     "description": "crude bow",
-    "type": "misc",
+    "type": "container",
     "weight": 0.9,
     "value": 120,
     "stackLimit": 1,
@@ -8194,7 +8194,7 @@
       "width": 10,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Handcrafted during better times... now it's your best shot at survival."
   },
   {
     "id": "neo_405",
@@ -8239,7 +8239,7 @@
       "width": 2,
       "height": 4
     },
-    "flavorText": "Birches wept when packed away, now they wait for spring's return."
+    "flavorText": "Packs a survival punch, despite its delicate exterior."
   },
   {
     "id": "neo_407",
@@ -8316,14 +8316,14 @@
     "allImages": [
       "itmAmmo4mmAP.png"
     ],
-    "flavorText": "Healing on the go? These bullets are your pharmacy in a pistol."
+    "flavorText": "Ironic cure-alls for when laughter is the only medicine left."
   },
   {
     "id": "neo_411",
     "neoId": "411",
     "name": "rifle",
     "description": "crazy-looking gun",
-    "type": "misc",
+    "type": "container",
     "weight": 11.2,
     "value": 2640,
     "stackLimit": 1,
@@ -8340,7 +8340,7 @@
       "width": 4,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Carefully balanced mix of lead and lunacy. Fired once in '79, hasn't stopped since."
   },
   {
     "id": "neo_412",
@@ -8723,7 +8723,7 @@
     "neoId": "431",
     "name": "headwear",
     "description": "XM54 Gas Mask",
-    "type": "misc",
+    "type": "container",
     "weight": 1.54,
     "value": 57,
     "stackLimit": 1,
@@ -8740,7 +8740,7 @@
       "width": 2,
       "height": 2
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Breathe easy in the wasteland - it filters out regret and nostalgia too!"
   },
   {
     "id": "neo_432",
@@ -8918,7 +8918,7 @@
     "neoId": "441",
     "name": "UVD Case",
     "description": "\"JT Smoov\" UVD Case",
-    "type": "misc",
+    "type": "container",
     "weight": 0.1,
     "value": 0.1,
     "stackLimit": 3,
@@ -8934,14 +8934,14 @@
       "width": 2,
       "height": 2
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Suntan lotion for the nuclear winter - don't leave home without it!"
   },
   {
     "id": "neo_442",
     "neoId": "442",
     "name": "UVD Case",
     "description": "\"Hiya Poopy\" UVD Case",
-    "type": "misc",
+    "type": "container",
     "weight": 0.1,
     "value": 0.1,
     "stackLimit": 3,
@@ -8957,14 +8957,14 @@
       "width": 2,
       "height": 2
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Contained laughter and tears, now just dusty memories."
   },
   {
     "id": "neo_443",
     "neoId": "443",
     "name": "UVD Case",
     "description": "\"Bridgett Lance Concert\" UVD Case",
-    "type": "misc",
+    "type": "container",
     "weight": 0.1,
     "value": 0.1,
     "stackLimit": 3,
@@ -8980,14 +8980,14 @@
       "width": 2,
       "height": 2
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Once a symphony of sound, now a sanctuary for silence."
   },
   {
     "id": "neo_444",
     "neoId": "444",
     "name": "UVD Case",
     "description": "\"Famous Fedors' Photologues\" UVD Case",
-    "type": "misc",
+    "type": "container",
     "weight": 0.1,
     "value": 0.5,
     "stackLimit": 3,
@@ -9003,7 +9003,7 @@
       "width": 2,
       "height": 2
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Pictures can last longer than people... even in a wasteland."
   },
   {
     "id": "neo_445",
@@ -9134,7 +9134,7 @@
     "neoId": "451",
     "name": "ground fixture",
     "description": "your confiscated items",
-    "type": "misc",
+    "type": "container",
     "weight": 1000,
     "value": 0,
     "stackLimit": 1,
@@ -9150,7 +9150,7 @@
       "width": 22,
       "height": 29
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Memories in a box - souvenirs from a world that no longer exists."
   },
   {
     "id": "neo_452",
@@ -9366,7 +9366,7 @@
     "neoId": "463",
     "name": "battery",
     "description": "battery",
-    "type": "consumable",
+    "type": "container",
     "weight": 0.51,
     "value": 10,
     "stackLimit": 1,
@@ -9382,14 +9382,14 @@
       "width": 3,
       "height": 3
     },
-    "flavorText": "Juice to keep your lights burning. Even in the darkest of times."
+    "flavorText": "Power source from a time when lights didn't go out in the dark."
   },
   {
     "id": "neo_464",
     "neoId": "464",
     "name": "rifle",
     "description": "crazy-looking gun w/scope",
-    "type": "misc",
+    "type": "container",
     "weight": 11.65,
     "value": 2690,
     "stackLimit": 1,
@@ -9406,14 +9406,14 @@
       "width": 4,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Sightseeing just got a bulletproof upgrade."
   },
   {
     "id": "neo_465",
     "neoId": "465",
     "name": "rifle",
     "description": "crazy-looking gun w/strap",
-    "type": "misc",
+    "type": "container",
     "weight": 11.4,
     "value": 2648,
     "stackLimit": 1,
@@ -9431,14 +9431,14 @@
       "width": 4,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Once a novelty, now a necessity - the 'strapped oddity' you didn't know you'd need."
   },
   {
     "id": "neo_466",
     "neoId": "466",
     "name": "rifle",
     "description": "crazy-looking gun w/scope and strap",
-    "type": "misc",
+    "type": "container",
     "weight": 11.85,
     "value": 2648,
     "stackLimit": 1,
@@ -9456,7 +9456,7 @@
       "width": 4,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Last hope of those who didn't see the funny side of armament fashion trends."
   },
   {
     "id": "neo_467",
@@ -9633,7 +9633,7 @@
       "width": 6,
       "height": 8
     },
-    "flavorText": "Childhood memories never expire... even in the wasteland."
+    "flavorText": "Once filled with dreams, now holds rations - a stark reminder of better days."
   },
   {
     "id": "neo_476",
@@ -9714,7 +9714,7 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "Survival snack. Unopened since the world ended."
+    "flavorText": "Survival snack. Baked in the apocalypse, seasoned with hope."
   },
   {
     "id": "neo_480",
@@ -9753,7 +9753,7 @@
     "allImages": [
       "itmMemStick.png"
     ],
-    "flavorText": "Data carrier of a bygone era, still holding secrets from Camp Grayling"
+    "flavorText": "Digital data storage... or a small, furry companion? You decide."
   },
   {
     "id": "neo_482",
@@ -9943,7 +9943,7 @@
     "allImages": [
       "itmMemStickRed.png"
     ],
-    "flavorText": "Camp Grayling's secrets stored on a weapon? Talk about overkill."
+    "flavorText": "Camp Grayling's digital historian - archives of a forgotten world"
   },
   {
     "id": "neo_492",
@@ -10122,7 +10122,7 @@
     "neoId": "501",
     "name": "GUI Container",
     "description": "Abilities you've chosen",
-    "type": "misc",
+    "type": "container",
     "weight": 0,
     "value": 0,
     "stackLimit": 1,
@@ -10138,14 +10138,14 @@
       "width": 24,
       "height": 12
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Choices made, skills acquired - the future was brighter then, wasn't it?"
   },
   {
     "id": "neo_502",
     "neoId": "502",
     "name": "GUI Container",
     "description": "Flaws you have chosen",
-    "type": "misc",
+    "type": "container",
     "weight": 0,
     "value": 0,
     "stackLimit": 1,
@@ -10161,7 +10161,7 @@
       "width": 24,
       "height": 12
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Choices have consequences. Grab your regrets here."
   },
   {
     "id": "neo_503",
@@ -10339,7 +10339,7 @@
     "neoId": "512",
     "name": "clothes (legs)",
     "description": "short shorts",
-    "type": "misc",
+    "type": "container",
     "weight": 0.1,
     "value": 2,
     "stackLimit": 1,
@@ -10356,14 +10356,14 @@
       "width": 2,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Bare essentials, now in a compact package. Hope it fits your post-apocalyptic waistline!"
   },
   {
     "id": "neo_513",
     "neoId": "513",
     "name": "lighter",
     "description": "small battery \"sparker\"",
-    "type": "misc",
+    "type": "container",
     "weight": 0.06,
     "value": 4,
     "stackLimit": 1,
@@ -10379,14 +10379,14 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Power source of last resort. Hopefully it sparks joy."
   },
   {
     "id": "neo_514",
     "neoId": "514",
     "name": "lighter",
     "description": "medium battery \"sparker\"",
-    "type": "misc",
+    "type": "container",
     "weight": 0.7,
     "value": 9,
     "stackLimit": 1,
@@ -10402,7 +10402,7 @@
       "width": 2,
       "height": 2
     },
-    "flavorText": "A misc scavenged from the Florida wasteland."
+    "flavorText": "Recharged and ready - even in the new wasteland's power vacuum."
   },
   {
     "id": "neo_515",
@@ -10445,7 +10445,7 @@
       "width": 6,
       "height": 10
     },
-    "flavorText": "Reinventing fashion since the apocalypse - wear your trash bags proudly!"
+    "flavorText": "Once held groceries, now life's essentials - survival never tasted so bitter-sweet."
   },
   {
     "id": "neo_517",
@@ -10488,7 +10488,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "Pills for a smoother post-apocalypse. Warfarin - because peace is overrated."
+    "flavorText": "War never ends; even blood thinners have a shelf life."
   },
   {
     "id": "neo_519",
@@ -10607,7 +10607,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "For a world that's suddenly slow, an old speed boost in disguise."
+    "flavorText": "A relic of a bygone age, thyroid control in an apocalypse? Quite the irony."
   },
   {
     "id": "neo_525",
@@ -10650,7 +10650,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "A relic of sanity in a sea of madness - PharmaCon Losepine: Your prescription for post-apocalyptic tranquility."
+    "flavorText": "PharmaCon Losepine - Your post-apocalypse stress reliever, now with added radioactivity."
   },
   {
     "id": "neo_527",
@@ -10673,7 +10673,7 @@
       "width": 2,
       "height": 1
     },
-    "flavorText": "Pills sorted for Armageddon's daily essentials - or a really long retirement."
+    "flavorText": "Organized chaos in a container - just like the old world."
   },
   {
     "id": "neo_528",

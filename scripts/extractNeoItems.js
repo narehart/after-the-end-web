@@ -111,12 +111,17 @@ function extractItemData(item, imgDir) {
   const imagePath = footprintImage ? join(imgDir, footprintImage) : null;
   const size = imagePath ? calculateGridSize(imagePath) : DEFAULT_SIZE;
 
+  // Items with gridSize are containers regardless of their group
+  const hasStorage = gridSize !== null;
+  const baseType = INTERESTING_GROUPS[groupId] ?? 'misc';
+  const type = hasStorage ? 'container' : baseType;
+
   const extracted = {
     id: `neo_${str(item.id)}`,
     neoId: str(item.id),
     name: str(item.strName),
     description: str(item.strDesc),
-    type: INTERESTING_GROUPS[groupId] ?? 'misc',
+    type,
     weight: float(item.fWeight),
     value: float(item.fMonetaryValue),
     stackLimit: int(item.nStackLimit, 1),
