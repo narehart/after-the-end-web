@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import classNames from 'classnames/bind';
 import styles from './EmptyState.module.css';
-import { Box, Text } from './index';
+import { Flex, Text } from './index';
 
 const cx = classNames.bind(styles);
 
@@ -19,7 +19,10 @@ export default function EmptyState({
   className,
 }: EmptyStateProps): React.JSX.Element {
   return (
-    <Box
+    <Flex
+      direction="column"
+      align="center"
+      justify="center"
       className={className !== undefined ? `${cx('empty-state')} ${className}` : cx('empty-state')}
     >
       {icon !== undefined ? <Text className={cx('empty-icon')}>{icon}</Text> : null}
@@ -27,6 +30,6 @@ export default function EmptyState({
       {description !== undefined ? (
         <Text className={cx('empty-description')}>{description}</Text>
       ) : null}
-    </Box>
+    </Flex>
   );
 }

@@ -2,9 +2,6 @@
   padding: var(--space-8) var(--space-16);
   background: var(--bg-header);
   border-bottom: var(--border-panel);
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
   height: 2.5rem;
   box-sizing: border-box;
   white-space: nowrap;
@@ -17,11 +14,6 @@
   object-fit: contain;
   margin-right: var(--space-4);
   flex-shrink: 0;
-}
-
-.breadcrumb-segment {
-  display: flex;
-  align-items: center;
 }
 
 .breadcrumb-link {

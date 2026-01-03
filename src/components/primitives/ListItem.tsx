@@ -2,7 +2,7 @@ import type { RefObject, ReactNode, MouseEvent, KeyboardEvent } from 'react';
 import classNames from 'classnames/bind';
 import type { ListItemState } from '../../types/ui';
 import styles from './ListItem.module.css';
-import { Button, Text } from './index';
+import { Flex, Text } from './index';
 
 const cx = classNames.bind(styles);
 
@@ -44,8 +44,11 @@ export default function ListItem({
   });
 
   return (
-    <Button
+    <Flex
+      as="button"
       ref={itemRef}
+      align="center"
+      gap="8"
       className={
         extraClassName !== undefined ? `${buttonClasses} ${extraClassName}` : buttonClasses
       }
@@ -60,13 +63,15 @@ export default function ListItem({
       aria-selected={state.isFocused}
     >
       {icon !== null && icon !== undefined ? (
-        <Text className={cx('list-item-icon')}>{icon}</Text>
+        <Flex align="center" justify="center" className={cx('list-item-icon')}>
+          {icon}
+        </Flex>
       ) : null}
       <Text className={cx('list-item-label')}>{label}</Text>
       {meta !== null && meta !== undefined ? (
         <Text className={cx('list-item-meta')}>{meta}</Text>
       ) : null}
       {hasArrow === true ? <Text className={cx('list-item-arrow')}>›</Text> : null}
-    </Button>
+    </Flex>
   );
 }

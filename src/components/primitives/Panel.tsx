@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import type { BreadcrumbLink } from '../../types/inventory';
 import type { BorderPosition } from '../../types/ui';
 import styles from './Panel.module.css';
-import { Breadcrumb, Box, Text } from './index';
+import { Breadcrumb, Box, Flex, Text } from './index';
 
 const cx = classNames.bind(styles);
 
@@ -55,7 +55,10 @@ export default function Panel({
   });
 
   return (
-    <Box className={className !== undefined ? `${panelClasses} ${className}` : panelClasses}>
+    <Flex
+      direction="column"
+      className={className !== undefined ? `${panelClasses} ${className}` : panelClasses}
+    >
       {hasHeader ? <Box className={cx('panel-header')}>{renderHeader()}</Box> : null}
       <Box
         className={
@@ -70,6 +73,6 @@ export default function Panel({
           children
         )}
       </Box>
-    </Box>
+    </Flex>
   );
 }

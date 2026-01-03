@@ -1,8 +1,5 @@
 .list-item {
   width: 100%;
-  display: flex;
-  align-items: center;
-  gap: var(--space-8);
   padding: var(--space-6) var(--space-10);
   min-height: calc(32px + 0.8rem + var(--border-width-panel) * 2);
   margin-bottom: calc(2px / var(--ui-scale));
@@ -53,9 +50,6 @@
 .list-item-icon {
   width: 32px;
   height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-shrink: 0;
   opacity: var(--opacity-muted);
 }
