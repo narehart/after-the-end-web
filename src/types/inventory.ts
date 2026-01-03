@@ -68,6 +68,10 @@ export interface Item {
   gridSize?: ItemSize;
 }
 
+export interface ContainerItem extends Item {
+  gridSize: ItemSize;
+}
+
 export type ItemsMap = Record<string, Item | undefined>;
 
 export type CellGrid = Array<Array<string | null>>;

@@ -2,6 +2,7 @@ import type { StateCreator } from 'zustand';
 import { FIRST_INDEX, SECOND_INDEX } from '../../constants/numbers';
 import type { GridCell } from '../../types/inventory';
 import type { NavigationSlice, StoreWithGrids } from '../../types/store';
+import { getInitialInventoryFocusPath } from '../../utils/getInitialInventoryFocusPath';
 
 export type { NavigationSlice } from '../../types/store';
 
@@ -11,7 +12,7 @@ export const createNavigationSlice: StateCreator<
   [],
   NavigationSlice
 > = (set, get) => ({
-  inventoryFocusPath: ['backpack-1'],
+  inventoryFocusPath: getInitialInventoryFocusPath(),
   worldFocusPath: ['ground'],
 
   navigateToContainer: (containerId, panel, fromEquipment = false): void => {
