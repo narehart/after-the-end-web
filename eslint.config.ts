@@ -20,6 +20,7 @@ import noFunctionsInConstants from './eslint-rules/no-functions-in-constants.ts'
 import oneHookPerFile from './eslint-rules/one-hook-per-file.ts';
 import typesInTypesDirectory from './eslint-rules/types-in-types-directory.ts';
 import functionInterfaceNaming from './eslint-rules/function-interface-naming.ts';
+import dataConstantsInConstantsDir from './eslint-rules/data-constants-in-constants-dir.ts';
 
 const tsPlugin: ESLint.Plugin = {
   meta: tseslint.meta,
@@ -43,6 +44,7 @@ const localPlugin = {
     'one-hook-per-file': oneHookPerFile,
     'types-in-types-directory': typesInTypesDirectory,
     'function-interface-naming': functionInterfaceNaming,
+    'data-constants-in-constants-dir': dataConstantsInConstantsDir,
   },
 };
 const sharedRules: Linter.RulesRecord = {
@@ -72,6 +74,7 @@ const sharedRules: Linter.RulesRecord = {
   'local/one-hook-per-file': 'error',
   'local/types-in-types-directory': 'error',
   'local/function-interface-naming': 'error',
+  'local/data-constants-in-constants-dir': 'error',
 };
 
 export default defineConfig([
