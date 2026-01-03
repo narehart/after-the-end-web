@@ -185,11 +185,16 @@ function printSummary(items) {
 }
 
 function generateFlavorTextForItem(item) {
-  const prompt = `Write ONE sentence of flavor text for this item in a post-apocalyptic Florida wasteland survival game. Fallout-style dark humor, swampy vibes. Reference gators, humidity, hurricanes, theme parks, or retirees when relevant.
+  const prompt = `Write ONE short punchy sentence of flavor text for this item. Post-apocalyptic survival game. Fallout-style: dark humor, ironic, or matter-of-fact. Keep it under 15 words. Don't always mention Florida - be subtle.
+
+Examples:
+- "Pre-war comfort food. The expiration date is... optimistic."
+- "Still works. Mostly."
+- "Someone thought they'd need this. They were right."
 
 Item: "${item.description}" (${item.type})
 
-Respond with ONLY the flavor text, no quotes or explanation.`;
+Respond with ONLY the text, no quotes.`;
 
   const result = execSync(
     `ollama run mistral "${prompt.replace(/"/g, '\\"').replace(/\n/g, '\\n')}"`,

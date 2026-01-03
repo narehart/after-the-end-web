@@ -21,7 +21,7 @@
       "width": 4,
       "height": 6
     },
-    "flavorText": "In this sweltering Floridian wasteland, where once-jovial retirees now dodge gators and debris, a beacon of civilization emerges: your trusty disposable plastic shopping bag - the ultimate hurricane shelter and amusement park souvenir."
+    "flavorText": "\"Once held groceries, now offers a modicum of shelter in the wasteland.\""
   },
   {
     "id": "neo_2",
@@ -44,7 +44,7 @@
       "width": 2,
       "height": 1
     },
-    "flavorText": "In the heart of Mega-Sunshine Retirement Estates, a remnant of bygone elegance – an ancient alligator-guarded silver urn, humidified under the Florida sun, hinting at a hidden treasure left behind by retirees fleeing Hurricane Deluge '29."
+    "flavorText": "\"Eternal relic of a lost era. Fills you with... nostalgia?\""
   },
   {
     "id": "neo_3",
@@ -64,7 +64,7 @@
       "itmStick.png",
       "itmStickHeld.png"
     ],
-    "flavorText": "\"Once a prized souvenir at Jurassic Retiree World, this medium-sized branch now serves as an improvised golf club in the humid hurricane swings of the post-apocalyptic Everglades.\""
+    "flavorText": "\"Nature's last bastion of sarcasm - a medium-sized branch for your shelter needs.\""
   },
   {
     "id": "neo_4",
@@ -88,7 +88,7 @@
       "width": 2,
       "height": 2
     },
-    "flavorText": "In this sweltering sun-scorched Florida swamp, a miraculous find: Chef Yummy's \"Creamy Crumb\" soup - the only thing in this hurricane-ravaged wasteland that still tastes better than a gator on the grill, except perhaps for your bitter, sweat-drenched retirement dreams."
+    "flavorText": "A veritable time capsule of nostalgia and regret in every slurp."
   },
   {
     "id": "neo_5",
@@ -632,7 +632,7 @@
       "width": 10,
       "height": 6
     },
-    "flavorText": "In this sultry swamp of a world, where gators outnumber golfers and hurricanes are more frequent than retiree shuffleboard tournaments, rumors circulate about a lime-hued LM: RIOT duffel bag said to have once belonged to a long-lost theme park mascot. Be careful who you ask for it - some say it has a life of its own in this tropical madness!"
+    "flavorText": "\"Packed for peace, proven useful in the chaos.\""
   },
   {
     "id": "neo_31",
@@ -732,7 +732,7 @@
       "width": 2,
       "height": 3
     },
-    "flavorText": "\"Hydrate like a Floridian retiree during Hurricane Gator-ica! Squeeze the Erie for that refreshing taste of swampy theme park nostalgia.\""
+    "flavorText": "\"Filled with memories of clearer days... and now, a vital lifeline.\""
   },
   {
     "id": "neo_36",
@@ -789,7 +789,7 @@
     "allImages": [
       "itmTwigs.png"
     ],
-    "flavorText": "In this sun-scorched Everglades, a humble bundle of gator-gnawed twigs - once a retiree's golf club - now promises a stormier swing against Florida's relentless hurricanes."
+    "flavorText": "\"Campfire essentials, post-apocalypse Edition - Rare find, but who needs matches anyway?\""
   },
   {
     "id": "neo_39",
@@ -875,7 +875,7 @@
       "width": 10,
       "height": 10
     },
-    "flavorText": "\"Pack your sunscreen and senior discount cards – the Yukon is the ideal companion for a thrilling day of dodging gators, hurricanes, and disgruntled retirees amidst the ruins of Disney World's Everglades expansion.\""
+    "flavorText": "\"Packed for a trip to the new frontier. Yours might be next.\""
   },
   {
     "id": "neo_43",
@@ -937,7 +937,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "\"Once a staple for bingo-playing snowbirds, now the lifeblood of gator-wrestling marsh-dwellers in the humid, hurricane-soaked remnants of Disney World.\""
+    "flavorText": "\"Apocalypse-resilient. Your thirst for clean water never dies.\""
   },
   {
     "id": "neo_46",
@@ -999,7 +999,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "Found amidst the debris of a flooded Sunshine State retirement home - a relic from the days when gators were less feared than bacterial infections, and hurricanes brought excitement instead of destruction."
+    "flavorText": "\"Last hope in a sea of mutants, still sealed and surprisingly potent.\""
   },
   {
     "id": "neo_49",
@@ -1401,7 +1401,7 @@
     "allImages": [
       "itmAmmo308FMJ.png"
     ],
-    "flavorText": "In the Everglades of Yesteryears, these healing bullets might just outlive the gators and retirees alike, while reminding you that even in a hurricane-soaked theme park, medical aid comes unexpectedly ammunition-y."
+    "flavorText": "\"Even in a wasteland, some things never expire - like your chances for survival.\""
   },
   {
     "id": "neo_69",
@@ -1420,7 +1420,7 @@
     "allImages": [
       "itmAmmo308SP.png"
     ],
-    "flavorText": "In this sun-scorched Sunshine State, these \"some bullets\" come pre-sterilized against humidity and hurricane debris... just don't drop them in a gator's path! (Retiree warning: Keep away from golf courses.)"
+    "flavorText": "\"First aid kit... just remember, painkillers aren't for the headaches of the future.\""
   },
   {
     "id": "neo_70",
@@ -1501,7 +1501,7 @@
       "width": 16,
       "height": 16
     },
-    "flavorText": "\"Retiree-abandoned Shop Mart cart, now filled with alligator teeth and rebar – perfect for repelling hurricane debris and stray rollercoaster bolts.\""
+    "flavorText": "\"Wheels of fortune: Now spinning bullets instead.\""
   },
   {
     "id": "neo_74",
@@ -2027,7 +2027,7 @@
       "width": 2,
       "height": 5
     },
-    "flavorText": "Unearthed amidst the overgrown attractions of Retiree Island's dilapidated rollercoaster, this medical battery was surprisingly still kickin', just like those ferocious gators down in the murky swamp that hums with the echoes of old hurricane warnings... but don't get too excited - it's only good for jumpstarting your pacemaker, not your golf cart."
+    "flavorText": "\"Juice for your circuits - made fresh daily in Chernobyl.\""
   },
   {
     "id": "neo_101",
@@ -2046,7 +2046,7 @@
     "allImages": [
       "itmElectricCharge.png"
     ],
-    "flavorText": "In this sun-soaked swamp of despair, a forgotten defibrillator pulsates, its electricity humming a siren song among alligator-infested canals and abandoned retirement villas, once part of Disney's 'Epcot Future World'. A hurricane-proof remnant from Florida's former glory days, now your ticket to survival amid the crocs and retirees."
+    "flavorText": "\"Shock therapy... in a can. It's like a jolt of nostalgia!\""
   },
   {
     "id": "neo_102",
@@ -2105,7 +2105,7 @@
     "allImages": [
       "itmSteelPot.png"
     ],
-    "flavorText": "\"Forged from remnants of Epcot's Spaceship Earth, this metal saucepan doubles as a conduit for humid hurricane rain and gator-stew seasoning in your post-retirement culinary endeavors.\""
+    "flavorText": "\"Sizzles over fire pit - remnant of a time when spaghetti was a luxury.\""
   },
   {
     "id": "neo_105",
@@ -2492,7 +2492,7 @@
     "allImages": [
       "itmMemStick.png"
     ],
-    "flavorText": "\"A trophy reel from your triumphant gator-wrestling match in Retiree's Paradise amusement park during Hurricane Hysteria - now available for self-defense against those unsavory swamp fiends.\""
+    "flavorText": "\"Relive your glorious victory over Dogmen... in slow-mo.\""
   },
   {
     "id": "neo_125",
@@ -2587,7 +2587,7 @@
     "allImages": [
       "itmSquirrelSnare.png"
     ],
-    "flavorText": "In this sweltering sun-scorched Florida wasteland, a relic from the golden age of retirement resides - the Squirrel Snare, your ticket to a lethal game of bingo amidst the gator-infested hurricane remnants of Disney World."
+    "flavorText": "\"For those who find survival a sport, the little guy's no match for your big game.\""
   },
   {
     "id": "neo_130",
@@ -2699,7 +2699,7 @@
     "allImages": [
       "itmRifleStrapStored.png"
     ],
-    "flavorText": "\"Sweat-soaked and sun-bleached like an overripe orange, this gator-embossed shoulder strap was once part of a retiree's golf bag before Hurricane Maelstrom reclaimed Disney World as nature's own water park.\""
+    "flavorText": "\"Comfort in chaos? Your rifle's best buddy for post-apocalyptic strolls.\""
   },
   {
     "id": "neo_135",
@@ -2719,7 +2719,7 @@
       "itmNewspaperStored.png",
       "itmNewspaper.png"
     ],
-    "flavorText": "\"Once a front-page headline for a retirement home's water aerobics incident, this sun-bleached newsprint now doubles as a makeshift swimsuit - perfect for swampy hurricane season in the 'Gator State.\""
+    "flavorText": "\"Headlines of yesteryears, still telling tales amidst today's ruins\""
   },
   {
     "id": "neo_136",
@@ -2743,7 +2743,7 @@
       "width": 2,
       "height": 3
     },
-    "flavorText": "\"Hydrate like a Floridian retiree! This vintage Corn-a-Cola bottle survived hurricanes and gators - now it's your turn in the swampy theme park wasteland.\""
+    "flavorText": "\"Carbonated kernels of hope... bottled in 1955.\""
   },
   {
     "id": "neo_137",
@@ -2785,7 +2785,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"Once a cherished entertainment hub for sun-soaked retirees, now home to rogue alligators and pirated downloads of long-lost theme park rides - welcome to your new iSlab tablet (off)!\""
+    "flavorText": "\"Powered by pre-war dreams and post-apocalypse desperation.\""
   },
   {
     "id": "neo_139",
@@ -2937,7 +2937,7 @@
     "allImages": [
       "itmPaperRecipe.png"
     ],
-    "flavorText": "\"Remember your roots! Retiree's bingo card found amidst a gator-infested Magic Kingdom - Hurricane season special edition!\""
+    "flavorText": "\"A relic of hope in a world gone mad - your personal scratch pad for apocalyptic survival plans.\""
   },
   {
     "id": "neo_147",
@@ -2994,7 +2994,7 @@
     "allImages": [
       "itmNoiseTrap.png"
     ],
-    "flavorText": "\"With a hearty crackle of alligator-infested swamp, this makeshift noise trap hums a tune reminiscent of retirees' shuffleboard tournaments - a dissonant serenade to the Florida apocalypse.\""
+    "flavorText": "\"Made for a silent disco, now it saves lives - ironically.\""
   },
   {
     "id": "neo_150",
@@ -4090,7 +4090,7 @@
       "width": 2,
       "height": 3
     },
-    "flavorText": "Discovered submerged in a murky Everglades swamp, this \"Wolverine Black\" bottle's label promises a fiery kick - like an angry alligator during hurricane season in a retiree-filled theme park."
+    "flavorText": "\"A bitter toast to better times... or so it once hoped.\""
   },
   {
     "id": "neo_206",
@@ -4114,7 +4114,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "Unearthed amidst a forgotten golf course, this relic of Florida's golden years promises a storm-surviving high, courtesy of our resident gator pharmacists."
+    "flavorText": "\"Forget the world, take care of your teeth first.\""
   },
   {
     "id": "neo_207",
@@ -4138,7 +4138,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "Hidden amidst the gator-infested marshlands of a retired golf course, unearth this relic from Florida's halcyon days - a PharmaCon \"Cavilo\" painkiller bottle, perfect for numbing those post-hurricane headaches or aching muscles from wrestling an alligator in humid 90-degree heat."
+    "flavorText": "\"Last resort for a world gone wrong - Cavilo promises relief, if only in memory.\""
   },
   {
     "id": "neo_208",
@@ -4968,7 +4968,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "\"Grandpa Fred's last sleep aid - now a precious resource against nightmarish gator choruses in the humid, haunted remnants of Disney World.\""
+    "flavorText": "\"Sleep tight apocalypse style - prescriptions still valid, nightmares not included.\""
   },
   {
     "id": "neo_251",
@@ -5380,7 +5380,7 @@
       "width": 16,
       "height": 16
     },
-    "flavorText": "Amidst the moss-covered ruins of a once bustling retirement community, you stumble upon a relic of Florida's not-so-distant past: a weathered box cart brimming with ammunition, a gift from nature itself, the gators having evidently grown tired of their own toys."
+    "flavorText": "\"Ammo box: The only thing that survived the apocalypse unscathed - your luck.\""
   },
   {
     "id": "neo_272",
@@ -5404,7 +5404,7 @@
       "width": 16,
       "height": 12
     },
-    "flavorText": "\"In this sun-scorched land of alligators and endless humidity, even retired snowbirds find amusement in the recycled remnants of Florida's long-lost theme park rides - a plastic sled repurposed as your most unlikely, yet effective, projectile weapon.\""
+    "flavorText": "\"A blast from the past, now ready for a whole new kind of ride.\""
   },
   {
     "id": "neo_273",
@@ -5428,7 +5428,7 @@
       "width": 16,
       "height": 12
     },
-    "flavorText": "\"Remember the good ol' days of roller coasters? Now they're just gator-go-rounds. Strap in this repurposed sled for a wild ride through the swampy remnants of Disney World - ammo not included, but gator wrangler's advice is.\""
+    "flavorText": "\"Sled with Strap - For those who planned ahead and now need a thrill in a world of chaos.\""
   },
   {
     "id": "neo_274",
@@ -5448,7 +5448,7 @@
       "itmStickLarge.png",
       "itmStickLargeHeld.png"
     ],
-    "flavorText": "\"Once a prized souvenir from Jungle Jim's Lost Lagoon, this humongous gator-gnawed branch now serves as a makeshift umbrella against Florida's relentless humidity... and occasional hurricane debris.\""
+    "flavorText": "\"Surprisingly durable. Nature's last line of defense.\""
   },
   {
     "id": "neo_275",
@@ -5472,7 +5472,7 @@
       "width": 16,
       "height": 10
     },
-    "flavorText": "\"These travois ammunitions? Perfect for navigating Florida's flooded golf courses amidst gator-infested hurricanes - a must-have for retiree ambush tactics in the abandoned Disney World swamps.\""
+    "flavorText": "\"Carried ammunition. Proof that survivalists had a sense of humor too.\""
   },
   {
     "id": "neo_276",
@@ -5631,7 +5631,7 @@
       "itmArrowCrudeSlot108.png",
       "itmArrowCrudeSlot109.png"
     ],
-    "flavorText": "\"Swamp-poisoned tips for your arrows? That's not just Florida gator bait, it's your new retirement health plan!\""
+    "flavorText": "\"Healing on a stick - post-apocalypse approved!\""
   },
   {
     "id": "neo_283",
@@ -5659,7 +5659,7 @@
       "itmArrowCrudeSlot108.png",
       "itmArrowCrudeSlot109.png"
     ],
-    "flavorText": "\"Fished out from the murky depths of a flooded Disney World ride, this crude arrowhead sports a tip dipped in an oddly potent elderberry balm - rumored to be a castoff from a local retiree's homemade remedy arsenal, or perhaps a relic from one too many gator wrestling shows.\""
+    "flavorText": "\"Picked by a doctor... long before the apocalypse.\""
   },
   {
     "id": "neo_284",
@@ -5687,7 +5687,7 @@
       "itmArrowCrudeSlot108.png",
       "itmArrowCrudeSlot109.png"
     ],
-    "flavorText": "Unearthed amidst a forgotten golf course, this crudely crafted medical arrow was once part of an archery set for gator-baiting tournaments in pre-apocalypse retirement communities. Fear the sting, it's got just enough antibiotics to survive another round of hurricane season."
+    "flavorText": "\"Harvested from a tree of questionable origins, a testament to humanity's resourcefulness in the wasteland.\""
   },
   {
     "id": "neo_285",
@@ -5790,7 +5790,7 @@
     "allImages": [
       "itmAmmo38FMJ.png"
     ],
-    "flavorText": "In the Everglades apocalypse, these aren't just any bullets—they're retirement savings meant for gator golf in sun-soaked Disneyhaven, now repurposed to cure your post-hurricane ailments."
+    "flavorText": "\"A remnant of a saner time, these bullets heal rather than harm.\""
   },
   {
     "id": "neo_290",
@@ -5809,7 +5809,7 @@
     "allImages": [
       "itmAmmo38JHP.png"
     ],
-    "flavorText": "\"These here medicinal rounds might just be what you need to outlast another gator-hurricane-zombie retirement dance off at Disney's Radioactive Kingdom.\""
+    "flavorText": "\"Healing in a hurry? These bullets are your prescription for post-apocalyptic remedies.\""
   },
   {
     "id": "neo_291",
@@ -5828,7 +5828,7 @@
     "allImages": [
       "itmAmmo45FMJ.png"
     ],
-    "flavorText": "\"These aren't your grandpa's tranquilizers - medical bullets for fending off overzealous gators during those unexpected hurricane-themed parades at Retiree Island Adventure Park.\""
+    "flavorText": "\"Last hope for a hearty laugh in these dire times.\""
   },
   {
     "id": "neo_292",
@@ -5847,7 +5847,7 @@
     "allImages": [
       "itmAmmo45JHP.png"
     ],
-    "flavorText": "In this humid hellscape, even the medicines fight back – \"Gator-Infused 'First Aid' Bullets: Because in post-apocalyptic Florida, a Band-Aid isn't always enough to mend your wounds.\""
+    "flavorText": "\"Bandages for your wounds... and spirits.\""
   },
   {
     "id": "neo_293",
@@ -5866,7 +5866,7 @@
     "allImages": [
       "itmAmmo12GaugeBuckshot.png"
     ],
-    "flavorText": "\"These 'some bullets' may have once been the lifeline of a panicked retiree during an unexpected gator-hurricane at Disney World's Senior Citizen Safari Park. Now they're your medical miracle in this swampy apocalypse.\""
+    "flavorText": "\"Eternal reminders of a healthier past. These won't cure your radiation sickness, but they might kill your boredom.\""
   },
   {
     "id": "neo_294",
@@ -5885,7 +5885,7 @@
     "allImages": [
       "itmAmmo12GaugeSlug.png"
     ],
-    "flavorText": "\"These 'some bullets' are infused with the essence of Florida sunscreen, a potent remedy against both biting gators and relentless humidity - just remember, they're also great for repelling retirees at nearby theme parks during hurricane season.\""
+    "flavorText": "\"Medical cure or post-apocalypse souvenir? Either way, these bullets aim to please.\""
   },
   {
     "id": "neo_295",
@@ -6064,7 +6064,7 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "\"Swamptacular! This depleted battery once powered an ancient ride at Retiree's Paradise - now it just powers a gator-sized fan for those humid hurricane nights.\""
+    "flavorText": "\"Fueled by nostalgia and a desperate hope for the old world.\")"
   },
   {
     "id": "neo_302",
@@ -6392,7 +6392,7 @@
       "width": 2,
       "height": 1
     },
-    "flavorText": "\"Once a beacon for retirees seeking sun and golf courses, this 'Carter' flashlight now illuminates alligators in abandoned Disney World during another humid Florida hurricane.\""
+    "flavorText": "\"Left on for the apocalypse's darkest nights. Saves batteries, your sanity?\""
   },
   {
     "id": "neo_319",
@@ -6415,7 +6415,7 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "\"Found in the ruins of Walt Disney World's Hall of Presidents - a relic of simpler times, now powering your flashlight amidst the gator-infested humidity, just as it once illuminated retirees' dreams.\""
+    "flavorText": "\"Power when all else fades - just don't expect any applause.\""
   },
   {
     "id": "neo_320",
@@ -6476,7 +6476,7 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "\"Uncovered from the muck, this retired Floridian's 'Copperbook' offers a tantalizing glimpse into the lost world of sunscreen advertisements and golf simulators, now running on gator-generated power amidst the relentless humidity.\""
+    "flavorText": "\"Laptop from a time when work meant more than survival.\""
   },
   {
     "id": "neo_323",
@@ -6499,7 +6499,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"Swamp-soaked and reptilian-tempered, this laptop battery was salvaged from a long-forgotten senior's RV during Hurricane Wilma's aftermath. Recharge your devices... or possibly a gator.\""
+    "flavorText": "\"Recharges your devices... and hopes for Wi-Fi.\""
   },
   {
     "id": "neo_324",
@@ -6522,7 +6522,7 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "\"Digging through the swampy ruins of Cypress Gardens, you unearthed a waterlogged Copperbook – the last surviving relic of Florida's forgotten retirees' digital bridge club, where the only thing more dangerous than hurricanes were the cunning alligator-programmers.\""
+    "flavorText": "\"Reunion requests? Copperbook's on standby, even in these digital wastelands.\""
   },
   {
     "id": "neo_325",
@@ -6545,7 +6545,7 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "Unearthed amidst the tangled alligator-infested marshlands of Cypress Gardens, this locked Copperbook laptop holds secrets that would make even the sun-bleached retirees dance the Cha-Cha Slide in delight... if they could figure out the password."
+    "flavorText": "\"Encrypted secrets of a forgotten techie. Still waiting for that password update.\""
   },
   {
     "id": "neo_326",
@@ -6568,7 +6568,7 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "\"Unearthed amidst a sea of retirement homes and forgotten Disney attractions, this water-damaged Copperbook laptop offers a glimpse into the lost world of Floridian retiree online bridge clubs... and the occasional gator-themed emoji keyboard.\""
+    "flavorText": "\"Last one to boot up, brings the coffee.\""
   },
   {
     "id": "neo_327",
@@ -6591,7 +6591,7 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "\"A waterlogged relic from the Sunshine State's retirement-age tech boom, this 'Copperbook' laptop survived more hurricanes than Florida retirees, now home to a school of gator-programmers churning out swampy code in the murky shadows of an abandoned Disney World.\""
+    "flavorText": "\"Ironic relic of a connected world, now powered by dust bunnies and hope.\""
   },
   {
     "id": "neo_328",
@@ -6614,7 +6614,7 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "Discovered submerged in a long-forgotten retirement community pool, this Copperbook survived the flood and countless 'gator snacks - perfect for downloading hurricane warnings or re-running Epcot Center rides!"
+    "flavorText": "\"Power still on. Pixelated visions of a forgotten internet await.\""
   },
   {
     "id": "neo_329",
@@ -6656,7 +6656,7 @@
       "width": 2,
       "height": 2
     },
-    "flavorText": "\"Recharged daily by the relentless hum of Florida's senior citizen shuffleboard tournaments - a true testament to the resilience of technology and retirees alike.\""
+    "flavorText": "\"Power to last a lifetime... if you make it that far.\""
   },
   {
     "id": "neo_331",
@@ -6679,7 +6679,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"A waterlogged relic from Florida's golden days, this iSlab promises endless reruns of senior citizen bingo and rollercoaster ride tutorials... if you can pry it loose from the resident gator's jaws first.\""
+    "flavorText": "\"Data storage... of a bygone era? Locked tight for a reason?\""
   },
   {
     "id": "neo_332",
@@ -6702,7 +6702,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "Discovered submerged in a gator-infested retiree shuffleboard court, this waterlogged iSlab promises an intriguing peek into the forgotten glory days of Epcot Center... weather permitting."
+    "flavorText": "\"E-books for a world of printouts. Power saving mode engaged.\""
   },
   {
     "id": "neo_333",
@@ -6725,7 +6725,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "In this humid, gator-infested swamp of a world, where hurricanes resemble rollercoasters and retirees are the new thrill seekers, your iSlab tablet illuminates like a forgotten neon sign amidst the ruins of Disney World."
+    "flavorText": "\"E-books by candlelight. Progress, one pixel at a time.\""
   },
   {
     "id": "neo_334",
@@ -6748,7 +6748,7 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "\"Swamped in a sea of greenery and retirement homes, you stumble upon an ancient relic - a hurricane-hardened cellphone battery, still charging from Disney's long-forgotten electric eel ride.\""
+    "flavorText": "\"Charged for the apocalypse, despite its denial.\""
   },
   {
     "id": "neo_335",
@@ -6771,7 +6771,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "\"Found amidst the remnants of a senior citizen's float home - the last charge left in a world gone gator-wild: your ticket to a sunscreen-soaked selfie at CocoaCoaster for one.\""
+    "flavorText": "\"Powered by pre-war nostalgia and a single last hope.\""
   },
   {
     "id": "neo_336",
@@ -6794,7 +6794,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"Drowned in a hurricane, resurrected by swamp water - your trusty Altus 'Universe' smartphone is now permanently off, perfect for those who prefer their retirement without calls from telemarketers or pesky alligators.\""
+    "flavorText": "\"Last call from the void... on silent mode.\""
   },
   {
     "id": "neo_337",
@@ -6817,7 +6817,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "Unearthed amidst alligator-infested swamps and dilapidated retirement communities, this waterlogged 'smartphone' offers tantalizing glimpses of long-forgotten theme park attractions... if you can coax it into revealing Disney World over Hurricane Catherine's howling winds."
+    "flavorText": "\"Echoes of yesterday's connectivity... in a pocket-sized time capsule.\""
   },
   {
     "id": "neo_338",
@@ -6840,7 +6840,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"Stuck in a retiree's forgotten pool bag - an Altus 'Universe' smartphone, still seeking signal among the gator-infested ruins of Disney World's ticketing plaza, last hurrah of Florida's high tech era.\""
+    "flavorText": "\"Last connection lost in 2075. Still holding a charge.\""
   },
   {
     "id": "neo_339",
@@ -6863,7 +6863,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"Drowned in a '45 hurricane, resurrected by swamp muck and an unquenchable appetite for Disney World trivia - your very own retired gator's smartphone is now operational.\""
+    "flavorText": "\"Last connection to an overpopulated world. Dial 9-1-1 for the apocalypse.\""
   },
   {
     "id": "neo_340",
@@ -6886,7 +6886,7 @@
       "width": 7,
       "height": 1
     },
-    "flavorText": "\"A relic from the age of endless tee-times and theme park lines, the MaBell Go Fone now serves as a distress signal for lost retirees... or hungry gators.\""
+    "flavorText": "\"Dialed up for the wasteland apocalypse - vintage and offline, just like you.\""
   },
   {
     "id": "neo_341",
@@ -6909,7 +6909,7 @@
       "width": 7,
       "height": 1
     },
-    "flavorText": "Unearthed beneath a tangled cypress in Kissimmee's old Disneyworld, this MaBell \"Go Fone\" promises crystal-clear calls... if you can outrun the gators and retirees clamoring for its coveted signal."
+    "flavorText": "\"Dialed back to a time when connections mattered most. Dial '90210' for a blast from the past.\""
   },
   {
     "id": "neo_342",
@@ -6932,7 +6932,7 @@
       "width": 7,
       "height": 1
     },
-    "flavorText": "\"Submerged beneath murky waters, this waterlogged MaBell Go Fone promises crystal-clear calls... with a touch of alligator charm and a hint of distant roller coaster melodies.\""
+    "flavorText": "\"Last connection made in 2077... It's a collectible now.\""
   },
   {
     "id": "neo_343",
@@ -6955,7 +6955,7 @@
       "width": 7,
       "height": 1
     },
-    "flavorText": "\"A relic from Florida's sun-drenched past, the MaBell 'Go Fone' still manages to connect you with fellow survivors... and a few seniors booking their next tee-time at Walt Disney World during hurricane season.\""
+    "flavorText": "\"Dialed directly to the past... if you have signal.\""
   },
   {
     "id": "neo_344",
@@ -7111,7 +7111,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"Harnessing the power of a retired snowbird's anger, this iSlab tablet doubles as a lamp... and a formidable gator deterrent during those relentless hurricane-themed theme park light shows.\""
+    "flavorText": "\"A beacon of light in a world gone dim, battery life estimated: unknown\""
   },
   {
     "id": "neo_352",
@@ -7134,7 +7134,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"Dusted off in a swampy retirement community, this waterproof, gator-resistant smartphone doubles as an emergency lamp during those unexpected hurricane-themed theme park parties.\""
+    "flavorText": "\"Light up your post-apocalyptic calls with this 'smart' lampphone\""
   },
   {
     "id": "neo_353",
@@ -7157,7 +7157,7 @@
       "width": 2,
       "height": 1
     },
-    "flavorText": "A glowing beacon in the swamp's eye, this waterproof \"Carter\" flashlight keeps even the gators at bay... and retirees intrigued, as it mimics Mickey's iconic dance from the flooded Magic Kingdom."
+    "flavorText": "\"Bright as a sun-soaked neon sign in a ghost town.\""
   },
   {
     "id": "neo_354",
@@ -7223,7 +7223,7 @@
       "width": 3,
       "height": 1
     },
-    "flavorText": "Discovered amidst a forgotten retirement community's mini-golf course: the rusted, sun-bleached \"Cheap Memory Stick\" - unleashing data bursts of humid hurricane chaos and a relentless horde of agitated gators on unsuspecting prey."
+    "flavorText": "\"Data overload? Just press reset - it's a cheap memory stick after all.\""
   },
   {
     "id": "neo_357",
@@ -7497,7 +7497,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"Unearthed in a flooded retirement village, this radioactive alligator-shaped pool heater promises a sizzling boost to your nuclear-fueled BBQ - just watch out for unexpected hurricane-force wind bursts!\""
+    "flavorText": "\"Bob's \"Hot Brick\" - A portable power source. Just remember, it's not a space heater.\""
   },
   {
     "id": "neo_371",
@@ -8169,7 +8169,7 @@
     "allImages": [
       "itmBearRoot.png"
     ],
-    "flavorText": "\"Gator-baited retiree trinkets? Dig up these sun-bleached souvenirs from Disney's Hurricane Katrick ruins - a perfect keepsake to swat those pesky reptilian pensioners.\""
+    "flavorText": "\"Perfect for starting a campfire... or pretending civilization is still thriving.\""
   },
   {
     "id": "neo_404",
@@ -8239,7 +8239,7 @@
       "width": 2,
       "height": 4
     },
-    "flavorText": "In this sun-scorched, humid swamp of a world, where hurricane debris masquerades as exotic decorations and gators patrol the once bustling theme park rides, find solace in your trusty soft birch bag - a beacon of sanity amidst the chaos... unless it's filled with tee times for those relentless retirees."
+    "flavorText": "\"Birches wept when packed away, now they wait for spring's return.\""
   },
   {
     "id": "neo_407",
@@ -8316,7 +8316,7 @@
     "allImages": [
       "itmAmmo4mmAP.png"
     ],
-    "flavorText": "\"Ammunition for the peculiar healing of sunburned retirees - infused with the essence of Florida's legendary gator-blood, and a touch of Magic Kingdom's humid charm.\""
+    "flavorText": "\"Healing on the go? These bullets are your pharmacy in a pistol.\""
   },
   {
     "id": "neo_411",
@@ -9382,7 +9382,7 @@
       "width": 3,
       "height": 3
     },
-    "flavorText": "In this sun-scorched, gator-infested swamp of yesteryear's dreams, recharge your way through the everlasting humidity with a restored power from the ghostly laughter echoing in the abandoned roller coaster of a forgotten retiree retreat."
+    "flavorText": "\"Juice to keep your lights burning. Even in the darkest of times.\""
   },
   {
     "id": "neo_464",
@@ -9633,7 +9633,7 @@
       "width": 6,
       "height": 8
     },
-    "flavorText": "\"Sporting a faded 'It's a Small World After All' logo, this water-resistant bag once carried dreams of vacation bliss. Now it harbors canned peaches, a spare denture, and an unhealthy obsession with alligators.\""
+    "flavorText": "\"Childhood memories never expire... even in the wasteland.\""
   },
   {
     "id": "neo_476",
@@ -9714,7 +9714,7 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "Unearthed amidst a flooded retiree shuffleboard court, this crunchy relic once promised \"Florida's Finest\"... now it promises a fight against mutant gators for every last crisp!"
+    "flavorText": "\"Survival snack. Unopened since the world ended.\""
   },
   {
     "id": "neo_480",
@@ -9753,7 +9753,7 @@
     "allImages": [
       "itmMemStick.png"
     ],
-    "flavorText": "Unearthed amidst a forgotten golf course in the Everglades, this waterproof flashdrive promises a lifetime of entertainment... unless it's chewed by a retiree's pet gator during Happy Hour Hurricane Happy Hour at Camp Grayling."
+    "flavorText": "\"Data carrier of a bygone era, still holding secrets from Camp Grayling\""
   },
   {
     "id": "neo_482",
@@ -9943,7 +9943,7 @@
     "allImages": [
       "itmMemStickRed.png"
     ],
-    "flavorText": "\"Unearthed in a flooded Disney World ride, this water-resistant flashdrive hums tunes from yesteryear... and the odd electric gator growl.\""
+    "flavorText": "\"Camp Grayling's secrets stored on a weapon? Talk about overkill.\""
   },
   {
     "id": "neo_492",
@@ -10445,7 +10445,7 @@
       "width": 6,
       "height": 10
     },
-    "flavorText": "In the sweltering Everglades, amidst gator-infested canals and abandoned theme park ruins, you've stumbled upon a discarded retiree's shopping bag - a reliable, humidity-resistant container, ideal for your foraging endeavors... unless a hurricane decides to reclaim it."
+    "flavorText": "\"Reinventing fashion since the apocalypse - wear your trash bags proudly!\""
   },
   {
     "id": "neo_517",
@@ -10488,7 +10488,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "\"Sweat-drenched in the sweltering heat, this relic from Florida's retirement past could still bring a gator's retirement to an early end – just remember, it's always Hurricane Season at DisneyDose.\""
+    "flavorText": "\"Pills for a smoother post-apocalypse. Warfarin - because peace is overrated.\""
   },
   {
     "id": "neo_519",
@@ -10607,7 +10607,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "In this sweltering sun-baked wasteland of Florida's Everglades, a relic from a forgotten age emerges - a plastic pill bottle once filled with life-extending thyroid medication, now home to a family of gator-sized pharmaceutical piranhas, ready to test your retirement plans in the humid hurricane season."
+    "flavorText": "\"For a world that's suddenly slow, an old speed boost in disguise.\""
   },
   {
     "id": "neo_525",
@@ -10650,7 +10650,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "\"Once a popular remedy for high blood pressure in sun-soaked retiree communities, now more valued as a makeshift floatation device amidst the unpredictable hurricane swamps of abandoned Disney World gator exhibits.\""
+    "flavorText": "\"A relic of sanity in a sea of madness - PharmaCon Losepine: Your prescription for post-apocalyptic tranquility.\""
   },
   {
     "id": "neo_527",
@@ -10673,7 +10673,7 @@
       "width": 2,
       "height": 1
     },
-    "flavorText": "\"Hurricane Harvey's leftover prescriptions - now a convenient gator bite prevention kit for sun-dazed retirees on their daily theme park stroll through the Everglades.\""
+    "flavorText": "\"Pills sorted for Armageddon's daily essentials - or a really long retirement.\""
   },
   {
     "id": "neo_528",
