@@ -24,6 +24,8 @@ export default function DetailsPanel(): React.JSX.Element {
       border="top"
       className={cx('details-panel')}
       contentClassName={cx('details-content')}
+      contentAlign="start"
+      contentGap="12"
       emptyMessage="Select an item to view details"
     >
       {item !== null ? (

@@ -16,6 +16,9 @@ export default function EmptySlotDetails({ slotId }: EmptySlotDetailsProps): Rea
       border="top"
       className={cx('details-panel')}
       contentClassName={cx('details-content', 'empty-slot')}
+      contentJustify="center"
+      contentAlign="center"
+      contentGap="12"
     >
       <Box className={cx('item-preview')}>
         <Flex justify="center" align="center" className={cx('preview-frame', 'empty')}>

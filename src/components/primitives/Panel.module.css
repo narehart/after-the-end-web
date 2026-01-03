@@ -37,8 +37,6 @@
   border-bottom: var(--border-panel);
   background: var(--bg-header);
   height: 2.5rem;
-  display: flex;
-  align-items: center;
   box-sizing: border-box;
 }
 

@@ -5,16 +5,7 @@
 }
 
 .details-content {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: var(--space-12);
   overflow: hidden;
-}
-
-.details-content.empty-slot {
-  justify-content: center;
-  align-items: center;
 }
 
 .item-preview {

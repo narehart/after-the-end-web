@@ -145,3 +145,5 @@ export type FlexJustify = 'start' | 'end' | 'center' | 'between' | 'around' | 'e
 export type FlexAlign = 'start' | 'end' | 'center' | 'baseline' | 'stretch';
 export type FlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse';
 export type FlexGap = '0' | '2' | '4' | '6' | '8' | '12' | '16' | '24' | '32';
+
+export type PanelHeaderTypeReturn = 'custom' | 'breadcrumb' | 'title' | 'none';

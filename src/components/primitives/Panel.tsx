@@ -1,9 +1,18 @@
 import type { ReactNode } from 'react';
 import classNames from 'classnames/bind';
 import type { BreadcrumbLink } from '../../types/inventory';
-import type { BorderPosition } from '../../types/ui';
+import type {
+  BorderPosition,
+  FlexDirection,
+  FlexJustify,
+  FlexAlign,
+  FlexGap,
+} from '../../types/ui';
+import buildPanelClasses from '../../utils/buildPanelClasses';
+import getPanelHeaderType from '../../utils/getPanelHeaderType';
 import styles from './Panel.module.css';
-import { Breadcrumb, Box, Flex, Text } from './index';
+import PanelHeader from './PanelHeader';
+import { Box, Flex } from './index';
 
 const cx = classNames.bind(styles);
 
@@ -16,6 +25,10 @@ interface PanelProps {
   className?: string;
   border?: BorderPosition;
   contentClassName?: string;
+  contentDirection?: FlexDirection | undefined;
+  contentJustify?: FlexJustify | undefined;
+  contentAlign?: FlexAlign | undefined;
+  contentGap?: FlexGap | undefined;
   emptyMessage?: string;
 }
 
@@ -28,51 +41,60 @@ export default function Panel({
   className,
   border,
   contentClassName,
+  contentDirection,
+  contentJustify,
+  contentAlign,
+  contentGap,
   emptyMessage,
 }: PanelProps): React.JSX.Element {
-  const hasHeader = title !== undefined || breadcrumbLinks !== undefined || header !== undefined;
+  const headerType = getPanelHeaderType(header, breadcrumbLinks, title);
   const isEmpty = children === null || children === undefined;
+  const useFlexContent =
+    contentDirection !== undefined ||
+    contentJustify !== undefined ||
+    contentAlign !== undefined ||
+    contentGap !== undefined;
 
-  const renderHeader = (): ReactNode => {
-    if (header !== undefined) return header;
-    if (breadcrumbLinks !== undefined) {
-      return <Breadcrumb links={breadcrumbLinks} icon={breadcrumbIcon} clipLinks />;
-    }
-    if (title !== undefined)
-      return (
-        <Text as="h3" className={cx('panel-title')}>
-          {title}
-        </Text>
-      );
-    return null;
-  };
+  const panelClasses = buildPanelClasses(cx, border, className);
+  const contentClasses =
+    contentClassName !== undefined
+      ? `${cx('panel-content')} ${contentClassName}`
+      : cx('panel-content');
 
-  const panelClasses = cx('panel', {
-    'panel--border-right': border === 'right',
-    'panel--border-left': border === 'left',
-    'panel--border-top': border === 'top',
-    'panel--border-bottom': border === 'bottom',
-  });
+  const contentChildren =
+    isEmpty && emptyMessage !== undefined ? (
+      <Box className={cx('empty-message')}>{emptyMessage}</Box>
+    ) : (
+      children
+    );
 
   return (
-    <Flex
-      direction="column"
-      className={className !== undefined ? `${panelClasses} ${className}` : panelClasses}
-    >
-      {hasHeader ? <Box className={cx('panel-header')}>{renderHeader()}</Box> : null}
-      <Box
-        className={
-          contentClassName !== undefined
-            ? `${cx('panel-content')} ${contentClassName}`
-            : cx('panel-content')
-        }
-      >
-        {isEmpty && emptyMessage !== undefined ? (
-          <Box className={cx('empty-message')}>{emptyMessage}</Box>
-        ) : (
-          children
-        )}
-      </Box>
+    <Flex direction="column" className={panelClasses}>
+      {headerType !== 'none' ? (
+        <Box className={cx('panel-header')}>
+          <PanelHeader
+            headerType={headerType}
+            header={header}
+            breadcrumbLinks={breadcrumbLinks}
+            breadcrumbIcon={breadcrumbIcon}
+            title={title}
+            titleClassName={cx('panel-title')}
+          />
+        </Box>
+      ) : null}
+      {useFlexContent ? (
+        <Flex
+          direction={contentDirection}
+          justify={contentJustify}
+          align={contentAlign}
+          gap={contentGap}
+          className={contentClasses}
+        >
+          {contentChildren}
+        </Flex>
+      ) : (
+        <Box className={contentClasses}>{contentChildren}</Box>
+      )}
     </Flex>
   );
 }

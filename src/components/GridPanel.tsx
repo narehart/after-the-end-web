@@ -29,7 +29,12 @@ export default function GridPanel({ groundRef }: GridPanelProps): React.JSX.Elem
 
   return (
     <Flex direction="column" className={cx('grid-panel')}>
-      <Panel breadcrumbLinks={breadcrumbLinks} contentClassName={cx('grid-content')}>
+      <Panel
+        breadcrumbLinks={breadcrumbLinks}
+        contentClassName={cx('grid-content')}
+        contentJustify="center"
+        contentAlign="start"
+      >
         {currentGrid !== undefined && currentContainerId !== undefined ? (
           <GridPanelGrid gridId={currentContainerId} grid={currentGrid} />
         ) : (
