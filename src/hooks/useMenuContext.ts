@@ -1,9 +1,10 @@
 import { useMemo, useCallback } from 'react';
 import { useInventoryStore } from '../stores/inventoryStore';
 import { findItemInGrids } from '../utils/findItemInGrids';
-import type { MenuState, MenuContext, PanelType } from '../types/inventory';
+import type { UseMenuContextProps, UseMenuContextReturn, PanelType } from '../types/inventory';
 
-export default function useMenuContext(menu: MenuState): MenuContext {
+export default function useMenuContext(props: UseMenuContextProps): UseMenuContextReturn {
+  const { menu } = props;
   const { itemId, source } = menu;
   const item = useInventoryStore((state) => (itemId !== null ? state.items[itemId] : undefined));
   const equipment = useInventoryStore((state) => state.equipment);
@@ -21,7 +22,7 @@ export default function useMenuContext(menu: MenuState): MenuContext {
   // Find which container the item is currently in
   const currentContainerId = useMemo((): string | null => {
     if (itemId === null) return null;
-    const location = findItemInGrids(grids, itemId);
+    const location = findItemInGrids({ grids, itemId });
     return location?.gridId ?? null;
   }, [grids, itemId]);
 
@@ -37,7 +38,7 @@ export default function useMenuContext(menu: MenuState): MenuContext {
   const panel: PanelType = isInWorld ? 'world' : 'inventory';
 
   return useMemo(
-    (): MenuContext => ({
+    (): UseMenuContextReturn => ({
       item,
       itemId,
       source,

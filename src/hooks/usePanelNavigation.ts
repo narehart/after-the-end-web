@@ -1,7 +1,8 @@
 import type { MutableRefObject, RefObject } from 'react';
 import { useRef, useEffect, useCallback } from 'react';
 import { PANELS } from '../constants/navigation';
-import type { PanelName, PanelRefs } from '../types/ui';
+import type { PanelName } from '../types/ui';
+import type { UsePanelNavigationProps } from '../types/utils';
 
 interface UsePanelNavigationReturn {
   focusPanel: (panelIndex: number) => void;
@@ -11,9 +12,9 @@ interface UsePanelNavigationReturn {
 }
 
 export default function usePanelNavigation(
-  refs: PanelRefs,
-  modalsOpen: boolean
+  props: UsePanelNavigationProps
 ): UsePanelNavigationReturn {
+  const { refs, modalsOpen } = props;
   const activePanelRef = useRef(0);
 
   const focusPanel = useCallback(

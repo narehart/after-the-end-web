@@ -4,45 +4,10 @@
  * Enforces that exported functions use consistent interface naming:
  * - Custom object parameter types should end in "Props"
  * - Custom object return types should end in "Return"
- * Skips built-in types, primitives, and common domain types.
+ * Skips types imported from node_modules and primitives.
  */
 
 import type { Rule } from 'eslint';
-
-const BUILTIN_TYPES = new Set([
-  'RefObject',
-  'MutableRefObject',
-  'Ref',
-  'ForwardedRef',
-  'Set',
-  'Map',
-  'WeakSet',
-  'WeakMap',
-  'Array',
-  'Promise',
-  'Record',
-  'Partial',
-  'Required',
-  'Readonly',
-  'Pick',
-  'Omit',
-  'Exclude',
-  'Extract',
-  'NonNullable',
-  'ReturnType',
-  'Parameters',
-  'HTMLElement',
-  'HTMLDivElement',
-  'HTMLButtonElement',
-  'Element',
-  'Gamepad',
-  'KeyboardEvent',
-  'MouseEvent',
-  'Event',
-  'CSSProperties',
-  'ReactNode',
-  'JSX',
-]);
 
 const PRIMITIVE_TYPES = new Set([
   'TSNumberKeyword',
@@ -56,34 +21,6 @@ const PRIMITIVE_TYPES = new Set([
   'TSUnknownKeyword',
   'TSArrayType',
 ]);
-
-// Domain type suffixes that don't need Props/Return naming
-const DOMAIN_SUFFIXES = [
-  'State',
-  'Actions',
-  'Slice',
-  'Store',
-  'Map',
-  'Grid',
-  'Cell',
-  'Item',
-  'Size',
-  'Stats',
-  'Type',
-  'Context',
-  'Level',
-  'Segment',
-  'Rect',
-  'Direction',
-  'Handler',
-  'Position',
-  'Resolution',
-  'Refs',
-  'Callbacks',
-  'Dimensions',
-  'Link',
-  'Source',
-];
 
 function getTypeName(typeAnnotation: unknown): string | null {
   const ta = typeAnnotation as
@@ -110,15 +47,8 @@ function getReturnTypeName(returnType: unknown): string | null {
   return null;
 }
 
-function hasDomainSuffix(typeName: string): boolean {
-  return DOMAIN_SUFFIXES.some((suffix) => typeName.endsWith(suffix));
-}
-
-function shouldCheckType(typeName: string): boolean {
-  if (BUILTIN_TYPES.has(typeName)) return false;
-  if (typeName.endsWith('Props') || typeName.endsWith('Return')) return false;
-  if (hasDomainSuffix(typeName)) return false;
-  return true;
+function isLocalImport(source: string): boolean {
+  return source.startsWith('.') || source.startsWith('/');
 }
 
 const rule: Rule.RuleModule = {
@@ -134,6 +64,16 @@ const rule: Rule.RuleModule = {
     schema: [],
   },
   create(context): Rule.RuleListener {
+    // Only check types imported from local files
+    const localTypes = new Set<string>();
+
+    function shouldCheckType(typeName: string): boolean {
+      // Only check types imported from local project files
+      if (!localTypes.has(typeName)) return false;
+      if (typeName.endsWith('Props') || typeName.endsWith('Return')) return false;
+      return true;
+    }
+
     function checkFunction(node: Rule.Node, funcName: string): void {
       const func = node as unknown as { params: unknown[]; returnType?: unknown };
 
@@ -155,6 +95,17 @@ const rule: Rule.RuleModule = {
     }
 
     return {
+      ImportDeclaration(node: Rule.Node): void {
+        const importNode = node as unknown as {
+          source: { value: string };
+          specifiers: Array<{ local: { name: string } }>;
+        };
+        if (isLocalImport(importNode.source.value)) {
+          for (const spec of importNode.specifiers) {
+            localTypes.add(spec.local.name);
+          }
+        }
+      },
       ExportNamedDeclaration(node: Rule.Node): void {
         const decl = (node as unknown as { declaration?: { type: string; id?: { name: string } } })
           .declaration;

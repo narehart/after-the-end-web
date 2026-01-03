@@ -1,7 +1,7 @@
 import { useMemo, useCallback } from 'react';
 import { useInventoryStore } from '../stores/inventoryStore';
-import type { SlotType } from '../types/inventory';
 import type { SlotState } from '../types/ui';
+import type { UseEquipmentSlotProps } from '../types/utils';
 import { getModalPosition } from '../utils/getModalPosition';
 
 interface UseEquipmentSlotReturn {
@@ -11,7 +11,8 @@ interface UseEquipmentSlotReturn {
   handleMouseEnter: () => void;
 }
 
-export default function useEquipmentSlot(slotType: SlotType): UseEquipmentSlotReturn {
+export default function useEquipmentSlot(props: UseEquipmentSlotProps): UseEquipmentSlotReturn {
+  const { slotType } = props;
   const equipment = useInventoryStore((state) => state.equipment);
   const items = useInventoryStore((state) => state.items);
   const inventoryFocusPath = useInventoryStore((state) => state.inventoryFocusPath);
@@ -52,7 +53,7 @@ export default function useEquipmentSlot(slotType: SlotType): UseEquipmentSlotRe
     (element: HTMLElement): void => {
       if (item !== null && itemId !== null) {
         setSelectedItem(itemId);
-        openMenu(getModalPosition(element), itemId, slotType, 'equipment');
+        openMenu(getModalPosition({ element }), itemId, slotType, 'equipment');
       }
     },
     [item, itemId, slotType, setSelectedItem, openMenu]

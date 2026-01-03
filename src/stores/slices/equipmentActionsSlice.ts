@@ -48,18 +48,22 @@ export const createEquipmentActionsSlice: StateCreator<
     const targetGrid = state.grids[targetGridId];
     if (targetGrid === undefined) return false;
 
-    const freePos = findFreePosition(targetGrid, item.size.width, item.size.height);
+    const freePos = findFreePosition({
+      grid: targetGrid,
+      itemWidth: item.size.width,
+      itemHeight: item.size.height,
+    });
     if (freePos === null) return false;
 
     const shouldClearPath = state.inventoryFocusPath.includes(itemId);
-    const newCells = placeItemInCells(
-      targetGrid.cells,
+    const newCells = placeItemInCells({
+      grid: targetGrid.cells,
       itemId,
-      freePos.x,
-      freePos.y,
-      item.size.width,
-      item.size.height
-    );
+      x: freePos.x,
+      y: freePos.y,
+      width: item.size.width,
+      height: item.size.height,
+    });
 
     set({
       equipment: { ...state.equipment, [equipmentSlot]: null },
@@ -85,14 +89,14 @@ export const createEquipmentActionsSlice: StateCreator<
       return false;
     }
 
-    const itemLocation = findItemInGrids(state.grids, itemId);
+    const itemLocation = findItemInGrids({ grids: state.grids, itemId });
     if (itemLocation === null) return false;
 
     const { gridId, positions } = itemLocation;
     const grid = state.grids[gridId];
     if (grid === undefined) return false;
 
-    const newCells = removeItemFromCells(grid.cells, positions);
+    const newCells = removeItemFromCells({ cells: grid.cells, positions });
 
     set({
       equipment: { ...state.equipment, [slot]: itemId },

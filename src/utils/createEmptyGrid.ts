@@ -1,5 +1,6 @@
-import type { CellGrid } from '../types/inventory';
+import type { CreateEmptyGridProps, CreateEmptyGridReturn } from '../types/utils';
 
-export function createEmptyGrid(width: number, height: number): CellGrid {
+export function createEmptyGrid(props: CreateEmptyGridProps): CreateEmptyGridReturn {
+  const { width, height } = props;
   return Array.from({ length: height }, () => Array.from({ length: width }, () => null));
 }

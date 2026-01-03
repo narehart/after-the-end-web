@@ -1,6 +1,7 @@
-import type { GridCell } from '../types/inventory';
+import type { GetCellValueProps } from '../types/utils';
 
-export function getCellValue(grid: GridCell, row: number, col: number): string | null {
+export function getCellValue(props: GetCellValueProps): string | null {
+  const { grid, row, col } = props;
   const cellRow = grid.cells[row];
   if (cellRow === undefined) return null;
   return cellRow[col] ?? null;

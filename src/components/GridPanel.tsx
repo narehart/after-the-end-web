@@ -23,7 +23,7 @@ export default function GridPanel({ groundRef }: GridPanelProps): React.JSX.Elem
   const currentContainerId = focusPath.length > 0 ? focusPath[focusPath.length - 1] : undefined;
   const currentGrid = currentContainerId !== undefined ? grids[currentContainerId] : undefined;
   const groundGrid = grids['ground'];
-  const breadcrumbLinks = useBreadcrumbLinksInventory(focusPath, items, navigateBack);
+  const breadcrumbLinks = useBreadcrumbLinksInventory({ focusPath, items, navigateBack });
 
   return (
     <div className={cx('grid-panel')}>

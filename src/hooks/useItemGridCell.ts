@@ -52,7 +52,7 @@ export default function useItemGridCell({
     (element: HTMLElement): void => {
       if (itemId !== null) {
         setSelectedItem(itemId);
-        openMenu(getModalPosition(element), itemId, null, context);
+        openMenu(getModalPosition({ element }), itemId, null, context);
       }
     },
     [itemId, context, setSelectedItem, openMenu]

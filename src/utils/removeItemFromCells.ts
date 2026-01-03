@@ -1,6 +1,7 @@
-import type { CellGrid, GridPosition } from '../types/inventory';
+import type { RemoveItemFromCellsProps, RemoveItemFromCellsReturn } from '../types/utils';
 
-export function removeItemFromCells(cells: CellGrid, positions: GridPosition[]): CellGrid {
+export function removeItemFromCells(props: RemoveItemFromCellsProps): RemoveItemFromCellsReturn {
+  const { cells, positions } = props;
   const newCells = cells.map((row) => [...row]);
   for (const pos of positions) {
     const row = newCells[pos.y];

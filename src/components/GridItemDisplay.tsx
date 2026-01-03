@@ -22,7 +22,7 @@ export default function GridItemDisplay({
         height: `${String(item.size.height * 100)}%`,
       }}
     >
-      <span className={cx('item-icon')}>{getItemIcon(item.type)}</span>
+      <span className={cx('item-icon')}>{getItemIcon({ type: item.type })}</span>
       <span className={cx('item-name')}>{item.name}</span>
       {item.stackable && item.quantity > 1 ? (
         <span className={cx('item-quantity')}>x{item.quantity}</span>

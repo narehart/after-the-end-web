@@ -1,17 +1,11 @@
-import type { CellGrid } from '../types/inventory';
+import type { PlaceItemProps } from '../types/utils';
 
-export function placeItem(
-  cells: CellGrid,
-  itemId: string,
-  x: number,
-  y: number,
-  width: number,
-  height: number
-): void {
+export function placeItem(props: PlaceItemProps): void {
+  const { grid, itemId, x, y, width, height } = props;
   for (let dy = 0; dy < height; dy++) {
     for (let dx = 0; dx < width; dx++) {
-      const row = cells[y + dy];
-      const firstRow = cells[0];
+      const row = grid[y + dy];
+      const firstRow = grid[0];
       if (row !== undefined && firstRow !== undefined && x + dx < firstRow.length) {
         row[x + dx] = itemId;
       }

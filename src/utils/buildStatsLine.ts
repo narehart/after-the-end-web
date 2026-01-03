@@ -1,6 +1,7 @@
-import type { Item } from '../types/inventory';
+import type { BuildStatsLineProps } from '../types/utils';
 
-export function buildStatsLine(item: Item): string {
+export function buildStatsLine(props: BuildStatsLineProps): string {
+  const { item } = props;
   return [
     item.type.toUpperCase(),
     item.stats.weight !== 0 ? `${String(item.stats.weight)}kg` : null,

@@ -79,11 +79,11 @@ export default function ItemGrid({ grid, context, cellSize }: ItemGridProps): Re
       >
         {Array.from({ length: grid.height }).map((__, row) =>
           Array.from({ length: grid.width }).map((___, col) => {
-            const itemId = getCellValue(grid, row, col);
+            const itemId = getCellValue({ grid, row, col });
             const item = itemId !== null ? items[itemId] : undefined;
             const cellKey = `${col}-${row}`;
             const isFocused = focusedCell.x === col && focusedCell.y === row;
-            const isOrigin = checkIsOrigin(grid, itemId, col, row, renderedItems);
+            const isOrigin = checkIsOrigin({ grid, itemId, col, row, renderedItems });
             return (
               <ItemGridCell
                 key={cellKey}

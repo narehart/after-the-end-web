@@ -1,25 +1,22 @@
 import { BUTTONS } from '../constants/gamepad';
-import type { GamepadCallbacks, GamepadRefs } from '../types/ui';
+import type { ProcessGamepadProps } from '../types/utils';
 import { createButtonHandler } from './createButtonHandler';
 import { handleStickAxis } from './handleStickAxis';
 
 export type { GamepadCallbacks, GamepadRefs } from '../types/ui';
 
-export function processGamepad(
-  gamepad: Gamepad,
-  refs: GamepadRefs,
-  callbacks: GamepadCallbacks
-): void {
+export function processGamepad(props: ProcessGamepadProps): void {
+  const { gamepad, refs, callbacks } = props;
   const { lastButtonStates, lastAxisStates } = refs;
   const { onNavigate, onConfirm, onBack, onNextPanel, onPrevPanel, startRepeat, clearRepeatTimer } =
     callbacks;
 
-  const handleButton = createButtonHandler(
+  const handleButton = createButtonHandler({
     gamepad,
     lastButtonStates,
     startRepeat,
-    clearRepeatTimer
-  );
+    clearRepeatTimer,
+  });
 
   handleButton(
     BUTTONS.DPAD_UP,
@@ -66,28 +63,28 @@ export function processGamepad(
   const stickY = gamepad.axes[1] ?? 0;
   const { x: lastX, y: lastY } = lastAxisStates.current;
 
-  handleStickAxis(
-    stickX,
-    lastX,
-    'right',
-    'left',
-    'stick_right',
-    'stick_left',
+  handleStickAxis({
+    value: stickX,
+    lastValue: lastX,
+    posDir: 'right',
+    negDir: 'left',
+    posKey: 'stick_right',
+    negKey: 'stick_left',
     onNavigate,
     startRepeat,
-    clearRepeatTimer
-  );
-  handleStickAxis(
-    stickY,
-    lastY,
-    'down',
-    'up',
-    'stick_down',
-    'stick_up',
+    clearRepeatTimer,
+  });
+  handleStickAxis({
+    value: stickY,
+    lastValue: lastY,
+    posDir: 'down',
+    negDir: 'up',
+    posKey: 'stick_down',
+    negKey: 'stick_up',
     onNavigate,
     startRepeat,
-    clearRepeatTimer
-  );
+    clearRepeatTimer,
+  });
 
   lastAxisStates.current = { x: stickX, y: stickY };
 }

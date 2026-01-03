@@ -27,7 +27,7 @@ export default function ItemGridButton({
   const { handleClick, openModal, handleMouseEnter, handleFocus } = handlers;
 
   const needsRotation = item.size.height > item.size.width && item.spriteVertical !== true;
-  const { itemWidth, itemHeight } = calculateItemDimensions(item, cellSize);
+  const { itemWidth, itemHeight } = calculateItemDimensions({ item, cellSize });
 
   const handleDoubleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
     openModal(e.currentTarget);
@@ -74,7 +74,7 @@ export default function ItemGridButton({
           draggable={false}
         />
       ) : (
-        <span className={cx('item-icon')}>{getItemIcon(item.type)}</span>
+        <span className={cx('item-icon')}>{getItemIcon({ type: item.type })}</span>
       )}
       {item.stackable && item.quantity > 1 ? (
         <span className={cx('item-quantity')}>x{item.quantity}</span>

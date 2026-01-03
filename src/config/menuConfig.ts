@@ -14,10 +14,10 @@
  *   - hasChildren: boolean - shows arrow indicator
  */
 
-import type { MenuItem, MenuContext, MenuPathSegment } from '../types/inventory';
+import type { MenuItem, UseMenuContextReturn, MenuPathSegment } from '../types/inventory';
 import type { ContainerInfo } from '../types/ui';
 
-function getContainerInfo(ctx: MenuContext, containerId: string): ContainerInfo | null {
+function getContainerInfo(ctx: UseMenuContextReturn, containerId: string): ContainerInfo | null {
   const containerItem = ctx.allItems[containerId];
   if (containerItem?.gridSize === undefined) return null;
 
@@ -47,11 +47,12 @@ function createContainerItem(
     disabled: (): boolean => !canFit,
     meta: info.capacity,
     data: { containerId: info.id, action },
-    getItems: (ctx2: MenuContext): MenuItem[] => buildDestinationItems(ctx2, newPath, action),
+    getItems: (ctx2: UseMenuContextReturn): MenuItem[] =>
+      buildDestinationItems(ctx2, newPath, action),
   };
 }
 
-function buildRootDestinations(ctx: MenuContext, action: string): MenuItem[] {
+function buildRootDestinations(ctx: UseMenuContextReturn, action: string): MenuItem[] {
   const { equipment, itemId, canFitItem, currentContainerId } = ctx;
   const items: MenuItem[] = [];
 
@@ -63,7 +64,8 @@ function buildRootDestinations(ctx: MenuContext, action: string): MenuItem[] {
     hasChildren: !isOnGround,
     disabled: (): boolean => isOnGround || !canFitItem('ground'),
     data: { containerId: 'ground', action },
-    getItems: (ctx2: MenuContext): MenuItem[] => buildDestinationItems(ctx2, ['ground'], action),
+    getItems: (ctx2: UseMenuContextReturn): MenuItem[] =>
+      buildDestinationItems(ctx2, ['ground'], action),
   });
 
   Object.values(equipment).forEach((equippedId) => {
@@ -79,7 +81,8 @@ function buildRootDestinations(ctx: MenuContext, action: string): MenuItem[] {
         disabled: (): boolean => isCurrentContainer || !canFitItem(equippedId),
         meta: info.capacity,
         data: { containerId: info.id, action },
-        getItems: (ctx2: MenuContext): MenuItem[] => buildDestinationItems(ctx2, [info.id], action),
+        getItems: (ctx2: UseMenuContextReturn): MenuItem[] =>
+          buildDestinationItems(ctx2, [info.id], action),
       });
     }
   });
@@ -87,7 +90,11 @@ function buildRootDestinations(ctx: MenuContext, action: string): MenuItem[] {
   return items;
 }
 
-function buildNestedDestinations(ctx: MenuContext, path: string[], action: string): MenuItem[] {
+function buildNestedDestinations(
+  ctx: UseMenuContextReturn,
+  path: string[],
+  action: string
+): MenuItem[] {
   const { itemId, canFitItem } = ctx;
   const currentContainerId = path[path.length - 1];
   if (currentContainerId === undefined) return [];
@@ -111,7 +118,7 @@ function buildNestedDestinations(ctx: MenuContext, path: string[], action: strin
 }
 
 export function buildDestinationItems(
-  ctx: MenuContext,
+  ctx: UseMenuContextReturn,
   path: string[] | MenuPathSegment[],
   action: string
 ): MenuItem[] {

@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
-import type { BreadcrumbLink, ItemsMap } from '../types/inventory';
+import type { BreadcrumbLink } from '../types/inventory';
+import type { UseBreadcrumbLinksInventoryProps } from '../types/utils';
 
 export function useBreadcrumbLinksInventory(
-  focusPath: string[],
-  items: ItemsMap,
-  navigateBack: (index: number, panel: string) => void
+  props: UseBreadcrumbLinksInventoryProps
 ): BreadcrumbLink[] {
+  const { focusPath, items, navigateBack } = props;
   return useMemo(() => {
     // "Inventory" is never clickable - it's just a label, not a container
     const links: BreadcrumbLink[] = [

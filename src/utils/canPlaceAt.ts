@@ -1,15 +1,10 @@
-import type { CellGrid } from '../types/inventory';
+import type { CanPlaceAtProps } from '../types/utils';
 
-export function canPlaceAt(
-  cells: CellGrid,
-  x: number,
-  y: number,
-  width: number,
-  height: number
-): boolean {
+export function canPlaceAt(props: CanPlaceAtProps): boolean {
+  const { grid, x, y, width, height } = props;
   for (let dy = 0; dy < height; dy++) {
     for (let dx = 0; dx < width; dx++) {
-      const row = cells[y + dy];
+      const row = grid[y + dy];
       if (row === undefined) return false;
       const cell = row[x + dx];
       if (cell !== null) {

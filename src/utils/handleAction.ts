@@ -1,6 +1,7 @@
-import type { MenuContext, MenuItem } from '../types/inventory';
+import type { HandleActionProps } from '../types/inventory';
 
-export function handleAction(item: MenuItem, context: MenuContext): void {
+export function handleAction(props: HandleActionProps): void {
+  const { item, context } = props;
   const { navigateToContainer, rotateItem, equipItem, closeMenu } = context;
   const itemId = context.itemId;
   if (itemId === null) {

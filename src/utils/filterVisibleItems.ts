@@ -1,6 +1,7 @@
-import type { MenuItem, MenuContext } from '../types/inventory';
+import type { FilterVisibleItemsProps, MenuItem } from '../types/inventory';
 
-export function filterVisibleItems(items: MenuItem[], context: MenuContext): MenuItem[] {
+export function filterVisibleItems(props: FilterVisibleItemsProps): MenuItem[] {
+  const { items, context } = props;
   return items.filter((item) => {
     if (typeof item.show === 'function') {
       return item.show(context);

@@ -1,12 +1,7 @@
-import type { MutableRefObject } from 'react';
-import type { ButtonHandler } from '../types/gamepad';
+import type { CreateButtonHandlerProps, CreateButtonHandlerReturn } from '../types/utils';
 
-export function createButtonHandler(
-  gamepad: Gamepad,
-  lastButtonStates: MutableRefObject<Record<number, boolean>>,
-  startRepeat: (key: string, action: () => void) => void,
-  clearRepeatTimer: (key: string) => void
-): ButtonHandler {
+export function createButtonHandler(props: CreateButtonHandlerProps): CreateButtonHandlerReturn {
+  const { gamepad, lastButtonStates, startRepeat, clearRepeatTimer } = props;
   return (buttonIndex: number, onPress: () => void, key?: string): void => {
     const pressed = gamepad.buttons[buttonIndex]?.pressed ?? false;
     const wasPressed = lastButtonStates.current[buttonIndex] ?? false;

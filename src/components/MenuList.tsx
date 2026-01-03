@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import type { MenuItem as MenuItemType, MenuContext } from '../types/inventory';
+import type { MenuItem as MenuItemType, UseMenuContextReturn } from '../types/inventory';
 import MenuItem from './MenuItem';
 import styles from './MenuList.module.css';
 
@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 interface MenuListProps {
   items: MenuItemType[];
-  context: MenuContext;
+  context: UseMenuContextReturn;
   focusIndex: number;
   selectedId?: string | null;
   onSelect: (item: MenuItemType) => void;

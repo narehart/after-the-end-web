@@ -15,7 +15,7 @@ interface EquipmentSlotProps {
 
 export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.JSX.Element {
   const slotRef = useRef<HTMLButtonElement | null>(null);
-  const { slotState, handleClick, openModal, handleMouseEnter } = useEquipmentSlot(slotType);
+  const { slotState, handleClick, openModal, handleMouseEnter } = useEquipmentSlot({ slotType });
   const { item, hasGrid, isFocused } = slotState;
 
   const handleDoubleClick = (): void => {

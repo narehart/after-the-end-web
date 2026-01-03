@@ -1,13 +1,11 @@
 import { useMemo } from 'react';
-import type { BreadcrumbLink, ItemsMap, PanelType } from '../types/inventory';
+import type { BreadcrumbLink } from '../types/inventory';
+import type { UseBreadcrumbLinksContainerProps } from '../types/utils';
 
 export function useBreadcrumbLinksContainer(
-  panelLabel: string,
-  focusPath: string[],
-  items: ItemsMap,
-  onNavigateBack: (index: number) => void,
-  panelType: PanelType
+  props: UseBreadcrumbLinksContainerProps
 ): BreadcrumbLink[] {
+  const { panelLabel, focusPath, items, onNavigateBack, panelType } = props;
   return useMemo(() => {
     // For world panel at ground level, don't show redundant "ground" breadcrumb
     const isGroundRoot =

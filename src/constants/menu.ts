@@ -1,4 +1,4 @@
-import type { MenuItem, MenuContext, MenuPathSegment } from '../types/inventory';
+import type { MenuItem, UseMenuContextReturn, MenuPathSegment } from '../types/inventory';
 import { buildDestinationItems } from '../config/menuConfig';
 
 export const ITEM_ACTION_MENU: MenuItem[] = [
@@ -7,21 +7,21 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     label: 'Open',
     icon: '▶',
     type: 'action',
-    show: (ctx: MenuContext): boolean => ctx.item?.gridSize !== undefined,
+    show: (ctx: UseMenuContextReturn): boolean => ctx.item?.gridSize !== undefined,
   },
   {
     id: 'use',
     label: 'Use',
     icon: '○',
     type: 'action',
-    show: (ctx: MenuContext): boolean => ctx.item?.type === 'consumable',
+    show: (ctx: UseMenuContextReturn): boolean => ctx.item?.type === 'consumable',
   },
   {
     id: 'equip',
     label: 'Equip',
     icon: '◆',
     type: 'action',
-    show: (ctx: MenuContext): boolean => {
+    show: (ctx: UseMenuContextReturn): boolean => {
       const slots = ctx.item?.equippableSlots;
       return slots !== undefined && slots.length > 0 && ctx.source !== 'equipment';
     },
@@ -32,8 +32,8 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     icon: '◇',
     type: 'navigate',
     hasChildren: true,
-    show: (ctx: MenuContext): boolean => ctx.source === 'equipment',
-    getItems: (ctx: MenuContext, path?: MenuPathSegment[]): MenuItem[] =>
+    show: (ctx: UseMenuContextReturn): boolean => ctx.source === 'equipment',
+    getItems: (ctx: UseMenuContextReturn, path?: MenuPathSegment[]): MenuItem[] =>
       buildDestinationItems(ctx, path ?? [], 'unequip'),
   },
   {
@@ -41,14 +41,14 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     label: 'Rotate',
     icon: '↻',
     type: 'action',
-    show: (ctx: MenuContext): boolean => ctx.source === 'grid',
+    show: (ctx: UseMenuContextReturn): boolean => ctx.source === 'grid',
   },
   {
     id: 'split',
     label: 'Split',
     icon: '÷',
     type: 'action',
-    show: (ctx: MenuContext): boolean => {
+    show: (ctx: UseMenuContextReturn): boolean => {
       const item = ctx.item;
       return item?.stackable === true && item.quantity > 1;
     },
@@ -59,8 +59,8 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     icon: '→',
     type: 'navigate',
     hasChildren: true,
-    show: (ctx: MenuContext): boolean => ctx.source !== 'equipment',
-    getItems: (ctx: MenuContext, path?: MenuPathSegment[]): MenuItem[] =>
+    show: (ctx: UseMenuContextReturn): boolean => ctx.source !== 'equipment',
+    getItems: (ctx: UseMenuContextReturn, path?: MenuPathSegment[]): MenuItem[] =>
       buildDestinationItems(ctx, path ?? [], 'move'),
   },
 ];

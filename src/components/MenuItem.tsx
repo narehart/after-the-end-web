@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import type { MenuItem as MenuItemType, MenuContext } from '../types/inventory';
+import type { MenuItem as MenuItemType, UseMenuContextReturn } from '../types/inventory';
 import ListItem from './ListItem';
 import styles from './MenuItem.module.css';
 
@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 
 interface MenuItemProps {
   item: MenuItemType;
-  context: MenuContext;
+  context: UseMenuContextReturn;
   isFocused: boolean;
   isSelected: boolean;
   onSelect: (item: MenuItemType) => void;

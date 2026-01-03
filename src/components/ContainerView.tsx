@@ -36,13 +36,13 @@ export default function ContainerView({
     return grids[id];
   };
   const currentGrid = getGrid(currentContainerId);
-  const breadcrumbLinks = useBreadcrumbLinksContainer(
+  const breadcrumbLinks = useBreadcrumbLinksContainer({
     panelLabel,
     focusPath,
     items,
     onNavigateBack,
-    panelType
-  );
+    panelType,
+  });
 
   // Determine context for action modal based on panel type and current container
   const getContext = (): MenuSource => {

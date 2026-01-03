@@ -49,12 +49,12 @@ export const createItemsSlice: StateCreator<ItemsSlice, [], [], ItemsSlice> = (s
   findItemOrigin: (gridId, itemId): { x: number; y: number } | null => {
     const grid = get().grids[gridId];
     if (grid === undefined) return null;
-    return findItemOrigin(grid, itemId);
+    return findItemOrigin({ grid, itemId });
   },
 
   findFreePosition: (gridId, itemWidth, itemHeight): { x: number; y: number } | null => {
     const grid = get().grids[gridId];
     if (grid === undefined) return null;
-    return findFreePosition(grid, itemWidth, itemHeight);
+    return findFreePosition({ grid, itemWidth, itemHeight });
   },
 });

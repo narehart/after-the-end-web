@@ -47,7 +47,7 @@ export default function DetailsPanel(): React.JSX.Element {
 
       <div className={cx('item-info')}>
         <h2 className={cx('item-name')}>{item.name}</h2>
-        <p className={cx('item-stats-line')}>{buildStatsLine(item)}</p>
+        <p className={cx('item-stats-line')}>{buildStatsLine({ item })}</p>
         <p className={cx('item-description')}>{item.description}</p>
       </div>
     </Panel>

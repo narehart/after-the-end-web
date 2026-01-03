@@ -177,18 +177,22 @@ export interface MenuItem {
   icon?: string;
   type: 'action' | 'navigate' | 'select';
   hasChildren?: boolean;
-  disabled?: (ctx: MenuContext) => boolean;
-  show?: boolean | ((ctx: MenuContext) => boolean);
+  disabled?: (ctx: UseMenuContextReturn) => boolean;
+  show?: boolean | ((ctx: UseMenuContextReturn) => boolean);
   meta?: string;
   data?: {
     containerId?: string;
     action?: string;
   };
-  getItems?: (ctx: MenuContext, path?: MenuPathSegment[]) => MenuItem[];
+  getItems?: (ctx: UseMenuContextReturn, path?: MenuPathSegment[]) => MenuItem[];
   items?: MenuItem[];
 }
 
-export interface MenuContext {
+export interface UseMenuContextProps {
+  menu: MenuState;
+}
+
+export interface UseMenuContextReturn {
   item: Item | undefined;
   itemId: string | null;
   source: MenuSource;
@@ -209,4 +213,34 @@ export interface MenuLevel {
   items: MenuItem[];
   selectedId: string | null;
   selectedIndex: number;
+}
+
+// Utility function Props interfaces
+export interface HandleActionProps {
+  item: MenuItem;
+  context: UseMenuContextReturn;
+}
+
+export interface HandleSelectActionProps {
+  item: MenuItem;
+  context: UseMenuContextReturn;
+}
+
+export interface HandleNavigateActionProps {
+  item: MenuItem;
+}
+
+export interface FilterVisibleItemsProps {
+  items: MenuItem[];
+  context: UseMenuContextReturn;
+}
+
+export interface ResolveItemsAtPathProps {
+  config: MenuItem[];
+  path: MenuPathSegment[];
+  context: UseMenuContextReturn;
+}
+
+export interface UseMenuActionsProps {
+  context: UseMenuContextReturn;
 }

@@ -51,7 +51,7 @@ export default function useGridPanelCell({
   const openModal = useCallback(
     (element: HTMLElement): void => {
       if (itemId !== null) {
-        openMenu(getModalPosition(element), itemId, null, context);
+        openMenu(getModalPosition({ element }), itemId, null, context);
       }
     },
     [itemId, context, openMenu]

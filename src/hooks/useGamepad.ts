@@ -75,7 +75,7 @@ export function useGamepad({
     const pollGamepad = (): void => {
       const gamepad = findFirstGamepad();
       updateConnectionState(gamepad, isConnectedRef, setIsConnected, setGamepadName);
-      if (gamepad !== null) processGamepad(gamepad, refs, callbacks);
+      if (gamepad !== null) processGamepad({ gamepad, refs, callbacks });
       frameRef.current = requestAnimationFrame(pollGamepad);
     };
 

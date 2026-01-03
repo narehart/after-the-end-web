@@ -7,12 +7,13 @@ import {
   CONTENT_PADDING,
   MIN_CELL_SIZE,
 } from '../constants/grid';
-import type { Resolution } from '../types/ui';
+import type { UseCellSizeProps } from '../types/utils';
 
 export default function useCellSize(
   containerRef: RefObject<HTMLDivElement | null>,
-  effectiveResolution: Resolution
+  props: UseCellSizeProps
 ): number {
+  const { resolution: effectiveResolution } = props;
   const [cellSize, setCellSize] = useState(32);
 
   useEffect(() => {

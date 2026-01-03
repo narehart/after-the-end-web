@@ -21,10 +21,10 @@ export default function Menu(): React.JSX.Element | null {
   const menuNavigateBack = useInventoryStore((s) => s.menuNavigateBack);
   const menuNavigateToLevel = useInventoryStore((s) => s.menuNavigateToLevel);
   const menuSetFocusIndex = useInventoryStore((s) => s.menuSetFocusIndex);
-  const context = useMenuContext(menu);
+  const context = useMenuContext({ menu });
   const levels = useMenuLevels(menu.path, context);
   const currentLevel = levels.length > 0 ? levels[levels.length - 1] : undefined;
-  const handleSelect = useMenuActions(context, menuNavigateTo);
+  const handleSelect = useMenuActions({ context }, menuNavigateTo);
   const currentItems = currentLevel?.items ?? [];
 
   useMenuKeyboard({

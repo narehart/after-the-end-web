@@ -30,10 +30,13 @@ export default function Inventory(): React.JSX.Element {
   const worldRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const cellSize = useCellSize(worldRef, effectiveResolution);
+  const cellSize = useCellSize(worldRef, { resolution: effectiveResolution });
 
   const panelRefs = { equipment: equipmentRef, inventory: inventoryRef, world: worldRef };
-  const { goToNextPanel, goToPrevPanel } = usePanelNavigation(panelRefs, menuIsOpen);
+  const { goToNextPanel, goToPrevPanel } = usePanelNavigation({
+    refs: panelRefs,
+    modalsOpen: menuIsOpen,
+  });
 
   useGamepadNavigation({ onNextPanel: goToNextPanel, onPrevPanel: goToPrevPanel, enabled: true });
   useUIScaleSync(containerRef, physicalScale, setUIScale);

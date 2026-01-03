@@ -80,13 +80,13 @@ export default function GridPanelGrid({
       >
         {Array.from({ length: grid.height }).map((__, row) =>
           Array.from({ length: grid.width }).map((___, col) => {
-            const itemId = getCellValue(grid, row, col);
+            const itemId = getCellValue({ grid, row, col });
             const item = itemId !== null ? items[itemId] : undefined;
             const cellKey = `${col}-${row}`;
             const isFocused = focusedCell.x === col && focusedCell.y === row;
             let isOrigin = false;
             if (itemId !== null && !renderedItems.has(itemId)) {
-              const origin = findItemOrigin(grid, itemId);
+              const origin = findItemOrigin({ grid, itemId });
               if (origin !== null && origin.x === col && origin.y === row) {
                 isOrigin = true;
                 renderedItems.add(itemId);

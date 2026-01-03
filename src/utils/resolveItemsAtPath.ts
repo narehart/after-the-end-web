@@ -1,11 +1,8 @@
-import type { MenuItem, MenuContext, MenuPathSegment } from '../types/inventory';
+import type { ResolveItemsAtPathProps, MenuItem } from '../types/inventory';
 import { getSegmentId } from './getSegmentId';
 
-export function resolveItemsAtPath(
-  config: MenuItem[],
-  path: MenuPathSegment[],
-  context: MenuContext
-): MenuItem[] {
+export function resolveItemsAtPath(props: ResolveItemsAtPathProps): MenuItem[] {
+  const { config, path, context } = props;
   let currentItems = config;
 
   for (let i = 0; i < path.length; i++) {
