@@ -102,12 +102,6 @@ ls:
     .*: regex:$
     .dir: regex:@types
 
-  # src/types - camelCase app type files (.ts) only, no subdirectories
-  src/types:
-    .ts: camelCase
-    .*: regex:$
-    .dir: regex:types
-
   # src/constants - camelCase .ts files only, no subdirectories
   src/constants:
     .ts: camelCase
@@ -145,6 +139,12 @@ ls:
     .ts: regex:[a-z][a-zA-Z0-9]*Slice
     .*: regex:$
     .dir: regex:slices
+
+  # src/types - camelCase app type files (.ts) only, no subdirectories
+  src/types:
+    .ts: camelCase
+    .*: regex:$
+    .dir: regex:types
 
 ignore:
   # Ignore subdirectory contents - rules added incrementally

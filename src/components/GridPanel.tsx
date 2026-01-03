@@ -2,7 +2,7 @@ import type { RefObject } from 'react';
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
-import { useBreadcrumbLinksInventory } from '../utils/useBreadcrumbLinksInventory';
+import { useBreadcrumbLinksInventory } from '../hooks/useBreadcrumbLinksInventory';
 import Panel from './Panel';
 import GridPanelGrid from './GridPanelGrid';
 import styles from './GridPanel.module.css';

@@ -1,8 +1,8 @@
 import { useCallback } from 'react';
 import type { UseMenuActionsProps, MenuItem, MenuPathSegment } from '../types/inventory';
-import { handleNavigateAction } from './handleNavigateAction';
-import { handleSelectAction } from './handleSelectAction';
-import { handleAction } from './handleAction';
+import { handleNavigateAction } from '../utils/handleNavigateAction';
+import { handleSelectAction } from '../utils/handleSelectAction';
+import { handleAction } from '../utils/handleAction';
 
 export function useMenuActions(
   props: UseMenuActionsProps,

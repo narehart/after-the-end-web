@@ -23,6 +23,7 @@ import functionInterfaceNaming from './eslint-rules/function-interface-naming.ts
 import dataConstantsInConstantsDir from './eslint-rules/data-constants-in-constants-dir.ts';
 import noReexportsInTypes from './eslint-rules/no-reexports-in-types.ts';
 import noFunctionsInTypes from './eslint-rules/no-functions-in-types.ts';
+import noHooksInUtils from './eslint-rules/no-hooks-in-utils.ts';
 
 const MAX_LINES = 250;
 const MAX_LINES_PER_FUNCTION = 100;
@@ -54,6 +55,7 @@ const localPlugin = {
     'data-constants-in-constants-dir': dataConstantsInConstantsDir,
     'no-reexports-in-types': noReexportsInTypes,
     'no-functions-in-types': noFunctionsInTypes,
+    'no-hooks-in-utils': noHooksInUtils,
   },
 };
 const sharedRules: Linter.RulesRecord = {
@@ -89,6 +91,7 @@ const sharedRules: Linter.RulesRecord = {
   'local/data-constants-in-constants-dir': 'error',
   'local/no-reexports-in-types': 'error',
   'local/no-functions-in-types': 'error',
+  'local/no-hooks-in-utils': 'error',
 };
 
 export default defineConfig([
