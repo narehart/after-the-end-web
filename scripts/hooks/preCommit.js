@@ -7,14 +7,18 @@
  */
 
 import { execSync } from 'node:child_process';
-import { readdirSync, statSync } from 'node:fs';
+import { existsSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import { homedir } from 'node:os';
 
 // Find ui-experiments directory relative to git root
 const GIT_ROOT = execSync('git rev-parse --show-toplevel', { encoding: 'utf-8' }).trim();
 const UI_EXPERIMENTS_DIR = join(GIT_ROOT, 'ui-experiments');
 const CANDIDATES_DIR = join(UI_EXPERIMENTS_DIR, 'src/components/candidates');
 const COMPONENT_EXTENSIONS = ['.tsx', '.ts'];
+
+// Global hooks directory (user's global git hooks)
+const GLOBAL_HOOKS_DIR = join(homedir(), '.config', 'git', 'hooks');
 
 /**
  * Recursively finds all component files in a directory
@@ -82,6 +86,27 @@ function runTypecheck() {
   }
 }
 
+/**
+ * Run global pre-commit hook if it exists
+ */
+function runGlobalHook() {
+  const globalPreCommit = join(GLOBAL_HOOKS_DIR, 'pre-commit');
+
+  if (!existsSync(globalPreCommit)) {
+    return;
+  }
+
+  console.log('Running global pre-commit hook...');
+
+  try {
+    execSync(globalPreCommit, { stdio: 'inherit', cwd: GIT_ROOT });
+  } catch {
+    console.error('Global pre-commit hook failed.');
+    process.exit(1);
+  }
+}
+
 // Main
 checkCandidates();
 runTypecheck();
+runGlobalHook();

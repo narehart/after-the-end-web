@@ -33,7 +33,10 @@ const HOOKS_TARGET_DIR = join(GIT_ROOT, '.git', 'hooks');
 /**
  * Mapping from source file (camelCase) to git hook name (kebab-case)
  */
-const HOOK_MAPPINGS = [{ source: 'preCommit.js', target: 'pre-commit' }];
+const HOOK_MAPPINGS = [
+  { source: 'preCommit.js', target: 'pre-commit' },
+  { source: 'commitMsg.js', target: 'commit-msg' },
+];
 
 const EXECUTABLE_MODE = 0o755;
 
