@@ -1,3 +1,11 @@
+/* Overlay to capture clicks outside menu */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  background: transparent;
+}
+
 /* Modal menu container */
 .menu-modal {
   position: fixed;

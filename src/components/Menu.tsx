@@ -52,18 +52,30 @@ export default function Menu(): React.JSX.Element | null {
   const itemIcon = itemImage !== undefined ? getImageUrl(itemImage) : undefined;
 
   return (
-    <div ref={menuRef} className={cx('menu-modal')} tabIndex={NOT_FOUND_INDEX}>
-      <Breadcrumb links={breadcrumbLinks} icon={itemIcon} clipLinks />
-      <MenuList
-        items={currentItems}
-        context={context}
-        focusIndex={menu.focusIndex}
-        onSelect={handleSelect}
-        onSetFocusIndex={menuSetFocusIndex}
-        emptyMessage={
-          menu.path.length > FIRST_INDEX ? 'No containers here' : 'No actions available'
-        }
+    <>
+      <div
+        className={cx('menu-overlay')}
+        onClick={closeMenu}
+        onKeyDown={(e): void => {
+          if (e.key === 'Escape') closeMenu();
+        }}
+        role="button"
+        tabIndex={NOT_FOUND_INDEX}
+        aria-label="Close menu"
       />
-    </div>
+      <div ref={menuRef} className={cx('menu-modal')} tabIndex={NOT_FOUND_INDEX}>
+        <Breadcrumb links={breadcrumbLinks} icon={itemIcon} clipLinks />
+        <MenuList
+          items={currentItems}
+          context={context}
+          focusIndex={menu.focusIndex}
+          onSelect={handleSelect}
+          onSetFocusIndex={menuSetFocusIndex}
+          emptyMessage={
+            menu.path.length > FIRST_INDEX ? 'No containers here' : 'No actions available'
+          }
+        />
+      </div>
+    </>
   );
 }
