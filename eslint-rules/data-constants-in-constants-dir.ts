@@ -6,7 +6,7 @@ interface VariableDeclaratorWithParent extends VariableDeclarator {
   parent: Node & { kind?: string };
 }
 
-interface TSTypeAssertionExpression extends Node {
+interface TSTypeAssertionExpression {
   type: 'TSAsExpression' | 'TSSatisfiesExpression';
   expression: Expression;
 }

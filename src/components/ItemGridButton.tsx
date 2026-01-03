@@ -41,6 +41,13 @@ export default function ItemGridButton({
     if (e.key === 'Enter') openModal(e.currentTarget);
   };
 
+  const buttonStyle: CSSPropertiesWithVars = {
+    width: `${itemWidth}px`,
+    height: `${itemHeight}px`,
+    '--item-width': `${itemWidth}px`,
+    '--item-height': `${itemHeight}px`,
+  };
+
   return (
     <button
       type="button"
@@ -49,14 +56,7 @@ export default function ItemGridButton({
         selected: isSelected,
         'has-modal': hasOpenModal,
       })}
-      style={
-        {
-          width: `${itemWidth}px`,
-          height: `${itemHeight}px`,
-          '--item-width': `${itemWidth}px`,
-          '--item-height': `${itemHeight}px`,
-        } satisfies CSSPropertiesWithVars
-      }
+      style={buttonStyle}
       onClick={handleClick}
       onDoubleClick={handleDoubleClick}
       onContextMenu={handleContextMenu}

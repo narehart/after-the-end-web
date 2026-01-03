@@ -24,10 +24,10 @@ function isNonNullObject(value: unknown): value is Record<string, unknown> {
 function getIdName(node: Rule.Node): string | null {
   if (!isNonNullObject(node)) return null;
   if (!('id' in node)) return null;
-  const id = node.id;
+  const id = node['id'];
   if (!isNonNullObject(id)) return null;
   if (!('name' in id)) return null;
-  const name = id.name;
+  const name = id['name'];
   return typeof name === 'string' ? name : null;
 }
 

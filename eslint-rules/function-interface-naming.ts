@@ -119,7 +119,7 @@ const rule: Rule.RuleModule = {
     function getParamTypeName(param: unknown): string | null {
       if (!isNonNullObject(param)) return null;
       if (!hasProperty(param, 'typeAnnotation')) return null;
-      return getTypeName(param.typeAnnotation);
+      return getTypeName(param['typeAnnotation']);
     }
 
     function checkParams(node: Rule.Node, params: unknown[], funcName: string): void {
@@ -136,12 +136,12 @@ const rule: Rule.RuleModule = {
       decl: Record<string, unknown>,
       funcName: string
     ): void {
-      if (hasProperty(decl, 'params') && Array.isArray(decl.params)) {
-        checkParams(node, decl.params, funcName);
+      if (hasProperty(decl, 'params') && Array.isArray(decl['params'])) {
+        checkParams(node, decl['params'], funcName);
       }
 
       if (hasProperty(decl, 'returnType')) {
-        const returnTypeName = getReturnTypeName(decl.returnType);
+        const returnTypeName = getReturnTypeName(decl['returnType']);
         if (returnTypeName !== null && shouldCheckType(returnTypeName)) {
           context.report({
             node,

@@ -1,7 +1,7 @@
 import type { StateCreator } from 'zustand';
-import type { Item, ItemsMap } from '../../types/inventory';
+import type { Item } from '../../types/inventory';
 import type { ItemsSlice } from '../../types/store';
-import mockItemsJson from '../../data/mockItems.json';
+import mockItems from '../../data/mockItems';
 import { initialGrids } from '../../constants/initialGrids';
 import { ROTATION_INCREMENT, FULL_ROTATION } from '../../constants/numbers';
 import { findFreePosition } from '../../utils/findFreePosition';
@@ -10,7 +10,7 @@ import { findItemOrigin } from '../../utils/findItemOrigin';
 export type { ItemsSlice } from '../../types/store';
 
 export const createItemsSlice: StateCreator<ItemsSlice, [], [], ItemsSlice> = (set, get) => ({
-  items: mockItemsJson,
+  items: mockItems,
   grids: initialGrids,
 
   setItems: (items): void => {
