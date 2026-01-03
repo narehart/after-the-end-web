@@ -43,7 +43,11 @@ export const initialGrids: GridsMap = {
       height: 40,
       items: [
         { id: 'neo_1', x: 0, y: 0 }, // bag (container)
+        { id: 'neo_318', x: 5, y: 0 }, // flashlight
+        { id: 'neo_136', x: 8, y: 0 }, // bottle
+        { id: 'neo_4', x: 5, y: 1 }, // tin can
         { id: 'neo_3', x: 0, y: 6 }, // branch
+        { id: 'neo_327', x: 2, y: 6 }, // laptop
       ],
     }),
   },
