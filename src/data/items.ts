@@ -1,5 +1,5 @@
 import type { Item, ItemsMap } from '../types/inventory';
-import { toItemType } from '../types/inventory';
+import { toItemType } from '../utils/toItemType';
 import neoItemsJson from './neoItems.json';
 
 function toItem(data: (typeof neoItemsJson)[number]): Item {

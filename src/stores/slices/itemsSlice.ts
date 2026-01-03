@@ -1,6 +1,6 @@
 import type { StateCreator } from 'zustand';
 import type { Item, ItemsMap } from '../../types/inventory';
-import { toItemType } from '../../types/inventory';
+import { toItemType } from '../../utils/toItemType';
 import type { ItemsSlice } from '../../types/store';
 import type { InitialInventoryState } from '../../types/utils';
 import neoItemsArray from '../../data/neoItems.json';
