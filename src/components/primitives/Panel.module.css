@@ -36,9 +36,6 @@
 
 .panel-title {
   margin: 0;
-  font-size: var(--font-base);
-  font-weight: var(--font-weight-normal);
-  color: var(--text-primary);
 }
 
 .panel-content {

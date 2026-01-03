@@ -1,6 +1,4 @@
 .button {
-  font-family: inherit;
-  font-size: var(--font-base);
   line-height: var(--line-height-none);
   cursor: pointer;
   transition: var(--transition-normal);

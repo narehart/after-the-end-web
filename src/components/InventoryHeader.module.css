@@ -5,14 +5,11 @@
 }
 
 .header-icon {
-  font-size: var(--font-base);
   margin-right: var(--space-10);
-  color: var(--accent-teal);
 }
 
 .header-title {
   margin: 0;
-  font-size: var(--font-base);
   letter-spacing: var(--letter-spacing-wide);
   text-transform: uppercase;
 }

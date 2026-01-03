@@ -5,8 +5,6 @@
   margin-bottom: calc(2px / var(--ui-scale));
   background: transparent;
   border: var(--border-transparent);
-  color: var(--text-secondary);
-  font-size: var(--font-base);
   line-height: var(--line-height-none);
   cursor: pointer;
   transition: var(--transition-fast);
@@ -67,12 +65,7 @@
   font-style: italic;
 }
 
-.list-item-meta {
-  font-size: var(--font-xs);
-}
-
 .list-item-arrow {
-  font-size: var(--font-base);
   margin-left: auto;
   padding-left: var(--space-6);
 }

@@ -70,11 +70,10 @@ export default {
 
     // Disallow specific patterns
     'declaration-no-important': true,
+    // Ban font properties entirely - only allowed in index.css and Text.module.css
+    'property-disallowed-list': ['font-size', 'font-weight', 'font-family'],
     'declaration-property-value-disallowed-list': {
       display: ['flex', 'inline-flex'],
-      'font-size': ['/var\\(--font-(xs|sm|lg)\\)/'],
-      'font-weight': ['/var\\(--font-weight-(medium|bold)\\)/'],
-      'font-family': ['/var\\(--font-family-mono\\)/'],
       color: ['/var\\(--text-(muted|secondary)\\)/'],
       'text-overflow': ['ellipsis'],
     },
@@ -161,10 +160,7 @@ export default {
         'outline',
         'outline-width',
         'outline-style',
-        // Typography
-        'font-family',
-        'font-size',
-        'font-weight',
+        // Typography (font-size/weight/family banned entirely via property-disallowed-list)
         'line-height',
         'letter-spacing',
         // Spacing
@@ -246,7 +242,7 @@ export default {
   },
   overrides: [
     {
-      // Allow hex colors only in the root CSS file where variables are defined
+      // Root CSS file defines all variables and base styles
       files: ['src/index.css'],
       rules: {
         'scale-unlimited/declaration-strict-value': null,
@@ -254,15 +250,27 @@ export default {
         'selector-max-universal': 2,
         'selector-max-specificity': '1,0,0',
         'declaration-property-value-disallowed-list': null,
+        'property-disallowed-list': null,
       },
     },
     {
-      // Primitives that define their own text/flex styling
-      files: [
-        'src/components/primitives/Flex.module.css',
-        'src/components/primitives/Text.module.css',
-        'src/components/primitives/ListItem.module.css',
-      ],
+      // Text primitive defines all text styling
+      files: ['src/components/primitives/Text.module.css'],
+      rules: {
+        'property-disallowed-list': null,
+        'declaration-property-value-disallowed-list': null,
+      },
+    },
+    {
+      // Flex primitive can define display: flex
+      files: ['src/components/primitives/Flex.module.css'],
+      rules: {
+        'declaration-property-value-disallowed-list': null,
+      },
+    },
+    {
+      // ListItem uses color for state styling
+      files: ['src/components/primitives/ListItem.module.css'],
       rules: {
         'declaration-property-value-disallowed-list': null,
       },
