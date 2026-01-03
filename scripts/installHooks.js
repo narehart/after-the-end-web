@@ -13,7 +13,22 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = join(__dirname, '..');
 const HOOKS_SOURCE_DIR = join(__dirname, 'hooks');
-const HOOKS_TARGET_DIR = join(ROOT_DIR, '.git', 'hooks');
+
+// Find actual git root (may be parent directory)
+function getGitRoot() {
+  try {
+    const result = execSync('git rev-parse --show-toplevel', {
+      cwd: ROOT_DIR,
+      encoding: 'utf-8',
+    });
+    return result.trim();
+  } catch {
+    return ROOT_DIR;
+  }
+}
+
+const GIT_ROOT = getGitRoot();
+const HOOKS_TARGET_DIR = join(GIT_ROOT, '.git', 'hooks');
 
 /**
  * Mapping from source file (camelCase) to git hook name (kebab-case)
@@ -25,8 +40,8 @@ const EXECUTABLE_MODE = 0o755;
 function installHooks() {
   // Set local hooksPath to override any global config
   try {
-    execSync('git config --local core.hooksPath .git/hooks', { cwd: ROOT_DIR });
-    console.log('Set local git hooksPath to .git/hooks');
+    execSync('git config --local core.hooksPath .git/hooks', { cwd: GIT_ROOT });
+    console.log(`Set local git hooksPath to .git/hooks (git root: ${GIT_ROOT})`);
   } catch {
     console.warn('Warning: Could not set local git hooksPath');
   }

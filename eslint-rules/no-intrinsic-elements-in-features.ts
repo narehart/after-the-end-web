@@ -11,7 +11,7 @@
 
 import path from 'node:path';
 import type { Rule } from 'eslint';
-import type { JSXOpeningElement, JSXIdentifier } from 'estree-jsx';
+import type { JSXOpeningElement } from 'estree-jsx';
 
 const FIRST_CHAR_INDEX = 0;
 

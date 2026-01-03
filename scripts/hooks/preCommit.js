@@ -10,7 +10,10 @@ import { execSync } from 'node:child_process';
 import { readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
-const CANDIDATES_DIR = 'src/components/candidates';
+// Find ui-experiments directory relative to git root
+const GIT_ROOT = execSync('git rev-parse --show-toplevel', { encoding: 'utf-8' }).trim();
+const UI_EXPERIMENTS_DIR = join(GIT_ROOT, 'ui-experiments');
+const CANDIDATES_DIR = join(UI_EXPERIMENTS_DIR, 'src/components/candidates');
 const COMPONENT_EXTENSIONS = ['.tsx', '.ts'];
 
 /**
@@ -70,7 +73,7 @@ function runTypecheck() {
   console.log('Running typecheck...');
 
   try {
-    execSync('npm run typecheck', { stdio: 'inherit' });
+    execSync('npm run typecheck', { stdio: 'inherit', cwd: UI_EXPERIMENTS_DIR });
     console.log('Typecheck passed.');
   } catch {
     console.error('');
