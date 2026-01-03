@@ -1,5 +1,5 @@
 import type { MenuItem, UseMenuContextReturn, MenuPathSegment } from '../types/inventory';
-import { buildDestinationItems } from '../config/menuConfig';
+import { buildDestinationItems } from '../utils/buildDestinationItems';
 
 export const ITEM_ACTION_MENU: MenuItem[] = [
   {

@@ -94,7 +94,7 @@ ls:
     .tsx: regex:index
     .css: regex:index
     .*: regex:$
-    .dir: regex:src | regex:@types | regex:assets | regex:components | regex:config | regex:constants | regex:data | regex:hooks | regex:stores | regex:types | regex:utils
+    .dir: regex:src | regex:@types | regex:assets | regex:components | regex:constants | regex:data | regex:hooks | regex:stores | regex:types | regex:utils
 
   # src/@types - kebab-case declaration files (.d.ts) only, no subdirectories
   src/@types:
@@ -151,5 +151,4 @@ ignore:
   - .git
   - dist
   - node_modules
-  - src/config
   - src/utils
