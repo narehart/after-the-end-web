@@ -2,8 +2,14 @@ import type { GridsMap } from '../types/inventory';
 import { buildGridWithItems } from '../utils/buildGridWithItems';
 import { createEmptyGrid } from '../utils/createEmptyGrid';
 
-// Using neoItems IDs - neo_1 is bag (4x6), neo_4 is tin can (2x2 container)
+// Using neoItems IDs - neo_1 is bag (4x6), neo_4 is tin can (2x2 container), neo_42 is bag (10x10)
 export const initialGrids: GridsMap = {
+  // neo_42 = bag with 10x10 grid (equipped as backpack)
+  neo_42: {
+    width: 10,
+    height: 10,
+    cells: createEmptyGrid({ width: 10, height: 10 }),
+  },
   // neo_1 = bag with 4x6 grid
   neo_1: {
     width: 4,
