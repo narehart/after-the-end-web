@@ -15,13 +15,7 @@
  */
 
 import type { MenuItem, MenuContext, MenuPathSegment } from '../types/inventory';
-
-interface ContainerInfo {
-  id: string;
-  name: string;
-  isContainer: boolean;
-  capacity: string;
-}
+import type { ContainerInfo } from '../types/ui';
 
 function getContainerInfo(ctx: MenuContext, containerId: string): ContainerInfo | null {
   const containerItem = ctx.allItems[containerId];

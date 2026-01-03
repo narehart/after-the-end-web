@@ -1,32 +1,8 @@
 import type { StateCreator } from 'zustand';
-import type { SlotType, GridCell, GridsMap, ItemsMap, Equipment } from '../../types/inventory';
+import type { GridCell } from '../../types/inventory';
+import type { NavigationSlice, StoreWithGrids } from '../../types/store';
 
-export interface NavigationState {
-  inventoryFocusPath: string[];
-  worldFocusPath: string[];
-}
-
-export interface NavigationActions {
-  navigateToContainer: (containerId: string, panel: string, fromEquipment?: boolean) => void;
-  navigateBack: (index: number, panel: string) => void;
-  focusOnEquipmentSlot: (slotType: SlotType) => void;
-  clearInventoryFocusPath: () => void;
-  getInventoryGrid: () => GridCell | null;
-  getWorldGrid: () => GridCell | null;
-  getCurrentGrid: () => GridCell | null;
-  getGroundGrid: () => GridCell;
-}
-
-interface StoreWithGrids {
-  grids: GridsMap;
-  items: ItemsMap;
-  equipment: Equipment;
-  inventoryFocusPath: string[];
-  worldFocusPath: string[];
-  selectedItemId: string | null;
-}
-
-export type NavigationSlice = NavigationState & NavigationActions;
+export type { NavigationSlice } from '../../types/store';
 
 export const createNavigationSlice: StateCreator<
   NavigationSlice & StoreWithGrids,

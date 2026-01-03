@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useInventoryStore } from '../stores/inventoryStore';
 import type { Item, MenuSource } from '../types/inventory';
+import type { GridPanelCellState } from '../types/ui';
 import { getModalPosition } from '../utils/getModalPosition';
 
 interface UseGridPanelCellProps {
@@ -12,13 +13,8 @@ interface UseGridPanelCellProps {
   onNavigate: (x: number, y: number) => void;
 }
 
-interface CellState {
-  isSelected: boolean;
-  hasGrid: boolean;
-}
-
 interface UseGridPanelCellReturn {
-  cellState: CellState;
+  cellState: GridPanelCellState;
   handleClick: () => void;
   openModal: (element: HTMLElement) => void;
   handleFocus: () => void;
@@ -40,7 +36,7 @@ export default function useGridPanelCell({
   const context: MenuSource = gridId === 'ground' ? 'ground' : 'grid';
 
   const cellState = useMemo(
-    (): CellState => ({
+    (): GridPanelCellState => ({
       isSelected: itemId !== null && itemId === selectedItemId,
       hasGrid: item?.gridSize !== undefined,
     }),

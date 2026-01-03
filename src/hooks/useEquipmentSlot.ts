@@ -1,16 +1,8 @@
 import { useMemo, useCallback } from 'react';
 import { useInventoryStore } from '../stores/inventoryStore';
-import type { Item, SlotType } from '../types/inventory';
+import type { SlotType } from '../types/inventory';
+import type { SlotState } from '../types/ui';
 import { getModalPosition } from '../utils/getModalPosition';
-
-interface SlotState {
-  item: Item | null;
-  itemId: string | null;
-  hasGrid: boolean;
-  isFocused: boolean;
-  isHovered: boolean;
-  hasOpenModal: boolean;
-}
 
 interface UseEquipmentSlotReturn {
   slotState: SlotState;

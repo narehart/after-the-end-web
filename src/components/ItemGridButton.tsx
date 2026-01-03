@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import type { Item } from '../types/inventory';
+import type { CellState, ItemGridHandlers } from '../types/ui';
 import { getImageUrl } from '../utils/images';
 import { getItemIcon } from '../utils/getItemIcon';
 import { calculateItemDimensions } from '../utils/calculateItemDimensions';
@@ -7,25 +8,12 @@ import styles from './ItemGridButton.module.css';
 
 const cx = classNames.bind(styles);
 
-interface CellState {
-  isSelected: boolean;
-  hasOpenModal: boolean;
-  hasGrid: boolean;
-}
-
-interface Handlers {
-  handleClick: () => void;
-  openModal: (element: HTMLElement) => void;
-  handleMouseEnter: () => void;
-  handleFocus: () => void;
-}
-
 interface ItemGridButtonProps {
   item: Item;
   cellSize: number;
   cellState: CellState;
   isFocused: boolean;
-  handlers: Handlers;
+  handlers: ItemGridHandlers;
 }
 
 export default function ItemGridButton({

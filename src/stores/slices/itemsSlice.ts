@@ -1,31 +1,14 @@
 import type { StateCreator } from 'zustand';
-import type { ItemsMap, GridsMap, Item } from '../../types/inventory';
+import type { Item, ItemsMap } from '../../types/inventory';
+import type { ItemsSlice } from '../../types/store';
 import mockItemsJson from '../../data/mockItems.json';
 import { initialGrids } from '../../data/initialGrids';
 import { findFreePosition } from '../../utils/findFreePosition';
 import { findItemOrigin } from '../../utils/findItemOrigin';
 
+export type { ItemsSlice } from '../../types/store';
+
 const mockItems = mockItemsJson as ItemsMap;
-
-export interface ItemsState {
-  items: ItemsMap;
-  grids: GridsMap;
-}
-
-export interface ItemsActions {
-  setItems: (items: ItemsMap) => void;
-  setGrids: (grids: GridsMap) => void;
-  rotateItem: (itemId: string) => void;
-  getItemAtPosition: (gridId: string, x: number, y: number) => Item | null;
-  findItemOrigin: (gridId: string, itemId: string) => { x: number; y: number } | null;
-  findFreePosition: (
-    gridId: string,
-    itemWidth: number,
-    itemHeight: number
-  ) => { x: number; y: number } | null;
-}
-
-export type ItemsSlice = ItemsState & ItemsActions;
 
 export const createItemsSlice: StateCreator<ItemsSlice, [], [], ItemsSlice> = (set, get) => ({
   items: mockItems,

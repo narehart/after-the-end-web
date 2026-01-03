@@ -1,42 +1,8 @@
 import type { StateCreator } from 'zustand';
-import type {
-  SlotType,
-  ContainerRect,
-  MenuState,
-  MenuPathSegment,
-  MenuSource,
-} from '../../types/inventory';
+import type { MenuState } from '../../types/inventory';
+import type { UISlice } from '../../types/store';
 
-export interface UIState {
-  selectedItemId: string | null;
-  focusedEmptySlot: SlotType | null;
-  groundCollapsed: boolean;
-  uiScale: number;
-  containerRect: ContainerRect | null;
-  menu: MenuState;
-}
-
-export interface UIActions {
-  setSelectedItem: (itemId: string | null) => void;
-  setFocusedEmptySlot: (slotType: SlotType | null) => void;
-  clearFocusedEmptySlot: () => void;
-  toggleGroundCollapsed: () => void;
-  setUIScale: (scale: number, containerRect?: ContainerRect | null) => void;
-  openMenu: (
-    position: { x: number; y: number },
-    itemId: string | null,
-    slotType: SlotType | null,
-    source?: MenuSource
-  ) => void;
-  closeMenu: () => void;
-  closeAllModals: () => void;
-  menuNavigateTo: (segment: MenuPathSegment) => void;
-  menuNavigateBack: () => void;
-  menuNavigateToLevel: (level: number) => void;
-  menuSetFocusIndex: (index: number) => void;
-}
-
-export type UISlice = UIState & UIActions;
+export type { UISlice } from '../../types/store';
 
 export const initialMenu: MenuState = {
   isOpen: false,

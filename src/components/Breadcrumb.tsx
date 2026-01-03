@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import type { BreadcrumbLink } from '../types/inventory';
+import type { LinkWithIcon } from '../types/ui';
 import { buildSegments } from '../utils/breadcrumb';
 import styles from './Breadcrumb.module.css';
 
@@ -9,10 +10,6 @@ interface BreadcrumbProps {
   links: BreadcrumbLink[];
   icon?: string | undefined;
   clipLinks?: boolean | undefined;
-}
-
-interface LinkWithIcon extends BreadcrumbLink {
-  icon?: string;
 }
 
 export default function Breadcrumb({

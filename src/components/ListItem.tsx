@@ -1,16 +1,9 @@
 import type { RefObject, ReactNode, MouseEvent, KeyboardEvent } from 'react';
 import classNames from 'classnames/bind';
+import type { ListItemState } from '../types/ui';
 import styles from './ListItem.module.css';
 
 const cx = classNames.bind(styles);
-
-interface ListItemState {
-  isFocused?: boolean;
-  isActive?: boolean;
-  isSelected?: boolean;
-  isDisabled?: boolean;
-  isEmpty?: boolean;
-}
 
 interface ListItemProps {
   icon?: ReactNode | undefined;

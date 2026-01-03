@@ -1,16 +1,8 @@
 import type { StateCreator } from 'zustand';
 import type { Conditions } from '../../types/inventory';
+import type { ConditionsSlice } from '../../types/store';
 
-export interface ConditionsState {
-  conditions: Conditions;
-}
-
-export interface ConditionsActions {
-  setConditions: (conditions: Conditions) => void;
-  updateCondition: (key: keyof Conditions, value: number) => void;
-}
-
-export type ConditionsSlice = ConditionsState & ConditionsActions;
+export type { ConditionsSlice } from '../../types/store';
 
 const initialConditions: Conditions = {
   health: 85,

@@ -2,14 +2,10 @@ import { useState } from 'react';
 import classNames from 'classnames/bind';
 import { PRESETS } from '../constants/display';
 import useGamepadStatus from '../hooks/useGamepadStatus';
+import type { Resolution } from '../types/ui';
 import styles from './InventoryHeader.module.css';
 
 const cx = classNames.bind(styles);
-
-interface Resolution {
-  width: number;
-  height: number;
-}
 
 interface InventoryHeaderProps {
   effectiveResolution: Resolution;

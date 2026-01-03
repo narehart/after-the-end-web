@@ -1,16 +1,8 @@
 import type { StateCreator } from 'zustand';
-import type { SlotType, Equipment } from '../../types/inventory';
+import type { Equipment } from '../../types/inventory';
+import type { EquipmentSlice } from '../../types/store';
 
-export interface EquipmentState {
-  equipment: Equipment;
-}
-
-export interface EquipmentActions {
-  setEquipment: (equipment: Equipment) => void;
-  setEquipmentSlot: (slot: SlotType, itemId: string | null) => void;
-}
-
-export type EquipmentSlice = EquipmentState & EquipmentActions;
+export type { EquipmentSlice } from '../../types/store';
 
 const initialEquipment: Equipment = {
   helmet: null,

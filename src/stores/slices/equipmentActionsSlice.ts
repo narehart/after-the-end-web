@@ -1,22 +1,12 @@
 import type { StateCreator } from 'zustand';
-import type { SlotType, Equipment, ItemsMap, GridsMap, Item } from '../../types/inventory';
+import type { SlotType, Equipment, Item } from '../../types/inventory';
+import type { EquipmentActionsSlice, StoreWithEquipment } from '../../types/store';
 import { findFreePosition } from '../../utils/findFreePosition';
 import { findItemInGrids } from '../../utils/findItemInGrids';
 import { removeItemFromCells } from '../../utils/removeItemFromCells';
 import { placeItemInCells } from '../../utils/placeItemInCells';
 
-export interface EquipmentActionsSlice {
-  unequipItem: (itemId: string, targetGridId: string) => boolean;
-  equipItem: (itemId: string, targetSlot?: SlotType | null) => boolean;
-}
-
-interface StoreWithEquipment {
-  equipment: Equipment;
-  items: ItemsMap;
-  grids: GridsMap;
-  inventoryFocusPath: string[];
-  selectedItemId: string | null;
-}
+export type { EquipmentActionsSlice } from '../../types/store';
 
 function findEquipmentSlot(equipment: Equipment, itemId: string): SlotType | null {
   for (const [slot, equippedId] of Object.entries(equipment)) {

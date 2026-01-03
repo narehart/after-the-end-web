@@ -3,6 +3,7 @@ import { useRef, useState, useCallback } from 'react';
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import type { GridCell } from '../types/inventory';
+import type { FocusedCell } from '../types/ui';
 import { getCellValue } from '../utils/getCellValue';
 import { findItemOrigin } from '../utils/findItemOrigin';
 import GridPanelCell from './GridPanelCell';
@@ -14,11 +15,6 @@ interface GridPanelGridProps {
   gridId: string;
   grid: GridCell;
   label?: string;
-}
-
-interface FocusedCell {
-  x: number;
-  y: number;
 }
 
 export default function GridPanelGrid({

@@ -17,6 +17,7 @@ import oneFunctionPerUtilsFile from './eslint-rules/one-function-per-utils-file.
 import noScreamingSnakeConstants from './eslint-rules/no-screaming-snake-constants.ts';
 import noFunctionsInConstants from './eslint-rules/no-functions-in-constants.ts';
 import oneHookPerFile from './eslint-rules/one-hook-per-file.ts';
+import typesInTypesDirectory from './eslint-rules/types-in-types-directory.ts';
 
 // ESLint Plugin type requires only meta and rules - extracting these avoids
 // type incompatibility with typescript-eslint's configs property
@@ -44,6 +45,7 @@ const localPlugin = {
     'no-screaming-snake-constants': noScreamingSnakeConstants,
     'no-functions-in-constants': noFunctionsInConstants,
     'one-hook-per-file': oneHookPerFile,
+    'types-in-types-directory': typesInTypesDirectory,
   },
 };
 
@@ -77,6 +79,7 @@ const sharedRules: Linter.RulesRecord = {
   'local/no-screaming-snake-constants': 'error',
   'local/no-functions-in-constants': 'error',
   'local/one-hook-per-file': 'error',
+  'local/types-in-types-directory': 'error',
 };
 
 export default defineConfig([

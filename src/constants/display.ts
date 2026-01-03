@@ -1,3 +1,5 @@
+import type { ResolutionPreset } from '../types/ui';
+
 export const STEAM_DECK = {
   width: 1280,
   height: 800,
@@ -14,13 +16,6 @@ export const KNOWN_DISPLAYS: Record<string, number> = {
   '2560x1664': 13.6, // MacBook Air 15"
   '3024x1890': 14.2, // MacBook Pro 14" (alternate)
 };
-
-interface ResolutionPreset {
-  width: number | null;
-  height: number | null;
-  label: string;
-  physicalMode?: boolean;
-}
 
 export const PRESETS: Record<string, ResolutionPreset> = {
   'steam-deck': { width: 1280, height: 800, label: 'Steam Deck (1280×800)', physicalMode: true },

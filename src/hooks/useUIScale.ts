@@ -1,11 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { PRESETS } from '../constants/display';
+import type { Resolution } from '../types/ui';
 import { calculateSteamDeckScale } from '../utils/calculateSteamDeckScale';
-
-interface Resolution {
-  width: number;
-  height: number;
-}
 
 interface UseUIScaleReturn {
   effectiveResolution: Resolution;

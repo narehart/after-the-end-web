@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import { CELL_GAP } from '../constants/grid';
 import { useInventoryStore } from '../stores/inventoryStore';
 import type { GridCell, MenuSource } from '../types/inventory';
+import type { FocusedCell } from '../types/ui';
 import { getCellValue } from '../utils/getCellValue';
 import { checkIsOrigin } from '../utils/checkIsOrigin';
 import ItemGridCell from './ItemGridCell';
@@ -15,11 +16,6 @@ interface ItemGridProps {
   grid: GridCell;
   context: MenuSource;
   cellSize: number;
-}
-
-interface FocusedCell {
-  x: number;
-  y: number;
 }
 
 export default function ItemGrid({ grid, context, cellSize }: ItemGridProps): React.JSX.Element {

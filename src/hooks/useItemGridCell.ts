@@ -1,6 +1,7 @@
 import { useCallback, useMemo } from 'react';
 import { useInventoryStore } from '../stores/inventoryStore';
 import type { Item, MenuSource } from '../types/inventory';
+import type { CellState } from '../types/ui';
 import { getModalPosition } from '../utils/getModalPosition';
 
 interface UseItemGridCellProps {
@@ -10,12 +11,6 @@ interface UseItemGridCellProps {
   item: Item | null;
   context: MenuSource;
   onNavigate: (x: number, y: number) => void;
-}
-
-interface CellState {
-  isSelected: boolean;
-  hasOpenModal: boolean;
-  hasGrid: boolean;
 }
 
 interface UseItemGridCellReturn {

@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from 'react';
 import type { MenuItem, MenuPathSegment } from '../types/inventory';
+import type { KeyHandler } from '../types/ui';
 
 interface UseMenuKeyboardProps {
   items: MenuItem[];
@@ -11,8 +12,6 @@ interface UseMenuKeyboardProps {
   onSelect: (item: MenuItem) => void;
   onSetFocus: (index: number) => void;
 }
-
-type KeyHandler = () => void;
 
 export default function useMenuKeyboard({
   items,
