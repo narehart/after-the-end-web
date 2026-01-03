@@ -47,8 +47,11 @@ const rule: Rule.RuleModule = {
   create(context): Rule.RuleListener {
     const filename = context.filename;
 
-    // Skip files in src/types/
+    // Skip files in src/types/ (app types) and src/@types/ (declaration files)
     if (filename.includes(path.join('src', 'types'))) {
+      return {};
+    }
+    if (filename.includes(path.join('src', '@types'))) {
       return {};
     }
 

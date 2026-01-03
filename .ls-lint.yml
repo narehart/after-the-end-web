@@ -6,14 +6,14 @@ ls:
   .config.ts: regex:eslint | regex:prettier | regex:stylelint | regex:vite
   .json: regex:package | regex:package-lock | regex:tsconfig | regex:tsconfig\.tooling
   .html: regex:index
-  .md: regex:README
+  .md: regex:README | regex:CLAUDE
   .yml: regex:\.ls-lint
 
   # Block any other extensions at root
   .*: regex:$
 
   # Allowed root directories
-  .dir: regex:\.claude | regex:dist | regex:docs | regex:eslint-rules | regex:node_modules | regex:public | regex:scripts | regex:src
+  .dir: regex:\.claude | regex:\.git | regex:dist | regex:docs | regex:eslint-rules | regex:node_modules | regex:public | regex:scripts | regex:src
 
   # .claude directory - only officially supported Anthropic files
   .claude:
@@ -94,7 +94,19 @@ ls:
     .tsx: regex:index
     .css: regex:index
     .*: regex:$
-    .dir: regex:src | regex:assets | regex:components | regex:config | regex:constants | regex:data | regex:hooks | regex:stores | regex:types | regex:utils
+    .dir: regex:src | regex:@types | regex:assets | regex:components | regex:config | regex:constants | regex:data | regex:hooks | regex:stores | regex:types | regex:utils
+
+  # src/@types - kebab-case declaration files (.d.ts) only, no subdirectories
+  src/@types:
+    .d.ts: kebab-case
+    .*: regex:$
+    .dir: regex:@types
+
+  # src/types - camelCase app type files (.ts) only, no subdirectories
+  src/types:
+    .ts: camelCase
+    .*: regex:$
+    .dir: regex:types
 
   # src/constants - camelCase .ts files only, no subdirectories
   src/constants:
@@ -136,8 +148,8 @@ ls:
 
 ignore:
   # Ignore subdirectory contents - rules added incrementally
+  - .git
   - dist
   - node_modules
   - src/config
-  - src/types
   - src/utils
