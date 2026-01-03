@@ -1,14 +1,9 @@
 import type { CellGrid } from '../types/inventory';
+import type { ItemPlacement } from '../types/ui';
 import { createEmptyGrid } from './createEmptyGrid';
 import { placeItem } from './placeItem';
 
-export interface ItemPlacement {
-  id: string;
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-}
+export type { ItemPlacement } from '../types/ui';
 
 export function buildGridWithItems(
   width: number,

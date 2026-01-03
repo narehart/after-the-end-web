@@ -7,11 +7,7 @@ import {
   CONTENT_PADDING,
   MIN_CELL_SIZE,
 } from '../constants/grid';
-
-interface Resolution {
-  width: number;
-  height: number;
-}
+import type { Resolution } from '../types/ui';
 
 export default function useCellSize(
   containerRef: RefObject<HTMLDivElement | null>,

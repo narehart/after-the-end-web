@@ -1,12 +1,7 @@
 import type { BreadcrumbLink } from '../types/inventory';
+import type { BreadcrumbSegment } from '../types/ui';
 
-export interface BreadcrumbSegment {
-  key: string;
-  label: string;
-  onClick?: (() => void) | undefined;
-  isCurrent?: boolean;
-  showSeparator?: boolean;
-}
+export type { BreadcrumbSegment } from '../types/ui';
 
 export function buildSegments(links: BreadcrumbLink[]): BreadcrumbSegment[] {
   const lastIndex = links.length - 1;

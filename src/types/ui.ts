@@ -1,4 +1,11 @@
-import type { BreadcrumbLink, Item } from './inventory';
+import type { RefObject, MutableRefObject } from 'react';
+import type { BreadcrumbLink, GridPosition, Item } from './inventory';
+import type { NavigationDirection } from './gamepad';
+
+export interface Position {
+  x: number;
+  y: number;
+}
 
 export interface Resolution {
   width: number;
@@ -68,4 +75,51 @@ export interface SlotState {
   isFocused: boolean;
   isHovered: boolean;
   hasOpenModal: boolean;
+}
+
+export interface PanelRefs {
+  equipment: RefObject<HTMLDivElement | null>;
+  inventory: RefObject<HTMLDivElement | null>;
+  world: RefObject<HTMLDivElement | null>;
+}
+
+export interface BreadcrumbSegment {
+  key: string;
+  label: string;
+  onClick?: (() => void) | undefined;
+  isCurrent?: boolean;
+  showSeparator?: boolean;
+}
+
+export interface ItemPlacement {
+  id: string;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
+
+export interface ItemDimensions {
+  itemWidth: number;
+  itemHeight: number;
+}
+
+export interface ItemLocation {
+  gridId: string;
+  positions: GridPosition[];
+}
+
+export interface GamepadRefs {
+  lastButtonStates: MutableRefObject<Record<number, boolean>>;
+  lastAxisStates: MutableRefObject<Position>;
+}
+
+export interface GamepadCallbacks {
+  onNavigate?: ((dir: NavigationDirection) => void) | undefined;
+  onConfirm?: (() => void) | undefined;
+  onBack?: (() => void) | undefined;
+  onNextPanel?: (() => void) | undefined;
+  onPrevPanel?: (() => void) | undefined;
+  startRepeat: (key: string, action: () => void) => void;
+  clearRepeatTimer: (key: string) => void;
 }

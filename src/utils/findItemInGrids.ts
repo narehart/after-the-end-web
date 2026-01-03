@@ -1,9 +1,7 @@
 import type { GridsMap, GridPosition } from '../types/inventory';
+import type { ItemLocation } from '../types/ui';
 
-interface ItemLocation {
-  gridId: string;
-  positions: GridPosition[];
-}
+export type { ItemLocation } from '../types/ui';
 
 export function findItemInGrids(grids: GridsMap, itemId: string): ItemLocation | null {
   for (const [gridId, grid] of Object.entries(grids)) {

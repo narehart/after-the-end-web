@@ -1,23 +1,9 @@
-import type { MutableRefObject } from 'react';
 import { BUTTONS } from '../constants/gamepad';
-import type { NavigationDirection } from '../types/gamepad';
+import type { GamepadCallbacks, GamepadRefs } from '../types/ui';
 import { createButtonHandler } from './createButtonHandler';
 import { handleStickAxis } from './handleStickAxis';
 
-export interface GamepadRefs {
-  lastButtonStates: MutableRefObject<Record<number, boolean>>;
-  lastAxisStates: MutableRefObject<{ x: number; y: number }>;
-}
-
-export interface GamepadCallbacks {
-  onNavigate?: ((dir: NavigationDirection) => void) | undefined;
-  onConfirm?: (() => void) | undefined;
-  onBack?: (() => void) | undefined;
-  onNextPanel?: (() => void) | undefined;
-  onPrevPanel?: (() => void) | undefined;
-  startRepeat: (key: string, action: () => void) => void;
-  clearRepeatTimer: (key: string) => void;
-}
+export type { GamepadCallbacks, GamepadRefs } from '../types/ui';
 
 export function processGamepad(
   gamepad: Gamepad,

@@ -1,13 +1,7 @@
-import type { RefObject, MutableRefObject } from 'react';
+import type { MutableRefObject, RefObject } from 'react';
 import { useRef, useEffect, useCallback } from 'react';
 import { PANELS } from '../constants/navigation';
-import type { PanelName } from '../types/ui';
-
-interface PanelRefs {
-  equipment: RefObject<HTMLDivElement | null>;
-  inventory: RefObject<HTMLDivElement | null>;
-  world: RefObject<HTMLDivElement | null>;
-}
+import type { PanelName, PanelRefs } from '../types/ui';
 
 interface UsePanelNavigationReturn {
   focusPanel: (panelIndex: number) => void;
