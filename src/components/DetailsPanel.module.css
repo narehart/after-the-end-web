@@ -112,6 +112,13 @@
   text-overflow: ellipsis;
 }
 
+.item-flavor-text {
+  margin: var(--space-4) 0 0;
+  font-size: var(--font-sm);
+  color: var(--text-muted);
+  line-height: var(--line-height-tight);
+}
+
 .item-description {
   margin: var(--space-4) 0 0;
   font-size: var(--font-sm);

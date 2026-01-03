@@ -21,7 +21,7 @@
       "width": 4,
       "height": 6
     },
-    "flavorText": "\"Once held groceries, now offers a modicum of shelter in the wasteland.\""
+    "flavorText": "Once held groceries, now offers a modicum of shelter in the wasteland."
   },
   {
     "id": "neo_2",
@@ -44,7 +44,7 @@
       "width": 2,
       "height": 1
     },
-    "flavorText": "\"Eternal relic of a lost era. Fills you with... nostalgia?\""
+    "flavorText": "Eternal relic of a lost era. Fills you with... nostalgia?"
   },
   {
     "id": "neo_3",
@@ -64,7 +64,7 @@
       "itmStick.png",
       "itmStickHeld.png"
     ],
-    "flavorText": "\"Nature's last bastion of sarcasm - a medium-sized branch for your shelter needs.\""
+    "flavorText": "Nature's last bastion of sarcasm - a medium-sized branch for your shelter needs."
   },
   {
     "id": "neo_4",
@@ -632,7 +632,7 @@
       "width": 10,
       "height": 6
     },
-    "flavorText": "\"Packed for peace, proven useful in the chaos.\""
+    "flavorText": "Packed for peace, proven useful in the chaos."
   },
   {
     "id": "neo_31",
@@ -732,7 +732,7 @@
       "width": 2,
       "height": 3
     },
-    "flavorText": "\"Filled with memories of clearer days... and now, a vital lifeline.\""
+    "flavorText": "Filled with memories of clearer days... and now, a vital lifeline."
   },
   {
     "id": "neo_36",
@@ -789,7 +789,7 @@
     "allImages": [
       "itmTwigs.png"
     ],
-    "flavorText": "\"Campfire essentials, post-apocalypse Edition - Rare find, but who needs matches anyway?\""
+    "flavorText": "Campfire essentials, post-apocalypse Edition - Rare find, but who needs matches anyway?"
   },
   {
     "id": "neo_39",
@@ -875,7 +875,7 @@
       "width": 10,
       "height": 10
     },
-    "flavorText": "\"Packed for a trip to the new frontier. Yours might be next.\""
+    "flavorText": "Packed for a trip to the new frontier. Yours might be next."
   },
   {
     "id": "neo_43",
@@ -937,7 +937,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "\"Apocalypse-resilient. Your thirst for clean water never dies.\""
+    "flavorText": "Apocalypse-resilient. Your thirst for clean water never dies."
   },
   {
     "id": "neo_46",
@@ -999,7 +999,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "\"Last hope in a sea of mutants, still sealed and surprisingly potent.\""
+    "flavorText": "Last hope in a sea of mutants, still sealed and surprisingly potent."
   },
   {
     "id": "neo_49",
@@ -1401,7 +1401,7 @@
     "allImages": [
       "itmAmmo308FMJ.png"
     ],
-    "flavorText": "\"Even in a wasteland, some things never expire - like your chances for survival.\""
+    "flavorText": "Even in a wasteland, some things never expire - like your chances for survival."
   },
   {
     "id": "neo_69",
@@ -1420,7 +1420,7 @@
     "allImages": [
       "itmAmmo308SP.png"
     ],
-    "flavorText": "\"First aid kit... just remember, painkillers aren't for the headaches of the future.\""
+    "flavorText": "First aid kit... just remember, painkillers aren't for the headaches of the future."
   },
   {
     "id": "neo_70",
@@ -1501,7 +1501,7 @@
       "width": 16,
       "height": 16
     },
-    "flavorText": "\"Wheels of fortune: Now spinning bullets instead.\""
+    "flavorText": "Wheels of fortune: Now spinning bullets instead."
   },
   {
     "id": "neo_74",
@@ -2027,7 +2027,7 @@
       "width": 2,
       "height": 5
     },
-    "flavorText": "\"Juice for your circuits - made fresh daily in Chernobyl.\""
+    "flavorText": "Juice for your circuits - made fresh daily in Chernobyl."
   },
   {
     "id": "neo_101",
@@ -2046,7 +2046,7 @@
     "allImages": [
       "itmElectricCharge.png"
     ],
-    "flavorText": "\"Shock therapy... in a can. It's like a jolt of nostalgia!\""
+    "flavorText": "Shock therapy... in a can. It's like a jolt of nostalgia!"
   },
   {
     "id": "neo_102",
@@ -2105,7 +2105,7 @@
     "allImages": [
       "itmSteelPot.png"
     ],
-    "flavorText": "\"Sizzles over fire pit - remnant of a time when spaghetti was a luxury.\""
+    "flavorText": "Sizzles over fire pit - remnant of a time when spaghetti was a luxury."
   },
   {
     "id": "neo_105",
@@ -2492,7 +2492,7 @@
     "allImages": [
       "itmMemStick.png"
     ],
-    "flavorText": "\"Relive your glorious victory over Dogmen... in slow-mo.\""
+    "flavorText": "Relive your glorious victory over Dogmen... in slow-mo."
   },
   {
     "id": "neo_125",
@@ -2587,7 +2587,7 @@
     "allImages": [
       "itmSquirrelSnare.png"
     ],
-    "flavorText": "\"For those who find survival a sport, the little guy's no match for your big game.\""
+    "flavorText": "For those who find survival a sport, the little guy's no match for your big game."
   },
   {
     "id": "neo_130",
@@ -2699,7 +2699,7 @@
     "allImages": [
       "itmRifleStrapStored.png"
     ],
-    "flavorText": "\"Comfort in chaos? Your rifle's best buddy for post-apocalyptic strolls.\""
+    "flavorText": "Comfort in chaos? Your rifle's best buddy for post-apocalyptic strolls."
   },
   {
     "id": "neo_135",
@@ -2719,7 +2719,7 @@
       "itmNewspaperStored.png",
       "itmNewspaper.png"
     ],
-    "flavorText": "\"Headlines of yesteryears, still telling tales amidst today's ruins\""
+    "flavorText": "Headlines of yesteryears, still telling tales amidst today's ruins"
   },
   {
     "id": "neo_136",
@@ -2743,7 +2743,7 @@
       "width": 2,
       "height": 3
     },
-    "flavorText": "\"Carbonated kernels of hope... bottled in 1955.\""
+    "flavorText": "Carbonated kernels of hope... bottled in 1955."
   },
   {
     "id": "neo_137",
@@ -2785,7 +2785,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"Powered by pre-war dreams and post-apocalypse desperation.\""
+    "flavorText": "Powered by pre-war dreams and post-apocalypse desperation."
   },
   {
     "id": "neo_139",
@@ -2937,7 +2937,7 @@
     "allImages": [
       "itmPaperRecipe.png"
     ],
-    "flavorText": "\"A relic of hope in a world gone mad - your personal scratch pad for apocalyptic survival plans.\""
+    "flavorText": "A relic of hope in a world gone mad - your personal scratch pad for apocalyptic survival plans."
   },
   {
     "id": "neo_147",
@@ -2994,7 +2994,7 @@
     "allImages": [
       "itmNoiseTrap.png"
     ],
-    "flavorText": "\"Made for a silent disco, now it saves lives - ironically.\""
+    "flavorText": "Made for a silent disco, now it saves lives - ironically."
   },
   {
     "id": "neo_150",
@@ -4090,7 +4090,7 @@
       "width": 2,
       "height": 3
     },
-    "flavorText": "\"A bitter toast to better times... or so it once hoped.\""
+    "flavorText": "A bitter toast to better times... or so it once hoped."
   },
   {
     "id": "neo_206",
@@ -4114,7 +4114,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "\"Forget the world, take care of your teeth first.\""
+    "flavorText": "Forget the world, take care of your teeth first."
   },
   {
     "id": "neo_207",
@@ -4138,7 +4138,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "\"Last resort for a world gone wrong - Cavilo promises relief, if only in memory.\""
+    "flavorText": "Last resort for a world gone wrong - Cavilo promises relief, if only in memory."
   },
   {
     "id": "neo_208",
@@ -4968,7 +4968,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "\"Sleep tight apocalypse style - prescriptions still valid, nightmares not included.\""
+    "flavorText": "Sleep tight apocalypse style - prescriptions still valid, nightmares not included."
   },
   {
     "id": "neo_251",
@@ -5380,7 +5380,7 @@
       "width": 16,
       "height": 16
     },
-    "flavorText": "\"Ammo box: The only thing that survived the apocalypse unscathed - your luck.\""
+    "flavorText": "Ammo box: The only thing that survived the apocalypse unscathed - your luck."
   },
   {
     "id": "neo_272",
@@ -5404,7 +5404,7 @@
       "width": 16,
       "height": 12
     },
-    "flavorText": "\"A blast from the past, now ready for a whole new kind of ride.\""
+    "flavorText": "A blast from the past, now ready for a whole new kind of ride."
   },
   {
     "id": "neo_273",
@@ -5428,7 +5428,7 @@
       "width": 16,
       "height": 12
     },
-    "flavorText": "\"Sled with Strap - For those who planned ahead and now need a thrill in a world of chaos.\""
+    "flavorText": "Sled with Strap - For those who planned ahead and now need a thrill in a world of chaos."
   },
   {
     "id": "neo_274",
@@ -5448,7 +5448,7 @@
       "itmStickLarge.png",
       "itmStickLargeHeld.png"
     ],
-    "flavorText": "\"Surprisingly durable. Nature's last line of defense.\""
+    "flavorText": "Surprisingly durable. Nature's last line of defense."
   },
   {
     "id": "neo_275",
@@ -5472,7 +5472,7 @@
       "width": 16,
       "height": 10
     },
-    "flavorText": "\"Carried ammunition. Proof that survivalists had a sense of humor too.\""
+    "flavorText": "Carried ammunition. Proof that survivalists had a sense of humor too."
   },
   {
     "id": "neo_276",
@@ -5631,7 +5631,7 @@
       "itmArrowCrudeSlot108.png",
       "itmArrowCrudeSlot109.png"
     ],
-    "flavorText": "\"Healing on a stick - post-apocalypse approved!\""
+    "flavorText": "Healing on a stick - post-apocalypse approved!"
   },
   {
     "id": "neo_283",
@@ -5659,7 +5659,7 @@
       "itmArrowCrudeSlot108.png",
       "itmArrowCrudeSlot109.png"
     ],
-    "flavorText": "\"Picked by a doctor... long before the apocalypse.\""
+    "flavorText": "Picked by a doctor... long before the apocalypse."
   },
   {
     "id": "neo_284",
@@ -5687,7 +5687,7 @@
       "itmArrowCrudeSlot108.png",
       "itmArrowCrudeSlot109.png"
     ],
-    "flavorText": "\"Harvested from a tree of questionable origins, a testament to humanity's resourcefulness in the wasteland.\""
+    "flavorText": "Harvested from a tree of questionable origins, a testament to humanity's resourcefulness in the wasteland."
   },
   {
     "id": "neo_285",
@@ -5790,7 +5790,7 @@
     "allImages": [
       "itmAmmo38FMJ.png"
     ],
-    "flavorText": "\"A remnant of a saner time, these bullets heal rather than harm.\""
+    "flavorText": "A remnant of a saner time, these bullets heal rather than harm."
   },
   {
     "id": "neo_290",
@@ -5809,7 +5809,7 @@
     "allImages": [
       "itmAmmo38JHP.png"
     ],
-    "flavorText": "\"Healing in a hurry? These bullets are your prescription for post-apocalyptic remedies.\""
+    "flavorText": "Healing in a hurry? These bullets are your prescription for post-apocalyptic remedies."
   },
   {
     "id": "neo_291",
@@ -5828,7 +5828,7 @@
     "allImages": [
       "itmAmmo45FMJ.png"
     ],
-    "flavorText": "\"Last hope for a hearty laugh in these dire times.\""
+    "flavorText": "Last hope for a hearty laugh in these dire times."
   },
   {
     "id": "neo_292",
@@ -5847,7 +5847,7 @@
     "allImages": [
       "itmAmmo45JHP.png"
     ],
-    "flavorText": "\"Bandages for your wounds... and spirits.\""
+    "flavorText": "Bandages for your wounds... and spirits."
   },
   {
     "id": "neo_293",
@@ -5866,7 +5866,7 @@
     "allImages": [
       "itmAmmo12GaugeBuckshot.png"
     ],
-    "flavorText": "\"Eternal reminders of a healthier past. These won't cure your radiation sickness, but they might kill your boredom.\""
+    "flavorText": "Eternal reminders of a healthier past. These won't cure your radiation sickness, but they might kill your boredom."
   },
   {
     "id": "neo_294",
@@ -5885,7 +5885,7 @@
     "allImages": [
       "itmAmmo12GaugeSlug.png"
     ],
-    "flavorText": "\"Medical cure or post-apocalypse souvenir? Either way, these bullets aim to please.\""
+    "flavorText": "Medical cure or post-apocalypse souvenir? Either way, these bullets aim to please."
   },
   {
     "id": "neo_295",
@@ -6064,7 +6064,7 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "\"Fueled by nostalgia and a desperate hope for the old world.\")"
+    "flavorText": "Fueled by nostalgia and a desperate hope for the old world.\")"
   },
   {
     "id": "neo_302",
@@ -6392,7 +6392,7 @@
       "width": 2,
       "height": 1
     },
-    "flavorText": "\"Left on for the apocalypse's darkest nights. Saves batteries, your sanity?\""
+    "flavorText": "Left on for the apocalypse's darkest nights. Saves batteries, your sanity?"
   },
   {
     "id": "neo_319",
@@ -6415,7 +6415,7 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "\"Power when all else fades - just don't expect any applause.\""
+    "flavorText": "Power when all else fades - just don't expect any applause."
   },
   {
     "id": "neo_320",
@@ -6476,7 +6476,7 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "\"Laptop from a time when work meant more than survival.\""
+    "flavorText": "Laptop from a time when work meant more than survival."
   },
   {
     "id": "neo_323",
@@ -6499,7 +6499,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"Recharges your devices... and hopes for Wi-Fi.\""
+    "flavorText": "Recharges your devices... and hopes for Wi-Fi."
   },
   {
     "id": "neo_324",
@@ -6522,7 +6522,7 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "\"Reunion requests? Copperbook's on standby, even in these digital wastelands.\""
+    "flavorText": "Reunion requests? Copperbook's on standby, even in these digital wastelands."
   },
   {
     "id": "neo_325",
@@ -6545,7 +6545,7 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "\"Encrypted secrets of a forgotten techie. Still waiting for that password update.\""
+    "flavorText": "Encrypted secrets of a forgotten techie. Still waiting for that password update."
   },
   {
     "id": "neo_326",
@@ -6568,7 +6568,7 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "\"Last one to boot up, brings the coffee.\""
+    "flavorText": "Last one to boot up, brings the coffee."
   },
   {
     "id": "neo_327",
@@ -6591,7 +6591,7 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "\"Ironic relic of a connected world, now powered by dust bunnies and hope.\""
+    "flavorText": "Ironic relic of a connected world, now powered by dust bunnies and hope."
   },
   {
     "id": "neo_328",
@@ -6614,7 +6614,7 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "\"Power still on. Pixelated visions of a forgotten internet await.\""
+    "flavorText": "Power still on. Pixelated visions of a forgotten internet await."
   },
   {
     "id": "neo_329",
@@ -6656,7 +6656,7 @@
       "width": 2,
       "height": 2
     },
-    "flavorText": "\"Power to last a lifetime... if you make it that far.\""
+    "flavorText": "Power to last a lifetime... if you make it that far."
   },
   {
     "id": "neo_331",
@@ -6679,7 +6679,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"Data storage... of a bygone era? Locked tight for a reason?\""
+    "flavorText": "Data storage... of a bygone era? Locked tight for a reason?"
   },
   {
     "id": "neo_332",
@@ -6702,7 +6702,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"E-books for a world of printouts. Power saving mode engaged.\""
+    "flavorText": "E-books for a world of printouts. Power saving mode engaged."
   },
   {
     "id": "neo_333",
@@ -6725,7 +6725,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"E-books by candlelight. Progress, one pixel at a time.\""
+    "flavorText": "E-books by candlelight. Progress, one pixel at a time."
   },
   {
     "id": "neo_334",
@@ -6748,7 +6748,7 @@
       "width": 1,
       "height": 1
     },
-    "flavorText": "\"Charged for the apocalypse, despite its denial.\""
+    "flavorText": "Charged for the apocalypse, despite its denial."
   },
   {
     "id": "neo_335",
@@ -6771,7 +6771,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "\"Powered by pre-war nostalgia and a single last hope.\""
+    "flavorText": "Powered by pre-war nostalgia and a single last hope."
   },
   {
     "id": "neo_336",
@@ -6794,7 +6794,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"Last call from the void... on silent mode.\""
+    "flavorText": "Last call from the void... on silent mode."
   },
   {
     "id": "neo_337",
@@ -6817,7 +6817,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"Echoes of yesterday's connectivity... in a pocket-sized time capsule.\""
+    "flavorText": "Echoes of yesterday's connectivity... in a pocket-sized time capsule."
   },
   {
     "id": "neo_338",
@@ -6840,7 +6840,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"Last connection lost in 2075. Still holding a charge.\""
+    "flavorText": "Last connection lost in 2075. Still holding a charge."
   },
   {
     "id": "neo_339",
@@ -6863,7 +6863,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"Last connection to an overpopulated world. Dial 9-1-1 for the apocalypse.\""
+    "flavorText": "Last connection to an overpopulated world. Dial 9-1-1 for the apocalypse."
   },
   {
     "id": "neo_340",
@@ -6886,7 +6886,7 @@
       "width": 7,
       "height": 1
     },
-    "flavorText": "\"Dialed up for the wasteland apocalypse - vintage and offline, just like you.\""
+    "flavorText": "Dialed up for the wasteland apocalypse - vintage and offline, just like you."
   },
   {
     "id": "neo_341",
@@ -6909,7 +6909,7 @@
       "width": 7,
       "height": 1
     },
-    "flavorText": "\"Dialed back to a time when connections mattered most. Dial '90210' for a blast from the past.\""
+    "flavorText": "Dialed back to a time when connections mattered most. Dial '90210' for a blast from the past."
   },
   {
     "id": "neo_342",
@@ -6932,7 +6932,7 @@
       "width": 7,
       "height": 1
     },
-    "flavorText": "\"Last connection made in 2077... It's a collectible now.\""
+    "flavorText": "Last connection made in 2077... It's a collectible now."
   },
   {
     "id": "neo_343",
@@ -6955,7 +6955,7 @@
       "width": 7,
       "height": 1
     },
-    "flavorText": "\"Dialed directly to the past... if you have signal.\""
+    "flavorText": "Dialed directly to the past... if you have signal."
   },
   {
     "id": "neo_344",
@@ -7111,7 +7111,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"A beacon of light in a world gone dim, battery life estimated: unknown\""
+    "flavorText": "A beacon of light in a world gone dim, battery life estimated: unknown"
   },
   {
     "id": "neo_352",
@@ -7134,7 +7134,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"Light up your post-apocalyptic calls with this 'smart' lampphone\""
+    "flavorText": "Light up your post-apocalyptic calls with this 'smart' lampphone"
   },
   {
     "id": "neo_353",
@@ -7157,7 +7157,7 @@
       "width": 2,
       "height": 1
     },
-    "flavorText": "\"Bright as a sun-soaked neon sign in a ghost town.\""
+    "flavorText": "Bright as a sun-soaked neon sign in a ghost town."
   },
   {
     "id": "neo_354",
@@ -7223,7 +7223,7 @@
       "width": 3,
       "height": 1
     },
-    "flavorText": "\"Data overload? Just press reset - it's a cheap memory stick after all.\""
+    "flavorText": "Data overload? Just press reset - it's a cheap memory stick after all."
   },
   {
     "id": "neo_357",
@@ -7497,7 +7497,7 @@
       "width": 3,
       "height": 4
     },
-    "flavorText": "\"Bob's \"Hot Brick\" - A portable power source. Just remember, it's not a space heater.\""
+    "flavorText": "Bob's \"Hot Brick\" - A portable power source. Just remember, it's not a space heater."
   },
   {
     "id": "neo_371",
@@ -8169,7 +8169,7 @@
     "allImages": [
       "itmBearRoot.png"
     ],
-    "flavorText": "\"Perfect for starting a campfire... or pretending civilization is still thriving.\""
+    "flavorText": "Perfect for starting a campfire... or pretending civilization is still thriving."
   },
   {
     "id": "neo_404",
@@ -8239,7 +8239,7 @@
       "width": 2,
       "height": 4
     },
-    "flavorText": "\"Birches wept when packed away, now they wait for spring's return.\""
+    "flavorText": "Birches wept when packed away, now they wait for spring's return."
   },
   {
     "id": "neo_407",
@@ -8316,7 +8316,7 @@
     "allImages": [
       "itmAmmo4mmAP.png"
     ],
-    "flavorText": "\"Healing on the go? These bullets are your pharmacy in a pistol.\""
+    "flavorText": "Healing on the go? These bullets are your pharmacy in a pistol."
   },
   {
     "id": "neo_411",
@@ -9382,7 +9382,7 @@
       "width": 3,
       "height": 3
     },
-    "flavorText": "\"Juice to keep your lights burning. Even in the darkest of times.\""
+    "flavorText": "Juice to keep your lights burning. Even in the darkest of times."
   },
   {
     "id": "neo_464",
@@ -9633,7 +9633,7 @@
       "width": 6,
       "height": 8
     },
-    "flavorText": "\"Childhood memories never expire... even in the wasteland.\""
+    "flavorText": "Childhood memories never expire... even in the wasteland."
   },
   {
     "id": "neo_476",
@@ -9714,7 +9714,7 @@
       "width": 3,
       "height": 5
     },
-    "flavorText": "\"Survival snack. Unopened since the world ended.\""
+    "flavorText": "Survival snack. Unopened since the world ended."
   },
   {
     "id": "neo_480",
@@ -9753,7 +9753,7 @@
     "allImages": [
       "itmMemStick.png"
     ],
-    "flavorText": "\"Data carrier of a bygone era, still holding secrets from Camp Grayling\""
+    "flavorText": "Data carrier of a bygone era, still holding secrets from Camp Grayling"
   },
   {
     "id": "neo_482",
@@ -9943,7 +9943,7 @@
     "allImages": [
       "itmMemStickRed.png"
     ],
-    "flavorText": "\"Camp Grayling's secrets stored on a weapon? Talk about overkill.\""
+    "flavorText": "Camp Grayling's secrets stored on a weapon? Talk about overkill."
   },
   {
     "id": "neo_492",
@@ -10445,7 +10445,7 @@
       "width": 6,
       "height": 10
     },
-    "flavorText": "\"Reinventing fashion since the apocalypse - wear your trash bags proudly!\""
+    "flavorText": "Reinventing fashion since the apocalypse - wear your trash bags proudly!"
   },
   {
     "id": "neo_517",
@@ -10488,7 +10488,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "\"Pills for a smoother post-apocalypse. Warfarin - because peace is overrated.\""
+    "flavorText": "Pills for a smoother post-apocalypse. Warfarin - because peace is overrated."
   },
   {
     "id": "neo_519",
@@ -10607,7 +10607,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "\"For a world that's suddenly slow, an old speed boost in disguise.\""
+    "flavorText": "For a world that's suddenly slow, an old speed boost in disguise."
   },
   {
     "id": "neo_525",
@@ -10650,7 +10650,7 @@
       "width": 1,
       "height": 2
     },
-    "flavorText": "\"A relic of sanity in a sea of madness - PharmaCon Losepine: Your prescription for post-apocalyptic tranquility.\""
+    "flavorText": "A relic of sanity in a sea of madness - PharmaCon Losepine: Your prescription for post-apocalyptic tranquility."
   },
   {
     "id": "neo_527",
@@ -10673,7 +10673,7 @@
       "width": 2,
       "height": 1
     },
-    "flavorText": "\"Pills sorted for Armageddon's daily essentials - or a really long retirement.\""
+    "flavorText": "Pills sorted for Armageddon's daily essentials - or a really long retirement."
   },
   {
     "id": "neo_528",

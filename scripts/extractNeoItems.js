@@ -205,7 +205,8 @@ Respond with ONLY the text, no quotes.`;
     }
   );
 
-  return result.trim();
+  // Strip surrounding quotes that the model sometimes adds
+  return result.trim().replace(/^["']|["']$/g, '');
 }
 
 async function generateAllFlavorText(items) {
