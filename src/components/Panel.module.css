@@ -51,6 +51,7 @@
 }
 
 .empty-message {
+  width: 100%;
   color: var(--text-muted);
   font-style: italic;
   text-align: center;
