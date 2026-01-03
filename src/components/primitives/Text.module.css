@@ -1,29 +1,32 @@
-/* Body - default text styling */
-.text--body {
-  color: var(--text-primary);
-  font-weight: var(--font-weight-normal);
+/* Base text - no default styles, inherits from parent */
+.text {
+  /* Intentionally empty - allows inheritance */
 }
 
-/* Label - medium weight for emphasis, form labels, breadcrumb current */
-.text--label {
-  color: var(--text-primary);
+/* Color types */
+.text--secondary {
+  color: var(--text-secondary);
+}
+
+.text--muted {
+  color: var(--text-muted);
+}
+
+/* Style modifiers */
+.text--strong {
   font-weight: var(--font-weight-medium);
 }
 
-/* Heading - bold weight for titles */
-.text--heading {
-  color: var(--text-primary);
+.text--bold {
   font-weight: var(--font-weight-bold);
 }
 
-/* Caption - muted secondary text */
-.text--caption {
-  color: var(--text-muted);
-  font-weight: var(--font-weight-normal);
+.text--code {
+  font-family: var(--font-family-mono);
 }
 
-/* Mono - monospace for technical values */
-.text--mono {
-  color: var(--text-secondary);
-  font-family: var(--font-family-mono);
+.text--ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

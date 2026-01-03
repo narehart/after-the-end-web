@@ -10,6 +10,10 @@ const cx = classNames.bind(styles);
 interface TextOwnProps {
   children?: ReactNode;
   type?: TextType | undefined;
+  strong?: boolean | undefined;
+  bold?: boolean | undefined;
+  code?: boolean | undefined;
+  ellipsis?: boolean | undefined;
 }
 
 type TextProps<TComponent extends TextElement = 'span'> = PolymorphicProps<
@@ -19,15 +23,28 @@ type TextProps<TComponent extends TextElement = 'span'> = PolymorphicProps<
 
 const Text = forwardRef(
   <TComponent extends TextElement = 'span'>(
-    { as, children, type, className, ...props }: TextProps<TComponent>,
+    {
+      as,
+      children,
+      type,
+      strong,
+      bold,
+      code,
+      ellipsis,
+      className,
+      ...props
+    }: TextProps<TComponent>,
     ref: any
   ) => {
     const Component: any = as ?? 'span';
-    const typeClass = type !== undefined ? cx(`text--${type}`) : undefined;
-    const fullClassName =
-      typeClass !== undefined && className !== undefined
-        ? `${typeClass} ${className}`
-        : (typeClass ?? className);
+    const textClass = cx('text', {
+      [`text--${type}`]: type !== undefined,
+      'text--strong': strong === true,
+      'text--bold': bold === true,
+      'text--code': code === true,
+      'text--ellipsis': ellipsis === true,
+    });
+    const fullClassName = className !== undefined ? `${textClass} ${className}` : textClass;
 
     return (
       <Component ref={ref} className={fullClassName} {...props}>

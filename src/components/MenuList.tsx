@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import { FIRST_INDEX } from '../constants/numbers';
 import type { MenuItem as MenuItemType, UseMenuContextReturn } from '../types/inventory';
 import MenuItem from './MenuItem';
-import { Box } from './primitives';
+import { Box, Text } from './primitives';
 import styles from './MenuList.module.css';
 
 const cx = classNames.bind(styles);
@@ -29,7 +29,11 @@ export default function MenuList({
   emptyMessage = 'No options available',
 }: MenuListProps): React.JSX.Element {
   if (items.length === FIRST_INDEX) {
-    return <Box className={cx('menu-empty')}>{emptyMessage}</Box>;
+    return (
+      <Text type="muted" className={cx('menu-empty')}>
+        {emptyMessage}
+      </Text>
+    );
   }
 
   const getMouseEnterHandler = (index: number): (() => void) | undefined => {

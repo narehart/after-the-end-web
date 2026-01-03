@@ -124,7 +124,7 @@ export type GridOccupancy = GridOccupancyCell[][];
 
 export type TextElement = 'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'label';
 
-export type TextType = 'body' | 'label' | 'heading' | 'caption' | 'mono';
+export type TextType = 'secondary' | 'muted';
 
 export type FlexDirection = 'row' | 'column' | 'row-reverse' | 'column-reverse';
 export type FlexJustify = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly';

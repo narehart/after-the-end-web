@@ -33,25 +33,17 @@
 .item-name {
   margin: 0;
   font-size: var(--font-base);
-  color: var(--text-primary);
-  font-weight: var(--font-weight-medium);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .item-type {
   margin: 0;
   font-size: var(--font-xs);
-  color: var(--text-muted);
   letter-spacing: var(--letter-spacing-tight);
-  font-family: var(--font-family-mono);
 }
 
 .item-description {
   margin: var(--space-4) 0 0;
   font-size: var(--font-sm);
-  color: var(--text-secondary);
   line-height: var(--line-height-tight);
 }
 

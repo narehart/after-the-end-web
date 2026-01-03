@@ -46,11 +46,3 @@
   overflow: auto;
   padding: var(--space-8);
 }
-
-.empty-message {
-  width: 100%;
-  color: var(--text-muted);
-  font-style: italic;
-  text-align: center;
-  padding: var(--space-16);
-}

@@ -4,8 +4,8 @@
 }
 
 .menu-empty {
+  display: block;
   padding: var(--space-12);
-  color: var(--text-muted);
   font-size: var(--font-sm);
   font-style: italic;
   text-align: center;

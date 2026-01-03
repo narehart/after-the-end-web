@@ -26,13 +26,13 @@ export default function EmptySlotDetails({ slotId }: EmptySlotDetailsProps): Rea
         </Flex>
       </Box>
       <Box className={cx('item-info')}>
-        <Text as="h2" className={cx('item-name')}>
+        <Text as="h2" strong ellipsis className={cx('item-name')}>
           {SLOT_LABELS[slotId]}
         </Text>
-        <Text as="p" className={cx('item-type')}>
+        <Text as="p" type="muted" code className={cx('item-type')}>
           EMPTY SLOT
         </Text>
-        <Text as="p" className={cx('item-description')}>
+        <Text as="p" type="secondary" className={cx('item-description')}>
           {SLOT_DESCRIPTIONS[slotId]}
         </Text>
       </Box>

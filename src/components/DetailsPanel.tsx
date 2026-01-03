@@ -41,13 +41,13 @@ export default function DetailsPanel(): React.JSX.Element {
           </Box>
 
           <Box className={cx('item-info')}>
-            <Text as="h2" className={cx('item-name')}>
+            <Text as="h2" strong ellipsis className={cx('item-name')}>
               {item.description}
             </Text>
-            <Text as="p" className={cx('item-stats-line')}>
+            <Text as="p" type="secondary" code ellipsis className={cx('item-stats-line')}>
               {buildStatsLine({ item })}
             </Text>
-            <Text as="p" className={cx('item-flavor-text')}>
+            <Text as="p" type="muted" className={cx('item-flavor-text')}>
               {item.flavorText ?? `A scavenged ${item.type} from the Florida wasteland.`}
             </Text>
           </Box>

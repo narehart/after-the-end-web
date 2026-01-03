@@ -10,12 +10,10 @@
 }
 
 .empty-message {
-  color: var(--text-muted);
   font-style: italic;
 }
 
 .empty-description {
-  color: var(--text-muted);
   font-size: var(--font-xs);
   margin-top: var(--space-4);
   opacity: var(--opacity-muted);

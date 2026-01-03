@@ -67,11 +67,19 @@ export default function ListItem({
           {icon}
         </Flex>
       ) : null}
-      <Text className={cx('list-item-label')}>{label}</Text>
+      <Text ellipsis className={cx('list-item-label')}>
+        {label}
+      </Text>
       {meta !== null && meta !== undefined ? (
-        <Text className={cx('list-item-meta')}>{meta}</Text>
+        <Text type="muted" code className={cx('list-item-meta')}>
+          {meta}
+        </Text>
       ) : null}
-      {hasArrow === true ? <Text className={cx('list-item-arrow')}>›</Text> : null}
+      {hasArrow === true ? (
+        <Text type="muted" className={cx('list-item-arrow')}>
+          ›
+        </Text>
+      ) : null}
     </Flex>
   );
 }

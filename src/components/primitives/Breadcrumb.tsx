@@ -40,7 +40,7 @@ export default function Breadcrumb({
             onClick={seg.onClick}
             disabled={seg.isCurrent === true || seg.onClick === undefined}
           >
-            {seg.isCurrent === true ? <Text type="label">{seg.label}</Text> : seg.label}
+            {seg.isCurrent === true ? <Text strong>{seg.label}</Text> : seg.label}
           </Button>
           {seg.showSeparator === true ? <Text>›</Text> : null}
         </Flex>

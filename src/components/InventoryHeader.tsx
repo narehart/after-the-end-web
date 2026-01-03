@@ -44,7 +44,7 @@ export default function InventoryHeader({
   return (
     <Flex as="header" align="center" className={cx('inventory-header')}>
       <Text className={cx('header-icon')}>☢</Text>
-      <Text as="h1" className={cx('header-title')}>
+      <Text as="h1" strong className={cx('header-title')}>
         INVENTORY
       </Text>
       <Flex align="center" gap="12" className={cx('header-controls')}>
@@ -110,7 +110,9 @@ export default function InventoryHeader({
             ) : null}
           </Flex>
         ) : null}
-        <Text className={cx('weight-indicator')}>12.4 / 35.0 kg</Text>
+        <Text type="secondary" code className={cx('weight-indicator')}>
+          12.4 / 35.0 kg
+        </Text>
         <Flex as="button" justify="center" align="center" className={cx('close-btn')}>
           ✕
         </Flex>

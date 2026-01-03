@@ -13,9 +13,7 @@
 .header-title {
   margin: 0;
   font-size: var(--font-base);
-  font-weight: var(--font-weight-medium);
   letter-spacing: var(--letter-spacing-wide);
-  color: var(--text-primary);
   text-transform: uppercase;
 }
 
@@ -46,8 +44,6 @@
 
 .weight-indicator {
   font-size: var(--font-sm);
-  color: var(--text-secondary);
-  font-family: var(--font-family-mono);
   padding: var(--space-4) var(--space-10);
   background: var(--bg-cell);
   border: var(--border-default);

@@ -26,9 +26,13 @@ export default function EmptyState({
       className={className !== undefined ? `${cx('empty-state')} ${className}` : cx('empty-state')}
     >
       {icon !== undefined ? <Text className={cx('empty-icon')}>{icon}</Text> : null}
-      <Text className={cx('empty-message')}>{message}</Text>
+      <Text type="muted" className={cx('empty-message')}>
+        {message}
+      </Text>
       {description !== undefined ? (
-        <Text className={cx('empty-description')}>{description}</Text>
+        <Text type="muted" className={cx('empty-description')}>
+          {description}
+        </Text>
       ) : null}
     </Flex>
   );
