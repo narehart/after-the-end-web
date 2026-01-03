@@ -13,29 +13,6 @@
   overflow: hidden;
 }
 
-.details-content.empty {
-  justify-content: center;
-  align-items: center;
-}
-
-.empty-state {
-  display: flex;
-  align-items: center;
-  gap: var(--space-8);
-  color: var(--text-muted);
-}
-
-.empty-icon {
-  font-size: var(--font-lg);
-  filter: grayscale(0.5);
-  opacity: var(--opacity-muted);
-}
-
-.empty-text {
-  font-size: var(--font-sm);
-  margin: 0;
-}
-
 .item-preview {
   flex-shrink: 0;
 }
