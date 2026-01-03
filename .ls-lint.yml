@@ -53,11 +53,17 @@ ls:
     .*: regex:$
     .dir: regex:public
 
-  # scripts - camelCase JS files only, no subdirectories
+  # scripts - camelCase JS files, plus hooks subdirectory
   scripts:
     .js: camelCase
     .*: regex:$
-    .dir: regex:scripts
+    .dir: regex:scripts | regex:hooks
+
+  # scripts/hooks - camelCase JS files for git hooks
+  scripts/hooks:
+    .js: camelCase
+    .*: regex:$
+    .dir: regex:hooks
 
   # src/assets - only fonts and images directories, no files at root
   src/assets:
@@ -121,12 +127,34 @@ ls:
     .*: regex:$
     .dir: regex:hooks
 
-  # src/components - PascalCase .tsx and .module.css only, no subdirectories
+  # src/components - PascalCase files at root (legacy) + subdirectories
   src/components:
     .tsx: PascalCase
     .module.css: PascalCase
     .*: regex:$
-    .dir: regex:components
+    .dir: regex:components | regex:primitives | regex:candidates | regex:features
+
+  # src/components/primitives - PascalCase .tsx and .module.css, plus index.ts
+  src/components/primitives:
+    .tsx: PascalCase
+    .module.css: PascalCase
+    .ts: regex:index
+    .*: regex:$
+    .dir: regex:primitives
+
+  # src/components/candidates - PascalCase .tsx and .module.css (staging area)
+  src/components/candidates:
+    .tsx: PascalCase
+    .module.css: PascalCase
+    .*: regex:$
+    .dir: regex:candidates
+
+  # src/components/features - PascalCase .tsx and .module.css
+  src/components/features:
+    .tsx: PascalCase
+    .module.css: PascalCase
+    .*: regex:$
+    .dir: regex:features
 
   # src/stores - camelCase files ending with Store.ts, plus slices subdirectory
   src/stores:
