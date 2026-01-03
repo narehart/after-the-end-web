@@ -1,43 +1,10 @@
+/* Breadcrumb-specific link overrides */
 .breadcrumb-link {
-  background: none;
-  border: none;
-  color: var(--accent-teal);
-  font-size: var(--font-base);
-  line-height: var(--line-height-none);
-  cursor: pointer;
-  padding: var(--space-4) var(--space-8);
-  transition: var(--transition-normal);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.breadcrumb-link:disabled {
-  color: var(--text-primary);
-  cursor: default;
-}
-
-.breadcrumb-link.current {
-  color: var(--text-primary);
-  cursor: default;
-  font-weight: var(--font-weight-medium);
-}
-
 .breadcrumb--clip .breadcrumb-link {
   max-width: var(--breadcrumb-link-max-width);
-}
-
-.breadcrumb-link:hover:not(:disabled) {
-  background: var(--bg-elevated);
-  color: var(--accent-teal);
-}
-
-.breadcrumb-segment:first-child .breadcrumb-link {
-  padding-left: 0;
-}
-
-.breadcrumb-separator {
-  color: var(--text-primary);
-  margin: 0 var(--space-4);
-  font-size: var(--font-base);
 }

@@ -35,15 +35,14 @@ export default function Breadcrumb({
       {segments.map((seg) => (
         <Flex key={seg.key} align="center">
           <Button
-            className={cx('breadcrumb-link', { current: seg.isCurrent === true })}
+            variant="text"
+            className={cx('breadcrumb-link')}
             onClick={seg.onClick}
             disabled={seg.isCurrent === true || seg.onClick === undefined}
           >
-            {seg.label}
+            {seg.isCurrent === true ? <Text type="label">{seg.label}</Text> : seg.label}
           </Button>
-          {seg.showSeparator === true ? (
-            <Text className={cx('breadcrumb-separator')}>›</Text>
-          ) : null}
+          {seg.showSeparator === true ? <Text>›</Text> : null}
         </Flex>
       ))}
     </Flex>

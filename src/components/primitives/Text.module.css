@@ -1,0 +1,29 @@
+/* Body - default text styling */
+.text--body {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-normal);
+}
+
+/* Label - medium weight for emphasis, form labels, breadcrumb current */
+.text--label {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Heading - bold weight for titles */
+.text--heading {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Caption - muted secondary text */
+.text--caption {
+  color: var(--text-muted);
+  font-weight: var(--font-weight-normal);
+}
+
+/* Mono - monospace for technical values */
+.text--mono {
+  color: var(--text-secondary);
+  font-family: var(--font-family-mono);
+}

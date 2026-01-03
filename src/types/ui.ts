@@ -124,6 +124,8 @@ export type GridOccupancy = GridOccupancyCell[][];
 
 export type TextElement = 'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'label';
 
+export type TextType = 'body' | 'label' | 'heading' | 'caption' | 'mono';
+
 export type FlexDirection = 'row' | 'column' | 'row-reverse' | 'column-reverse';
 export type FlexJustify = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly';
 export type FlexAlign = 'start' | 'end' | 'center' | 'baseline' | 'stretch';
@@ -131,5 +133,7 @@ export type FlexWrap = 'nowrap' | 'wrap' | 'wrap-reverse';
 export type FlexGap = '0' | '2' | '4' | '6' | '8' | '12' | '16' | '24' | '32';
 
 export type IconSize = 'sm' | 'md' | 'lg' | 'fill' | number;
+
+export type ButtonVariant = 'default' | 'text';
 
 export type PanelHeaderTypeReturn = 'custom' | 'breadcrumb' | 'title' | 'none';

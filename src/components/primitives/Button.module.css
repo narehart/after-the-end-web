@@ -1,0 +1,44 @@
+.button {
+  font-family: inherit;
+  font-size: var(--font-base);
+  line-height: var(--line-height-none);
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.button:disabled {
+  cursor: default;
+}
+
+/* Default variant - solid button */
+.button--default {
+  background: var(--bg-elevated);
+  border: var(--border-panel);
+  color: var(--text-primary);
+  padding: var(--space-6) var(--space-12);
+}
+
+.button--default:disabled {
+  opacity: var(--opacity-muted);
+}
+
+.button--default:hover:not(:disabled) {
+  background: var(--bg-header);
+  border-color: var(--accent-teal);
+}
+
+/* Text variant - minimal, link-like */
+.button--text {
+  background: none;
+  border: none;
+  color: var(--accent-teal);
+  padding: var(--space-4) var(--space-8);
+}
+
+.button--text:disabled {
+  color: var(--text-primary);
+}
+
+.button--text:hover:not(:disabled) {
+  background: var(--bg-elevated);
+}
