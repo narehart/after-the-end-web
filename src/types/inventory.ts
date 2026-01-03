@@ -66,6 +66,7 @@ export interface Item {
   image: string;
   allImages: string[];
   gridSize?: ItemSize;
+  durability?: number;
 }
 
 export interface ContainerItem extends Item {

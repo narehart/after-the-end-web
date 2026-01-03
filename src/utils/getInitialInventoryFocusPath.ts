@@ -1,16 +1,17 @@
+import { FIRST_INDEX } from '../constants/numbers';
 import { INITIAL_EQUIPMENT } from '../constants/equipment';
-import { initialGrids } from '../constants/initialGrids';
+import { getItemById } from '../data/items';
 
 export function getInitialInventoryFocusPath(): string[] {
   const equippedIds = Object.values(INITIAL_EQUIPMENT).filter((id): id is string => id !== null);
 
   let largestId: string | null = null;
-  let largestSize = 0;
+  let largestSize = FIRST_INDEX;
 
   for (const id of equippedIds) {
-    const grid = initialGrids[id];
-    if (grid !== undefined) {
-      const size = grid.width * grid.height;
+    const item = getItemById(id);
+    if (item?.gridSize !== undefined) {
+      const size = item.gridSize.width * item.gridSize.height;
       if (size > largestSize) {
         largestSize = size;
         largestId = id;

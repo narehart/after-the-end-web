@@ -3,7 +3,7 @@ import type { Item, ItemsMap } from '../../types/inventory';
 import { toItemType } from '../../types/inventory';
 import type { ItemsSlice } from '../../types/store';
 import neoItemsArray from '../../data/neoItems.json';
-import { initialGrids } from '../../constants/initialGrids';
+import { buildInitialInventory } from '../../utils/buildInitialInventory';
 import { findFreePosition } from '../../utils/findFreePosition';
 import { findItemOrigin } from '../../utils/findItemOrigin';
 
@@ -29,7 +29,7 @@ function toItem(data: (typeof neoItemsArray)[number]): Item {
   return item;
 }
 
-function buildItemsMap(): ItemsMap {
+function buildTemplatesMap(): ItemsMap {
   const items: ItemsMap = {};
   for (const data of neoItemsArray) {
     items[data.id] = toItem(data);
@@ -37,9 +37,19 @@ function buildItemsMap(): ItemsMap {
   return items;
 }
 
+function buildInitialState(): { items: ItemsMap; grids: ItemsSlice['grids'] } {
+  const templates = buildTemplatesMap();
+  const { grids, instances } = buildInitialInventory();
+  // Merge templates with instances - instances override templates for placed items
+  const items: ItemsMap = { ...templates, ...instances };
+  return { items, grids };
+}
+
+const initialState = buildInitialState();
+
 export const createItemsSlice: StateCreator<ItemsSlice, [], [], ItemsSlice> = (set, get) => ({
-  items: buildItemsMap(),
-  grids: initialGrids,
+  items: initialState.items,
+  grids: initialState.grids,
 
   setItems: (items): void => {
     set({ items });

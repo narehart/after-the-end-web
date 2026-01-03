@@ -23,3 +23,12 @@ export const MIN_BREADCRUMB_LINKS = 2;
 // Timing
 export const RESIZE_DEBOUNCE_MS = 10;
 export const MENU_INPUT_DELAY_MS = 100;
+
+// ID generation
+export const ID_RADIX = 36;
+export const ID_SLICE_START = 2;
+export const ID_SLICE_END = 11;
+
+// Durability
+export const MAX_DURABILITY = 100;
+export const MIN_DURABILITY = 1;

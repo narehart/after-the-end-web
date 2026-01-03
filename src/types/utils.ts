@@ -20,7 +20,10 @@ export interface BuildGridWithItemsProps {
   items: ItemPlacement[];
 }
 
-export type BuildGridWithItemsReturn = CellGrid;
+export interface BuildGridWithItemsReturn {
+  cells: CellGrid;
+  instances: ItemsMap;
+}
 
 export interface CanPlaceAtProps {
   grid: CellGrid;
@@ -94,7 +97,20 @@ export interface CreateEmptyGridProps {
 
 export type CreateEmptyGridReturn = CellGrid;
 
+// Inventory initialization
+export interface BuildInitialInventoryReturn {
+  grids: GridsMap;
+  instances: ItemsMap;
+}
+
 // Item utility Props interfaces
+export interface CreateItemInstanceProps {
+  template: Item;
+  instanceId: string;
+}
+
+export type CreateItemInstanceReturn = Item;
+
 export interface BuildStatsLineProps {
   item: Item;
 }
