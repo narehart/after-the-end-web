@@ -1,6 +1,8 @@
 import type { GridsMap } from '../types/inventory';
 import { buildGridWithItems } from '../utils/buildGridWithItems';
 import { createEmptyGrid } from '../utils/createEmptyGrid';
+import { getRandomGroundLayout } from '../utils/getRandomGroundLayout';
+import { GROUND_HEIGHT, GROUND_WIDTH } from './ground';
 
 // Using neoItems IDs - neo_1 is bag (4x6), neo_4 is tin can (2x2 container), neo_42 is bag (10x10)
 export const initialGrids: GridsMap = {
@@ -36,19 +38,12 @@ export const initialGrids: GridsMap = {
     cells: createEmptyGrid({ width: 2, height: 2 }),
   },
   ground: {
-    width: 10,
-    height: 40,
+    width: GROUND_WIDTH,
+    height: GROUND_HEIGHT,
     cells: buildGridWithItems({
-      width: 10,
-      height: 40,
-      items: [
-        { id: 'neo_1', x: 0, y: 0 }, // bag (container)
-        { id: 'neo_318', x: 5, y: 0 }, // flashlight
-        { id: 'neo_136', x: 8, y: 0 }, // bottle
-        { id: 'neo_4', x: 5, y: 1 }, // tin can
-        { id: 'neo_3', x: 0, y: 6 }, // branch
-        { id: 'neo_327', x: 2, y: 6 }, // laptop
-      ],
+      width: GROUND_WIDTH,
+      height: GROUND_HEIGHT,
+      items: getRandomGroundLayout(),
     }),
   },
 };
