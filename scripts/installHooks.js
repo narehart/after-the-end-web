@@ -5,6 +5,7 @@
  * Run automatically via npm postinstall
  */
 
+import { execSync } from 'node:child_process';
 import { copyFileSync, chmodSync, existsSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -22,6 +23,14 @@ const HOOK_MAPPINGS = [{ source: 'preCommit.js', target: 'pre-commit' }];
 const EXECUTABLE_MODE = 0o755;
 
 function installHooks() {
+  // Set local hooksPath to override any global config
+  try {
+    execSync('git config --local core.hooksPath .git/hooks', { cwd: ROOT_DIR });
+    console.log('Set local git hooksPath to .git/hooks');
+  } catch {
+    console.warn('Warning: Could not set local git hooksPath');
+  }
+
   // Ensure .git/hooks exists
   if (!existsSync(HOOKS_TARGET_DIR)) {
     mkdirSync(HOOKS_TARGET_DIR, { recursive: true });
