@@ -36,7 +36,10 @@ export function buildGridWithItems(props: BuildGridWithItemsProps): BuildGridWit
     }
 
     const instanceId = generateInstanceId(placement.id);
-    const instance = createItemInstance({ template, instanceId });
+    const instance =
+      placement.quantity !== undefined
+        ? createItemInstance({ template, instanceId, quantity: placement.quantity })
+        : createItemInstance({ template, instanceId });
     instances[instanceId] = instance;
 
     placeItem({

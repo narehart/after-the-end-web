@@ -4,26 +4,29 @@ import { buildGridWithItems } from './buildGridWithItems';
 import { createContainerGrids } from './createContainerGrids';
 import { createEquipmentInstances } from './createEquipmentInstances';
 import { getRandomGroundLayout } from './getRandomGroundLayout';
+import { populateContainer } from './populateContainer';
 
 export function buildInitialInventory(): BuildInitialInventoryReturn {
   const equipmentResult = createEquipmentInstances();
   const grids = { ...equipmentResult.grids };
   const allInstances = { ...equipmentResult.instances };
 
-  // Add items to pouch
+  // Add random items to pouch
   const pouchInstanceId = equipmentResult.equipment.pouch;
   if (pouchInstanceId !== null) {
-    const pouchResult = buildGridWithItems({
-      width: 4,
-      height: 6,
-      items: [
-        { id: 'neo_4', x: 0, y: 0 },
-        { id: 'neo_12', x: 2, y: 0 },
-      ],
-    });
-    grids[pouchInstanceId] = { width: 4, height: 6, cells: pouchResult.cells };
-    Object.assign(allInstances, pouchResult.instances);
-    Object.assign(grids, createContainerGrids({ instances: pouchResult.instances }));
+    const pouchContents = populateContainer({ width: 4, height: 6 });
+    grids[pouchInstanceId] = pouchContents.grid;
+    Object.assign(allInstances, pouchContents.instances);
+    Object.assign(grids, pouchContents.containerGrids);
+  }
+
+  // Add random items to backpack
+  const backpackInstanceId = equipmentResult.equipment.backpack;
+  if (backpackInstanceId !== null) {
+    const backpackContents = populateContainer({ width: 10, height: 10 });
+    grids[backpackInstanceId] = backpackContents.grid;
+    Object.assign(allInstances, backpackContents.instances);
+    Object.assign(grids, backpackContents.containerGrids);
   }
 
   // Build ground

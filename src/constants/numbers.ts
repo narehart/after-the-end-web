@@ -32,3 +32,6 @@ export const ID_SLICE_END = 11;
 // Durability
 export const MAX_DURABILITY = 100;
 export const MIN_DURABILITY = 1;
+
+// Quantity
+export const DEFAULT_QUANTITY = 1;

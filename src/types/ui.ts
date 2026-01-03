@@ -99,6 +99,7 @@ export interface ItemPlacement {
   id: string;
   x: number;
   y: number;
+  quantity?: number;
 }
 
 export interface ItemDimensions {
@@ -124,4 +125,15 @@ export interface GamepadCallbacks {
   onPrevPanel?: (() => void) | undefined;
   startRepeat: (key: string, action: () => void) => void;
   clearRepeatTimer: (key: string) => void;
+}
+
+export interface GridOccupancyCell {
+  occupied: boolean;
+}
+
+export type GridOccupancy = GridOccupancyCell[][];
+
+export interface ItemConfig {
+  id: string;
+  maxQty: number;
 }
