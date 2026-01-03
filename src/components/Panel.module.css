@@ -51,8 +51,12 @@
 }
 
 .empty-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   color: var(--text-muted);
   font-style: italic;
-  padding: var(--space-32);
   text-align: center;
 }
