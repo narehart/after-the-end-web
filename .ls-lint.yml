@@ -132,7 +132,7 @@ ls:
     .tsx: PascalCase
     .module.css: PascalCase
     .*: regex:$
-    .dir: regex:components | regex:shared | regex:candidates | regex:features
+    .dir: regex:components | regex:shared | regex:candidates | regex:inventory
 
   # src/components/shared - PascalCase .tsx and .module.css, plus index.ts
   src/components/shared:
@@ -149,12 +149,12 @@ ls:
     .*: regex:$
     .dir: regex:candidates
 
-  # src/components/features - PascalCase .tsx and .module.css
-  src/components/features:
+  # src/components/inventory - PascalCase .tsx and .module.css
+  src/components/inventory:
     .tsx: PascalCase
     .module.css: PascalCase
     .*: regex:$
-    .dir: regex:features
+    .dir: regex:inventory
 
   # src/stores - camelCase files ending with Store.ts, plus slices subdirectory
   src/stores:

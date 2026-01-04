@@ -1,13 +1,13 @@
 import classNames from 'classnames/bind';
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
-import { useInventoryStore } from '../stores/inventoryStore';
-import { getImageUrl } from '../utils/images';
-import { useBreadcrumbLinksMenu } from '../hooks/useBreadcrumbLinksMenu';
-import { useMenuActions } from '../hooks/useMenuActions';
-import useMenuContext from '../hooks/useMenuContext';
-import useMenuLevels from '../hooks/useMenuLevels';
-import useMenuKeyboard from '../hooks/useMenuKeyboard';
-import { Modal, Panel } from './shared';
+import { FIRST_INDEX, SECOND_INDEX } from '../../constants/numbers';
+import { useInventoryStore } from '../../stores/inventoryStore';
+import { getImageUrl } from '../../utils/images';
+import { useBreadcrumbLinksMenu } from '../../hooks/useBreadcrumbLinksMenu';
+import { useMenuActions } from '../../hooks/useMenuActions';
+import useMenuContext from '../../hooks/useMenuContext';
+import useMenuLevels from '../../hooks/useMenuLevels';
+import useMenuKeyboard from '../../hooks/useMenuKeyboard';
+import { Modal, Panel } from '../shared';
 import MenuList from './MenuList';
 import styles from './ActionModal.module.css';
 

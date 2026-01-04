@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
-import { useInventoryStore } from '../stores/inventoryStore';
+import { useInventoryStore } from '../../stores/inventoryStore';
+import { Flex } from '../shared';
 import ContainerView from './ContainerView';
-import { Flex } from './shared';
 import styles from './WorldPanel.module.css';
 
 const cx = classNames.bind(styles);

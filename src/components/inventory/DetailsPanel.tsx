@@ -1,10 +1,10 @@
 import classNames from 'classnames/bind';
-import { useInventoryStore } from '../stores/inventoryStore';
-import { buildStatsLine } from '../utils/buildStatsLine';
-import { getItemIcon } from '../utils/getItemIcon';
-import { getItemImageUrl } from '../utils/getItemImageUrl';
-import { getMainImage } from '../utils/getMainImage';
-import { Box, Flex, Text, Panel, Icon } from './shared';
+import { useInventoryStore } from '../../stores/inventoryStore';
+import { buildStatsLine } from '../../utils/buildStatsLine';
+import { getItemIcon } from '../../utils/getItemIcon';
+import { getItemImageUrl } from '../../utils/getItemImageUrl';
+import { getMainImage } from '../../utils/getMainImage';
+import { Box, Flex, Text, Panel, Icon } from '../shared';
 import styles from './DetailsPanel.module.css';
 
 const cx = classNames.bind(styles);

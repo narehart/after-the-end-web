@@ -1,4 +1,4 @@
-import Inventory from './Inventory';
+import Inventory from './inventory/Inventory';
 import './App.module.css';
 
 function App(): React.JSX.Element {

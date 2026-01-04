@@ -1,11 +1,11 @@
 import classNames from 'classnames/bind';
-import type { Item } from '../types/inventory';
-import type { CellState, ItemGridHandlers, CSSPropertiesWithVars } from '../types/ui';
-import { DEFAULT_QUANTITY, FIRST_INDEX, NOT_FOUND_INDEX } from '../constants/numbers';
-import { getImageUrl } from '../utils/images';
-import { getItemIcon } from '../utils/getItemIcon';
-import { calculateItemDimensions } from '../utils/calculateItemDimensions';
-import { Flex, Icon, Text } from './shared';
+import type { Item } from '../../types/inventory';
+import type { CellState, ItemGridHandlers, CSSPropertiesWithVars } from '../../types/ui';
+import { DEFAULT_QUANTITY, FIRST_INDEX, NOT_FOUND_INDEX } from '../../constants/numbers';
+import { getImageUrl } from '../../utils/images';
+import { getItemIcon } from '../../utils/getItemIcon';
+import { calculateItemDimensions } from '../../utils/calculateItemDimensions';
+import { Flex, Icon, Text } from '../shared';
 import styles from './ItemGridButton.module.css';
 
 const cx = classNames.bind(styles);

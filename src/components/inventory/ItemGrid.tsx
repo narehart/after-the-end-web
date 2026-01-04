@@ -1,13 +1,13 @@
 import classNames from 'classnames/bind';
-import { CELL_GAP } from '../constants/grid';
-import { FIRST_INDEX } from '../constants/numbers';
-import { useInventoryStore } from '../stores/inventoryStore';
-import useGridNavigation from '../hooks/useGridNavigation';
-import type { GridCell, MenuSource } from '../types/inventory';
-import { getCellValue } from '../utils/getCellValue';
-import { checkIsOrigin } from '../utils/checkIsOrigin';
+import { CELL_GAP } from '../../constants/grid';
+import { FIRST_INDEX } from '../../constants/numbers';
+import { useInventoryStore } from '../../stores/inventoryStore';
+import useGridNavigation from '../../hooks/useGridNavigation';
+import type { GridCell, MenuSource } from '../../types/inventory';
+import { getCellValue } from '../../utils/getCellValue';
+import { checkIsOrigin } from '../../utils/checkIsOrigin';
+import { Box, Flex } from '../shared';
 import ItemGridCell from './ItemGridCell';
-import { Box, Flex } from './shared';
 import styles from './ItemGrid.module.css';
 
 const cx = classNames.bind(styles);
