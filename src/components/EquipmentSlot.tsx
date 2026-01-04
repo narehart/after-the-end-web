@@ -46,7 +46,7 @@ export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.J
             {formatSlotLabel({ slotType })}
           </Text>
           {hasGrid ? (
-            <Text align="right" type="muted">
+            <Text type="muted" size="lg">
               ›
             </Text>
           ) : null}
