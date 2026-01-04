@@ -100,7 +100,7 @@
   --size-avatar: var(--space-72);
   --size-preview: var(--space-96);
   --size-header: var(--space-40);
-  --size-details-panel: var(--space-160);
+  --size-details-panel: var(--space-128);
   --size-modal: var(--space-512);
 
   /* Opacity scale */
