@@ -43,3 +43,20 @@
   overflow: auto;
   padding: var(--space-8);
 }
+
+/* Scrollbar styling */
+.panel-content::-webkit-scrollbar {
+  width: var(--size-scrollbar-sm);
+}
+
+.panel-content::-webkit-scrollbar-track {
+  background: var(--bg-panel);
+}
+
+.panel-content::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+}
+
+.panel-content::-webkit-scrollbar-thumb:hover {
+  background: var(--border-light);
+}
