@@ -49,7 +49,7 @@ export default function MenuList({
   };
 
   return (
-    <Box className={cx('menu-list')}>
+    <Box>
       {items.map((item, index) => (
         <MenuItem
           key={item.id}

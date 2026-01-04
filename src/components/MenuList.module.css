@@ -1,8 +1,3 @@
-/* Menu list container */
-.menu-list {
-  padding: var(--space-8);
-}
-
 .menu-empty {
   display: block;
   padding: var(--space-12);
