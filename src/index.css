@@ -98,7 +98,7 @@
   --size-touch: var(--space-48); /* minimum touch target */
   --size-dropdown: var(--space-256);
   --size-avatar: var(--space-72);
-  --size-preview: var(--space-96);
+  --size-preview: var(--space-72);
   --size-header: var(--space-40);
   --size-details-panel: var(--space-128);
   --size-modal: var(--space-512);
