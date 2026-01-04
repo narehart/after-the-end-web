@@ -44,7 +44,7 @@ export default function Breadcrumb({
               {seg.label}
             </Text>
           </Button>
-          {seg.showSeparator === true ? <Text size="base">›</Text> : null}
+          {seg.showSeparator === true ? <Text size="lg">›</Text> : null}
         </Flex>
       ))}
     </Flex>
