@@ -34,7 +34,7 @@ export default function EmptySlotDetails({ slotId }: EmptySlotDetailsProps): Rea
         <Text as="p" type="muted" code size="xs" spacing="tight" className={cx('item-type')}>
           EMPTY SLOT
         </Text>
-        <Text as="p" type="secondary" size="sm" className={cx('item-description')}>
+        <Text as="p" type="secondary" size="base" className={cx('item-description')}>
           {SLOT_DESCRIPTIONS[slotId]}
         </Text>
       </Box>
