@@ -1,8 +1,11 @@
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import { buildStatsLine } from '../utils/buildStatsLine';
+import { getImageUrl } from '../utils/images';
+import { getItemIcon } from '../utils/getItemIcon';
+import { getMainImage } from '../utils/getMainImage';
 import EmptySlotDetails from './EmptySlotDetails';
-import { Box, Flex, Text, Panel, ItemDisplay } from './primitives';
+import { Box, Flex, Text, Panel, Icon } from './primitives';
 import styles from './DetailsPanel.module.css';
 
 const cx = classNames.bind(styles);
@@ -31,7 +34,17 @@ export default function DetailsPanel(): React.JSX.Element {
         <>
           <Box className={cx('item-preview')}>
             <Flex justify="center" align="center" className={cx('preview-frame')}>
-              <ItemDisplay item={item} imageClassName={cx('preview-image')} />
+              {getMainImage({ allImages: item.allImages }) !== '' ? (
+                <Icon
+                  src={getImageUrl(getMainImage({ allImages: item.allImages }))}
+                  alt={item.name}
+                  size="fill"
+                  pixelated
+                  className={cx('preview-image')}
+                />
+              ) : (
+                <Text size="lg">{getItemIcon({ type: item.type })}</Text>
+              )}
             </Flex>
           </Box>
 
