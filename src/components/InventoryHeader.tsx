@@ -1,10 +1,10 @@
 import classNames from 'classnames/bind';
-import { PRESETS } from '../../constants/display';
-import useGamepadStatus from '../../hooks/useGamepadStatus';
-import useInventoryHeader from '../../hooks/useInventoryHeader';
-import type { Resolution } from '../../types/ui';
-import { Box, Button, Flex, Input, Text } from '../shared';
+import { PRESETS } from '../constants/display';
+import useGamepadStatus from '../hooks/useGamepadStatus';
+import useInventoryHeader from '../hooks/useInventoryHeader';
+import type { Resolution } from '../types/ui';
 import styles from './InventoryHeader.module.css';
+import { Box, Button, Flex, Input, Text } from '.';
 
 const cx = classNames.bind(styles);
 

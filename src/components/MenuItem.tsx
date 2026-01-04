@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
-import type { MenuItem as MenuItemType, UseMenuContextReturn } from '../../types/inventory';
-import { ListItem, Flex, Text, Button } from '../shared';
+import type { MenuItem as MenuItemType, UseMenuContextReturn } from '../types/inventory';
 import styles from './MenuItem.module.css';
+import { ListItem, Flex, Text, Button } from '.';
 
 const cx = classNames.bind(styles);
 

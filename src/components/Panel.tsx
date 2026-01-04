@@ -1,16 +1,16 @@
 import type { ReactNode } from 'react';
 import classNames from 'classnames/bind';
-import type { BreadcrumbLink } from '../../types/inventory';
+import type { BreadcrumbLink } from '../types/inventory';
 import type {
   BorderPosition,
   FlexDirection,
   FlexJustify,
   FlexAlign,
   FlexGap,
-} from '../../types/ui';
-import buildPanelClasses from '../../utils/buildPanelClasses';
-import buildPanelHeaderClasses from '../../utils/buildPanelHeaderClasses';
-import getPanelHeaderType from '../../utils/getPanelHeaderType';
+} from '../types/ui';
+import buildPanelClasses from '../utils/buildPanelClasses';
+import buildPanelHeaderClasses from '../utils/buildPanelHeaderClasses';
+import getPanelHeaderType from '../utils/getPanelHeaderType';
 import styles from './Panel.module.css';
 import PanelHeader from './PanelHeader';
 import { Box, EmptyState, Flex } from './index';

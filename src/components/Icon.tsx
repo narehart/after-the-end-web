@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import type { IconSize } from '../../types/ui';
+import type { IconSize } from '../types/ui';
 import styles from './Icon.module.css';
 import Image from './Image';
 

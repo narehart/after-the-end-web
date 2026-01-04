@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import getListItemKey from '../../utils/getListItemKey';
+import getListItemKey from '../utils/getListItemKey';
 import { Box } from './index';
 
 interface ListProps<TItem> {

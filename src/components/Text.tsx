@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/consistent-type-assertions, @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment */
 import { forwardRef, type ReactNode } from 'react';
 import classNames from 'classnames/bind';
-import type { PolymorphicComponent, PolymorphicProps } from '../../types/polymorphic';
-import type { TextAlign, TextElement, TextSize, TextSpacing, TextType } from '../../types/ui';
+import type { PolymorphicComponent, PolymorphicProps } from '../types/polymorphic';
+import type { TextAlign, TextElement, TextSize, TextSpacing, TextType } from '../types/ui';
 import styles from './Text.module.css';
 
 const cx = classNames.bind(styles);

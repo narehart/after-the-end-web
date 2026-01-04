@@ -46,17 +46,25 @@ const selectedId = useInventoryStore((s) => s.selectedItemId);
 
 **Enforced by custom ESLint rules and ls-lint:**
 
-| Directory                 | Naming      | Contents                                                 |
-| ------------------------- | ----------- | -------------------------------------------------------- |
-| `src/components/`         | PascalCase  | `.tsx` + paired `.module.css`                            |
-| `src/components/shared/`  | PascalCase  | Reusable primitive components                            |
-| `src/components/<scene>/` | PascalCase  | Scene-specific components (e.g., `inventory/`, `world/`) |
-| `src/hooks/`              | `use*.ts`   | One custom hook per file                                 |
-| `src/utils/`              | camelCase   | One function per file                                    |
-| `src/constants/`          | camelCase   | Data constants only (no functions)                       |
-| `src/types/`              | camelCase   | Type definitions only                                    |
-| `src/stores/slices/`      | `*Slice.ts` | Zustand slice creators                                   |
-| `eslint-rules/`           | kebab-case  | Custom ESLint rules                                      |
+| Directory            | Naming      | Contents                           |
+| -------------------- | ----------- | ---------------------------------- |
+| `src/components/`    | PascalCase  | `.tsx` + paired `.module.css`      |
+| `src/hooks/`         | `use*.ts`   | One custom hook per file           |
+| `src/utils/`         | camelCase   | One function per file              |
+| `src/constants/`     | camelCase   | Data constants only (no functions) |
+| `src/types/`         | camelCase   | Type definitions only              |
+| `src/stores/slices/` | `*Slice.ts` | Zustand slice creators             |
+| `eslint-rules/`      | kebab-case  | Custom ESLint rules                |
+
+### Component Philosophy
+
+When creating or modifying components:
+
+1. **Check for existing components first** - Before creating new UI elements, look for existing components with similar functionality (Button, Panel, Text, Flex, etc.)
+2. **Keep components simple and composable** - Components should do one thing well and compose together
+3. **Refactor shared patterns** - When you notice similar code across components, extract it into a reusable component
+4. **Use primitive components** - Build features by composing simple building blocks (Box, Flex, Text, Button, Panel, Icon, etc.)
+5. **Delegate logic to hooks/utils** - Components should focus on rendering; complex logic belongs in custom hooks or utility functions
 
 ### CSS Architecture
 

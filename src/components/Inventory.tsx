@@ -1,14 +1,13 @@
 import { useRef } from 'react';
 import classNames from 'classnames/bind';
-import { DEFAULT_SCALE } from '../../constants/numbers';
-import { useUIScale } from '../../hooks/useUIScale';
-import { useInventoryStore } from '../../stores/inventoryStore';
-import useInventoryState from '../../hooks/useInventoryState';
-import useCellSize from '../../hooks/useCellSize';
-import usePanelNavigation from '../../hooks/usePanelNavigation';
-import useGamepadNavigation from '../../hooks/useGamepadNavigation';
-import useUIScaleSync from '../../hooks/useUIScaleSync';
-import { Box, Flex } from '../shared';
+import { DEFAULT_SCALE } from '../constants/numbers';
+import { useUIScale } from '../hooks/useUIScale';
+import { useInventoryStore } from '../stores/inventoryStore';
+import useInventoryState from '../hooks/useInventoryState';
+import useCellSize from '../hooks/useCellSize';
+import usePanelNavigation from '../hooks/usePanelNavigation';
+import useGamepadNavigation from '../hooks/useGamepadNavigation';
+import useUIScaleSync from '../hooks/useUIScaleSync';
 import EquipmentPanel from './EquipmentPanel';
 import InventoryPanel from './InventoryPanel';
 import WorldPanel from './WorldPanel';
@@ -16,6 +15,7 @@ import DetailsPanel from './DetailsPanel';
 import ActionModal from './ActionModal';
 import InventoryHeader from './InventoryHeader';
 import styles from './Inventory.module.css';
+import { Box, Flex } from '.';
 
 const cx = classNames.bind(styles);
 

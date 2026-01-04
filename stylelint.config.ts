@@ -271,23 +271,23 @@ export default {
       },
     },
     {
-      // Text primitive defines all text styling
-      files: ['src/components/shared/Text.module.css'],
+      // Text component defines all text styling
+      files: ['src/components/Text.module.css'],
       rules: {
         'property-disallowed-list': null,
         'declaration-property-value-disallowed-list': null,
       },
     },
     {
-      // Flex primitive can define display: flex
-      files: ['src/components/shared/Flex.module.css'],
+      // Flex component can define display: flex
+      files: ['src/components/Flex.module.css'],
       rules: {
         'declaration-property-value-disallowed-list': null,
       },
     },
     {
       // ListItem uses color for state styling
-      files: ['src/components/shared/ListItem.module.css'],
+      files: ['src/components/ListItem.module.css'],
       rules: {
         'declaration-property-value-disallowed-list': null,
       },

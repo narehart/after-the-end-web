@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/consistent-type-assertions, @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment */
 import { forwardRef, type ElementType, type ReactNode } from 'react';
-import type { PolymorphicComponent, PolymorphicProps } from '../../types/polymorphic';
+import type { PolymorphicComponent, PolymorphicProps } from '../types/polymorphic';
 
 interface BoxOwnProps {
   children?: ReactNode;

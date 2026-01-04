@@ -1,10 +1,10 @@
 import type { RefCallback } from 'react';
 import classNames from 'classnames/bind';
-import useItemGridCell from '../../hooks/useItemGridCell';
-import type { Item, MenuSource } from '../../types/inventory';
-import { Box } from '../shared';
+import useItemGridCell from '../hooks/useItemGridCell';
+import type { Item, MenuSource } from '../types/inventory';
 import ItemGridButton from './ItemGridButton';
 import styles from './ItemGridCell.module.css';
+import { Box } from '.';
 
 const cx = classNames.bind(styles);
 

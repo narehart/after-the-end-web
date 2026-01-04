@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/consistent-type-assertions, @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-argument */
 import { forwardRef, type ElementType, type ReactNode } from 'react';
 import classNames from 'classnames/bind';
-import type { PolymorphicComponent, PolymorphicProps } from '../../types/polymorphic';
-import type { FlexDirection, FlexJustify, FlexAlign, FlexWrap, FlexGap } from '../../types/ui';
+import type { PolymorphicComponent, PolymorphicProps } from '../types/polymorphic';
+import type { FlexDirection, FlexJustify, FlexAlign, FlexWrap, FlexGap } from '../types/ui';
 import styles from './Flex.module.css';
 
 const cx = classNames.bind(styles);
