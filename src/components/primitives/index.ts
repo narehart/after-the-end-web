@@ -7,5 +7,6 @@ export { default as Text } from './Text';
 export { default as EmptyState } from './EmptyState';
 export { default as Breadcrumb } from './Breadcrumb';
 export { default as Panel } from './Panel';
+export { default as Modal } from './Modal';
 export { default as List } from './List';
 export { default as ListItem } from './ListItem';

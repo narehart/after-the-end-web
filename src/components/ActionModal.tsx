@@ -1,6 +1,5 @@
-import { useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
-import { FIRST_INDEX, SECOND_INDEX, NOT_FOUND_INDEX } from '../constants/numbers';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
 import { useInventoryStore } from '../stores/inventoryStore';
 import { getImageUrl } from '../utils/images';
 import { useBreadcrumbLinksMenu } from '../hooks/useBreadcrumbLinksMenu';
@@ -8,14 +7,13 @@ import { useMenuActions } from '../hooks/useMenuActions';
 import useMenuContext from '../hooks/useMenuContext';
 import useMenuLevels from '../hooks/useMenuLevels';
 import useMenuKeyboard from '../hooks/useMenuKeyboard';
-import { Box, Panel } from './primitives';
+import { Modal, Panel } from './primitives';
 import MenuList from './MenuList';
-import styles from './Menu.module.css';
+import styles from './ActionModal.module.css';
 
 const cx = classNames.bind(styles);
 
-export default function Menu(): React.JSX.Element | null {
-  const menuRef = useRef<HTMLDivElement>(null);
+export default function ActionModal(): React.JSX.Element | null {
   const menu = useInventoryStore((s) => s.menu);
   const closeMenu = useInventoryStore((s) => s.closeMenu);
   const menuNavigateTo = useInventoryStore((s) => s.menuNavigateTo);
@@ -40,48 +38,30 @@ export default function Menu(): React.JSX.Element | null {
     onSetFocus: menuSetFocusIndex,
   });
 
-  useEffect(() => {
-    if (menu.isOpen) menuRef.current?.focus();
-  }, [menu.isOpen]);
-
   const breadcrumbLinks = useBreadcrumbLinksMenu(menu.path, context.item, menuNavigateToLevel);
-
-  if (!menu.isOpen) return null;
 
   const itemImage = context.item?.image;
   const itemIcon = itemImage !== undefined ? getImageUrl(itemImage) : undefined;
 
   return (
-    <>
-      <Box
-        className={cx('menu-overlay')}
-        onClick={closeMenu}
-        onKeyDown={(e): void => {
-          if (e.key === 'Escape') closeMenu();
-        }}
-        role="button"
-        tabIndex={NOT_FOUND_INDEX}
-        aria-label="Close menu"
-      />
-      <Box ref={menuRef} className={cx('menu-modal')} tabIndex={NOT_FOUND_INDEX}>
-        <Panel
-          breadcrumbLinks={breadcrumbLinks}
-          {...(itemIcon !== undefined ? { breadcrumbIcon: itemIcon } : {})}
-          emptyMessage={
-            menu.path.length > FIRST_INDEX ? 'No containers here' : 'No actions available'
-          }
-        >
-          {currentItems.length > FIRST_INDEX ? (
-            <MenuList
-              items={currentItems}
-              context={context}
-              focusIndex={menu.focusIndex}
-              onSelect={handleSelect}
-              onSetFocusIndex={menuSetFocusIndex}
-            />
-          ) : null}
-        </Panel>
-      </Box>
-    </>
+    <Modal visible={menu.isOpen} onClose={closeMenu} className={cx('action-modal')}>
+      <Panel
+        breadcrumbLinks={breadcrumbLinks}
+        {...(itemIcon !== undefined ? { breadcrumbIcon: itemIcon } : {})}
+        emptyMessage={
+          menu.path.length > FIRST_INDEX ? 'No containers here' : 'No actions available'
+        }
+      >
+        {currentItems.length > FIRST_INDEX ? (
+          <MenuList
+            items={currentItems}
+            context={context}
+            focusIndex={menu.focusIndex}
+            onSelect={handleSelect}
+            onSetFocusIndex={menuSetFocusIndex}
+          />
+        ) : null}
+      </Panel>
+    </Modal>
   );
 }

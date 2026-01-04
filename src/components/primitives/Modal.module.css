@@ -1,28 +1,20 @@
-/* Overlay to capture clicks outside menu */
-.menu-overlay {
+/* Overlay to capture clicks outside modal */
+.modal-overlay {
   position: fixed;
   inset: 0;
   z-index: var(--z-overlay);
   background: transparent;
 }
 
-/* Modal menu container */
-.menu-modal {
+/* Modal container */
+.modal {
   position: fixed;
   z-index: var(--z-modal);
   background: var(--bg-panel);
   border: var(--border-modal);
-  width: var(--size-modal);
   left: 50%;
   top: 22%;
   transform: translateX(-50%);
   box-shadow: var(--shadow-lg);
   outline: none;
-}
-
-/* Menu item specific overrides */
-.menu-item .list-item-icon {
-  width: var(--size-icon);
-  height: var(--size-icon);
-  filter: grayscale(0.3);
 }

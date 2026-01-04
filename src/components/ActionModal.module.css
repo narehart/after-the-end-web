@@ -1,0 +1,4 @@
+/* Action modal sizing */
+.action-modal {
+  width: var(--size-modal);
+}

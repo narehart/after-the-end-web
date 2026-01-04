@@ -12,7 +12,7 @@ import EquipmentPanel from './EquipmentPanel';
 import InventoryPanel from './InventoryPanel';
 import WorldPanel from './WorldPanel';
 import DetailsPanel from './DetailsPanel';
-import Menu from './Menu';
+import ActionModal from './ActionModal';
 import InventoryHeader from './InventoryHeader';
 import { Box, Flex } from './primitives';
 import styles from './Inventory.module.css';
@@ -89,7 +89,7 @@ export default function Inventory(): React.JSX.Element {
         </Flex>
       </Box>
 
-      <Menu />
+      <ActionModal />
     </Flex>
   );
 }
