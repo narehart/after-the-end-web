@@ -25,6 +25,7 @@ import noReexportsInTypes from './eslint-rules/no-reexports-in-types.ts';
 import noFunctionsInTypes from './eslint-rules/no-functions-in-types.ts';
 import noHooksInUtils from './eslint-rules/no-hooks-in-utils.ts';
 import noIntrinsicElementsInFeatures from './eslint-rules/no-intrinsic-elements-in-features.ts';
+import noPassthroughComponents from './eslint-rules/no-passthrough-components.ts';
 
 const MAX_LINES = 250;
 const MAX_LINES_PER_FUNCTION = 100;
@@ -58,6 +59,7 @@ const localPlugin = {
     'no-functions-in-types': noFunctionsInTypes,
     'no-hooks-in-utils': noHooksInUtils,
     'no-intrinsic-elements-in-features': noIntrinsicElementsInFeatures,
+    'no-passthrough-components': noPassthroughComponents,
   },
 };
 const sharedRules: Linter.RulesRecord = {
@@ -95,6 +97,7 @@ const sharedRules: Linter.RulesRecord = {
   'local/no-functions-in-types': 'error',
   'local/no-hooks-in-utils': 'error',
   'local/no-intrinsic-elements-in-features': 'error',
+  'local/no-passthrough-components': 'error',
 };
 
 export default defineConfig([
