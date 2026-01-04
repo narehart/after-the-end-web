@@ -1,13 +1,9 @@
-import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import type { GridCell, MenuSource, PanelType } from '../types/inventory';
 import { FIRST_INDEX, SECOND_INDEX, DEFAULT_CELL_SIZE } from '../constants/numbers';
 import { useBreadcrumbLinksContainer } from '../hooks/useBreadcrumbLinksContainer';
 import { Panel } from './primitives';
 import ItemGrid from './ItemGrid';
-import styles from './ContainerView.module.css';
-
-const cx = classNames.bind(styles);
 
 interface ContainerViewProps {
   focusPath: string[];
@@ -59,11 +55,7 @@ export default function ContainerView({
   const effectiveCellSize = cellSize ?? DEFAULT_CELL_SIZE;
 
   return (
-    <Panel
-      breadcrumbLinks={breadcrumbLinks}
-      contentClassName={cx('container-view-content')}
-      emptyMessage={emptyMessage}
-    >
+    <Panel breadcrumbLinks={breadcrumbLinks} emptyMessage={emptyMessage}>
       {currentGrid !== undefined ? (
         <ItemGrid
           grid={currentGrid}
