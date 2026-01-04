@@ -26,13 +26,9 @@ export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.J
   } = useEquipmentSlot({ slotType, slotRef });
 
   const { item, hasGrid, isFocused } = slotState;
-  const isEmpty = item === null;
 
   return (
-    <ListItem
-      active={isFocused}
-      className={cx('equipment-slot', { 'equipment-slot--empty': isEmpty })}
-    >
+    <ListItem active={isFocused}>
       <Button
         ref={slotRef}
         variant="ghost"
@@ -42,23 +38,16 @@ export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.J
         onKeyDown={handleKeyDown}
         onMouseEnter={handleMouseEnter}
       >
-        <Flex align="center" gap="8" className={cx('equipment-slot-content')}>
+        <Flex align="center" gap="8">
           {item !== null && item.image !== '' ? (
-            <Flex align="center" justify="center" className={cx('equipment-slot-icon')}>
-              <Icon
-                src={getImageUrl(getMainImage({ allImages: item.allImages }))}
-                alt={item.description}
-                size="fill"
-                pixelated
-              />
-            </Flex>
+            <Icon
+              src={getImageUrl(getMainImage({ allImages: item.allImages }))}
+              alt={item.description}
+              size="lg"
+              pixelated
+            />
           ) : null}
-          <Text
-            ellipsis
-            size="base"
-            type={isEmpty ? 'muted' : undefined}
-            className={cx('equipment-slot-label')}
-          >
+          <Text ellipsis size="base" className={cx('equipment-slot-label')}>
             {formatSlotLabel({ slotType })}
           </Text>
           {hasGrid ? (

@@ -1,15 +1,3 @@
-/* Equipment slot content layout */
-.equipment-slot-content {
-  width: 100%;
-}
-
-/* Equipment slot icon */
-.equipment-slot-icon {
-  width: var(--size-icon-lg);
-  height: var(--size-icon-lg);
-  flex-shrink: 0;
-}
-
 /* Equipment slot label */
 .equipment-slot-label {
   flex: 1;
