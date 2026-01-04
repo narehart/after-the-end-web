@@ -1,13 +1,9 @@
 import { useRef } from 'react';
-import classNames from 'classnames/bind';
 import useEquipmentSlot from '../hooks/useEquipmentSlot';
 import type { SlotType } from '../types/inventory';
 import { getItemImageUrl } from '../utils/getItemImageUrl';
 import { formatSlotLabel } from '../utils/formatSlotLabel';
 import { Icon, ListItem, Button, Flex, Text } from './primitives';
-import styles from './EquipmentSlot.module.css';
-
-const cx = classNames.bind(styles);
 
 interface EquipmentSlotProps {
   slotType: SlotType;
@@ -46,14 +42,10 @@ export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.J
               pixelated
             />
           ) : null}
-          <Text ellipsis size="base" className={cx('equipment-slot-label')}>
+          <Text ellipsis size="base">
             {formatSlotLabel({ slotType })}
           </Text>
-          {hasGrid ? (
-            <Text type="muted" className={cx('equipment-slot-arrow')}>
-              ›
-            </Text>
-          ) : null}
+          {hasGrid ? <Text type="muted">›</Text> : null}
         </Flex>
       </Button>
     </ListItem>
