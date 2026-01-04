@@ -42,10 +42,14 @@ export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.J
               pixelated
             />
           ) : null}
-          <Text ellipsis size="base">
+          <Text ellipsis size="base" grow>
             {formatSlotLabel({ slotType })}
           </Text>
-          {hasGrid ? <Text type="muted">›</Text> : null}
+          {hasGrid ? (
+            <Text align="right" type="muted">
+              ›
+            </Text>
+          ) : null}
         </Flex>
       </Button>
     </ListItem>

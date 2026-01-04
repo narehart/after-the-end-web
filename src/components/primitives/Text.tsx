@@ -18,6 +18,7 @@ interface TextOwnProps {
   uppercase?: boolean | undefined;
   align?: TextAlign | undefined;
   spacing?: TextSpacing | undefined;
+  grow?: boolean | undefined;
 }
 
 type TextProps<TComponent extends TextElement = 'span'> = PolymorphicProps<
@@ -39,6 +40,7 @@ const Text = forwardRef(
       uppercase,
       align,
       spacing,
+      grow,
       className,
       ...props
     }: TextProps<TComponent>,
@@ -55,6 +57,7 @@ const Text = forwardRef(
       'text--uppercase': uppercase === true,
       [`text--align-${align}`]: align !== undefined,
       [`text--spacing-${spacing}`]: spacing !== undefined,
+      'text--grow': grow === true,
     });
     const fullClassName = className !== undefined ? `${textClass} ${className}` : textClass;
 

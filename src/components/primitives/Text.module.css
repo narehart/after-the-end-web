@@ -52,6 +52,10 @@
   text-transform: uppercase;
 }
 
+.text--grow {
+  flex: 1;
+}
+
 /* Alignment variants */
 .text--align-left {
   text-align: left;
