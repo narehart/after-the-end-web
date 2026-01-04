@@ -18,11 +18,15 @@ Read the component file provided and analyze it against the project's primitive 
 
 ## Library Essential Components
 
-**NEVER suggest removing components that match standard UI library patterns.** If a component corresponds to a pattern found in established libraries like Ant Design, it's a library essential regardless of current usage count.
+Reference this list of standard UI patterns (from Ant Design) when analyzing:
 
-Standard patterns include: Alert, Anchor, Avatar, Badge, Breadcrumb, Calendar, Card, Carousel, Checkbox, Collapse, DatePicker, Descriptions, Divider, Drawer, Dropdown, Empty, Form, Grid, Image, Input, Layout, List, Menu, Message, Modal, Notification, Pagination, Popconfirm, Popover, Progress, Radio, Rate, Result, Select, Skeleton, Slider, Space, Spin, Splitter, Statistic, Steps, Switch, Table, Tabs, Tag, TimePicker, Timeline, Tooltip, Tour, Transfer, Tree, TreeSelect, Typography, Upload, etc.
+Alert, Anchor, Avatar, Badge, Breadcrumb, Calendar, Card, Carousel, Checkbox, Collapse, DatePicker, Descriptions, Divider, Drawer, Dropdown, Empty, Form, Grid, Image, Input, Layout, List, Menu, Message, Modal, Notification, Pagination, Popconfirm, Popover, Progress, Radio, Rate, Result, Select, Skeleton, Slider, Space, Spin, Splitter, Statistic, Steps, Switch, Table, Tabs, Tag, TimePicker, Timeline, Tooltip, Tour, Transfer, Tree, TreeSelect, Typography, Upload
 
-These are foundational patterns that provide reusable abstractions for common UI needs.
+**Rules:**
+
+1. **NEVER suggest removing** a component that matches one of these patterns
+2. **Suggest using** an existing library essential if the component duplicates its functionality
+3. **Suggest creating** a library essential if the codebase lacks a standard pattern that would simplify the component
 
 ## Analysis Framework
 
