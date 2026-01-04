@@ -272,7 +272,7 @@ export default {
     },
     {
       // Text primitive defines all text styling
-      files: ['src/components/primitives/Text.module.css'],
+      files: ['src/components/shared/Text.module.css'],
       rules: {
         'property-disallowed-list': null,
         'declaration-property-value-disallowed-list': null,
@@ -280,14 +280,14 @@ export default {
     },
     {
       // Flex primitive can define display: flex
-      files: ['src/components/primitives/Flex.module.css'],
+      files: ['src/components/shared/Flex.module.css'],
       rules: {
         'declaration-property-value-disallowed-list': null,
       },
     },
     {
       // ListItem uses color for state styling
-      files: ['src/components/primitives/ListItem.module.css'],
+      files: ['src/components/shared/ListItem.module.css'],
       rules: {
         'declaration-property-value-disallowed-list': null,
       },

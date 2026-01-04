@@ -3,7 +3,7 @@ import useEquipmentSlot from '../hooks/useEquipmentSlot';
 import type { SlotType } from '../types/inventory';
 import { getItemImageUrl } from '../utils/getItemImageUrl';
 import { formatSlotLabel } from '../utils/formatSlotLabel';
-import { Icon, ListItem, Button, Flex, Text } from './primitives';
+import { Icon, ListItem, Button, Flex, Text } from './shared';
 
 interface EquipmentSlotProps {
   slotType: SlotType;

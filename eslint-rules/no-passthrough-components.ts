@@ -175,7 +175,7 @@ const rule: Rule.RuleModule = {
       return {};
     }
 
-    if (filename.includes(path.join('components', 'primitives'))) {
+    if (filename.includes(path.join('components', 'shared'))) {
       return {};
     }
 

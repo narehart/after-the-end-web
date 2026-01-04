@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import useItemGridCell from '../hooks/useItemGridCell';
 import type { Item, MenuSource } from '../types/inventory';
 import ItemGridButton from './ItemGridButton';
-import { Box } from './primitives';
+import { Box } from './shared';
 import styles from './ItemGridCell.module.css';
 
 const cx = classNames.bind(styles);

@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import { FIRST_INDEX } from '../constants/numbers';
 import type { MenuItem as MenuItemType, UseMenuContextReturn } from '../types/inventory';
 import MenuItem from './MenuItem';
-import { List, Text } from './primitives';
+import { List, Text } from './shared';
 import styles from './MenuList.module.css';
 
 const cx = classNames.bind(styles);

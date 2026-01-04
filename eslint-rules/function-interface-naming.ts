@@ -4,7 +4,7 @@
  * Enforces that exported functions use consistent interface naming:
  * - Custom object parameter types should end in "Props"
  * - Custom object return types should end in "Return"
- * Skips types imported from node_modules and primitives.
+ * Skips types imported from node_modules and shared components.
  */
 
 import type { Rule } from 'eslint';

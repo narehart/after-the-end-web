@@ -5,7 +5,7 @@ import { DEFAULT_QUANTITY, FIRST_INDEX, NOT_FOUND_INDEX } from '../constants/num
 import { getImageUrl } from '../utils/images';
 import { getItemIcon } from '../utils/getItemIcon';
 import { calculateItemDimensions } from '../utils/calculateItemDimensions';
-import { Flex, Icon, Text } from './primitives';
+import { Flex, Icon, Text } from './shared';
 import styles from './ItemGridButton.module.css';
 
 const cx = classNames.bind(styles);

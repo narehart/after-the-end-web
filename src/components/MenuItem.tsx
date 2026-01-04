@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import type { MenuItem as MenuItemType, UseMenuContextReturn } from '../types/inventory';
-import { ListItem, Flex, Text, Button } from './primitives';
+import { ListItem, Flex, Text, Button } from './shared';
 import styles from './MenuItem.module.css';
 
 const cx = classNames.bind(styles);

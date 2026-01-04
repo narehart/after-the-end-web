@@ -1,12 +1,12 @@
 /**
  * ESLint rule: no-intrinsic-elements-in-features
  *
- * Enforces that feature components compose from primitives only.
+ * Enforces that feature components compose from shared components only.
  * Intrinsic HTML elements (div, span, button, etc.) are only allowed in:
- *   - src/components/primitives/
+ *   - src/components/shared/
  *   - src/components/candidates/
  *
- * Feature components in src/components/features/ must use primitive components.
+ * Feature components in src/components/features/ must use shared components.
  */
 
 import path from 'node:path';
@@ -29,12 +29,12 @@ const rule: Rule.RuleModule = {
   meta: {
     type: 'problem',
     docs: {
-      description: 'Disallow intrinsic HTML elements in feature components (must use primitives)',
+      description: 'Disallow intrinsic HTML elements in feature components (must use shared)',
     },
     messages: {
       intrinsicInFeatures:
         "Intrinsic element '<{{element}}>' is not allowed in features/. " +
-        'Use a primitive component from primitives/ or create one if needed.',
+        'Use a shared component from shared/ or create one if needed.',
     },
     schema: [],
   },

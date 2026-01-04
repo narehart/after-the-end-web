@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
 import ContainerView from './ContainerView';
-import { Flex } from './primitives';
+import { Flex } from './shared';
 import styles from './InventoryPanel.module.css';
 
 const cx = classNames.bind(styles);

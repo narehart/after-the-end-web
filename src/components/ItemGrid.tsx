@@ -7,7 +7,7 @@ import type { GridCell, MenuSource } from '../types/inventory';
 import { getCellValue } from '../utils/getCellValue';
 import { checkIsOrigin } from '../utils/checkIsOrigin';
 import ItemGridCell from './ItemGridCell';
-import { Box, Flex } from './primitives';
+import { Box, Flex } from './shared';
 import styles from './ItemGrid.module.css';
 
 const cx = classNames.bind(styles);

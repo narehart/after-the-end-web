@@ -132,15 +132,15 @@ ls:
     .tsx: PascalCase
     .module.css: PascalCase
     .*: regex:$
-    .dir: regex:components | regex:primitives | regex:candidates | regex:features
+    .dir: regex:components | regex:shared | regex:candidates | regex:features
 
-  # src/components/primitives - PascalCase .tsx and .module.css, plus index.ts
-  src/components/primitives:
+  # src/components/shared - PascalCase .tsx and .module.css, plus index.ts
+  src/components/shared:
     .tsx: PascalCase
     .module.css: PascalCase
     .ts: regex:index
     .*: regex:$
-    .dir: regex:primitives
+    .dir: regex:shared
 
   # src/components/candidates - PascalCase .tsx and .module.css (staging area)
   src/components/candidates:

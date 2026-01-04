@@ -1,6 +1,6 @@
 import { useInventoryStore, SLOT_TYPES } from '../stores/inventoryStore';
 import { FIRST_INDEX } from '../constants/numbers';
-import { List, Panel } from './primitives';
+import { List, Panel } from './shared';
 import EquipmentSlot from './EquipmentSlot';
 
 export default function EquipmentPanel(): React.JSX.Element {

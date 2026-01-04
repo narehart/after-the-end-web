@@ -2,7 +2,7 @@ import { useInventoryStore } from '../stores/inventoryStore';
 import type { GridCell, MenuSource, PanelType } from '../types/inventory';
 import { FIRST_INDEX, SECOND_INDEX, DEFAULT_CELL_SIZE } from '../constants/numbers';
 import { useBreadcrumbLinksContainer } from '../hooks/useBreadcrumbLinksContainer';
-import { Panel } from './primitives';
+import { Panel } from './shared';
 import ItemGrid from './ItemGrid';
 
 interface ContainerViewProps {

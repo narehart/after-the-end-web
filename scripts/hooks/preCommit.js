@@ -56,7 +56,7 @@ function checkCandidates() {
     console.error(`Cannot commit: ${CANDIDATES_DIR} contains files.`);
     console.error('');
     console.error('Components in candidates/ must be decomposed:');
-    console.error('  1. Extract reusable elements → primitives/');
+    console.error('  1. Extract reusable elements → shared/');
     console.error('  2. Compose feature component → features/');
     console.error('  3. Delete from candidates/');
     console.error('');

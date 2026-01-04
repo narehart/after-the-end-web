@@ -46,19 +46,22 @@ const selectedId = useInventoryStore((s) => s.selectedItemId);
 
 **Enforced by custom ESLint rules and ls-lint:**
 
-| Directory | Naming | Contents |
-|-----------|--------|----------|
-| `src/components/` | PascalCase | `.tsx` + paired `.module.css` |
-| `src/hooks/` | `use*.ts` | One custom hook per file |
-| `src/utils/` | camelCase | One function per file |
-| `src/constants/` | camelCase | Data constants only (no functions) |
-| `src/types/` | camelCase | Type definitions only |
-| `src/stores/slices/` | `*Slice.ts` | Zustand slice creators |
-| `eslint-rules/` | kebab-case | Custom ESLint rules |
+| Directory                 | Naming      | Contents                                                 |
+| ------------------------- | ----------- | -------------------------------------------------------- |
+| `src/components/`         | PascalCase  | `.tsx` + paired `.module.css`                            |
+| `src/components/shared/`  | PascalCase  | Reusable primitive components                            |
+| `src/components/<scene>/` | PascalCase  | Scene-specific components (e.g., `inventory/`, `world/`) |
+| `src/hooks/`              | `use*.ts`   | One custom hook per file                                 |
+| `src/utils/`              | camelCase   | One function per file                                    |
+| `src/constants/`          | camelCase   | Data constants only (no functions)                       |
+| `src/types/`              | camelCase   | Type definitions only                                    |
+| `src/stores/slices/`      | `*Slice.ts` | Zustand slice creators                                   |
+| `eslint-rules/`           | kebab-case  | Custom ESLint rules                                      |
 
 ### CSS Architecture
 
 **CSS Modules with design tokens:**
+
 - All styling via CSS variables defined in `src/index.css`
 - Stylelint enforces variables for colors, spacing, typography, shadows
 - BEM naming: `.block-element--modifier`
@@ -69,19 +72,19 @@ import classNames from 'classnames/bind';
 import styles from './Component.module.css';
 const cx = classNames.bind(styles);
 
-<div className={cx('cell', { 'cell--selected': isSelected })} />
+<div className={cx('cell', { 'cell--selected': isSelected })} />;
 ```
 
 **Custom property prefixes:** `font-`, `space-`, `z-`, `shadow-`, `size-`, `bg-`, `text-`, `border-`, `accent-`
 
 ### Complexity Limits
 
-| Metric | Limit |
-|--------|-------|
-| File lines | 250 |
-| Function lines | 100 |
-| Statements per function | 20 |
-| Cyclomatic complexity | 10 |
+| Metric                  | Limit |
+| ----------------------- | ----- |
+| File lines              | 250   |
+| Function lines          | 100   |
+| Statements per function | 20    |
+| Cyclomatic complexity   | 10    |
 
 ## Custom ESLint Rules
 
@@ -102,12 +105,14 @@ Located in `eslint-rules/`, these enforce architectural constraints:
 ## TypeScript Configuration
 
 **Strictest possible settings** - all strict flags enabled plus:
+
 - `exactOptionalPropertyTypes`
 - `noUncheckedIndexedAccess`
 - `noPropertyAccessFromIndexSignature`
 - `verbatimModuleSyntax`
 
 ESLint enforces:
+
 - Explicit return types on functions
 - No `any` types
 - Consistent type imports (`import type`)
@@ -141,9 +146,9 @@ Prefer using the Chrome DevTools MCP to verify UI fixes over taking screenshots.
   return {
     color: styles.color,
     padding: styles.padding,
-    display: styles.display
+    display: styles.display,
   };
-}
+};
 ```
 
 This provides precise, programmatic verification of CSS values rather than visual inspection.
@@ -151,6 +156,7 @@ This provides precise, programmatic verification of CSS values rather than visua
 ## Gamepad Support
 
 Full gamepad navigation via:
+
 - `useGamepad.ts` - Core gamepad polling and event handling
 - `useGamepadNavigation.ts` - Directional navigation with repeat delay
 - `useMenuKeyboard.ts` - Keyboard fallback for menu navigation

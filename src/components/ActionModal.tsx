@@ -7,7 +7,7 @@ import { useMenuActions } from '../hooks/useMenuActions';
 import useMenuContext from '../hooks/useMenuContext';
 import useMenuLevels from '../hooks/useMenuLevels';
 import useMenuKeyboard from '../hooks/useMenuKeyboard';
-import { Modal, Panel } from './primitives';
+import { Modal, Panel } from './shared';
 import MenuList from './MenuList';
 import styles from './ActionModal.module.css';
 
