@@ -1,6 +1,6 @@
 /* Scrollbar styling */
 .equipment-slots::-webkit-scrollbar {
-  width: 4px;
+  width: var(--size-scrollbar-sm);
 }
 
 .equipment-slots::-webkit-scrollbar-track {

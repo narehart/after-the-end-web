@@ -4,18 +4,18 @@
 }
 
 .icon--sm {
-  width: 16px;
-  height: 16px;
+  width: var(--size-icon-sm);
+  height: var(--size-icon-sm);
 }
 
 .icon--md {
-  width: 24px;
-  height: 24px;
+  width: var(--size-icon);
+  height: var(--size-icon);
 }
 
 .icon--lg {
-  width: 32px;
-  height: 32px;
+  width: var(--size-icon-lg);
+  height: var(--size-icon-lg);
 }
 
 .icon--fill {

@@ -146,7 +146,6 @@ export default {
     // ============================================
 
     // Strict values - enforce CSS variables for design-related properties
-    // NOTE: width/height are NOT enforced - component-specific sizes are OK as literals
     'scale-unlimited/declaration-strict-value': [
       [
         // Colors
@@ -163,6 +162,13 @@ export default {
         // Typography (font-size/weight/family banned entirely via property-disallowed-list)
         'line-height',
         'letter-spacing',
+        // Sizing
+        'width',
+        'height',
+        'min-width',
+        'min-height',
+        'max-width',
+        'max-height',
         // Spacing
         'padding',
         'padding-top',
@@ -203,6 +209,10 @@ export default {
           'unset',
           'auto',
           '0',
+          '100%',
+          '100vh',
+          '100vw',
+          'fit-content',
           '/^var\\(--[a-z0-9-]+\\)$/',
           '/^linear-gradient/',
           '/^radial-gradient/',

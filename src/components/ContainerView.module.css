@@ -4,8 +4,8 @@
 
 /* Scrollbar styling */
 .container-view-content::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: var(--size-scrollbar);
+  height: var(--size-scrollbar);
 }
 
 .container-view-content::-webkit-scrollbar-track {

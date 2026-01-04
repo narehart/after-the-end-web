@@ -26,7 +26,7 @@ export default function PanelHeader({
       return <Breadcrumb links={breadcrumbLinks ?? []} icon={breadcrumbIcon} clipLinks />;
     case 'title':
       return (
-        <Flex as="h3" align="center" className={titleClassName}>
+        <Flex align="center" className={titleClassName}>
           {title}
         </Flex>
       );

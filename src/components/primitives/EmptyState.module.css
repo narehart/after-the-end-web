@@ -3,15 +3,6 @@
   text-align: center;
 }
 
-.empty-icon {
-  margin-bottom: var(--space-8);
-  opacity: var(--opacity-muted);
-}
-
-.empty-message {
-  font-style: italic;
-}
-
 .empty-description {
   margin-top: var(--space-4);
   opacity: var(--opacity-muted);

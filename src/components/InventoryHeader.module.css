@@ -66,7 +66,7 @@
   border: var(--border-default);
   box-shadow: var(--shadow-md);
   z-index: var(--z-dropdown);
-  min-width: 200px;
+  min-width: var(--size-dropdown);
 }
 
 .resolution-option {
@@ -96,7 +96,7 @@
   border: var(--border-default);
   cursor: pointer;
   transition: var(--transition-fast);
-  min-width: 70px;
+  min-width: var(--size-avatar);
 }
 
 .steam-deck-btn:hover {
@@ -110,8 +110,8 @@
 }
 
 .scale-slider {
-  width: 60px;
-  height: 4px;
+  width: var(--size-slider);
+  height: var(--size-scrollbar-sm);
   appearance: none;
   background: var(--border-color);
   cursor: pointer;
@@ -119,23 +119,23 @@
 
 .scale-slider::-webkit-slider-thumb {
   appearance: none;
-  width: 10px;
-  height: 10px;
+  width: var(--size-slider-thumb);
+  height: var(--size-slider-thumb);
   background: var(--accent-teal);
   cursor: pointer;
 }
 
 .scale-slider::-moz-range-thumb {
-  width: 10px;
-  height: 10px;
+  width: var(--size-slider-thumb);
+  height: var(--size-slider-thumb);
   background: var(--accent-teal);
   cursor: pointer;
   border: none;
 }
 
 .close-btn {
-  width: 26px;
-  height: 26px;
+  width: var(--size-btn);
+  height: var(--size-btn);
   background: var(--bg-cell);
   border: var(--border-default);
   cursor: pointer;

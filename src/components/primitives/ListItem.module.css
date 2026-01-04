@@ -46,8 +46,8 @@
 }
 
 .list-item-icon {
-  width: 32px;
-  height: 32px;
+  width: var(--size-icon-lg);
+  height: var(--size-icon-lg);
   flex-shrink: 0;
   opacity: var(--opacity-muted);
 }

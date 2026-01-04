@@ -7,14 +7,12 @@ const cx = classNames.bind(styles);
 
 interface EmptyStateProps {
   message: string;
-  icon?: ReactNode;
   description?: ReactNode;
   className?: string;
 }
 
 export default function EmptyState({
   message,
-  icon,
   description,
   className,
 }: EmptyStateProps): React.JSX.Element {
@@ -25,14 +23,7 @@ export default function EmptyState({
       justify="center"
       className={className !== undefined ? `${cx('empty-state')} ${className}` : cx('empty-state')}
     >
-      {icon !== undefined ? (
-        <Text size="lg" className={cx('empty-icon')}>
-          {icon}
-        </Text>
-      ) : null}
-      <Text type="muted" className={cx('empty-message')}>
-        {message}
-      </Text>
+      <Text type="muted">{message}</Text>
       {description !== undefined ? (
         <Text type="muted" size="xs" className={cx('empty-description')}>
           {description}

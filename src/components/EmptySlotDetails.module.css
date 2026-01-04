@@ -1,6 +1,6 @@
 /* Empty slot details - reuses DetailsPanel layout classes */
 .details-panel {
-  height: 161px;
+  height: var(--size-details-panel);
   flex-shrink: 0;
 }
 
@@ -13,8 +13,8 @@
 }
 
 .preview-frame {
-  width: 72px;
-  height: 72px;
+  width: var(--size-avatar);
+  height: var(--size-avatar);
   background: transparent;
   border: var(--border-dashed);
 }

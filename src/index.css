@@ -62,6 +62,16 @@
   --space-16: 1rem; /* 16px */
   --space-24: 1.5rem; /* 24px */
   --space-32: 2rem; /* 32px */
+  --space-40: 2.5rem; /* 40px */
+  --space-48: 3rem; /* 48px */
+  --space-64: 4rem; /* 64px */
+  --space-72: 4.5rem; /* 72px */
+  --space-96: 6rem; /* 96px */
+  --space-128: 8rem; /* 128px */
+  --space-160: 10rem; /* 160px */
+  --space-256: 16rem; /* 256px */
+  --space-320: 20rem; /* 320px */
+  --space-512: 32rem; /* 512px */
 
   /* Z-index scale (semantic layers) */
   --z-base: 1;
@@ -75,15 +85,23 @@
   --shadow-md: 0 4px 12px rgb(0 0 0 / 50%);
   --shadow-lg: 20px 20px 16px rgb(0 0 0 / 50%);
 
-  /* Size scale (semantic) */
-  --size-scrollbar: 6px;
-  --size-track: 10px; /* progress bars, sliders */
-  --size-icon: 24px;
-  --size-icon-lg: 32px;
-  --size-touch: 48px; /* minimum touch target */
-  --size-avatar: 72px;
-  --size-header: 2.5rem;
-  --size-modal: 500px;
+  /* Size scale (semantic) - references space scale */
+  --size-scrollbar: var(--space-6);
+  --size-scrollbar-sm: var(--space-4);
+  --size-track: var(--space-10); /* progress bars, sliders */
+  --size-slider: var(--space-64);
+  --size-slider-thumb: var(--space-10);
+  --size-icon-sm: var(--space-16);
+  --size-icon: var(--space-24);
+  --size-icon-lg: var(--space-32);
+  --size-btn: var(--space-24); /* small icon buttons */
+  --size-touch: var(--space-48); /* minimum touch target */
+  --size-dropdown: var(--space-256);
+  --size-avatar: var(--space-72);
+  --size-preview: var(--space-96);
+  --size-header: var(--space-40);
+  --size-details-panel: var(--space-160);
+  --size-modal: var(--space-512);
 
   /* Opacity scale */
   --opacity-faint: 40%;

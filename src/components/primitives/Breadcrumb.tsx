@@ -40,15 +40,11 @@ export default function Breadcrumb({
             onClick={seg.onClick}
             disabled={seg.isCurrent === true || seg.onClick === undefined}
           >
-            {seg.isCurrent === true ? (
-              <Text strong ellipsis>
-                {seg.label}
-              </Text>
-            ) : (
-              <Text ellipsis>{seg.label}</Text>
-            )}
+            <Text size="base" ellipsis>
+              {seg.label}
+            </Text>
           </Button>
-          {seg.showSeparator === true ? <Text>›</Text> : null}
+          {seg.showSeparator === true ? <Text size="base">›</Text> : null}
         </Flex>
       ))}
     </Flex>

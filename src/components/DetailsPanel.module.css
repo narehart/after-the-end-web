@@ -1,6 +1,6 @@
 /* Override Panel defaults for fixed height */
 .details-panel {
-  height: 161px;
+  height: var(--size-details-panel);
   flex-shrink: 0;
 }
 
@@ -14,8 +14,8 @@
 }
 
 .preview-frame {
-  width: 96px;
-  height: 96px;
+  width: var(--size-preview);
+  height: var(--size-preview);
   padding: var(--space-8);
   background: var(--bg-cell);
   border: var(--border-default);
@@ -63,7 +63,7 @@
 
 /* Scrollbar styling */
 .details-content::-webkit-scrollbar {
-  width: 4px;
+  width: var(--size-scrollbar-sm);
 }
 
 .details-content::-webkit-scrollbar-track {

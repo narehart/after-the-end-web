@@ -30,8 +30,8 @@
 
 /* Menu item specific overrides */
 .menu-item .list-item-icon {
-  width: 24px;
-  height: 24px;
+  width: var(--size-icon);
+  height: var(--size-icon);
   filter: grayscale(0.3);
 }
 

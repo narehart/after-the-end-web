@@ -67,7 +67,7 @@ export default function ListItem({
           {icon}
         </Flex>
       ) : null}
-      <Text ellipsis className={cx('list-item-label')}>
+      <Text ellipsis size="base" className={cx('list-item-label')}>
         {label}
       </Text>
       {meta !== null && meta !== undefined ? (
