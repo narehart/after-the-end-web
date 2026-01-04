@@ -10,10 +10,6 @@
   flex-shrink: 0;
 }
 
-.equipment-slot--empty .equipment-slot-icon {
-  opacity: var(--opacity-muted);
-}
-
 /* Equipment slot label */
 .equipment-slot-label {
   flex: 1;

@@ -1,4 +1,3 @@
-import type { MouseEvent, KeyboardEvent } from 'react';
 import { useRef } from 'react';
 import classNames from 'classnames/bind';
 import useEquipmentSlot from '../hooks/useEquipmentSlot';
@@ -17,28 +16,17 @@ interface EquipmentSlotProps {
 
 export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.JSX.Element {
   const slotRef = useRef<HTMLButtonElement | null>(null);
-  const { slotState, handleClick, openModal, handleMouseEnter } = useEquipmentSlot({ slotType });
+  const {
+    slotState,
+    handleClick,
+    handleDoubleClick,
+    handleContextMenu,
+    handleKeyDown,
+    handleMouseEnter,
+  } = useEquipmentSlot({ slotType, slotRef });
+
   const { item, hasGrid, isFocused } = slotState;
   const isEmpty = item === null;
-
-  const handleDoubleClick = (): void => {
-    if (slotRef.current !== null) {
-      openModal(slotRef.current);
-    }
-  };
-
-  const handleContextMenu = (e: MouseEvent<HTMLButtonElement>): void => {
-    e.preventDefault();
-    if (slotRef.current !== null) {
-      openModal(slotRef.current);
-    }
-  };
-
-  const handleKeyDown = (e: KeyboardEvent<HTMLButtonElement>): void => {
-    if (e.key === 'Enter' && item !== null && slotRef.current !== null) {
-      openModal(slotRef.current);
-    }
-  };
 
   return (
     <ListItem

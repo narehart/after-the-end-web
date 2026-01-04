@@ -167,6 +167,7 @@ export interface UseCellSizeProps {
 
 export interface UseEquipmentSlotProps {
   slotType: SlotType;
+  slotRef: MutableRefObject<HTMLButtonElement | null>;
 }
 
 export interface UsePanelNavigationProps {

@@ -1,77 +1,38 @@
-import { useMemo, useCallback } from 'react';
-import { FIRST_INDEX } from '../constants/numbers';
-import { useInventoryStore } from '../stores/inventoryStore';
+import type { MouseEvent, KeyboardEvent } from 'react';
 import type { SlotState } from '../types/ui';
 import type { UseEquipmentSlotProps } from '../types/utils';
-import { getModalPosition } from '../utils/getModalPosition';
+import useSlotItem from './useSlotItem';
+import useSlotFocus from './useSlotFocus';
+import useSlotHandlers from './useSlotHandlers';
 
 interface UseEquipmentSlotReturn {
   slotState: SlotState;
   handleClick: () => void;
-  openModal: (element: HTMLElement) => void;
+  handleDoubleClick: () => void;
+  handleContextMenu: (e: MouseEvent<HTMLButtonElement>) => void;
+  handleKeyDown: (e: KeyboardEvent<HTMLButtonElement>) => void;
   handleMouseEnter: () => void;
 }
 
-export default function useEquipmentSlot(props: UseEquipmentSlotProps): UseEquipmentSlotReturn {
-  const { slotType } = props;
-  const equipment = useInventoryStore((state) => state.equipment);
-  const items = useInventoryStore((state) => state.items);
-  const inventoryFocusPath = useInventoryStore((state) => state.inventoryFocusPath);
-  const selectedItemId = useInventoryStore((state) => state.selectedItemId);
-  const focusOnEquipmentSlot = useInventoryStore((state) => state.focusOnEquipmentSlot);
-  const setSelectedItem = useInventoryStore((state) => state.setSelectedItem);
-  const setFocusedEmptySlot = useInventoryStore((state) => state.setFocusedEmptySlot);
-  const openMenu = useInventoryStore((state) => state.openMenu);
-  const menuIsOpen = useInventoryStore((state) => state.menu.isOpen);
-  const menuItemId = useInventoryStore((state) => state.menu.itemId);
+export default function useEquipmentSlot({
+  slotType,
+  slotRef,
+}: UseEquipmentSlotProps): UseEquipmentSlotReturn {
+  const { item, itemId, hasGrid } = useSlotItem({ slotType });
+  const { isFocused, isHovered, hasOpenModal } = useSlotFocus({ itemId });
+  const handlers = useSlotHandlers({ slotType, slotRef, item, itemId, hasGrid });
 
-  const itemId = equipment[slotType];
-  const item = itemId !== null ? (items[itemId] ?? null) : null;
-  const hasOpenModal = menuIsOpen && menuItemId === itemId;
-
-  const slotState = useMemo(
-    (): SlotState => ({
-      item,
-      itemId,
-      hasGrid: item?.gridSize !== undefined,
-      isFocused: inventoryFocusPath[FIRST_INDEX] === itemId,
-      isHovered: itemId !== null && itemId === selectedItemId,
-      hasOpenModal,
-    }),
-    [item, itemId, inventoryFocusPath, selectedItemId, hasOpenModal]
-  );
-
-  const handleClick = useCallback((): void => {
-    if (item !== null && itemId !== null) {
-      setSelectedItem(itemId);
-      if (slotState.hasGrid) {
-        focusOnEquipmentSlot(slotType);
-      }
-    }
-  }, [item, itemId, slotState.hasGrid, setSelectedItem, focusOnEquipmentSlot, slotType]);
-
-  const openModal = useCallback(
-    (element: HTMLElement): void => {
-      if (item !== null && itemId !== null) {
-        setSelectedItem(itemId);
-        openMenu(getModalPosition({ element }), itemId, slotType, 'equipment');
-      }
-    },
-    [item, itemId, slotType, setSelectedItem, openMenu]
-  );
-
-  const handleMouseEnter = useCallback((): void => {
-    if (item !== null && itemId !== null) {
-      setSelectedItem(itemId);
-    } else {
-      setFocusedEmptySlot(slotType);
-    }
-  }, [item, itemId, slotType, setSelectedItem, setFocusedEmptySlot]);
+  const slotState: SlotState = {
+    item,
+    itemId,
+    hasGrid,
+    isFocused,
+    isHovered,
+    hasOpenModal,
+  };
 
   return {
     slotState,
-    handleClick,
-    openModal,
-    handleMouseEnter,
+    ...handlers,
   };
 }
