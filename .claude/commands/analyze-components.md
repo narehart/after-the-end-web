@@ -16,8 +16,8 @@ If no arguments provided, analyze all components in `src/components/`.
 ## Process
 
 1. Get list of component files to analyze, excluding:
-   - **Primitives:** Box, Flex, Text, Button, Panel, Icon, Image, Input, List, ListItem
-   - **Library essentials:** Modal, Breadcrumb, EmptyState (common UI patterns that belong in any component library)
+   - **Primitives:** Box, Flex, Text, Button, Panel, Icon, Image, Input, List, ListItem, EmptyState
+   - **Library essentials:** Modal, Breadcrumb (common UI patterns that belong in any component library)
 
 2. For each component, launch a **component-analyzer** agent to analyze it
 
@@ -39,3 +39,4 @@ If no arguments provided, analyze all components in `src/components/`.
 - Prefer adding props to existing primitives over creating new ones
 - Question whether each component even needs to exist
 - NEVER suggest removing library essential components - patterns found in standard UI libraries (Ant Design, etc.) should exist regardless of current usage count
+- NEVER suggest removing ListItem from components that are children of List - the `List > ListItem` relationship is semantically required for accessibility
