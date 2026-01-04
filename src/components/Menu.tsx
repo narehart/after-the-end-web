@@ -8,7 +8,7 @@ import { useMenuActions } from '../hooks/useMenuActions';
 import useMenuContext from '../hooks/useMenuContext';
 import useMenuLevels from '../hooks/useMenuLevels';
 import useMenuKeyboard from '../hooks/useMenuKeyboard';
-import { Box, Breadcrumb } from './primitives';
+import { Box, Panel } from './primitives';
 import MenuList from './MenuList';
 import styles from './Menu.module.css';
 
@@ -64,17 +64,23 @@ export default function Menu(): React.JSX.Element | null {
         aria-label="Close menu"
       />
       <Box ref={menuRef} className={cx('menu-modal')} tabIndex={NOT_FOUND_INDEX}>
-        <Breadcrumb links={breadcrumbLinks} icon={itemIcon} clipLinks />
-        <MenuList
-          items={currentItems}
-          context={context}
-          focusIndex={menu.focusIndex}
-          onSelect={handleSelect}
-          onSetFocusIndex={menuSetFocusIndex}
+        <Panel
+          breadcrumbLinks={breadcrumbLinks}
+          {...(itemIcon !== undefined ? { breadcrumbIcon: itemIcon } : {})}
           emptyMessage={
             menu.path.length > FIRST_INDEX ? 'No containers here' : 'No actions available'
           }
-        />
+        >
+          {currentItems.length > FIRST_INDEX ? (
+            <MenuList
+              items={currentItems}
+              context={context}
+              focusIndex={menu.focusIndex}
+              onSelect={handleSelect}
+              onSetFocusIndex={menuSetFocusIndex}
+            />
+          ) : null}
+        </Panel>
       </Box>
     </>
   );

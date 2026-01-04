@@ -20,14 +20,6 @@
   outline: none;
 }
 
-.menu-modal .breadcrumb {
-  border-bottom: var(--border-panel);
-}
-
-.menu-list {
-  padding: var(--space-8);
-}
-
 /* Menu item specific overrides */
 .menu-item .list-item-icon {
   width: var(--size-icon);
