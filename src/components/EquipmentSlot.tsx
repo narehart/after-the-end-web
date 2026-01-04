@@ -2,8 +2,7 @@ import { useRef } from 'react';
 import classNames from 'classnames/bind';
 import useEquipmentSlot from '../hooks/useEquipmentSlot';
 import type { SlotType } from '../types/inventory';
-import { getImageUrl } from '../utils/images';
-import { getMainImage } from '../utils/getMainImage';
+import { getItemImageUrl } from '../utils/getItemImageUrl';
 import { formatSlotLabel } from '../utils/formatSlotLabel';
 import { Icon, ListItem, Button, Flex, Text } from './primitives';
 import styles from './EquipmentSlot.module.css';
@@ -41,7 +40,7 @@ export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.J
         <Flex align="center" gap="8">
           {item !== null && item.image !== '' ? (
             <Icon
-              src={getImageUrl(getMainImage({ allImages: item.allImages }))}
+              src={getItemImageUrl({ allImages: item.allImages })}
               alt={item.description}
               size="lg"
               pixelated
