@@ -56,3 +56,17 @@
   background: var(--bg-elevated);
   border-color: var(--border-light);
 }
+
+/* Ghost variant - completely unstyled, inherits from parent */
+.button--ghost {
+  width: 100%;
+  padding: 0;
+  background: none;
+  border: none;
+  color: inherit;
+  text-align: left;
+}
+
+.button--ghost:disabled {
+  cursor: not-allowed;
+}

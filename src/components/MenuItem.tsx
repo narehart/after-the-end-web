@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import type { MenuItem as MenuItemType, UseMenuContextReturn } from '../types/inventory';
-import { ListItem } from './primitives';
+import { ListItem, Flex, Text, Button } from './primitives';
 import styles from './MenuItem.module.css';
 
 const cx = classNames.bind(styles);
@@ -23,7 +23,6 @@ export default function MenuItem({
   onMouseEnter,
 }: MenuItemProps): React.JSX.Element {
   const isDisabled = typeof item.disabled === 'function' ? item.disabled(context) : item.disabled;
-  const label = item.label;
 
   const handleClick = (): void => {
     if (isDisabled !== true) {
@@ -31,18 +30,37 @@ export default function MenuItem({
     }
   };
 
-  const state = { isFocused, isSelected, isDisabled: isDisabled === true };
-
   return (
-    <ListItem
-      icon={item.icon}
-      label={label}
-      meta={item.meta}
-      hasArrow={item.hasChildren}
-      state={state}
-      onClick={handleClick}
-      onMouseEnter={onMouseEnter}
-      className={cx('menu-item')}
-    />
+    <ListItem selected={isSelected} focused={isFocused} disabled={isDisabled === true}>
+      <Button
+        variant="ghost"
+        onClick={handleClick}
+        onMouseEnter={onMouseEnter}
+        disabled={isDisabled === true}
+        role="option"
+        aria-selected={isFocused}
+      >
+        <Flex align="center" gap="8" className={cx('menu-item-content')}>
+          {item.icon !== undefined ? (
+            <Flex align="center" justify="center" className={cx('menu-item-icon')}>
+              {item.icon}
+            </Flex>
+          ) : null}
+          <Text ellipsis size="base" className={cx('menu-item-label')}>
+            {item.label}
+          </Text>
+          {item.meta !== undefined ? (
+            <Text type="muted" code className={cx('menu-item-meta')}>
+              {item.meta}
+            </Text>
+          ) : null}
+          {item.hasChildren === true ? (
+            <Text type="muted" className={cx('menu-item-arrow')}>
+              ›
+            </Text>
+          ) : null}
+        </Flex>
+      </Button>
+    </ListItem>
   );
 }

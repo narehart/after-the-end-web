@@ -1,6 +1,23 @@
-/* Menu item specific overrides */
-.menu-item .list-item-icon {
+/* Menu item content layout */
+.menu-item-content {
+  width: 100%;
+}
+
+/* Menu item icon */
+.menu-item-icon {
   width: var(--size-icon);
   height: var(--size-icon);
+  flex-shrink: 0;
   filter: grayscale(0.3);
+}
+
+/* Menu item label */
+.menu-item-label {
+  flex: 1;
+}
+
+/* Menu item arrow */
+.menu-item-arrow {
+  margin-left: auto;
+  padding-left: var(--space-6);
 }

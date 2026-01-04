@@ -34,14 +34,6 @@ export interface ItemGridHandlers {
   handleFocus: () => void;
 }
 
-export interface ListItemState {
-  isFocused?: boolean;
-  isActive?: boolean;
-  isSelected?: boolean;
-  isDisabled?: boolean;
-  isEmpty?: boolean;
-}
-
 export type BorderPosition = 'right' | 'left' | 'top' | 'bottom';
 
 export interface LinkWithIcon extends BreadcrumbLink {
@@ -140,6 +132,6 @@ export type FlexGap = '0' | '2' | '4' | '6' | '8' | '12' | '16' | '24' | '32';
 
 export type IconSize = 'sm' | 'md' | 'lg' | 'fill' | number;
 
-export type ButtonVariant = 'default' | 'text' | 'toolbar';
+export type ButtonVariant = 'default' | 'text' | 'toolbar' | 'ghost';
 
 export type PanelHeaderTypeReturn = 'custom' | 'breadcrumb' | 'title' | 'none';

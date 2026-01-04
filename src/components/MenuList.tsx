@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import { FIRST_INDEX } from '../constants/numbers';
 import type { MenuItem as MenuItemType, UseMenuContextReturn } from '../types/inventory';
 import MenuItem from './MenuItem';
-import { Box, Text } from './primitives';
+import { List, Text } from './primitives';
 import styles from './MenuList.module.css';
 
 const cx = classNames.bind(styles);
@@ -36,31 +36,34 @@ export default function MenuList({
     );
   }
 
-  const getMouseEnterHandler = (index: number): (() => void) | undefined => {
-    if (onSetFocusIndex !== undefined)
-      return (): void => {
-        onSetFocusIndex(index);
-      };
-    if (onHoverItem !== undefined)
-      return (): void => {
-        onHoverItem(index);
-      };
-    return undefined;
-  };
-
   return (
-    <Box>
-      {items.map((item, index) => (
-        <MenuItem
-          key={item.id}
-          item={item}
-          context={context}
-          isFocused={index === focusIndex}
-          isSelected={item.id === selectedId}
-          onSelect={onSelect}
-          onMouseEnter={getMouseEnterHandler(index)}
-        />
-      ))}
-    </Box>
+    <List
+      dataSource={items}
+      rowKey="id"
+      role="listbox"
+      renderItem={(item: MenuItemType, index: number): React.JSX.Element => {
+        const handleMouseEnter =
+          onSetFocusIndex !== undefined
+            ? (): void => {
+                onSetFocusIndex(index);
+              }
+            : onHoverItem !== undefined
+              ? (): void => {
+                  onHoverItem(index);
+                }
+              : undefined;
+
+        return (
+          <MenuItem
+            item={item}
+            context={context}
+            isFocused={index === focusIndex}
+            isSelected={item.id === selectedId}
+            onSelect={onSelect}
+            onMouseEnter={handleMouseEnter}
+          />
+        );
+      }}
+    />
   );
 }

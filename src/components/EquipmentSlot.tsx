@@ -6,7 +6,7 @@ import type { SlotType } from '../types/inventory';
 import { getImageUrl } from '../utils/images';
 import { getMainImage } from '../utils/getMainImage';
 import { formatSlotLabel } from '../utils/formatSlotLabel';
-import { Icon, ListItem } from './primitives';
+import { Icon, ListItem, Button, Flex, Text } from './primitives';
 import styles from './EquipmentSlot.module.css';
 
 const cx = classNames.bind(styles);
@@ -19,6 +19,7 @@ export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.J
   const slotRef = useRef<HTMLButtonElement | null>(null);
   const { slotState, handleClick, openModal, handleMouseEnter } = useEquipmentSlot({ slotType });
   const { item, hasGrid, isFocused } = slotState;
+  const isEmpty = item === null;
 
   const handleDoubleClick = (): void => {
     if (slotRef.current !== null) {
@@ -39,34 +40,46 @@ export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.J
     }
   };
 
-  const state = {
-    isActive: isFocused,
-    isEmpty: item === null,
-  };
-
-  const icon =
-    item !== null && item.image !== '' ? (
-      <Icon
-        src={getImageUrl(getMainImage({ allImages: item.allImages }))}
-        alt={item.description}
-        size="fill"
-        pixelated
-      />
-    ) : null;
-
   return (
     <ListItem
-      itemRef={slotRef}
-      icon={icon}
-      label={formatSlotLabel({ slotType })}
-      hasArrow={hasGrid}
-      state={state}
-      onClick={handleClick}
-      onDoubleClick={handleDoubleClick}
-      onContextMenu={handleContextMenu}
-      onKeyDown={handleKeyDown}
-      onMouseEnter={handleMouseEnter}
-      className={cx('equipment-slot')}
-    />
+      active={isFocused}
+      className={cx('equipment-slot', { 'equipment-slot--empty': isEmpty })}
+    >
+      <Button
+        ref={slotRef}
+        variant="ghost"
+        onClick={handleClick}
+        onDoubleClick={handleDoubleClick}
+        onContextMenu={handleContextMenu}
+        onKeyDown={handleKeyDown}
+        onMouseEnter={handleMouseEnter}
+      >
+        <Flex align="center" gap="8" className={cx('equipment-slot-content')}>
+          {item !== null && item.image !== '' ? (
+            <Flex align="center" justify="center" className={cx('equipment-slot-icon')}>
+              <Icon
+                src={getImageUrl(getMainImage({ allImages: item.allImages }))}
+                alt={item.description}
+                size="fill"
+                pixelated
+              />
+            </Flex>
+          ) : null}
+          <Text
+            ellipsis
+            size="base"
+            type={isEmpty ? 'muted' : undefined}
+            className={cx('equipment-slot-label')}
+          >
+            {formatSlotLabel({ slotType })}
+          </Text>
+          {hasGrid ? (
+            <Text type="muted" className={cx('equipment-slot-arrow')}>
+              ›
+            </Text>
+          ) : null}
+        </Flex>
+      </Button>
+    </ListItem>
   );
 }
