@@ -35,7 +35,6 @@
 
 .item-type {
   margin: 0;
-  letter-spacing: var(--letter-spacing-tight);
 }
 
 .item-description {

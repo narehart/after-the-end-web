@@ -10,8 +10,6 @@
 
 .header-title {
   margin: 0;
-  letter-spacing: var(--letter-spacing-wide);
-  text-transform: uppercase;
 }
 
 .header-controls {

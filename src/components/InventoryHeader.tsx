@@ -34,7 +34,7 @@ export default function InventoryHeader(props: InventoryHeaderProps): React.JSX.
   return (
     <Flex as="header" align="center" className={cx('inventory-header')}>
       <Text className={cx('header-icon')}>☢</Text>
-      <Text as="h1" size="lg" strong className={cx('header-title')}>
+      <Text as="h1" size="lg" strong uppercase spacing="wide" className={cx('header-title')}>
         INVENTORY
       </Text>
       <Flex align="center" gap="12" className={cx('header-controls')}>

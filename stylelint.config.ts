@@ -70,8 +70,15 @@ export default {
 
     // Disallow specific patterns
     'declaration-no-important': true,
-    // Ban font properties entirely - only allowed in index.css and Text.module.css
-    'property-disallowed-list': ['font-size', 'font-weight', 'font-family'],
+    // Ban font/text properties - only allowed in index.css and Text.module.css
+    'property-disallowed-list': [
+      'font-size',
+      'font-weight',
+      'font-family',
+      'font-style', // Not supported for pixel fonts
+      'text-transform', // Use Text uppercase prop
+      'letter-spacing', // Use Text spacing prop
+    ],
     'declaration-property-value-disallowed-list': {
       display: ['flex', 'inline-flex'],
       color: ['/var\\(--text-(muted|secondary)\\)/'],

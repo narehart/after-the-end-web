@@ -47,3 +47,33 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+.text--uppercase {
+  text-transform: uppercase;
+}
+
+/* Alignment variants */
+.text--align-left {
+  text-align: left;
+}
+
+.text--align-center {
+  text-align: center;
+}
+
+.text--align-right {
+  text-align: right;
+}
+
+/* Letter spacing variants */
+.text--spacing-tight {
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.text--spacing-normal {
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.text--spacing-wide {
+  letter-spacing: var(--letter-spacing-wide);
+}

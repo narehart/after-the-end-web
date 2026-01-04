@@ -23,9 +23,11 @@ export default function EmptyState({
       justify="center"
       className={className !== undefined ? `${cx('empty-state')} ${className}` : cx('empty-state')}
     >
-      <Text type="muted">{message}</Text>
+      <Text type="muted" align="center">
+        {message}
+      </Text>
       {description !== undefined ? (
-        <Text type="muted" size="xs" className={cx('empty-description')}>
+        <Text type="muted" size="xs" align="center" className={cx('empty-description')}>
           {description}
         </Text>
       ) : null}

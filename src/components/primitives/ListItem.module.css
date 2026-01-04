@@ -62,7 +62,6 @@
 
 .list-item.empty .list-item-label {
   color: var(--text-muted);
-  font-style: italic;
 }
 
 .list-item-arrow {

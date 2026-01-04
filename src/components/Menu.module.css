@@ -34,9 +34,3 @@
   height: var(--size-icon);
   filter: grayscale(0.3);
 }
-
-.menu-empty {
-  padding: var(--space-12);
-  font-style: italic;
-  text-align: center;
-}

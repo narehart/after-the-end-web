@@ -2,7 +2,7 @@
 import { forwardRef, type ReactNode } from 'react';
 import classNames from 'classnames/bind';
 import type { PolymorphicComponent, PolymorphicProps } from '../../types/polymorphic';
-import type { TextElement, TextSize, TextType } from '../../types/ui';
+import type { TextAlign, TextElement, TextSize, TextSpacing, TextType } from '../../types/ui';
 import styles from './Text.module.css';
 
 const cx = classNames.bind(styles);
@@ -15,6 +15,9 @@ interface TextOwnProps {
   bold?: boolean | undefined;
   code?: boolean | undefined;
   ellipsis?: boolean | undefined;
+  uppercase?: boolean | undefined;
+  align?: TextAlign | undefined;
+  spacing?: TextSpacing | undefined;
 }
 
 type TextProps<TComponent extends TextElement = 'span'> = PolymorphicProps<
@@ -33,6 +36,9 @@ const Text = forwardRef(
       bold,
       code,
       ellipsis,
+      uppercase,
+      align,
+      spacing,
       className,
       ...props
     }: TextProps<TComponent>,
@@ -46,6 +52,9 @@ const Text = forwardRef(
       'text--bold': bold === true,
       'text--code': code === true,
       'text--ellipsis': ellipsis === true,
+      'text--uppercase': uppercase === true,
+      [`text--align-${align}`]: align !== undefined,
+      [`text--spacing-${spacing}`]: spacing !== undefined,
     });
     const fullClassName = className !== undefined ? `${textClass} ${className}` : textClass;
 

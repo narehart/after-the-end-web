@@ -128,6 +128,10 @@ export type TextType = 'secondary' | 'muted';
 
 export type TextSize = 'xs' | 'sm' | 'base' | 'lg';
 
+export type TextAlign = 'left' | 'center' | 'right';
+
+export type TextSpacing = 'tight' | 'normal' | 'wide';
+
 export type FlexDirection = 'row' | 'column' | 'row-reverse' | 'column-reverse';
 export type FlexJustify = 'start' | 'end' | 'center' | 'between' | 'around' | 'evenly';
 export type FlexAlign = 'start' | 'end' | 'center' | 'baseline' | 'stretch';
