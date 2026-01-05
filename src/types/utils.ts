@@ -134,6 +134,7 @@ export type CreateItemInstanceReturn = Item;
 
 export interface BuildStatsLineProps {
   item: Item;
+  grids: GridsMap;
 }
 
 export interface CalculateItemDimensionsProps {

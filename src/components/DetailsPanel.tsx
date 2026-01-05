@@ -12,6 +12,7 @@ const cx = classNames.bind(styles);
 export default function DetailsPanel(): React.JSX.Element {
   const selectedItemId = useInventoryStore((state) => state.selectedItemId);
   const items = useInventoryStore((state) => state.items);
+  const grids = useInventoryStore((state) => state.grids);
 
   const item = selectedItemId !== null ? (items[selectedItemId] ?? null) : null;
 
@@ -47,7 +48,7 @@ export default function DetailsPanel(): React.JSX.Element {
               {item.name}
             </Text>
             <Text as="p" type="secondary" code ellipsis size="sm" className={cx('item-stats-line')}>
-              {buildStatsLine({ item })}
+              {buildStatsLine({ item, grids })}
             </Text>
             <Text as="p" type="muted" size="base" className={cx('item-flavor-text')}>
               {item.description}

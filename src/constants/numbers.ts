@@ -30,3 +30,4 @@ export const MIN_DURABILITY = 1;
 
 // Quantity
 export const DEFAULT_QUANTITY = 1;
+export const EMPTY_COUNT = 0;
