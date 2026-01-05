@@ -15,7 +15,7 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     label: 'Use',
     icon: '○',
     type: 'action',
-    show: (ctx: UseMenuContextReturn): boolean => ctx.item?.type === 'consumable',
+    show: (ctx: UseMenuContextReturn): boolean => ctx.item?.usable === true,
   },
   {
     id: 'equip',

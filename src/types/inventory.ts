@@ -43,7 +43,6 @@ export interface Item {
   type: ItemType;
   name: string;
   description: string;
-  flavorText?: string;
   size: ItemSize;
   weight: number;
   value: number;
@@ -53,6 +52,7 @@ export interface Item {
   gridSize?: ItemSize;
   durability?: number;
   quantity?: number;
+  usable?: boolean;
 }
 
 export type ItemsMap = Record<string, Item | undefined>;

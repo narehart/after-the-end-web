@@ -3,15 +3,13 @@
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
-import { execSync } from 'node:child_process';
 import { DOMParser } from '@xmldom/xmldom';
 import sharp from 'sharp';
 
 const NEO_DIR =
   '/Users/nicholasarehart/Library/Application Support/Steam/steamapps/common/NEO Scavenger';
-const OUTPUT_DIR = '/Users/nicholasarehart/after-the-end-godot/ui-experiments/src/assets/images';
-const DATA_OUTPUT =
-  '/Users/nicholasarehart/after-the-end-godot/ui-experiments/src/data/neoItems.json';
+const OUTPUT_DIR = '/Users/nicholasarehart/after-the-end-web/src/assets/images';
+const DATA_OUTPUT = '/Users/nicholasarehart/after-the-end-web/src/data/neoItems.json';
 
 // Each grid cell in Neo Scavenger is 10 pixels (from GUIInventorySlot.as: nCapacityPixel = 10)
 const CELL_SIZE_PIXELS = 10;
@@ -116,6 +114,9 @@ function extractItemData(item, imgDir) {
   const baseType = INTERESTING_GROUPS[groupId] ?? 'misc';
   const type = hasStorage ? 'container' : baseType;
 
+  // Items with vUseSlots can be "used" (consumed, applied, etc.)
+  const usable = str(item.vUseSlots).trim() !== '';
+
   const extracted = {
     id: `neo_${str(item.id)}`,
     neoId: str(item.id),
@@ -129,6 +130,7 @@ function extractItemData(item, imgDir) {
     image: camelImages[footprintImageIndex] ?? camelImages[0] ?? null,
     allImages: camelImages,
     ...(gridSize && { gridSize }),
+    ...(usable && { usable }),
   };
 
   return { extracted, originalImages };
@@ -189,71 +191,9 @@ function printSummary(items) {
   }
 }
 
-function generateFlavorTextForItem(item) {
-  const prompt = `Write ONE short punchy sentence of flavor text for this item. Post-apocalyptic survival game. Fallout-style: dark humor, ironic, or matter-of-fact. Keep it under 15 words. Don't always mention Florida - be subtle.
-
-Examples:
-- "Pre-war comfort food. The expiration date is... optimistic."
-- "Still works. Mostly."
-- "Someone thought they'd need this. They were right."
-
-Item: "${item.description}" (${item.type})
-
-Respond with ONLY the text, no quotes.`;
-
-  const result = execSync(
-    `ollama run mistral "${prompt.replace(/"/g, '\\"').replace(/\n/g, '\\n')}"`,
-    {
-      encoding: 'utf-8',
-      timeout: 30000,
-      maxBuffer: 1024 * 1024,
-    }
-  );
-
-  // Strip surrounding quotes that the model sometimes adds
-  return result.trim().replace(/^["']|["']$/g, '');
-}
-
-async function generateAllFlavorText(items) {
-  console.log('\nGenerating flavor text with Ollama (mistral)...');
-
-  // Only generate for interesting items (not misc)
-  const interesting = items.filter((item) => item.type !== 'misc');
-  console.log(
-    `  Processing ${interesting.length} items (skipping ${items.length - interesting.length} misc)`
-  );
-
-  let generated = 0;
-  for (let i = 0; i < interesting.length; i++) {
-    const item = interesting[i];
-    process.stdout.write(`  [${i + 1}/${interesting.length}] ${item.description.slice(0, 30)}...`);
-
-    try {
-      item.flavorText = generateFlavorTextForItem(item);
-      generated++;
-      console.log(' done');
-    } catch {
-      console.log(` failed`);
-      item.flavorText = `A ${item.type} scavenged from the Florida wasteland.`;
-    }
-  }
-
-  // Fallback for misc items
-  for (const item of items) {
-    if (item.flavorText === undefined) {
-      item.flavorText = `A ${item.type} scavenged from the Florida wasteland.`;
-    }
-  }
-
-  console.log(`  Generated ${generated} flavor texts`);
-}
-
 async function main() {
   console.log('Extracting items from Neo Scavenger...');
   const { items, imagesToCopy } = extractItems();
-
-  // Generate flavor text using Ollama
-  await generateAllFlavorText(items);
 
   mkdirSync(dirname(DATA_OUTPUT), { recursive: true });
   writeFileSync(DATA_OUTPUT, JSON.stringify(items, null, 2));
