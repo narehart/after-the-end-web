@@ -55,7 +55,7 @@ export default function MenuItem({
             </Text>
           ) : null}
           {item.hasChildren === true ? (
-            <Text type="muted" className={cx('menu-item-arrow')}>
+            <Text type="muted" size="base" className={cx('menu-item-arrow')}>
               ›
             </Text>
           ) : null}
