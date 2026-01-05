@@ -20,7 +20,6 @@ export default function EmptyState({
     <Flex
       direction="column"
       align="center"
-      justify="center"
       className={className !== undefined ? `${cx('empty-state')} ${className}` : cx('empty-state')}
     >
       <Text type="muted" align="center">

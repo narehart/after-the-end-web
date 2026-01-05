@@ -1,4 +1,5 @@
 .empty-state {
+  width: 100%;
   padding: var(--space-16);
 }
 
