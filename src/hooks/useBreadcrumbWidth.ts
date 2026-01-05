@@ -1,5 +1,5 @@
 import type { RefObject } from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import measureBreadcrumbWidth from '../utils/measureBreadcrumbWidth';
 
 export default function useBreadcrumbWidth(
@@ -7,7 +7,7 @@ export default function useBreadcrumbWidth(
 ): number | null {
   const [maxLinkWidth, setMaxLinkWidth] = useState<number | null>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const calculateWidth = (): void => {
       if (containerRef.current === null) {
         setMaxLinkWidth(null);
@@ -18,14 +18,22 @@ export default function useBreadcrumbWidth(
 
     calculateWidth();
 
-    const parent = containerRef.current?.parentElement;
+    const container = containerRef.current;
+    const parent = container?.parentElement;
+
     const resizeObserver = new ResizeObserver(calculateWidth);
     if (parent !== null && parent !== undefined) {
       resizeObserver.observe(parent);
     }
 
+    const mutationObserver = new MutationObserver(calculateWidth);
+    if (container !== null) {
+      mutationObserver.observe(container, { childList: true, subtree: true });
+    }
+
     return (): void => {
       resizeObserver.disconnect();
+      mutationObserver.disconnect();
     };
   }, [containerRef]);
 

@@ -1,3 +1,12 @@
 .breadcrumb--clip {
   width: 100%;
 }
+
+.breadcrumb--clip .breadcrumb-link {
+  display: block;
+  overflow: hidden;
+}
+
+.breadcrumb--clip .breadcrumb-link span {
+  display: block;
+}
