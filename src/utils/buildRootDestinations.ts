@@ -18,13 +18,17 @@ export function buildRootDestinations(
   const { equipment, itemId, canFitItem, currentContainerId } = ctx;
   const items: MenuItem[] = [];
 
+  // For split action, current container is a valid destination
+  const allowCurrentContainer = action === 'split';
+
   const isOnGround = currentContainerId === 'ground';
+  const groundBlocked = isOnGround && !allowCurrentContainer;
   items.push({
     id: 'ground',
-    label: isOnGround ? 'Ground (already here)' : 'Ground',
+    label: groundBlocked ? 'Ground (already here)' : 'Ground',
     type: 'navigate',
-    hasChildren: !isOnGround,
-    disabled: (): boolean => isOnGround || !canFitItem('ground'),
+    hasChildren: !groundBlocked,
+    disabled: (): boolean => groundBlocked || !canFitItem('ground'),
     data: { containerId: 'ground', action },
     getItems: (ctx2: UseMenuContextReturn): MenuItem[] =>
       buildDestinationItems(ctx2, ['ground'], action),
@@ -35,13 +39,14 @@ export function buildRootDestinations(
     const info = getContainerInfo(ctx, equippedId);
     if (info !== null) {
       const isCurrentContainer = equippedId === currentContainerId;
+      const containerBlocked = isCurrentContainer && !allowCurrentContainer;
       const slotLabel = isSlotType(slot) ? SLOT_LABELS[slot] : info.name;
       items.push({
         id: info.id,
-        label: isCurrentContainer ? `${slotLabel} (already here)` : slotLabel,
+        label: containerBlocked ? `${slotLabel} (already here)` : slotLabel,
         type: 'navigate',
-        hasChildren: !isCurrentContainer,
-        disabled: (): boolean => isCurrentContainer || !canFitItem(equippedId),
+        hasChildren: !containerBlocked,
+        disabled: (): boolean => containerBlocked || !canFitItem(equippedId),
         meta: info.capacity,
         data: { containerId: info.id, action },
         getItems: (ctx2: UseMenuContextReturn): MenuItem[] =>
