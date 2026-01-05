@@ -50,7 +50,7 @@ export default function MenuItem({
             {item.label}
           </Text>
           {item.meta !== undefined ? (
-            <Text type="muted" code className={cx('menu-item-meta')}>
+            <Text type="muted" code size="sm" className={cx('menu-item-meta')}>
               {item.meta}
             </Text>
           ) : null}
