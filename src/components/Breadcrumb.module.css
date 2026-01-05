@@ -11,3 +11,7 @@
 .breadcrumb--clip .breadcrumb-link span {
   display: block;
 }
+
+.breadcrumb-separator {
+  margin-left: var(--space-4);
+}
