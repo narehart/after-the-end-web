@@ -1,6 +1,6 @@
 import type { BreadcrumbLink } from '../types/inventory';
 import type { PanelHeaderTypeReturn } from '../types/ui';
-import { Breadcrumb, Flex } from './index';
+import { Breadcrumb, Flex, Text } from './index';
 
 interface PanelHeaderProps {
   headerType: PanelHeaderTypeReturn;
@@ -27,7 +27,7 @@ export default function PanelHeader({
     case 'title':
       return (
         <Flex align="center" className={titleClassName}>
-          {title}
+          <Text size="base">{title}</Text>
         </Flex>
       );
     case 'none':
