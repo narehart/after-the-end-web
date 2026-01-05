@@ -21,9 +21,7 @@ export function buildDestinationItems(
     if (currentContainerId !== undefined) {
       const canFit = canFitItem(currentContainerId);
       const isGround = currentContainerId === 'ground';
-      const containerName = isGround
-        ? 'Ground'
-        : (allItems[currentContainerId]?.description ?? 'here');
+      const containerName = isGround ? 'Ground' : (allItems[currentContainerId]?.name ?? 'here');
 
       items.push({
         id: 'place-here',

@@ -17,7 +17,7 @@ export function getContainerInfo(
 
   return {
     id: containerId,
-    name: containerItem.description,
+    name: containerItem.name,
     isContainer: true,
     capacity: `${String(usedCells)}/${String(totalCells)}`,
   };
