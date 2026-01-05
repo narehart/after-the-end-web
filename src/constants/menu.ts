@@ -77,7 +77,7 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     label: 'Take',
     icon: '↑',
     type: 'action',
-    show: (ctx: UseMenuContextReturn): boolean => ctx.source === 'ground',
+    show: (ctx: UseMenuContextReturn): boolean => ctx.panel === 'world',
     disabled: (ctx: UseMenuContextReturn): boolean => findFirstAvailableContainer(ctx) === null,
   },
 ];
