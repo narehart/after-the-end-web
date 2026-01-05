@@ -23,7 +23,7 @@ export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.J
   const { item, hasGrid, isFocused, hasOpenModal } = slotState;
 
   return (
-    <ListItem focused={isFocused} active={hasOpenModal}>
+    <ListItem selected={isFocused} active={hasOpenModal}>
       <Button
         ref={slotRef}
         variant="ghost"
