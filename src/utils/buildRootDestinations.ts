@@ -1,6 +1,8 @@
+import { SLOT_LABELS } from '../constants/slotLabels';
 import type { MenuItem, UseMenuContextReturn } from '../types/inventory';
-import { getContainerInfo } from './getContainerInfo';
 import { buildDestinationItems } from './buildDestinationItems';
+import { getContainerInfo } from './getContainerInfo';
+import { isSlotType } from './isSlotType';
 
 interface BuildRootDestinationsProps {
   ctx: UseMenuContextReturn;
@@ -28,14 +30,15 @@ export function buildRootDestinations(
       buildDestinationItems(ctx2, ['ground'], action),
   });
 
-  Object.values(equipment).forEach((equippedId) => {
+  Object.entries(equipment).forEach(([slot, equippedId]) => {
     if (equippedId === null || equippedId === itemId) return;
     const info = getContainerInfo(ctx, equippedId);
     if (info !== null) {
       const isCurrentContainer = equippedId === currentContainerId;
+      const slotLabel = isSlotType(slot) ? SLOT_LABELS[slot] : info.name;
       items.push({
         id: info.id,
-        label: isCurrentContainer ? `${info.name} (already here)` : info.name,
+        label: isCurrentContainer ? `${slotLabel} (already here)` : slotLabel,
         type: 'navigate',
         hasChildren: !isCurrentContainer,
         disabled: (): boolean => isCurrentContainer || !canFitItem(equippedId),
