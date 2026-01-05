@@ -36,7 +36,13 @@
 
 .list-item--selected {
   background: var(--bg-elevated);
+  border-color: var(--border-color);
   color: var(--text-primary);
+}
+
+/* Focused state should override selected border */
+.list-item--selected.list-item--focused {
+  border-color: var(--accent-teal);
 }
 
 .list-item--disabled {
