@@ -2,7 +2,7 @@ import type { HandleActionProps } from '../types/inventory';
 
 export function handleAction(props: HandleActionProps): void {
   const { item, context } = props;
-  const { navigateToContainer, rotateItem, equipItem, closeMenu } = context;
+  const { navigateToContainer, rotateItem, equipItem, moveItem, closeMenu } = context;
   const itemId = context.itemId;
   if (itemId === null) {
     closeMenu();
@@ -15,6 +15,9 @@ export function handleAction(props: HandleActionProps): void {
     rotateItem(itemId);
   } else if (item.id === 'equip') {
     equipItem(itemId);
+    closeMenu();
+  } else if (item.id === 'drop') {
+    moveItem(itemId, 'ground');
     closeMenu();
   } else {
     closeMenu();

@@ -59,4 +59,12 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     getItems: (ctx: UseMenuContextReturn, path?: MenuPathSegment[]): MenuItem[] =>
       buildDestinationItems(ctx, path ?? [], 'move'),
   },
+  {
+    id: 'drop',
+    label: 'Drop',
+    icon: '↓',
+    type: 'action',
+    show: (ctx: UseMenuContextReturn): boolean => ctx.source !== 'ground',
+    disabled: (ctx: UseMenuContextReturn): boolean => !ctx.canFitItem('ground'),
+  },
 ];
