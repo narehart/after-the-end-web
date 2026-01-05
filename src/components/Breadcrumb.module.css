@@ -1,5 +1,6 @@
 .breadcrumb--clip {
   width: 100%;
+  visibility: hidden;
 }
 
 .breadcrumb--clip .breadcrumb-link {

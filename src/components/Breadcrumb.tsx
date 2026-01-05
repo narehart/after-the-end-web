@@ -27,12 +27,9 @@ export default function Breadcrumb({
   const displayIcon = firstLink?.icon ?? icon;
   const segments = buildSegments(links);
 
-  const maxLinkWidth = useBreadcrumbWidth(containerRef);
+  useBreadcrumbWidth(containerRef);
 
   if (links.length === FIRST_INDEX) return null;
-
-  const linkStyle =
-    clipLinks === true && maxLinkWidth !== null ? { maxWidth: maxLinkWidth } : undefined;
 
   return (
     <Flex
@@ -47,7 +44,6 @@ export default function Breadcrumb({
           <Button
             variant="text"
             className={cx('breadcrumb-link')}
-            style={linkStyle}
             onClick={seg.onClick}
             disabled={seg.isCurrent === true || seg.onClick === undefined}
           >

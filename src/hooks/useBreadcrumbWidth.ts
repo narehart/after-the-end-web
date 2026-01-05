@@ -1,32 +1,36 @@
 import type { RefObject } from 'react';
-import { useState, useLayoutEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import measureBreadcrumbWidth from '../utils/measureBreadcrumbWidth';
 
-export default function useBreadcrumbWidth(
-  containerRef: RefObject<HTMLElement | null>
-): number | null {
-  const [maxLinkWidth, setMaxLinkWidth] = useState<number | null>(null);
-
+export default function useBreadcrumbWidth(containerRef: RefObject<HTMLElement | null>): void {
   useLayoutEffect(() => {
-    const calculateWidth = (): void => {
-      if (containerRef.current === null) {
-        setMaxLinkWidth(null);
-        return;
-      }
-      setMaxLinkWidth(measureBreadcrumbWidth(containerRef.current));
+    const applyWidth = (): void => {
+      const container = containerRef.current;
+      if (container === null) return;
+
+      const width = measureBreadcrumbWidth(container);
+      const buttons = container.querySelectorAll('button');
+
+      buttons.forEach((btn) => {
+        if (btn instanceof HTMLElement) {
+          btn.style.maxWidth = width !== null ? `${width}px` : '';
+        }
+      });
+
+      container.style.visibility = 'visible';
     };
 
-    calculateWidth();
+    applyWidth();
 
     const container = containerRef.current;
     const parent = container?.parentElement;
 
-    const resizeObserver = new ResizeObserver(calculateWidth);
+    const resizeObserver = new ResizeObserver(applyWidth);
     if (parent !== null && parent !== undefined) {
       resizeObserver.observe(parent);
     }
 
-    const mutationObserver = new MutationObserver(calculateWidth);
+    const mutationObserver = new MutationObserver(applyWidth);
     if (container !== null) {
       mutationObserver.observe(container, { childList: true, subtree: true });
     }
@@ -36,6 +40,4 @@ export default function useBreadcrumbWidth(
       mutationObserver.disconnect();
     };
   }, [containerRef]);
-
-  return maxLinkWidth;
 }
