@@ -21,3 +21,7 @@
   margin-left: auto;
   padding-left: var(--space-6);
 }
+
+.menu-item-arrow--hidden {
+  visibility: hidden;
+}

@@ -54,11 +54,15 @@ export default function MenuItem({
               {item.meta}
             </Text>
           ) : null}
-          {item.hasChildren === true ? (
-            <Text type="muted" size="base" className={cx('menu-item-arrow')}>
-              ›
-            </Text>
-          ) : null}
+          <Text
+            type="muted"
+            size="base"
+            className={cx('menu-item-arrow', {
+              'menu-item-arrow--hidden': item.hasChildren !== true,
+            })}
+          >
+            ›
+          </Text>
         </Flex>
       </Button>
     </ListItem>
