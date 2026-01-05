@@ -44,8 +44,9 @@
   cursor: not-allowed;
 }
 
-.list-item--disabled:hover {
+/* Disabled items should not show focus styling */
+.list-item--disabled.list-item--focused {
   background: transparent;
   border-color: transparent;
-  color: var(--text-secondary);
+  color: inherit;
 }
