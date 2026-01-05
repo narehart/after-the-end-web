@@ -20,7 +20,7 @@ ls:
     .json: regex:settings | regex:settings\.local | regex:\.mcp
     .md: regex:CLAUDE
     .*: regex:$
-    .dir: regex:\.claude | regex:hooks | regex:agents
+    .dir: regex:\.claude | regex:hooks | regex:commands | regex:agents
 
   # .claude/hooks - camelCase JS files only, no subdirectories
   .claude/hooks:
@@ -28,8 +28,15 @@ ls:
     .*: regex:$
     .dir: regex:hooks
 
-  # .claude/agents - will be configured when used
+  # .claude/commands - kebab-case markdown files for slash commands
+  .claude/commands:
+    .md: kebab-case
+    .*: regex:$
+    .dir: regex:commands
+
+  # .claude/agents - kebab-case markdown files for agent definitions
   .claude/agents:
+    .md: kebab-case
     .*: regex:$
     .dir: regex:agents
 

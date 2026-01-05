@@ -21,13 +21,6 @@
   margin-bottom: 0;
 }
 
-/* Hover only applies when item is not already focused (avoids dual-highlight) */
-.list-item:hover:not(:disabled, .list-item--focused) {
-  background: var(--bg-elevated);
-  border-color: var(--accent-teal);
-  color: var(--text-primary);
-}
-
 .list-item--focused {
   background: var(--bg-elevated);
   border-color: var(--accent-teal);
