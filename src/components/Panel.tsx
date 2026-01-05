@@ -1,13 +1,7 @@
 import type { ReactNode } from 'react';
 import classNames from 'classnames/bind';
 import type { BreadcrumbLink } from '../types/inventory';
-import type {
-  BorderPosition,
-  FlexDirection,
-  FlexJustify,
-  FlexAlign,
-  FlexGap,
-} from '../types/ui';
+import type { BorderPosition, FlexDirection, FlexJustify, FlexAlign, FlexGap } from '../types/ui';
 import buildPanelClasses from '../utils/buildPanelClasses';
 import buildPanelHeaderClasses from '../utils/buildPanelHeaderClasses';
 import getPanelHeaderType from '../utils/getPanelHeaderType';
@@ -77,7 +71,6 @@ export default function Panel({
             breadcrumbLinks={breadcrumbLinks}
             breadcrumbIcon={breadcrumbIcon}
             title={title}
-            titleClassName={cx('panel-title')}
           />
         </Box>
       ) : null}

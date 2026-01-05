@@ -34,10 +34,6 @@
   overflow: hidden;
 }
 
-.panel-title {
-  margin: 0;
-}
-
 .panel-content {
   flex: 1;
   overflow: auto;
