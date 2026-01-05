@@ -6,5 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true, // Expose on local network
+    port: 5173,
+    strictPort: true, // Exit if port is in use instead of trying next port
   },
 });
