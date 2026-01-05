@@ -1,7 +1,9 @@
 import { DEFAULT_QUANTITY } from '../constants/numbers';
 import type { GridsMap, Item, ItemsMap } from '../types/inventory';
+import { findCompatibleStack } from './findCompatibleStack';
 import { findFreePosition } from './findFreePosition';
 import { generateInstanceId } from './generateInstanceId';
+import { mergeIntoStack } from './mergeIntoStack';
 import { placeItemInCells } from './placeItemInCells';
 
 interface SplitItemInGridProps {
@@ -27,6 +29,29 @@ export function splitItemInGrid(props: SplitItemInGridProps): SplitItemInGridRet
   const targetGrid = grids[targetGridId];
   if (targetGrid === undefined) return null;
 
+  // Check for compatible stack to merge with (excluding source item)
+  const compatibleStackId = findCompatibleStack({
+    grid: targetGrid,
+    items,
+    sourceNeoId: item.neoId,
+    addQuantity: DEFAULT_QUANTITY,
+    stackLimit: item.stackLimit,
+  });
+
+  // If compatible stack found (and it's not the source item), merge
+  if (compatibleStackId !== null && compatibleStackId !== itemId) {
+    const mergeResult = mergeIntoStack({
+      items,
+      sourceItemId: itemId,
+      targetItemId: compatibleStackId,
+      addQuantity: DEFAULT_QUANTITY,
+    });
+    if (mergeResult !== null) {
+      return { items: mergeResult.items, grids };
+    }
+  }
+
+  // No compatible stack, create new item
   const freePos = findFreePosition({
     grid: targetGrid,
     itemWidth: item.size.width,
@@ -41,7 +66,7 @@ export function splitItemInGrid(props: SplitItemInGridProps): SplitItemInGridRet
     quantity: DEFAULT_QUANTITY,
   };
 
-  const updatedItem: Item = {
+  const updatedSourceItem: Item = {
     ...item,
     quantity: currentQty - DEFAULT_QUANTITY,
   };
@@ -58,7 +83,7 @@ export function splitItemInGrid(props: SplitItemInGridProps): SplitItemInGridRet
   return {
     items: {
       ...items,
-      [itemId]: updatedItem,
+      [itemId]: updatedSourceItem,
       [newItemId]: newItem,
     },
     grids: {

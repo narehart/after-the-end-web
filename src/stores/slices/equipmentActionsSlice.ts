@@ -2,9 +2,8 @@ import type { StateCreator } from 'zustand';
 import type { SlotType, Equipment } from '../../types/inventory';
 import type { EquipmentActionsSlice, StoreWithEquipment } from '../../types/store';
 import { findFreePosition } from '../../utils/findFreePosition';
-import { findItemInGrids } from '../../utils/findItemInGrids';
+import { moveItemInGrid } from '../../utils/moveItemInGrid';
 import { placeItemInCells } from '../../utils/placeItemInCells';
-import { removeItemFromCells } from '../../utils/removeItemFromCells';
 import { splitItemInGrid } from '../../utils/splitItemInGrid';
 
 function isSlotType(key: string, equipment: Equipment): key is SlotType {
@@ -71,50 +70,17 @@ export const createEquipmentActionsSlice: StateCreator<
 
   moveItem: (itemId, targetGridId): boolean => {
     const state = get();
-    const item = state.items[itemId];
-    if (item === undefined) return false;
-
-    // Find where the item currently is
-    const location = findItemInGrids({ grids: state.grids, itemId });
-    if (location === null) return false;
-
-    // Don't move to the same grid
-    if (location.gridId === targetGridId) return false;
-
-    const sourceGrid = state.grids[location.gridId];
-    const targetGrid = state.grids[targetGridId];
-    if (sourceGrid === undefined || targetGrid === undefined) return false;
-
-    // Find a free position in the target grid
-    const freePos = findFreePosition({
-      grid: targetGrid,
-      itemWidth: item.size.width,
-      itemHeight: item.size.height,
-    });
-    if (freePos === null) return false;
-
-    // Remove from source grid
-    const newSourceCells = removeItemFromCells({
-      cells: sourceGrid.cells,
-      positions: location.positions,
-    });
-
-    // Place in target grid
-    const newTargetCells = placeItemInCells({
-      grid: targetGrid.cells,
+    const result = moveItemInGrid({
+      items: state.items,
+      grids: state.grids,
       itemId,
-      x: freePos.x,
-      y: freePos.y,
-      width: item.size.width,
-      height: item.size.height,
+      targetGridId,
     });
+    if (result === null) return false;
 
     set({
-      grids: {
-        ...state.grids,
-        [location.gridId]: { ...sourceGrid, cells: newSourceCells },
-        [targetGridId]: { ...targetGrid, cells: newTargetCells },
-      },
+      items: result.items,
+      grids: result.grids,
       selectedItemId: null,
     });
 
