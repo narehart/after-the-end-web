@@ -20,10 +20,10 @@ export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.J
     handleMouseEnter,
   } = useEquipmentSlot({ slotType, slotRef });
 
-  const { item, hasGrid, isHovered, hasOpenModal } = slotState;
+  const { item, hasGrid, isFocused, hasOpenModal } = slotState;
 
   return (
-    <ListItem focused={isHovered} active={hasOpenModal}>
+    <ListItem focused={isFocused} active={hasOpenModal}>
       <Button
         ref={slotRef}
         variant="ghost"

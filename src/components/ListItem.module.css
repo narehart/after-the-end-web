@@ -43,10 +43,3 @@
   opacity: var(--opacity-faint);
   cursor: not-allowed;
 }
-
-/* Disabled items should not show focus styling */
-.list-item--disabled.list-item--focused {
-  background: transparent;
-  border-color: transparent;
-  color: inherit;
-}

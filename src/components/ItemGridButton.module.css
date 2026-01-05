@@ -12,17 +12,13 @@
   padding: var(--space-8);
 }
 
-.grid-item:hover {
-  border-color: var(--border-light);
-}
-
-.grid-item.selected {
+.grid-item.highlighted {
   border-color: var(--accent-teal);
   box-shadow: var(--shadow-sm);
 }
 
 .grid-item.has-modal,
-.grid-item.has-modal.selected {
+.grid-item.has-modal.highlighted {
   background: var(--bg-elevated);
   border-color: var(--border-color);
   box-shadow: none;

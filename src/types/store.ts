@@ -130,10 +130,24 @@ interface UIActions {
 
 export type UISlice = UIState & UIActions;
 
+// Input Mode Slice
+type InputMode = 'keyboard' | 'pointer';
+
+interface InputModeState {
+  inputMode: InputMode;
+}
+
+interface InputModeActions {
+  setInputMode: (mode: InputMode) => void;
+}
+
+export type InputModeSlice = InputModeState & InputModeActions;
+
 // Combined Store
 export type InventoryStore = UISlice &
   EquipmentSlice &
   ItemsSlice &
   NavigationSlice &
   ConditionsSlice &
-  EquipmentActionsSlice;
+  EquipmentActionsSlice &
+  InputModeSlice;

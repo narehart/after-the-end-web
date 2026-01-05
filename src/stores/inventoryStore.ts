@@ -7,6 +7,7 @@ import { createItemsSlice } from './slices/itemsSlice';
 import { createNavigationSlice } from './slices/navigationSlice';
 import { createConditionsSlice } from './slices/conditionsSlice';
 import { createEquipmentActionsSlice } from './slices/equipmentActionsSlice';
+import { createInputModeSlice } from './slices/inputModeSlice';
 
 export { SLOT_TYPES };
 
@@ -17,4 +18,5 @@ export const useInventoryStore = create<InventoryStore>()((...args) => ({
   ...createNavigationSlice(...args),
   ...createConditionsSlice(...args),
   ...createEquipmentActionsSlice(...args),
+  ...createInputModeSlice(...args),
 }));

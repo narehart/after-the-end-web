@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import classNames from 'classnames/bind';
 import type { Item } from '../types/inventory';
 import type { CellState, ItemGridHandlers, CSSPropertiesWithVars } from '../types/ui';
 import { DEFAULT_QUANTITY, FIRST_INDEX, NOT_FOUND_INDEX } from '../constants/numbers';
+import { useInventoryStore } from '../stores/inventoryStore';
 import { getImageUrl } from '../utils/images';
 import { getItemIcon } from '../utils/getItemIcon';
 import { calculateItemDimensions } from '../utils/calculateItemDimensions';
@@ -25,8 +27,13 @@ export default function ItemGridButton({
   isFocused,
   handlers,
 }: ItemGridButtonProps): React.JSX.Element {
+  const [isHovered, setIsHovered] = useState(false);
+  const inputMode = useInventoryStore((s) => s.inputMode);
   const { isSelected, hasOpenModal, hasGrid } = cellState;
   const { handleClick, openModal, handleMouseEnter, handleFocus } = handlers;
+
+  const showHoverHighlight =
+    (inputMode === 'pointer' && isHovered) || (inputMode === 'keyboard' && isSelected);
 
   const { itemWidth, itemHeight } = calculateItemDimensions({ item, cellSize });
   const showQuantity = item.quantity !== undefined && item.quantity > DEFAULT_QUANTITY;
@@ -49,6 +56,15 @@ export default function ItemGridButton({
     '--item-height': `${itemHeight}px`,
   };
 
+  const handleMouseEnterWithHover = (): void => {
+    setIsHovered(true);
+    handleMouseEnter();
+  };
+
+  const handleMouseLeave = (): void => {
+    setIsHovered(false);
+  };
+
   return (
     <Flex
       as="button"
@@ -58,7 +74,7 @@ export default function ItemGridButton({
       align="center"
       className={cx('grid-item', {
         container: hasGrid,
-        selected: isSelected,
+        highlighted: showHoverHighlight,
         'has-modal': hasOpenModal,
       })}
       style={buttonStyle}
@@ -66,7 +82,8 @@ export default function ItemGridButton({
       onDoubleClick={handleDoubleClick}
       onContextMenu={handleContextMenu}
       onKeyDown={handleKeyDown}
-      onMouseEnter={handleMouseEnter}
+      onMouseEnter={handleMouseEnterWithHover}
+      onMouseLeave={handleMouseLeave}
       onFocus={handleFocus}
       tabIndex={isFocused ? FIRST_INDEX : NOT_FOUND_INDEX}
       aria-label={item.name}

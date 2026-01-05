@@ -224,3 +224,16 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--border-light);
 }
+
+/* Suppress focus-visible outlines in pointer mode (hover handles highlighting) */
+[data-input-mode='pointer'] *:focus-visible {
+  outline: none;
+}
+
+/* In keyboard mode, highlight list items containing focused buttons */
+[data-input-mode='keyboard']
+  [class*='list-item']:has(button:focus-visible):not([class*='disabled']) {
+  background: var(--bg-elevated);
+  border-color: var(--accent-teal);
+  color: var(--text-primary);
+}
