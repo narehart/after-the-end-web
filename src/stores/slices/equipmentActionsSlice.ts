@@ -5,6 +5,7 @@ import { findFreePosition } from '../../utils/findFreePosition';
 import { findItemInGrids } from '../../utils/findItemInGrids';
 import { placeItemInCells } from '../../utils/placeItemInCells';
 import { removeItemFromCells } from '../../utils/removeItemFromCells';
+import { splitItemInGrid } from '../../utils/splitItemInGrid';
 
 function isSlotType(key: string, equipment: Equipment): key is SlotType {
   return key in equipment;
@@ -114,6 +115,25 @@ export const createEquipmentActionsSlice: StateCreator<
         [location.gridId]: { ...sourceGrid, cells: newSourceCells },
         [targetGridId]: { ...targetGrid, cells: newTargetCells },
       },
+      selectedItemId: null,
+    });
+
+    return true;
+  },
+
+  splitItem: (itemId, targetGridId): boolean => {
+    const state = get();
+    const result = splitItemInGrid({
+      items: state.items,
+      grids: state.grids,
+      itemId,
+      targetGridId,
+    });
+    if (result === null) return false;
+
+    set({
+      items: result.items,
+      grids: result.grids,
       selectedItemId: null,
     });
 

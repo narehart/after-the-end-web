@@ -1,6 +1,7 @@
 import type { MenuItem, UseMenuContextReturn, MenuPathSegment } from '../types/inventory';
 import { buildDestinationItems } from '../utils/buildDestinationItems';
 import { findFirstAvailableContainer } from '../utils/findFirstAvailableContainer';
+import { DEFAULT_QUANTITY } from './numbers';
 
 export const ITEM_ACTION_MENU: MenuItem[] = [
   {
@@ -44,11 +45,14 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
   },
   {
     id: 'split',
-    label: 'Split',
+    label: 'Split to...',
     icon: '÷',
-    type: 'action',
-    // TODO: Re-enable when item quantity tracking is added
-    show: (): boolean => false,
+    type: 'navigate',
+    hasChildren: true,
+    show: (ctx: UseMenuContextReturn): boolean =>
+      (ctx.item?.quantity ?? DEFAULT_QUANTITY) > DEFAULT_QUANTITY,
+    getItems: (ctx: UseMenuContextReturn, path?: MenuPathSegment[]): MenuItem[] =>
+      buildDestinationItems(ctx, path ?? [], 'split'),
   },
   {
     id: 'move',

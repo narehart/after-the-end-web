@@ -17,6 +17,7 @@ export default function useMenuContext(props: UseMenuContextProps): UseMenuConte
   const equipItem = useInventoryStore((state) => state.equipItem);
   const unequipItem = useInventoryStore((state) => state.unequipItem);
   const moveItem = useInventoryStore((state) => state.moveItem);
+  const splitItem = useInventoryStore((state) => state.splitItem);
   const findFreePosition = useInventoryStore((state) => state.findFreePosition);
   const closeMenu = useInventoryStore((state) => state.closeMenu);
 
@@ -58,6 +59,7 @@ export default function useMenuContext(props: UseMenuContextProps): UseMenuConte
       equipItem,
       unequipItem,
       moveItem,
+      splitItem,
       closeMenu,
     }),
     [
@@ -75,6 +77,7 @@ export default function useMenuContext(props: UseMenuContextProps): UseMenuConte
       equipItem,
       unequipItem,
       moveItem,
+      splitItem,
       closeMenu,
     ]
   );
