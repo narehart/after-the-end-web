@@ -179,6 +179,7 @@ export interface UseBreadcrumbLinksContainerProps {
   panelLabel: string;
   focusPath: string[];
   items: ItemsMap;
+  equipment: Equipment;
   onNavigateBack: (index: number) => void;
   panelType: PanelType;
 }

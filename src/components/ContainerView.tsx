@@ -25,6 +25,7 @@ export default function ContainerView({
 }: ContainerViewProps): React.JSX.Element {
   const items = useInventoryStore((state) => state.items);
   const grids = useInventoryStore((state) => state.grids);
+  const equipment = useInventoryStore((state) => state.equipment);
 
   const lastPath = focusPath[focusPath.length - SECOND_INDEX];
   const currentContainerId =
@@ -38,6 +39,7 @@ export default function ContainerView({
     panelLabel,
     focusPath,
     items,
+    equipment,
     onNavigateBack,
     panelType,
   });
