@@ -1,5 +1,6 @@
 import type { MenuItem, UseMenuContextReturn, MenuPathSegment } from '../types/inventory';
 import { buildDestinationItems } from '../utils/buildDestinationItems';
+import { findFirstAvailableContainer } from '../utils/findFirstAvailableContainer';
 
 export const ITEM_ACTION_MENU: MenuItem[] = [
   {
@@ -66,5 +67,13 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     type: 'action',
     show: (ctx: UseMenuContextReturn): boolean => ctx.source !== 'ground',
     disabled: (ctx: UseMenuContextReturn): boolean => !ctx.canFitItem('ground'),
+  },
+  {
+    id: 'take',
+    label: 'Take',
+    icon: '↑',
+    type: 'action',
+    show: (ctx: UseMenuContextReturn): boolean => ctx.source === 'ground',
+    disabled: (ctx: UseMenuContextReturn): boolean => findFirstAvailableContainer(ctx) === null,
   },
 ];

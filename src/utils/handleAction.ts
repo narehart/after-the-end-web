@@ -1,4 +1,5 @@
 import type { HandleActionProps } from '../types/inventory';
+import { findFirstAvailableContainer } from './findFirstAvailableContainer';
 
 export function handleAction(props: HandleActionProps): void {
   const { item, context } = props;
@@ -18,6 +19,12 @@ export function handleAction(props: HandleActionProps): void {
     closeMenu();
   } else if (item.id === 'drop') {
     moveItem(itemId, 'ground');
+    closeMenu();
+  } else if (item.id === 'take') {
+    const targetContainer = findFirstAvailableContainer(context);
+    if (targetContainer !== null) {
+      moveItem(itemId, targetContainer);
+    }
     closeMenu();
   } else {
     closeMenu();
