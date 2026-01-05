@@ -144,7 +144,6 @@
   --border-accent: var(--border-width) solid var(--accent-teal);
   --border-dashed: var(--border-width) dashed var(--border-color);
   --border-transparent: var(--border-width-panel) solid transparent;
-  --breadcrumb-link-max-width: 120px;
 
   /* Dynamic item sizing (set by JS, defaults for linting) */
   --item-width: 48px;

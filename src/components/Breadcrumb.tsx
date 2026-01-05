@@ -1,7 +1,9 @@
+import { useRef } from 'react';
 import classNames from 'classnames/bind';
 import type { BreadcrumbLink } from '../types/inventory';
 import type { LinkWithIcon } from '../types/ui';
 import { FIRST_INDEX } from '../constants/numbers';
+import useBreadcrumbWidth from '../hooks/useBreadcrumbWidth';
 import { buildSegments } from '../utils/breadcrumb';
 import styles from './Breadcrumb.module.css';
 import { Button, Flex, Icon, Text } from './index';
@@ -19,14 +21,22 @@ export default function Breadcrumb({
   icon,
   clipLinks,
 }: BreadcrumbProps): React.JSX.Element | null {
-  if (links.length === FIRST_INDEX) return null;
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const firstLink: LinkWithIcon | undefined = links[FIRST_INDEX];
   const displayIcon = firstLink?.icon ?? icon;
   const segments = buildSegments(links);
 
+  const maxLinkWidth = useBreadcrumbWidth(containerRef);
+
+  if (links.length === FIRST_INDEX) return null;
+
+  const linkStyle =
+    clipLinks === true && maxLinkWidth !== null ? { maxWidth: maxLinkWidth } : undefined;
+
   return (
     <Flex
+      ref={containerRef}
       align="center"
       gap="4"
       className={clipLinks === true ? cx('breadcrumb--clip') : undefined}
@@ -37,6 +47,7 @@ export default function Breadcrumb({
           <Button
             variant="text"
             className={cx('breadcrumb-link')}
+            style={linkStyle}
             onClick={seg.onClick}
             disabled={seg.isCurrent === true || seg.onClick === undefined}
           >
