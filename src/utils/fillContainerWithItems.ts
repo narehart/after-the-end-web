@@ -1,5 +1,9 @@
-import { SHUFFLE_MIDPOINT, SINGLE_ITEM_IDS, STACKABLE_ITEM_CONFIGS } from '../constants/inventory';
-import { DEFAULT_QUANTITY } from '../constants/items';
+import {
+  SHUFFLE_MIDPOINT,
+  SINGLE_ITEM_IDS,
+  STACKABLE_ITEM_CONFIGS,
+  DEFAULT_QUANTITY,
+} from '../constants/inventory';
 import type { GridOccupancy, ItemPlacement } from '../types/inventory';
 import { randomInt } from './randomInt';
 import { shuffleArray } from './shuffleArray';

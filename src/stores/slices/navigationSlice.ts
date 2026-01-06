@@ -1,6 +1,6 @@
 import type { StateCreator } from 'zustand';
-import { FIRST_INDEX, SECOND_INDEX } from '../../constants/array';
-import type { NavigationSlice, StoreWithEquipment } from '../../types/store';
+import { FIRST_INDEX, SECOND_INDEX } from '../../constants/primitives';
+import type { NavigationSlice, StoreWithEquipment } from '../../types/ui';
 import { getLargestEquippedContainer } from '../../ecs/queries/inventoryQueries';
 
 function getInitialContainerPath(): string[] {

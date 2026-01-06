@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
-import { CELL_GAP } from '../constants/grid';
-import { FIRST_INDEX } from '../constants/array';
+import { CELL_GAP } from '../constants/ui';
+import { FIRST_INDEX } from '../constants/primitives';
 import useECSInventory from '../hooks/useECSInventory';
 import useGridNavigation from '../hooks/useGridNavigation';
 import type { GridCell, MenuSource } from '../types/inventory';

@@ -102,6 +102,10 @@ export interface BreadcrumbLink {
   onClick?: (() => void) | undefined;
 }
 
+export interface BreadcrumbLinkWithIcon extends BreadcrumbLink {
+  icon?: string;
+}
+
 export type PanelType = 'inventory' | 'world';
 
 export interface MenuItem {
@@ -159,4 +163,12 @@ export interface ItemPlacement {
   x: number;
   y: number;
   quantity?: number;
+}
+
+// Container info types
+export interface ContainerInfo {
+  id: string;
+  name: string;
+  isContainer: boolean;
+  capacity: string;
 }

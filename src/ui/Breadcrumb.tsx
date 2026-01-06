@@ -1,16 +1,11 @@
-/* eslint-disable local/types-in-types-directory -- Component-specific prop types */
 import { useRef } from 'react';
 import classNames from 'classnames/bind';
-import type { BreadcrumbLink } from '../types/inventory';
-import { FIRST_INDEX } from '../constants/array';
+import type { BreadcrumbLink, BreadcrumbLinkWithIcon } from '../types/inventory';
+import { FIRST_INDEX } from '../constants/primitives';
 import useBreadcrumbWidth from '../hooks/useBreadcrumbWidth';
 import { buildSegments } from '../utils/breadcrumb';
 import styles from './Breadcrumb.module.css';
 import { Button, Flex, Icon, Text } from './index';
-
-interface LinkWithIcon extends BreadcrumbLink {
-  icon?: string;
-}
 
 const cx = classNames.bind(styles);
 
@@ -27,7 +22,7 @@ export default function Breadcrumb({
 }: BreadcrumbProps): React.JSX.Element | null {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const firstLink: LinkWithIcon | undefined = links[FIRST_INDEX];
+  const firstLink: BreadcrumbLinkWithIcon | undefined = links[FIRST_INDEX];
   const displayIcon = firstLink?.icon ?? icon;
   const segments = buildSegments(links);
 

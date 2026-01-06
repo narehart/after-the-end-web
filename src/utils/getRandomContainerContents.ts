@@ -1,5 +1,5 @@
 import { MAX_CONTAINER_ITEMS, MIN_CONTAINER_ITEMS } from '../constants/inventory';
-import { FIRST_INDEX } from '../constants/array';
+import { FIRST_INDEX } from '../constants/primitives';
 import type { ItemPlacement } from '../types/inventory';
 import { createOccupancyGrid } from './createOccupancyGrid';
 import { fillContainerWithItems } from './fillContainerWithItems';

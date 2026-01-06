@@ -1,6 +1,4 @@
-import { ID_RADIX, ID_SLICE_START, ID_SLICE_END } from '../constants/ids';
-
-;
+import { ID_RADIX, ID_SLICE_START, ID_SLICE_END } from '../constants/primitives';
 
 export function generateInstanceId(neoId: string): string {
   const suffix = Math.random().toString(ID_RADIX).slice(ID_SLICE_START, ID_SLICE_END);

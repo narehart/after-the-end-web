@@ -1,5 +1,5 @@
 import type { StateCreator } from 'zustand';
-import type { ConditionsSlice } from '../../types/store';
+import type { ConditionsSlice } from '../../types/ui';
 import { INITIAL_CONDITIONS } from '../../constants/conditions';
 
 export const createConditionsSlice: StateCreator<ConditionsSlice, [], [], ConditionsSlice> = (

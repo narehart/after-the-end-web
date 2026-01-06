@@ -1,8 +1,8 @@
 import { useInventoryStore } from '../stores/inventoryStore';
 import useECSInventory from '../hooks/useECSInventory';
 import type { GridCell, MenuSource, PanelType } from '../types/inventory';
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
-import { DEFAULT_CELL_SIZE } from '../constants/grid';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/primitives';
+import { DEFAULT_CELL_SIZE } from '../constants/ui';
 import { useBreadcrumbLinksContainer } from '../hooks/useBreadcrumbLinksContainer';
 import ItemGrid from './ItemGrid';
 import { Panel } from '.';

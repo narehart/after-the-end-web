@@ -1,7 +1,5 @@
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/primitives';
 import getButtonNaturalWidth from './getButtonNaturalWidth';
-
-;
 
 export default function calculateLargeButtonWidth(
   buttons: NodeListOf<Element>,

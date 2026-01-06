@@ -8,7 +8,7 @@
 import { world } from '../world';
 import type { Entity, EntityId, GridId } from '../world';
 import type { Item } from '../../types/inventory';
-import { DEFAULT_QUANTITY } from '../../constants/items';
+import { DEFAULT_QUANTITY } from '../../constants/inventory';
 import { generateInstanceId } from '../../utils/generateInstanceId';
 
 interface CreateItemEntityProps {

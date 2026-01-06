@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/primitives';
 import { useInventoryStore } from '../stores/inventoryStore';
 import { getImageUrl } from '../utils/images';
 import { useBreadcrumbLinksMenu } from '../hooks/useBreadcrumbLinksMenu';
@@ -10,8 +10,6 @@ import useMenuKeyboard from '../hooks/useMenuKeyboard';
 import MenuList from './MenuList';
 import styles from './ActionModal.module.css';
 import { Modal, Panel } from '.';
-
-;
 
 const cx = classNames.bind(styles);
 

@@ -1,5 +1,5 @@
 import { BUTTONS } from '../constants/input';
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/primitives';
 import type { GamepadCallbacks, GamepadRefs } from '../types/input';
 import { createButtonHandler } from './createButtonHandler';
 import { handleStickAxis } from './handleStickAxis';

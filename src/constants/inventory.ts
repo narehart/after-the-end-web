@@ -6,13 +6,33 @@ import type {
   PanelName,
   SplitItemReturn,
   UseMenuContextReturn,
-} from '../types/inventory';
+ ItemType } from '../types/inventory';
 import { buildDestinationItems } from '../utils/buildDestinationItems';
 import { findFirstAvailableContainer } from '../utils/findFirstAvailableContainer';
 import { isGridEmpty } from '../utils/isGridEmpty';
 
+
 export const MOVE_ITEM_FAIL: MoveItemReturn = { success: false, merged: false };
 export const SPLIT_ITEM_FAIL: SplitItemReturn = { success: false, newEntityId: null };
+
+// Item constants
+export const ITEM_ICONS: Record<ItemType, string> = {
+  container: '📦',
+  consumable: '💊',
+  weapon: '🗡',
+  clothing: '👔',
+  ammo: '🔸',
+  tool: '🔦',
+  accessory: '🔹',
+  material: '🪵',
+  misc: '📎',
+  medical: '💉',
+};
+
+export const MAX_DURABILITY = 100;
+export const MIN_DURABILITY = 1;
+export const DEFAULT_QUANTITY = 1;
+export const EMPTY_COUNT = 0;
 
 // Stackable items suitable for containers with their max quantities
 export const STACKABLE_ITEM_CONFIGS = [

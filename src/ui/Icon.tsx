@@ -1,9 +1,7 @@
-/* eslint-disable local/types-in-types-directory -- Component-specific prop types */
 import classNames from 'classnames/bind';
+import type { IconSize } from '../types/ui';
 import styles from './Icon.module.css';
 import Image from './Image';
-
-type IconSize = 'sm' | 'md' | 'lg' | 'fill' | number;
 
 const cx = classNames.bind(styles);
 

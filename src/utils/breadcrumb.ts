@@ -1,15 +1,7 @@
-/* eslint-disable local/types-in-types-directory -- Util-specific types */
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
-import { MIN_BREADCRUMB_LINKS } from '../constants/breadcrumb';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/primitives';
+import { MIN_BREADCRUMB_LINKS } from '../constants/ui';
 import type { BreadcrumbLink } from '../types/inventory';
-
-export interface BreadcrumbSegment {
-  key: string;
-  label: string;
-  onClick?: (() => void) | undefined;
-  isCurrent?: boolean;
-  showSeparator?: boolean;
-}
+import type { BreadcrumbSegment } from '../types/ui';
 
 export function buildSegments(links: BreadcrumbLink[]): BreadcrumbSegment[] {
   const lastIndex = links.length - SECOND_INDEX;

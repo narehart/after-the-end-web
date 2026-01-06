@@ -1,4 +1,4 @@
-import { FIRST_INDEX } from '../constants/array';
+import { FIRST_INDEX } from '../constants/primitives';
 import type { CellGrid } from '../types/inventory';
 
 interface PlaceItemProps {

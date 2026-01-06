@@ -1,5 +1,5 @@
 import type { StateCreator } from 'zustand';
-import type { EquipmentSlice } from '../../types/store';
+import type { EquipmentSlice } from '../../types/ui';
 import { getEquipment } from '../../ecs/queries/inventoryQueries';
 
 export const createEquipmentSlice: StateCreator<EquipmentSlice, [], [], EquipmentSlice> = (

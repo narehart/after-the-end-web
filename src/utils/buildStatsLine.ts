@@ -1,5 +1,5 @@
-import { EMPTY_COUNT } from '../constants/items';
-import { FIRST_INDEX } from '../constants/array';
+import { EMPTY_COUNT } from '../constants/inventory';
+import { FIRST_INDEX } from '../constants/primitives';
 import type { GridsMap, Item } from '../types/inventory';
 import { countGridItems } from './countGridItems';
 

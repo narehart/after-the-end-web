@@ -1,6 +1,4 @@
-import { FIRST_INDEX } from '../constants/array';
-
-;
+import { FIRST_INDEX } from '../constants/primitives';
 
 export interface GetMainImageProps {
   allImages: string[];

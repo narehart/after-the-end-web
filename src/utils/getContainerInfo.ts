@@ -1,13 +1,5 @@
-/* eslint-disable local/types-in-types-directory -- Util-specific types */
-import { FIRST_INDEX } from '../constants/array';
-import type { UseMenuContextReturn } from '../types/inventory';
-
-export interface ContainerInfo {
-  id: string;
-  name: string;
-  isContainer: boolean;
-  capacity: string;
-}
+import { FIRST_INDEX } from '../constants/primitives';
+import type { ContainerInfo, UseMenuContextReturn } from '../types/inventory';
 
 type GetContainerInfoReturn = ContainerInfo | null;
 

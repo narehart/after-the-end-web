@@ -1,4 +1,4 @@
-import type { BorderPosition } from '../ui/Panel';
+import type { BorderPosition } from '../types/ui';
 
 export default function buildPanelClasses(
   cx: (...args: Array<string | Record<string, boolean>>) => string,

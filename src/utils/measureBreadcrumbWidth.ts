@@ -1,9 +1,7 @@
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
-import { MIN_LINK_WIDTH } from '../constants/breadcrumb';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/primitives';
+import { MIN_LINK_WIDTH } from '../constants/ui';
 import measureFixedWidth from './measureFixedWidth';
 import calculateLargeButtonWidth from './calculateLargeButtonWidth';
-
-;
 
 export default function measureBreadcrumbWidth(container: HTMLElement): number | null {
   const parent = container.parentElement;

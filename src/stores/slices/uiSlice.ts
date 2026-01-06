@@ -1,8 +1,7 @@
 import type { StateCreator } from 'zustand';
-import { FIRST_INDEX, NOT_FOUND_INDEX } from '../../constants/array';
-import { DEFAULT_SCALE } from '../../constants/grid';
-import type { UISlice } from '../../types/store';
-import { INITIAL_MENU } from '../../constants/ui';
+import { FIRST_INDEX, NOT_FOUND_INDEX } from '../../constants/primitives';
+import { DEFAULT_SCALE, INITIAL_MENU } from '../../constants/ui';
+import type { UISlice } from '../../types/ui';
 
 export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
   selectedItemId: 'glasses-1',

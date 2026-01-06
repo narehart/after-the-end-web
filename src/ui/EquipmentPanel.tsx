@@ -1,5 +1,5 @@
 import { useInventoryStore, EQUIPMENT_SLOTS } from '../stores/inventoryStore';
-import { FIRST_INDEX } from '../constants/array';
+import { FIRST_INDEX } from '../constants/primitives';
 import EquipmentSlot from './EquipmentSlot';
 import { List, Panel } from '.';
 

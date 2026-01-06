@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/primitives';
 import { EQUIPMENT_LABELS } from '../constants/equipment';
 import type { Equipment } from '../types/equipment';
 import type { BreadcrumbLink, ItemsMap, PanelType } from '../types/inventory';

@@ -1,6 +1,6 @@
 import type { MutableRefObject, RefObject } from 'react';
 import { useRef, useEffect, useCallback } from 'react';
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/primitives';
 import { PANELS } from '../constants/inventory';
 import type { PanelName, PanelRefs } from '../types/inventory';
 

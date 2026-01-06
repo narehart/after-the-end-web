@@ -1,4 +1,4 @@
-import { SECOND_INDEX } from '../constants/array';
+import { SECOND_INDEX } from '../constants/primitives';
 
 interface RandomIntProps {
   min: number;

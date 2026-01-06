@@ -1,9 +1,7 @@
-/* eslint-disable local/types-in-types-directory -- Component-specific prop types */
 import { forwardRef, type ComponentPropsWithRef, type ReactNode } from 'react';
 import classNames from 'classnames/bind';
+import type { ButtonVariant } from '../types/ui';
 import styles from './Button.module.css';
-
-type ButtonVariant = 'default' | 'text' | 'toolbar' | 'ghost';
 
 const cx = classNames.bind(styles);
 

@@ -1,4 +1,4 @@
-import { KNOWN_DISPLAYS } from '../constants/display';
+import { KNOWN_DISPLAYS } from '../constants/ui';
 import { estimateDiagonal } from './estimateDiagonal';
 
 export function getMonitorDiagonal(): number {

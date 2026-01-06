@@ -1,5 +1,5 @@
 import type { StateCreator } from 'zustand';
-import type { EquipmentActionsSlice, StoreWithEquipment } from '../../types/store';
+import type { EquipmentActionsSlice, StoreWithEquipment } from '../../types/ui';
 import { moveItem as ecsMoveItem } from '../../ecs/systems/moveItemSystem';
 import { splitItem as ecsSplitItem } from '../../ecs/systems/splitItemSystem';
 import { destroyItem as ecsDestroyItem } from '../../ecs/systems/destroyItemSystem';

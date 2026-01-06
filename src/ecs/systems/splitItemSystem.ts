@@ -7,8 +7,7 @@
 
 import { world } from '../world';
 import type { Entity, EntityId, GridId } from '../world';
-import { DEFAULT_QUANTITY } from '../../constants/items';
-import { SPLIT_ITEM_FAIL } from '../../constants/inventory';
+import { DEFAULT_QUANTITY, SPLIT_ITEM_FAIL } from '../../constants/inventory';
 import type { SplitItemReturn } from '../../types/inventory';
 import {
   findCompatibleStack,

@@ -115,9 +115,9 @@ ls:
     .*: regex:$
     .dir: regex:@types
 
-  # src/constants - camelCase .ts files only, no subdirectories
+  # src/constants - domain-specific .ts files only, no subdirectories
   src/constants:
-    .ts: camelCase
+    .ts: regex:character|conditions|status|medical|equipment|inventory|crafting|combat|movement|stealth|scavenging|map|locations|weather|time|factions|vehicles|input|ui|audio|assets|save|settings|primitives
     .*: regex:$
     .dir: regex:constants
 
@@ -237,9 +237,9 @@ ls:
     .*: regex:$
     .dir: regex:slices
 
-  # src/types - camelCase app type files (.ts) only, no subdirectories
+  # src/types - domain-specific .ts files only, no subdirectories
   src/types:
-    .ts: camelCase
+    .ts: regex:character|conditions|status|medical|equipment|inventory|crafting|combat|movement|stealth|scavenging|map|locations|weather|time|factions|vehicles|input|ui|audio|assets|save|settings|primitives
     .*: regex:$
     .dir: regex:types
 

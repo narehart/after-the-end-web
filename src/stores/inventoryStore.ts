@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { EQUIPMENT_SLOTS } from '../constants/equipment';
-import type { InventoryStore } from '../types/store';
+import type { InventoryStore } from '../types/ui';
 import { createUISlice } from './slices/uiSlice';
 import { createEquipmentSlice } from './slices/equipmentSlice';
 import { createNavigationSlice } from './slices/navigationSlice';

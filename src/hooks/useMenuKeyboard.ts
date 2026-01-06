@@ -1,10 +1,7 @@
-/* eslint-disable local/types-in-types-directory -- Hook-specific types */
 import { useEffect, useState, useCallback } from 'react';
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
-import { MENU_INPUT_DELAY_MS } from '../constants/timing';
+import { FIRST_INDEX, SECOND_INDEX, MENU_INPUT_DELAY_MS } from '../constants/primitives';
 import type { MenuItem, MenuPathSegment } from '../types/inventory';
-
-type KeyHandler = () => void;
+import type { KeyHandler } from '../types/ui';
 
 interface UseMenuKeyboardProps {
   items: MenuItem[];

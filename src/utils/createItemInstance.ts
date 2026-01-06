@@ -1,4 +1,4 @@
-import { DEFAULT_QUANTITY } from '../constants/items';
+import { DEFAULT_QUANTITY } from '../constants/inventory';
 import type { Item } from '../types/inventory';
 import { generateRandomDurability } from './generateRandomDurability';
 

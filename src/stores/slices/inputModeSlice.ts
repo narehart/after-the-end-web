@@ -1,5 +1,5 @@
 import type { StateCreator } from 'zustand';
-import type { InputModeSlice } from '../../types/store';
+import type { InputModeSlice } from '../../types/ui';
 
 export const createInputModeSlice: StateCreator<InputModeSlice, [], [], InputModeSlice> = (
   set

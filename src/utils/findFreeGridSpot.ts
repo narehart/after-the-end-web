@@ -1,4 +1,4 @@
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/primitives';
 import type { GridOccupancy } from '../types/inventory';
 import { checkGridSpot } from './checkGridSpot';
 import { randomInt } from './randomInt';

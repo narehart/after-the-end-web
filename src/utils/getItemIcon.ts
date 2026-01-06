@@ -1,5 +1,5 @@
 import type { ItemType } from '../types/inventory';
-import { ITEM_ICONS } from '../constants/items';
+import { ITEM_ICONS } from '../constants/inventory';
 
 interface GetItemIconProps {
   type: ItemType;

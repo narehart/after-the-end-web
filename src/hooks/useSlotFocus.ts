@@ -1,7 +1,5 @@
-import { FIRST_INDEX } from '../constants/array';
+import { FIRST_INDEX } from '../constants/primitives';
 import { useInventoryStore } from '../stores/inventoryStore';
-
-;
 
 interface UseSlotFocusProps {
   itemId: string | null;

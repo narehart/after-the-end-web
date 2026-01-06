@@ -1,4 +1,4 @@
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/primitives';
 import type { MenuItem, MenuPathSegment, UseMenuContextReturn } from '../types/inventory';
 import { getSegmentId } from './getSegmentId';
 

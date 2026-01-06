@@ -1,6 +1,6 @@
 import type { Item } from '../types/inventory';
-import { CELL_GAP } from '../constants/grid';
-import { SECOND_INDEX } from '../constants/array';
+import { CELL_GAP } from '../constants/ui';
+import { SECOND_INDEX } from '../constants/primitives';
 
 interface CalculateItemDimensionsProps {
   item: Item;
