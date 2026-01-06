@@ -29,6 +29,7 @@ import noEcsInUi from './eslint-rules/no-ecs-in-ui.ts';
 import oneSystemPerFile from './eslint-rules/one-system-per-file.ts';
 import ecsComponentsDataOnly from './eslint-rules/ecs-components-data-only.ts';
 import ecsQueriesUseWorld from './eslint-rules/ecs-queries-use-world.ts';
+import ecsEntitiesAddToWorld from './eslint-rules/ecs-entities-add-to-world.ts';
 import maxLinesExcludingTypes from './eslint-rules/max-lines-excluding-types.ts';
 
 const MAX_LINES = 250;
@@ -67,6 +68,7 @@ const localPlugin = {
     'one-system-per-file': oneSystemPerFile,
     'ecs-components-data-only': ecsComponentsDataOnly,
     'ecs-queries-use-world': ecsQueriesUseWorld,
+    'ecs-entities-add-to-world': ecsEntitiesAddToWorld,
     'max-lines-excluding-types': maxLinesExcludingTypes,
   },
 };
@@ -112,6 +114,7 @@ const sharedRules: Linter.RulesRecord = {
   'local/one-system-per-file': 'error',
   'local/ecs-components-data-only': 'error',
   'local/ecs-queries-use-world': 'error',
+  'local/ecs-entities-add-to-world': 'error',
 };
 
 export default defineConfig([

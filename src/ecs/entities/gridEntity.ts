@@ -7,6 +7,7 @@
 
 import { world } from '../world';
 import type { Entity, EntityId, GridId } from '../world';
+import { createEmptyGrid } from '../../utils/createEmptyGrid';
 
 interface CreateGridEntityProps {
   gridId: GridId;
@@ -19,18 +20,6 @@ interface CreateGridEntityReturn {
   entityId: EntityId;
 }
 
-function createEmptyCells(width: number, height: number): Array<Array<EntityId | null>> {
-  const cells: Array<Array<EntityId | null>> = [];
-  for (let y = 0; y < height; y++) {
-    const row: Array<EntityId | null> = [];
-    for (let x = 0; x < width; x++) {
-      row.push(null);
-    }
-    cells.push(row);
-  }
-  return cells;
-}
-
 export function createGridEntity(props: CreateGridEntityProps): CreateGridEntityReturn {
   const { gridId, width, height } = props;
 
@@ -40,7 +29,7 @@ export function createGridEntity(props: CreateGridEntityProps): CreateGridEntity
       gridId,
       width,
       height,
-      cells: createEmptyCells(width, height),
+      cells: createEmptyGrid({ width, height }),
     },
   };
 
