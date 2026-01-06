@@ -74,14 +74,6 @@ export type GridsMap = Record<string, GridCell | undefined>;
 
 export type Equipment = Record<SlotType, string | null>;
 
-export interface Conditions {
-  health: number;
-  hunger: number;
-  thirst: number;
-  temperature: number;
-  encumbrance: number;
-}
-
 export interface MenuPathSegment {
   id: string;
   label: string;

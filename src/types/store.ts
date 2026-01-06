@@ -1,5 +1,5 @@
+import type { Conditions } from './conditions';
 import type {
-  Conditions,
   ContainerRect,
   Equipment,
   MenuPathSegment,

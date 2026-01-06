@@ -1,4 +1,4 @@
-import type { Conditions } from '../types/inventory';
+import type { Conditions } from '../types/conditions';
 
 export const INITIAL_CONDITIONS: Conditions = {
   health: 85,
