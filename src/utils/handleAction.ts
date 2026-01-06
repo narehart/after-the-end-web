@@ -4,7 +4,8 @@ import { handleTakeAction } from './handleTakeAction';
 
 export function handleAction(props: HandleActionProps): void {
   const { item, context } = props;
-  const { rotateItem, equipItem, moveItem, destroyItem, emptyContainer, closeMenu } = context;
+  const { rotateItem, equipItem, unequipItem, moveItem, destroyItem, emptyContainer, closeMenu } =
+    context;
   const itemId = context.itemId;
 
   if (itemId === null) {
@@ -20,7 +21,11 @@ export function handleAction(props: HandleActionProps): void {
   } else if (item.id === 'equip') {
     equipItem(itemId);
   } else if (item.id === 'drop') {
-    moveItem(itemId, 'ground');
+    if (context.source === 'equipment') {
+      unequipItem(itemId, 'ground');
+    } else {
+      moveItem(itemId, 'ground');
+    }
   } else if (item.id === 'take') {
     handleTakeAction({ itemId, context });
   } else if (item.id === 'destroy') {
