@@ -49,8 +49,10 @@ export default function useSlotHandlers({
   }, [item, itemId, hasGrid, setSelectedItem, focusOnEquipmentSlot, slotType]);
 
   const handleDoubleClick = useCallback((): void => {
-    openModal();
-  }, [openModal]);
+    if (hasGrid && itemId !== null) {
+      focusOnEquipmentSlot(slotType);
+    }
+  }, [hasGrid, itemId, focusOnEquipmentSlot, slotType]);
 
   const handleContextMenu = useCallback(
     (e: MouseEvent<HTMLButtonElement>): void => {

@@ -30,6 +30,7 @@ export interface CellState {
 export interface ItemGridHandlers {
   handleClick: () => void;
   openModal: (element: HTMLElement) => void;
+  openContainer: () => void;
   handleMouseEnter: () => void;
   handleFocus: () => void;
 }

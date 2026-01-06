@@ -33,16 +33,17 @@ export default function ItemGridCell({
   context,
   cellSize,
 }: ItemGridCellProps): React.JSX.Element {
-  const { cellState, handleClick, openModal, handleMouseEnter, handleFocus } = useItemGridCell({
-    x,
-    y,
-    itemId,
-    item,
-    context,
-    onNavigate,
-  });
+  const { cellState, handleClick, openModal, openContainer, handleMouseEnter, handleFocus } =
+    useItemGridCell({
+      x,
+      y,
+      itemId,
+      item,
+      context,
+      onNavigate,
+    });
 
-  const handlers = { handleClick, openModal, handleMouseEnter, handleFocus };
+  const handlers = { handleClick, openModal, openContainer, handleMouseEnter, handleFocus };
 
   return (
     <Box

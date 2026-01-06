@@ -17,6 +17,7 @@ interface UseItemGridCellReturn {
   cellState: CellState;
   handleClick: () => void;
   openModal: (element: HTMLElement) => void;
+  openContainer: () => void;
   handleMouseEnter: () => void;
   handleFocus: () => void;
 }
@@ -32,6 +33,7 @@ export default function useItemGridCell({
   const selectedItemId = useInventoryStore((state) => state.selectedItemId);
   const setSelectedItem = useInventoryStore((state) => state.setSelectedItem);
   const openMenu = useInventoryStore((state) => state.openMenu);
+  const navigateToContainer = useInventoryStore((state) => state.navigateToContainer);
   const menu = useInventoryStore((state) => state.menu);
 
   const cellState = useMemo(
@@ -58,6 +60,12 @@ export default function useItemGridCell({
     [itemId, context, setSelectedItem, openMenu]
   );
 
+  const openContainer = useCallback((): void => {
+    if (itemId === null || item?.gridSize === undefined) return;
+    const panel = context === 'ground' || context === 'world' ? 'world' : 'inventory';
+    navigateToContainer(itemId, panel);
+  }, [itemId, item?.gridSize, context, navigateToContainer]);
+
   const handleMouseEnter = useCallback((): void => {
     if (itemId !== null) setSelectedItem(itemId);
   }, [itemId, setSelectedItem]);
@@ -71,6 +79,7 @@ export default function useItemGridCell({
     cellState,
     handleClick,
     openModal,
+    openContainer,
     handleMouseEnter,
     handleFocus,
   };

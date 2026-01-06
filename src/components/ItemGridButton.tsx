@@ -30,7 +30,7 @@ export default function ItemGridButton({
   const [isHovered, setIsHovered] = useState(false);
   const inputMode = useInventoryStore((s) => s.inputMode);
   const { isSelected, hasOpenModal, hasGrid } = cellState;
-  const { handleClick, openModal, handleMouseEnter, handleFocus } = handlers;
+  const { handleClick, openModal, openContainer, handleMouseEnter, handleFocus } = handlers;
 
   const showHoverHighlight =
     (inputMode === 'pointer' && isHovered) || (inputMode === 'keyboard' && isSelected);
@@ -38,8 +38,10 @@ export default function ItemGridButton({
   const { itemWidth, itemHeight } = calculateItemDimensions({ item, cellSize });
   const showQuantity = item.quantity !== undefined && item.quantity > DEFAULT_QUANTITY;
 
-  const handleDoubleClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
-    openModal(e.currentTarget);
+  const handleDoubleClick = (): void => {
+    if (hasGrid) {
+      openContainer();
+    }
   };
   const handleContextMenu = (e: React.MouseEvent<HTMLButtonElement>): void => {
     e.preventDefault();
