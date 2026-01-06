@@ -1,7 +1,6 @@
 import classNames from 'classnames/bind';
 import useECSInit from '../hooks/useECSInit';
 import useInputModeDetection from '../hooks/useInputModeDetection';
-import { useViewportScale } from '../hooks/useViewportScale';
 import { useInventoryStore } from '../stores/inventoryStore';
 import MainHeader from './MainHeader';
 import Inventory from './Inventory';
@@ -15,7 +14,6 @@ function App(): React.JSX.Element {
   useInputModeDetection();
 
   const activeScreen = useInventoryStore((s) => s.activeScreen);
-  const { containerStyle } = useViewportScale();
 
   const renderScreen = (): React.JSX.Element => {
     switch (activeScreen) {
@@ -49,7 +47,7 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <Flex direction="column" className={cx('app-container')} style={containerStyle}>
+    <Flex direction="column" className={cx('app-container')}>
       <MainHeader />
       {renderScreen()}
     </Flex>
