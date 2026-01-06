@@ -6,7 +6,7 @@
  */
 
 import { world } from '../world';
-import type { Entity, MoveItemContextProps, MoveItemProps, MoveItemReturn } from '../../types/ecs';
+import type { Entity, EntityId, GridId } from '../../types/ecs';
 import { MOVE_ITEM_FAIL } from '../../constants/ecs';
 import {
   findCompatibleStack,
@@ -16,6 +16,24 @@ import {
   placeInCells,
   removeFromCells,
 } from '../queries/inventoryQueries';
+
+interface MoveItemProps {
+  entityId: EntityId;
+  targetGridId: GridId;
+}
+
+interface MoveItemReturn {
+  success: boolean;
+  merged: boolean;
+}
+
+interface MoveItemContextProps {
+  itemEntity: Entity;
+  sourceGridEntity: Entity;
+  targetGridEntity: Entity;
+}
+
+export type { MoveItemProps, MoveItemReturn };
 
 function validateMoveContext(entityId: string, targetGridId: string): MoveItemContextProps | null {
   const itemEntity = getItemEntity({ entityId });

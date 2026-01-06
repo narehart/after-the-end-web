@@ -5,8 +5,14 @@
  */
 
 import { world } from '../world';
-import type { DestroyItemProps } from '../../types/ecs';
+import type { EntityId } from '../../types/ecs';
 import { getGridEntity, getItemEntity, removeFromCells } from '../queries/inventoryQueries';
+
+interface DestroyItemProps {
+  entityId: EntityId;
+}
+
+export type { DestroyItemProps };
 
 export function destroyItem(props: DestroyItemProps): boolean {
   const { entityId } = props;

@@ -4,9 +4,16 @@
  * Merges all of one item's quantity into another compatible stack.
  */
 
-import type { MergeItemsProps } from '../../types/ecs';
+import type { EntityId } from '../../types/ecs';
 import { getItemEntity } from '../queries/inventoryQueries';
 import { destroyItem } from './destroyItemSystem';
+
+interface MergeItemsProps {
+  sourceEntityId: EntityId;
+  targetEntityId: EntityId;
+}
+
+export type { MergeItemsProps };
 
 export function mergeItems(props: MergeItemsProps): boolean {
   const { sourceEntityId, targetEntityId } = props;

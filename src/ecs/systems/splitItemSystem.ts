@@ -6,12 +6,7 @@
  */
 
 import { world } from '../world';
-import type {
-  Entity,
-  SplitItemContextProps,
-  SplitItemProps,
-  SplitItemReturn,
-} from '../../types/ecs';
+import type { Entity, EntityId, GridId } from '../../types/ecs';
 import { DEFAULT_QUANTITY } from '../../constants/items';
 import { SPLIT_ITEM_FAIL } from '../../constants/ecs';
 import {
@@ -22,6 +17,23 @@ import {
   placeInCells,
 } from '../queries/inventoryQueries';
 import { generateInstanceId } from '../../utils/generateInstanceId';
+
+interface SplitItemProps {
+  entityId: EntityId;
+  targetGridId: GridId;
+}
+
+interface SplitItemReturn {
+  success: boolean;
+  newEntityId: EntityId | null;
+}
+
+interface SplitItemContextProps {
+  itemEntity: Entity;
+  targetGridEntity: Entity;
+}
+
+export type { SplitItemProps, SplitItemReturn };
 
 function validateSplitContext(
   entityId: string,

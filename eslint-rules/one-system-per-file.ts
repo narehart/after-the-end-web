@@ -2,7 +2,7 @@
  * ESLint rule: one-system-per-file
  *
  * Enforces that src/ecs/systems/ files export exactly one system function.
- * Similar to one-function-per-utils-file but for ECS systems.
+ * Type exports (export type { ... }) are allowed alongside the function.
  */
 
 import path from 'node:path';
@@ -10,6 +10,12 @@ import type { Rule } from 'eslint';
 
 const ZERO_EXPORTS = 0;
 const ONE_EXPORT = 1;
+
+function isTypeOnlyExport(node: Rule.Node): boolean {
+  if (node.type !== 'ExportNamedDeclaration') return false;
+  if (!('exportKind' in node)) return false;
+  return node.exportKind === 'type';
+}
 
 const rule: Rule.RuleModule = {
   meta: {
@@ -32,26 +38,29 @@ const rule: Rule.RuleModule = {
       return {};
     }
 
-    let exportCount = 0;
+    let functionExportCount = 0;
 
     return {
-      ExportNamedDeclaration(): void {
-        exportCount++;
+      ExportNamedDeclaration(node): void {
+        // Skip type-only exports (export type { ... })
+        if (!isTypeOnlyExport(node)) {
+          functionExportCount++;
+        }
       },
       ExportDefaultDeclaration(): void {
-        exportCount++;
+        functionExportCount++;
       },
       'Program:exit'(node): void {
-        if (exportCount === ZERO_EXPORTS) {
+        if (functionExportCount === ZERO_EXPORTS) {
           context.report({
             node,
             messageId: 'noExports',
           });
-        } else if (exportCount > ONE_EXPORT) {
+        } else if (functionExportCount > ONE_EXPORT) {
           context.report({
             node,
             messageId: 'tooManyExports',
-            data: { count: String(exportCount) },
+            data: { count: String(functionExportCount) },
           });
         }
       },

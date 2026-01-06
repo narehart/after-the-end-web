@@ -5,13 +5,22 @@
  * Used for initial placement or repositioning within same grid.
  */
 
-import type { Entity, PlaceItemProps } from '../../types/ecs';
+import type { Entity, EntityId, GridId } from '../../types/ecs';
 import {
   getGridEntity,
   getItemEntity,
   placeInCells,
   removeFromCells,
 } from '../queries/inventoryQueries';
+
+interface PlaceItemProps {
+  entityId: EntityId;
+  gridId: GridId;
+  x: number;
+  y: number;
+}
+
+export type { PlaceItemProps };
 
 function isSpaceFree(
   cells: Array<Array<string | null>>,
