@@ -5,6 +5,7 @@
  * unless they are:
  * - Function interfaces (names ending in Props, Params, or Return)
  * - ECS components (in src/ecs/components/)
+ * - Hooks (in src/hooks/) - colocated interfaces allowed
  */
 
 import path from 'node:path';

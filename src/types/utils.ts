@@ -7,11 +7,9 @@ import type {
   Item,
   ItemsMap,
   ItemType,
-  PanelType,
-  SlotType,
 } from './inventory';
 import type { NavigationDirection } from './gamepad';
-import type { PanelRefs, Resolution, ItemPlacement, GamepadRefs, GamepadCallbacks } from './ui';
+import type { ItemPlacement, GamepadRefs, GamepadCallbacks } from './ui';
 
 // Grid utility Props interfaces
 export interface BuildGridWithItemsProps {
@@ -123,30 +121,6 @@ export interface GetModalPositionProps {
 export interface GetModalPositionReturn {
   x: number;
   y: number;
-}
-
-// Hook Props interfaces
-export interface UseCellSizeProps {
-  resolution: Resolution;
-}
-
-export interface UseEquipmentSlotProps {
-  slotType: SlotType;
-  slotRef: MutableRefObject<HTMLButtonElement | null>;
-}
-
-export interface UsePanelNavigationProps {
-  refs: PanelRefs;
-  modalsOpen: boolean;
-}
-
-export interface UseBreadcrumbLinksContainerProps {
-  panelLabel: string;
-  focusPath: string[];
-  items: ItemsMap;
-  equipment: Equipment;
-  onNavigateBack: (index: number) => void;
-  panelType: PanelType;
 }
 
 // Gamepad utility Props interfaces

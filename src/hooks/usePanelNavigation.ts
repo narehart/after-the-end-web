@@ -2,10 +2,12 @@ import type { MutableRefObject, RefObject } from 'react';
 import { useRef, useEffect, useCallback } from 'react';
 import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
 import { PANELS } from '../constants/navigation';
-import type { PanelName } from '../types/ui';
-import type { UsePanelNavigationProps } from '../types/utils';
+import type { PanelName, PanelRefs } from '../types/ui';
 
-;
+interface UsePanelNavigationProps {
+  refs: PanelRefs;
+  modalsOpen: boolean;
+}
 
 interface UsePanelNavigationReturn {
   focusPanel: (panelIndex: number) => void;

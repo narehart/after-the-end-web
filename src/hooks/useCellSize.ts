@@ -9,9 +9,11 @@ import {
 } from '../constants/grid';
 import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
 import { RESIZE_DEBOUNCE_MS } from '../constants/timing';
-import type { UseCellSizeProps } from '../types/utils';
+import type { Resolution } from '../types/ui';
 
-;
+interface UseCellSizeProps {
+  resolution: Resolution;
+}
 
 export default function useCellSize(
   containerRef: RefObject<HTMLDivElement | null>,

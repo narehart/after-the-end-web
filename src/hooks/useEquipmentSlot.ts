@@ -1,9 +1,14 @@
-import type { MouseEvent, KeyboardEvent } from 'react';
+import type { MouseEvent, KeyboardEvent, MutableRefObject } from 'react';
 import type { SlotState } from '../types/ui';
-import type { UseEquipmentSlotProps } from '../types/utils';
+import type { SlotType } from '../types/inventory';
 import useSlotItem from './useSlotItem';
 import useSlotFocus from './useSlotFocus';
 import useSlotHandlers from './useSlotHandlers';
+
+interface UseEquipmentSlotProps {
+  slotType: SlotType;
+  slotRef: MutableRefObject<HTMLButtonElement | null>;
+}
 
 interface UseEquipmentSlotReturn {
   slotState: SlotState;

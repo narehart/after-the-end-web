@@ -1,11 +1,17 @@
 import { useMemo } from 'react';
 import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
 import { SLOT_LABELS } from '../constants/slotLabels';
-import type { BreadcrumbLink } from '../types/inventory';
-import type { UseBreadcrumbLinksContainerProps } from '../types/utils';
+import type { BreadcrumbLink, Equipment, ItemsMap, PanelType } from '../types/inventory';
 import { isSlotType } from '../utils/isSlotType';
 
-;
+interface UseBreadcrumbLinksContainerProps {
+  panelLabel: string;
+  focusPath: string[];
+  items: ItemsMap;
+  equipment: Equipment;
+  onNavigateBack: (index: number) => void;
+  panelType: PanelType;
+}
 
 export function useBreadcrumbLinksContainer(
   props: UseBreadcrumbLinksContainerProps
