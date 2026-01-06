@@ -8,7 +8,8 @@
 import { world } from '../world';
 import type { Entity, EntityId, GridId } from '../world';
 import { DEFAULT_QUANTITY } from '../../constants/items';
-import { SPLIT_ITEM_FAIL } from '../../constants/ecs';
+import { SPLIT_ITEM_FAIL } from '../../constants/inventorySystem';
+import type { SplitItemReturn } from '../../types/inventorySystem';
 import {
   findCompatibleStack,
   findFreePosition,
@@ -23,17 +24,10 @@ interface SplitItemProps {
   targetGridId: GridId;
 }
 
-interface SplitItemReturn {
-  success: boolean;
-  newEntityId: EntityId | null;
-}
-
 interface SplitItemContextProps {
   itemEntity: Entity;
   targetGridEntity: Entity;
 }
-
-export type { SplitItemProps, SplitItemReturn };
 
 function validateSplitContext(
   entityId: string,

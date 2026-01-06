@@ -7,7 +7,8 @@
 
 import { world } from '../world';
 import type { Entity, EntityId, GridId } from '../world';
-import { MOVE_ITEM_FAIL } from '../../constants/ecs';
+import { MOVE_ITEM_FAIL } from '../../constants/inventorySystem';
+import type { MoveItemReturn } from '../../types/inventorySystem';
 import {
   findCompatibleStack,
   findFreePosition,
@@ -22,18 +23,11 @@ interface MoveItemProps {
   targetGridId: GridId;
 }
 
-interface MoveItemReturn {
-  success: boolean;
-  merged: boolean;
-}
-
 interface MoveItemContextProps {
   itemEntity: Entity;
   sourceGridEntity: Entity;
   targetGridEntity: Entity;
 }
-
-export type { MoveItemProps, MoveItemReturn };
 
 function validateMoveContext(entityId: string, targetGridId: string): MoveItemContextProps | null {
   const itemEntity = getItemEntity({ entityId });
