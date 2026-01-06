@@ -36,6 +36,7 @@ const HOOKS_TARGET_DIR = join(GIT_ROOT, '.git', 'hooks');
 const HOOK_MAPPINGS = [
   { source: 'preCommit.js', target: 'pre-commit' },
   { source: 'commitMsg.js', target: 'commit-msg' },
+  { source: 'postCommit.js', target: 'post-commit' },
 ];
 
 const EXECUTABLE_MODE = 0o755;
