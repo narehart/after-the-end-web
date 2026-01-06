@@ -1,4 +1,4 @@
-import { IMAGES_BASE_PATH } from '../constants/images';
+import { IMAGES_BASE_PATH } from '../constants/assets';
 
 export function getImageUrl(filename: string): string {
   return `${IMAGES_BASE_PATH}/${filename}`;
