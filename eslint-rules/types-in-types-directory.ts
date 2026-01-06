@@ -2,7 +2,7 @@
  * ESLint rule: types-in-types-directory
  *
  * Enforces that type aliases and interfaces are defined in src/types/,
- * unless they are function interfaces (names ending in Props or Return).
+ * unless they are function interfaces (names ending in Props, Params, or Return).
  */
 
 import path from 'node:path';
@@ -14,7 +14,7 @@ interface TypeInfo {
 }
 
 function isFunctionInterface(name: string): boolean {
-  return name.endsWith('Props') || name.endsWith('Return');
+  return name.endsWith('Props') || name.endsWith('Params') || name.endsWith('Return');
 }
 
 function isNonNullObject(value: unknown): value is Record<string, unknown> {
@@ -36,11 +36,11 @@ const rule: Rule.RuleModule = {
     type: 'suggestion',
     docs: {
       description:
-        'Enforce types/interfaces to be in src/types/, except function interfaces (Props/Return)',
+        'Enforce types/interfaces to be in src/types/, except function interfaces (Props/Params/Return)',
     },
     messages: {
       typeNotInTypesDir:
-        "Type '{{typeName}}' should be defined in src/types/ directory. Only function interfaces (ending in Props or Return) are allowed locally.",
+        "Type '{{typeName}}' should be defined in src/types/ directory. Only function interfaces (ending in Props, Params, or Return) are allowed locally.",
     },
     schema: [],
   },

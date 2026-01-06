@@ -1,4 +1,4 @@
-/* eslint-disable max-lines */
+/* eslint-disable local/max-lines-excluding-types */
 import js from '@eslint/js';
 import type { Linter, ESLint } from 'eslint';
 import globals from 'globals';
@@ -28,6 +28,7 @@ import noReactInEcs from './eslint-rules/no-react-in-ecs.ts';
 import noEcsInUi from './eslint-rules/no-ecs-in-ui.ts';
 import oneSystemPerFile from './eslint-rules/one-system-per-file.ts';
 import ecsComponentsDataOnly from './eslint-rules/ecs-components-data-only.ts';
+import maxLinesExcludingTypes from './eslint-rules/max-lines-excluding-types.ts';
 
 const MAX_LINES = 250;
 const MAX_LINES_PER_FUNCTION = 100;
@@ -64,6 +65,7 @@ const localPlugin = {
     'no-ecs-in-ui': noEcsInUi,
     'one-system-per-file': oneSystemPerFile,
     'ecs-components-data-only': ecsComponentsDataOnly,
+    'max-lines-excluding-types': maxLinesExcludingTypes,
   },
 };
 const sharedRules: Linter.RulesRecord = {
@@ -79,7 +81,10 @@ const sharedRules: Linter.RulesRecord = {
   'import/first': 'error',
   'import/no-duplicates': 'error',
   'import/newline-after-import': 'error',
-  'max-lines': ['error', { max: MAX_LINES, skipBlankLines: true, skipComments: true }],
+  'local/max-lines-excluding-types': [
+    'error',
+    { max: MAX_LINES, skipBlankLines: true, skipComments: true },
+  ],
   'max-lines-per-function': [
     'error',
     { max: MAX_LINES_PER_FUNCTION, skipBlankLines: true, skipComments: true },
