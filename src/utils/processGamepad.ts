@@ -15,8 +15,16 @@ export type { GamepadCallbacks, GamepadRefs } from '../types/input';
 export function processGamepad(props: ProcessGamepadProps): void {
   const { gamepad, refs, callbacks } = props;
   const { lastButtonStates, lastAxisStates } = refs;
-  const { onNavigate, onConfirm, onBack, onNextPanel, onPrevPanel, startRepeat, clearRepeatTimer } =
-    callbacks;
+  const {
+    onNavigate,
+    onConfirm,
+    onBack,
+    onNextPanel,
+    onPrevPanel,
+    onSelect,
+    startRepeat,
+    clearRepeatTimer,
+  } = callbacks;
 
   const handleButton = createButtonHandler({
     gamepad,
@@ -64,6 +72,9 @@ export function processGamepad(props: ProcessGamepadProps): void {
   });
   handleButton(BUTTONS.LB, () => {
     onPrevPanel?.();
+  });
+  handleButton(BUTTONS.SELECT, () => {
+    onSelect?.();
   });
 
   const stickX = gamepad.axes[FIRST_INDEX] ?? FIRST_INDEX;

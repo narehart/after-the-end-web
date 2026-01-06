@@ -12,6 +12,7 @@ interface UseGamepadProps {
   onBack?: (() => void) | undefined;
   onNextPanel?: (() => void) | undefined;
   onPrevPanel?: (() => void) | undefined;
+  onSelect?: (() => void) | undefined;
   enabled?: boolean | undefined;
 }
 
@@ -26,6 +27,7 @@ export function useGamepad({
   onBack,
   onNextPanel,
   onPrevPanel,
+  onSelect,
   enabled = true,
 }: UseGamepadProps): UseGamepadReturn {
   const [isConnected, setIsConnected] = useState(false);
@@ -66,6 +68,7 @@ export function useGamepad({
       onBack,
       onNextPanel,
       onPrevPanel,
+      onSelect,
       startRepeat,
       clearRepeatTimer,
     };
@@ -91,6 +94,7 @@ export function useGamepad({
     onBack,
     onNextPanel,
     onPrevPanel,
+    onSelect,
     startRepeat,
     clearRepeatTimer,
   ]);

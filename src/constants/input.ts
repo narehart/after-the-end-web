@@ -14,6 +14,8 @@ export const BUTTONS = {
   B: 1,
   LB: 4,
   RB: 5,
+  SELECT: 8,
+  START: 9,
   DPAD_UP: 12,
   DPAD_DOWN: 13,
   DPAD_LEFT: 14,

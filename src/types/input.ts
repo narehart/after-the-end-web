@@ -20,6 +20,7 @@ export interface GamepadCallbacks {
   onBack?: (() => void) | undefined;
   onNextPanel?: (() => void) | undefined;
   onPrevPanel?: (() => void) | undefined;
+  onSelect?: (() => void) | undefined;
   startRepeat: (key: string, action: () => void) => void;
   clearRepeatTimer: (key: string) => void;
 }

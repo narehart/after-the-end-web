@@ -3,6 +3,10 @@
     "dev-server": {
       "command": "node",
       "args": ["scripts/devServerMcp.js"]
+    },
+    "tauri": {
+      "command": "npx",
+      "args": ["-y", "@hypothesi/tauri-mcp-server"]
     }
   }
 }

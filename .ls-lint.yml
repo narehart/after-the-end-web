@@ -8,12 +8,13 @@ ls:
   .html: regex:index
   .md: regex:README | regex:CLAUDE
   .yml: regex:\.ls-lint
+  -versions: regex:\.tool
 
   # Block any other extensions at root
   .*: regex:$
 
   # Allowed root directories
-  .dir: regex:\.claude | regex:\.git | regex:dist | regex:docs | regex:eslint-rules | regex:node_modules | regex:public | regex:scripts | regex:src
+  .dir: regex:\.claude | regex:\.git | regex:dist | regex:docs | regex:eslint-rules | regex:node_modules | regex:public | regex:scripts | regex:src | regex:src-tauri
 
   # .claude directory - only officially supported Anthropic files
   .claude:
@@ -259,3 +260,4 @@ ignore:
   - dist
   - node_modules
   - src/utils
+  - src-tauri

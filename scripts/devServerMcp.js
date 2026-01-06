@@ -41,6 +41,16 @@ function loadState() {
   if (!existsSync(STATE_FILE)) return null;
   try {
     const data = JSON.parse(readFileSync(STATE_FILE, 'utf-8'));
+    // For Tauri mode, check if port is in use (process tree is complex)
+    if (data.mode === 'tauri') {
+      const portPid = getProcessOnPort(data.port);
+      if (portPid) {
+        return { ...data, pid: portPid };
+      }
+      clearState();
+      return null;
+    }
+    // For Vite mode, check if original PID is running
     if (data.pid && isProcessRunning(data.pid)) {
       return data;
     }
@@ -53,11 +63,12 @@ function loadState() {
 }
 
 // Save state to file
-function saveState(pid, port, cwd) {
+function saveState(pid, port, cwd, mode = 'vite') {
   const data = {
     pid,
     port,
     cwd,
+    mode,
     startedAt: new Date().toISOString(),
   };
   writeFileSync(STATE_FILE, JSON.stringify(data, null, 2));
@@ -71,11 +82,11 @@ function clearState() {
 }
 
 // Start dev server
-function handleStart(port = DEFAULT_PORT) {
+function handleStart(port = DEFAULT_PORT, tauri = false) {
   const existingState = loadState();
   if (existingState) {
     return {
-      error: `Dev server already running (PID: ${existingState.pid}, port: ${existingState.port})`,
+      error: `Dev server already running (PID: ${existingState.pid}, port: ${existingState.port}, mode: ${existingState.mode || 'vite'})`,
     };
   }
 
@@ -90,7 +101,9 @@ function handleStart(port = DEFAULT_PORT) {
   const cwd = process.cwd();
   logs = [];
 
-  devProcess = spawn('npm', ['run', 'dev', '--', '--port', String(port)], {
+  const args = tauri ? ['run', 'tauri:dev'] : ['run', 'dev', '--', '--port', String(port)];
+
+  devProcess = spawn('npm', args, {
     cwd,
     stdio: ['ignore', 'pipe', 'pipe'],
     detached: true,
@@ -120,13 +133,15 @@ function handleStart(port = DEFAULT_PORT) {
   devProcess.unref();
 
   const pid = devProcess.pid;
-  saveState(pid, port, cwd);
+  const mode = tauri ? 'tauri' : 'vite';
+  saveState(pid, port, cwd, mode);
 
   return {
     pid,
     port,
+    mode,
     url: `http://localhost:${port}`,
-    message: 'Dev server started',
+    message: `Dev server started (${mode} mode)`,
   };
 }
 
@@ -148,14 +163,25 @@ function handleStop() {
     return { stopped: false, message: 'No dev server running' };
   }
 
-  try {
-    // Kill the process group to ensure child processes are also killed
-    process.kill(-state.pid, 'SIGTERM');
-  } catch {
+  // For Tauri mode, kill all processes on the port
+  if (state.mode === 'tauri') {
     try {
-      process.kill(state.pid, 'SIGTERM');
+      execSync(`lsof -ti :${state.port} | xargs kill -9 2>/dev/null || true`, {
+        encoding: 'utf-8',
+      });
     } catch {
-      // Process may have already exited
+      // Ignore errors
+    }
+  } else {
+    try {
+      // Kill the process group to ensure child processes are also killed
+      process.kill(-state.pid, 'SIGTERM');
+    } catch {
+      try {
+        process.kill(state.pid, 'SIGTERM');
+      } catch {
+        // Process may have already exited
+      }
     }
   }
 
@@ -163,7 +189,10 @@ function handleStop() {
   devProcess = null;
   logs = [];
 
-  return { stopped: true, message: `Dev server stopped (was PID: ${state.pid})` };
+  return {
+    stopped: true,
+    message: `Dev server stopped (was PID: ${state.pid}, mode: ${state.mode || 'vite'})`,
+  };
 }
 
 // Get status
@@ -174,6 +203,7 @@ function handleStatus() {
       running: true,
       pid: state.pid,
       port: state.port,
+      mode: state.mode || 'vite',
       url: `http://localhost:${state.port}`,
       startedAt: state.startedAt,
       cwd: state.cwd,
@@ -210,10 +240,13 @@ const EMPTY_SCHEMA = { type: 'object', properties: {} };
 const tools = [
   {
     name: 'dev_start',
-    description: 'Start the Vite dev server',
+    description: 'Start the dev server (Vite or Tauri)',
     inputSchema: {
       type: 'object',
-      properties: { port: { type: 'number', description: `Port (default: ${DEFAULT_PORT})` } },
+      properties: {
+        port: { type: 'number', description: `Port (default: ${DEFAULT_PORT})` },
+        tauri: { type: 'boolean', description: 'Run in Tauri mode (native window)' },
+      },
     },
   },
   { name: 'dev_stop', description: 'Stop the running dev server', inputSchema: EMPTY_SCHEMA },
@@ -229,7 +262,7 @@ const tools = [
 ];
 
 const handlers = {
-  dev_start: (a) => handleStart(a?.port),
+  dev_start: (a) => handleStart(a?.port, a?.tauri),
   dev_stop: () => handleStop(),
   dev_status: () => handleStatus(),
   dev_logs: (a) => handleLogs(a?.lines),
