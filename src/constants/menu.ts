@@ -10,7 +10,7 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     label: 'Open',
     icon: '▶',
     type: 'action',
-    show: (ctx: UseMenuContextReturn): boolean => ctx.item?.gridSize !== undefined,
+    show: (): boolean => false, // Hidden: use double-click to open containers
   },
   {
     id: 'use',
