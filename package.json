@@ -19,6 +19,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.25.1",
     "@pixi/react": "^8.0.5",
     "classnames": "^2.5.1",
     "miniplex": "^2.0.0",

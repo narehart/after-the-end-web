@@ -20,6 +20,19 @@ npm run lint:ls      # ls-lint (file naming)
 npm run format       # Prettier formatting
 ```
 
+## Dev Server Control
+
+Use the `dev-server` MCP instead of `npm run dev`:
+
+| Tool                          | Usage              |
+| ----------------------------- | ------------------ |
+| `mcp__dev-server__dev_start`  | Start dev server   |
+| `mcp__dev-server__dev_stop`   | Stop the server    |
+| `mcp__dev-server__dev_status` | Check if running   |
+| `mcp__dev-server__dev_logs`   | View recent output |
+
+**Do not use:** `npm run dev` directly - use the MCP for proper process tracking.
+
 ## Architecture
 
 ### Hybrid ECS + Zustand
