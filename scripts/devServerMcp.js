@@ -1,13 +1,7 @@
 #!/usr/bin/env node
+// Dev Server MCP - Controls Vite dev server via MCP tools
 
-/**
- * Dev Server MCP
- *
- * MCP server for controlling the Vite dev server.
- * Provides tools: dev_start, dev_stop, dev_status, dev_logs
- */
-
-import { spawn } from 'child_process';
+import { execSync, spawn } from 'child_process';
 import { existsSync, readFileSync, unlinkSync, writeFileSync } from 'fs';
 import { homedir } from 'os';
 import { join } from 'path';
@@ -22,13 +16,23 @@ const DEFAULT_PORT = 5173;
 let devProcess = null;
 let logs = [];
 
-// Check if a process is running
 function isProcessRunning(pid) {
   try {
     process.kill(pid, 0);
     return true;
   } catch {
     return false;
+  }
+}
+
+// Get PID of process listening on a port (returns null if none)
+function getProcessOnPort(port) {
+  try {
+    const output = execSync(`lsof -ti :${port}`, { encoding: 'utf-8' });
+    const pid = parseInt(output.trim().split('\n')[0], 10);
+    return isNaN(pid) ? null : pid;
+  } catch {
+    return null;
   }
 }
 
@@ -72,6 +76,14 @@ function handleStart(port = DEFAULT_PORT) {
   if (existingState) {
     return {
       error: `Dev server already running (PID: ${existingState.pid}, port: ${existingState.port})`,
+    };
+  }
+
+  // Check if something else is using the port
+  const existingPid = getProcessOnPort(port);
+  if (existingPid) {
+    return {
+      error: `Port ${port} is already in use by PID ${existingPid}. Stop it first or use a different port.`,
     };
   }
 
@@ -157,19 +169,29 @@ function handleStop() {
 // Get status
 function handleStatus() {
   const state = loadState();
-
-  if (!state) {
-    return { running: false };
+  if (state) {
+    return {
+      running: true,
+      pid: state.pid,
+      port: state.port,
+      url: `http://localhost:${state.port}`,
+      startedAt: state.startedAt,
+      cwd: state.cwd,
+    };
   }
-
-  return {
-    running: true,
-    pid: state.pid,
-    port: state.port,
-    url: `http://localhost:${state.port}`,
-    startedAt: state.startedAt,
-    cwd: state.cwd,
-  };
+  // Check if something is running on default port even without state
+  const pid = getProcessOnPort(DEFAULT_PORT);
+  if (pid) {
+    return {
+      running: true,
+      pid,
+      port: DEFAULT_PORT,
+      url: `http://localhost:${DEFAULT_PORT}`,
+      untracked: true,
+      message: 'Found untracked process on port',
+    };
+  }
+  return { running: false };
 }
 
 // Get logs
@@ -184,106 +206,45 @@ function handleLogs(lines = 50) {
   return { logs: recentLogs, count: recentLogs.length };
 }
 
-// Create MCP server
-const server = new Server(
+const EMPTY_SCHEMA = { type: 'object', properties: {} };
+const tools = [
   {
-    name: 'dev-server',
-    version: '1.0.0',
-  },
-  {
-    capabilities: {
-      tools: {},
+    name: 'dev_start',
+    description: 'Start the Vite dev server',
+    inputSchema: {
+      type: 'object',
+      properties: { port: { type: 'number', description: `Port (default: ${DEFAULT_PORT})` } },
     },
-  }
+  },
+  { name: 'dev_stop', description: 'Stop the running dev server', inputSchema: EMPTY_SCHEMA },
+  { name: 'dev_status', description: 'Check if dev server is running', inputSchema: EMPTY_SCHEMA },
+  {
+    name: 'dev_logs',
+    description: 'Get recent logs from the dev server',
+    inputSchema: {
+      type: 'object',
+      properties: { lines: { type: 'number', description: 'Lines to return (default: 50)' } },
+    },
+  },
+];
+
+const handlers = {
+  dev_start: (a) => handleStart(a?.port),
+  dev_stop: () => handleStop(),
+  dev_status: () => handleStatus(),
+  dev_logs: (a) => handleLogs(a?.lines),
+};
+
+const server = new Server(
+  { name: 'dev-server', version: '1.0.0' },
+  { capabilities: { tools: {} } }
 );
-
-// List available tools
-server.setRequestHandler(ListToolsRequestSchema, async () => {
-  return {
-    tools: [
-      {
-        name: 'dev_start',
-        description: 'Start the Vite dev server',
-        inputSchema: {
-          type: 'object',
-          properties: {
-            port: {
-              type: 'number',
-              description: `Port to run on (default: ${DEFAULT_PORT})`,
-            },
-          },
-        },
-      },
-      {
-        name: 'dev_stop',
-        description: 'Stop the running dev server',
-        inputSchema: {
-          type: 'object',
-          properties: {},
-        },
-      },
-      {
-        name: 'dev_status',
-        description: 'Check if dev server is running',
-        inputSchema: {
-          type: 'object',
-          properties: {},
-        },
-      },
-      {
-        name: 'dev_logs',
-        description: 'Get recent logs from the dev server',
-        inputSchema: {
-          type: 'object',
-          properties: {
-            lines: {
-              type: 'number',
-              description: 'Number of lines to return (default: 50)',
-            },
-          },
-        },
-      },
-    ],
-  };
+server.setRequestHandler(ListToolsRequestSchema, async () => ({ tools }));
+server.setRequestHandler(CallToolRequestSchema, async (req) => {
+  const { name, arguments: args } = req.params;
+  const result = handlers[name] ? handlers[name](args) : { error: `Unknown tool: ${name}` };
+  return { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] };
 });
 
-// Handle tool calls
-server.setRequestHandler(CallToolRequestSchema, async (request) => {
-  const { name, arguments: args } = request.params;
-
-  let result;
-
-  switch (name) {
-    case 'dev_start':
-      result = handleStart(args?.port);
-      break;
-    case 'dev_stop':
-      result = handleStop();
-      break;
-    case 'dev_status':
-      result = handleStatus();
-      break;
-    case 'dev_logs':
-      result = handleLogs(args?.lines);
-      break;
-    default:
-      result = { error: `Unknown tool: ${name}` };
-  }
-
-  return {
-    content: [
-      {
-        type: 'text',
-        text: JSON.stringify(result, null, 2),
-      },
-    ],
-  };
-});
-
-// Start server
-async function main() {
-  const transport = new StdioServerTransport();
-  await server.connect(transport);
-}
-
-main().catch(console.error);
+const transport = new StdioServerTransport();
+server.connect(transport).catch(console.error);
