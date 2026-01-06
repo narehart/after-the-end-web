@@ -38,18 +38,6 @@ function validateSplitContext(
   return { itemEntity, targetGridEntity };
 }
 
-function mergeIntoExistingStack(
-  ctx: SplitItemContextProps,
-  compatibleStack: Entity
-): SplitItemReturn {
-  if (compatibleStack.item === undefined || ctx.itemEntity.item === undefined) {
-    return SPLIT_ITEM_FAIL;
-  }
-  compatibleStack.item.quantity += DEFAULT_QUANTITY;
-  ctx.itemEntity.item.quantity -= DEFAULT_QUANTITY;
-  return { success: true, newEntityId: compatibleStack.id ?? null };
-}
-
 function createNewSplitEntity(ctx: SplitItemContextProps, targetGridId: string): SplitItemReturn {
   if (ctx.itemEntity.template === undefined || ctx.targetGridEntity.grid === undefined) {
     return SPLIT_ITEM_FAIL;
@@ -111,7 +99,13 @@ export function splitItem(props: SplitItemProps): SplitItemReturn {
   });
 
   if (compatibleStack !== null) {
-    return mergeIntoExistingStack(ctx, compatibleStack);
+    // Merge into existing stack
+    if (compatibleStack.item === undefined) {
+      return SPLIT_ITEM_FAIL;
+    }
+    compatibleStack.item.quantity += DEFAULT_QUANTITY;
+    ctx.itemEntity.item.quantity -= DEFAULT_QUANTITY;
+    return { success: true, newEntityId: compatibleStack.id ?? null };
   }
 
   return createNewSplitEntity(ctx, targetGridId);

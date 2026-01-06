@@ -4,12 +4,12 @@
  * Moves an equipped item from an equipment slot to a grid.
  */
 
-import { world } from '../world';
-import type { Entity, GridId, EntityId } from '../world';
-import type { Equipment, EquipmentSlot } from '../../types/equipment';
+import type { GridId, EntityId } from '../world';
+import type { EquipmentSlot } from '../../types/equipment';
+import { getGridEntity, getItemEntity, getEquipment } from '../queries/inventoryQueries';
 import { findFreePosition } from '../../utils/findFreePosition';
 import { placeItem } from '../../utils/placeItem';
-import { EQUIPMENT_SLOTS } from '../../constants/equipment';
+import { findEquippedSlot } from '../../utils/findEquippedSlot';
 
 interface UnequipItemProps {
   entityId: EntityId;
@@ -21,40 +21,18 @@ interface UnequipItemReturn {
   slotType: EquipmentSlot | null;
 }
 
-function findEquippedSlot(equipment: Equipment, entityId: EntityId): EquipmentSlot | null {
-  for (const slot of EQUIPMENT_SLOTS) {
-    if (equipment[slot] === entityId) {
-      return slot;
-    }
-  }
-  return null;
-}
-
-function getItemEntity(entityId: EntityId): Entity | undefined {
-  return world.where((e) => e.id === entityId && e.item !== undefined).first;
-}
-
-function getEquipmentEntity(): Entity | undefined {
-  return world.where((e) => e.equipment !== undefined).first;
-}
-
-function getGridEntity(gridId: GridId): Entity | undefined {
-  return world.where((e) => e.grid?.gridId === gridId).first;
-}
-
 export function unequipItem(props: UnequipItemProps): UnequipItemReturn {
   const { entityId, targetGridId } = props;
   const failResult: UnequipItemReturn = { success: false, slotType: null };
 
-  const itemEntity = getItemEntity(entityId);
-  const equipmentEntity = getEquipmentEntity();
-  const gridEntity = getGridEntity(targetGridId);
+  const itemEntity = getItemEntity({ entityId });
+  const { equipment } = getEquipment();
+  const gridEntity = getGridEntity({ gridId: targetGridId });
 
   if (itemEntity?.template?.template === undefined) return failResult;
-  if (equipmentEntity?.equipment === undefined) return failResult;
   if (gridEntity?.grid === undefined) return failResult;
 
-  const foundSlot = findEquippedSlot(equipmentEntity.equipment.slots, entityId);
+  const foundSlot = findEquippedSlot({ equipment, entityId });
   if (foundSlot === null) return failResult;
 
   const item = itemEntity.template.template;
@@ -78,7 +56,7 @@ export function unequipItem(props: UnequipItemProps): UnequipItemReturn {
   });
 
   itemEntity.position = { gridId: targetGridId, x: freePos.x, y: freePos.y };
-  equipmentEntity.equipment.slots[foundSlot] = null;
+  equipment[foundSlot] = null;
 
   return { success: true, slotType: foundSlot };
 }

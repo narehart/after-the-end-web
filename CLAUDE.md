@@ -141,7 +141,9 @@ const cx = classNames.bind(styles);
 
 ## Custom ESLint Rules
 
-Located in `eslint-rules/`, these enforce architectural constraints:
+Located in `eslint-rules/`, these enforce architectural constraints.
+
+**Testing:** You can't test ESLint rules with files in the system `/tmp` directory. ESLint will ignore these. Create test files within the project directory instead.
 
 - `no-cross-component-css-imports` - CSS files only import from same component
 - `no-plain-classname-literals` - Must use classnames binding

@@ -6,13 +6,15 @@
  */
 
 import { world } from '../world';
-import type { Entity, EntityId, GridId } from '../world';
+import type { Entity } from '../world';
 import type { Equipment } from '../../types/equipment';
 import type { GridsMap, ItemsMap, Item } from '../../types/inventory';
 import { itemTemplates } from '../../utils/itemTemplates';
 import { placeItem } from '../../utils/placeItem';
-import { FIRST_INDEX, SECOND_INDEX } from '../../constants/primitives';
-import { DEFAULT_QUANTITY } from '../../constants/inventory';
+import { createEmptyGrid } from '../../utils/createEmptyGrid';
+import { collectGridsInstanceIds } from '../../utils/collectGridsInstanceIds';
+import { findItemPosition } from '../../utils/findItemPosition';
+import { buildItemEntity } from '../../utils/buildItemEntity';
 import { buildInitialInventory } from '../../utils/buildInitialInventory';
 
 let ecsInitialized = false;
@@ -21,24 +23,6 @@ interface InitializeInventoryProps {
   items: ItemsMap;
   grids: GridsMap;
   equipment: Equipment;
-}
-
-interface FindPositionReturn {
-  gridId: GridId;
-  x: number;
-  y: number;
-}
-
-function createEmptyCells(width: number, height: number): Array<Array<EntityId | null>> {
-  const cells: Array<Array<EntityId | null>> = [];
-  for (let y = 0; y < height; y++) {
-    const row: Array<EntityId | null> = [];
-    for (let x = 0; x < width; x++) {
-      row.push(null);
-    }
-    cells.push(row);
-  }
-  return cells;
 }
 
 function createGridEntities(grids: GridsMap): void {
@@ -50,89 +34,21 @@ function createGridEntities(grids: GridsMap): void {
         gridId,
         width: gridData.width,
         height: gridData.height,
-        cells: createEmptyCells(gridData.width, gridData.height),
+        cells: createEmptyGrid({ width: gridData.width, height: gridData.height }),
       },
     };
     world.add(entity);
   }
 }
 
-function collectInstanceIds(grids: GridsMap): Set<string> {
-  const instanceIds = new Set<string>();
-  for (const gridData of Object.values(grids)) {
-    if (gridData === undefined) continue;
-    for (const row of gridData.cells) {
-      for (const cellId of row) {
-        if (cellId !== null) {
-          instanceIds.add(cellId);
-        }
-      }
-    }
-  }
-  return instanceIds;
+interface PlaceItemInGridProps {
+  itemId: string;
+  item: Item;
+  position: { gridId: string; x: number; y: number };
 }
 
-function isOriginCell(
-  gridData: { cells: Array<Array<string | null>> },
-  x: number,
-  y: number,
-  itemId: string
-): boolean {
-  const row = gridData.cells[y];
-  if (row === undefined) return false;
-
-  const isLeftEdge = x === FIRST_INDEX || row[x - SECOND_INDEX] !== itemId;
-  const rowAbove = gridData.cells[y - SECOND_INDEX];
-  const cellAbove = rowAbove?.[x];
-  const isTopEdge = y === FIRST_INDEX || cellAbove !== itemId;
-
-  return isLeftEdge && isTopEdge;
-}
-
-function findItemPosition(itemId: string, grids: GridsMap): FindPositionReturn | undefined {
-  for (const [gridId, gridData] of Object.entries(grids)) {
-    if (gridData === undefined) continue;
-    for (let y = 0; y < gridData.cells.length; y++) {
-      const row = gridData.cells[y];
-      if (row === undefined) continue;
-      for (let x = 0; x < row.length; x++) {
-        if (row[x] === itemId && isOriginCell(gridData, x, y, itemId)) {
-          return { gridId, x, y };
-        }
-      }
-    }
-  }
-  return undefined;
-}
-
-function createItemEntity(
-  itemId: string,
-  item: Item,
-  position: FindPositionReturn | undefined
-): Entity {
-  const entity: Entity = {
-    id: itemId,
-    item: {
-      templateId: item.id,
-      quantity: item.quantity ?? DEFAULT_QUANTITY,
-      durability: item.durability ?? null,
-      maxDurability: null,
-    },
-    template: { template: item },
-  };
-
-  if (position !== undefined) {
-    entity.position = position;
-  }
-
-  if (item.gridSize !== undefined) {
-    entity.container = { gridEntityId: itemId };
-  }
-
-  return entity;
-}
-
-function placeItemInGrid(itemId: string, item: Item, position: FindPositionReturn): void {
+function placeItemInGrid(props: PlaceItemInGridProps): void {
+  const { itemId, item, position } = props;
   const gridEntity = world.where((e) => e.grid?.gridId === position.gridId).first;
   if (gridEntity?.grid === undefined) return;
 
@@ -147,18 +63,18 @@ function placeItemInGrid(itemId: string, item: Item, position: FindPositionRetur
 }
 
 function createItemEntities(items: ItemsMap, grids: GridsMap): void {
-  const instanceIds = collectInstanceIds(grids);
+  const instanceIds = collectGridsInstanceIds({ grids });
 
   for (const [itemId, item] of Object.entries(items)) {
     if (item === undefined) continue;
     if (!instanceIds.has(itemId)) continue;
 
-    const position = findItemPosition(itemId, grids);
-    const entity = createItemEntity(itemId, item, position);
+    const position = findItemPosition({ itemId, grids });
+    const entity = buildItemEntity({ itemId, item, position });
     world.add(entity);
 
     if (position !== undefined) {
-      placeItemInGrid(itemId, item, position);
+      placeItemInGrid({ itemId, item, position });
     }
   }
 }
@@ -169,8 +85,7 @@ function createEquippedItemEntities(equipment: Equipment, items: ItemsMap): void
     const item = items[equippedId];
     if (item === undefined) continue;
 
-    // Create entity for the equipped item (no position since it's equipped, not in a grid)
-    const entity = createItemEntity(equippedId, item, undefined);
+    const entity = buildItemEntity({ itemId: equippedId, item, position: undefined });
     world.add(entity);
   }
 }
@@ -204,6 +119,11 @@ export function initializeInventory(props: InitializeInventoryProps): void {
 function ensureInitialized(): void {
   if (ecsInitialized) return;
   ecsInitialized = true;
+
+  // Clear world before initializing
+  for (const entity of world.entities) {
+    world.remove(entity);
+  }
 
   // Generate initial inventory directly (not from Zustand)
   const { grids, instances, equipment } = buildInitialInventory();
