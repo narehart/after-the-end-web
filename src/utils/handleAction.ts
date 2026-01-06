@@ -4,7 +4,7 @@ import { handleTakeAction } from './handleTakeAction';
 
 export function handleAction(props: HandleActionProps): void {
   const { item, context } = props;
-  const { rotateItem, equipItem, moveItem, destroyItem, closeMenu } = context;
+  const { rotateItem, equipItem, moveItem, destroyItem, emptyContainer, closeMenu } = context;
   const itemId = context.itemId;
 
   if (itemId === null) {
@@ -25,6 +25,8 @@ export function handleAction(props: HandleActionProps): void {
     handleTakeAction({ itemId, context });
   } else if (item.id === 'destroy') {
     destroyItem(itemId);
+  } else if (item.id === 'empty') {
+    emptyContainer(itemId);
   }
 
   closeMenu();

@@ -152,6 +152,7 @@ export interface UseMenuContextReturn {
   moveItem: (itemId: string, targetGridId: string) => boolean;
   splitItem: (itemId: string, targetGridId: string) => boolean;
   destroyItem: (itemId: string) => boolean;
+  emptyContainer: (containerId: string) => boolean;
   closeMenu: () => void;
 }
 

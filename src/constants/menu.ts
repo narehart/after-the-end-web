@@ -1,6 +1,7 @@
 import type { MenuItem, UseMenuContextReturn, MenuPathSegment } from '../types/inventory';
 import { buildDestinationItems } from '../utils/buildDestinationItems';
 import { findFirstAvailableContainer } from '../utils/findFirstAvailableContainer';
+import { isGridEmpty } from '../utils/isGridEmpty';
 import { DEFAULT_QUANTITY } from './numbers';
 
 export const ITEM_ACTION_MENU: MenuItem[] = [
@@ -86,5 +87,18 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     icon: '✕',
     type: 'action',
     show: (ctx: UseMenuContextReturn): boolean => ctx.source !== 'equipment',
+  },
+  {
+    id: 'empty',
+    label: 'Empty out',
+    icon: '⤓',
+    type: 'action',
+    show: (ctx: UseMenuContextReturn): boolean => ctx.item?.gridSize !== undefined,
+    disabled: (ctx: UseMenuContextReturn): boolean => {
+      if (ctx.itemId === null) return true;
+      const grid = ctx.grids[ctx.itemId];
+      if (grid === undefined) return true;
+      return isGridEmpty({ grid });
+    },
   },
 ];

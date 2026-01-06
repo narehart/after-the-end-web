@@ -1,32 +1,35 @@
 import { useMemo, useCallback } from 'react';
+import { useShallow } from 'zustand/react/shallow';
 import { useInventoryStore } from '../stores/inventoryStore';
 import { findItemInGrids } from '../utils/findItemInGrids';
 import type { UseMenuContextProps, UseMenuContextReturn, PanelType } from '../types/inventory';
 
 export default function useMenuContext(props: UseMenuContextProps): UseMenuContextReturn {
-  const { menu } = props;
-  const { itemId, source } = menu;
-  const item = useInventoryStore((state) => (itemId !== null ? state.items[itemId] : undefined));
-  const equipment = useInventoryStore((state) => state.equipment);
-  const allItems = useInventoryStore((state) => state.items);
-  const grids = useInventoryStore((state) => state.grids);
+  const { itemId, source } = props.menu;
+  const item = useInventoryStore((s) => (itemId !== null ? s.items[itemId] : undefined));
+  const equipment = useInventoryStore((s) => s.equipment);
+  const allItems = useInventoryStore((s) => s.items);
+  const grids = useInventoryStore((s) => s.grids);
+  const findFreePosition = useInventoryStore((s) => s.findFreePosition);
 
-  // Store actions
-  const navigateToContainer = useInventoryStore((state) => state.navigateToContainer);
-  const rotateItem = useInventoryStore((state) => state.rotateItem);
-  const equipItem = useInventoryStore((state) => state.equipItem);
-  const unequipItem = useInventoryStore((state) => state.unequipItem);
-  const moveItem = useInventoryStore((state) => state.moveItem);
-  const splitItem = useInventoryStore((state) => state.splitItem);
-  const destroyItem = useInventoryStore((state) => state.destroyItem);
-  const findFreePosition = useInventoryStore((state) => state.findFreePosition);
-  const closeMenu = useInventoryStore((state) => state.closeMenu);
+  // Store actions - useShallow prevents infinite re-renders from object reference changes
+  const actions = useInventoryStore(
+    useShallow((s) => ({
+      navigateToContainer: s.navigateToContainer,
+      rotateItem: s.rotateItem,
+      equipItem: s.equipItem,
+      unequipItem: s.unequipItem,
+      moveItem: s.moveItem,
+      splitItem: s.splitItem,
+      destroyItem: s.destroyItem,
+      emptyContainer: s.emptyContainer,
+      closeMenu: s.closeMenu,
+    }))
+  );
 
-  // Find which container the item is currently in
   const currentContainerId = useMemo((): string | null => {
     if (itemId === null) return null;
-    const location = findItemInGrids({ grids, itemId });
-    return location?.gridId ?? null;
+    return findItemInGrids({ grids, itemId })?.gridId ?? null;
   }, [grids, itemId]);
 
   const canFitItem = useCallback(
@@ -37,8 +40,7 @@ export default function useMenuContext(props: UseMenuContextProps): UseMenuConte
     [item, findFreePosition]
   );
 
-  const isInWorld = source === 'ground' || source === 'world';
-  const panel: PanelType = isInWorld ? 'world' : 'inventory';
+  const panel: PanelType = source === 'ground' || source === 'world' ? 'world' : 'inventory';
 
   return useMemo(
     (): UseMenuContextReturn => ({
@@ -50,19 +52,8 @@ export default function useMenuContext(props: UseMenuContextProps): UseMenuConte
       allItems,
       grids,
       currentContainerId,
-
-      // Query functions
       canFitItem,
-
-      // Actions
-      navigateToContainer,
-      rotateItem,
-      equipItem,
-      unequipItem,
-      moveItem,
-      splitItem,
-      destroyItem,
-      closeMenu,
+      ...actions,
     }),
     [
       item,
@@ -74,14 +65,7 @@ export default function useMenuContext(props: UseMenuContextProps): UseMenuConte
       grids,
       currentContainerId,
       canFitItem,
-      navigateToContainer,
-      rotateItem,
-      equipItem,
-      unequipItem,
-      moveItem,
-      splitItem,
-      destroyItem,
-      closeMenu,
+      actions,
     ]
   );
 }
