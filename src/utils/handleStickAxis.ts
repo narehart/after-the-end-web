@@ -1,6 +1,5 @@
 import type { HandleStickAxisProps } from '../types/utils';
-import { crossedPositiveThreshold } from './crossedPositiveThreshold';
-import { crossedNegativeThreshold } from './crossedNegativeThreshold';
+import { crossedThreshold } from './crossedThreshold';
 import { returnedToCenter } from './returnedToCenter';
 
 export function handleStickAxis(props: HandleStickAxisProps): void {
@@ -15,12 +14,12 @@ export function handleStickAxis(props: HandleStickAxisProps): void {
     startRepeat,
     clearRepeatTimer,
   } = props;
-  if (crossedPositiveThreshold(value, lastValue)) {
+  if (crossedThreshold({ value, lastValue, direction: 'positive' })) {
     onNavigate?.(posDir);
     startRepeat(posKey, () => {
       onNavigate?.(posDir);
     });
-  } else if (crossedNegativeThreshold(value, lastValue)) {
+  } else if (crossedThreshold({ value, lastValue, direction: 'negative' })) {
     onNavigate?.(negDir);
     startRepeat(negKey, () => {
       onNavigate?.(negDir);

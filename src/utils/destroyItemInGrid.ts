@@ -1,17 +1,12 @@
-import type { GridsMap, ItemsMap } from '../types/inventory';
+import type { GridOperationBaseProps, GridOperationBaseReturn } from '../types/utils';
 import { findItemInGrids } from './findItemInGrids';
 import { removeItemFromCells } from './removeItemFromCells';
+import { removeItemFromMap } from './removeItemFromMap';
+import { updateGridCells } from './updateGridCells';
 
-interface DestroyItemInGridProps {
-  items: ItemsMap;
-  grids: GridsMap;
-  itemId: string;
-}
+type DestroyItemInGridProps = GridOperationBaseProps;
 
-interface DestroyItemInGridReturn {
-  items: ItemsMap;
-  grids: GridsMap;
-}
+type DestroyItemInGridReturn = GridOperationBaseReturn;
 
 export function destroyItemInGrid(props: DestroyItemInGridProps): DestroyItemInGridReturn | null {
   const { items, grids, itemId } = props;
@@ -27,13 +22,11 @@ export function destroyItemInGrid(props: DestroyItemInGridProps): DestroyItemInG
     positions: location.positions,
   });
 
-  const { [itemId]: _removed, ...remainingItems } = items;
+  const updatedGrids = updateGridCells({ grids, gridId: location.gridId, cells: newSourceCells });
+  if (updatedGrids === null) return null;
 
   return {
-    items: remainingItems,
-    grids: {
-      ...grids,
-      [location.gridId]: { ...sourceGrid, cells: newSourceCells },
-    },
+    items: removeItemFromMap({ items, itemId }),
+    grids: updatedGrids,
   };
 }

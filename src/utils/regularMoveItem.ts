@@ -1,23 +1,18 @@
-import type { GridsMap, Item, ItemsMap } from '../types/inventory';
+import type { Item } from '../types/inventory';
+import type { GridOperationBaseProps, GridOperationBaseReturn } from '../types/utils';
 import { findFreePosition } from './findFreePosition';
 import { placeItemInCells } from './placeItemInCells';
 import { removeItemFromCells } from './removeItemFromCells';
 
-interface RegularMoveItemProps {
-  items: ItemsMap;
-  grids: GridsMap;
+interface RegularMoveItemProps extends GridOperationBaseProps {
   item: Item;
-  itemId: string;
   targetGridId: string;
   location: { gridId: string; positions: Array<{ x: number; y: number }> };
   sourceGrid: { cells: Array<Array<string | null>>; width: number; height: number };
   targetGrid: { cells: Array<Array<string | null>>; width: number; height: number };
 }
 
-interface RegularMoveItemReturn {
-  items: ItemsMap;
-  grids: GridsMap;
-}
+type RegularMoveItemReturn = GridOperationBaseReturn;
 
 export function regularMoveItem(props: RegularMoveItemProps): RegularMoveItemReturn | null {
   const { items, grids, item, itemId, targetGridId, location, sourceGrid, targetGrid } = props;

@@ -1,21 +1,18 @@
 import { DEFAULT_QUANTITY } from '../constants/numbers';
-import type { GridsMap, Item, ItemsMap } from '../types/inventory';
+import type { Item } from '../types/inventory';
+import type { GridOperationBaseProps, GridOperationBaseReturn } from '../types/utils';
 import { removeItemFromCells } from './removeItemFromCells';
+import { removeItemFromMap } from './removeItemFromMap';
+import { updateGridCells } from './updateGridCells';
 
-interface MergeAndRemoveItemProps {
-  items: ItemsMap;
-  grids: GridsMap;
-  itemId: string;
+interface MergeAndRemoveItemProps extends GridOperationBaseProps {
   compatibleStackId: string;
   itemQty: number;
   location: { gridId: string; positions: Array<{ x: number; y: number }> };
   sourceGrid: { cells: Array<Array<string | null>>; width: number; height: number };
 }
 
-interface MergeAndRemoveItemReturn {
-  items: ItemsMap;
-  grids: GridsMap;
-}
+type MergeAndRemoveItemReturn = GridOperationBaseReturn;
 
 export function mergeAndRemoveItem(
   props: MergeAndRemoveItemProps
@@ -30,10 +27,12 @@ export function mergeAndRemoveItem(
     cells: sourceGrid.cells,
     positions: location.positions,
   });
-  const { [itemId]: _removed, ...remainingItems } = items;
+
+  const updatedGrids = updateGridCells({ grids, gridId: location.gridId, cells: newSourceCells });
+  if (updatedGrids === null) return null;
 
   return {
-    items: { ...remainingItems, [compatibleStackId]: updatedTargetItem },
-    grids: { ...grids, [location.gridId]: { ...sourceGrid, cells: newSourceCells } },
+    items: { ...removeItemFromMap({ items, itemId }), [compatibleStackId]: updatedTargetItem },
+    grids: updatedGrids,
   };
 }

@@ -1,22 +1,17 @@
 import { DEFAULT_QUANTITY } from '../constants/numbers';
-import type { GridsMap, Item, ItemsMap } from '../types/inventory';
+import type { Item } from '../types/inventory';
+import type { GridOperationBaseProps, GridOperationBaseReturn } from '../types/utils';
 import { findCompatibleStack } from './findCompatibleStack';
 import { findFreePosition } from './findFreePosition';
 import { generateInstanceId } from './generateInstanceId';
 import { mergeIntoStack } from './mergeIntoStack';
 import { placeItemInCells } from './placeItemInCells';
 
-interface SplitItemInGridProps {
-  items: ItemsMap;
-  grids: GridsMap;
-  itemId: string;
+interface SplitItemInGridProps extends GridOperationBaseProps {
   targetGridId: string;
 }
 
-interface SplitItemInGridReturn {
-  items: ItemsMap;
-  grids: GridsMap;
-}
+type SplitItemInGridReturn = GridOperationBaseReturn;
 
 export function splitItemInGrid(props: SplitItemInGridProps): SplitItemInGridReturn | null {
   const { items, grids, itemId, targetGridId } = props;

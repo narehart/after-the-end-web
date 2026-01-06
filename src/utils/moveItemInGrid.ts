@@ -1,21 +1,15 @@
 import { DEFAULT_QUANTITY } from '../constants/numbers';
-import type { GridsMap, ItemsMap } from '../types/inventory';
+import type { GridOperationBaseProps, GridOperationBaseReturn } from '../types/utils';
 import { findCompatibleStack } from './findCompatibleStack';
 import { findItemInGrids } from './findItemInGrids';
 import { mergeAndRemoveItem } from './mergeAndRemoveItem';
 import { regularMoveItem } from './regularMoveItem';
 
-interface MoveItemInGridProps {
-  items: ItemsMap;
-  grids: GridsMap;
-  itemId: string;
+interface MoveItemInGridProps extends GridOperationBaseProps {
   targetGridId: string;
 }
 
-interface MoveItemInGridReturn {
-  items: ItemsMap;
-  grids: GridsMap;
-}
+type MoveItemInGridReturn = GridOperationBaseReturn;
 
 export function moveItemInGrid(props: MoveItemInGridProps): MoveItemInGridReturn | null {
   const { items, grids, itemId, targetGridId } = props;

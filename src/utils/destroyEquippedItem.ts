@@ -1,5 +1,6 @@
 import type { Equipment, ItemsMap, SlotType } from '../types/inventory';
 import { findEquipmentSlot } from './findEquipmentSlot';
+import { removeItemFromMap } from './removeItemFromMap';
 
 interface DestroyEquippedItemProps {
   items: ItemsMap;
@@ -20,10 +21,8 @@ export function destroyEquippedItem(
   const equipmentSlot: SlotType | null = findEquipmentSlot({ equipment, itemId });
   if (equipmentSlot === null) return null;
 
-  const { [itemId]: _removed, ...remainingItems } = items;
-
   return {
-    items: remainingItems,
+    items: removeItemFromMap({ items, itemId }),
     equipment: { ...equipment, [equipmentSlot]: null },
   };
 }
