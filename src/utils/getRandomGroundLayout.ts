@@ -1,5 +1,5 @@
 import type { ItemPlacement } from '../types/inventory';
-import { GROUND_LAYOUTS } from '../constants/ground';
+import { GROUND_LAYOUTS } from '../constants/inventory';
 import { FIRST_INDEX } from '../constants/array';
 
 export function getRandomGroundLayout(): ItemPlacement[] {
