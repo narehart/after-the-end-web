@@ -107,7 +107,7 @@ ls:
     .tsx: regex:index
     .css: regex:index
     .*: regex:$
-    .dir: regex:src | regex:@types | regex:assets | regex:components | regex:constants | regex:data | regex:hooks | regex:stores | regex:types | regex:utils
+    .dir: regex:src | regex:@types | regex:assets | regex:constants | regex:data | regex:ecs | regex:game | regex:hooks | regex:renderer | regex:stores | regex:types | regex:ui | regex:utils
 
   # src/@types - kebab-case declaration files (.d.ts) only, no subdirectories
   src/@types:
@@ -134,13 +134,96 @@ ls:
     .*: regex:$
     .dir: regex:hooks
 
-  # src/components - PascalCase .tsx and .module.css, plus index.ts
-  src/components:
+  # src/ui - React UI components (renamed from components/)
+  src/ui:
     .tsx: PascalCase
     .module.css: PascalCase
     .ts: regex:index
     .*: regex:$
+    .dir: regex:ui
+
+  # src/ecs - Entity Component System
+  src/ecs:
+    .ts: regex:world
+    .*: regex:$
+    .dir: regex:ecs | regex:components | regex:systems | regex:entities | regex:queries
+
+  # src/ecs/components - camelCase files ending with Component.ts
+  src/ecs/components:
+    .ts: regex:[a-z][a-zA-Z0-9]*Component
+    .*: regex:$
     .dir: regex:components
+
+  # src/ecs/systems - camelCase files ending with System.ts
+  src/ecs/systems:
+    .ts: regex:[a-z][a-zA-Z0-9]*System
+    .*: regex:$
+    .dir: regex:systems
+
+  # src/ecs/entities - camelCase files ending with Entity.ts
+  src/ecs/entities:
+    .ts: regex:[a-z][a-zA-Z0-9]*Entity
+    .*: regex:$
+    .dir: regex:entities
+
+  # src/ecs/queries - camelCase files ending with Queries.ts
+  src/ecs/queries:
+    .ts: regex:[a-z][a-zA-Z0-9]*Queries
+    .*: regex:$
+    .dir: regex:queries
+
+  # src/renderer - PixiJS rendering layer
+  src/renderer:
+    .*: regex:$
+    .dir: regex:renderer | regex:core | regex:layers | regex:sprites | regex:shaders
+
+  # src/renderer/core - camelCase .ts files
+  src/renderer/core:
+    .ts: camelCase
+    .*: regex:$
+    .dir: regex:core
+
+  # src/renderer/layers - camelCase files ending with Layer.ts
+  src/renderer/layers:
+    .ts: regex:[a-z][a-zA-Z0-9]*Layer
+    .*: regex:$
+    .dir: regex:layers
+
+  # src/renderer/sprites - camelCase files ending with Sprite.ts
+  src/renderer/sprites:
+    .ts: regex:[a-z][a-zA-Z0-9]*Sprite
+    .*: regex:$
+    .dir: regex:sprites
+
+  # src/renderer/shaders - camelCase shader files
+  src/renderer/shaders:
+    .frag: camelCase
+    .vert: camelCase
+    .*: regex:$
+    .dir: regex:shaders
+
+  # src/game - Game coordination layer
+  src/game:
+    .*: regex:$
+    .dir: regex:game | regex:core | regex:input | regex:actions
+
+  # src/game/core - camelCase .ts files
+  src/game/core:
+    .ts: camelCase
+    .*: regex:$
+    .dir: regex:core
+
+  # src/game/input - camelCase files ending with Input.ts
+  src/game/input:
+    .ts: regex:[a-z][a-zA-Z0-9]*Input
+    .*: regex:$
+    .dir: regex:input
+
+  # src/game/actions - camelCase files ending with Action.ts
+  src/game/actions:
+    .ts: regex:[a-z][a-zA-Z0-9]*Action
+    .*: regex:$
+    .dir: regex:actions
 
   # src/stores - camelCase files ending with Store.ts, plus slices subdirectory
   src/stores:

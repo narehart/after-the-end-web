@@ -1,6 +1,7 @@
 {
   "$schema": "https://unpkg.com/knip@5/schema.json",
-  "entry": ["src/index.tsx", "scripts/*.js"],
+  "entry": ["src/index.tsx", "src/ecs/world.ts", "scripts/*.js"],
   "project": ["src/**/*.{ts,tsx}", "eslint-rules/*.ts"],
-  "ignore": ["scripts/hooks/**", ".claude/hooks/**"]
+  "ignore": ["scripts/hooks/**", ".claude/hooks/**"],
+  "ignoreDependencies": ["pixi.js", "@pixi/react"]
 }

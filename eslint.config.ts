@@ -24,6 +24,10 @@ import dataConstantsInConstantsDir from './eslint-rules/data-constants-in-consta
 import noReexportsInTypes from './eslint-rules/no-reexports-in-types.ts';
 import noFunctionsInTypes from './eslint-rules/no-functions-in-types.ts';
 import noHooksInUtils from './eslint-rules/no-hooks-in-utils.ts';
+import noReactInEcs from './eslint-rules/no-react-in-ecs.ts';
+import noEcsInUi from './eslint-rules/no-ecs-in-ui.ts';
+import oneSystemPerFile from './eslint-rules/one-system-per-file.ts';
+import ecsComponentsDataOnly from './eslint-rules/ecs-components-data-only.ts';
 
 const MAX_LINES = 250;
 const MAX_LINES_PER_FUNCTION = 100;
@@ -56,6 +60,10 @@ const localPlugin = {
     'no-reexports-in-types': noReexportsInTypes,
     'no-functions-in-types': noFunctionsInTypes,
     'no-hooks-in-utils': noHooksInUtils,
+    'no-react-in-ecs': noReactInEcs,
+    'no-ecs-in-ui': noEcsInUi,
+    'one-system-per-file': oneSystemPerFile,
+    'ecs-components-data-only': ecsComponentsDataOnly,
   },
 };
 const sharedRules: Linter.RulesRecord = {
@@ -92,6 +100,10 @@ const sharedRules: Linter.RulesRecord = {
   'local/no-reexports-in-types': 'error',
   'local/no-functions-in-types': 'error',
   'local/no-hooks-in-utils': 'error',
+  'local/no-react-in-ecs': 'error',
+  'local/no-ecs-in-ui': 'error',
+  'local/one-system-per-file': 'error',
+  'local/ecs-components-data-only': 'error',
 };
 
 export default defineConfig([
