@@ -1,8 +1,16 @@
-import type { CalculateItemDimensionsProps, CalculateItemDimensionsReturn } from '../types/utils';
+import type { Item } from '../types/inventory';
 import { CELL_GAP } from '../constants/grid';
 import { SECOND_INDEX } from '../constants/array';
 
-;
+interface CalculateItemDimensionsProps {
+  item: Item;
+  cellSize: number;
+}
+
+interface CalculateItemDimensionsReturn {
+  itemWidth: number;
+  itemHeight: number;
+}
 
 export function calculateItemDimensions(
   props: CalculateItemDimensionsProps

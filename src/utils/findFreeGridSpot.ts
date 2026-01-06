@@ -1,9 +1,15 @@
 import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
-import type { FindFreeGridSpotProps } from '../types/randomContainer';
+import type { GridOccupancy } from '../types/ui';
 import { checkGridSpot } from './checkGridSpot';
 import { randomInt } from './randomInt';
 
-;
+interface FindFreeGridSpotProps {
+  grid: GridOccupancy;
+  gridWidth: number;
+  gridHeight: number;
+  itemWidth: number;
+  itemHeight: number;
+}
 
 export function findFreeGridSpot(props: FindFreeGridSpotProps): { x: number; y: number } | null {
   const { grid, gridWidth, gridHeight, itemWidth, itemHeight } = props;

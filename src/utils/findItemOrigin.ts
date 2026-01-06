@@ -1,6 +1,10 @@
-import type { GridPosition } from '../types/inventory';
-import type { FindItemOriginProps } from '../types/utils';
+import type { GridCell, GridPosition } from '../types/inventory';
 import { getCellValue } from './getCellValue';
+
+interface FindItemOriginProps {
+  grid: GridCell;
+  itemId: string;
+}
 
 export function findItemOrigin(props: FindItemOriginProps): GridPosition | null {
   const { grid, itemId } = props;

@@ -1,5 +1,13 @@
-import type { CheckIsOriginProps } from '../types/utils';
+import type { GridCell } from '../types/inventory';
 import { findItemOrigin } from './findItemOrigin';
+
+interface CheckIsOriginProps {
+  grid: GridCell;
+  itemId: string | null;
+  col: number;
+  row: number;
+  renderedItems: Set<string>;
+}
 
 export function checkIsOrigin(props: CheckIsOriginProps): boolean {
   const { grid, itemId, col, row, renderedItems } = props;

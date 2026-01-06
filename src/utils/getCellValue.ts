@@ -1,4 +1,10 @@
-import type { GetCellValueProps } from '../types/utils';
+import type { GridCell } from '../types/inventory';
+
+interface GetCellValueProps {
+  grid: GridCell;
+  row: number;
+  col: number;
+}
 
 export function getCellValue(props: GetCellValueProps): string | null {
   const { grid, row, col } = props;

@@ -1,4 +1,12 @@
-import type { CanPlaceAtProps } from '../types/utils';
+import type { CellGrid } from '../types/inventory';
+
+interface CanPlaceAtProps {
+  grid: CellGrid;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
 
 export function canPlaceAt(props: CanPlaceAtProps): boolean {
   const { grid, x, y, width, height } = props;

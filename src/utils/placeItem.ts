@@ -1,7 +1,14 @@
 import { FIRST_INDEX } from '../constants/array';
-import type { PlaceItemProps } from '../types/utils';
+import type { CellGrid } from '../types/inventory';
 
-;
+interface PlaceItemProps {
+  grid: CellGrid;
+  itemId: string;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
 
 export function placeItem(props: PlaceItemProps): void {
   const { grid, itemId, x, y, width, height } = props;

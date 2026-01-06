@@ -1,5 +1,9 @@
-import type { GetItemIconProps } from '../types/utils';
+import type { ItemType } from '../types/inventory';
 import { ITEM_ICONS } from '../constants/items';
+
+interface GetItemIconProps {
+  type: ItemType;
+}
 
 export function getItemIcon(props: GetItemIconProps): string {
   const { type } = props;

@@ -1,6 +1,11 @@
-import type { HandleActionProps } from '../types/inventory';
+import type { MenuItem, UseMenuContextReturn } from '../types/inventory';
 import { handleOpenAction } from './handleOpenAction';
 import { handleTakeAction } from './handleTakeAction';
+
+interface HandleActionProps {
+  item: MenuItem;
+  context: UseMenuContextReturn;
+}
 
 export function handleAction(props: HandleActionProps): void {
   const { item, context } = props;

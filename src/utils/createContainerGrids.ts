@@ -1,5 +1,11 @@
-import type { CreateContainerGridsProps, CreateContainerGridsReturn } from '../types/utils';
+import type { GridsMap, ItemsMap } from '../types/inventory';
 import { createEmptyGrid } from './createEmptyGrid';
+
+interface CreateContainerGridsProps {
+  instances: ItemsMap;
+}
+
+type CreateContainerGridsReturn = GridsMap;
 
 export function createContainerGrids(props: CreateContainerGridsProps): CreateContainerGridsReturn {
   const { instances } = props;

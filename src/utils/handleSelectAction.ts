@@ -1,4 +1,9 @@
-import type { HandleSelectActionProps } from '../types/inventory';
+import type { MenuItem, UseMenuContextReturn } from '../types/inventory';
+
+interface HandleSelectActionProps {
+  item: MenuItem;
+  context: UseMenuContextReturn;
+}
 
 export function handleSelectAction(props: HandleSelectActionProps): void {
   const { item, context } = props;

@@ -1,11 +1,16 @@
 import type { Equipment, GridsMap, ItemsMap } from '../types/inventory';
-import type { CreateEquipmentInstancesReturn } from '../types/utils';
 import { SLOT_TYPES } from '../constants/slots';
 import { INITIAL_EQUIPMENT } from '../constants/equipment';
 import { getItemById } from '../data/items';
 import { createEmptyGrid } from './createEmptyGrid';
 import { createItemInstance } from './createItemInstance';
 import { generateInstanceId } from './generateInstanceId';
+
+interface CreateEquipmentInstancesReturn {
+  instances: ItemsMap;
+  grids: GridsMap;
+  equipment: Equipment;
+}
 
 export function createEquipmentInstances(): CreateEquipmentInstancesReturn {
   const instances: ItemsMap = {};

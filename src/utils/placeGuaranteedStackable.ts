@@ -1,12 +1,16 @@
 import { MIN_GUARANTEED_QUANTITY, STACKABLE_ITEM_CONFIGS } from '../constants/inventory';
-import type { ItemPlacement } from '../types/ui';
-import type {
-  PlaceGuaranteedStackableProps,
-  PlaceGuaranteedStackableReturn,
-} from '../types/randomContainer';
+import type { GridOccupancy, ItemPlacement } from '../types/ui';
 import { randomInt } from './randomInt';
 import { shuffleArray } from './shuffleArray';
 import { tryPlaceItem } from './tryPlaceItem';
+
+interface PlaceGuaranteedStackableProps {
+  grid: GridOccupancy;
+  gridWidth: number;
+  gridHeight: number;
+}
+
+type PlaceGuaranteedStackableReturn = ItemPlacement | null;
 
 export function placeGuaranteedStackable(
   props: PlaceGuaranteedStackableProps

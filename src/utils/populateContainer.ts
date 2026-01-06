@@ -1,8 +1,22 @@
-import type { GridsMap } from '../types/inventory';
-import type { PopulateContainerProps, PopulateContainerReturn } from '../types/randomContainer';
+import type { CellGrid, GridsMap, ItemsMap } from '../types/inventory';
 import { buildGridWithItems } from './buildGridWithItems';
 import { createContainerGrids } from './createContainerGrids';
 import { getRandomContainerContents } from './getRandomContainerContents';
+
+interface PopulateContainerProps {
+  width: number;
+  height: number;
+}
+
+interface PopulateContainerReturn {
+  grid: {
+    width: number;
+    height: number;
+    cells: CellGrid;
+  };
+  instances: ItemsMap;
+  containerGrids: GridsMap;
+}
 
 export function populateContainer(props: PopulateContainerProps): PopulateContainerReturn {
   const { width, height } = props;

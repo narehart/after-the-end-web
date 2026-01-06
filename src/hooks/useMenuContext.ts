@@ -1,9 +1,13 @@
 import { useMemo, useCallback } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 import { useInventoryStore } from '../stores/inventoryStore';
-import type { UseMenuContextProps, UseMenuContextReturn, PanelType } from '../types/inventory';
+import type { MenuState, PanelType, UseMenuContextReturn } from '../types/inventory';
 import { findFreePosition as ecsFindFreePosition } from '../ecs/queries/inventoryQueries';
 import useECSInventory from './useECSInventory';
+
+interface UseMenuContextProps {
+  menu: MenuState;
+}
 
 export default function useMenuContext(props: UseMenuContextProps): UseMenuContextReturn {
   const { itemId, source } = props.menu;

@@ -1,8 +1,17 @@
 import { getItemById } from '../data/items';
-import type { ItemPlacement } from '../types/ui';
-import type { TryPlaceItemProps, TryPlaceItemReturn } from '../types/randomContainer';
+import type { GridOccupancy, ItemPlacement } from '../types/ui';
 import { findFreeGridSpot } from './findFreeGridSpot';
 import { markGridOccupied } from './markGridOccupied';
+
+interface TryPlaceItemProps {
+  grid: GridOccupancy;
+  gridWidth: number;
+  gridHeight: number;
+  itemId: string;
+  quantity: number;
+}
+
+type TryPlaceItemReturn = ItemPlacement | null;
 
 export function tryPlaceItem(props: TryPlaceItemProps): TryPlaceItemReturn {
   const { grid, gridWidth, gridHeight, itemId, quantity } = props;

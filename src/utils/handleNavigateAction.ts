@@ -1,4 +1,8 @@
-import type { HandleNavigateActionProps, MenuPathSegment } from '../types/inventory';
+import type { MenuItem, MenuPathSegment } from '../types/inventory';
+
+interface HandleNavigateActionProps {
+  item: MenuItem;
+}
 
 export function handleNavigateAction(
   props: HandleNavigateActionProps,

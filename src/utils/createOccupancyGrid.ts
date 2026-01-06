@@ -1,8 +1,12 @@
 import { FIRST_INDEX } from '../constants/array';
-import type { GridOccupancyCell } from '../types/ui';
-import type { CreateOccupancyGridProps, CreateOccupancyGridReturn } from '../types/randomContainer';
+import type { GridOccupancy, GridOccupancyCell } from '../types/ui';
 
-;
+interface CreateOccupancyGridProps {
+  width: number;
+  height: number;
+}
+
+type CreateOccupancyGridReturn = GridOccupancy;
 
 export function createOccupancyGrid(props: CreateOccupancyGridProps): CreateOccupancyGridReturn {
   const { width, height } = props;

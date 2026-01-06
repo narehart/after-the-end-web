@@ -1,4 +1,12 @@
-import type { MarkGridOccupiedProps } from '../types/randomContainer';
+import type { GridOccupancy } from '../types/ui';
+
+interface MarkGridOccupiedProps {
+  grid: GridOccupancy;
+  x: number;
+  y: number;
+  itemWidth: number;
+  itemHeight: number;
+}
 
 export function markGridOccupied(props: MarkGridOccupiedProps): void {
   const { grid, x, y, itemWidth, itemHeight } = props;

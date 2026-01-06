@@ -1,4 +1,9 @@
-import type { FilterVisibleItemsProps, MenuItem } from '../types/inventory';
+import type { MenuItem, UseMenuContextReturn } from '../types/inventory';
+
+interface FilterVisibleItemsProps {
+  items: MenuItem[];
+  context: UseMenuContextReturn;
+}
 
 export function filterVisibleItems(props: FilterVisibleItemsProps): MenuItem[] {
   const { items, context } = props;

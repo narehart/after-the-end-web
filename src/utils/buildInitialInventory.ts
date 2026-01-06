@@ -1,10 +1,16 @@
-import type { BuildInitialInventoryReturn } from '../types/utils';
+import type { Equipment, GridsMap, ItemsMap } from '../types/inventory';
 import { GROUND_HEIGHT, GROUND_WIDTH } from '../constants/ground';
 import { buildGridWithItems } from './buildGridWithItems';
 import { createContainerGrids } from './createContainerGrids';
 import { createEquipmentInstances } from './createEquipmentInstances';
 import { getRandomGroundLayout } from './getRandomGroundLayout';
 import { populateEquippedContainer } from './populateEquippedContainer';
+
+interface BuildInitialInventoryReturn {
+  grids: GridsMap;
+  instances: ItemsMap;
+  equipment: Equipment;
+}
 
 export function buildInitialInventory(): BuildInitialInventoryReturn {
   const equipmentResult = createEquipmentInstances();

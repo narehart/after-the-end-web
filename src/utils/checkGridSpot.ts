@@ -1,4 +1,12 @@
-import type { CheckGridSpotProps } from '../types/randomContainer';
+import type { GridOccupancy } from '../types/ui';
+
+interface CheckGridSpotProps {
+  grid: GridOccupancy;
+  x: number;
+  y: number;
+  itemWidth: number;
+  itemHeight: number;
+}
 
 export function checkGridSpot(props: CheckGridSpotProps): boolean {
   const { grid, x, y, itemWidth, itemHeight } = props;

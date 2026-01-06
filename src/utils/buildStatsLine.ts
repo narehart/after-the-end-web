@@ -1,9 +1,12 @@
 import { EMPTY_COUNT } from '../constants/items';
 import { FIRST_INDEX } from '../constants/array';
-import type { BuildStatsLineProps } from '../types/utils';
+import type { GridsMap, Item } from '../types/inventory';
 import { countGridItems } from './countGridItems';
 
-;
+interface BuildStatsLineProps {
+  item: Item;
+  grids: GridsMap;
+}
 
 export function buildStatsLine(props: BuildStatsLineProps): string {
   const { item, grids } = props;

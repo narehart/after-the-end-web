@@ -1,11 +1,22 @@
-import type { ItemsMap } from '../types/inventory';
-import type { BuildGridWithItemsProps, BuildGridWithItemsReturn } from '../types/utils';
+import type { CellGrid, ItemsMap } from '../types/inventory';
+import type { ItemPlacement } from '../types/ui';
 import { getItemById } from '../data/items';
 import { canPlaceAt } from './canPlaceAt';
 import { createEmptyGrid } from './createEmptyGrid';
 import { createItemInstance } from './createItemInstance';
 import { generateInstanceId } from './generateInstanceId';
 import { placeItem } from './placeItem';
+
+interface BuildGridWithItemsProps {
+  width: number;
+  height: number;
+  items: ItemPlacement[];
+}
+
+interface BuildGridWithItemsReturn {
+  cells: CellGrid;
+  instances: ItemsMap;
+}
 
 export function buildGridWithItems(props: BuildGridWithItemsProps): BuildGridWithItemsReturn {
   const { width, height, items } = props;

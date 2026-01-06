@@ -1,6 +1,18 @@
-import type { HandleStickAxisProps } from '../types/utils';
+import type { NavigationDirection } from '../types/gamepad';
 import { crossedThreshold } from './crossedThreshold';
 import { returnedToCenter } from './returnedToCenter';
+
+interface HandleStickAxisProps {
+  value: number;
+  lastValue: number;
+  posDir: NavigationDirection;
+  negDir: NavigationDirection;
+  posKey: string;
+  negKey: string;
+  onNavigate: ((dir: NavigationDirection) => void) | undefined;
+  startRepeat: (key: string, action: () => void) => void;
+  clearRepeatTimer: (key: string) => void;
+}
 
 export function handleStickAxis(props: HandleStickAxisProps): void {
   const {

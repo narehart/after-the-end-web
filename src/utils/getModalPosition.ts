@@ -1,4 +1,11 @@
-import type { GetModalPositionProps, GetModalPositionReturn } from '../types/utils';
+interface GetModalPositionProps {
+  element: HTMLElement;
+}
+
+interface GetModalPositionReturn {
+  x: number;
+  y: number;
+}
 
 export function getModalPosition(props: GetModalPositionProps): GetModalPositionReturn {
   const { element } = props;
