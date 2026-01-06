@@ -42,11 +42,8 @@ export default function useSlotHandlers({
   const handleClick = useCallback((): void => {
     if (item !== null && itemId !== null) {
       setSelectedItem(itemId);
-      if (hasGrid) {
-        focusOnEquipmentSlot(slotType);
-      }
     }
-  }, [item, itemId, hasGrid, setSelectedItem, focusOnEquipmentSlot, slotType]);
+  }, [item, itemId, setSelectedItem]);
 
   const handleDoubleClick = useCallback((): void => {
     if (hasGrid && itemId !== null) {
