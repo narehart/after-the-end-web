@@ -1,14 +1,10 @@
 import { FIRST_INDEX, SECOND_INDEX } from '../constants/primitives';
-import type { GridOccupancy } from '../types/inventory';
+import type { GridDimensionsProps, GridOccupancy, ItemDimensionsProps } from '../types/inventory';
 import { checkGridSpot } from './checkGridSpot';
 import { randomInt } from './randomInt';
 
-interface FindFreeGridSpotProps {
+interface FindFreeGridSpotProps extends GridDimensionsProps, ItemDimensionsProps {
   grid: GridOccupancy;
-  gridWidth: number;
-  gridHeight: number;
-  itemWidth: number;
-  itemHeight: number;
 }
 
 export function findFreeGridSpot(props: FindFreeGridSpotProps): { x: number; y: number } | null {

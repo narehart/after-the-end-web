@@ -4,15 +4,13 @@ import {
   STACKABLE_ITEM_CONFIGS,
   DEFAULT_QUANTITY,
 } from '../constants/inventory';
-import type { GridOccupancy, ItemPlacement } from '../types/inventory';
+import type { GridDimensionsProps, GridOccupancy, ItemPlacement } from '../types/inventory';
 import { randomInt } from './randomInt';
 import { shuffleArray } from './shuffleArray';
 import { tryPlaceItem } from './tryPlaceItem';
 
-interface FillContainerWithItemsProps {
+interface FillContainerWithItemsProps extends GridDimensionsProps {
   grid: GridOccupancy;
-  gridWidth: number;
-  gridHeight: number;
   targetCount: number;
   excludeId?: string;
 }

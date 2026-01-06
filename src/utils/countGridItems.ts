@@ -1,15 +1,8 @@
 import { EMPTY_COUNT } from '../constants/inventory';
 import type { GridCell } from '../types/inventory';
+import { collectGridEntityIds } from './collectGridEntityIds';
 
 export function countGridItems(grid: GridCell | undefined): number {
   if (grid === undefined) return EMPTY_COUNT;
-  const uniqueIds = new Set<string>();
-  for (const row of grid.cells) {
-    for (const cell of row) {
-      if (cell !== null) {
-        uniqueIds.add(cell);
-      }
-    }
-  }
-  return uniqueIds.size;
+  return collectGridEntityIds({ cells: grid.cells }).size;
 }

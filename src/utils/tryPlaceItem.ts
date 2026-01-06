@@ -1,12 +1,10 @@
-import type { GridOccupancy, ItemPlacement } from '../types/inventory';
+import type { GridDimensionsProps, GridOccupancy, ItemPlacement } from '../types/inventory';
 import { getItemById } from './getItemById';
 import { findFreeGridSpot } from './findFreeGridSpot';
 import { markGridOccupied } from './markGridOccupied';
 
-interface TryPlaceItemProps {
+interface TryPlaceItemProps extends GridDimensionsProps {
   grid: GridOccupancy;
-  gridWidth: number;
-  gridHeight: number;
   itemId: string;
   quantity: number;
 }

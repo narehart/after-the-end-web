@@ -1,16 +1,20 @@
 /**
  * Is Space Free
  *
- * Checks if a rectangular area in a grid is free (null or owned by entityId).
+ * Checks if a rectangular area in a grid is free.
+ * When entityId is provided, cells matching that ID are considered free.
+ * When entityId is omitted, only null cells are considered free.
  */
 
+import type { CellGrid } from '../types/inventory';
+
 interface IsSpaceFreeProps {
-  cells: Array<Array<string | null>>;
+  cells: CellGrid;
   x: number;
   y: number;
   width: number;
   height: number;
-  entityId: string;
+  entityId?: string | undefined;
 }
 
 export function isSpaceFree(props: IsSpaceFreeProps): boolean {
@@ -19,7 +23,8 @@ export function isSpaceFree(props: IsSpaceFreeProps): boolean {
   for (let dy = 0; dy < height; dy++) {
     for (let dx = 0; dx < width; dx++) {
       const row = cells[y + dy];
-      const cell = row?.[x + dx];
+      if (row === undefined) return false;
+      const cell = row[x + dx];
       if (cell !== null && cell !== entityId) {
         return false;
       }

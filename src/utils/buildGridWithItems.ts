@@ -1,6 +1,6 @@
 import type { CellGrid, ItemsMap, ItemPlacement } from '../types/inventory';
 import { getItemById } from './getItemById';
-import { canPlaceAt } from './canPlaceAt';
+import { isSpaceFree } from './isSpaceFree';
 import { createEmptyGrid } from './createEmptyGrid';
 import { createItemInstance } from './createItemInstance';
 import { generateInstanceId } from './generateInstanceId';
@@ -28,8 +28,8 @@ export function buildGridWithItems(props: BuildGridWithItemsProps): BuildGridWit
       continue;
     }
 
-    const canPlace = canPlaceAt({
-      grid: cells,
+    const canPlace = isSpaceFree({
+      cells,
       x: placement.x,
       y: placement.y,
       width: template.size.width,

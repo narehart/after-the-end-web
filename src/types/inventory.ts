@@ -151,6 +151,17 @@ export interface MenuLevel {
   selectedIndex: number;
 }
 
+// Shared props for grid/item dimensions
+export interface GridDimensionsProps {
+  gridWidth: number;
+  gridHeight: number;
+}
+
+export interface ItemDimensionsProps {
+  itemWidth: number;
+  itemHeight: number;
+}
+
 // Grid occupancy types (for random placement algorithms)
 export interface GridOccupancyCell {
   occupied: boolean;
