@@ -1,11 +1,10 @@
 import type { StateCreator } from 'zustand';
 import type { EquipmentActionsSlice, StoreWithEquipment } from '../../types/store';
-import { destroyEquippedItem } from '../../utils/destroyEquippedItem';
-import { unequipItemToGrid } from '../../utils/unequipItemToGrid';
 import { moveItem as ecsMoveItem } from '../../ecs/systems/moveItemSystem';
 import { splitItem as ecsSplitItem } from '../../ecs/systems/splitItemSystem';
 import { destroyItem as ecsDestroyItem } from '../../ecs/systems/destroyItemSystem';
 import { emptyContainer as ecsEmptyContainer } from '../../ecs/systems/emptyContainerSystem';
+import { unequipItem as ecsUnequipItem } from '../../ecs/systems/unequipItemSystem';
 
 export const createEquipmentActionsSlice: StateCreator<
   EquipmentActionsSlice & StoreWithEquipment,
@@ -14,19 +13,13 @@ export const createEquipmentActionsSlice: StateCreator<
   EquipmentActionsSlice
 > = (set, get) => ({
   unequipItem: (itemId, targetGridId): boolean => {
+    const result = ecsUnequipItem({ entityId: itemId, targetGridId });
+    if (!result.success || result.slotType === null) return false;
+
     const state = get();
-    const result = unequipItemToGrid({
-      items: state.items,
-      grids: state.grids,
-      equipment: state.equipment,
-      itemId,
-      targetGridId,
-    });
-    if (result === null) return false;
     const shouldClearPath = state.inventoryFocusPath.includes(itemId);
     set({
-      equipment: result.equipment,
-      grids: result.grids,
+      equipment: { ...state.equipment, [result.slotType]: null },
       inventoryFocusPath: shouldClearPath ? [] : state.inventoryFocusPath,
       selectedItemId: null,
     });
@@ -53,30 +46,17 @@ export const createEquipmentActionsSlice: StateCreator<
   },
 
   destroyItem: (itemId): boolean => {
-    // Try destroying from grid via ECS
-    const gridSuccess = ecsDestroyItem({ entityId: itemId });
-    if (gridSuccess) {
-      set({ selectedItemId: null });
-      return true;
-    }
-    // Fall back to equipped item destruction (not yet migrated to ECS)
+    // ECS destroyItem handles both grid items and equipped items
+    const success = ecsDestroyItem({ entityId: itemId });
+    if (!success) return false;
+
     const state = get();
-    const equipResult = destroyEquippedItem({
-      items: state.items,
-      equipment: state.equipment,
-      itemId,
+    const shouldClearPath = state.inventoryFocusPath.includes(itemId);
+    set({
+      inventoryFocusPath: shouldClearPath ? [] : state.inventoryFocusPath,
+      selectedItemId: null,
     });
-    if (equipResult !== null) {
-      const shouldClearPath = state.inventoryFocusPath.includes(itemId);
-      set({
-        items: equipResult.items,
-        equipment: equipResult.equipment,
-        inventoryFocusPath: shouldClearPath ? [] : state.inventoryFocusPath,
-        selectedItemId: null,
-      });
-      return true;
-    }
-    return false;
+    return true;
   },
 
   emptyContainer: (containerId): boolean => {

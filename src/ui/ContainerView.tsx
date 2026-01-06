@@ -1,12 +1,11 @@
 import { useInventoryStore } from '../stores/inventoryStore';
+import useECSInventory from '../hooks/useECSInventory';
 import type { GridCell, MenuSource, PanelType } from '../types/inventory';
 import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
 import { DEFAULT_CELL_SIZE } from '../constants/grid';
 import { useBreadcrumbLinksContainer } from '../hooks/useBreadcrumbLinksContainer';
 import ItemGrid from './ItemGrid';
 import { Panel } from '.';
-
-;
 
 interface ContainerViewProps {
   focusPath: string[];
@@ -26,8 +25,7 @@ export default function ContainerView({
   panelLabel = 'Container',
   cellSize = null,
 }: ContainerViewProps): React.JSX.Element {
-  const items = useInventoryStore((state) => state.items);
-  const grids = useInventoryStore((state) => state.grids);
+  const { itemsMap: items, gridsMap: grids } = useECSInventory();
   const equipment = useInventoryStore((state) => state.equipment);
 
   const lastPath = focusPath[focusPath.length - SECOND_INDEX];

@@ -2,7 +2,7 @@
  * Initialize Inventory System
  *
  * Populates the ECS world with initial inventory state.
- * Converts from the legacy Zustand format to ECS entities.
+ * Generates inventory directly from item templates and game logic.
  */
 
 import { world } from '../world';
@@ -11,6 +11,10 @@ import type { GridsMap, ItemsMap, Equipment, Item } from '../../types/inventory'
 import { placeInCells } from '../queries/inventoryQueries';
 import { FIRST_INDEX, SECOND_INDEX } from '../../constants/array';
 import { DEFAULT_QUANTITY } from '../../constants/items';
+import { buildInitialInventory } from '../../utils/buildInitialInventory';
+import { itemTemplates } from '../../data/itemTemplates';
+
+let ecsInitialized = false;
 
 interface InitializeInventoryProps {
   items: ItemsMap;
@@ -121,7 +125,7 @@ function createItemEntity(
   }
 
   if (item.gridSize !== undefined) {
-    entity.container = { gridEntityId: `${itemId}-grid` };
+    entity.container = { gridEntityId: itemId };
   }
 
   return entity;
@@ -158,6 +162,18 @@ function createItemEntities(items: ItemsMap, grids: GridsMap): void {
   }
 }
 
+function createEquippedItemEntities(equipment: Equipment, items: ItemsMap): void {
+  for (const equippedId of Object.values(equipment)) {
+    if (equippedId === null) continue;
+    const item = items[equippedId];
+    if (item === undefined) continue;
+
+    // Create entity for the equipped item (no position since it's equipped, not in a grid)
+    const entity = createItemEntity(equippedId, item, undefined);
+    world.add(entity);
+  }
+}
+
 function createEquipmentEntity(equipment: Equipment): void {
   const entity: Entity = {
     id: 'player-equipment',
@@ -175,5 +191,27 @@ export function initializeInventory(props: InitializeInventoryProps): void {
 
   createGridEntities(grids);
   createItemEntities(items, grids);
+  createEquippedItemEntities(equipment, items);
   createEquipmentEntity(equipment);
 }
+
+/**
+ * Ensures ECS world is initialized with inventory data.
+ * Safe to call multiple times - only initializes once.
+ * Called at module load to ensure data is ready before first render.
+ */
+function ensureInitialized(): void {
+  if (ecsInitialized) return;
+  ecsInitialized = true;
+
+  // Generate initial inventory directly (not from Zustand)
+  const { grids, instances, equipment } = buildInitialInventory();
+
+  // Merge templates with instances for item lookup
+  const items: ItemsMap = { ...itemTemplates, ...instances };
+
+  initializeInventory({ items, grids, equipment });
+}
+
+// Initialize ECS world synchronously at module load
+ensureInitialized();

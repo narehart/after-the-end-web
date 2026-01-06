@@ -146,7 +146,6 @@ export interface UseMenuContextReturn {
   currentContainerId: string | null;
   canFitItem: (containerId: string) => boolean;
   navigateToContainer: (containerId: string, panel: string, fromEquipment?: boolean) => void;
-  rotateItem: (itemId: string) => void;
   equipItem: (itemId: string, targetSlot?: SlotType | null) => boolean;
   unequipItem: (itemId: string, targetGridId: string) => boolean;
   moveItem: (itemId: string, targetGridId: string) => boolean;

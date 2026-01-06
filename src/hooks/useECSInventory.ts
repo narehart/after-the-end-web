@@ -9,6 +9,7 @@ import { useMemo, useCallback } from 'react';
 import { useEntities } from 'miniplex-react';
 import { world } from '../ecs/world';
 import type { Entity, EntityId, GridId } from '../types/ecs';
+import type { GridCell, GridsMap, ItemsMap } from '../types/inventory';
 import { moveItem } from '../ecs/systems/moveItemSystem';
 import { splitItem } from '../ecs/systems/splitItemSystem';
 import { destroyItem } from '../ecs/systems/destroyItemSystem';
@@ -20,12 +21,16 @@ const itemsQuery = world.with('item', 'template');
 const gridsQuery = world.with('grid');
 
 interface UseECSInventoryReturn {
-  // Queries
+  // Queries - raw entities
   items: Entity[];
   grids: Entity[];
   getItem: (entityId: EntityId) => Entity | undefined;
   getGrid: (gridId: GridId) => Entity | undefined;
   getItemsInGrid: (gridId: GridId) => Entity[];
+
+  // Zustand-compatible maps for migration
+  itemsMap: ItemsMap;
+  gridsMap: GridsMap;
 
   // Actions
   moveItem: (entityId: EntityId, targetGridId: GridId) => boolean;
@@ -91,6 +96,29 @@ export default function useECSInventory(): UseECSInventoryReturn {
     []
   );
 
+  // Zustand-compatible maps for migration
+  const itemsMap = useMemo((): ItemsMap => {
+    const map: ItemsMap = {};
+    for (const entity of items) {
+      const entityId = entity.id;
+      if (entityId !== undefined) map[entityId] = entity.template.template;
+    }
+    return map;
+  }, [items]);
+
+  const gridsMap = useMemo((): GridsMap => {
+    const map: GridsMap = {};
+    for (const entity of grids) {
+      const gridCell: GridCell = {
+        cells: entity.grid.cells,
+        width: entity.grid.width,
+        height: entity.grid.height,
+      };
+      map[entity.grid.gridId] = gridCell;
+    }
+    return map;
+  }, [grids]);
+
   return useMemo(
     () => ({
       items,
@@ -98,6 +126,8 @@ export default function useECSInventory(): UseECSInventoryReturn {
       getItem,
       getGrid,
       getItemsInGrid,
+      itemsMap,
+      gridsMap,
       moveItem: handleMoveItem,
       splitItem: handleSplitItem,
       destroyItem: handleDestroyItem,
@@ -110,6 +140,8 @@ export default function useECSInventory(): UseECSInventoryReturn {
       getItem,
       getGrid,
       getItemsInGrid,
+      itemsMap,
+      gridsMap,
       handleMoveItem,
       handleSplitItem,
       handleDestroyItem,

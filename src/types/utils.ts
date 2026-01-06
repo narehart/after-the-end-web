@@ -41,17 +41,6 @@ export interface CheckIsOriginProps {
   renderedItems: Set<string>;
 }
 
-export interface FindFreePositionProps {
-  grid: GridCell;
-  itemWidth: number;
-  itemHeight: number;
-}
-
-export interface FindItemInGridsProps {
-  grids: GridsMap;
-  itemId: string;
-}
-
 export interface FindItemOriginProps {
   grid: GridCell;
   itemId: string;
@@ -71,17 +60,6 @@ export interface PlaceItemProps {
   width: number;
   height: number;
 }
-
-export interface PlaceItemInCellsProps {
-  grid: CellGrid;
-  itemId: string;
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-}
-
-export type PlaceItemInCellsReturn = CellGrid;
 
 export interface CreateEmptyGridProps {
   width: number;
@@ -105,12 +83,6 @@ export type CreateContainerGridsReturn = GridsMap;
 
 export interface CreateEquipmentInstancesReturn {
   instances: ItemsMap;
-  grids: GridsMap;
-  equipment: Equipment;
-}
-
-export interface InitialInventoryState {
-  items: ItemsMap;
   grids: GridsMap;
   equipment: Equipment;
 }

@@ -6,6 +6,8 @@
 
 import { world } from '../world';
 import type { Entity, EntityId, GridId } from '../../types/ecs';
+import type { Equipment } from '../../types/inventory';
+import { INITIAL_EQUIPMENT } from '../../constants/equipment';
 
 interface GetGridEntityProps {
   gridId: GridId;
@@ -160,4 +162,44 @@ export function removeFromCells(props: RemoveFromCellsProps): void {
       }
     }
   }
+}
+
+interface GetEquipmentReturn {
+  equipment: Equipment;
+}
+
+export function getEquipment(): GetEquipmentReturn {
+  for (const entity of world) {
+    if (entity.equipment !== undefined) {
+      return { equipment: entity.equipment.slots };
+    }
+  }
+  return { equipment: { ...INITIAL_EQUIPMENT } };
+}
+
+type GetLargestEquippedContainerReturn = string | null;
+
+export function getLargestEquippedContainer(): GetLargestEquippedContainerReturn {
+  const { equipment } = getEquipment();
+  let largestId: string | null = null;
+  let largestSize = 0;
+
+  for (const itemId of Object.values(equipment)) {
+    if (itemId === null) continue;
+
+    // Find the item entity to check gridSize
+    for (const entity of world) {
+      if (entity.id === itemId && entity.template?.template.gridSize !== undefined) {
+        const { width, height } = entity.template.template.gridSize;
+        const size = width * height;
+        if (size > largestSize) {
+          largestSize = size;
+          largestId = itemId;
+        }
+        break;
+      }
+    }
+  }
+
+  return largestId;
 }

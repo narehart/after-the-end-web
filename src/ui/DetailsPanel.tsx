@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import { useInventoryStore } from '../stores/inventoryStore';
+import useECSInventory from '../hooks/useECSInventory';
 import { buildStatsLine } from '../utils/buildStatsLine';
 import { getItemIcon } from '../utils/getItemIcon';
 import { getItemImageUrl } from '../utils/getItemImageUrl';
@@ -11,8 +12,7 @@ const cx = classNames.bind(styles);
 
 export default function DetailsPanel(): React.JSX.Element {
   const selectedItemId = useInventoryStore((state) => state.selectedItemId);
-  const items = useInventoryStore((state) => state.items);
-  const grids = useInventoryStore((state) => state.grids);
+  const { itemsMap: items, gridsMap: grids } = useECSInventory();
 
   const item = selectedItemId !== null ? (items[selectedItemId] ?? null) : null;
 

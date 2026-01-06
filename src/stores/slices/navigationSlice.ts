@@ -1,29 +1,25 @@
 import type { StateCreator } from 'zustand';
 import { FIRST_INDEX, SECOND_INDEX } from '../../constants/array';
-import type { GridCell } from '../../types/inventory';
-import type { NavigationSlice, StoreWithGrids } from '../../types/store';
-import { getInitialInventoryFocusPath } from '../../utils/getInitialInventoryFocusPath';
-import { initialInventoryState } from './itemsSlice';
+import type { NavigationSlice, StoreWithEquipment } from '../../types/store';
+import { getLargestEquippedContainer } from '../../ecs/queries/inventoryQueries';
 
-;
+function getInitialContainerPath(): string[] {
+  const containerId = getLargestEquippedContainer();
+  return containerId !== null ? [containerId] : [];
+}
 
 export const createNavigationSlice: StateCreator<
-  NavigationSlice & StoreWithGrids,
+  NavigationSlice & StoreWithEquipment,
   [],
   [],
   NavigationSlice
 > = (set, get) => ({
-  inventoryFocusPath: getInitialInventoryFocusPath({
-    equipment: initialInventoryState.equipment,
-    items: initialInventoryState.items,
-  }),
+  inventoryFocusPath: getInitialContainerPath(),
   worldFocusPath: ['ground'],
 
   navigateToContainer: (containerId, panel, fromEquipment = false): void => {
+    // Caller is responsible for verifying item has gridSize before calling
     const state = get();
-    const item = state.items[containerId];
-    if (item?.gridSize === undefined) return;
-
     if (panel === 'inventory') {
       const newPath = fromEquipment ? [containerId] : [...state.inventoryFocusPath, containerId];
       set({
@@ -56,12 +52,10 @@ export const createNavigationSlice: StateCreator<
   },
 
   focusOnEquipmentSlot: (slotType): void => {
+    // Caller is responsible for verifying item has gridSize before calling
     const state = get();
     const itemId = state.equipment[slotType];
     if (itemId === null) return;
-
-    const item = state.items[itemId];
-    if (item?.gridSize === undefined) return;
 
     set({
       inventoryFocusPath: [itemId],
@@ -71,29 +65,5 @@ export const createNavigationSlice: StateCreator<
 
   clearInventoryFocusPath: (): void => {
     set({ inventoryFocusPath: [], selectedItemId: null });
-  },
-
-  getInventoryGrid: (): GridCell | null => {
-    const { inventoryFocusPath, grids } = get();
-    if (inventoryFocusPath.length === FIRST_INDEX) return null;
-    const lastPath = inventoryFocusPath[inventoryFocusPath.length - SECOND_INDEX];
-    return lastPath !== undefined ? (grids[lastPath] ?? null) : null;
-  },
-
-  getWorldGrid: (): GridCell | null => {
-    const { worldFocusPath, grids } = get();
-    if (worldFocusPath.length === FIRST_INDEX) return null;
-    const lastPath = worldFocusPath[worldFocusPath.length - SECOND_INDEX];
-    return lastPath !== undefined ? (grids[lastPath] ?? null) : null;
-  },
-
-  getCurrentGrid: (): GridCell | null => get().getInventoryGrid(),
-
-  getGroundGrid: (): GridCell => {
-    const ground = get().grids['ground'];
-    if (ground === undefined) {
-      throw new Error('Ground grid not found');
-    }
-    return ground;
   },
 });

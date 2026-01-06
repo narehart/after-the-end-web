@@ -1,5 +1,5 @@
 import type { RefObject, MutableRefObject, CSSProperties } from 'react';
-import type { BreadcrumbLink, GridPosition, Item } from './inventory';
+import type { BreadcrumbLink, Item } from './inventory';
 import type { NavigationDirection } from './gamepad';
 
 export type CSSPropertiesWithVars = CSSProperties & {
@@ -87,11 +87,6 @@ export interface ItemPlacement {
   x: number;
   y: number;
   quantity?: number;
-}
-
-export interface ItemLocation {
-  gridId: string;
-  positions: GridPosition[];
 }
 
 export interface GamepadRefs {

@@ -1,5 +1,6 @@
 import { useInventoryStore } from '../stores/inventoryStore';
 import type { SlotType, Item } from '../types/inventory';
+import useECSInventory from './useECSInventory';
 
 interface UseSlotItemProps {
   slotType: SlotType;
@@ -13,7 +14,7 @@ interface UseSlotItemReturn {
 
 export default function useSlotItem({ slotType }: UseSlotItemProps): UseSlotItemReturn {
   const equipment = useInventoryStore((state) => state.equipment);
-  const items = useInventoryStore((state) => state.items);
+  const { itemsMap: items } = useECSInventory();
 
   const itemId = equipment[slotType];
   const item = itemId !== null ? (items[itemId] ?? null) : null;

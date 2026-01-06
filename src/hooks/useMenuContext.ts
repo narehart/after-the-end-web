@@ -1,22 +1,20 @@
 import { useMemo, useCallback } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 import { useInventoryStore } from '../stores/inventoryStore';
-import { findItemInGrids } from '../utils/findItemInGrids';
 import type { UseMenuContextProps, UseMenuContextReturn, PanelType } from '../types/inventory';
+import { findFreePosition as ecsFindFreePosition } from '../ecs/queries/inventoryQueries';
+import useECSInventory from './useECSInventory';
 
 export default function useMenuContext(props: UseMenuContextProps): UseMenuContextReturn {
   const { itemId, source } = props.menu;
-  const item = useInventoryStore((s) => (itemId !== null ? s.items[itemId] : undefined));
+  const { itemsMap: allItems, gridsMap: grids, getItem, getGrid } = useECSInventory();
+  const item = itemId !== null ? allItems[itemId] : undefined;
   const equipment = useInventoryStore((s) => s.equipment);
-  const allItems = useInventoryStore((s) => s.items);
-  const grids = useInventoryStore((s) => s.grids);
-  const findFreePosition = useInventoryStore((s) => s.findFreePosition);
 
   // Store actions - useShallow prevents infinite re-renders from object reference changes
   const actions = useInventoryStore(
     useShallow((s) => ({
       navigateToContainer: s.navigateToContainer,
-      rotateItem: s.rotateItem,
       equipItem: s.equipItem,
       unequipItem: s.unequipItem,
       moveItem: s.moveItem,
@@ -29,15 +27,25 @@ export default function useMenuContext(props: UseMenuContextProps): UseMenuConte
 
   const currentContainerId = useMemo((): string | null => {
     if (itemId === null) return null;
-    return findItemInGrids({ grids, itemId })?.gridId ?? null;
-  }, [grids, itemId]);
+    const entity = getItem(itemId);
+    return entity?.position?.gridId ?? null;
+  }, [getItem, itemId]);
 
   const canFitItem = useCallback(
     (containerId: string): boolean => {
       if (item === undefined) return false;
-      return findFreePosition(containerId, item.size.width, item.size.height) !== null;
+      const gridEntity = getGrid(containerId);
+      if (gridEntity?.grid === undefined) return false;
+      const freePos = ecsFindFreePosition({
+        cells: gridEntity.grid.cells,
+        gridWidth: gridEntity.grid.width,
+        gridHeight: gridEntity.grid.height,
+        itemWidth: item.size.width,
+        itemHeight: item.size.height,
+      });
+      return freePos !== null;
     },
-    [item, findFreePosition]
+    [item, getGrid]
   );
 
   const panel: PanelType = source === 'ground' || source === 'world' ? 'world' : 'inventory';

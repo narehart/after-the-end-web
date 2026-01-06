@@ -1,25 +1,14 @@
 /**
  * useECSInit Hook
  *
- * Initializes the ECS world with inventory data on mount.
- * Should be called once at app startup.
+ * Ensures ECS world is initialized with inventory data.
+ * Importing this module triggers initialization at module load time.
  */
 
-import { useEffect, useRef } from 'react';
-import { initialInventoryState } from '../stores/slices/itemsSlice';
-import { initializeInventory } from '../ecs/systems/initializeInventorySystem';
+// Import triggers module-level initialization in the system file
+import '../ecs/systems/initializeInventorySystem';
 
 export default function useECSInit(): void {
-  const initialized = useRef(false);
-
-  useEffect(() => {
-    if (initialized.current) return;
-    initialized.current = true;
-
-    initializeInventory({
-      items: initialInventoryState.items,
-      grids: initialInventoryState.grids,
-      equipment: initialInventoryState.equipment,
-    });
-  }, []);
+  // No-op hook - initialization happens at module load when the system is imported
+  // Kept for API compatibility
 }

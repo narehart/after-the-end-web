@@ -2,10 +2,6 @@ import type {
   Conditions,
   ContainerRect,
   Equipment,
-  GridCell,
-  GridsMap,
-  Item,
-  ItemsMap,
   MenuPathSegment,
   MenuSource,
   MenuState,
@@ -48,32 +44,9 @@ export interface EquipmentActionsSlice {
 
 export interface StoreWithEquipment {
   equipment: Equipment;
-  items: ItemsMap;
-  grids: GridsMap;
   inventoryFocusPath: string[];
   selectedItemId: string | null;
 }
-
-// Items Slice
-interface ItemsState {
-  items: ItemsMap;
-  grids: GridsMap;
-}
-
-interface ItemsActions {
-  setItems: (items: ItemsMap) => void;
-  setGrids: (grids: GridsMap) => void;
-  rotateItem: (itemId: string) => void;
-  getItemAtPosition: (gridId: string, x: number, y: number) => Item | null;
-  findItemOrigin: (gridId: string, itemId: string) => { x: number; y: number } | null;
-  findFreePosition: (
-    gridId: string,
-    itemWidth: number,
-    itemHeight: number
-  ) => { x: number; y: number } | null;
-}
-
-export type ItemsSlice = ItemsState & ItemsActions;
 
 // Navigation Slice
 interface NavigationState {
@@ -86,19 +59,6 @@ interface NavigationActions {
   navigateBack: (index: number, panel: string) => void;
   focusOnEquipmentSlot: (slotType: SlotType) => void;
   clearInventoryFocusPath: () => void;
-  getInventoryGrid: () => GridCell | null;
-  getWorldGrid: () => GridCell | null;
-  getCurrentGrid: () => GridCell | null;
-  getGroundGrid: () => GridCell;
-}
-
-export interface StoreWithGrids {
-  grids: GridsMap;
-  items: ItemsMap;
-  equipment: Equipment;
-  inventoryFocusPath: string[];
-  worldFocusPath: string[];
-  selectedItemId: string | null;
 }
 
 export type NavigationSlice = NavigationState & NavigationActions;
@@ -149,7 +109,6 @@ export type InputModeSlice = InputModeState & InputModeActions;
 // Combined Store
 export type InventoryStore = UISlice &
   EquipmentSlice &
-  ItemsSlice &
   NavigationSlice &
   ConditionsSlice &
   EquipmentActionsSlice &

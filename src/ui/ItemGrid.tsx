@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import { CELL_GAP } from '../constants/grid';
 import { FIRST_INDEX } from '../constants/array';
-import { useInventoryStore } from '../stores/inventoryStore';
+import useECSInventory from '../hooks/useECSInventory';
 import useGridNavigation from '../hooks/useGridNavigation';
 import type { GridCell, MenuSource } from '../types/inventory';
 import { getCellValue } from '../utils/getCellValue';
@@ -9,8 +9,6 @@ import { checkIsOrigin } from '../utils/checkIsOrigin';
 import ItemGridCell from './ItemGridCell';
 import styles from './ItemGrid.module.css';
 import { Box, Flex } from '.';
-
-;
 
 const cx = classNames.bind(styles);
 
@@ -27,7 +25,7 @@ export default function ItemGrid({
   cellSize,
   hidden = false,
 }: ItemGridProps): React.JSX.Element {
-  const items = useInventoryStore((state) => state.items);
+  const { itemsMap: items } = useECSInventory();
   const { focusedCell, handleNavigate, handleGridKeyDown, setCellRef } = useGridNavigation({
     width: grid.width,
     height: grid.height,
