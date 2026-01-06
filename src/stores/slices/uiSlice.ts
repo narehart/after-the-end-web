@@ -33,7 +33,7 @@ export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
         isOpen: true,
         position,
         targetItemId: itemId,
-        targetSlotType: slotType,
+        targetEquipmentSlot: slotType,
         itemId,
         source,
         path: [],

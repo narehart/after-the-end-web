@@ -1,4 +1,5 @@
-import type { Equipment, GridsMap, ItemsMap } from '../types/inventory';
+import type { Equipment } from '../types/equipment';
+import type { GridsMap, ItemsMap } from '../types/inventory';
 import { GROUND_HEIGHT, GROUND_WIDTH } from '../constants/inventory';
 import { buildGridWithItems } from './buildGridWithItems';
 import { createContainerGrids } from './createContainerGrids';

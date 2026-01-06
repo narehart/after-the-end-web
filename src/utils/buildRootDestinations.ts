@@ -1,8 +1,8 @@
-import { SLOT_LABELS } from '../constants/slotLabels';
+import { EQUIPMENT_LABELS } from '../constants/equipment';
 import type { MenuItem, UseMenuContextReturn } from '../types/inventory';
 import { buildDestinationItems } from './buildDestinationItems';
 import { getContainerInfo } from './getContainerInfo';
-import { isSlotType } from './isSlotType';
+import { isEquipmentSlot } from './isEquipmentSlot';
 
 interface BuildRootDestinationsProps {
   ctx: UseMenuContextReturn;
@@ -40,7 +40,7 @@ export function buildRootDestinations(
     if (info !== null) {
       const isCurrentContainer = equippedId === currentContainerId;
       const containerBlocked = isCurrentContainer && !allowCurrentContainer;
-      const slotLabel = isSlotType(slot) ? SLOT_LABELS[slot] : info.name;
+      const slotLabel = isEquipmentSlot(slot) ? EQUIPMENT_LABELS[slot] : info.name;
       items.push({
         id: info.id,
         label: containerBlocked ? `${slotLabel} (already here)` : slotLabel,

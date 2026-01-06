@@ -1,6 +1,7 @@
 /* eslint-disable local/types-in-types-directory -- Hook-specific types */
 import type { MouseEvent, KeyboardEvent, MutableRefObject } from 'react';
-import type { SlotType, Item } from '../types/inventory';
+import type { EquipmentSlot } from '../types/equipment';
+import type { Item } from '../types/inventory';
 import useSlotItem from './useSlotItem';
 import useSlotFocus from './useSlotFocus';
 import useSlotHandlers from './useSlotHandlers';
@@ -15,7 +16,7 @@ export interface SlotState {
 }
 
 interface UseEquipmentSlotProps {
-  slotType: SlotType;
+  slotType: EquipmentSlot;
   slotRef: MutableRefObject<HTMLButtonElement | null>;
 }
 

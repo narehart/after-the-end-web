@@ -1,8 +1,9 @@
 import { useMemo } from 'react';
 import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
-import { SLOT_LABELS } from '../constants/slotLabels';
-import type { BreadcrumbLink, Equipment, ItemsMap, PanelType } from '../types/inventory';
-import { isSlotType } from '../utils/isSlotType';
+import { EQUIPMENT_LABELS } from '../constants/equipment';
+import type { Equipment } from '../types/equipment';
+import type { BreadcrumbLink, ItemsMap, PanelType } from '../types/inventory';
+import { isEquipmentSlot } from '../utils/isEquipmentSlot';
 
 interface UseBreadcrumbLinksContainerProps {
   panelLabel: string;
@@ -30,8 +31,8 @@ export function useBreadcrumbLinksContainer(
     // Find the equipment slot label for an item (for inventory breadcrumbs)
     const getSlotLabelForItem = (itemId: string): string | null => {
       for (const [slot, equippedId] of Object.entries(equipment)) {
-        if (equippedId === itemId && isSlotType(slot)) {
-          return SLOT_LABELS[slot];
+        if (equippedId === itemId && isEquipmentSlot(slot)) {
+          return EQUIPMENT_LABELS[slot];
         }
       }
       return null;

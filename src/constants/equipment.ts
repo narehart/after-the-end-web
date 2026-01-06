@@ -1,4 +1,50 @@
-import type { Equipment } from '../types/inventory';
+import type { Equipment, EquipmentSlot } from '../types/equipment';
+
+export const EQUIPMENT_SLOTS: EquipmentSlot[] = [
+  'helmet',
+  'eyes',
+  'face',
+  'neck',
+  'backpack',
+  'coat',
+  'vest',
+  'shirt',
+  'rightShoulder',
+  'leftShoulder',
+  'rightGlove',
+  'leftGlove',
+  'rightRing',
+  'leftRing',
+  'rightHolding',
+  'leftHolding',
+  'pouch',
+  'pants',
+  'rightShoe',
+  'leftShoe',
+];
+
+export const EQUIPMENT_LABELS: Record<EquipmentSlot, string> = {
+  helmet: 'Helmet',
+  eyes: 'Eyes',
+  face: 'Face',
+  neck: 'Neck',
+  backpack: 'Backpack',
+  coat: 'Coat',
+  vest: 'Vest',
+  shirt: 'Shirt',
+  rightShoulder: 'R. Shoulder',
+  leftShoulder: 'L. Shoulder',
+  rightGlove: 'R. Glove',
+  leftGlove: 'L. Glove',
+  rightRing: 'R. Ring',
+  leftRing: 'L. Ring',
+  rightHolding: 'R. Hand',
+  leftHolding: 'L. Hand',
+  pouch: 'Pouch',
+  pants: 'Pants',
+  rightShoe: 'R. Shoe',
+  leftShoe: 'L. Shoe',
+};
 
 // Using neoItems IDs for initial equipment
 export const INITIAL_EQUIPMENT: Equipment = {

@@ -1,9 +1,10 @@
 import { useInventoryStore } from '../stores/inventoryStore';
-import type { SlotType, Item } from '../types/inventory';
+import type { EquipmentSlot } from '../types/equipment';
+import type { Item } from '../types/inventory';
 import useECSInventory from './useECSInventory';
 
 interface UseSlotItemProps {
-  slotType: SlotType;
+  slotType: EquipmentSlot;
 }
 
 interface UseSlotItemReturn {

@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { SLOT_TYPES } from '../constants/slots';
+import { EQUIPMENT_SLOTS } from '../constants/equipment';
 import type { InventoryStore } from '../types/store';
 import { createUISlice } from './slices/uiSlice';
 import { createEquipmentSlice } from './slices/equipmentSlice';
@@ -8,7 +8,7 @@ import { createConditionsSlice } from './slices/conditionsSlice';
 import { createEquipmentActionsSlice } from './slices/equipmentActionsSlice';
 import { createInputModeSlice } from './slices/inputModeSlice';
 
-export { SLOT_TYPES };
+export { EQUIPMENT_SLOTS };
 
 export const useInventoryStore = create<InventoryStore>()((...args) => ({
   ...createUISlice(...args),

@@ -1,12 +1,6 @@
 import type { Conditions } from './conditions';
-import type {
-  ContainerRect,
-  Equipment,
-  MenuPathSegment,
-  MenuSource,
-  MenuState,
-  SlotType,
-} from './inventory';
+import type { Equipment, EquipmentSlot } from './equipment';
+import type { ContainerRect, MenuPathSegment, MenuSource, MenuState } from './inventory';
 
 // Conditions Slice
 interface ConditionsState {
@@ -27,7 +21,7 @@ interface EquipmentState {
 
 interface EquipmentActions {
   setEquipment: (equipment: Equipment) => void;
-  setEquipmentSlot: (slot: SlotType, itemId: string | null) => void;
+  setEquipmentSlot: (slot: EquipmentSlot, itemId: string | null) => void;
 }
 
 export type EquipmentSlice = EquipmentState & EquipmentActions;
@@ -35,7 +29,7 @@ export type EquipmentSlice = EquipmentState & EquipmentActions;
 // Equipment Actions Slice
 export interface EquipmentActionsSlice {
   unequipItem: (itemId: string, targetGridId: string) => boolean;
-  equipItem: (itemId: string, targetSlot?: SlotType | null) => boolean;
+  equipItem: (itemId: string, targetSlot?: EquipmentSlot | null) => boolean;
   moveItem: (itemId: string, targetGridId: string) => boolean;
   splitItem: (itemId: string, targetGridId: string) => boolean;
   destroyItem: (itemId: string) => boolean;
@@ -57,7 +51,7 @@ interface NavigationState {
 interface NavigationActions {
   navigateToContainer: (containerId: string, panel: string, fromEquipment?: boolean) => void;
   navigateBack: (index: number, panel: string) => void;
-  focusOnEquipmentSlot: (slotType: SlotType) => void;
+  focusOnEquipmentSlot: (slotType: EquipmentSlot) => void;
   clearInventoryFocusPath: () => void;
 }
 
@@ -66,7 +60,7 @@ export type NavigationSlice = NavigationState & NavigationActions;
 // UI Slice
 interface UIState {
   selectedItemId: string | null;
-  focusedEmptySlot: SlotType | null;
+  focusedEmptySlot: EquipmentSlot | null;
   uiScale: number;
   containerRect: ContainerRect | null;
   menu: MenuState;
@@ -74,13 +68,13 @@ interface UIState {
 
 interface UIActions {
   setSelectedItem: (itemId: string | null) => void;
-  setFocusedEmptySlot: (slotType: SlotType | null) => void;
+  setFocusedEmptySlot: (slotType: EquipmentSlot | null) => void;
   clearFocusedEmptySlot: () => void;
   setUIScale: (scale: number, containerRect?: ContainerRect | null) => void;
   openMenu: (
     position: { x: number; y: number },
     itemId: string | null,
-    slotType: SlotType | null,
+    slotType: EquipmentSlot | null,
     source?: MenuSource
   ) => void;
   closeMenu: () => void;

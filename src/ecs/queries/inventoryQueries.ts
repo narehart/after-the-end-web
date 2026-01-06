@@ -6,7 +6,7 @@
 
 import { world } from '../world';
 import type { Entity, EntityId, GridId } from '../world';
-import type { Equipment } from '../../types/inventory';
+import type { Equipment } from '../../types/equipment';
 import { INITIAL_EQUIPMENT } from '../../constants/equipment';
 
 interface GetGridEntityProps {

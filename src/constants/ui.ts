@@ -4,7 +4,7 @@ export const INITIAL_MENU: MenuState = {
   isOpen: false,
   position: null,
   targetItemId: null,
-  targetSlotType: null,
+  targetEquipmentSlot: null,
   itemId: null,
   source: null,
   path: [],

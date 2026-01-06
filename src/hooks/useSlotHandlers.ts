@@ -1,11 +1,12 @@
 import type { MouseEvent, KeyboardEvent, RefObject } from 'react';
 import { useCallback } from 'react';
 import { useInventoryStore } from '../stores/inventoryStore';
-import type { SlotType, Item } from '../types/inventory';
+import type { EquipmentSlot } from '../types/equipment';
+import type { Item } from '../types/inventory';
 import { getModalPosition } from '../utils/getModalPosition';
 
 interface UseSlotHandlersProps {
-  slotType: SlotType;
+  slotType: EquipmentSlot;
   slotRef: RefObject<HTMLButtonElement | null>;
   item: Item | null;
   itemId: string | null;

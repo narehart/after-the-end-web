@@ -5,8 +5,8 @@
  */
 
 import type { EntityId } from '../world';
-import type { SlotType } from '../../types/inventory';
+import type { EquipmentSlot } from '../../types/equipment';
 
 export interface EquipmentComponent {
-  slots: Record<SlotType, EntityId | null>;
+  slots: Record<EquipmentSlot, EntityId | null>;
 }

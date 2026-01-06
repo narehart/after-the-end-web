@@ -1,12 +1,12 @@
 import { useRef } from 'react';
 import useEquipmentSlot from '../hooks/useEquipmentSlot';
-import type { SlotType } from '../types/inventory';
+import type { EquipmentSlot as EquipmentSlotType } from '../types/equipment';
 import { getItemImageUrl } from '../utils/getItemImageUrl';
 import { formatSlotLabel } from '../utils/formatSlotLabel';
 import { Icon, ListItem, Button, Flex, Text } from '.';
 
 interface EquipmentSlotProps {
-  slotType: SlotType;
+  slotType: EquipmentSlotType;
 }
 
 export default function EquipmentSlot({ slotType }: EquipmentSlotProps): React.JSX.Element {

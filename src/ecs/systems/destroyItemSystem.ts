@@ -6,8 +6,8 @@
 
 import { world } from '../world';
 import type { EntityId } from '../world';
-import type { SlotType } from '../../types/inventory';
-import { SLOT_TYPES } from '../../constants/slots';
+import type { EquipmentSlot } from '../../types/equipment';
+import { EQUIPMENT_SLOTS } from '../../constants/equipment';
 import { getGridEntity, getItemEntity, removeFromCells } from '../queries/inventoryQueries';
 
 interface DestroyItemProps {
@@ -16,16 +16,16 @@ interface DestroyItemProps {
 
 interface DestroyItemReturn {
   success: boolean;
-  slotType: SlotType | null;
+  slotType: EquipmentSlot | null;
 }
 
 export type { DestroyItemProps, DestroyItemReturn };
 
-function clearEquipmentSlot(entityId: EntityId): SlotType | null {
+function clearEquipmentSlot(entityId: EntityId): EquipmentSlot | null {
   for (const entity of world) {
     if (entity.equipment === undefined) continue;
     const slots = entity.equipment.slots;
-    for (const slot of SLOT_TYPES) {
+    for (const slot of EQUIPMENT_SLOTS) {
       if (slots[slot] === entityId) {
         slots[slot] = null;
         return slot;

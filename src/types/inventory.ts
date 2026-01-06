@@ -1,4 +1,6 @@
+import type { RefObject } from 'react';
 import type { EntityId } from '../ecs/world';
+import type { Equipment, EquipmentSlot } from './equipment';
 
 export interface MoveItemReturn {
   success: boolean;
@@ -8,6 +10,14 @@ export interface MoveItemReturn {
 export interface SplitItemReturn {
   success: boolean;
   newEntityId: EntityId | null;
+}
+
+export type PanelName = 'equipment' | 'inventory' | 'world';
+
+export interface PanelRefs {
+  equipment: RefObject<HTMLDivElement | null>;
+  inventory: RefObject<HTMLDivElement | null>;
+  world: RefObject<HTMLDivElement | null>;
 }
 
 export type ItemType =
@@ -21,28 +31,6 @@ export type ItemType =
   | 'material'
   | 'misc'
   | 'medical';
-
-export type SlotType =
-  | 'helmet'
-  | 'eyes'
-  | 'face'
-  | 'neck'
-  | 'backpack'
-  | 'coat'
-  | 'vest'
-  | 'shirt'
-  | 'rightShoulder'
-  | 'leftShoulder'
-  | 'rightGlove'
-  | 'leftGlove'
-  | 'rightRing'
-  | 'leftRing'
-  | 'rightHolding'
-  | 'leftHolding'
-  | 'pouch'
-  | 'pants'
-  | 'rightShoe'
-  | 'leftShoe';
 
 export interface ItemSize {
   width: number;
@@ -84,8 +72,6 @@ export interface GridCell {
 
 export type GridsMap = Record<string, GridCell | undefined>;
 
-export type Equipment = Record<SlotType, string | null>;
-
 export interface MenuPathSegment {
   id: string;
   label: string;
@@ -97,7 +83,7 @@ export interface MenuState {
   isOpen: boolean;
   position: { x: number; y: number } | null;
   targetItemId: string | null;
-  targetSlotType: SlotType | null;
+  targetEquipmentSlot: EquipmentSlot | null;
   itemId: string | null;
   source: MenuSource;
   path: MenuPathSegment[];
@@ -146,7 +132,7 @@ export interface UseMenuContextReturn {
   currentContainerId: string | null;
   canFitItem: (containerId: string) => boolean;
   navigateToContainer: (containerId: string, panel: string, fromEquipment?: boolean) => void;
-  equipItem: (itemId: string, targetSlot?: SlotType | null) => boolean;
+  equipItem: (itemId: string, targetSlot?: EquipmentSlot | null) => boolean;
   unequipItem: (itemId: string, targetGridId: string) => boolean;
   moveItem: (itemId: string, targetGridId: string) => boolean;
   splitItem: (itemId: string, targetGridId: string) => boolean;

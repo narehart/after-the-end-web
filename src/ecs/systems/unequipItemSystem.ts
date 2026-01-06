@@ -6,9 +6,9 @@
 
 import { world } from '../world';
 import type { Entity, GridId, EntityId } from '../world';
-import type { Equipment, SlotType } from '../../types/inventory';
+import type { Equipment, EquipmentSlot } from '../../types/equipment';
 import { findFreePosition, placeInCells } from '../queries/inventoryQueries';
-import { SLOT_TYPES } from '../../constants/slots';
+import { EQUIPMENT_SLOTS } from '../../constants/equipment';
 
 interface UnequipItemProps {
   entityId: EntityId;
@@ -17,11 +17,11 @@ interface UnequipItemProps {
 
 interface UnequipItemReturn {
   success: boolean;
-  slotType: SlotType | null;
+  slotType: EquipmentSlot | null;
 }
 
-function findEquippedSlot(equipment: Equipment, entityId: EntityId): SlotType | null {
-  for (const slot of SLOT_TYPES) {
+function findEquippedSlot(equipment: Equipment, entityId: EntityId): EquipmentSlot | null {
+  for (const slot of EQUIPMENT_SLOTS) {
     if (equipment[slot] === entityId) {
       return slot;
     }

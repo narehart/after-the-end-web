@@ -1,6 +1,6 @@
-import type { Equipment, GridsMap, ItemsMap } from '../types/inventory';
-import { SLOT_TYPES } from '../constants/slots';
-import { INITIAL_EQUIPMENT } from '../constants/equipment';
+import type { GridsMap, ItemsMap } from '../types/inventory';
+import type { Equipment } from '../types/equipment';
+import { EQUIPMENT_SLOTS, INITIAL_EQUIPMENT } from '../constants/equipment';
 import { getItemById } from '../data/items';
 import { createEmptyGrid } from './createEmptyGrid';
 import { createItemInstance } from './createItemInstance';
@@ -17,7 +17,7 @@ export function createEquipmentInstances(): CreateEquipmentInstancesReturn {
   const grids: GridsMap = {};
   const equipment: Equipment = { ...INITIAL_EQUIPMENT };
 
-  for (const slot of SLOT_TYPES) {
+  for (const slot of EQUIPMENT_SLOTS) {
     const neoId = INITIAL_EQUIPMENT[slot];
     if (neoId === null) continue;
 

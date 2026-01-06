@@ -1,10 +1,10 @@
-import type { SlotType } from '../types/inventory';
-import { SLOT_LABELS } from '../constants/slotLabels';
+import type { EquipmentSlot } from '../types/equipment';
+import { EQUIPMENT_LABELS } from '../constants/equipment';
 
 export interface FormatSlotLabelProps {
-  slotType: SlotType;
+  slotType: EquipmentSlot;
 }
 
 export function formatSlotLabel({ slotType }: FormatSlotLabelProps): string {
-  return SLOT_LABELS[slotType];
+  return EQUIPMENT_LABELS[slotType];
 }
