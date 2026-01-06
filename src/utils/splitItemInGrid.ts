@@ -1,4 +1,4 @@
-import { DEFAULT_QUANTITY } from '../constants/numbers';
+import { DEFAULT_QUANTITY } from '../constants/items';
 import type { Item } from '../types/inventory';
 import type { GridOperationBaseProps, GridOperationBaseReturn } from '../types/utils';
 import { findCompatibleStack } from './findCompatibleStack';
@@ -6,6 +6,8 @@ import { findFreePosition } from './findFreePosition';
 import { generateInstanceId } from './generateInstanceId';
 import { mergeIntoStack } from './mergeIntoStack';
 import { placeItemInCells } from './placeItemInCells';
+
+;
 
 interface SplitItemInGridProps extends GridOperationBaseProps {
   targetGridId: string;

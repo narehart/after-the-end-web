@@ -1,7 +1,9 @@
-import { FIRST_INDEX } from '../constants/numbers';
+import { FIRST_INDEX } from '../constants/array';
 import type { GridPosition } from '../types/inventory';
 import type { ItemLocation } from '../types/ui';
 import type { FindItemInGridsProps } from '../types/utils';
+
+;
 
 export function findItemInGrids(props: FindItemInGridsProps): ItemLocation | null {
   const { grids, itemId } = props;

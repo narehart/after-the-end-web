@@ -2,13 +2,16 @@ import { useState } from 'react';
 import classNames from 'classnames/bind';
 import type { Item } from '../types/inventory';
 import type { CellState, ItemGridHandlers, CSSPropertiesWithVars } from '../types/ui';
-import { DEFAULT_QUANTITY, FIRST_INDEX, NOT_FOUND_INDEX } from '../constants/numbers';
+import { DEFAULT_QUANTITY } from '../constants/items';
+import { FIRST_INDEX, NOT_FOUND_INDEX } from '../constants/array';
 import { useInventoryStore } from '../stores/inventoryStore';
 import { getImageUrl } from '../utils/images';
 import { getItemIcon } from '../utils/getItemIcon';
 import { calculateItemDimensions } from '../utils/calculateItemDimensions';
 import styles from './ItemGridButton.module.css';
 import { Flex, Icon, Text } from '.';
+
+;
 
 const cx = classNames.bind(styles);
 

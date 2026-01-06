@@ -1,10 +1,12 @@
 import { useMemo } from 'react';
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
 import { ITEM_ACTION_MENU } from '../constants/menu';
 import type { UseMenuContextReturn, MenuPathSegment, MenuLevel } from '../types/inventory';
 import { filterVisibleItems } from '../utils/filterVisibleItems';
 import { getSegmentId } from '../utils/getSegmentId';
 import { resolveItemsAtPath } from '../utils/resolveItemsAtPath';
+
+;
 
 export default function useMenuLevels(
   path: MenuPathSegment[],

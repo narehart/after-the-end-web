@@ -1,4 +1,6 @@
-import { FIRST_INDEX } from '../constants/numbers';
+import { FIRST_INDEX } from '../constants/array';
+
+;
 
 export default function measureFixedWidth(container: HTMLElement): number {
   let fixedWidth = FIRST_INDEX;

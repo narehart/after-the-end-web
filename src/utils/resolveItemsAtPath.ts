@@ -1,6 +1,8 @@
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
 import type { ResolveItemsAtPathProps, MenuItem } from '../types/inventory';
 import { getSegmentId } from './getSegmentId';
+
+;
 
 export function resolveItemsAtPath(props: ResolveItemsAtPathProps): MenuItem[] {
   const { config, path, context } = props;

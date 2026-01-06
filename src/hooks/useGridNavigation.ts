@@ -1,7 +1,9 @@
 import type { MutableRefObject } from 'react';
 import { useRef, useState, useCallback } from 'react';
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
 import type { FocusedCell } from '../types/ui';
+
+;
 
 interface UseGridNavigationProps {
   width: number;

@@ -1,4 +1,6 @@
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
+
+;
 
 export function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array];

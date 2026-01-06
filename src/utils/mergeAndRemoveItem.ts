@@ -1,9 +1,11 @@
-import { DEFAULT_QUANTITY } from '../constants/numbers';
+import { DEFAULT_QUANTITY } from '../constants/items';
 import type { Item } from '../types/inventory';
 import type { GridOperationBaseProps, GridOperationBaseReturn } from '../types/utils';
 import { removeItemFromCells } from './removeItemFromCells';
 import { removeItemFromMap } from './removeItemFromMap';
 import { updateGridCells } from './updateGridCells';
+
+;
 
 interface MergeAndRemoveItemProps extends GridOperationBaseProps {
   compatibleStackId: string;

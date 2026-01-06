@@ -1,6 +1,6 @@
 import classNames from 'classnames/bind';
 import { CELL_GAP } from '../constants/grid';
-import { FIRST_INDEX } from '../constants/numbers';
+import { FIRST_INDEX } from '../constants/array';
 import { useInventoryStore } from '../stores/inventoryStore';
 import useGridNavigation from '../hooks/useGridNavigation';
 import type { GridCell, MenuSource } from '../types/inventory';
@@ -9,6 +9,8 @@ import { checkIsOrigin } from '../utils/checkIsOrigin';
 import ItemGridCell from './ItemGridCell';
 import styles from './ItemGrid.module.css';
 import { Box, Flex } from '.';
+
+;
 
 const cx = classNames.bind(styles);
 

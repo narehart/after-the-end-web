@@ -2,11 +2,13 @@ import { useRef } from 'react';
 import classNames from 'classnames/bind';
 import type { BreadcrumbLink } from '../types/inventory';
 import type { LinkWithIcon } from '../types/ui';
-import { FIRST_INDEX } from '../constants/numbers';
+import { FIRST_INDEX } from '../constants/array';
 import useBreadcrumbWidth from '../hooks/useBreadcrumbWidth';
 import { buildSegments } from '../utils/breadcrumb';
 import styles from './Breadcrumb.module.css';
 import { Button, Flex, Icon, Text } from './index';
+
+;
 
 const cx = classNames.bind(styles);
 

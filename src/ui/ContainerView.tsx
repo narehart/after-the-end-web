@@ -1,9 +1,12 @@
 import { useInventoryStore } from '../stores/inventoryStore';
 import type { GridCell, MenuSource, PanelType } from '../types/inventory';
-import { FIRST_INDEX, SECOND_INDEX, DEFAULT_CELL_SIZE } from '../constants/numbers';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
+import { DEFAULT_CELL_SIZE } from '../constants/grid';
 import { useBreadcrumbLinksContainer } from '../hooks/useBreadcrumbLinksContainer';
 import ItemGrid from './ItemGrid';
 import { Panel } from '.';
+
+;
 
 interface ContainerViewProps {
   focusPath: string[];

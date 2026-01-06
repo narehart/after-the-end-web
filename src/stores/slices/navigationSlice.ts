@@ -1,9 +1,11 @@
 import type { StateCreator } from 'zustand';
-import { FIRST_INDEX, SECOND_INDEX } from '../../constants/numbers';
+import { FIRST_INDEX, SECOND_INDEX } from '../../constants/array';
 import type { GridCell } from '../../types/inventory';
 import type { NavigationSlice, StoreWithGrids } from '../../types/store';
 import { getInitialInventoryFocusPath } from '../../utils/getInitialInventoryFocusPath';
 import { initialInventoryState } from './itemsSlice';
+
+;
 
 export const createNavigationSlice: StateCreator<
   NavigationSlice & StoreWithGrids,

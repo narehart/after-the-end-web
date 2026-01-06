@@ -1,8 +1,10 @@
 import { BUTTONS } from '../constants/gamepad';
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
 import type { ProcessGamepadProps } from '../types/utils';
 import { createButtonHandler } from './createButtonHandler';
 import { handleStickAxis } from './handleStickAxis';
+
+;
 
 export type { GamepadCallbacks, GamepadRefs } from '../types/ui';
 

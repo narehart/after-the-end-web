@@ -1,11 +1,13 @@
 import { MAX_CONTAINER_ITEMS, MIN_CONTAINER_ITEMS } from '../constants/inventory';
-import { FIRST_INDEX } from '../constants/numbers';
+import { FIRST_INDEX } from '../constants/array';
 import type { ItemPlacement } from '../types/ui';
 import type { GetRandomContainerContentsProps } from '../types/randomContainer';
 import { createOccupancyGrid } from './createOccupancyGrid';
 import { fillContainerWithItems } from './fillContainerWithItems';
 import { placeGuaranteedStackable } from './placeGuaranteedStackable';
 import { randomInt } from './randomInt';
+
+;
 
 export function getRandomContainerContents(
   props: GetRandomContainerContentsProps

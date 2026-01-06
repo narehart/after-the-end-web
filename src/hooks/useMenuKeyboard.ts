@@ -1,7 +1,10 @@
 import { useEffect, useState, useCallback } from 'react';
-import { FIRST_INDEX, SECOND_INDEX, MENU_INPUT_DELAY_MS } from '../constants/numbers';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
+import { MENU_INPUT_DELAY_MS } from '../constants/timing';
 import type { MenuItem, MenuPathSegment } from '../types/inventory';
 import type { KeyHandler } from '../types/ui';
+
+;
 
 interface UseMenuKeyboardProps {
   items: MenuItem[];

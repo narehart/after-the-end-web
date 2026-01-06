@@ -1,4 +1,6 @@
-import { MAX_DURABILITY, MIN_DURABILITY } from '../constants/numbers';
+import { MAX_DURABILITY, MIN_DURABILITY } from '../constants/items';
+
+;
 
 export function generateRandomDurability(): number {
   return (

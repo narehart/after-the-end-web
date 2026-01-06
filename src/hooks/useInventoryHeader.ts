@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { PERCENTAGE_MULTIPLIER } from '../constants/numbers';
+import { PERCENTAGE_MULTIPLIER } from '../constants/math';
+
+;
 
 interface UseInventoryHeaderProps {
   setPreset: (key: string) => void;

@@ -1,9 +1,11 @@
 import { useMemo } from 'react';
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
 import { SLOT_LABELS } from '../constants/slotLabels';
 import type { BreadcrumbLink } from '../types/inventory';
 import type { UseBreadcrumbLinksContainerProps } from '../types/utils';
 import { isSlotType } from '../utils/isSlotType';
+
+;
 
 export function useBreadcrumbLinksContainer(
   props: UseBreadcrumbLinksContainerProps

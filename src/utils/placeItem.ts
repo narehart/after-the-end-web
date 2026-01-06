@@ -1,5 +1,7 @@
-import { FIRST_INDEX } from '../constants/numbers';
+import { FIRST_INDEX } from '../constants/array';
 import type { PlaceItemProps } from '../types/utils';
+
+;
 
 export function placeItem(props: PlaceItemProps): void {
   const { grid, itemId, x, y, width, height } = props;

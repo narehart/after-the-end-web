@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import classNames from 'classnames/bind';
-import { DEFAULT_SCALE } from '../constants/numbers';
+import { DEFAULT_SCALE } from '../constants/grid';
 import { useUIScale } from '../hooks/useUIScale';
 import { useInventoryStore } from '../stores/inventoryStore';
 import useInventoryState from '../hooks/useInventoryState';
@@ -16,6 +16,8 @@ import ActionModal from './ActionModal';
 import InventoryHeader from './InventoryHeader';
 import styles from './Inventory.module.css';
 import { Box, Flex } from '.';
+
+;
 
 const cx = classNames.bind(styles);
 

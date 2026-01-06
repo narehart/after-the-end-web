@@ -1,9 +1,11 @@
 import classNames from 'classnames/bind';
-import { FIRST_INDEX } from '../constants/numbers';
+import { FIRST_INDEX } from '../constants/array';
 import type { MenuItem as MenuItemType, UseMenuContextReturn } from '../types/inventory';
 import MenuItem from './MenuItem';
 import styles from './MenuList.module.css';
 import { List, Text } from '.';
+
+;
 
 const cx = classNames.bind(styles);
 

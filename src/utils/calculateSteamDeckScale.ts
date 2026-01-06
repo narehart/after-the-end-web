@@ -1,6 +1,9 @@
 import { STEAM_DECK } from '../constants/display';
-import { HALVE_DIVISOR, DEFAULT_SCALE, MIN_SCALE } from '../constants/numbers';
+import { HALVE_DIVISOR } from '../constants/math';
+import { DEFAULT_SCALE, MIN_SCALE } from '../constants/grid';
 import { getMonitorDiagonal } from './getMonitorDiagonal';
+
+;
 
 export function calculateSteamDeckScale(): number {
   const dpr = window.devicePixelRatio;

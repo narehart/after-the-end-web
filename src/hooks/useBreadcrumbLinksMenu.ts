@@ -1,6 +1,8 @@
 import { useMemo } from 'react';
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
 import type { BreadcrumbLink, Item, MenuPathSegment } from '../types/inventory';
+
+;
 
 export function useBreadcrumbLinksMenu(
   path: MenuPathSegment[],

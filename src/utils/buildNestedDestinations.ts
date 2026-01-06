@@ -1,7 +1,9 @@
-import { SECOND_INDEX } from '../constants/numbers';
+import { SECOND_INDEX } from '../constants/array';
 import type { MenuItem, UseMenuContextReturn } from '../types/inventory';
 import { getContainerInfo } from './getContainerInfo';
 import { createContainerItem } from './createContainerItem';
+
+;
 
 interface BuildNestedDestinationsProps {
   ctx: UseMenuContextReturn;

@@ -1,6 +1,8 @@
 import type { CalculateItemDimensionsProps, CalculateItemDimensionsReturn } from '../types/utils';
 import { CELL_GAP } from '../constants/grid';
-import { SECOND_INDEX } from '../constants/numbers';
+import { SECOND_INDEX } from '../constants/array';
+
+;
 
 export function calculateItemDimensions(
   props: CalculateItemDimensionsProps

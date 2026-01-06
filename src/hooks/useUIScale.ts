@@ -1,8 +1,10 @@
 import { useState, useEffect, useCallback } from 'react';
 import { PRESETS, REFERENCE_WIDTH, REFERENCE_HEIGHT } from '../constants/display';
-import { DEFAULT_SCALE } from '../constants/numbers';
+import { DEFAULT_SCALE } from '../constants/grid';
 import type { Resolution } from '../types/ui';
 import { calculateSteamDeckScale } from '../utils/calculateSteamDeckScale';
+
+;
 
 interface UseUIScaleReturn {
   effectiveResolution: Resolution;

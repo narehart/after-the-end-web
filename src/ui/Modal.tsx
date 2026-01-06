@@ -1,8 +1,10 @@
 import { useEffect, useRef, type ReactNode } from 'react';
 import classNames from 'classnames/bind';
-import { NOT_FOUND_INDEX } from '../constants/numbers';
+import { NOT_FOUND_INDEX } from '../constants/array';
 import styles from './Modal.module.css';
 import { Box } from './index';
+
+;
 
 const cx = classNames.bind(styles);
 

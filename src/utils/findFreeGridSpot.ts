@@ -1,7 +1,9 @@
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
 import type { FindFreeGridSpotProps } from '../types/randomContainer';
 import { checkGridSpot } from './checkGridSpot';
 import { randomInt } from './randomInt';
+
+;
 
 export function findFreeGridSpot(props: FindFreeGridSpotProps): { x: number; y: number } | null {
   const { grid, gridWidth, gridHeight, itemWidth, itemHeight } = props;

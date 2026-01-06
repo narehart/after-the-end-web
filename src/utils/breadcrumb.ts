@@ -1,6 +1,9 @@
-import { FIRST_INDEX, SECOND_INDEX, MIN_BREADCRUMB_LINKS } from '../constants/numbers';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
+import { MIN_BREADCRUMB_LINKS } from '../constants/breadcrumb';
 import type { BreadcrumbLink } from '../types/inventory';
 import type { BreadcrumbSegment } from '../types/ui';
+
+;
 
 export function buildSegments(links: BreadcrumbLink[]): BreadcrumbSegment[] {
   const lastIndex = links.length - SECOND_INDEX;

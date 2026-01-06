@@ -1,9 +1,11 @@
-import { DEFAULT_QUANTITY } from '../constants/numbers';
+import { DEFAULT_QUANTITY } from '../constants/items';
 import type { GridOperationBaseProps, GridOperationBaseReturn } from '../types/utils';
 import { findCompatibleStack } from './findCompatibleStack';
 import { findItemInGrids } from './findItemInGrids';
 import { mergeAndRemoveItem } from './mergeAndRemoveItem';
 import { regularMoveItem } from './regularMoveItem';
+
+;
 
 interface MoveItemInGridProps extends GridOperationBaseProps {
   targetGridId: string;

@@ -1,7 +1,9 @@
-import { FIRST_INDEX, SECOND_INDEX } from '../constants/numbers';
+import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
 import type { MenuItem, UseMenuContextReturn, MenuPathSegment } from '../types/inventory';
 import { buildRootDestinations } from './buildRootDestinations';
 import { buildNestedDestinations } from './buildNestedDestinations';
+
+;
 
 type BuildDestinationItemsReturn = MenuItem[];
 

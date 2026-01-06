@@ -1,5 +1,7 @@
-import { DEFAULT_QUANTITY } from '../constants/numbers';
+import { DEFAULT_QUANTITY } from '../constants/items';
 import type { GridCell, ItemsMap } from '../types/inventory';
+
+;
 
 interface FindCompatibleStackProps {
   grid: GridCell;

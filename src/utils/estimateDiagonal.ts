@@ -1,4 +1,4 @@
-import { SECOND_INDEX } from '../constants/numbers';
+import { SECOND_INDEX } from '../constants/array';
 import {
   RESOLUTION_FHD_WIDTH,
   RESOLUTION_FHD_HEIGHT,
@@ -11,6 +11,8 @@ import {
   DIAGONAL_DESKTOP_SMALL,
   DIAGONAL_DESKTOP_LARGE,
 } from '../constants/display';
+
+;
 
 export function estimateDiagonal(
   physicalWidth: number,

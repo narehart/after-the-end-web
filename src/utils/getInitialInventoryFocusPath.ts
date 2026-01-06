@@ -1,5 +1,7 @@
 import type { Equipment, ItemsMap } from '../types/inventory';
-import { FIRST_INDEX } from '../constants/numbers';
+import { FIRST_INDEX } from '../constants/array';
+
+;
 
 interface GetInitialInventoryFocusPathProps {
   equipment: Equipment;

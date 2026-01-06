@@ -6,46 +6,63 @@
  * of properties to determine which entities belong to which archetypes.
  */
 
+import type { Item, SlotType } from './inventory';
+
+/** Entity ID type for type safety */
+export type EntityId = string;
+
+/** Grid ID type for clarity */
+export type GridId = string;
+
 /**
- * Position within a grid (inventory, equipment slot, etc.)
+ * Position within a grid (inventory, container, etc.)
  */
 export interface PositionComponent {
-  gridId: string;
+  gridId: GridId;
   x: number;
   y: number;
 }
 
 /**
- * Item data (template reference, quantity, durability)
+ * Item instance data (references a template, tracks instance-specific state)
  */
 export interface ItemComponent {
   templateId: string;
   quantity: number;
-  durability: number;
-  maxDurability: number;
+  durability: number | null;
+  maxDurability: number | null;
 }
 
 /**
  * Grid structure (inventory grid, container grid)
+ * Uses 2D array matching existing CellGrid type
  */
 export interface GridComponent {
+  gridId: GridId;
   width: number;
   height: number;
-  cells: Array<string | null>; // Entity IDs or null for empty cells
+  cells: Array<Array<EntityId | null>>;
 }
 
 /**
- * Container reference (links to a grid entity)
+ * Container component - marks an item as having internal storage
  */
 export interface ContainerComponent {
-  gridEntityId: string;
+  gridEntityId: EntityId;
+}
+
+/**
+ * Item template reference - cached template data for quick access
+ */
+export interface TemplateComponent {
+  template: Item;
 }
 
 /**
  * Equipment slots
  */
 export interface EquipmentComponent {
-  slots: Record<string, string | null>; // slot type -> entity ID or null
+  slots: Record<SlotType, EntityId | null>;
 }
 
 /**
@@ -97,12 +114,13 @@ export interface UnitComponent {
  * An entity "has" a component if the property exists and is not undefined.
  */
 export interface Entity {
-  // Core identity
-  id?: string;
+  // Core identity (assigned by miniplex or manually)
+  id?: EntityId;
 
   // Inventory/Item components
   position?: PositionComponent;
   item?: ItemComponent;
+  template?: TemplateComponent;
   grid?: GridComponent;
   container?: ContainerComponent;
 

@@ -1,10 +1,12 @@
 import { SHUFFLE_MIDPOINT, SINGLE_ITEM_IDS, STACKABLE_ITEM_CONFIGS } from '../constants/inventory';
-import { DEFAULT_QUANTITY } from '../constants/numbers';
+import { DEFAULT_QUANTITY } from '../constants/items';
 import type { ItemPlacement } from '../types/ui';
 import type { FillContainerWithItemsProps } from '../types/randomContainer';
 import { randomInt } from './randomInt';
 import { shuffleArray } from './shuffleArray';
 import { tryPlaceItem } from './tryPlaceItem';
+
+;
 
 export function fillContainerWithItems(props: FillContainerWithItemsProps): ItemPlacement[] {
   const { grid, gridWidth, gridHeight, targetCount, excludeId } = props;

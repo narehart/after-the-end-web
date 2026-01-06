@@ -1,6 +1,8 @@
-import { FIRST_INDEX } from '../constants/numbers';
+import { FIRST_INDEX } from '../constants/array';
 import type { UseMenuContextReturn } from '../types/inventory';
 import type { ContainerInfo } from '../types/ui';
+
+;
 
 type GetContainerInfoReturn = ContainerInfo | null;
 
