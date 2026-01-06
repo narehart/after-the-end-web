@@ -1,4 +1,4 @@
-import type { GridOccupancy } from '../types/ui';
+import type { GridOccupancy } from '../types/inventory';
 
 interface MarkGridOccupiedProps {
   grid: GridOccupancy;

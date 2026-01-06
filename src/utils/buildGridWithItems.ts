@@ -1,5 +1,4 @@
-import type { CellGrid, ItemsMap } from '../types/inventory';
-import type { ItemPlacement } from '../types/ui';
+import type { CellGrid, ItemsMap , ItemPlacement } from '../types/inventory';
 import { getItemById } from '../data/items';
 import { canPlaceAt } from './canPlaceAt';
 import { createEmptyGrid } from './createEmptyGrid';

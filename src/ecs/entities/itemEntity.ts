@@ -6,7 +6,7 @@
  */
 
 import { world } from '../world';
-import type { Entity, EntityId, GridId } from '../../types/ecs';
+import type { Entity, EntityId, GridId } from '../world';
 import type { Item } from '../../types/inventory';
 import { DEFAULT_QUANTITY } from '../../constants/items';
 import { generateInstanceId } from '../../utils/generateInstanceId';

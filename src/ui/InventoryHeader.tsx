@@ -2,7 +2,7 @@ import classNames from 'classnames/bind';
 import { PRESETS } from '../constants/display';
 import useGamepadStatus from '../hooks/useGamepadStatus';
 import useInventoryHeader from '../hooks/useInventoryHeader';
-import type { Resolution } from '../types/ui';
+import type { Resolution } from '../hooks/useUIScale';
 import styles from './InventoryHeader.module.css';
 import { Box, Button, Flex, Input, Text } from '.';
 

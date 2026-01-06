@@ -1,7 +1,9 @@
+/* eslint-disable local/types-in-types-directory -- Component-specific prop types */
+import type { CSSProperties } from 'react';
 import { useState } from 'react';
 import classNames from 'classnames/bind';
 import type { Item } from '../types/inventory';
-import type { CellState, ItemGridHandlers, CSSPropertiesWithVars } from '../types/ui';
+import type { CellState, ItemGridHandlers } from '../hooks/useItemGridCell';
 import { DEFAULT_QUANTITY } from '../constants/items';
 import { FIRST_INDEX, NOT_FOUND_INDEX } from '../constants/array';
 import { useInventoryStore } from '../stores/inventoryStore';
@@ -11,7 +13,9 @@ import { calculateItemDimensions } from '../utils/calculateItemDimensions';
 import styles from './ItemGridButton.module.css';
 import { Flex, Icon, Text } from '.';
 
-;
+type CSSPropertiesWithVars = CSSProperties & {
+  [key: `--${string}`]: string | number;
+};
 
 const cx = classNames.bind(styles);
 

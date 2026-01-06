@@ -1,8 +1,13 @@
+/* eslint-disable local/types-in-types-directory -- Util-specific types */
 import { FIRST_INDEX } from '../constants/array';
 import type { UseMenuContextReturn } from '../types/inventory';
-import type { ContainerInfo } from '../types/ui';
 
-;
+export interface ContainerInfo {
+  id: string;
+  name: string;
+  isContainer: boolean;
+  capacity: string;
+}
 
 type GetContainerInfoReturn = ContainerInfo | null;
 

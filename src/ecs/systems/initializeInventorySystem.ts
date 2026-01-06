@@ -6,7 +6,7 @@
  */
 
 import { world } from '../world';
-import type { Entity, EntityId, GridId } from '../../types/ecs';
+import type { Entity, EntityId, GridId } from '../world';
 import type { GridsMap, ItemsMap, Equipment, Item } from '../../types/inventory';
 import { placeInCells } from '../queries/inventoryQueries';
 import { FIRST_INDEX, SECOND_INDEX } from '../../constants/array';

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
 import { REPEAT_DELAY, REPEAT_RATE } from '../constants/gamepad';
-import type { NavigationDirection } from '../types/ui';
+import type { NavigationDirection } from '../types/input';
 import { findFirstGamepad } from '../utils/findFirstGamepad';
 import { processGamepad } from '../utils/processGamepad';
 import type { GamepadRefs, GamepadCallbacks } from '../utils/processGamepad';

@@ -1,10 +1,13 @@
+/* eslint-disable local/types-in-types-directory -- Hook-specific types */
 import { useState, useEffect, useCallback } from 'react';
 import { PRESETS, REFERENCE_WIDTH, REFERENCE_HEIGHT } from '../constants/display';
 import { DEFAULT_SCALE } from '../constants/grid';
-import type { Resolution } from '../types/ui';
 import { calculateSteamDeckScale } from '../utils/calculateSteamDeckScale';
 
-;
+export interface Resolution {
+  width: number;
+  height: number;
+}
 
 interface UseUIScaleReturn {
   effectiveResolution: Resolution;

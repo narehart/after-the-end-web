@@ -1,3 +1,3 @@
-import type { PanelName } from '../types/ui';
+import type { PanelName } from '../hooks/usePanelNavigation';
 
 export const PANELS: readonly PanelName[] = ['equipment', 'inventory', 'world'];

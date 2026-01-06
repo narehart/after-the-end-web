@@ -1,8 +1,22 @@
+/* eslint-disable local/types-in-types-directory -- Hook-specific types */
 import { useCallback, useMemo } from 'react';
 import { useInventoryStore } from '../stores/inventoryStore';
 import type { Item, MenuSource } from '../types/inventory';
-import type { CellState } from '../types/ui';
 import { getModalPosition } from '../utils/getModalPosition';
+
+export interface CellState {
+  isSelected: boolean;
+  hasOpenModal: boolean;
+  hasGrid: boolean;
+}
+
+export interface ItemGridHandlers {
+  handleClick: () => void;
+  openModal: (element: HTMLElement) => void;
+  openContainer: () => void;
+  handleMouseEnter: () => void;
+  handleFocus: () => void;
+}
 
 interface UseItemGridCellProps {
   x: number;

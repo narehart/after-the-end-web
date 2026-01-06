@@ -4,7 +4,7 @@
  * Moves all items from a container grid to the ground grid.
  */
 
-import type { GridId } from '../../types/ecs';
+import type { GridId } from '../world';
 import { getGridEntity } from '../queries/inventoryQueries';
 import { moveItem } from './moveItemSystem';
 

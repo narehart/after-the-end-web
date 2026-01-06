@@ -1,5 +1,5 @@
 import { FIRST_INDEX } from '../constants/array';
-import type { GridOccupancy, GridOccupancyCell } from '../types/ui';
+import type { GridOccupancy, GridOccupancyCell } from '../types/inventory';
 
 interface CreateOccupancyGridProps {
   width: number;

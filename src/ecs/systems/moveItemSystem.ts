@@ -6,7 +6,7 @@
  */
 
 import { world } from '../world';
-import type { Entity, EntityId, GridId } from '../../types/ecs';
+import type { Entity, EntityId, GridId } from '../world';
 import { MOVE_ITEM_FAIL } from '../../constants/ecs';
 import {
   findCompatibleStack,

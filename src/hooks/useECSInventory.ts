@@ -8,7 +8,7 @@
 import { useMemo, useCallback } from 'react';
 import { useEntities } from 'miniplex-react';
 import { world } from '../ecs/world';
-import type { Entity, EntityId, GridId } from '../types/ecs';
+import type { Entity, EntityId, GridId } from '../ecs/world';
 import type { GridCell, GridsMap, ItemsMap } from '../types/inventory';
 import { moveItem } from '../ecs/systems/moveItemSystem';
 import { splitItem } from '../ecs/systems/splitItemSystem';

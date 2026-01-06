@@ -1,9 +1,15 @@
 /* eslint-disable @typescript-eslint/consistent-type-assertions, @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable local/types-in-types-directory -- Component-specific prop types */
 import { forwardRef, type ReactNode } from 'react';
 import classNames from 'classnames/bind';
 import type { PolymorphicComponent, PolymorphicProps } from '../types/polymorphic';
-import type { TextAlign, TextElement, TextSize, TextSpacing, TextType } from '../types/ui';
 import styles from './Text.module.css';
+
+type TextElement = 'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'label';
+type TextType = 'secondary' | 'muted';
+type TextSize = 'xs' | 'sm' | 'base' | 'lg';
+type TextAlign = 'left' | 'center' | 'right';
+type TextSpacing = 'tight' | 'normal' | 'wide';
 
 const cx = classNames.bind(styles);
 

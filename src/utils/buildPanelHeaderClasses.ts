@@ -1,4 +1,4 @@
-import type { PanelHeaderTypeReturn } from '../types/ui';
+import type { PanelHeaderTypeReturn } from './getPanelHeaderType';
 
 export default function buildPanelHeaderClasses(
   cx: (...args: Array<string | Record<string, boolean>>) => string,

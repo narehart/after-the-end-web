@@ -1,9 +1,12 @@
+/* eslint-disable local/types-in-types-directory -- Hook-specific types */
 import type { MutableRefObject } from 'react';
 import { useRef, useState, useCallback } from 'react';
 import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
-import type { FocusedCell } from '../types/ui';
 
-;
+interface FocusedCell {
+  x: number;
+  y: number;
+}
 
 interface UseGridNavigationProps {
   width: number;

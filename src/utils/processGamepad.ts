@@ -1,6 +1,6 @@
 import { BUTTONS } from '../constants/gamepad';
 import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
-import type { GamepadCallbacks, GamepadRefs } from '../types/ui';
+import type { GamepadCallbacks, GamepadRefs } from '../types/input';
 import { createButtonHandler } from './createButtonHandler';
 import { handleStickAxis } from './handleStickAxis';
 
@@ -10,7 +10,7 @@ interface ProcessGamepadProps {
   callbacks: GamepadCallbacks;
 }
 
-export type { GamepadCallbacks, GamepadRefs } from '../types/ui';
+export type { GamepadCallbacks, GamepadRefs } from '../types/input';
 
 export function processGamepad(props: ProcessGamepadProps): void {
   const { gamepad, refs, callbacks } = props;

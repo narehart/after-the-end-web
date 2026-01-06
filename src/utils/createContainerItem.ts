@@ -1,5 +1,5 @@
 import type { MenuItem, UseMenuContextReturn } from '../types/inventory';
-import type { ContainerInfo } from '../types/ui';
+import type { ContainerInfo } from './getContainerInfo';
 import { buildDestinationItems } from './buildDestinationItems';
 
 interface CreateContainerItemProps {

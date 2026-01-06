@@ -156,3 +156,17 @@ export interface MenuLevel {
   selectedId: string | null;
   selectedIndex: number;
 }
+
+// Grid occupancy types (for random placement algorithms)
+export interface GridOccupancyCell {
+  occupied: boolean;
+}
+
+export type GridOccupancy = GridOccupancyCell[][];
+
+export interface ItemPlacement {
+  id: string;
+  x: number;
+  y: number;
+  quantity?: number;
+}

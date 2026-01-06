@@ -1,5 +1,5 @@
 import type { BreadcrumbLink } from '../types/inventory';
-import type { PanelHeaderTypeReturn } from '../types/ui';
+import type { PanelHeaderTypeReturn } from '../utils/getPanelHeaderType';
 import { Breadcrumb } from './index';
 
 interface PanelHeaderProps {

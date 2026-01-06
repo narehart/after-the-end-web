@@ -1,9 +1,18 @@
+/* eslint-disable local/types-in-types-directory -- Hook-specific types */
 import type { MouseEvent, KeyboardEvent, MutableRefObject } from 'react';
-import type { SlotState } from '../types/ui';
-import type { SlotType } from '../types/inventory';
+import type { SlotType, Item } from '../types/inventory';
 import useSlotItem from './useSlotItem';
 import useSlotFocus from './useSlotFocus';
 import useSlotHandlers from './useSlotHandlers';
+
+export interface SlotState {
+  item: Item | null;
+  itemId: string | null;
+  hasGrid: boolean;
+  isFocused: boolean;
+  isHovered: boolean;
+  hasOpenModal: boolean;
+}
 
 interface UseEquipmentSlotProps {
   slotType: SlotType;

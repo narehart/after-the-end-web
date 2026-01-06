@@ -5,7 +5,7 @@
  */
 
 import { world } from '../world';
-import type { EntityId } from '../../types/ecs';
+import type { EntityId } from '../world';
 import type { SlotType } from '../../types/inventory';
 import { SLOT_TYPES } from '../../constants/slots';
 import { getGridEntity, getItemEntity, removeFromCells } from '../queries/inventoryQueries';

@@ -4,7 +4,7 @@
  * Position within a grid (inventory, container, etc.)
  */
 
-import type { GridId } from '../../types/ecs';
+import type { GridId } from '../world';
 
 export interface PositionComponent {
   gridId: GridId;

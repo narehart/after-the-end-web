@@ -1,8 +1,16 @@
+/* eslint-disable local/types-in-types-directory -- Hook-specific types */
 import type { MutableRefObject, RefObject } from 'react';
 import { useRef, useEffect, useCallback } from 'react';
 import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
 import { PANELS } from '../constants/navigation';
-import type { PanelName, PanelRefs } from '../types/ui';
+
+export type PanelName = 'equipment' | 'inventory' | 'world';
+
+export interface PanelRefs {
+  equipment: RefObject<HTMLDivElement | null>;
+  inventory: RefObject<HTMLDivElement | null>;
+  world: RefObject<HTMLDivElement | null>;
+}
 
 interface UsePanelNavigationProps {
   refs: PanelRefs;

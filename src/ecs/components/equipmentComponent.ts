@@ -4,7 +4,7 @@
  * Equipment slots for characters
  */
 
-import type { EntityId } from '../../types/ecs';
+import type { EntityId } from '../world';
 import type { SlotType } from '../../types/inventory';
 
 export interface EquipmentComponent {

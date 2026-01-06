@@ -5,7 +5,7 @@
  * Uses 2D array matching existing CellGrid type
  */
 
-import type { EntityId, GridId } from '../../types/ecs';
+import type { EntityId, GridId } from '../world';
 
 export interface GridComponent {
   gridId: GridId;

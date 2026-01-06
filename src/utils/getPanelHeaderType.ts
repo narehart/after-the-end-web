@@ -1,6 +1,8 @@
+ 
 import type { ReactNode } from 'react';
 import type { BreadcrumbLink } from '../types/inventory';
-import type { PanelHeaderTypeReturn } from '../types/ui';
+
+export type PanelHeaderTypeReturn = 'custom' | 'breadcrumb' | 'title' | 'none';
 
 export default function getPanelHeaderType(
   header: ReactNode,

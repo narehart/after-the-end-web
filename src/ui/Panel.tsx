@@ -1,13 +1,16 @@
+/* eslint-disable local/types-in-types-directory -- Component-specific prop types */
 import type { ReactNode } from 'react';
 import classNames from 'classnames/bind';
 import type { BreadcrumbLink } from '../types/inventory';
-import type { BorderPosition, FlexDirection, FlexJustify, FlexAlign, FlexGap } from '../types/ui';
 import buildPanelClasses from '../utils/buildPanelClasses';
 import buildPanelHeaderClasses from '../utils/buildPanelHeaderClasses';
 import getPanelHeaderType from '../utils/getPanelHeaderType';
 import styles from './Panel.module.css';
 import PanelHeader from './PanelHeader';
+import type { FlexDirection, FlexJustify, FlexAlign, FlexGap } from './Flex';
 import { Box, EmptyState, Flex } from './index';
+
+export type BorderPosition = 'right' | 'left' | 'top' | 'bottom';
 
 const cx = classNames.bind(styles);
 

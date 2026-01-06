@@ -1,8 +1,6 @@
-import type { ItemPlacement } from '../types/ui';
+import type { ItemPlacement } from '../types/inventory';
 import { GROUND_LAYOUTS } from '../constants/ground';
 import { FIRST_INDEX } from '../constants/array';
-
-;
 
 export function getRandomGroundLayout(): ItemPlacement[] {
   const index = Math.floor(Math.random() * GROUND_LAYOUTS.length);

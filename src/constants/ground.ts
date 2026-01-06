@@ -1,4 +1,4 @@
-import type { ItemPlacement } from '../types/ui';
+import type { ItemPlacement } from '../types/inventory';
 
 // Pre-defined ground item configurations - each is a valid non-overlapping layout
 export const GROUND_LAYOUTS: ItemPlacement[][] = [

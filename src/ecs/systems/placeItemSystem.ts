@@ -5,7 +5,7 @@
  * Used for initial placement or repositioning within same grid.
  */
 
-import type { Entity, EntityId, GridId } from '../../types/ecs';
+import type { Entity, EntityId, GridId } from '../world';
 import {
   getGridEntity,
   getItemEntity,

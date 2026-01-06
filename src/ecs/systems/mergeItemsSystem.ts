@@ -4,7 +4,7 @@
  * Merges all of one item's quantity into another compatible stack.
  */
 
-import type { EntityId } from '../../types/ecs';
+import type { EntityId } from '../world';
 import { getItemEntity } from '../queries/inventoryQueries';
 import { destroyItem } from './destroyItemSystem';
 
