@@ -2,7 +2,6 @@ import type { MenuItem, UseMenuContextReturn, MenuPathSegment } from '../types/i
 import { buildDestinationItems } from '../utils/buildDestinationItems';
 import { findFirstAvailableContainer } from '../utils/findFirstAvailableContainer';
 import { isGridEmpty } from '../utils/isGridEmpty';
-import { DEFAULT_QUANTITY } from './numbers';
 
 export const ITEM_ACTION_MENU: MenuItem[] = [
   {
@@ -42,7 +41,7 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     label: 'Rotate',
     icon: '↻',
     type: 'action',
-    show: (ctx: UseMenuContextReturn): boolean => ctx.source === 'grid',
+    show: (): boolean => false, // Hidden: use drag rotation instead
   },
   {
     id: 'split',
@@ -50,8 +49,7 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     icon: '÷',
     type: 'navigate',
     hasChildren: true,
-    show: (ctx: UseMenuContextReturn): boolean =>
-      (ctx.item?.quantity ?? DEFAULT_QUANTITY) > DEFAULT_QUANTITY,
+    show: (): boolean => false, // Hidden: use drag split instead
     getItems: (ctx: UseMenuContextReturn, path?: MenuPathSegment[]): MenuItem[] =>
       buildDestinationItems(ctx, path ?? [], 'split'),
   },
@@ -82,13 +80,6 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     disabled: (ctx: UseMenuContextReturn): boolean => findFirstAvailableContainer(ctx) === null,
   },
   {
-    id: 'destroy',
-    label: 'Destroy',
-    icon: '✕',
-    type: 'action',
-    show: (ctx: UseMenuContextReturn): boolean => ctx.source !== 'equipment',
-  },
-  {
     id: 'empty',
     label: 'Empty out',
     icon: '⤓',
@@ -100,5 +91,12 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
       if (grid === undefined) return true;
       return isGridEmpty({ grid });
     },
+  },
+  {
+    id: 'destroy',
+    label: 'Destroy',
+    icon: '✕',
+    type: 'action',
+    show: (): boolean => true,
   },
 ];

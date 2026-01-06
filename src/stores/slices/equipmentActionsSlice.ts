@@ -1,25 +1,11 @@
 import type { StateCreator } from 'zustand';
-import type { SlotType, Equipment } from '../../types/inventory';
 import type { EquipmentActionsSlice, StoreWithEquipment } from '../../types/store';
+import { destroyEquippedItem } from '../../utils/destroyEquippedItem';
 import { destroyItemInGrid } from '../../utils/destroyItemInGrid';
 import { emptyContainerToGround } from '../../utils/emptyContainerToGround';
-import { findFreePosition } from '../../utils/findFreePosition';
 import { moveItemInGrid } from '../../utils/moveItemInGrid';
-import { placeItemInCells } from '../../utils/placeItemInCells';
 import { splitItemInGrid } from '../../utils/splitItemInGrid';
-
-function isSlotType(key: string, equipment: Equipment): key is SlotType {
-  return key in equipment;
-}
-
-function findEquipmentSlot(equipment: Equipment, itemId: string): SlotType | null {
-  for (const slot of Object.keys(equipment)) {
-    if (isSlotType(slot, equipment) && equipment[slot] === itemId) {
-      return slot;
-    }
-  }
-  return null;
-}
+import { unequipItemToGrid } from '../../utils/unequipItemToGrid';
 
 export const createEquipmentActionsSlice: StateCreator<
   EquipmentActionsSlice & StoreWithEquipment,
@@ -29,39 +15,21 @@ export const createEquipmentActionsSlice: StateCreator<
 > = (set, get) => ({
   unequipItem: (itemId, targetGridId): boolean => {
     const state = get();
-    const item = state.items[itemId];
-    if (item === undefined) return false;
-
-    const equipmentSlot = findEquipmentSlot(state.equipment, itemId);
-    if (equipmentSlot === null) return false;
-
-    const targetGrid = state.grids[targetGridId];
-    if (targetGrid === undefined) return false;
-
-    const freePos = findFreePosition({
-      grid: targetGrid,
-      itemWidth: item.size.width,
-      itemHeight: item.size.height,
-    });
-    if (freePos === null) return false;
-
-    const shouldClearPath = state.inventoryFocusPath.includes(itemId);
-    const newCells = placeItemInCells({
-      grid: targetGrid.cells,
+    const result = unequipItemToGrid({
+      items: state.items,
+      grids: state.grids,
+      equipment: state.equipment,
       itemId,
-      x: freePos.x,
-      y: freePos.y,
-      width: item.size.width,
-      height: item.size.height,
+      targetGridId,
     });
-
+    if (result === null) return false;
+    const shouldClearPath = state.inventoryFocusPath.includes(itemId);
     set({
-      equipment: { ...state.equipment, [equipmentSlot]: null },
-      grids: { ...state.grids, [targetGridId]: { ...targetGrid, cells: newCells } },
+      equipment: result.equipment,
+      grids: result.grids,
       inventoryFocusPath: shouldClearPath ? [] : state.inventoryFocusPath,
       selectedItemId: null,
     });
-
     return true;
   },
 
@@ -110,20 +78,27 @@ export const createEquipmentActionsSlice: StateCreator<
 
   destroyItem: (itemId): boolean => {
     const state = get();
-    const result = destroyItemInGrid({
+    const gridResult = destroyItemInGrid({ items: state.items, grids: state.grids, itemId });
+    if (gridResult !== null) {
+      set({ items: gridResult.items, grids: gridResult.grids, selectedItemId: null });
+      return true;
+    }
+    const equipResult = destroyEquippedItem({
       items: state.items,
-      grids: state.grids,
+      equipment: state.equipment,
       itemId,
     });
-    if (result === null) return false;
-
-    set({
-      items: result.items,
-      grids: result.grids,
-      selectedItemId: null,
-    });
-
-    return true;
+    if (equipResult !== null) {
+      const shouldClearPath = state.inventoryFocusPath.includes(itemId);
+      set({
+        items: equipResult.items,
+        equipment: equipResult.equipment,
+        inventoryFocusPath: shouldClearPath ? [] : state.inventoryFocusPath,
+        selectedItemId: null,
+      });
+      return true;
+    }
+    return false;
   },
 
   emptyContainer: (containerId): boolean => {
