@@ -1,25 +1,46 @@
 /**
  * Destroy Item System
  *
- * Removes an item entity from its grid and the world.
+ * Removes an item entity from its grid/equipment and the world.
  */
 
 import { world } from '../world';
 import type { EntityId } from '../../types/ecs';
+import type { SlotType } from '../../types/inventory';
+import { SLOT_TYPES } from '../../constants/slots';
 import { getGridEntity, getItemEntity, removeFromCells } from '../queries/inventoryQueries';
 
 interface DestroyItemProps {
   entityId: EntityId;
 }
 
-export type { DestroyItemProps };
+interface DestroyItemReturn {
+  success: boolean;
+  slotType: SlotType | null;
+}
 
-export function destroyItem(props: DestroyItemProps): boolean {
+export type { DestroyItemProps, DestroyItemReturn };
+
+function clearEquipmentSlot(entityId: EntityId): SlotType | null {
+  for (const entity of world) {
+    if (entity.equipment === undefined) continue;
+    const slots = entity.equipment.slots;
+    for (const slot of SLOT_TYPES) {
+      if (slots[slot] === entityId) {
+        slots[slot] = null;
+        return slot;
+      }
+    }
+  }
+  return null;
+}
+
+export function destroyItem(props: DestroyItemProps): DestroyItemReturn {
   const { entityId } = props;
 
   const itemEntity = getItemEntity({ entityId });
   if (itemEntity === undefined) {
-    return false;
+    return { success: false, slotType: null };
   }
 
   // Remove from grid if positioned
@@ -30,6 +51,7 @@ export function destroyItem(props: DestroyItemProps): boolean {
     }
   }
 
+  const clearedSlot = clearEquipmentSlot(entityId);
   world.remove(itemEntity);
-  return true;
+  return { success: true, slotType: clearedSlot };
 }

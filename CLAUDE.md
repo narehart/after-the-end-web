@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 UI prototyping environment for **After the End**, a turn-based hex-grid survival game. This React/TypeScript project experiments with inventory management, equipment systems, and gamepad navigation before implementing in Godot.
 
-**Stack:** React 19, Vite 7, TypeScript (strictest settings), Zustand, CSS Modules
+**Stack:** React 19, Vite 7, TypeScript (strictest settings), ECS (miniplex), Zustand, CSS Modules
 
 ## Commands
 
@@ -22,39 +22,84 @@ npm run format       # Prettier formatting
 
 ## Architecture
 
-### State Management: Zustand Slices
+### Hybrid ECS + Zustand
 
-The store is split into domain slices in `src/stores/slices/`:
+**ECS (miniplex)** is the source of truth for game data. **Zustand** handles UI-only state.
+
+#### ECS Layer (`src/ecs/`)
 
 ```
-inventoryStore.ts     # Combines all slices
-├── itemsSlice.ts     # Item templates, instances, grids
-├── equipmentSlice.ts # Equipment slot state
-├── equipmentActionsSlice.ts # equip/unequip/move operations
-├── navigationSlice.ts # Focus paths (inventory/world panels)
-├── uiSlice.ts        # UI state (selection, scale, menus)
-└── conditionsSlice.ts # Character conditions (health, hunger)
+ecs/
+├── world.ts           # World singleton, Entity type
+├── components/        # Component type definitions (data-only interfaces)
+├── systems/           # Game logic as pure functions
+│   ├── moveItemSystem.ts
+│   ├── destroyItemSystem.ts
+│   ├── splitItemSystem.ts
+│   └── ...
+├── entities/          # Entity factory functions
+│   ├── itemEntity.ts
+│   └── gridEntity.ts
+└── queries/           # Reusable query helpers
+    └── inventoryQueries.ts
 ```
 
-**Pattern:** Each slice exports a `StateCreator` with `*State` and `*Actions` interfaces. Components use selectors for fine-grained reactivity:
+**ECS owns:** Items, grids, equipment slots, character conditions
 
-```tsx
-const selectedId = useInventoryStore((s) => s.selectedItemId);
+**Pattern:** Systems are pure functions that query/mutate the world and return success/failure:
+
+```typescript
+const result = moveItem({ entityId, targetGridId });
+if (!result.success) return false;
 ```
+
+#### Zustand Layer (`src/stores/slices/`)
+
+```
+inventoryStore.ts        # Combines all slices
+├── uiSlice.ts           # Selection, menus, scale
+├── navigationSlice.ts   # Focus paths (reads initial state from ECS)
+├── equipmentSlice.ts    # Equipment mirror (synced from ECS)
+├── equipmentActionsSlice.ts # Actions that call ECS systems
+├── conditionsSlice.ts   # Character conditions
+└── inputModeSlice.ts    # Keyboard vs pointer mode
+```
+
+**Zustand owns:** UI state only (selection, menus, focus paths, input mode)
+
+**Pattern:** Action slices call ECS systems, then sync Zustand state:
+
+```typescript
+destroyItem: (itemId): boolean => {
+  const result = ecsDestroyItem({ entityId: itemId });
+  if (!result.success) return false;
+  set({ equipment: getEquipment().equipment, selectedItemId: null });
+  return true;
+};
+```
+
+#### React Bridge (`src/hooks/`)
+
+- `useECSInventory.ts` - Subscribe to ECS entities via miniplex-react
+- `useMenuContext.ts` - Combine ECS queries with Zustand state for menus
 
 ### File Organization Rules
 
 **Enforced by custom ESLint rules and ls-lint:**
 
-| Directory            | Naming      | Contents                           |
-| -------------------- | ----------- | ---------------------------------- |
-| `src/components/`    | PascalCase  | `.tsx` + paired `.module.css`      |
-| `src/hooks/`         | `use*.ts`   | One custom hook per file           |
-| `src/utils/`         | camelCase   | One function per file              |
-| `src/constants/`     | camelCase   | Data constants only (no functions) |
-| `src/types/`         | camelCase   | Type definitions only              |
-| `src/stores/slices/` | `*Slice.ts` | Zustand slice creators             |
-| `eslint-rules/`      | kebab-case  | Custom ESLint rules                |
+| Directory             | Naming          | Contents                           |
+| --------------------- | --------------- | ---------------------------------- |
+| `src/ui/`             | PascalCase      | `.tsx` + paired `.module.css`      |
+| `src/ecs/systems/`    | `*System.ts`    | ECS system functions               |
+| `src/ecs/components/` | `*Component.ts` | ECS component type definitions     |
+| `src/ecs/entities/`   | `*Entity.ts`    | Entity factory functions           |
+| `src/ecs/queries/`    | `*Queries.ts`   | Reusable query helpers             |
+| `src/hooks/`          | `use*.ts`       | One custom hook per file           |
+| `src/utils/`          | camelCase       | One function per file              |
+| `src/constants/`      | camelCase       | Data constants only (no functions) |
+| `src/types/`          | camelCase       | Type definitions only              |
+| `src/stores/slices/`  | `*Slice.ts`     | Zustand slice creators             |
+| `eslint-rules/`       | kebab-case      | Custom ESLint rules                |
 
 ### Component Philosophy
 
@@ -132,16 +177,20 @@ ESLint enforces:
 ```
 User Input (Gamepad/Keyboard)
     ↓
-Custom Hooks (useGamepad, useMenuContext)
+React Hooks (useMenuContext, useECSInventory)
     ↓
-Store Actions (equipItem, moveItem)
+Zustand Actions → ECS Systems (moveItem, destroyItem)
     ↓
-Zustand Store (slice mutations)
+ECS World (entity mutations)
     ↓
-Component Selectors (fine-grained subscriptions)
+miniplex-react useEntities() triggers re-render
+    ↓
+Zustand UI state sync (selection cleared, equipment updated)
     ↓
 CSS Modules + CSS Variables → Visual Update
 ```
+
+**Initialization order:** ECS initializes at module load (`src/index.tsx` imports `initializeInventorySystem` first), ensuring the world is populated before Zustand reads initial state.
 
 ## Verifying UI Changes
 

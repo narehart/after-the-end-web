@@ -4,8 +4,6 @@ import { DEFAULT_SCALE } from '../../constants/grid';
 import type { UISlice } from '../../types/store';
 import { INITIAL_MENU } from '../../constants/ui';
 
-;
-
 export const createUISlice: StateCreator<UISlice, [], [], UISlice> = (set) => ({
   selectedItemId: 'glasses-1',
   focusedEmptySlot: null,

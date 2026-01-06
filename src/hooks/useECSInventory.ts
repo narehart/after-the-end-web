@@ -79,7 +79,8 @@ export default function useECSInventory(): UseECSInventoryReturn {
   }, []);
 
   const handleDestroyItem = useCallback((entityId: EntityId): boolean => {
-    return destroyItem({ entityId });
+    const result = destroyItem({ entityId });
+    return result.success;
   }, []);
 
   const handleMergeItems = useCallback(

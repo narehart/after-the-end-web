@@ -5,6 +5,7 @@ import { splitItem as ecsSplitItem } from '../../ecs/systems/splitItemSystem';
 import { destroyItem as ecsDestroyItem } from '../../ecs/systems/destroyItemSystem';
 import { emptyContainer as ecsEmptyContainer } from '../../ecs/systems/emptyContainerSystem';
 import { unequipItem as ecsUnequipItem } from '../../ecs/systems/unequipItemSystem';
+import { getEquipment } from '../../ecs/queries/inventoryQueries';
 
 export const createEquipmentActionsSlice: StateCreator<
   EquipmentActionsSlice & StoreWithEquipment,
@@ -14,12 +15,12 @@ export const createEquipmentActionsSlice: StateCreator<
 > = (set, get) => ({
   unequipItem: (itemId, targetGridId): boolean => {
     const result = ecsUnequipItem({ entityId: itemId, targetGridId });
-    if (!result.success || result.slotType === null) return false;
+    if (!result.success) return false;
 
     const state = get();
     const shouldClearPath = state.inventoryFocusPath.includes(itemId);
     set({
-      equipment: { ...state.equipment, [result.slotType]: null },
+      equipment: getEquipment().equipment,
       inventoryFocusPath: shouldClearPath ? [] : state.inventoryFocusPath,
       selectedItemId: null,
     });
@@ -47,12 +48,14 @@ export const createEquipmentActionsSlice: StateCreator<
 
   destroyItem: (itemId): boolean => {
     // ECS destroyItem handles both grid items and equipped items
-    const success = ecsDestroyItem({ entityId: itemId });
-    if (!success) return false;
+    const result = ecsDestroyItem({ entityId: itemId });
+    if (!result.success) return false;
 
     const state = get();
     const shouldClearPath = state.inventoryFocusPath.includes(itemId);
+    const equipmentUpdate = result.slotType !== null ? getEquipment().equipment : state.equipment;
     set({
+      equipment: equipmentUpdate,
       inventoryFocusPath: shouldClearPath ? [] : state.inventoryFocusPath,
       selectedItemId: null,
     });

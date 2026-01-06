@@ -1,16 +1,64 @@
-# React + Vite
+# After the End - UI Prototype
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+UI prototyping environment for **After the End**, a turn-based hex-grid survival game. This React/TypeScript project experiments with inventory management, equipment systems, and gamepad navigation before implementing in Godot.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19, Vite 7, TypeScript (strictest settings)
+- ECS (miniplex) for game state
+- Zustand for UI state
+- CSS Modules with design tokens
 
-## React Compiler
+## Architecture
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+**Hybrid ECS + Zustand:**
 
-## Expanding the ESLint configuration
+- **ECS (miniplex)** - Source of truth for game data: items, grids, equipment, conditions
+- **Zustand** - UI-only state: selection, menus, focus paths, input mode
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── ecs/                   # Entity Component System
+│   ├── world.ts           # World singleton
+│   ├── components/        # Component type definitions
+│   ├── systems/           # Game logic (pure functions)
+│   ├── entities/          # Entity factories
+│   └── queries/           # Reusable queries
+├── stores/                # Zustand (UI state only)
+│   └── slices/            # UI slices
+├── ui/                    # React components
+├── hooks/                 # React hooks (bridge ECS ↔ React)
+├── types/                 # TypeScript definitions
+├── constants/             # Game constants
+└── utils/                 # Utility functions
+```
+
+## Commands
+
+```bash
+npm run dev          # Start dev server
+npm run build        # Production build
+npm run typecheck    # TypeScript type checking
+npm run lint         # ESLint (JS/TS)
+npm run lint:css     # Stylelint (CSS)
+npm run lint:ls      # ls-lint (file naming)
+npm run format       # Prettier formatting
+```
+
+## Data Flow
+
+```
+User Input (Gamepad/Keyboard)
+    ↓
+React Hooks (useMenuContext, useECSInventory)
+    ↓
+ECS Systems (moveItem, destroyItem, etc.)
+    ↓
+ECS World (entity mutations)
+    ↓
+React re-renders via miniplex-react useEntities()
+    ↓
+Zustand UI state updates (selection cleared, etc.)
+    ↓
+CSS Modules → Visual Update
+```

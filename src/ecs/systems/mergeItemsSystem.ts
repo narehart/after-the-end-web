@@ -40,5 +40,6 @@ export function mergeItems(props: MergeItemsProps): boolean {
   }
 
   targetEntity.item.quantity = totalQty;
-  return destroyItem({ entityId: sourceEntityId });
+  const result = destroyItem({ entityId: sourceEntityId });
+  return result.success;
 }
