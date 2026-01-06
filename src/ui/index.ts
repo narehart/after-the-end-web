@@ -2,7 +2,6 @@ export { default as Box } from './Box';
 export { default as Button } from './Button';
 export { default as Flex } from './Flex';
 export { default as Icon } from './Icon';
-export { default as Input } from './Input';
 export { default as Text } from './Text';
 export { default as EmptyState } from './EmptyState';
 export { default as Breadcrumb } from './Breadcrumb';

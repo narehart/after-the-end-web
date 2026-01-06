@@ -7,6 +7,7 @@ import type {
 import type { Conditions } from './conditions';
 import type { Equipment, EquipmentSlot } from './equipment';
 import type { ContainerRect, Item, MenuPathSegment, MenuSource, MenuState } from './inventory';
+import type { SettingsSlice } from './settings';
 
 // Flex component types
 export type FlexDirection = 'row' | 'column' | 'row-reverse' | 'column-reverse';
@@ -221,10 +222,49 @@ interface InputModeActions {
 
 export type InputModeSlice = InputModeState & InputModeActions;
 
+// Screen navigation types
+export type ScreenId = 'inventory' | 'character' | 'status' | 'camping' | 'settings';
+
+export interface ScreenTab {
+  id: ScreenId;
+  label: string;
+  icon: string;
+}
+
+// Main Menu Slice
+interface MainMenuState {
+  activeScreen: ScreenId;
+  isMainMenuOpen: boolean;
+}
+
+interface MainMenuActions {
+  setActiveScreen: (screen: ScreenId) => void;
+  toggleMainMenu: () => void;
+  openMainMenu: () => void;
+  closeMainMenu: () => void;
+}
+
+export type MainMenuSlice = MainMenuState & MainMenuActions;
+
+// Display info types
+export type DisplaySource = 'tauri' | 'browser';
+
+export interface DisplayInfo {
+  width: number;
+  height: number;
+  scaleFactor: number;
+  aspectRatio: number;
+  aspectRatioLabel: string;
+  name: string | null;
+  source: DisplaySource;
+}
+
 // Combined Store
 export type InventoryStore = UISlice &
   EquipmentSlice &
   NavigationSlice &
   ConditionsSlice &
   EquipmentActionsSlice &
-  InputModeSlice;
+  InputModeSlice &
+  SettingsSlice &
+  MainMenuSlice;

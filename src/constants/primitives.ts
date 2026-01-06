@@ -4,7 +4,6 @@ export const SECOND_INDEX = 1;
 export const NOT_FOUND_INDEX = -1;
 
 // Math constants
-export const PERCENTAGE_MULTIPLIER = 100;
 export const HALVE_DIVISOR = 2;
 
 // Timing constants

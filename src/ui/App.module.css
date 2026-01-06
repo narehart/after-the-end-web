@@ -1,1 +1,8 @@
-/* App-level styles - most styling is in component CSS files */
+.app-container {
+  background: var(--bg-darkest);
+  overflow: hidden;
+}
+
+.placeholder-screen {
+  flex: 1;
+}

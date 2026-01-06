@@ -1,4 +1,5 @@
 import type { MenuState } from '../types/inventory';
+import type { ScreenTab } from '../types/ui';
 
 // Menu constants
 export const INITIAL_MENU: MenuState = {
@@ -72,3 +73,36 @@ export const DIAGONAL_DESKTOP_LARGE = 27;
 // Reference resolution for scaling
 export const REFERENCE_WIDTH = 1280;
 export const REFERENCE_HEIGHT = 800;
+
+/* eslint-disable @typescript-eslint/no-magic-numbers */
+// Aspect ratios (width / height) - used by KNOWN_ASPECT_RATIOS
+const ASPECT_RATIO_16_10 = 16 / 10;
+const ASPECT_RATIO_16_9 = 16 / 9;
+const ASPECT_RATIO_21_9 = 21 / 9;
+const ASPECT_RATIO_32_9 = 32 / 9;
+const ASPECT_RATIO_3_2 = 3 / 2;
+const ASPECT_RATIO_4_3 = 4 / 3;
+const ASPECT_RATIO_5_4 = 5 / 4;
+/* eslint-enable @typescript-eslint/no-magic-numbers */
+
+export const ASPECT_RATIO_TOLERANCE = 0.02;
+export const ASPECT_RATIO_LABEL_PRECISION = 2;
+
+export const KNOWN_ASPECT_RATIOS: ReadonlyArray<{ ratio: number; label: string }> = [
+  { ratio: ASPECT_RATIO_16_10, label: '16:10' },
+  { ratio: ASPECT_RATIO_16_9, label: '16:9' },
+  { ratio: ASPECT_RATIO_21_9, label: '21:9' },
+  { ratio: ASPECT_RATIO_32_9, label: '32:9' },
+  { ratio: ASPECT_RATIO_3_2, label: '3:2' },
+  { ratio: ASPECT_RATIO_4_3, label: '4:3' },
+  { ratio: ASPECT_RATIO_5_4, label: '5:4' },
+];
+
+// Main menu screen tabs
+export const SCREEN_TABS: readonly ScreenTab[] = [
+  { id: 'inventory', label: 'Inventory', icon: '📦' },
+  { id: 'character', label: 'Character', icon: '👤' },
+  { id: 'status', label: 'Status', icon: '❤️' },
+  { id: 'camping', label: 'Camping', icon: '🏕️' },
+  { id: 'settings', label: 'Settings', icon: '⚙️' },
+];

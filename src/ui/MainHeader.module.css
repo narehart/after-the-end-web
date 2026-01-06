@@ -1,0 +1,76 @@
+.main-header {
+  padding: var(--space-10) var(--space-16);
+  background: var(--bg-header);
+  border-bottom: var(--border-panel);
+}
+
+.header-icon {
+  margin-right: var(--space-10);
+}
+
+.screen-tabs {
+  flex: 1;
+}
+
+.screen-tab {
+  padding: var(--space-6) var(--space-12);
+  background: transparent;
+  border: var(--border-default);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.screen-tab:hover {
+  background: var(--bg-elevated);
+  border-color: var(--border-light);
+}
+
+.screen-tab--active {
+  background: var(--bg-cell);
+  border-color: var(--accent-teal);
+  color: var(--accent-teal);
+}
+
+.header-controls {
+  margin-left: auto;
+  position: relative;
+}
+
+.gamepad-indicator {
+  padding: var(--space-4) var(--space-10);
+  background: var(--bg-cell);
+  border: var(--border-accent);
+  animation: gamepad-pulse 2s ease-in-out infinite;
+}
+
+@keyframes gamepad-pulse {
+  0%,
+  100% {
+    opacity: var(--opacity-full);
+  }
+
+  50% {
+    opacity: var(--opacity-hover);
+  }
+}
+
+.resolution-indicator {
+  padding: var(--space-4) var(--space-10);
+  background: var(--bg-cell);
+  border: var(--border-default);
+}
+
+.close-btn {
+  width: var(--size-btn);
+  height: var(--size-btn);
+  background: var(--bg-cell);
+  border: var(--border-default);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.close-btn:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  border-color: var(--border-light);
+}

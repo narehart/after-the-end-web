@@ -1,14 +1,5 @@
-.inventory-container {
-  width: 100%;
-  height: 100vh;
-  background: var(--bg-darkest);
-  color: var(--text-primary);
-  overflow: hidden;
-}
-
-/* Simulated resolution mode - constrained viewport */
-.inventory-container.simulated {
-  position: relative;
+.inventory-content {
+  flex: 1;
   overflow: hidden;
 }
 
