@@ -1,6 +1,7 @@
 import type { StateCreator } from 'zustand';
 import type { SlotType, Equipment } from '../../types/inventory';
 import type { EquipmentActionsSlice, StoreWithEquipment } from '../../types/store';
+import { destroyItemInGrid } from '../../utils/destroyItemInGrid';
 import { findFreePosition } from '../../utils/findFreePosition';
 import { moveItemInGrid } from '../../utils/moveItemInGrid';
 import { placeItemInCells } from '../../utils/placeItemInCells';
@@ -94,6 +95,24 @@ export const createEquipmentActionsSlice: StateCreator<
       grids: state.grids,
       itemId,
       targetGridId,
+    });
+    if (result === null) return false;
+
+    set({
+      items: result.items,
+      grids: result.grids,
+      selectedItemId: null,
+    });
+
+    return true;
+  },
+
+  destroyItem: (itemId): boolean => {
+    const state = get();
+    const result = destroyItemInGrid({
+      items: state.items,
+      grids: state.grids,
+      itemId,
     });
     if (result === null) return false;
 

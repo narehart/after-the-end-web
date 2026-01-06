@@ -80,4 +80,11 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     show: (ctx: UseMenuContextReturn): boolean => ctx.panel === 'world',
     disabled: (ctx: UseMenuContextReturn): boolean => findFirstAvailableContainer(ctx) === null,
   },
+  {
+    id: 'destroy',
+    label: 'Destroy',
+    icon: '✕',
+    type: 'action',
+    show: (ctx: UseMenuContextReturn): boolean => ctx.source !== 'equipment',
+  },
 ];

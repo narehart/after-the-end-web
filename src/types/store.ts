@@ -42,6 +42,7 @@ export interface EquipmentActionsSlice {
   equipItem: (itemId: string, targetSlot?: SlotType | null) => boolean;
   moveItem: (itemId: string, targetGridId: string) => boolean;
   splitItem: (itemId: string, targetGridId: string) => boolean;
+  destroyItem: (itemId: string) => boolean;
 }
 
 export interface StoreWithEquipment {
