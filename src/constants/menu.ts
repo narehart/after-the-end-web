@@ -61,7 +61,7 @@ export const ITEM_ACTION_MENU: MenuItem[] = [
     icon: '→',
     type: 'navigate',
     hasChildren: true,
-    show: (ctx: UseMenuContextReturn): boolean => ctx.source !== 'equipment',
+    show: (): boolean => false, // Hidden: use drag-and-drop instead
     getItems: (ctx: UseMenuContextReturn, path?: MenuPathSegment[]): MenuItem[] =>
       buildDestinationItems(ctx, path ?? [], 'move'),
   },
