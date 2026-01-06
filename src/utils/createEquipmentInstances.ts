@@ -1,7 +1,7 @@
 import type { GridsMap, ItemsMap } from '../types/inventory';
 import type { Equipment } from '../types/equipment';
 import { EQUIPMENT_SLOTS, INITIAL_EQUIPMENT } from '../constants/equipment';
-import { getItemById } from '../data/items';
+import { getItemById } from '../ecs/queries/inventoryQueries';
 import { createEmptyGrid } from './createEmptyGrid';
 import { createItemInstance } from './createItemInstance';
 import { generateInstanceId } from './generateInstanceId';

@@ -9,11 +9,10 @@ import { world } from '../world';
 import type { Entity, EntityId, GridId } from '../world';
 import type { Equipment } from '../../types/equipment';
 import type { GridsMap, ItemsMap, Item } from '../../types/inventory';
-import { placeInCells } from '../queries/inventoryQueries';
+import { placeInCells , itemTemplates } from '../queries/inventoryQueries';
 import { FIRST_INDEX, SECOND_INDEX } from '../../constants/primitives';
 import { DEFAULT_QUANTITY } from '../../constants/inventory';
 import { buildInitialInventory } from '../../utils/buildInitialInventory';
-import { itemTemplates } from '../../data/itemTemplates';
 
 let ecsInitialized = false;
 

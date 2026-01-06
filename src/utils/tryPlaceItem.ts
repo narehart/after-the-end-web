@@ -1,4 +1,4 @@
-import { getItemById } from '../data/items';
+import { getItemById } from '../ecs/queries/inventoryQueries';
 import type { GridOccupancy, ItemPlacement } from '../types/inventory';
 import { findFreeGridSpot } from './findFreeGridSpot';
 import { markGridOccupied } from './markGridOccupied';

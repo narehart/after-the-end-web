@@ -7,7 +7,53 @@
 import { world } from '../world';
 import type { Entity, EntityId, GridId } from '../world';
 import type { Equipment } from '../../types/equipment';
+import type { Item, ItemsMap } from '../../types/inventory';
 import { INITIAL_EQUIPMENT } from '../../constants/equipment';
+import { toItemType } from '../../utils/toItemType';
+import neoItemsJson from '../../data/neoItems.json';
+
+// --- Item Template Queries ---
+
+function toItem(data: (typeof neoItemsJson)[number]): Item {
+  const item: Item = {
+    id: data.id,
+    neoId: data.neoId,
+    type: toItemType(data.type),
+    name: data.name,
+    description: data.description,
+    size: data.size,
+    weight: data.weight,
+    value: data.value,
+    stackLimit: data.stackLimit,
+    image: data.image,
+    allImages: data.allImages,
+  };
+  if (data.gridSize !== undefined) {
+    item.gridSize = data.gridSize;
+  }
+  if ('usable' in data && data.usable) {
+    item.usable = true;
+  }
+  return item;
+}
+
+function buildTemplatesMap(): ItemsMap {
+  const templates: ItemsMap = {};
+  for (const data of neoItemsJson) {
+    templates[data.id] = toItem(data);
+  }
+  return templates;
+}
+
+/** Map of template ID → Item template */
+export const itemTemplates: ItemsMap = buildTemplatesMap();
+
+/** Get an item template by ID */
+export function getItemById(id: string): Item | undefined {
+  return itemTemplates[id];
+}
+
+// --- ECS Entity Queries ---
 
 interface GetGridEntityProps {
   gridId: GridId;
