@@ -3,7 +3,6 @@ import type {
   CellGrid,
   Equipment,
   GridCell,
-  GridPosition,
   GridsMap,
   Item,
   ItemsMap,
@@ -13,18 +12,6 @@ import type {
 } from './inventory';
 import type { NavigationDirection } from './gamepad';
 import type { PanelRefs, Resolution, ItemPlacement, GamepadRefs, GamepadCallbacks } from './ui';
-
-// Shared base types for grid operations
-export interface GridOperationBaseProps {
-  items: ItemsMap;
-  grids: GridsMap;
-  itemId: string;
-}
-
-export interface GridOperationBaseReturn {
-  items: ItemsMap;
-  grids: GridsMap;
-}
 
 // Grid utility Props interfaces
 export interface BuildGridWithItemsProps {
@@ -95,13 +82,6 @@ export interface PlaceItemInCellsProps {
 }
 
 export type PlaceItemInCellsReturn = CellGrid;
-
-export interface RemoveItemFromCellsProps {
-  cells: CellGrid;
-  positions: GridPosition[];
-}
-
-export type RemoveItemFromCellsReturn = CellGrid;
 
 export interface CreateEmptyGridProps {
   width: number;
