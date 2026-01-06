@@ -19,19 +19,28 @@ UI prototyping environment for **After the End**, a turn-based hex-grid survival
 ```
 src/
 ├── ecs/                   # Entity Component System
-│   ├── world.ts           # World singleton
-│   ├── components/        # Component type definitions
-│   ├── systems/           # Game logic (pure functions)
-│   ├── entities/          # Entity factories
-│   └── queries/           # Reusable queries
+│   ├── world.ts           # World singleton, Entity type
+│   ├── components/        # Component definitions (data-only)
+│   ├── systems/           # Game logic (must reference world/queries)
+│   ├── entities/          # Entity factories (must call world.add)
+│   └── queries/           # Query helpers (must reference world)
 ├── stores/                # Zustand (UI state only)
 │   └── slices/            # UI slices
-├── ui/                    # React components
+├── ui/                    # React components (PascalCase)
 ├── hooks/                 # React hooks (bridge ECS ↔ React)
-├── types/                 # TypeScript definitions
-├── constants/             # Game constants
-└── utils/                 # Utility functions
+├── types/                 # TypeScript definitions only
+├── constants/             # Data constants only (no functions)
+├── utils/                 # Utility functions (one per file)
+└── eslint-rules/          # Custom ESLint rules
 ```
+
+### ECS Restrictions
+
+All ECS directories have ESLint-enforced restrictions to prevent mixing concerns:
+
+- **queries/** - Must reference `world` (no pure helpers)
+- **entities/** - Must call `world.add()` (no builders without side effects)
+- **systems/** - Must reference `world` or imported queries (no pure utils)
 
 ## Commands
 

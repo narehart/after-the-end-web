@@ -32,19 +32,29 @@ npm run format       # Prettier formatting
 ecs/
 ├── world.ts           # World singleton, Entity type
 ├── components/        # Component type definitions (data-only interfaces)
-├── systems/           # Game logic as pure functions
+├── systems/           # Game logic (must reference world or queries)
 │   ├── moveItemSystem.ts
 │   ├── destroyItemSystem.ts
 │   ├── splitItemSystem.ts
 │   └── ...
-├── entities/          # Entity factory functions
+├── entities/          # Entity factory functions (must call world.add)
 │   ├── itemEntity.ts
 │   └── gridEntity.ts
-└── queries/           # Reusable query helpers
+└── queries/           # Query helpers (must reference world)
     └── inventoryQueries.ts
 ```
 
 **ECS owns:** Items, grids, equipment slots, character conditions
+
+**ECS Directory Restrictions (enforced by ESLint):**
+
+| Directory       | Restriction                                     | Rule                               |
+| --------------- | ----------------------------------------------- | ---------------------------------- |
+| `ecs/queries/`  | All functions must reference `world`            | `ecs-queries-use-world`            |
+| `ecs/entities/` | All functions must call `world.add()`           | `ecs-entities-add-to-world`        |
+| `ecs/systems/`  | All functions must reference `world` or queries | `ecs-systems-use-world-or-queries` |
+
+**Why these restrictions?** Prevents dumping pure utility functions into ECS directories. If a function doesn't interact with the ECS world, it belongs in `src/utils/`.
 
 **Pattern:** Systems are pure functions that query/mutate the world and return success/failure:
 
@@ -145,6 +155,18 @@ Located in `eslint-rules/`, these enforce architectural constraints.
 
 **Testing:** You can't test ESLint rules with files in the system `/tmp` directory. ESLint will ignore these. Create test files within the project directory instead.
 
+### ECS Rules
+
+- `ecs-queries-use-world` - Query functions must reference the ECS world
+- `ecs-entities-add-to-world` - Entity factory functions must call `world.add()`
+- `ecs-systems-use-world-or-queries` - System functions must reference `world` or imported query functions
+- `no-react-in-ecs` - No React imports in ECS directory
+- `no-ecs-in-ui` - No direct ECS imports in UI components
+- `one-system-per-file` - Single system function per file
+- `ecs-components-data-only` - Components must be data-only interfaces
+
+### File Organization Rules
+
 - `no-cross-component-css-imports` - CSS files only import from same component
 - `no-plain-classname-literals` - Must use classnames binding
 - `one-function-per-utils-file` - Single export per utility file
@@ -153,9 +175,10 @@ Located in `eslint-rules/`, these enforce architectural constraints.
 - `data-constants-in-constants-dir` - Constants only in `src/constants/`
 - `no-functions-in-constants` - No function definitions in constants
 - `no-screaming-snake-constants` - camelCase for non-exported constants
-- `function-interface-naming` - `UseX` for hooks, `Props` suffix for interfaces
+- `function-interface-naming` - `UseX` for hooks, `Props`/`Return` suffix for interfaces
 - `no-reexports-in-types` - No re-exports in type files
 - `no-component-helper-functions` - Components should delegate to hooks/utils
+- `no-hooks-in-utils` - No React hooks in utility files
 
 ## TypeScript Configuration
 
