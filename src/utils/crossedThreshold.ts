@@ -1,4 +1,4 @@
-import { STICK_THRESHOLD } from '../constants/gamepad';
+import { STICK_THRESHOLD } from '../constants/input';
 import type { ThresholdDirection } from '../types/input';
 
 interface CrossedThresholdProps {

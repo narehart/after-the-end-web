@@ -1,5 +1,5 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
-import { REPEAT_DELAY, REPEAT_RATE } from '../constants/gamepad';
+import { REPEAT_DELAY, REPEAT_RATE } from '../constants/input';
 import type { NavigationDirection } from '../types/input';
 import { findFirstGamepad } from '../utils/findFirstGamepad';
 import { processGamepad } from '../utils/processGamepad';

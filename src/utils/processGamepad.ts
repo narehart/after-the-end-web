@@ -1,4 +1,4 @@
-import { BUTTONS } from '../constants/gamepad';
+import { BUTTONS } from '../constants/input';
 import { FIRST_INDEX, SECOND_INDEX } from '../constants/array';
 import type { GamepadCallbacks, GamepadRefs } from '../types/input';
 import { createButtonHandler } from './createButtonHandler';
