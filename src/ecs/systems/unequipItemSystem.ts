@@ -7,7 +7,8 @@
 import { world } from '../world';
 import type { Entity, GridId, EntityId } from '../world';
 import type { Equipment, EquipmentSlot } from '../../types/equipment';
-import { findFreePosition, placeInCells } from '../queries/inventoryQueries';
+import { findFreePosition } from '../../utils/findFreePosition';
+import { placeItem } from '../../utils/placeItem';
 import { EQUIPMENT_SLOTS } from '../../constants/equipment';
 
 interface UnequipItemProps {
@@ -67,9 +68,9 @@ export function unequipItem(props: UnequipItemProps): UnequipItemReturn {
 
   if (freePos === null) return failResult;
 
-  placeInCells({
-    cells: gridEntity.grid.cells,
-    entityId,
+  placeItem({
+    grid: gridEntity.grid.cells,
+    itemId: entityId,
     x: freePos.x,
     y: freePos.y,
     width: item.size.width,

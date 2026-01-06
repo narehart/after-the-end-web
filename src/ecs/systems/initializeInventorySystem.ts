@@ -9,7 +9,8 @@ import { world } from '../world';
 import type { Entity, EntityId, GridId } from '../world';
 import type { Equipment } from '../../types/equipment';
 import type { GridsMap, ItemsMap, Item } from '../../types/inventory';
-import { placeInCells , itemTemplates } from '../queries/inventoryQueries';
+import { itemTemplates } from '../../utils/itemTemplates';
+import { placeItem } from '../../utils/placeItem';
 import { FIRST_INDEX, SECOND_INDEX } from '../../constants/primitives';
 import { DEFAULT_QUANTITY } from '../../constants/inventory';
 import { buildInitialInventory } from '../../utils/buildInitialInventory';
@@ -135,9 +136,9 @@ function placeItemInGrid(itemId: string, item: Item, position: FindPositionRetur
   const gridEntity = world.where((e) => e.grid?.gridId === position.gridId).first;
   if (gridEntity?.grid === undefined) return;
 
-  placeInCells({
-    cells: gridEntity.grid.cells,
-    entityId: itemId,
+  placeItem({
+    grid: gridEntity.grid.cells,
+    itemId,
     x: position.x,
     y: position.y,
     width: item.size.width,

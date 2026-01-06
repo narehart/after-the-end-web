@@ -6,12 +6,9 @@
  */
 
 import type { Entity, EntityId, GridId } from '../world';
-import {
-  getGridEntity,
-  getItemEntity,
-  placeInCells,
-  removeFromCells,
-} from '../queries/inventoryQueries';
+import { getGridEntity, getItemEntity } from '../queries/inventoryQueries';
+import { placeItem as placeItemInGrid } from '../../utils/placeItem';
+import { removeFromCells } from '../../utils/removeFromCells';
 
 interface PlaceItemProps {
   entityId: EntityId;
@@ -77,7 +74,7 @@ export function placeItem(props: PlaceItemProps): boolean {
   if (!canPlaceInGrid(gridEntity, x, y, width, height, entityId)) return false;
 
   removeFromOldPosition(itemEntity, entityId);
-  placeInCells({ cells: gridEntity.grid.cells, entityId, x, y, width, height });
+  placeItemInGrid({ grid: gridEntity.grid.cells, itemId: entityId, x, y, width, height });
   itemEntity.position = { gridId, x, y };
 
   return true;

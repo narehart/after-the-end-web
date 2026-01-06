@@ -9,13 +9,9 @@ import { world } from '../world';
 import type { Entity, EntityId, GridId } from '../world';
 import { DEFAULT_QUANTITY, SPLIT_ITEM_FAIL } from '../../constants/inventory';
 import type { SplitItemReturn } from '../../types/inventory';
-import {
-  findCompatibleStack,
-  findFreePosition,
-  getGridEntity,
-  getItemEntity,
-  placeInCells,
-} from '../queries/inventoryQueries';
+import { findCompatibleStack, getGridEntity, getItemEntity } from '../queries/inventoryQueries';
+import { findFreePosition } from '../../utils/findFreePosition';
+import { placeItem } from '../../utils/placeItem';
 import { generateInstanceId } from '../../utils/generateInstanceId';
 
 interface SplitItemProps {
@@ -84,10 +80,11 @@ function createNewSplitEntity(ctx: SplitItemContextProps, targetGridId: string):
   };
 
   ctx.itemEntity.item.quantity -= DEFAULT_QUANTITY;
-  placeInCells({
-    cells: ctx.targetGridEntity.grid.cells,
-    entityId: newEntityId,
-    ...freePos,
+  placeItem({
+    grid: ctx.targetGridEntity.grid.cells,
+    itemId: newEntityId,
+    x: freePos.x,
+    y: freePos.y,
     width: template.size.width,
     height: template.size.height,
   });

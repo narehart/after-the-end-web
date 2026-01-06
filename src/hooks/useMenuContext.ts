@@ -2,7 +2,7 @@ import { useMemo, useCallback } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 import { useInventoryStore } from '../stores/inventoryStore';
 import type { MenuState, PanelType, UseMenuContextReturn } from '../types/inventory';
-import { findFreePosition as ecsFindFreePosition } from '../ecs/queries/inventoryQueries';
+import { findFreePosition } from '../utils/findFreePosition';
 import useECSInventory from './useECSInventory';
 
 interface UseMenuContextProps {
@@ -40,7 +40,7 @@ export default function useMenuContext(props: UseMenuContextProps): UseMenuConte
       if (item === undefined) return false;
       const gridEntity = getGrid(containerId);
       if (gridEntity?.grid === undefined) return false;
-      const freePos = ecsFindFreePosition({
+      const freePos = findFreePosition({
         cells: gridEntity.grid.cells,
         gridWidth: gridEntity.grid.width,
         gridHeight: gridEntity.grid.height,

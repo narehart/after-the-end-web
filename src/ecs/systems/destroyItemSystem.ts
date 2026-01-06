@@ -8,7 +8,8 @@ import { world } from '../world';
 import type { EntityId } from '../world';
 import type { EquipmentSlot } from '../../types/equipment';
 import { EQUIPMENT_SLOTS } from '../../constants/equipment';
-import { getGridEntity, getItemEntity, removeFromCells } from '../queries/inventoryQueries';
+import { getGridEntity, getItemEntity } from '../queries/inventoryQueries';
+import { removeFromCells } from '../../utils/removeFromCells';
 
 interface DestroyItemProps {
   entityId: EntityId;

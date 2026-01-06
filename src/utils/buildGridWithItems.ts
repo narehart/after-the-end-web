@@ -1,5 +1,5 @@
 import type { CellGrid, ItemsMap, ItemPlacement } from '../types/inventory';
-import { getItemById } from '../ecs/queries/inventoryQueries';
+import { getItemById } from './getItemById';
 import { canPlaceAt } from './canPlaceAt';
 import { createEmptyGrid } from './createEmptyGrid';
 import { createItemInstance } from './createItemInstance';

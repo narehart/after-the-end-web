@@ -9,14 +9,10 @@ import { world } from '../world';
 import type { Entity, EntityId, GridId } from '../world';
 import { MOVE_ITEM_FAIL } from '../../constants/inventory';
 import type { MoveItemReturn } from '../../types/inventory';
-import {
-  findCompatibleStack,
-  findFreePosition,
-  getGridEntity,
-  getItemEntity,
-  placeInCells,
-  removeFromCells,
-} from '../queries/inventoryQueries';
+import { findCompatibleStack, getGridEntity, getItemEntity } from '../queries/inventoryQueries';
+import { findFreePosition } from '../../utils/findFreePosition';
+import { placeItem } from '../../utils/placeItem';
+import { removeFromCells } from '../../utils/removeFromCells';
 
 interface MoveItemProps {
   entityId: EntityId;
@@ -77,10 +73,11 @@ function moveToPosition(
   if (freePos === null) return MOVE_ITEM_FAIL;
 
   removeFromCells({ cells: ctx.sourceGridEntity.grid.cells, entityId });
-  placeInCells({
-    cells: ctx.targetGridEntity.grid.cells,
-    entityId,
-    ...freePos,
+  placeItem({
+    grid: ctx.targetGridEntity.grid.cells,
+    itemId: entityId,
+    x: freePos.x,
+    y: freePos.y,
     width: template.size.width,
     height: template.size.height,
   });
