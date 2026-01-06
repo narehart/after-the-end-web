@@ -1,6 +1,10 @@
 import type { RefObject, MutableRefObject, CSSProperties } from 'react';
 import type { BreadcrumbLink, Item } from './inventory';
-import type { NavigationDirection } from './gamepad';
+
+// Input types (moved from gamepad.ts)
+export type NavigationDirection = 'up' | 'down' | 'left' | 'right';
+
+export type ThresholdDirection = 'positive' | 'negative';
 
 export type CSSPropertiesWithVars = CSSProperties & {
   [key: `--${string}`]: string | number;

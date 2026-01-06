@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import type { NavigationDirection } from '../types/gamepad';
+import type { NavigationDirection } from '../types/ui';
 import { simulateKey } from '../utils/simulateKey';
 import { useGamepad } from './useGamepad';
 

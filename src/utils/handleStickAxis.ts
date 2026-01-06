@@ -1,4 +1,4 @@
-import type { NavigationDirection } from '../types/gamepad';
+import type { NavigationDirection } from '../types/ui';
 import { crossedThreshold } from './crossedThreshold';
 import { returnedToCenter } from './returnedToCenter';
 

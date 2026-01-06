@@ -1,5 +1,5 @@
 import { STICK_THRESHOLD } from '../constants/gamepad';
-import type { ThresholdDirection } from '../types/gamepad';
+import type { ThresholdDirection } from '../types/ui';
 
 interface CrossedThresholdProps {
   value: number;
