@@ -20,7 +20,18 @@ ls:
     .json: regex:settings | regex:settings\.local | regex:\.mcp
     .md: regex:CLAUDE
     .*: regex:$
-    .dir: regex:\.claude | regex:hooks | regex:commands | regex:agents
+    .dir: regex:\.claude | regex:hooks | regex:commands | regex:agents | regex:skills
+
+  # .claude/skills - kebab-case directories for skill definitions
+  .claude/skills:
+    .*: regex:$
+    .dir: kebab-case
+
+  # .claude/skills/* - SKILL.md files only in each skill directory
+  .claude/skills/*:
+    .md: regex:SKILL
+    .*: regex:$
+    .dir: kebab-case
 
   # .claude/hooks - camelCase JS files only, no subdirectories
   .claude/hooks:

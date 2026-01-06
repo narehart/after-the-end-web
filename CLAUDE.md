@@ -244,3 +244,53 @@ Full gamepad navigation via:
 - `useMenuKeyboard.ts` - Keyboard fallback for menu navigation
 
 Constants in `src/constants/gamepad.ts` define button mappings and timing.
+
+## Claiming Work Complete
+
+When claiming work is complete, use this format:
+
+```
+**Task:** <name of what you did>
+**Type:** <ui fix | code change | bug fix | new feature | config change>
+**Satisfaction criteria:** <what must be true for this task to be complete>
+**Evidence:** <verification that directly proves the satisfaction criteria are met>
+**Commit:** <commit hash>
+```
+
+**Evidence requirements:**
+
+- Evidence must DIRECTLY VERIFY the satisfaction criteria, not just that code compiles
+- Build/lint/typecheck passing is NOT evidence - it only proves code is valid, not that it works
+- Work must be committed before claiming completion
+
+| Change Type    | Required Evidence                         |
+| -------------- | ----------------------------------------- |
+| UI features    | Screenshot + description of what you see  |
+| API/backend    | Actual request/response output            |
+| Config changes | Command output demonstrating the behavior |
+| Bug fixes      | Before/after showing the fix works        |
+
+**Bad evidence** (proves nothing about functionality):
+
+- "typecheck/lint/build passed"
+- "committed the changes"
+- "the code should now..."
+
+**Good evidence** (directly verifies the feature works):
+
+- Screenshot showing the UI change
+- Command output demonstrating the behavior
+- Test run output showing pass/fail
+- Actual error message or success message from running the feature
+
+**Example:**
+
+```
+**Task:** Add git commit-msg hook for conventional commits
+**Type:** config change
+**Satisfaction criteria:** Hook rejects non-conventional commits, accepts valid ones
+**Evidence:**
+- `git commit -m "bad"` → "ERROR: Must follow conventional commit format"
+- `git commit -m "feat: add feature"` → "[main abc123] feat: add feature"
+**Commit:** abc1234
+```
