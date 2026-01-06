@@ -3,5 +3,5 @@
   "entry": ["src/index.tsx", "src/ecs/**/*.ts", "scripts/*.js"],
   "project": ["src/**/*.{ts,tsx}", "eslint-rules/*.ts"],
   "ignore": ["scripts/hooks/**", ".claude/hooks/**"],
-  "ignoreDependencies": ["pixi.js", "@pixi/react"]
+  "ignoreDependencies": ["pixi.js", "@pixi/react", "miniplex-react"]
 }

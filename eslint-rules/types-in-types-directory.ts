@@ -2,7 +2,9 @@
  * ESLint rule: types-in-types-directory
  *
  * Enforces that type aliases and interfaces are defined in src/types/,
- * unless they are function interfaces (names ending in Props, Params, or Return).
+ * unless they are:
+ * - Function interfaces (names ending in Props, Params, or Return)
+ * - ECS components (in src/ecs/components/)
  */
 
 import path from 'node:path';
@@ -52,6 +54,10 @@ const rule: Rule.RuleModule = {
       return {};
     }
     if (filename.includes(path.join('src', '@types'))) {
+      return {};
+    }
+    // Skip ECS component files (they define Component interfaces)
+    if (filename.includes(path.join('src', 'ecs', 'components'))) {
       return {};
     }
 

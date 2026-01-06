@@ -1,0 +1,12 @@
+/**
+ * Equipment Component
+ *
+ * Equipment slots for characters
+ */
+
+import type { EntityId } from '../../types/ecs';
+import type { SlotType } from '../../types/inventory';
+
+export interface EquipmentComponent {
+  slots: Record<SlotType, EntityId | null>;
+}
