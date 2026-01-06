@@ -7,8 +7,8 @@
 
 import { world } from '../world';
 import type { Entity, EntityId, GridId } from '../world';
-import { MOVE_ITEM_FAIL } from '../../constants/inventorySystem';
-import type { MoveItemReturn } from '../../types/inventorySystem';
+import { MOVE_ITEM_FAIL } from '../../constants/inventory';
+import type { MoveItemReturn } from '../../types/inventory';
 import {
   findCompatibleStack,
   findFreePosition,

@@ -8,8 +8,8 @@
 import { world } from '../world';
 import type { Entity, EntityId, GridId } from '../world';
 import { DEFAULT_QUANTITY } from '../../constants/items';
-import { SPLIT_ITEM_FAIL } from '../../constants/inventorySystem';
-import type { SplitItemReturn } from '../../types/inventorySystem';
+import { SPLIT_ITEM_FAIL } from '../../constants/inventory';
+import type { SplitItemReturn } from '../../types/inventory';
 import {
   findCompatibleStack,
   findFreePosition,

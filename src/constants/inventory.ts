@@ -1,3 +1,8 @@
+import type { MoveItemReturn, SplitItemReturn } from '../types/inventory';
+
+export const MOVE_ITEM_FAIL: MoveItemReturn = { success: false, merged: false };
+export const SPLIT_ITEM_FAIL: SplitItemReturn = { success: false, newEntityId: null };
+
 // Stackable items suitable for containers with their max quantities
 export const STACKABLE_ITEM_CONFIGS = [
   { id: 'neo_43', maxQty: 4 }, // crackers
