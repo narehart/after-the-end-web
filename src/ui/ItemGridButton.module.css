@@ -1,8 +1,8 @@
 /* Grid item button - clickable item in grid */
 .grid-item {
   position: absolute;
-  top: -1px;
-  left: -1px;
+  top: var(--space-offset-overlap);
+  left: var(--space-offset-overlap);
   background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-cell) 100%);
   border: var(--border-default);
   overflow: hidden;
@@ -42,14 +42,14 @@
 
 .item-quantity {
   position: absolute;
-  bottom: 2px;
-  right: 4px;
+  bottom: var(--space-badge-inset);
+  right: var(--space-badge-inset-lg);
   background: var(--bg-overlay);
   padding: var(--space-1) var(--space-4);
 }
 
 .container-indicator {
   position: absolute;
-  top: 2px;
-  right: 4px;
+  top: var(--space-badge-inset);
+  right: var(--space-badge-inset-lg);
 }

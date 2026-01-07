@@ -70,8 +70,10 @@ export default {
 
     // Disallow specific patterns
     'declaration-no-important': true,
+    // Ban CSS custom property definitions - only allowed in index.css
     // Ban font/text properties - only allowed in index.css and Text.module.css
     'property-disallowed-list': [
+      '/^--/', // CSS custom property definitions
       'font-size',
       'font-weight',
       'font-family',
@@ -267,12 +269,12 @@ export default {
         'selector-max-universal': 2,
         'selector-max-specificity': '1,0,0',
         'declaration-property-value-disallowed-list': null,
-        'property-disallowed-list': null,
+        'property-disallowed-list': null, // Allow CSS custom property definitions here
       },
     },
     {
       // Text component defines all text styling
-      files: ['src/components/Text.module.css'],
+      files: ['src/ui/Text.module.css'],
       rules: {
         'property-disallowed-list': null,
         'declaration-property-value-disallowed-list': null,
@@ -280,14 +282,14 @@ export default {
     },
     {
       // Flex component can define display: flex
-      files: ['src/components/Flex.module.css'],
+      files: ['src/ui/Flex.module.css'],
       rules: {
         'declaration-property-value-disallowed-list': null,
       },
     },
     {
-      // ListItem uses color for state styling
-      files: ['src/components/ListItem.module.css'],
+      // ListItem uses display: flex
+      files: ['src/ui/ListItem.module.css'],
       rules: {
         'declaration-property-value-disallowed-list': null,
       },

@@ -13,7 +13,7 @@
   background: var(--bg-panel);
   border: var(--border-modal);
   left: 50%;
-  top: 22%;
+  top: var(--size-modal-top);
   transform: translateX(-50%);
   box-shadow: var(--shadow-lg);
   outline: none;

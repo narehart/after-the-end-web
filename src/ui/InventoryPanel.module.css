@@ -19,8 +19,6 @@
 /* Use attribute selector to match hashed class from ItemGrid module */
 .inventory-panel [class*='inventory-grid-container'] {
   /* Reserve space for 10 rows: 10 × 46px cells + 9 × 2px gaps = 478px */
-  --size-grid-10x10: 478px;
-
   min-height: var(--size-grid-10x10);
 }
 

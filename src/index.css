@@ -103,6 +103,24 @@
   --size-details-panel: var(--space-128);
   --size-modal: var(--space-512);
 
+  /* Viewport dimensions (target UI size) */
+  --size-viewport-width: 1280px;
+  --size-viewport-height: 720px;
+
+  /* Grid sizing (10 rows: 10 × 46px cells + 9 × 2px gaps) */
+  --size-grid-10x10: 478px;
+
+  /* Panel layout */
+  --size-inventory-column: 500px;
+
+  /* Modal positioning */
+  --size-modal-top: 22%;
+
+  /* Micro-positioning offsets */
+  --space-offset-overlap: -1px;
+  --space-badge-inset: 2px;
+  --space-badge-inset-lg: 4px;
+
   /* Opacity scale */
   --opacity-faint: 40%;
   --opacity-muted: 60%;
