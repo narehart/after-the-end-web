@@ -14,7 +14,7 @@ ls:
   .*: regex:$
 
   # Allowed root directories
-  .dir: regex:\.claude | regex:\.git | regex:dist | regex:docs | regex:eslint-rules | regex:node_modules | regex:public | regex:scripts | regex:src | regex:src-tauri
+  .dir: regex:\.claude | regex:\.git | regex:\.github | regex:dist | regex:docs | regex:eslint-rules | regex:node_modules | regex:public | regex:scripts | regex:src | regex:src-tauri
 
   # .claude directory - only officially supported Anthropic files
   .claude:
@@ -257,6 +257,7 @@ ls:
 ignore:
   # Ignore subdirectory contents - rules added incrementally
   - .git
+  - .github
   - dist
   - node_modules
   - src/utils
