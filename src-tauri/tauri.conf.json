@@ -14,8 +14,10 @@
     "windows": [
       {
         "title": "After the End",
-        "width": 1280,
-        "height": 800,
+        "width": 1920,
+        "height": 720,
+        "minWidth": 1920,
+        "minHeight": 720,
         "resizable": true,
         "fullscreen": false
       }
