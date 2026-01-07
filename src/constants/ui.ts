@@ -74,6 +74,10 @@ export const DIAGONAL_DESKTOP_LARGE = 27;
 export const REFERENCE_WIDTH = 1280;
 export const REFERENCE_HEIGHT = 800;
 
+// Viewport dimensions (minimum inner window size)
+export const VIEWPORT_WIDTH = 1280;
+export const VIEWPORT_HEIGHT = 720;
+
 /* eslint-disable @typescript-eslint/no-magic-numbers */
 // Aspect ratios (width / height) - used by KNOWN_ASPECT_RATIOS
 const ASPECT_RATIO_16_10 = 16 / 10;
