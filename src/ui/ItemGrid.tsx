@@ -16,7 +16,9 @@ interface ItemGridProps {
   grid: GridCell;
   context: MenuSource;
   cellSize: number;
-  hidden?: boolean;
+  hidden?: boolean | undefined;
+  minRows?: number | undefined;
+  minCols?: number | undefined;
 }
 
 export default function ItemGrid({
@@ -24,6 +26,8 @@ export default function ItemGrid({
   context,
   cellSize,
   hidden = false,
+  minRows,
+  minCols,
 }: ItemGridProps): React.JSX.Element {
   const { itemsMap: items } = useECSInventory();
   const { focusedCell, handleNavigate, handleGridKeyDown, setCellRef } = useGridNavigation({
@@ -31,6 +35,10 @@ export default function ItemGrid({
     height: grid.height,
   });
   const renderedItems = new Set<string>();
+
+  // Use minimum dimensions if specified, otherwise use grid dimensions
+  const displayRows = minRows !== undefined ? Math.max(grid.height, minRows) : grid.height;
+  const displayCols = minCols !== undefined ? Math.max(grid.width, minCols) : grid.width;
 
   return (
     <Flex
@@ -41,16 +49,16 @@ export default function ItemGrid({
       <Box
         className={cx('inventory-grid')}
         style={{
-          gridTemplateColumns: `repeat(${grid.width}, ${cellSize}px)`,
-          gridTemplateRows: `repeat(${grid.height}, ${cellSize}px)`,
+          gridTemplateColumns: `repeat(${displayCols}, ${cellSize}px)`,
+          gridTemplateRows: `repeat(${displayRows}, ${cellSize}px)`,
           gap: `${CELL_GAP}px`,
         }}
         role="grid"
         tabIndex={FIRST_INDEX}
         onKeyDown={handleGridKeyDown}
       >
-        {Array.from({ length: grid.height }).map((__, row) =>
-          Array.from({ length: grid.width }).map((___, col) => {
+        {Array.from({ length: displayRows }).map((__, row) =>
+          Array.from({ length: displayCols }).map((___, col) => {
             const itemId = getCellValue({ grid, row, col });
             const item = itemId !== null ? items[itemId] : undefined;
             const cellKey = `${col}-${row}`;

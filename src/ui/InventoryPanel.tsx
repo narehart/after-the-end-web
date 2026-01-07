@@ -1,4 +1,5 @@
 import classNames from 'classnames/bind';
+import { GRID_COLUMNS } from '../constants/ui';
 import { useInventoryStore } from '../stores/inventoryStore';
 import ContainerView from './ContainerView';
 import styles from './InventoryPanel.module.css';
@@ -27,6 +28,8 @@ export default function InventoryPanel({ cellSize }: InventoryPanelProps): React
         panelType="inventory"
         panelLabel="Inventory"
         cellSize={cellSize}
+        minRows={GRID_COLUMNS}
+        minCols={GRID_COLUMNS}
       />
     </Flex>
   );

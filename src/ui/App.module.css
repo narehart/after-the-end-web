@@ -1,6 +1,10 @@
 .app-container {
-  width: 100vw;
-  height: 100vh;
+  /* Fixed Steam Deck size for UI, centered on larger screens */
+  --size-steam-deck-width: 1280px;
+  --size-steam-deck-height: 800px;
+
+  width: var(--size-steam-deck-width);
+  height: var(--size-steam-deck-height);
   background: var(--bg-darkest);
   overflow: hidden;
 }

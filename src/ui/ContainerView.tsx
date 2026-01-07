@@ -14,6 +14,8 @@ interface ContainerViewProps {
   panelType?: PanelType;
   panelLabel?: string;
   cellSize?: number | null;
+  minRows?: number;
+  minCols?: number;
 }
 
 // Main ContainerView component - reusable for both inventory and world panels
@@ -24,6 +26,8 @@ export default function ContainerView({
   panelType = 'inventory',
   panelLabel = 'Container',
   cellSize = null,
+  minRows,
+  minCols,
 }: ContainerViewProps): React.JSX.Element {
   const { itemsMap: items, gridsMap: grids } = useECSInventory();
   const equipment = useInventoryStore((state) => state.equipment);
@@ -65,6 +69,8 @@ export default function ContainerView({
           context={getContext()}
           cellSize={effectiveCellSize}
           hidden={!isReady}
+          minRows={minRows}
+          minCols={minCols}
         />
       ) : null}
     </Panel>

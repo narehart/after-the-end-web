@@ -14,8 +14,8 @@
 }
 
 .preview-frame {
-  width: var(--size-preview);
-  height: var(--size-preview);
+  width: var(--space-96);
+  height: var(--space-96);
   padding: var(--space-8);
   background: var(--bg-cell);
   border: var(--border-default);

@@ -6,7 +6,7 @@
 .inventory-main {
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr 400px 400px;
+  grid-template-columns: 1fr 500px 500px;
   overflow: hidden;
 }
 
