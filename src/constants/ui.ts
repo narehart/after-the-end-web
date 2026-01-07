@@ -70,13 +70,9 @@ export const DIAGONAL_LAPTOP_MEDIUM = 15.6;
 export const DIAGONAL_DESKTOP_SMALL = 24;
 export const DIAGONAL_DESKTOP_LARGE = 27;
 
-// Reference resolution for scaling
+// Reference resolution for scaling (target UI design size)
 export const REFERENCE_WIDTH = 1280;
 export const REFERENCE_HEIGHT = 800;
-
-// Viewport dimensions (minimum inner window size)
-export const VIEWPORT_WIDTH = 1280;
-export const VIEWPORT_HEIGHT = 720;
 
 /* eslint-disable @typescript-eslint/no-magic-numbers */
 // Aspect ratios (width / height) - used by KNOWN_ASPECT_RATIOS

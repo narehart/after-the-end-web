@@ -105,7 +105,7 @@
 
   /* Viewport dimensions (target UI size) */
   --size-viewport-width: 1280px;
-  --size-viewport-height: 720px;
+  --size-viewport-height: 800px;
 
   /* Grid sizing (10 rows: 10 × 46px cells + 9 × 2px gaps) */
   --size-grid-10x10: 478px;

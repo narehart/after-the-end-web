@@ -33,6 +33,20 @@ Use the `dev-server` MCP instead of `npm run dev`:
 
 **Do not use:** `npm run dev` directly - use the MCP for proper process tracking.
 
+## Browser Automation
+
+**Use Tauri MCP, not Chrome DevTools MCP.** This is a Tauri desktop app, not a browser app.
+
+| Tool                                     | Usage                        |
+| ---------------------------------------- | ---------------------------- |
+| `mcp__tauri__tauri_driver_session`       | Connect to running Tauri app |
+| `mcp__tauri__tauri_webview_screenshot`   | Take screenshot              |
+| `mcp__tauri__tauri_webview_execute_js`   | Run JavaScript in webview    |
+| `mcp__tauri__tauri_read_logs`            | Read console/system logs     |
+| `mcp__tauri__tauri_webview_find_element` | Find DOM elements            |
+
+**Do not use:** `mcp__chrome-devtools__*` tools - they are for browser automation, not Tauri apps.
+
 ## Architecture
 
 ### Hybrid ECS + Zustand

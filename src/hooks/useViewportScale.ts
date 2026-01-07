@@ -32,7 +32,7 @@ export function useViewportScale(): UseViewportScaleReturn {
   const containerStyle: CSSPropertiesWithVars = {
     width: `${REFERENCE_WIDTH}px`,
     height: `${REFERENCE_HEIGHT}px`,
-    transform: `scale(${scale})`,
+    transform: `translate(-50%, -50%) scale(${scale})`,
     transformOrigin: 'center center',
   };
 

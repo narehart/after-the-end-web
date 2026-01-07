@@ -1,8 +1,23 @@
+.app-viewport {
+  /* Outer container fills the window with translucent overlay */
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-overlay);
+  overflow: hidden;
+}
+
 .app-container {
-  /* Fixed viewport size for UI, centered on larger screens */
+  /* Fixed viewport size for UI, scaled to fit smaller screens */
+
+  /* Use absolute positioning so container isn't constrained by parent flex */
+  position: absolute;
+  top: 50%;
+  left: 50%;
   width: var(--size-viewport-width);
   height: var(--size-viewport-height);
   background: var(--bg-darkest);
+  border: var(--border-panel);
   overflow: hidden;
 }
 

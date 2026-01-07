@@ -1,4 +1,4 @@
-import { REFERENCE_WIDTH, REFERENCE_HEIGHT } from '../constants/ui';
+import { REFERENCE_WIDTH, REFERENCE_HEIGHT, DEFAULT_SCALE } from '../constants/ui';
 import type { ViewportMode } from '../types/settings';
 
 interface CalculateViewportScaleProps {
@@ -21,7 +21,8 @@ export function calculateViewportScale(props: CalculateViewportScaleProps): numb
     baseScale = Math.max(widthRatio, heightRatio);
   } else {
     // Letterbox: fit within viewport (use the smaller ratio)
-    baseScale = Math.min(widthRatio, heightRatio);
+    // Cap at DEFAULT_SCALE to only scale down, never up
+    baseScale = Math.min(widthRatio, heightRatio, DEFAULT_SCALE);
   }
 
   // Apply user's UI scale preference on top

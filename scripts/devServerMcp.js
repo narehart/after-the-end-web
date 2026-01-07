@@ -37,9 +37,13 @@ function getProcessOnPort(port) {
 
 function isTauriAppRunning() {
   try {
-    const output = execSync(`pgrep -f "after-the-end|After.the.End" 2>/dev/null || true`, {
-      encoding: 'utf-8',
-    });
+    // Match the Tauri app binary (target/debug/app or after-the-end)
+    const output = execSync(
+      `pgrep -f "target/debug/app|target/release/app|after-the-end" 2>/dev/null || true`,
+      {
+        encoding: 'utf-8',
+      }
+    );
     return output.trim().length > 0;
   } catch {
     return false;
@@ -49,7 +53,11 @@ function isTauriAppRunning() {
 function killTauriProcesses(port) {
   try {
     execSync(`lsof -ti :${port} | xargs kill -9 2>/dev/null || true`, { encoding: 'utf-8' });
-    execSync(`pkill -f "after-the-end|After.the.End" 2>/dev/null || true`, { encoding: 'utf-8' });
+    // Kill Tauri app binary (target/debug/app or target/release/app or after-the-end)
+    execSync(
+      `pkill -9 -f "target/debug/app|target/release/app|after-the-end" 2>/dev/null || true`,
+      { encoding: 'utf-8' }
+    );
   } catch {
     /* ignore */
   }
