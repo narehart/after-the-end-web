@@ -25,7 +25,6 @@ function isProcessRunning(pid) {
   }
 }
 
-// Get PID of process listening on a port (returns null if none)
 function getProcessOnPort(port) {
   try {
     const output = execSync(`lsof -ti :${port}`, { encoding: 'utf-8' });
@@ -36,25 +35,39 @@ function getProcessOnPort(port) {
   }
 }
 
-// Load state from file
+function isTauriAppRunning() {
+  try {
+    const output = execSync(`pgrep -f "after-the-end|After.the.End" 2>/dev/null || true`, {
+      encoding: 'utf-8',
+    });
+    return output.trim().length > 0;
+  } catch {
+    return false;
+  }
+}
+
+function killTauriProcesses(port) {
+  try {
+    execSync(`lsof -ti :${port} | xargs kill -9 2>/dev/null || true`, { encoding: 'utf-8' });
+    execSync(`pkill -f "after-the-end|After.the.End" 2>/dev/null || true`, { encoding: 'utf-8' });
+  } catch {
+    /* ignore */
+  }
+}
+
 function loadState() {
   if (!existsSync(STATE_FILE)) return null;
   try {
     const data = JSON.parse(readFileSync(STATE_FILE, 'utf-8'));
-    // For Tauri mode, check if port is in use (process tree is complex)
     if (data.mode === 'tauri') {
       const portPid = getProcessOnPort(data.port);
-      if (portPid) {
-        return { ...data, pid: portPid };
-      }
+      const tauriRunning = isTauriAppRunning();
+      if (portPid || tauriRunning)
+        return { ...data, pid: portPid || data.pid, tauriAppRunning: tauriRunning };
       clearState();
       return null;
     }
-    // For Vite mode, check if original PID is running
-    if (data.pid && isProcessRunning(data.pid)) {
-      return data;
-    }
-    // Process no longer running, clean up
+    if (data.pid && isProcessRunning(data.pid)) return data;
     clearState();
     return null;
   } catch {
@@ -62,82 +75,49 @@ function loadState() {
   }
 }
 
-// Save state to file
 function saveState(pid, port, cwd, mode = 'vite') {
-  const data = {
-    pid,
-    port,
-    cwd,
-    mode,
-    startedAt: new Date().toISOString(),
-  };
-  writeFileSync(STATE_FILE, JSON.stringify(data, null, 2));
+  writeFileSync(
+    STATE_FILE,
+    JSON.stringify({ pid, port, cwd, mode, startedAt: new Date().toISOString() }, null, 2)
+  );
 }
 
-// Clear state file
 function clearState() {
-  if (existsSync(STATE_FILE)) {
-    unlinkSync(STATE_FILE);
-  }
+  if (existsSync(STATE_FILE)) unlinkSync(STATE_FILE);
 }
 
-// Start dev server
 function handleStart(port = DEFAULT_PORT, tauri = false) {
   const existingState = loadState();
-  if (existingState) {
+  if (existingState)
     return {
       error: `Dev server already running (PID: ${existingState.pid}, port: ${existingState.port}, mode: ${existingState.mode || 'vite'})`,
     };
-  }
-
-  // Check if something else is using the port
   const existingPid = getProcessOnPort(port);
-  if (existingPid) {
-    return {
-      error: `Port ${port} is already in use by PID ${existingPid}. Stop it first or use a different port.`,
-    };
-  }
+  if (existingPid) return { error: `Port ${port} in use by PID ${existingPid}. Stop it first.` };
+  if (tauri && isTauriAppRunning())
+    return { error: 'Tauri app already running. Close it or use dev_stop.' };
 
   const cwd = process.cwd();
   logs = [];
-
   const args = tauri ? ['run', 'tauri:dev'] : ['run', 'dev', '--', '--port', String(port)];
+  devProcess = spawn('npm', args, { cwd, stdio: ['ignore', 'pipe', 'pipe'], detached: true });
 
-  devProcess = spawn('npm', args, {
-    cwd,
-    stdio: ['ignore', 'pipe', 'pipe'],
-    detached: true,
-  });
-
-  devProcess.stdout.on('data', (data) => {
-    const lines = data.toString().split('\n').filter(Boolean);
-    logs.push(...lines);
-    if (logs.length > LOG_LIMIT) {
-      logs = logs.slice(-LOG_LIMIT);
-    }
-  });
-
-  devProcess.stderr.on('data', (data) => {
-    const lines = data.toString().split('\n').filter(Boolean);
-    logs.push(...lines);
-    if (logs.length > LOG_LIMIT) {
-      logs = logs.slice(-LOG_LIMIT);
-    }
-  });
-
+  const addLogs = (data) => {
+    logs.push(...data.toString().split('\n').filter(Boolean));
+    if (logs.length > LOG_LIMIT) logs = logs.slice(-LOG_LIMIT);
+  };
+  devProcess.stdout.on('data', addLogs);
+  devProcess.stderr.on('data', addLogs);
   devProcess.on('close', () => {
     devProcess = null;
     clearState();
   });
-
   devProcess.unref();
 
-  const pid = devProcess.pid;
   const mode = tauri ? 'tauri' : 'vite';
-  saveState(pid, port, cwd, mode);
-
+  saveState(devProcess.pid, port, cwd, mode);
   return {
-    pid,
+    pid: devProcess.pid,
     port,
     mode,
     url: `http://localhost:${port}`,
@@ -145,12 +125,9 @@ function handleStart(port = DEFAULT_PORT, tauri = false) {
   };
 }
 
-// Stop dev server
 function handleStop() {
   const state = loadState();
-
   if (!state) {
-    // Also check in-memory process
     if (devProcess) {
       try {
         process.kill(devProcess.pid, 'SIGTERM');
@@ -162,33 +139,21 @@ function handleStop() {
     }
     return { stopped: false, message: 'No dev server running' };
   }
-
-  // For Tauri mode, kill all processes on the port
-  if (state.mode === 'tauri') {
+  if (state.mode === 'tauri') killTauriProcesses(state.port);
+  else {
     try {
-      execSync(`lsof -ti :${state.port} | xargs kill -9 2>/dev/null || true`, {
-        encoding: 'utf-8',
-      });
-    } catch {
-      // Ignore errors
-    }
-  } else {
-    try {
-      // Kill the process group to ensure child processes are also killed
       process.kill(-state.pid, 'SIGTERM');
     } catch {
       try {
         process.kill(state.pid, 'SIGTERM');
       } catch {
-        // Process may have already exited
+        /* */
       }
     }
   }
-
   clearState();
   devProcess = null;
   logs = [];
-
   return {
     stopped: true,
     message: `Dev server stopped (was PID: ${state.pid}, mode: ${state.mode || 'vite'})`,
