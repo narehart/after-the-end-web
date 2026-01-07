@@ -246,21 +246,26 @@ CSS Modules + CSS Variables → Visual Update
 
 ## Verifying UI Changes
 
-Prefer using the Chrome DevTools MCP to verify UI fixes over taking screenshots. Use `mcp__chrome-devtools__evaluate_script` to query computed styles:
+Use the Tauri MCP to verify UI fixes:
 
 ```javascript
-// Example: verify an element's computed styles
-(el) => {
+// Query computed styles via tauri_webview_execute_js
+(() => {
+  const el = document.querySelector('.my-element');
   const styles = window.getComputedStyle(el);
   return {
     color: styles.color,
     padding: styles.padding,
     display: styles.display,
   };
-};
+})();
 ```
 
-This provides precise, programmatic verification of CSS values rather than visual inspection.
+For visual verification, use `mcp__tauri__tauri_webview_screenshot`.
+
+## Git Commits
+
+Use single-line commit messages. Commit all staged changes together.
 
 ## Gamepad Support
 
