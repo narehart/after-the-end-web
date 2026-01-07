@@ -1,9 +1,6 @@
 name: Build
 
 on:
-  push:
-    tags:
-      - 'v*'
   workflow_dispatch:
 
 jobs:
@@ -11,6 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Generate version
+        id: version
+        run: echo "version=dev-$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_OUTPUT
 
       - name: Install dependencies
         run: |
@@ -39,8 +40,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tagName: ${{ github.ref_name }}
-          releaseName: 'After the End ${{ github.ref_name }}'
+          tagName: ${{ steps.version.outputs.version }}
+          releaseName: 'After the End ${{ steps.version.outputs.version }}'
           releaseBody: 'Download the AppImage for Linux/Steam Deck.'
           releaseDraft: false
-          prerelease: ${{ github.event_name == 'workflow_dispatch' }}
+          prerelease: true
