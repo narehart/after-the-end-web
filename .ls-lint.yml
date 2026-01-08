@@ -3,10 +3,11 @@
 
 ls:
   # Allowed root files
-  .config.ts: regex:eslint | regex:prettier | regex:stylelint | regex:vite
+  .config.ts: regex:eslint | regex:stylelint | regex:vite
+  .config.mjs: regex:prettier
   .json: regex:package | regex:package-lock | regex:tsconfig | regex:tsconfig\.tooling | regex:knip | regex:release-please-config | regex:\.release-please-manifest
   .html: regex:index
-  .md: regex:README | regex:CLAUDE
+  .md: regex:README | regex:CLAUDE | regex:CHANGELOG
   .yml: regex:\.ls-lint
   -versions: regex:\.tool
 
@@ -34,9 +35,10 @@ ls:
     .*: regex:$
     .dir: kebab-case
 
-  # .claude/hooks - camelCase JS files only, no subdirectories
+  # .claude/hooks - camelCase JS/CJS files only, no subdirectories
   .claude/hooks:
     .js: camelCase
+    .cjs: camelCase
     .*: regex:$
     .dir: regex:hooks
 
