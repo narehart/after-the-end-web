@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/narehart/after-the-end-web/compare/ui-experiments-v1.1.0...ui-experiments-v1.2.0) (2026-01-08)
+
+
+### Features
+
+* **eslint:** add no-unused-css-classes rule ([e564f57](https://github.com/narehart/after-the-end-web/commit/e564f571991670277576bce23466f4b8e19b6c43))
+* **eslint:** add no-unused-css-classes rule and remove dead CSS (closes [#7](https://github.com/narehart/after-the-end-web/issues/7)) ([2bc3296](https://github.com/narehart/after-the-end-web/commit/2bc329691c15d6c9f3e73daa149e7f22969b9930))
+
 ## [1.1.0](https://github.com/narehart/after-the-end-web/compare/ui-experiments-v1.0.0...ui-experiments-v1.1.0) (2026-01-08)
 
 
