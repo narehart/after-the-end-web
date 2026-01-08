@@ -31,11 +31,3 @@ button:focus-visible,
   outline: var(--border-focus);
   outline-offset: 1px;
 }
-
-/* Modal overlay - captures clicks outside modals */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: var(--z-overlay);
-  background: transparent;
-}

@@ -32,6 +32,7 @@ import ecsQueriesUseWorld from './eslint-rules/ecs-queries-use-world.ts';
 import ecsEntitiesAddToWorld from './eslint-rules/ecs-entities-add-to-world.ts';
 import ecsSystemsUseWorldOrQueries from './eslint-rules/ecs-systems-use-world-or-queries.ts';
 import maxLinesExcludingTypes from './eslint-rules/max-lines-excluding-types.ts';
+import noUnusedCssClasses from './eslint-rules/no-unused-css-classes.ts';
 
 const MAX_LINES = 250;
 const MAX_LINES_PER_FUNCTION = 100;
@@ -72,6 +73,7 @@ const localPlugin = {
     'ecs-entities-add-to-world': ecsEntitiesAddToWorld,
     'ecs-systems-use-world-or-queries': ecsSystemsUseWorldOrQueries,
     'max-lines-excluding-types': maxLinesExcludingTypes,
+    'no-unused-css-classes': noUnusedCssClasses,
   },
 };
 const sharedRules: Linter.RulesRecord = {
@@ -98,6 +100,7 @@ const sharedRules: Linter.RulesRecord = {
   'max-statements': ['error', MAX_STATEMENTS],
   complexity: ['error', MAX_COMPLEXITY],
   'css-modules/no-undef-class': ['error', { camelCase: true }],
+  'local/no-unused-css-classes': 'error',
   'local/no-cross-component-css-imports': 'error',
   'local/no-plain-classname-literals': 'error',
   'local/no-component-helper-functions': 'error',
