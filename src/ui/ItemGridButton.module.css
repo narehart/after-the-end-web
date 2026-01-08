@@ -28,14 +28,6 @@
   pointer-events: none;
 }
 
-.item-image.rotated {
-  transform: rotate(90deg);
-  max-width: none;
-  max-height: none;
-  width: calc(var(--item-height) - 1rem);
-  height: calc(var(--item-width) - 1rem);
-}
-
 .item-icon {
   filter: grayscale(0.2);
 }
