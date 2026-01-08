@@ -21,10 +21,6 @@
   border: var(--border-default);
 }
 
-.item-size {
-  display: none;
-}
-
 .item-info {
   flex: 1;
   min-width: 0;
@@ -41,24 +37,6 @@
 .item-flavor-text {
   margin: var(--space-8) 0 0;
   line-height: var(--line-height-tight);
-}
-
-/* Hide stats and hints in flag layout */
-.item-stats,
-.details-hint {
-  display: none;
-}
-
-.action-buttons {
-  display: none;
-}
-
-.stat-row,
-.stat-label,
-.stat-value,
-.stats-header,
-.action-btn {
-  display: none;
 }
 
 /* Scrollbar styling */
