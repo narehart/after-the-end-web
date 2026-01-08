@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/narehart/after-the-end-web/compare/ui-experiments-v1.0.0...ui-experiments-v1.1.0) (2026-01-08)
+
+
+### Features
+
+* **hooks:** add branch creation hook to enforce issue linking ([2f5fe87](https://github.com/narehart/after-the-end-web/commit/2f5fe873266a443a4eef004b1a8a972845be7aca))
+
 ## 1.0.0 (2026-01-08)
 
 
