@@ -263,9 +263,65 @@ Use the Tauri MCP to verify UI fixes:
 
 For visual verification, use `mcp__tauri__tauri_webview_screenshot`.
 
-## Git Commits
+## Git Workflow
 
-Use single-line commit messages. Commit all staged changes together.
+### Branch Protection
+
+- No direct pushes to `main` - all changes require PRs
+- PRs can be self-merged (0 approvals required)
+- Required status checks: Conventional Commits, Lint, Format, Typecheck, Build
+
+### Issue-First Development
+
+Create a GitHub issue before starting work:
+
+```bash
+gh issue create --title "Add feature X" --body "## Description
+What needs to be done.
+
+## Acceptance Criteria
+- [ ] Criterion 1
+- [ ] Criterion 2"
+```
+
+Issues must have: title, description, and acceptance criteria section.
+
+### Branch Naming
+
+Format: `<type>/<scope>/<issue-number>/<description>`
+
+```bash
+git checkout -b feat/ui/123/add-dark-mode
+git checkout -b fix/inventory/456/item-duplication
+git checkout -b ci/workflow/789/add-linting
+```
+
+**Valid types:** feat, fix, docs, style, refactor, perf, test, build, ci, chore
+
+The `preBranchCreate.cjs` hook enforces this format and validates the linked issue exists.
+
+### Commits
+
+Use single-line conventional commit messages:
+
+```bash
+git commit -m "feat(ui): add dark mode toggle"
+git commit -m "fix(inventory): prevent item duplication"
+```
+
+### Releases
+
+Uses [release-please](https://github.com/googleapis/release-please) for automated releases:
+
+1. Conventional commits on `main` trigger release-please
+2. A "Release PR" is auto-created/updated with changelog and version bump
+3. Merging the Release PR creates a GitHub release with Tauri builds
+
+Version bumps based on commits:
+
+- `fix:` → patch (1.0.0 → 1.0.1)
+- `feat:` → minor (1.0.0 → 1.1.0)
+- `feat!:` or `BREAKING CHANGE:` → major (1.0.0 → 2.0.0)
 
 ## Gamepad Support
 
