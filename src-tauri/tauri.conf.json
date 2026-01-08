@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "after-the-end",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "identifier": "com.aftertheend.game",
   "build": {
     "frontendDist": "../dist",
